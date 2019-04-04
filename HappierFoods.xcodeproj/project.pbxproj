@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9B22566A230090BB5F /* AppDelegate.swift */; };
+		44BE3B9E22566A230090BB5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9D22566A230090BB5F /* ViewController.swift */; };
+		44BE3BA122566A230090BB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3B9F22566A230090BB5F /* Main.storyboard */; };
+		44BE3BA422566A230090BB5F /* HappierFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3BA222566A230090BB5F /* HappierFoods.xcdatamodeld */; };
+		44BE3BA622566A250090BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA522566A250090BB5F /* Assets.xcassets */; };
+		44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */; };
+		44BE3BB422566A250090BB5F /* HappierFoodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3BB322566A250090BB5F /* HappierFoodsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44BE3BB022566A250090BB5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44BE3B9022566A230090BB5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44BE3B9722566A230090BB5F;
+			remoteInfo = HappierFoods;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		44BE3B9822566A230090BB5F /* HappierFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappierFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44BE3B9B22566A230090BB5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44BE3B9D22566A230090BB5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44BE3BA022566A230090BB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44BE3BA322566A230090BB5F /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
+		44BE3BA522566A250090BB5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44BE3BA822566A250090BB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		44BE3BAA22566A250090BB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44BE3BAF22566A250090BB5F /* HappierFoodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappierFoodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44BE3BB322566A250090BB5F /* HappierFoodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappierFoodsTests.swift; sourceTree = "<group>"; };
+		44BE3BB522566A250090BB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44BE3B9522566A230090BB5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44BE3BAC22566A250090BB5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44BE3B8F22566A230090BB5F = {
+			isa = PBXGroup;
+			children = (
+				44BE3B9A22566A230090BB5F /* HappierFoods */,
+				44BE3BB222566A250090BB5F /* HappierFoodsTests */,
+				44BE3B9922566A230090BB5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44BE3B9922566A230090BB5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44BE3B9822566A230090BB5F /* HappierFoods.app */,
+				44BE3BAF22566A250090BB5F /* HappierFoodsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44BE3B9A22566A230090BB5F /* HappierFoods */ = {
+			isa = PBXGroup;
+			children = (
+				44BE3B9B22566A230090BB5F /* AppDelegate.swift */,
+				44BE3B9D22566A230090BB5F /* ViewController.swift */,
+				44BE3B9F22566A230090BB5F /* Main.storyboard */,
+				44BE3BA522566A250090BB5F /* Assets.xcassets */,
+				44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */,
+				44BE3BAA22566A250090BB5F /* Info.plist */,
+				44BE3BA222566A230090BB5F /* HappierFoods.xcdatamodeld */,
+			);
+			path = HappierFoods;
+			sourceTree = "<group>";
+		};
+		44BE3BB222566A250090BB5F /* HappierFoodsTests */ = {
+			isa = PBXGroup;
+			children = (
+				44BE3BB322566A250090BB5F /* HappierFoodsTests.swift */,
+				44BE3BB522566A250090BB5F /* Info.plist */,
+			);
+			path = HappierFoodsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44BE3B9722566A230090BB5F /* HappierFoods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44BE3BB822566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoods" */;
+			buildPhases = (
+				44BE3B9422566A230090BB5F /* Sources */,
+				44BE3B9522566A230090BB5F /* Frameworks */,
+				44BE3B9622566A230090BB5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HappierFoods;
+			productName = HappierFoods;
+			productReference = 44BE3B9822566A230090BB5F /* HappierFoods.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44BE3BAE22566A250090BB5F /* HappierFoodsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44BE3BBB22566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoodsTests" */;
+			buildPhases = (
+				44BE3BAB22566A250090BB5F /* Sources */,
+				44BE3BAC22566A250090BB5F /* Frameworks */,
+				44BE3BAD22566A250090BB5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44BE3BB122566A250090BB5F /* PBXTargetDependency */,
+			);
+			name = HappierFoodsTests;
+			productName = HappierFoodsTests;
+			productReference = 44BE3BAF22566A250090BB5F /* HappierFoodsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44BE3B9022566A230090BB5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Kate Roberts";
+				TargetAttributes = {
+					44BE3B9722566A230090BB5F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					44BE3BAE22566A250090BB5F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 44BE3B9722566A230090BB5F;
+					};
+				};
+			};
+			buildConfigurationList = 44BE3B9322566A230090BB5F /* Build configuration list for PBXProject "HappierFoods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44BE3B8F22566A230090BB5F;
+			productRefGroup = 44BE3B9922566A230090BB5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44BE3B9722566A230090BB5F /* HappierFoods */,
+				44BE3BAE22566A250090BB5F /* HappierFoodsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44BE3B9622566A230090BB5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */,
+				44BE3BA622566A250090BB5F /* Assets.xcassets in Resources */,
+				44BE3BA122566A230090BB5F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44BE3BAD22566A250090BB5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44BE3B9422566A230090BB5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44BE3BA422566A230090BB5F /* HappierFoods.xcdatamodeld in Sources */,
+				44BE3B9E22566A230090BB5F /* ViewController.swift in Sources */,
+				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44BE3BAB22566A250090BB5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44BE3BB422566A250090BB5F /* HappierFoodsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44BE3BB122566A250090BB5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44BE3B9722566A230090BB5F /* HappierFoods */;
+			targetProxy = 44BE3BB022566A250090BB5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		44BE3B9F22566A230090BB5F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44BE3BA022566A230090BB5F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44BE3BA822566A250090BB5F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44BE3BB622566A250090BB5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		44BE3BB722566A250090BB5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44BE3BB922566A250090BB5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HappierFoods/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoods;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44BE3BBA22566A250090BB5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HappierFoods/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoods;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		44BE3BBC22566A250090BB5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HappierFoodsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoodsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HappierFoods.app/HappierFoods";
+			};
+			name = Debug;
+		};
+		44BE3BBD22566A250090BB5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HappierFoodsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoodsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HappierFoods.app/HappierFoods";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44BE3B9322566A230090BB5F /* Build configuration list for PBXProject "HappierFoods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44BE3BB622566A250090BB5F /* Debug */,
+				44BE3BB722566A250090BB5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44BE3BB822566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44BE3BB922566A250090BB5F /* Debug */,
+				44BE3BBA22566A250090BB5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44BE3BBB22566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoodsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44BE3BBC22566A250090BB5F /* Debug */,
+				44BE3BBD22566A250090BB5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		44BE3BA222566A230090BB5F /* HappierFoods.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				44BE3BA322566A230090BB5F /* HappierFoods.xcdatamodel */,
+			);
+			currentVersion = 44BE3BA322566A230090BB5F /* HappierFoods.xcdatamodel */;
+			path = HappierFoods.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 44BE3B9022566A230090BB5F /* Project object */;
+}
