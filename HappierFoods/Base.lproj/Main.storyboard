@@ -972,18 +972,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FbD-un-kuL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbD-un-kuL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="101.33333333333333"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQT-28-jsw">
+                                        <rect key="frame" x="125" y="40.333333333333336" width="125" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.97361403700000004" green="0.84680634740000005" blue="0.47435027359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="bQT-28-jsw" firstAttribute="centerY" secondItem="FbD-un-kuL" secondAttribute="centerY" id="Swe-bX-5gG"/>
+                                    <constraint firstItem="bQT-28-jsw" firstAttribute="centerX" secondItem="FbD-un-kuL" secondAttribute="centerX" id="bTc-b9-MVo"/>
+                                    <constraint firstItem="bQT-28-jsw" firstAttribute="width" secondItem="FbD-un-kuL" secondAttribute="width" multiplier="0.33333" id="rhc-QZ-ZXg"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FbD-un-kuL" secondAttribute="trailing" id="9ny-u4-BkY"/>
+                            <constraint firstItem="FbD-un-kuL" firstAttribute="top" secondItem="L7h-fq-fVL" secondAttribute="top" id="QJN-6O-wc6"/>
+                            <constraint firstItem="FbD-un-kuL" firstAttribute="height" secondItem="L7h-fq-fVL" secondAttribute="height" multiplier="0.666666" id="aKu-ze-btM"/>
+                            <constraint firstItem="FbD-un-kuL" firstAttribute="leading" secondItem="L7h-fq-fVL" secondAttribute="leading" id="tTb-YI-n2i"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kb3-dV-BZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="-359.48275862068965"/>
+            <point key="canvasLocation" x="-140" y="-359.85221674876851"/>
         </scene>
         <!--PhotoAndName-->
         <scene sceneID="pc3-ik-ZDh">
