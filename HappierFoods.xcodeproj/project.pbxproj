@@ -17,6 +17,8 @@
 		4425CAF9225E71D800A6DEE6 /* hahahahahahaha.png in Resources */ = {isa = PBXBuildFile; fileRef = 4425CAF8225E71D800A6DEE6 /* hahahahahahaha.png */; };
 		4425CAFB225EAEB700A6DEE6 /* topBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425CAFA225EAEB700A6DEE6 /* topBarViewController.swift */; };
 		4425CAFD225EAEE500A6DEE6 /* topView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425CAFC225EAEE500A6DEE6 /* topView.swift */; };
+		442F870F2289628500F4CCB5 /* detailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F870E2289628500F4CCB5 /* detailView.swift */; };
+		442F8711228962B700F4CCB5 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F8710228962B700F4CCB5 /* detailViewController.swift */; };
 		445138F322887411001DC15B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 445138F222887410001DC15B /* cross.png */; };
 		445FB7FF225C0934007C7746 /* Extensions_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FB7FE225C0934007C7746 /* Extensions_UIImage.swift */; };
 		445FB801225C165C007C7746 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 445FB800225C165B007C7746 /* 1.png */; };
@@ -74,6 +76,8 @@
 		4425CAF8225E71D800A6DEE6 /* hahahahahahaha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hahahahahahaha.png; path = ../../../Downloads/hahahahahahaha.png; sourceTree = "<group>"; };
 		4425CAFA225EAEB700A6DEE6 /* topBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topBarViewController.swift; sourceTree = "<group>"; };
 		4425CAFC225EAEE500A6DEE6 /* topView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topView.swift; sourceTree = "<group>"; };
+		442F870E2289628500F4CCB5 /* detailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailView.swift; sourceTree = "<group>"; };
+		442F8710228962B700F4CCB5 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		445138F222887410001DC15B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		445FB7FE225C0934007C7746 /* Extensions_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions_UIImage.swift; sourceTree = "<group>"; };
 		445FB800225C165B007C7746 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 			path = "Uninteresting VCs";
 			sourceTree = "<group>";
 		};
+		442F8713228962DF00F4CCB5 /* detailView */ = {
+			isa = PBXGroup;
+			children = (
+				442F870E2289628500F4CCB5 /* detailView.swift */,
+				442F8710228962B700F4CCB5 /* detailViewController.swift */,
+			);
+			path = detailView;
+			sourceTree = "<group>";
+		};
 		44BE3B8F22566A230090BB5F = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +188,7 @@
 				44BE3B9D22566A230090BB5F /* ViewController.swift */,
 				44A63E9022598D03002E656E /* rateFoodViewController.swift */,
 				44BE3B9F22566A230090BB5F /* Main.storyboard */,
+				442F8713228962DF00F4CCB5 /* detailView */,
 				4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */,
 				4414EE06225FA99500D9B9CB /* New Group */,
 				44D598642259582B00267E71 /* dataInputViewController.swift */,
@@ -365,6 +379,7 @@
 				44D598632259535100267E71 /* mainViewController.swift in Sources */,
 				44BE3BCC225699B50090BB5F /* CoreGraphicsExtensions.swift in Sources */,
 				44D5986122594EC900267E71 /* footerViewController.swift in Sources */,
+				442F870F2289628500F4CCB5 /* detailView.swift in Sources */,
 				44D5985022592A2B00267E71 /* historyViewController.swift in Sources */,
 				4425CAFD225EAEE500A6DEE6 /* topView.swift in Sources */,
 				449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */,
@@ -377,6 +392,7 @@
 				44D5985522592FBC00267E71 /* customTabBar.swift in Sources */,
 				44BE3B9E22566A230090BB5F /* ViewController.swift in Sources */,
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
+				442F8711228962B700F4CCB5 /* detailViewController.swift in Sources */,
 				44BE3BCB225699B50090BB5F /* UIViewExtension.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
