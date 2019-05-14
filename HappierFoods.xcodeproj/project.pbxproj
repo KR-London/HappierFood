@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441045FD228AB3CD00BF6D92 /* detailContainer1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441045FC228AB3CD00BF6D92 /* detailContainer1.swift */; };
+		441045FF228AB3EE00BF6D92 /* detailContainer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441045FE228AB3EE00BF6D92 /* detailContainer2.swift */; };
+		44104601228AB3FB00BF6D92 /* detailContainer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104600228AB3FB00BF6D92 /* detailContainer3.swift */; };
+		44104603228AB40F00BF6D92 /* detailContainer4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104602228AB40F00BF6D92 /* detailContainer4.swift */; };
+		44104605228AB41D00BF6D92 /* detailContainer5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104604228AB41D00BF6D92 /* detailContainer5.swift */; };
+		44104607228AB71900BF6D92 /* detailContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104606228AB71900BF6D92 /* detailContainerViewController.swift */; };
+		44104609228ACB4F00BF6D92 /* detailContainer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104608228ACB4F00BF6D92 /* detailContainer2ViewController.swift */; };
+		4410460B228ACB6700BF6D92 /* detailContainer1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */; };
+		4410460D228ACB7C00BF6D92 /* detailContainer3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */; };
+		4410460F228ACB9100BF6D92 /* detailContainer4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */; };
+		44104611228ACBA000BF6D92 /* detailContainer5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */; };
 		44146634225D358900DD4751 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44146633225D358900DD4751 /* ARViewController.swift */; };
 		4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EDFE225F0AFC00D9B9CB /* chaos.jpg */; };
 		4414EE03225F825A00D9B9CB /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 4414EE02225F825900D9B9CB /* share.png */; };
@@ -66,6 +77,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		441045FC228AB3CD00BF6D92 /* detailContainer1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer1.swift; sourceTree = "<group>"; };
+		441045FE228AB3EE00BF6D92 /* detailContainer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer2.swift; sourceTree = "<group>"; };
+		44104600228AB3FB00BF6D92 /* detailContainer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer3.swift; sourceTree = "<group>"; };
+		44104602228AB40F00BF6D92 /* detailContainer4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer4.swift; sourceTree = "<group>"; };
+		44104604228AB41D00BF6D92 /* detailContainer5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer5.swift; sourceTree = "<group>"; };
+		44104606228AB71900BF6D92 /* detailContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainerViewController.swift; sourceTree = "<group>"; };
+		44104608228ACB4F00BF6D92 /* detailContainer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer2ViewController.swift; sourceTree = "<group>"; };
+		4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer1ViewController.swift; sourceTree = "<group>"; };
+		4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer3ViewController.swift; sourceTree = "<group>"; };
+		4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer4ViewController.swift; sourceTree = "<group>"; };
+		44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer5ViewController.swift; sourceTree = "<group>"; };
 		44146633225D358900DD4751 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		4414EDFE225F0AFC00D9B9CB /* chaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos.jpg; sourceTree = "<group>"; };
 		4414EE02225F825900D9B9CB /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
@@ -158,6 +180,17 @@
 			children = (
 				442F870E2289628500F4CCB5 /* detailView.swift */,
 				442F8710228962B700F4CCB5 /* detailViewController.swift */,
+				44104606228AB71900BF6D92 /* detailContainerViewController.swift */,
+				4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */,
+				44104608228ACB4F00BF6D92 /* detailContainer2ViewController.swift */,
+				4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */,
+				4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */,
+				44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */,
+				441045FC228AB3CD00BF6D92 /* detailContainer1.swift */,
+				441045FE228AB3EE00BF6D92 /* detailContainer2.swift */,
+				44104600228AB3FB00BF6D92 /* detailContainer3.swift */,
+				44104602228AB40F00BF6D92 /* detailContainer4.swift */,
+				44104604228AB41D00BF6D92 /* detailContainer5.swift */,
 			);
 			path = detailView;
 			sourceTree = "<group>";
@@ -369,10 +402,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4410460F228ACB9100BF6D92 /* detailContainer4ViewController.swift in Sources */,
 				449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */,
 				44AB154F225D9A6B004E070A /* FaceViewController2.swift in Sources */,
+				441045FD228AB3CD00BF6D92 /* detailContainer1.swift in Sources */,
 				44BE3BA422566A230090BB5F /* HappierFoods.xcdatamodeld in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
+				44104605228AB41D00BF6D92 /* detailContainer5.swift in Sources */,
 				44A63E972259AA7D002E656E /* UIImage+PixelBuffer.swift in Sources */,
 				44D59859225930B800267E71 /* mainCollectionViewController.swift in Sources */,
 				4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */,
@@ -382,23 +418,31 @@
 				442F870F2289628500F4CCB5 /* detailView.swift in Sources */,
 				44D5985022592A2B00267E71 /* historyViewController.swift in Sources */,
 				4425CAFD225EAEE500A6DEE6 /* topView.swift in Sources */,
+				4410460B228ACB6700BF6D92 /* detailContainer1ViewController.swift in Sources */,
 				449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */,
 				44D5985B2259346700267E71 /* mainCollectionViewCell.swift in Sources */,
 				4495550B225BAB750094E317 /* PortholeView.swift in Sources */,
 				44BE3BC1225673F60090BB5F /* FaceViewController.swift in Sources */,
 				4425CAFB225EAEB700A6DEE6 /* topBarViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
+				44104609228ACB4F00BF6D92 /* detailContainer2ViewController.swift in Sources */,
 				445FB7FF225C0934007C7746 /* Extensions_UIImage.swift in Sources */,
 				44D5985522592FBC00267E71 /* customTabBar.swift in Sources */,
 				44BE3B9E22566A230090BB5F /* ViewController.swift in Sources */,
+				44104611228ACBA000BF6D92 /* detailContainer5ViewController.swift in Sources */,
+				44104601228AB3FB00BF6D92 /* detailContainer3.swift in Sources */,
+				4410460D228ACB7C00BF6D92 /* detailContainer3ViewController.swift in Sources */,
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
 				442F8711228962B700F4CCB5 /* detailViewController.swift in Sources */,
+				441045FF228AB3EE00BF6D92 /* detailContainer2.swift in Sources */,
 				44BE3BCB225699B50090BB5F /* UIViewExtension.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
 				44BE3BC52256797D0090BB5F /* FacialExpression.swift in Sources */,
+				44104603228AB40F00BF6D92 /* detailContainer4.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
 				44D5985722592FFD00267E71 /* customTabBarController.swift in Sources */,
+				44104607228AB71900BF6D92 /* detailContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
