@@ -397,6 +397,7 @@
 				449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */,
 				44AB154F225D9A6B004E070A /* FaceViewController2.swift in Sources */,
 				441045FD228AB3CD00BF6D92 /* detailContainer1.swift in Sources */,
+				44BE3BA422566A230090BB5F /* HappierFoods.xcdatamodeld in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
 				44104605228AB41D00BF6D92 /* detailContainer5.swift in Sources */,
 				44A63E972259AA7D002E656E /* UIImage+PixelBuffer.swift in Sources */,
@@ -416,6 +417,7 @@
 				44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */,
 				4425CAFB225EAEB700A6DEE6 /* topBarViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
+				44104609228ACB4F00BF6D92 /* detailContainer2ViewController.swift in Sources */,
 				445FB7FF225C0934007C7746 /* Extensions_UIImage.swift in Sources */,
 				44D5985522592FBC00267E71 /* customTabBar.swift in Sources */,
 				44BE3B9E22566A230090BB5F /* ViewController.swift in Sources */,
@@ -423,6 +425,7 @@
 				44104601228AB3FB00BF6D92 /* detailContainer3.swift in Sources */,
 				4410460D228ACB7C00BF6D92 /* detailContainer3ViewController.swift in Sources */,
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
+				442F8711228962B700F4CCB5 /* detailViewController.swift in Sources */,
 				441045FF228AB3EE00BF6D92 /* detailContainer2.swift in Sources */,
 				44BE3BCB225699B50090BB5F /* UIViewExtension.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
@@ -431,6 +434,7 @@
 				44104603228AB40F00BF6D92 /* detailContainer4.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
 				44D5985722592FFD00267E71 /* customTabBarController.swift in Sources */,
+				44104607228AB71900BF6D92 /* detailContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
