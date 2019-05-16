@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441045FD228AB3CD00BF6D92 /* detailContainer1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441045FC228AB3CD00BF6D92 /* detailContainer1.swift */; };
+		441045FF228AB3EE00BF6D92 /* detailContainer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441045FE228AB3EE00BF6D92 /* detailContainer2.swift */; };
+		44104601228AB3FB00BF6D92 /* detailContainer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104600228AB3FB00BF6D92 /* detailContainer3.swift */; };
+		44104603228AB40F00BF6D92 /* detailContainer4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104602228AB40F00BF6D92 /* detailContainer4.swift */; };
+		44104605228AB41D00BF6D92 /* detailContainer5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104604228AB41D00BF6D92 /* detailContainer5.swift */; };
+		4410460B228ACB6700BF6D92 /* detailContainer1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */; };
+		4410460D228ACB7C00BF6D92 /* detailContainer3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */; };
+		4410460F228ACB9100BF6D92 /* detailContainer4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */; };
+		44104611228ACBA000BF6D92 /* detailContainer5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */; };
 		44146634225D358900DD4751 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44146633225D358900DD4751 /* ARViewController.swift */; };
 		4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EDFE225F0AFC00D9B9CB /* chaos.jpg */; };
 		4414EE03225F825A00D9B9CB /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 4414EE02225F825900D9B9CB /* share.png */; };
@@ -18,7 +27,6 @@
 		4425CAFB225EAEB700A6DEE6 /* topBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425CAFA225EAEB700A6DEE6 /* topBarViewController.swift */; };
 		4425CAFD225EAEE500A6DEE6 /* topView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425CAFC225EAEE500A6DEE6 /* topView.swift */; };
 		442F870F2289628500F4CCB5 /* detailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F870E2289628500F4CCB5 /* detailView.swift */; };
-		442F8711228962B700F4CCB5 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F8710228962B700F4CCB5 /* detailViewController.swift */; };
 		445138F322887411001DC15B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 445138F222887410001DC15B /* cross.png */; };
 		445FB7FF225C0934007C7746 /* Extensions_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FB7FE225C0934007C7746 /* Extensions_UIImage.swift */; };
 		445FB801225C165C007C7746 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 445FB800225C165B007C7746 /* 1.png */; };
@@ -33,7 +41,6 @@
 		44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9B22566A230090BB5F /* AppDelegate.swift */; };
 		44BE3B9E22566A230090BB5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9D22566A230090BB5F /* ViewController.swift */; };
 		44BE3BA122566A230090BB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3B9F22566A230090BB5F /* Main.storyboard */; };
-		44BE3BA422566A230090BB5F /* HappierFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3BA222566A230090BB5F /* HappierFoods.xcdatamodeld */; };
 		44BE3BA622566A250090BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA522566A250090BB5F /* Assets.xcassets */; };
 		44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */; };
 		44BE3BB422566A250090BB5F /* HappierFoodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3BB322566A250090BB5F /* HappierFoodsTests.swift */; };
@@ -53,6 +60,7 @@
 		44D5986122594EC900267E71 /* footerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5986022594EC900267E71 /* footerViewController.swift */; };
 		44D598632259535100267E71 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598622259535100267E71 /* mainViewController.swift */; };
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
+		44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44F07810228D99A400427FEB /* HappierFoods.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +74,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		441045FC228AB3CD00BF6D92 /* detailContainer1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer1.swift; sourceTree = "<group>"; };
+		441045FE228AB3EE00BF6D92 /* detailContainer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer2.swift; sourceTree = "<group>"; };
+		44104600228AB3FB00BF6D92 /* detailContainer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer3.swift; sourceTree = "<group>"; };
+		44104602228AB40F00BF6D92 /* detailContainer4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer4.swift; sourceTree = "<group>"; };
+		44104604228AB41D00BF6D92 /* detailContainer5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer5.swift; sourceTree = "<group>"; };
+		4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer1ViewController.swift; sourceTree = "<group>"; };
+		4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer3ViewController.swift; sourceTree = "<group>"; };
+		4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer4ViewController.swift; sourceTree = "<group>"; };
+		44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer5ViewController.swift; sourceTree = "<group>"; };
 		44146633225D358900DD4751 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		4414EDFE225F0AFC00D9B9CB /* chaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos.jpg; sourceTree = "<group>"; };
 		4414EE02225F825900D9B9CB /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
@@ -77,7 +94,6 @@
 		4425CAFA225EAEB700A6DEE6 /* topBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topBarViewController.swift; sourceTree = "<group>"; };
 		4425CAFC225EAEE500A6DEE6 /* topView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topView.swift; sourceTree = "<group>"; };
 		442F870E2289628500F4CCB5 /* detailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailView.swift; sourceTree = "<group>"; };
-		442F8710228962B700F4CCB5 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		445138F222887410001DC15B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		445FB7FE225C0934007C7746 /* Extensions_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions_UIImage.swift; sourceTree = "<group>"; };
 		445FB800225C165B007C7746 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -93,7 +109,6 @@
 		44BE3B9B22566A230090BB5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44BE3B9D22566A230090BB5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		44BE3BA022566A230090BB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		44BE3BA322566A230090BB5F /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
 		44BE3BA522566A250090BB5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44BE3BA822566A250090BB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44BE3BAA22566A250090BB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +131,7 @@
 		44D5986022594EC900267E71 /* footerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerViewController.swift; sourceTree = "<group>"; };
 		44D598622259535100267E71 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
+		44F07811228D99A400427FEB /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +173,15 @@
 			isa = PBXGroup;
 			children = (
 				442F870E2289628500F4CCB5 /* detailView.swift */,
-				442F8710228962B700F4CCB5 /* detailViewController.swift */,
+				4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */,
+				4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */,
+				4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */,
+				44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */,
+				441045FC228AB3CD00BF6D92 /* detailContainer1.swift */,
+				441045FE228AB3EE00BF6D92 /* detailContainer2.swift */,
+				44104600228AB3FB00BF6D92 /* detailContainer3.swift */,
+				44104602228AB40F00BF6D92 /* detailContainer4.swift */,
+				44104604228AB41D00BF6D92 /* detailContainer5.swift */,
 			);
 			path = detailView;
 			sourceTree = "<group>";
@@ -213,12 +237,12 @@
 				44D519EE225E3301001BD7FB /* icons2.png */,
 				44D519EF225E3301001BD7FB /* icons3.png */,
 				4414EDFE225F0AFC00D9B9CB /* chaos.jpg */,
+				44F07810228D99A400427FEB /* HappierFoods.xcdatamodeld */,
 				44AB154C225D8F44004E070A /* 07891284.ttf */,
 				4425CAF6225E701800A6DEE6 /* back.png */,
 				445FB800225C165B007C7746 /* 1.png */,
 				44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */,
 				44BE3BAA22566A250090BB5F /* Info.plist */,
-				44BE3BA222566A230090BB5F /* HappierFoods.xcdatamodeld */,
 				442DBBC3225AAC6700D95125 /* Uninteresting VCs */,
 				44D5985322592F0D00267E71 /* Navigation Custom Classes  */,
 				44BE3BC6225699B50090BB5F /* Extensions */,
@@ -369,10 +393,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4410460F228ACB9100BF6D92 /* detailContainer4ViewController.swift in Sources */,
 				449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */,
 				44AB154F225D9A6B004E070A /* FaceViewController2.swift in Sources */,
-				44BE3BA422566A230090BB5F /* HappierFoods.xcdatamodeld in Sources */,
+				441045FD228AB3CD00BF6D92 /* detailContainer1.swift in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
+				44104605228AB41D00BF6D92 /* detailContainer5.swift in Sources */,
 				44A63E972259AA7D002E656E /* UIImage+PixelBuffer.swift in Sources */,
 				44D59859225930B800267E71 /* mainCollectionViewController.swift in Sources */,
 				4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */,
@@ -382,21 +408,27 @@
 				442F870F2289628500F4CCB5 /* detailView.swift in Sources */,
 				44D5985022592A2B00267E71 /* historyViewController.swift in Sources */,
 				4425CAFD225EAEE500A6DEE6 /* topView.swift in Sources */,
+				4410460B228ACB6700BF6D92 /* detailContainer1ViewController.swift in Sources */,
 				449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */,
 				44D5985B2259346700267E71 /* mainCollectionViewCell.swift in Sources */,
 				4495550B225BAB750094E317 /* PortholeView.swift in Sources */,
 				44BE3BC1225673F60090BB5F /* FaceViewController.swift in Sources */,
+				44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */,
 				4425CAFB225EAEB700A6DEE6 /* topBarViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
 				445FB7FF225C0934007C7746 /* Extensions_UIImage.swift in Sources */,
 				44D5985522592FBC00267E71 /* customTabBar.swift in Sources */,
 				44BE3B9E22566A230090BB5F /* ViewController.swift in Sources */,
+				44104611228ACBA000BF6D92 /* detailContainer5ViewController.swift in Sources */,
+				44104601228AB3FB00BF6D92 /* detailContainer3.swift in Sources */,
+				4410460D228ACB7C00BF6D92 /* detailContainer3ViewController.swift in Sources */,
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
-				442F8711228962B700F4CCB5 /* detailViewController.swift in Sources */,
+				441045FF228AB3EE00BF6D92 /* detailContainer2.swift in Sources */,
 				44BE3BCB225699B50090BB5F /* UIViewExtension.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
 				44BE3BC52256797D0090BB5F /* FacialExpression.swift in Sources */,
+				44104603228AB40F00BF6D92 /* detailContainer4.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
 				44D5985722592FFD00267E71 /* customTabBarController.swift in Sources */,
 			);
@@ -443,7 +475,7 @@
 		44BE3BB622566A250090BB5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -504,7 +536,7 @@
 		44BE3BB722566A250090BB5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -550,7 +582,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -642,7 +674,7 @@
 				44BE3BB722566A250090BB5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		44BE3BB822566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoods" */ = {
 			isa = XCConfigurationList;
@@ -651,7 +683,7 @@
 				44BE3BBA22566A250090BB5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		44BE3BBB22566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoodsTests" */ = {
 			isa = XCConfigurationList;
@@ -660,17 +692,17 @@
 				44BE3BBD22566A250090BB5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		44BE3BA222566A230090BB5F /* HappierFoods.xcdatamodeld */ = {
+		44F07810228D99A400427FEB /* HappierFoods.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				44BE3BA322566A230090BB5F /* HappierFoods.xcdatamodel */,
+				44F07811228D99A400427FEB /* HappierFoods.xcdatamodel */,
 			);
-			currentVersion = 44BE3BA322566A230090BB5F /* HappierFoods.xcdatamodel */;
+			currentVersion = 44F07811228D99A400427FEB /* HappierFoods.xcdatamodel */;
 			path = HappierFoods.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

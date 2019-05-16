@@ -15,7 +15,7 @@
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TargetFood" positionX="-36" positionY="27" width="128" height="120"/>
         <element name="TriedFood" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="TargetFood" positionX="-54" positionY="-9" width="128" height="120"/>
     </elements>
 </model>
