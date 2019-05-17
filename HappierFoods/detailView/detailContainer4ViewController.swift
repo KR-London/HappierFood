@@ -13,7 +13,7 @@ class detailContainer4ViewController: UIViewController {
     
     @IBOutlet weak var motivationText: UITextView!
     
-    var detailToDisplay = (photoFilename: "", foodName: "not initialosed. ", rating: 0.0, triedOn: NSDate.init(), notes: "" )
+    var detailToDisplay = (photoFilename: "", foodName: "not initialised. ", rating: 0.0, triedOn: NSDate.init(), notes: "" )
     
     
     override func viewDidLoad() {

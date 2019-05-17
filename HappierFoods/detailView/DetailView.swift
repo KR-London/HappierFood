@@ -8,7 +8,24 @@
 
 import UIKit
 
-class detailView: UIView {
+class DetailView: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame:frame)
+        customViewItems()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        customViewItems()
+    }
+    
+    func customViewItems(){
+        backgroundColor = UIColor.green
+    }
+    
+    //override var backgroundColor: UIColor?
 
     /// Section 1: Top amber bar
     
