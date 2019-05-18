@@ -35,6 +35,39 @@ class detailContainer3: UIView {
         return contentView
     }()
     
+//    lazy var Smile: UIView = {
+//        let contentView = smileView()
+//        return contentView
+//    }()
+    
+    override func draw(_ rect: CGRect)
+    {
+        UIColor.black.set()
+        pathForMouth().stroke()
+    }
+    
+    func pathForMouth() -> UIBezierPath
+    {
+        let mouthWidth = 100
+        let mouthHeight = 50
+        let mouthOffset = 10
+        
+        let mouthRect = CGRect(x: 50, y: 100, width: mouthWidth, height: mouthHeight)
+        
+        let smileOffset = CGFloat(max(-1, min(0.4, 1))) * mouthRect.height
+        let start = CGPoint(x: mouthRect.minX, y: mouthRect.minY)
+        let end = CGPoint(x: mouthRect.maxX, y: mouthRect.minY)
+        let cp1 = CGPoint(x: mouthRect.minX + mouthRect.width / 3, y: mouthRect.minY + smileOffset)
+        let cp2 = CGPoint(x: mouthRect.maxX - mouthRect.width / 3, y: mouthRect.minY + smileOffset)
+        
+        let path = UIBezierPath()
+        path.move(to: start)
+        path.addCurve(to: end, controlPoint1: cp1, controlPoint2: cp2)
+        path.lineWidth = 5.0
+        
+        return path
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customViewItems()

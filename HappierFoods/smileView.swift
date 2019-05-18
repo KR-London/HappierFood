@@ -42,15 +42,11 @@ class smileView: UIView {
         super.init(coder: aDecoder)
     }
 
-       override func draw(_ rect: CGRect)
-        {
+    override func draw(_ rect: CGRect)
+    {
             UIColor.black.set()
-    //        guard let context = UIGraphicsGetCurrentContext() else {
-    //            return
-    //        }
              pathForMouth().stroke()
-    
-        }
+   }
     
     func pathForMouth() -> UIBezierPath
     {
