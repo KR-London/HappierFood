@@ -13,6 +13,22 @@ class detailContainer2: UIView {
     @IBOutlet weak var foodPicture: UIImageView!
     @IBOutlet weak var foodName: UILabel!
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customViewItems()
+    }
     
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        customViewItems()
+    }
+    
+    func customViewItems(){
+        backgroundColor = UIColor.orange
+        translatesAutoresizingMaskIntoConstraints = false
+        // frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        
+    }
     
 }

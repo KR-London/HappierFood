@@ -27,6 +27,7 @@
 		4425CAFB225EAEB700A6DEE6 /* topBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425CAFA225EAEB700A6DEE6 /* topBarViewController.swift */; };
 		4425CAFD225EAEE500A6DEE6 /* topView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425CAFC225EAEE500A6DEE6 /* topView.swift */; };
 		442F870F2289628500F4CCB5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F870E2289628500F4CCB5 /* DetailView.swift */; };
+		443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B66BF228EBD48007DDACC /* historyViewController.swift */; };
 		44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44455A29228E7D01006A6652 /* DetailViewController.swift */; };
 		445138F322887411001DC15B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 445138F222887410001DC15B /* cross.png */; };
 		445FB7FF225C0934007C7746 /* Extensions_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FB7FE225C0934007C7746 /* Extensions_UIImage.swift */; };
@@ -53,7 +54,6 @@
 		44D519F0225E3301001BD7FB /* icons1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519ED225E3301001BD7FB /* icons1.png */; };
 		44D519F1225E3301001BD7FB /* icons2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EE225E3301001BD7FB /* icons2.png */; };
 		44D519F2225E3301001BD7FB /* icons3.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EF225E3301001BD7FB /* icons3.png */; };
-		44D5985022592A2B00267E71 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5984F22592A2B00267E71 /* historyViewController.swift */; };
 		44D5985522592FBC00267E71 /* customTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5985422592FBC00267E71 /* customTabBar.swift */; };
 		44D5985722592FFD00267E71 /* customTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5985622592FFD00267E71 /* customTabBarController.swift */; };
 		44D59859225930B800267E71 /* mainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D59858225930B800267E71 /* mainCollectionViewController.swift */; };
@@ -95,6 +95,7 @@
 		4425CAFA225EAEB700A6DEE6 /* topBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topBarViewController.swift; sourceTree = "<group>"; };
 		4425CAFC225EAEE500A6DEE6 /* topView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topView.swift; sourceTree = "<group>"; };
 		442F870E2289628500F4CCB5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		443B66BF228EBD48007DDACC /* historyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		44455A29228E7D01006A6652 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		445138F222887410001DC15B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		445FB7FE225C0934007C7746 /* Extensions_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions_UIImage.swift; sourceTree = "<group>"; };
@@ -125,7 +126,6 @@
 		44D519ED225E3301001BD7FB /* icons1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons1.png; sourceTree = "<group>"; };
 		44D519EE225E3301001BD7FB /* icons2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons2.png; sourceTree = "<group>"; };
 		44D519EF225E3301001BD7FB /* icons3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons3.png; sourceTree = "<group>"; };
-		44D5984F22592A2B00267E71 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		44D5985422592FBC00267E71 /* customTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBar.swift; sourceTree = "<group>"; };
 		44D5985622592FFD00267E71 /* customTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBarController.swift; sourceTree = "<group>"; };
 		44D59858225930B800267E71 /* mainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		442DBBC3225AAC6700D95125 /* Uninteresting VCs */ = {
 			isa = PBXGroup;
 			children = (
-				44D5984F22592A2B00267E71 /* historyViewController.swift */,
+				443B66BF228EBD48007DDACC /* historyViewController.swift */,
 			);
 			path = "Uninteresting VCs";
 			sourceTree = "<group>";
@@ -192,7 +192,6 @@
 		44BE3B8F22566A230090BB5F = {
 			isa = PBXGroup;
 			children = (
-				44D5986022594EC900267E71 /* footerViewController.swift */,
 				44BE3B9A22566A230090BB5F /* HappierFoods */,
 				44BE3BB222566A250090BB5F /* HappierFoodsTests */,
 				44BE3B9922566A230090BB5F /* Products */,
@@ -231,6 +230,7 @@
 				44AB154E225D9A6B004E070A /* FaceViewController2.swift */,
 				44BE3BC2225674070090BB5F /* FaceView.swift */,
 				4425CAF8225E71D800A6DEE6 /* hahahahahahaha.png */,
+				44D5986022594EC900267E71 /* footerViewController.swift */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
 				445138F222887410001DC15B /* cross.png */,
 				4414EE02225F825900D9B9CB /* share.png */,
@@ -409,7 +409,6 @@
 				44BE3BCC225699B50090BB5F /* CoreGraphicsExtensions.swift in Sources */,
 				44D5986122594EC900267E71 /* footerViewController.swift in Sources */,
 				442F870F2289628500F4CCB5 /* DetailView.swift in Sources */,
-				44D5985022592A2B00267E71 /* historyViewController.swift in Sources */,
 				4425CAFD225EAEE500A6DEE6 /* topView.swift in Sources */,
 				4410460B228ACB6700BF6D92 /* detailContainer1ViewController.swift in Sources */,
 				449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */,
@@ -417,6 +416,7 @@
 				4495550B225BAB750094E317 /* PortholeView.swift in Sources */,
 				44BE3BC1225673F60090BB5F /* FaceViewController.swift in Sources */,
 				44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */,
+				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */,
 				4425CAFB225EAEB700A6DEE6 /* topBarViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,

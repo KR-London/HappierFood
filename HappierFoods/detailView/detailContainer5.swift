@@ -10,12 +10,22 @@ import UIKit
 
 class detailContainer5: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customViewItems()
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        customViewItems()
+    }
+    
+    func customViewItems(){
+        backgroundColor = UIColor.blue
+        translatesAutoresizingMaskIntoConstraints = false
+        // frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        
+    }
 
 }
