@@ -10,12 +10,9 @@ import UIKit
 
 class detailContainer2: UIView {
 
-   // @IBOutlet weak var foodPicture: UIImageView!
-  //  @IBOutlet weak var foodName: UILabel!
-    
     lazy var foodLabel: UILabel = {
         let foodName = UILabel()
-        foodName.font = UIFont.systemFont(ofSize: 22, weight: .medium)
+        foodName.font = UIFont(name: "07891284.ttf", size: 22)
         foodName.text = "Custom View"
         foodName.textAlignment = .center
         foodName.translatesAutoresizingMaskIntoConstraints = false
@@ -24,9 +21,7 @@ class detailContainer2: UIView {
     
     lazy var foodPicture: UIImageView = {
         let pic = UIImageView()
-       // pic.frame = CGRect(x: 0, y: 0, width:50, height: 50)
         pic.image = UIImage(named: "chaos.jpg")
-      //  pic.heightAnchor.constraint(equalToConstant: 100)
         pic.translatesAutoresizingMaskIntoConstraints = false
         return pic
     }()
@@ -36,52 +31,33 @@ class detailContainer2: UIView {
         customViewItems()
     }
     
-    required init?(coder aDecoder: NSCoder)
-    {
+    required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
         customViewItems()
     }
     
     func customViewItems(){
         backgroundColor = UIColor.orange
-        let stackView = UIStackView(arrangedSubviews: [foodPicture, foodLabel])
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.spacing = 5
-        stackView.heightAnchor.constraint(equalToConstant: 400)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-      addSubview(stackView)
-     // addSubview(foodPicture)
-      // applyLayoutConstraintsNarrow(view: foodPicture)
-        applyLayoutConstraints(view: stackView)
+        addSubview(foodPicture)
+        addSubview(foodLabel)
+        applyLayoutConstraints(view1: foodPicture, view2: foodLabel)
         translatesAutoresizingMaskIntoConstraints = false
-        // frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-        
     }
     
-    func applyLayoutConstraints(view : UIView)
+    func applyLayoutConstraints(view1 : UIView, view2: UIView)
     {
         NSLayoutConstraint.activate([
-                view.topAnchor.constraint(equalTo: topAnchor),
-                view.leadingAnchor.constraint(equalTo: leadingAnchor),
-                view.trailingAnchor.constraint(equalTo: trailingAnchor),
-                view.heightAnchor.constraint(equalTo: heightAnchor),
+                view1.topAnchor.constraint(equalTo: topAnchor),
+                view1.leadingAnchor.constraint(equalTo: leadingAnchor),
+                view1.heightAnchor.constraint(equalTo: heightAnchor),
+                view1.widthAnchor.constraint(equalTo: heightAnchor)
             ])
         
-    }
-    
-    func applyLayoutConstraintsNarrow(view : UIView)
-    {
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: topAnchor),
-            view.leadingAnchor.constraint(equalTo: leadingAnchor),
-             view.bottomAnchor.constraint(equalTo: bottomAnchor),
-           // view.trailingAnchor.constraint(equalTo: trailingAnchor),
-            //view.heightAnchor.constraint(equalTo: heightAnchor),
-             view.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
+                view2.topAnchor.constraint(equalTo: topAnchor),
+                view2.trailingAnchor.constraint(equalTo: trailingAnchor),
+                view2.heightAnchor.constraint(equalTo: heightAnchor),
+                view2.leadingAnchor.constraint(equalTo: view1.trailingAnchor)
             ])
-        
     }
-    
 }

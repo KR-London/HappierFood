@@ -74,121 +74,38 @@ class DetailView: UIView {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-//            //pin headerTitle to headerView
-//            headerTitle.topAnchor.constraint(equalTo: headerView.topAnchor),
-//            headerTitle.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
-//            headerTitle.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-//            headerTitle.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-//
-//            //layout addButton in headerView
-//            addButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-//            addButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10),
-//
-            //pin headerView to top
             container1.topAnchor.constraint(equalTo: topAnchor),
-            container1.leadingAnchor.constraint(equalTo: leadingAnchor),
-            container1.trailingAnchor.constraint(equalTo: trailingAnchor),
+            container1.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
+            container1.centerXAnchor.constraint(equalTo: centerXAnchor),
             container1.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
-
-//            //layout contentView
-//            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-//            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
-//            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            contentView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ])
         NSLayoutConstraint.activate([
-            //            //pin headerTitle to headerView
-            //            headerTitle.topAnchor.constraint(equalTo: headerView.topAnchor),
-            //            headerTitle.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
-            //            headerTitle.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            //            headerTitle.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            //
-            //            //layout addButton in headerView
-            //            addButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-            //            addButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10),
-            //
-            //pin headerView to top
             container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
-            container2.leadingAnchor.constraint(equalTo: leadingAnchor),
-            container2.trailingAnchor.constraint(equalTo: trailingAnchor),
+            container2.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
+            container2.centerXAnchor.constraint(equalTo: centerXAnchor),
             container2.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
-            
-            //            //layout contentView
-            //            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            //            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            //            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            //            contentView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ])
         
         NSLayoutConstraint.activate([
-            //            //pin headerTitle to headerView
-            //            headerTitle.topAnchor.constraint(equalTo: headerView.topAnchor),
-            //            headerTitle.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
-            //            headerTitle.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            //            headerTitle.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            //
-            //            //layout addButton in headerView
-            //            addButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-            //            addButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10),
-            //
-            //pin headerView to top
+
             container3.topAnchor.constraint(equalTo: container2.bottomAnchor),
-            container3.leadingAnchor.constraint(equalTo: leadingAnchor),
-            container3.trailingAnchor.constraint(equalTo: trailingAnchor),
+            container3.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
+            container3.centerXAnchor.constraint(equalTo: centerXAnchor),
             container3.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
-            
-            //            //layout contentView
-            //            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            //            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            //            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            //            contentView.trailingAnchor.constraint(equalTo: trailingAnchor)
+
             ])
         NSLayoutConstraint.activate([
-            //            //pin headerTitle to headerView
-            //            headerTitle.topAnchor.constraint(equalTo: headerView.topAnchor),
-            //            headerTitle.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
-            //            headerTitle.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-            //            headerTitle.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-            //
-            //            //layout addButton in headerView
-            //            addButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-            //            addButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10),
-            //
-            //pin headerView to top
             container4.topAnchor.constraint(equalTo: container3.bottomAnchor),
-            container4.leadingAnchor.constraint(equalTo: leadingAnchor),
-            container4.trailingAnchor.constraint(equalTo: trailingAnchor),
+            container4.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
+            container4.centerXAnchor.constraint(equalTo: centerXAnchor),
             container4.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
-            
-            //            //layout contentView
-            //            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            //            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            //            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            //            contentView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ])
    
     NSLayoutConstraint.activate([
-        //            //pin headerTitle to headerView
-        //            headerTitle.topAnchor.constraint(equalTo: headerView.topAnchor),
-        //            headerTitle.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
-        //            headerTitle.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-        //            headerTitle.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
-        //
-        //            //layout addButton in headerView
-        //            addButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-        //            addButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10),
-        //
-        //pin to element above
         container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
-        container5.leadingAnchor.constraint(equalTo: leadingAnchor),
-        container5.trailingAnchor.constraint(equalTo: trailingAnchor),
+        container5.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
+        container5.centerXAnchor.constraint(equalTo: centerXAnchor),
         container5.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
-    
-        //            //layout contentView
-        //            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-        //            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        //            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-        //            contentView.trailingAnchor.constraint(equalTo: trailingAnchor)
     ])
 
     }
