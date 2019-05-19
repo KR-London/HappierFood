@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadView()
+        detailView.rating = -1
+        //detailView.container3.mouth
 
 //        switch PresentState
 //        {

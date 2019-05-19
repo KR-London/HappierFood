@@ -10,6 +10,8 @@ import UIKit
 
 class DetailView: UIView {
     
+    var rating = 0.0
+    
     // use lazy properties for each view
     lazy var container1: UIView = {
         let headerView = detailContainer1()
@@ -23,6 +25,7 @@ class DetailView: UIView {
     
     lazy var container3: UIView = {
         let bodyView = detailContainer3()
+        bodyView.rating = rating
         return bodyView
     }()
     
@@ -101,11 +104,11 @@ class DetailView: UIView {
             container4.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
             ])
    
-    NSLayoutConstraint.activate([
-        container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
-        container5.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
-        container5.centerXAnchor.constraint(equalTo: centerXAnchor),
-        container5.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+        NSLayoutConstraint.activate([
+            container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
+            container5.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
+            container5.centerXAnchor.constraint(equalTo: centerXAnchor),
+            container5.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
     ])
 
     }

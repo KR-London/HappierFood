@@ -31,7 +31,7 @@ class smileView: UIView {
         static let SkullRadiusToEyeRadius: CGFloat = 10
         static let SkullRadiusToMouthWidth: CGFloat = 1
         static let SkullRadiusToMouthHeight: CGFloat = 3
-        static let SkullRadiusToMouthOffset: CGFloat = 3
+        static let SkullRadiusToMouthOffset: CGFloat = 2.5
     }
     
     override init(frame: CGRect){
