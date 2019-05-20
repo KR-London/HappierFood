@@ -8,18 +8,26 @@
 
 import UIKit
 
-class DetailView: UIView {
+class DetailView: UIView, goBackDelegate {
+    func performSegueDelegate() {
+        delegate?.performSegueDelegate()
+    }
+    
+
+    weak var delegate: goBackDelegate?
     
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: NSDate.init(), notes: "" )
     var presentState = Costume.Unknown
 //    
-//    lazy var backButton: UIButton = {
-//        let button = UIButton()
-//       // button.backgroundColor = UIColor.red
-//        button.titleLabel?.text = "< Back "
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        return button
-//    }()
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+       // button.backgroundColor = UIColor.red
+        button.titleLabel?.text = "< Back "
+        button.backgroundColor = UIColor.yellow
+        button.addTarget(self, action: #selector(testButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     // use lazy properties for each view
     lazy var container1: UIView = {
@@ -92,10 +100,10 @@ class DetailView: UIView {
 //        NSLayoutConstraint.activate([
 //            backButton.topAnchor.constraint(equalTo: topAnchor),
 //            backButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            backButton.widthAnchor.constraint(equalToConstant: 100),
-//            backButton.heightAnchor.constraint(equalToConstant: 40)
+//            backButton.widthAnchor.constraint(equalToConstant: 600),
+//            backButton.heightAnchor.constraint(equalToConstant: 600)
 //            ])
-        
+//
         
         NSLayoutConstraint.activate([
             container1.topAnchor.constraint(equalTo: topAnchor),
@@ -132,11 +140,18 @@ class DetailView: UIView {
             container5.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
     ])
 
-    }
+
     
+  
+    }
+
+    @objc func testButton(sender: UIButton){
+        delegate?.performSegueDelegate()
+    }
+
     //custom views should override this to return true if
     //they cannot layout correctly using autoresizing.
-    //from apple docs https://developer.apple.com/documentation/uikit/uiview/1622549-requiresconstraintbasedlayout
+
     override class var requiresConstraintBasedLayout: Bool {
         return true
     }

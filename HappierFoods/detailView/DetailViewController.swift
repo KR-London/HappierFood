@@ -8,7 +8,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, goBackDelegate {
+    func performSegueDelegate() {
+        performSegue(withIdentifier: "detailToMain", sender: self)
+    }
+    
     
     var detailView = DetailView()
     
@@ -16,13 +20,27 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let fakeNavBar = storyboard!.instantiateViewController(withIdentifier: "topBarViewController")
+        detailView.delegate = self
+    
+        let fakeNavBar = storyboard!.instantiateViewController(withIdentifier: "topBarViewController") as! topBarViewController
         addChild(fakeNavBar)
         fakeNavBar.view.translatesAutoresizingMaskIntoConstraints = false
+        fakeNavBar.delegate = self
         detailView.container1.addSubview(fakeNavBar.view)
         
+        NSLayoutConstraint.activate([
+            fakeNavBar.view.topAnchor.constraint(equalTo: view.topAnchor),
+            fakeNavBar.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            fakeNavBar.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            fakeNavBar.view.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
+            ])
+        
+        //        NSLayoutConstraint.activate([
+        //            backButton.topAnchor.constraint(equalTo: topAnchor),
+        //            backButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+        //            backButton.widthAnchor.constraint(equalToConstant: 100),
+        //            backButton.heightAnchor.constraint(equalToConstant: 40)
+        //            ])
     
         
        // setUpNavigationBarItems()
@@ -83,4 +101,8 @@ class DetailViewController: UIViewController {
     }
     */
 
+}
+
+protocol goBackDelegate: class {
+    func performSegueDelegate()
 }

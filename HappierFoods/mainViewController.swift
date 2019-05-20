@@ -235,10 +235,10 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                 
                 /// acess that record
                 // I've messed up with how i handle possibility of undefinded value
-                let sentFood = foodArray[button.tag]
+               // let sentFood = foodArray[button.tag]
                 
-                dvc.detailView.detailToDisplay.photoFilename = sentFood.filename ?? ""
-                
+              //  dvc.detailView.detailToDisplay.photoFilename = sentFood.filename ?? ""
+                dvc.detailView.detailToDisplay.foodName = String(button.tag)
                 
                 
                // dvc.detailView.detailToDisplay = (photoFilename: sentFood.filename, foodName: sentFood.name , rating: sentFood.rating, triedOn: sentFood.dateTried, notes: sentFood.motivation)
