@@ -12,12 +12,14 @@ class DetailViewController: UIViewController {
     
     var detailView = DetailView()
     
-      var PresentState = Costume.Unknown
+    var PresentState = Costume.Unknown
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadView()
-        detailView.rating = -1
+     //   detailView.rating = -1
+        //detailView.data
+        //detailView.container2.food
         //detailView.container3.mouth
 
 //        switch PresentState

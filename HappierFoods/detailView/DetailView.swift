@@ -10,7 +10,10 @@ import UIKit
 
 class DetailView: UIView {
     
-    var rating = 0.0
+    var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: NSDate.init(), notes: "" )
+    var presentState = Costume.Unknown
+    
+    
     
     // use lazy properties for each view
     lazy var container1: UIView = {
@@ -20,12 +23,13 @@ class DetailView: UIView {
     
     lazy var container2: UIView = {
         let bodyView = detailContainer2()
+        bodyView.inputData(photoFilename: detailToDisplay.photoFilename, foodNameInput: detailToDisplay.foodName )
         return bodyView
     }()
     
     lazy var container3: UIView = {
         let bodyView = detailContainer3()
-        bodyView.rating = rating
+     // bodyView.rating = detail
         return bodyView
     }()
     

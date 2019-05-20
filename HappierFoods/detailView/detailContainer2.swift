@@ -9,11 +9,14 @@
 import UIKit
 
 class detailContainer2: UIView {
+    
+    var foodNameLocal : String?
+    var photoFilename : String?
 
     lazy var foodLabel: UILabel = {
         let foodName = UILabel()
         foodName.font = UIFont(name: "07891284.ttf", size: 22)
-        foodName.text = "Custom View"
+        foodName.text = foodNameLocal ?? "Custom View"
         foodName.textAlignment = .center
         foodName.translatesAutoresizingMaskIntoConstraints = false
         return foodName
@@ -21,7 +24,7 @@ class detailContainer2: UIView {
     
     lazy var foodPicture: UIImageView = {
         let pic = UIImageView()
-        pic.image = UIImage(named: "chaos.jpg")
+        pic.image = UIImage(named: photoFilename ?? "chaos.jpg") ?? UIImage(named: "chaos.jpg")
         pic.translatesAutoresizingMaskIntoConstraints = false
         return pic
     }()
@@ -31,12 +34,21 @@ class detailContainer2: UIView {
         customViewItems()
     }
     
+    func inputData(photoFilename: String, foodNameInput: String)
+    {
+        foodNameLocal = foodNameInput
+        foodLabel.text = foodNameLocal
+        foodPicture.image = UIImage(named: photoFilename)
+        
+    }
+    
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
         customViewItems()
     }
     
     func customViewItems(){
+        //print(foodNameLocal)
         backgroundColor = UIColor.orange
         addSubview(foodPicture)
         addSubview(foodLabel)
