@@ -57,6 +57,7 @@
 		449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB16226110F300C9F666 /* customFaceARViewController.swift */; };
 		44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A63E9022598D03002E656E /* rateFoodViewController.swift */; };
 		44A63E972259AA7D002E656E /* UIImage+PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A63E962259AA7C002E656E /* UIImage+PixelBuffer.swift */; };
+		44A897032292AD32002A3381 /* blueShare.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44A897022292AD31002A3381 /* blueShare.jpg */; };
 		44AB154D225D94CF004E070A /* 07891284.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44AB154C225D8F44004E070A /* 07891284.ttf */; };
 		44AB154F225D9A6B004E070A /* FaceViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB154E225D9A6B004E070A /* FaceViewController2.swift */; };
 		44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9B22566A230090BB5F /* AppDelegate.swift */; };
@@ -144,6 +145,7 @@
 		449ACB16226110F300C9F666 /* customFaceARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customFaceARViewController.swift; sourceTree = "<group>"; };
 		44A63E9022598D03002E656E /* rateFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateFoodViewController.swift; sourceTree = "<group>"; };
 		44A63E962259AA7C002E656E /* UIImage+PixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+PixelBuffer.swift"; sourceTree = "<group>"; };
+		44A897022292AD31002A3381 /* blueShare.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueShare.jpg; sourceTree = "<group>"; };
 		44AB154C225D8F44004E070A /* 07891284.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07891284.ttf; sourceTree = "<group>"; };
 		44AB154E225D9A6B004E070A /* FaceViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController2.swift; sourceTree = "<group>"; };
 		44BE3B9822566A230090BB5F /* HappierFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappierFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +273,7 @@
 				44D5986022594EC900267E71 /* footerViewController.swift */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
 				445138F222887410001DC15B /* cross.png */,
+				44A897022292AD31002A3381 /* blueShare.jpg */,
 				4414EE02225F825900D9B9CB /* share.png */,
 				443B66C922905FB4007DDACC /* face.png */,
 				443B66E52290605E007DDACC /* eyeOpen_browOuterUpLeft.png */,
@@ -435,6 +438,7 @@
 				443B66D822906034007DDACC /* eyeLookInLeft_browDownLeft.png in Resources */,
 				4425CAF9225E71D800A6DEE6 /* hahahahahahaha.png in Resources */,
 				443B66EE22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png in Resources */,
+				44A897032292AD32002A3381 /* blueShare.jpg in Resources */,
 				44D519F2225E3301001BD7FB /* icons3.png in Resources */,
 				443B66D62290602D007DDACC /* eyeLookDownLeft_browOuterUpLeft.png in Resources */,
 				443B66DA22906039007DDACC /* eyeLookInLeft_browOuterUpLeft.png in Resources */,

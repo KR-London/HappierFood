@@ -128,7 +128,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 60, left: 0, bottom: 10, right: 0)
+        return UIEdgeInsets.init(top: 0, left: 0, bottom: 10, right: 0)
     }
     
     
