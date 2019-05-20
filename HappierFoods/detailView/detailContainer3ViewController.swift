@@ -17,8 +17,8 @@ class detailContainer3ViewController: UIViewController {
     @IBOutlet weak var emojiFace: UIView!
     
     @IBOutlet weak var smileView: smileView!
-    var detailToDisplay = (photoFilename: "", foodName: "not initialosed. ", rating: 0.0, triedOn: NSDate.init(), notes: "" )
-    
+   // var detailToDisplay = (photoFilename: "", foodName: "not initialosed. ", rating: 0.0, triedOn: NSDate.init(), notes: "" )
+    var detailToDisplay  : (photoFilename: String?, foodName: String?, rating: Double?, triedOn: Date?, notes: String? )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class detailContainer3ViewController: UIViewController {
 
         emojiFace.backgroundColor = UIColor(patternImage: UIImage(named:"face.png")!)
         // Do any additional setup after loading the view.
-        switch Double(detailToDisplay.rating)
+        switch Double(detailToDisplay.rating ?? 0.0)
         {
         case 0.1...0.5 :
             topFace.image = UIImage(named: "eyeLookInLeft_browOuterUpLeft.png")
@@ -41,7 +41,7 @@ class detailContainer3ViewController: UIViewController {
             topFace.image =  UIImage(named: "eyeOpen_browDownLeft.png")
         }
         
-        smileView.mouthCurvature = detailToDisplay.rating
+        smileView.mouthCurvature = detailToDisplay.rating ?? 0.0
         
         
     }

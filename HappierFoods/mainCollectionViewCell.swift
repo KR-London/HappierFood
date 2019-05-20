@@ -18,9 +18,10 @@ class mainCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
+    @IBOutlet weak var showDetailButtonProperties: UIButton!
     @IBOutlet weak var tickImage: UIImageView!
     @IBOutlet weak var cellImage: UIImageView!
-    @IBAction func button(_ sender: UIButton) {
+    @IBAction func showDetailButton(_ sender: UIButton) {
     }
     
     

@@ -143,6 +143,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
       //  cell.layer.borderWidth = 1.0
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
+       // cell.showDetailButton(self)
+        cell.showDetailButtonProperties.tag = indexPath.row
        
         if indexPath.row < 6
         {
@@ -178,7 +180,6 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             }
         }
         
-        
         return cell
     }
     
@@ -189,8 +190,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             try
                 foodArray = context.fetch(request)
         }
-        catch
-        {
+        catch{
             print("Error fetching data \(error)")
         }
         
@@ -199,8 +199,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             try
                 targetArray = context.fetch(request2)
         }
-        catch
-        {
+        catch{
             print("Error fetching data \(error)")
         }
     }
@@ -221,6 +220,34 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             }
             
         }
+        if segue.identifier == "expandDetail" {
+            
+            let dvc = segue.destination as! DetailViewController
+            
+           
+            
+            //print("I'm in")
+            /// code to fill in
+            if let button = sender as? UIButton
+            {
+                
+                 print(button.tag )
+                
+                /// acess that record
+                // I've messed up with how i handle possibility of undefinded value
+                let sentFood = foodArray[button.tag]
+                
+                dvc.detailView.detailToDisplay.photoFilename = sentFood.filename ?? ""
+                
+                
+                
+               // dvc.detailView.detailToDisplay = (photoFilename: sentFood.filename, foodName: sentFood.name , rating: sentFood.rating, triedOn: sentFood.dateTried, notes: sentFood.motivation)
+                var presentState = Costume.Unknown
+//                dvc.sourceViewController = button.titleLabel?.text ?? "Dunno"
+//
+            }
+            
+        }
     }
     
     func deleteAllData(_ entity:String) {
@@ -236,5 +263,4 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             print("Detele all data in \(entity) error :", error)
         }
     }
-    
 }

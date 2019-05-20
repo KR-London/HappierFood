@@ -16,6 +16,16 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let fakeNavBar = storyboard!.instantiateViewController(withIdentifier: "topBarViewController")
+        addChild(fakeNavBar)
+        fakeNavBar.view.translatesAutoresizingMaskIntoConstraints = false
+        detailView.container1.addSubview(fakeNavBar.view)
+        
+    
+        
+       // setUpNavigationBarItems()
         loadView()
      //   detailView.rating = -1
         //detailView.data
@@ -39,8 +49,28 @@ class DetailViewController: UIViewController {
 //        }
     }
     
+    func setUpNavigationBarItems(){
+
+        navigationItem.title = "Nav Bar title"
+
+        let backButton = UIButton(type: .system)
+        backButton.setTitle("< Back", for: .normal)
+        backButton.addTarget(self, action: #selector(goBackToMain), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+
+        let shareButton = UIButton(type: .system)
+        shareButton.setImage(UIImage(named: "share.png"), for: .normal)
+        shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        shareButton.contentMode = .scaleAspectFit
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+    }
+    
     override  func loadView() {
         view = detailView
+    }
+    
+    @objc func goBackToMain(sender: UIButton!){
+        performSegue(withIdentifier: "detailToMain", sender: self)
     }
 
     /*

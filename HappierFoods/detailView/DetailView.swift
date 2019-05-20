@@ -12,8 +12,14 @@ class DetailView: UIView {
     
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: NSDate.init(), notes: "" )
     var presentState = Costume.Unknown
-    
-    
+//    
+//    lazy var backButton: UIButton = {
+//        let button = UIButton()
+//       // button.backgroundColor = UIColor.red
+//        button.titleLabel?.text = "< Back "
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
     
     // use lazy properties for each view
     lazy var container1: UIView = {
@@ -70,16 +76,27 @@ class DetailView: UIView {
     }
     
     func customViewItems(){
+      
         addSubview(container1)
         addSubview(container2)
         addSubview(container3)
         addSubview(container4)
         addSubview(container5)
+        //addSubview(backButton)
         setupLayout()
 
     }
     
     private func setupLayout() {
+        
+//        NSLayoutConstraint.activate([
+//            backButton.topAnchor.constraint(equalTo: topAnchor),
+//            backButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            backButton.widthAnchor.constraint(equalToConstant: 100),
+//            backButton.heightAnchor.constraint(equalToConstant: 40)
+//            ])
+        
+        
         NSLayoutConstraint.activate([
             container1.topAnchor.constraint(equalTo: topAnchor),
             container1.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
