@@ -9,6 +9,11 @@
 import UIKit
 
 class DetailView: UIView, goBackDelegate {
+    
+  
+   var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
+
+    
     func performSegueDelegate(recordToDelete: String) {
         delegate?.performSegueDelegate(recordToDelete: "")
     }
@@ -16,7 +21,7 @@ class DetailView: UIView, goBackDelegate {
 
     weak var delegate: goBackDelegate?
     
-    var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: NSDate.init(), notes: "" )
+
     var presentState = Costume.Unknown
 //    
     lazy var backButton: UIButton = {

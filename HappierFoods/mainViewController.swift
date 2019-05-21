@@ -24,9 +24,26 @@ enum location : String {
 var whereAmINowBeacon = location.Unknown
 
 class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate {
+    
+    var photoFilename = String()
+    var foodName = String()
+    var rating = Double()
+    var triedOn = Date()
+    var notes = String()
+    
     func expandDetailSegue(buttonTag: Int) {
         print("hello world")
+        
+        photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
+        foodName = foodArray[buttonTag].name ?? ""
+        rating = foodArray[buttonTag].rating
+        triedOn = foodArray[buttonTag].dateTried!
+        notes = foodArray[buttonTag].motivation ?? " "
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "expandRecord"), object: self)
+        
+        
+        //prepare(for: UIStoryboardSegue., sender: <#T##Any!#>)
         performSegue(withIdentifier: "expandDetail", sender: .none)
     }
     
@@ -235,28 +252,30 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             
             let dvc = segue.destination as! DetailViewController
             
+            dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
            
+          //  dvc.reloadInputViews()
             
             //print("I'm in")
             /// code to fill in
-            if let button = sender as? UIButton
-            {
-                
-                 print(button.tag )
-                
-                /// acess that record
-                // I've messed up with how i handle possibility of undefinded value
-               // let sentFood = foodArray[button.tag]
-                
-              //  dvc.detailView.detailToDisplay.photoFilename = sentFood.filename ?? ""
-                dvc.detailView.detailToDisplay.foodName = String(button.tag)
-                
-                
-               // dvc.detailView.detailToDisplay = (photoFilename: sentFood.filename, foodName: sentFood.name , rating: sentFood.rating, triedOn: sentFood.dateTried, notes: sentFood.motivation)
-                var presentState = Costume.Unknown
-//                dvc.sourceViewController = button.titleLabel?.text ?? "Dunno"
-//
-            }
+//            if let button = sender as? UIButton
+//            {
+//                
+//                 print(button.tag )
+//                
+//                /// acess that record
+//                // I've messed up with how i handle possibility of undefinded value
+//               // let sentFood = foodArray[button.tag]
+//                
+//              //  dvc.detailView.detailToDisplay.photoFilename = sentFood.filename ?? ""
+//                dvc.detailView.detailToDisplay.foodName = String(button.tag)
+//                
+//                
+//               // dvc.detailView.detailToDisplay = (photoFilename: sentFood.filename, foodName: sentFood.name , rating: sentFood.rating, triedOn: sentFood.dateTried, notes: sentFood.motivation)
+//                var presentState = Costume.Unknown
+////                dvc.sourceViewController = button.titleLabel?.text ?? "Dunno"
+////
+//            }
             
         }
     }

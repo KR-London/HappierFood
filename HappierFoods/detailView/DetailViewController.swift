@@ -8,11 +8,25 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, goBackDelegate {
+class DetailViewController: UIViewController, goBackDelegate, expandDetailDelegate {
+    
+    
     func performSegueDelegate(recordToDelete: String) {
         performSegue(withIdentifier: "detailToMain", sender: self)
     }
     
+    weak var delegate: expandDetailDelegate?
+    
+    var photoFilename = String()
+    var foodName = String()
+    var rating = Double()
+    var triedOn = Date()
+    var notes = String()
+    var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
+    
+    func expandDetailSegue(buttonTag: Int) {
+        detailToDisplay = (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
+    }
     
     var detailView = DetailView()
     
@@ -20,6 +34,7 @@ class DetailViewController: UIViewController, goBackDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailView.detailToDisplay = detailToDisplay
         detailView.delegate = self
     
         let fakeNavBar = storyboard!.instantiateViewController(withIdentifier: "topBarViewController") as! topBarViewController

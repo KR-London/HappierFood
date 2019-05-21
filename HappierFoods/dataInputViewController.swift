@@ -104,9 +104,12 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             recordTheFood()
         }
         else{
-            image = UIImage(named: "NoCameraPlaceholder.001.jpeg")!
+            if image == nil
+            {
+                image = UIImage(named: "NoCameraPlaceholder.001.jpeg")!
+            }
             captureImageView.isHidden = false
-            captureImageView.image = image
+            captureImageView.image = UIImage(named: "NoCameraPlaceholder.001.jpeg")
         }
     }
     
@@ -115,7 +118,14 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         refreshButtonAppearance()
         self.captureSession?.stopRunning()
        // publicInformationBroadcast.isHidden = false
-         image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+        if image == nil 
+        {
+            image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+        }
+        if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg")
+        {
+            image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+        }
         captureImageView.isHidden = true
         writtenInputElements.isHidden = false
         

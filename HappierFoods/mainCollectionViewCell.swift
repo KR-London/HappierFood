@@ -9,7 +9,16 @@
 import UIKit
 
 protocol expandDetailDelegate: class {
+    
     func expandDetailSegue(buttonTag: Int)
+    
+    var photoFilename: String {get set}
+    var foodName: String {get set}
+    var rating: Double {get set}
+    var triedOn: Date {get set }
+    var notes: String {get set}
+    
+    //(photoFilename: String(), foodName: String(), rating: Double(), triedOn: Date(), notes: String()){get, set}
 }
 
 class mainCollectionViewCell: UICollectionViewCell {
@@ -29,6 +38,9 @@ class mainCollectionViewCell: UICollectionViewCell {
     @IBAction func showDetailButton(_ sender: UIButton) {
         /// post information to notification centre
         print("hello world")
+        
+        
+        //delegate?.photoFilename = cellImage.image
         /// do segue
         delegate?.expandDetailSegue(buttonTag: self.tag)
         
