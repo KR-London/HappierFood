@@ -9,8 +9,8 @@
 import UIKit
 
 class DetailView: UIView, goBackDelegate {
-    func performSegueDelegate() {
-        delegate?.performSegueDelegate()
+    func performSegueDelegate(recordToDelete: String) {
+        delegate?.performSegueDelegate(recordToDelete: "")
     }
     
 
@@ -84,7 +84,8 @@ class DetailView: UIView, goBackDelegate {
     }
     
     func customViewItems(){
-      
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidExpandRecord), name: .expandRecord, object: nil)
+        backgroundColor = UIColor.white
         addSubview(container1)
         addSubview(container2)
         addSubview(container3)
@@ -109,7 +110,7 @@ class DetailView: UIView, goBackDelegate {
             container1.topAnchor.constraint(equalTo: topAnchor),
             container1.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
             container1.centerXAnchor.constraint(equalTo: centerXAnchor),
-            container1.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+            container1.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15),
             ])
         NSLayoutConstraint.activate([
             container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
@@ -146,7 +147,11 @@ class DetailView: UIView, goBackDelegate {
     }
 
     @objc func testButton(sender: UIButton){
-        delegate?.performSegueDelegate()
+        delegate?.performSegueDelegate(recordToDelete: "")
+    }
+    
+    @objc func onDidExpandRecord(){
+        print("I see record")
     }
 
     //custom views should override this to return true if
@@ -169,4 +174,9 @@ class DetailView: UIView, goBackDelegate {
     /// Section 4: Notes Section
     
     /// Section 5: Stack of buttons
+}
+
+protocol passFoodDetailProtocol: class
+{
+    func updateDetail(photoFilename: String, foodName: String, rating: Double, triedOn: Date, notes: String)
 }

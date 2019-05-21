@@ -43,13 +43,12 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonOutlet: UIButton!
-    @IBOutlet weak var publicInformationBroadcast: UILabel!
+  //  @IBOutlet weak var publicInformationBroadcast: UILabel!
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureImageView: UIImageView!
     @IBAction func didTakePhoto(_ sender: Any) {
         
         haptic.notificationOccurred(.success)
-         publicInformationBroadcast.isHidden = true
         if usedCamera == true
         {
             let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
@@ -73,7 +72,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         self.captureSession.stopRunning()
         }
         usedCamera = false
-        publicInformationBroadcast.isHidden = true
+       // publicInformationBroadcast.isHidden = true
        // publicInformationBroadcast.isHidden = false
         previewView.isHidden = true
         imagePicker.delegate = self
@@ -89,7 +88,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         refreshButtonAppearance()
         usedCamera = true
         previewView.isHidden = false
-        publicInformationBroadcast.isHidden = true
+      //  publicInformationBroadcast.isHidden = true
         usedCamera = true
         captureImageView.isHidden = false
         recordTheFood()
@@ -99,7 +98,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         currentDataInputMode = .write
         refreshButtonAppearance()
         self.captureSession.stopRunning()
-        publicInformationBroadcast.isHidden = false
+       // publicInformationBroadcast.isHidden = false
         captureImageView.isHidden = true
     }
     let imagePicker = UIImagePickerController()
@@ -112,7 +111,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         //usedCamera = true
         imagePicker.allowsEditing = true
-        publicInformationBroadcast.isHidden = true
         pictureViewConstraints()
        // containerView.titleLabel.text = "Input Food"
         

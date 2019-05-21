@@ -95,7 +95,7 @@ class detailContainer3: UIView {
     }
     
     func customViewItems(){
-        backgroundColor = UIColor.yellow
+        backgroundColor = UIColor.clear
         addSubview(DateLabel)
         addSubview(BottomFaceView)
         addSubview(TopFaceView)

@@ -48,8 +48,7 @@ class detailContainer2: UIView {
     }
     
     func customViewItems(){
-        //print(foodNameLocal)
-        backgroundColor = UIColor.orange
+        backgroundColor = UIColor.clear
         addSubview(foodPicture)
         addSubview(foodLabel)
         applyLayoutConstraints(view1: foodPicture, view2: foodLabel)

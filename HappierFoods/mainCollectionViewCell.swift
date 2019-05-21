@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol expandDetailDelegate: class {
+    func expandDetailSegue(buttonTag: Int)
+}
+
 class mainCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var textLabel: UILabel!
     
+   weak var delegate: expandDetailDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,6 +27,12 @@ class mainCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tickImage: UIImageView!
     @IBOutlet weak var cellImage: UIImageView!
     @IBAction func showDetailButton(_ sender: UIButton) {
+        /// post information to notification centre
+        print("hello world")
+        /// do segue
+        delegate?.expandDetailSegue(buttonTag: self.tag)
+        
+        
     }
     
     

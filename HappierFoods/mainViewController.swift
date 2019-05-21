@@ -23,7 +23,13 @@ enum location : String {
 
 var whereAmINowBeacon = location.Unknown
 
-class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate {
+    func expandDetailSegue(buttonTag: Int) {
+        print("hello world")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "expandRecord"), object: self)
+        performSegue(withIdentifier: "expandDetail", sender: .none)
+    }
+    
     
     @IBOutlet weak var containerView: topView!
     
@@ -143,6 +149,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
       //  cell.layer.borderWidth = 1.0
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
+        cell.delegate = self
        // cell.showDetailButton(self)
         cell.showDetailButtonProperties.tag = indexPath.row
        
@@ -189,6 +196,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         do{
             try
                 foodArray = context.fetch(request)
+            print("food array")
+                print(foodArray)
         }
         catch{
             print("Error fetching data \(error)")
@@ -198,6 +207,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         do{
             try
                 targetArray = context.fetch(request2)
+                print("target array")
+                print(targetArray)
         }
         catch{
             print("Error fetching data \(error)")
@@ -264,3 +275,4 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
     }
 }
+

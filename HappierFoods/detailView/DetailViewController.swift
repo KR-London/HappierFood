@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController, goBackDelegate {
-    func performSegueDelegate() {
+    func performSegueDelegate(recordToDelete: String) {
         performSegue(withIdentifier: "detailToMain", sender: self)
     }
     
@@ -104,5 +104,5 @@ class DetailViewController: UIViewController, goBackDelegate {
 }
 
 protocol goBackDelegate: class {
-    func performSegueDelegate()
+    func performSegueDelegate(recordToDelete: String)
 }

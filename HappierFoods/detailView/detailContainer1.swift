@@ -22,7 +22,7 @@ class detailContainer1: UIView {
     }
     
     func customViewItems(){
-        backgroundColor = UIColor.red
+        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
        // frame = CGRect(x: 100, y: 100, width: 100, height: 100)
 

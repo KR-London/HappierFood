@@ -38,7 +38,7 @@ class detailContainer5: UIView {
     }
     
     func customViewItems(){
-        backgroundColor = UIColor.blue
+        backgroundColor = UIColor.clear
         addSubview(deleteButton)
         addSubview(addRecord)
         layoutButtons(addRecordButton: addRecord, deleteButton: deleteButton)
