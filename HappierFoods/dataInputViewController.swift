@@ -23,6 +23,7 @@ enum dataInputMode: String{
 class dataInputViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate {
     
     var image = UIImage()
+    var foodName = String()
     
     var currentDataInputMode : dataInputMode = dataInputMode.camera
    
@@ -36,11 +37,17 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var containerView: topView!
     
     /// mode selecting buttons
+    @IBOutlet weak var writtenInputElements: UIStackView!
     
+    @IBOutlet weak var nameOfFood: UITextField!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var cameraRollButton: UIButton!
     @IBOutlet weak var writeButton: UIButton!
     
+    @IBAction func nameOfFoodInput(_ sender: Any) {
+        foodName = nameOfFood.text ?? ""
+        performSegue(withIdentifier: presentState.rawValue, sender: "dataInputViewController")
+    }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonOutlet: UIButton!
   //  @IBOutlet weak var publicInformationBroadcast: UILabel!
@@ -65,6 +72,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func launchCameraRollButton(_ sender: Any) {
+        writtenInputElements.isHidden = true
         currentDataInputMode = .cameraRoll
         refreshButtonAppearance()
         if usedCamera == true
@@ -83,23 +91,34 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func launchCamera(_ sender: Any) {
-        
-        currentDataInputMode = .camera
-        refreshButtonAppearance()
-        usedCamera = true
-        previewView.isHidden = false
-      //  publicInformationBroadcast.isHidden = true
-        usedCamera = true
-        captureImageView.isHidden = false
-        recordTheFood()
+        writtenInputElements.isHidden = true
+        if usingSimulator == false
+        {
+            currentDataInputMode = .camera
+            refreshButtonAppearance()
+            usedCamera = true
+            previewView.isHidden = false
+            //  publicInformationBroadcast.isHidden = true
+            usedCamera = true
+            captureImageView.isHidden = false
+            recordTheFood()
+        }
+        else{
+            image = UIImage(named: "NoCameraPlaceholder.001.jpeg")!
+            captureImageView.isHidden = false
+            captureImageView.image = image
+        }
     }
     
     @IBAction func writeTheFood(_ sender: Any) {
         currentDataInputMode = .write
         refreshButtonAppearance()
-        self.captureSession.stopRunning()
+        self.captureSession?.stopRunning()
        // publicInformationBroadcast.isHidden = false
+         image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
         captureImageView.isHidden = true
+        writtenInputElements.isHidden = false
+        
     }
     let imagePicker = UIImagePickerController()
     
@@ -111,6 +130,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         //usedCamera = true
         imagePicker.allowsEditing = true
+        writtenInputElements.isHidden = true
         pictureViewConstraints()
        // containerView.titleLabel.text = "Input Food"
         
@@ -225,6 +245,10 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             {
                 dvc1.imagePlaceholder = image
                 dvc1.presentState = presentState
+                if foodName != nil
+                {
+                    dvc1.foodName = foodName
+                }
             }
       //  if let dvc2 = segue.destination as! topBarViewController
         

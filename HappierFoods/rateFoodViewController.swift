@@ -16,6 +16,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 
     var imagePlaceholder = UIImage()
     var rating = 0.0
+    var foodName = String()
     
     var presentState: Costume = Costume.Unknown
     
@@ -71,6 +72,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
         foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
+        if foodName != nil{
+            nameOfFood.text = foodName
+        }
         
         
       //  detect(image: CIImage(image: imagePlaceholder)!)

@@ -17,7 +17,14 @@ enum brow : String {
     case down
 }
 
-
+//lazy var BottomFaceView: UIImageView = {
+//    let contentView = UIImageView()
+//    
+//    contentView.image = UIImage(named: "face.png")
+//    //contentView.image = UIImage(named: "chaos.jpg")
+//    contentView.translatesAutoresizingMaskIntoConstraints = false
+//    return contentView
+//}()
 
 //let usingSimulator = false
 

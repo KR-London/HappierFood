@@ -85,17 +85,29 @@ class handDrawnFaceView: UIView {
     }
     
     func assembleFace(){
+        addSubview(bottomFace)
         addSubview(topFace)
-        
         topFace.translatesAutoresizingMaskIntoConstraints = false
+        bottomFace.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
                 topFace.topAnchor.constraint(equalTo: self.topAnchor),
-                //topFace.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                topFace.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                 topFace.widthAnchor.constraint(equalToConstant: 300),
                 topFace.heightAnchor.constraint(equalToConstant: 150)
             ]
         )
+        
+        NSLayoutConstraint.activate(
+            [
+                bottomFace.topAnchor.constraint(equalTo: self.topAnchor),
+                bottomFace.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                bottomFace.widthAnchor.constraint(equalToConstant: 300),
+                bottomFace.heightAnchor.constraint(equalToConstant: 300)
+            ]
+        )
+        
+
         
     }
 }
