@@ -31,7 +31,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var triedOn = Date()
     var notes = String()
     
-    lazy var topBar : UIView = {
+    lazy var topBar : topView = {
         let content = topView()
         content.translatesAutoresizingMaskIntoConstraints = false
         return content
@@ -112,12 +112,14 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topBar.backButton.isHidden = true
+        topBar.titleLabel.text = "HappyFoods"
         //mainCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell") as! mainCollectionViewCell
         // Do any additional setup after loading the view.
         self.view.addSubview(topBar)
         NSLayoutConstraint.activate([
                 topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-                 topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+                 topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
                   topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                    topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])

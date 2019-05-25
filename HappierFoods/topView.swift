@@ -12,15 +12,33 @@ class topView: UIView {
     
     lazy var backButton : UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.green
+        //button.backgroundColor = UIColor.yellow
+        button.setTitle("< Back", for: .normal)
+        button.titleLabel?.font  = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+        button.setTitleColor(.black, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
         return button
     }()
     
     lazy var titleLabel : UILabel = {
         let content = UILabel()
         content.text = "Title"
-        content.backgroundColor = UIColor.green
+        content.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 30 )
+        content.textAlignment = .center
+       // content.backgroundColor = UIColor.blue
+        content.translatesAutoresizingMaskIntoConstraints = false
+
         return content
+    }()
+    
+    lazy var shareButton : UIButton = {
+        let button = UIButton()
+        //button.backgroundColor = UIColor.red
+        button.setImage(UIImage(named: "share.png"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
     }()
     
     override init(frame: CGRect){
@@ -35,9 +53,10 @@ class topView: UIView {
     
     
     func customViewItems(){
-        backgroundColor = UIColor.green
+        backgroundColor = UIColor(red: 245/255.0, green: 192/255.0, blue: 106/255.0, alpha: 1.0)
         addSubview(backButton)
         addSubview(titleLabel)
+        addSubview(shareButton)
         applyLayoutConstraints()
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -45,7 +64,7 @@ class topView: UIView {
     func applyLayoutConstraints()
     {
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
             titleLabel.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor)
@@ -53,11 +72,20 @@ class topView: UIView {
         
         NSLayoutConstraint.activate([
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
+            backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             backButton.heightAnchor.constraint(equalTo: titleLabel.heightAnchor),
             backButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
             
         ])
+        
+        NSLayoutConstraint.activate([
+            shareButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            shareButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            shareButton.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2),
+            shareButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
+            
+            ])
+
         
     }
 }

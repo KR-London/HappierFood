@@ -5,7 +5,7 @@
 //  Created by Kate Roberts on 06/04/2019.
 //  Copyright © 2019 Kate Roberts. All rights reserved.
 //
- var usedCamera = true
+ var usedCamera = false
 
 import UIKit
 import ARKit
