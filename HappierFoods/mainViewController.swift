@@ -31,6 +31,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var triedOn = Date()
     var notes = String()
     
+    lazy var topBar : UIView = {
+        let content = topView()
+        content.translatesAutoresizingMaskIntoConstraints = false
+        return content
+    }()
+    
     func expandDetailSegue(buttonTag: Int) {
         print("hello world")
         
@@ -108,6 +114,14 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         //mainCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell") as! mainCollectionViewCell
         // Do any additional setup after loading the view.
+        self.view.addSubview(topBar)
+        NSLayoutConstraint.activate([
+                topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+                 topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+                  topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                   topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        
         loadItems()
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
@@ -123,23 +137,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
  
        
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension mainViewController: UICollectionViewDelegateFlowLayout {

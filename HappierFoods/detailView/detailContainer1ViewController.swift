@@ -17,19 +17,19 @@ class detailContainer1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        switch PresentState
-            {
-        case .ReviewTriedViewController:
-            titleLabel.text = "Review Progress"
-        case .ReviewTargetViewController:
-            titleLabel.text = "Review Target"
-        default:
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen")
-            self.present(newViewController, animated: true, completion: nil)
-        }
-    }
+//        switch PresentState
+//            {
+//      //  case .ReviewTriedViewController:
+//            titleLabel.text = "Review Progress"
+//     //   case .ReviewTargetViewController:
+//            titleLabel.text = "Review Target"
+//        default:
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
+//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen")
+//            self.present(newViewController, animated: true, completion: nil)
+//        }
+   // }
         // Do any additional setup after loading the view.
     }
     

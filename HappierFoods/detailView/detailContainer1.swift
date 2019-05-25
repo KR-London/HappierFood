@@ -10,22 +10,22 @@ import UIKit
 
 class detailContainer1: UIView {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        customViewItems()
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-        customViewItems()
-    }
-    
-    func customViewItems(){
-        backgroundColor = UIColor.clear
-        translatesAutoresizingMaskIntoConstraints = false
-       // frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        customViewItems()
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder)
+//    {
+//        super.init(coder: aDecoder)
+//        customViewItems()
+//    }
+//    
+//    func customViewItems(){
+//        backgroundColor = UIColor.clear
+//        translatesAutoresizingMaskIntoConstraints = false
+//       // frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+//
+//    }
 
 }

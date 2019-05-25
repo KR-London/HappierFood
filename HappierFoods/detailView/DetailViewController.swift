@@ -37,18 +37,18 @@ class DetailViewController: UIViewController, goBackDelegate, expandDetailDelega
         detailView.detailToDisplay = detailToDisplay
         detailView.delegate = self
     
-        let fakeNavBar = storyboard!.instantiateViewController(withIdentifier: "topBarViewController") as! topBarViewController
-        addChild(fakeNavBar)
-        fakeNavBar.view.translatesAutoresizingMaskIntoConstraints = false
-        fakeNavBar.delegate = self
-        detailView.container1.addSubview(fakeNavBar.view)
+//        let fakeNavBar = storyboard!.instantiateViewController(withIdentifier: "topBarViewController") as! topBarViewController
+//        addChild(fakeNavBar)
+//        fakeNavBar.view.translatesAutoresizingMaskIntoConstraints = false
+//        fakeNavBar.delegate = self
+    //    detailView.container1.addSubview(fakeNavBar.view)
         
-        NSLayoutConstraint.activate([
-            fakeNavBar.view.topAnchor.constraint(equalTo: view.topAnchor),
-            fakeNavBar.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            fakeNavBar.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            fakeNavBar.view.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
-            ])
+//        NSLayoutConstraint.activate([
+//            fakeNavBar.view.topAnchor.constraint(equalTo: view.topAnchor),
+//            fakeNavBar.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            fakeNavBar.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            fakeNavBar.view.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
+//            ])
         
         //        NSLayoutConstraint.activate([
         //            backButton.topAnchor.constraint(equalTo: topAnchor),
