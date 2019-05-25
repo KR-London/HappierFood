@@ -89,7 +89,7 @@ class DetailView: UIView, goBackDelegate {
     }
     
     func customViewItems(){
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidExpandRecord), name: .expandRecord, object: nil)
+       // NotificationCenter.default.addObserver(self, selector: #selector(onDidExpandRecord), name: .expandRecord, object: nil)
         backgroundColor = UIColor.white
         addSubview(container1)
         addSubview(container2)

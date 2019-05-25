@@ -28,7 +28,7 @@
                                 <rect key="frame" x="37.666666666666657" y="132" width="300" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uej-fE-L1c">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="348"/>
+                                        <rect key="frame" x="0.33333333333334281" y="0.0" width="299" height="348"/>
                                         <string key="text">Here you will see your customisation options (avatars, wallpapers) (if you have purchased the full version) - or an encouragement to upgrade to the full version. </string>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <nil key="textColor"/>
@@ -71,7 +71,7 @@
                                 <rect key="frame" x="37.666666666666657" y="132" width="300" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-gS-U1w">
-                                        <rect key="frame" x="0.66666666666665719" y="0.0" width="298.66666666666674" height="340"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="340"/>
                                         <string key="text">Here you will see your historical data (if you have purchased the full version) - or an encouragement to upgrade to the full version. </string>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <nil key="textColor"/>
@@ -148,7 +148,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY7-4K-eUj">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <connections>
-                                                        <action selector="showDetailButton:" destination="P12-fL-dBa" eventType="touchUpInside" id="4al-4Q-w7E"/>
+                                                        <action selector="expandDetailButtonPressed:" destination="yA6-eK-gdw" eventType="touchUpInside" id="rRB-Ee-TyB"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -181,7 +181,7 @@
                                 <rect key="frame" x="8" y="585.66666666666663" width="359" height="99.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyO-Mw-g57">
-                                        <rect key="frame" x="0.0" y="30.666666666666742" width="164.66666666666666" height="38"/>
+                                        <rect key="frame" x="0.0" y="29.666666666666742" width="164.66666666666666" height="40"/>
                                         <color key="backgroundColor" red="0.97361403703689575" green="0.84680634737014771" blue="0.47435027360916138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <state key="normal" title="Set Target">
@@ -201,7 +201,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-lL-Bzf">
-                                        <rect key="frame" x="194.66666666666663" y="30.666666666666742" width="164.33333333333337" height="38"/>
+                                        <rect key="frame" x="194.66666666666663" y="29.666666666666742" width="164.33333333333337" height="40"/>
                                         <color key="backgroundColor" red="0.97361403703689575" green="0.84680634737014771" blue="0.47435027360916138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <state key="normal" title="Try Food">
@@ -260,7 +260,7 @@
                         <outlet property="containerView" destination="wyP-Xv-M1v" id="h06-si-1Ku"/>
                         <outlet property="mainCollectionView" destination="ntM-vN-9DJ" id="gAl-Sm-8nk"/>
                         <outlet property="setTargetOutlet" destination="vyO-Mw-g57" id="7Od-fM-cwY"/>
-                        <segue destination="Q61-IA-lhv" kind="showDetail" identifier="expandDetail" id="mxV-GV-PXI"/>
+                        <segue destination="Q61-IA-lhv" kind="show" identifier="expandDetail" id="EyT-iX-Ahn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fna-ov-CAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,13 +295,13 @@
                                 <rect key="frame" x="27.333333333333343" y="129.99999999999989" width="320.33333333333326" height="199.99999999999994"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please write the name of the food you'd like to try: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbJ-AV-uRv">
-                                        <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="43.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="46.666666666666664"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44z-7b-o9p">
-                                        <rect key="frame" x="0.0" y="71.333333333333357" width="320.33333333333331" height="128.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="74.666666666666686" width="320.33333333333331" height="125.33333333333331"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -595,10 +595,10 @@
                                 <rect key="frame" x="37.666666666666657" y="111" width="300" height="686"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-Zu-2J0" userLabel="Target Food Preview Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="205"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="204.33333333333334"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGs-EQ-3FX">
-                                                <rect key="frame" x="0.0" y="0.0" width="204.66666666666666" height="205"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="204.33333333333334"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pGs-EQ-3FX" secondAttribute="height" multiplier="1:1" id="BiA-7c-8qW"/>
                                                 </constraints>
@@ -609,7 +609,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter food name" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5ms-Pk-GMR">
-                                                <rect key="frame" x="235" y="0.0" width="65" height="205"/>
+                                                <rect key="frame" x="234.33333333333334" y="0.0" width="65.666666666666657" height="204.33333333333334"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
@@ -629,7 +629,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="hOU-fx-LMj" userLabel="Define Motivation Stack View">
-                                        <rect key="frame" x="0.0" y="213" width="300" height="473"/>
+                                        <rect key="frame" x="0.0" y="212.33333333333329" width="300" height="473.66666666666674"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="747" verticalCompressionResistancePriority="743" text="Why do you want to try this food?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bym-ZN-NZY">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
@@ -641,7 +641,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="69B-z6-04q">
-                                                <rect key="frame" x="0.0" y="79" width="300" height="344.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="79" width="300" height="335.66666666666669"/>
                                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
@@ -652,7 +652,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-Va-k3r">
-                                                <rect key="frame" x="0.0" y="442.33333333333337" width="300" height="30.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="433.66666666666669" width="300" height="40"/>
                                                 <color key="backgroundColor" red="0.97361403700000004" green="0.84680634740000005" blue="0.47435027359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="2qc-yt-V6X"/>
@@ -757,70 +757,18 @@
             <objects>
                 <viewController storyboardIdentifier="topBarViewController" id="ZjD-8v-mgb" customClass="topBarViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4m0-lH-h0D" customClass="topView" customModule="HappierFoods" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="121.66666666666667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z9e-Ql-MVX">
-                                <rect key="frame" x="0.0" y="40.666666666666664" width="375" height="14.666666666666664"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3Y-dE-3fg">
-                                        <rect key="frame" x="0.0" y="0.0" width="14.333333333333334" height="14.666666666666666"/>
-                                        <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="22"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backButtonPressed:" destination="ZjD-8v-mgb" eventType="touchUpInside" id="Lv1-lq-Dri"/>
-                                            <action selector="goBackOneScreen:" destination="4m0-lH-h0D" eventType="touchUpInside" id="MYE-We-kqp"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HappyFoods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wya-e3-MTK">
-                                        <rect key="frame" x="19.333333333333343" y="0.0" width="336.33333333333326" height="14.666666666666666"/>
-                                        <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87E-VE-hUA">
-                                        <rect key="frame" x="360.66666666666669" y="0.0" width="14.333333333333314" height="14.666666666666666"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="87E-VE-hUA" secondAttribute="height" multiplier="1:1" id="0zf-rz-jYL"/>
-                                            <constraint firstAttribute="width" priority="996" constant="80" id="k5G-tp-lnR"/>
-                                        </constraints>
-                                        <state key="normal" image="share"/>
-                                        <connections>
-                                            <action selector="share:" destination="4m0-lH-h0D" eventType="touchUpInside" id="RcC-2E-xjm"/>
-                                            <action selector="shareButtonPressed:" destination="ZjD-8v-mgb" eventType="touchUpInside" id="yGp-X7-HdU"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="i3Y-dE-3fg" firstAttribute="height" secondItem="Wya-e3-MTK" secondAttribute="height" id="0Lr-a8-D2R"/>
-                                    <constraint firstItem="i3Y-dE-3fg" firstAttribute="width" secondItem="87E-VE-hUA" secondAttribute="width" id="4gu-WY-9nT"/>
-                                    <constraint firstItem="i3Y-dE-3fg" firstAttribute="height" secondItem="87E-VE-hUA" secondAttribute="height" id="QCS-AN-D24"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" red="0.96011680359999996" green="0.75342005489999997" blue="0.41558474299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="z9e-Ql-MVX" firstAttribute="height" secondItem="NAX-5F-w4B" secondAttribute="height" multiplier="0.8" id="BtF-5B-gdN"/>
-                            <constraint firstItem="z9e-Ql-MVX" firstAttribute="width" secondItem="NAX-5F-w4B" secondAttribute="width" id="Hat-4X-HsA"/>
-                            <constraint firstItem="z9e-Ql-MVX" firstAttribute="centerY" secondItem="4m0-lH-h0D" secondAttribute="centerY" id="HhT-cq-qt5"/>
-                            <constraint firstItem="z9e-Ql-MVX" firstAttribute="centerX" secondItem="4m0-lH-h0D" secondAttribute="centerX" id="Qvv-z9-6eZ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NAX-5F-w4B"/>
-                        <connections>
-                            <outlet property="titleLabel" destination="Wya-e3-MTK" id="W9D-K4-HiL"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="topBarTitle" destination="Wya-e3-MTK" id="D20-G2-rbd"/>
                         <outlet property="topView" destination="4m0-lH-h0D" id="lQf-XK-3rX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xf9-7X-9br" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="-1771"/>
+            <point key="canvasLocation" x="712.79999999999995" y="-1771.1822660098524"/>
         </scene>
         <!--Detail View-->
         <scene sceneID="E0q-XM-Kkr">
@@ -974,13 +922,12 @@
         <image name="icons1.png" width="203" height="203"/>
         <image name="icons2.png" width="203" height="203"/>
         <image name="icons3.png" width="203" height="203"/>
-        <image name="share" width="512" height="512"/>
         <image name="tick" width="57.333332061767578" height="57.333332061767578"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="faX-Hr-qJb"/>
-        <segue reference="hZV-HX-SXF"/>
+        <segue reference="Z3v-3r-cD0"/>
         <segue reference="87p-EZ-bh5"/>
-        <segue reference="j5x-Ve-xVh"/>
+        <segue reference="eno-dq-w0E"/>
     </inferredMetricsTieBreakers>
 </document>

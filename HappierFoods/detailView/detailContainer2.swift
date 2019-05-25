@@ -10,7 +10,7 @@ import UIKit
 
 class detailContainer2: UIView {
     
-    var foodNameLocal : String?
+    var foodNameLocal = "Blueberries "
     var photoFilename : String?
 
     lazy var foodLabel: UILabel = {

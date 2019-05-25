@@ -38,7 +38,7 @@ class mainCollectionViewCell: UICollectionViewCell {
     @IBAction func showDetailButton(_ sender: UIButton) {
         /// post information to notification centre
         print("hello world")
-        
+        /// why aren't i posting info here?
         
         //delegate?.photoFilename = cellImage.image
         /// do segue

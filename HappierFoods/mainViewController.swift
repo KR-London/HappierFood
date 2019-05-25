@@ -40,7 +40,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         triedOn = foodArray[buttonTag].dateTried!
         notes = foodArray[buttonTag].motivation ?? " "
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "expandRecord"), object: self)
+ //       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "expandRecord"), object: self)
         
         
         //prepare(for: UIStoryboardSegue., sender: <#T##Any!#>)
@@ -74,6 +74,21 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
+    @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
+  
+        let buttonTag = sender.tag
+        print("The tag of this button is \(sender.tag)")
+        
+        photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
+        foodName = foodArray[buttonTag].name ?? ""
+        rating = foodArray[buttonTag].rating
+        triedOn = foodArray[buttonTag].dateTried!
+        notes = foodArray[buttonTag].motivation ?? " "
+        
+        performSegue(withIdentifier: "expandDetail", sender: sender)
+    }
+    
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [TriedFood]!
@@ -96,7 +111,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         loadItems()
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-        
         
         print(datafilepath!)
        // topBarViewController.delegate
@@ -252,8 +266,14 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             
             let dvc = segue.destination as! DetailViewController
             
+//            photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
+//            foodName = foodArray[buttonTag].name ?? ""
+//            rating = foodArray[buttonTag].rating
+//            triedOn = foodArray[buttonTag].dateTried!
+//            notes = foodArray[buttonTag].motivation ?? " "
+//
             dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
-           
+          // dvc.loadView()
           //  dvc.reloadInputViews()
             
             //print("I'm in")

@@ -55,7 +55,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
 //faceView.isHidden = true
         imagePickerView.allowsEditing = true
-        
+        nameOfFood.text = "Blueberries"
         loadItems()
         imagePickerView.delegate = self
         nameOfFood.delegate = self
