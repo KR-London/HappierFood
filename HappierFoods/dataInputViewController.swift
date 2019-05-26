@@ -120,8 +120,14 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
        // publicInformationBroadcast.isHidden = false
         if image == nil 
         {
-            image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            image = UIImage(named: "rice.jpeg")!
         }
+        
+        
+        
+        
+        
         if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg")
         {
             image = UIImage(named: "databasePlaceholderImage.001.jpeg")!

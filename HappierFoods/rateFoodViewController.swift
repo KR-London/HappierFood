@@ -20,6 +20,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var presentState: Costume = Costume.Unknown
     
+    lazy var topBar : topView = {
+        let content = topView()
+        content.translatesAutoresizingMaskIntoConstraints = false
+        return content
+    }()
     
     @IBOutlet weak var containerViewAddFood: topView!
     @IBOutlet weak var containerView: topView!
@@ -54,6 +59,17 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 //faceView.isHidden = true
+         topBar.titleLabel.text = "Rate It"
+        
+        // Do any additional setup after loading the view.
+        self.view.addSubview(topBar)
+        NSLayoutConstraint.activate([
+            topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        
         imagePickerView.allowsEditing = true
         nameOfFood.text = "Blueberries"
         loadItems()

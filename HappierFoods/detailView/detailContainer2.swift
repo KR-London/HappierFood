@@ -16,7 +16,9 @@ class detailContainer2: UIView {
     lazy var foodLabel: UILabel = {
         let foodName = UILabel()
         foodName.font = UIFont(name: "07891284.ttf", size: 22)
-        foodName.text = foodNameLocal ?? "Custom View"
+        foodName.text = "Baked Beans"
+        foodName.textColor = .black
+       // foodName.text = foodNameLocal ?? "Custom View"
         foodName.textAlignment = .center
         foodName.translatesAutoresizingMaskIntoConstraints = false
         return foodName
@@ -51,6 +53,7 @@ class detailContainer2: UIView {
         backgroundColor = UIColor.clear
         addSubview(foodPicture)
         addSubview(foodLabel)
+        
         applyLayoutConstraints(view1: foodPicture, view2: foodLabel)
         translatesAutoresizingMaskIntoConstraints = false
     }
