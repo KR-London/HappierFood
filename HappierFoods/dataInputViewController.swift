@@ -22,7 +22,7 @@ enum dataInputMode: String{
 
 class dataInputViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate {
     
-    var image = UIImage()
+    var image : UIImage?
     var foodName = String()
     
     var currentDataInputMode : dataInputMode = dataInputMode.camera
@@ -124,10 +124,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             image = UIImage(named: "rice.jpeg")!
         }
         
-        
-        
-        
-        
         if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg")
         {
             image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
@@ -136,8 +132,15 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         writtenInputElements.isHidden = false
         
     }
-    let imagePicker = UIImagePickerController()
     
+    lazy var topBar : topView = {
+        let content = topView()
+        content.translatesAutoresizingMaskIntoConstraints = false
+        return content
+    }()
+    
+    
+    let imagePicker = UIImagePickerController()
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
@@ -145,6 +148,15 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         //usedCamera = true
+        
+        self.view.addSubview(topBar)
+        NSLayoutConstraint.activate([
+            topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        
         imagePicker.allowsEditing = true
         writtenInputElements.isHidden = true
         pictureViewConstraints()
@@ -153,15 +165,15 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         switch sourceViewController
         {
             case "Try Food":
-               // titleLabel.text = "You Tried A New Food"
+               topBar.titleLabel.text = "Log a Try"
                 // buttonOutlet.setTitle("Add Food", for: .normal)
                 presentState = Costume.AddFoodViewController
             case "Set Target":
-               // titleLabel.text = "Let's set a target"
+               topBar.titleLabel.text = "Set a Target"
                 //buttonOutlet.setTitle("Add Target", for: .normal)
                 presentState = Costume.SetTargetViewController
             default:
-               // titleLabel.text = "Did you try a new food"
+               topBar.titleLabel.text = "HappyFoods"
              //   buttonOutlet.titleLabel?.text = "Click to proceed"
             presentState = Costume.Unknown
         }
@@ -259,7 +271,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
       if segue.identifier != "back" {
             if let dvc1 = segue.destination as? rateFoodViewController
             {
-                dvc1.imagePlaceholder = image
+                dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
                 dvc1.presentState = presentState
                 if foodName != nil
                 {

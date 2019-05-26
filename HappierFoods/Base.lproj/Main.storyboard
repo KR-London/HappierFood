@@ -266,9 +266,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkG-WY-hYu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                                <connections>
-                                    <segue destination="ZjD-8v-mgb" kind="embed" id="hZV-HX-SXF"/>
-                                </connections>
                             </containerView>
                             <view contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8AX-hO-TEp">
                                 <rect key="frame" x="27.333333333333343" y="104" width="320.33333333333326" height="320.66666666666674"/>
@@ -918,7 +915,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="faX-Hr-qJb"/>
-        <segue reference="HKF-Bz-uNV"/>
         <segue reference="87p-EZ-bh5"/>
         <segue reference="02M-J4-IJq"/>
     </inferredMetricsTieBreakers>
