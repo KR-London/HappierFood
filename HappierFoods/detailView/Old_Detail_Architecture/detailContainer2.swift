@@ -50,7 +50,7 @@ class detailContainer2: UIView {
     }
     
     func customViewItems(){
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.blue
         addSubview(foodPicture)
         addSubview(foodLabel)
         

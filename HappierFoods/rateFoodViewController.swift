@@ -87,7 +87,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         foodImage.contentMode = .scaleAspectFill
         foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
         foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
+        //print(foodImage)
         if foodName != nil{
             nameOfFood.text = foodName
         }

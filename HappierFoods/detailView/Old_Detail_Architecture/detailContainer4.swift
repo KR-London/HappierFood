@@ -34,7 +34,7 @@ class detailContainer4: UIView {
     }
     
     func customViewItems(){
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.red
         addSubview(motivation)
      //   motivation.placeholder = "Placeholder"
         layout(view: motivation)

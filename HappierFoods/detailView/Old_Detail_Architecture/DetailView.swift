@@ -8,32 +8,32 @@
 
 import UIKit
 
-class DetailView: UIView, goBackDelegate {
+class DetailView: UIView{
     
   
    var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
 
     
-    func performSegueDelegate(recordToDelete: String) {
-        delegate?.performSegueDelegate(recordToDelete: "")
-    }
+//    func performSegueDelegate(recordToDelete: String) {
+//        delegate?.performSegueDelegate(recordToDelete: "")
+//    }
     
 
-    weak var delegate: goBackDelegate?
+   // weak var delegate: goBackDelegate?
     
 
     var presentState = Costume.Unknown
+////    
+//    lazy var backButton: UIButton = {
+//        let button = UIButton()
+//       // button.backgroundColor = UIColor.red
+//        button.titleLabel?.text = "< Back "
+//        button.backgroundColor = UIColor.yellow
+//        button.addTarget(self, action: #selector(testButton), for: .touchUpInside)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
 //    
-    lazy var backButton: UIButton = {
-        let button = UIButton()
-       // button.backgroundColor = UIColor.red
-        button.titleLabel?.text = "< Back "
-        button.backgroundColor = UIColor.yellow
-        button.addTarget(self, action: #selector(testButton), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     // use lazy properties for each view
     lazy var container1: UIView = {
         let headerView = detailContainer1()
@@ -90,7 +90,7 @@ class DetailView: UIView, goBackDelegate {
     
     func customViewItems(){
        // NotificationCenter.default.addObserver(self, selector: #selector(onDidExpandRecord), name: .expandRecord, object: nil)
-        backgroundColor = UIColor.white
+    backgroundColor = UIColor.white
         addSubview(container1)
         addSubview(container2)
         addSubview(container3)
@@ -151,13 +151,13 @@ class DetailView: UIView, goBackDelegate {
   
     }
 
-    @objc func testButton(sender: UIButton){
-        delegate?.performSegueDelegate(recordToDelete: "")
-    }
-    
-    @objc func onDidExpandRecord(){
-        print("I see record")
-    }
+//    @objc func testButton(sender: UIButton){
+//        delegate?.performSegueDelegate(recordToDelete: "")
+//    }
+//
+//    @objc func onDidExpandRecord(){
+//        print("I see record")
+//    }
 
     //custom views should override this to return true if
     //they cannot layout correctly using autoresizing.

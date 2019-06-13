@@ -106,12 +106,14 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let buttonTag = sender.tag
         print("The tag of this button is \(sender.tag)")
         
-        photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
-        foodName = foodArray[buttonTag].name ?? ""
-        rating = foodArray[buttonTag].rating
-        triedOn = foodArray[buttonTag].dateTried!
-        notes = foodArray[buttonTag].motivation ?? " "
-        
+        if buttonTag < foodArray.count
+        {
+            photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
+            foodName = foodArray[buttonTag].name ?? ""
+            rating = foodArray[buttonTag].rating
+            triedOn = foodArray[buttonTag].dateTried!
+            notes = foodArray[buttonTag].motivation ?? " "
+        }
         performSegue(withIdentifier: "expandDetail", sender: sender)
     }
     
