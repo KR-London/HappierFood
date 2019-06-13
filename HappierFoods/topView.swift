@@ -8,7 +8,9 @@
 
 import UIKit
 
-class topView: UIView {
+class topView: UIView{
+  
+    
     
     lazy var backButton : UIButton = {
         let button = UIButton()
@@ -23,7 +25,7 @@ class topView: UIView {
     
     lazy var titleLabel : UILabel = {
         let content = UILabel()
-        content.text = "Title"
+        content.text = "Well Done!!!"
         content.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 30 )
         content.textAlignment = .center
        // content.backgroundColor = UIColor.blue
@@ -37,7 +39,7 @@ class topView: UIView {
         //button.backgroundColor = UIColor.red
         button.setImage(UIImage(named: "share.png"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+       // button.addTarget(self, action: #selector(share), for: .touchUpInside)
         return button
     }()
     
@@ -59,6 +61,20 @@ class topView: UIView {
         addSubview(shareButton)
         applyLayoutConstraints()
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    /// this is terrible coding. I shouldn't have this in a view file.
+    @objc func share(){
+        print("I'm sharing")
+        let whatHaveITried = "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
+        
+        let activityViewController =
+            UIActivityViewController(activityItems: [whatHaveITried],
+                                     applicationActivities: nil)
+        
+        let vc = UIViewController()
+        
+        vc.present(activityViewController, animated: true)
     }
     
     func applyLayoutConstraints()

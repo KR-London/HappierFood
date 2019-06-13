@@ -23,7 +23,28 @@ enum location : String {
 
 var whereAmINowBeacon = location.Unknown
 
-class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate {
+
+
+class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate, UIActivityItemSource  {
+    @IBAction func dummyButton(_ sender: Any) {
+        
+            let whatHaveITried = "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
+            
+            let activityViewController =
+                UIActivityViewController(activityItems: [whatHaveITried],
+                                         applicationActivities: nil)
+            
+           present(activityViewController, animated: true)
+        
+        
+    }
+    
+    lazy var ddummyButton : UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+            button.addTarget(self, action: #selector(share), for: .touchUpInside)
+        return button
+    }()
     
     var photoFilename = String()
     var foodName = String()
@@ -117,11 +138,19 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //mainCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell") as! mainCollectionViewCell
         // Do any additional setup after loading the view.
         self.view.addSubview(topBar)
+        self.view.addSubview(ddummyButton)
         NSLayoutConstraint.activate([
                 topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
                  topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
                   topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                    topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        
+        NSLayoutConstraint.activate([
+            ddummyButton.widthAnchor.constraint(equalTo: view.widthAnchor),
+            ddummyButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            ddummyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            ddummyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
         
         loadItems()
@@ -138,6 +167,10 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidAppear(false)
  
        
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        return "HappyFoods Update"
     }
 }
 
@@ -311,6 +344,24 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         } catch let error {
             print("Detele all data in \(entity) error :", error)
         }
+    }
+    
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        return "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
+    }
+    
+    @objc func share() {
+        let whatHaveITried = "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
+    
+        let activityViewController =
+        UIActivityViewController(activityItems: [whatHaveITried],
+        applicationActivities: nil)
+    
+        present(activityViewController, animated: true)
     }
 }
 

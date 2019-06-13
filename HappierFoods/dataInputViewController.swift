@@ -276,6 +276,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
                 if foodName != nil
                 {
                     dvc1.foodName = foodName
+                   // dvc1.foodName = "Cherry tomatoes"
                 }
             }
       //  if let dvc2 = segue.destination as! topBarViewController

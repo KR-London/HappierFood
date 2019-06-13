@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-let usingSimulator = true
+let usingSimulator = false
 
 class ARViewController: UIViewController, ARSessionDelegate {
 

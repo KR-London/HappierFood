@@ -9,6 +9,12 @@
 import UIKit
 
 class celebrationScreenViewController: UIViewController {
+    
+//    // use lazy properties for each view
+//    lazy var container1: UIImageView = {
+//        let headerView = detailContainer1()
+//        return headerView
+//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
