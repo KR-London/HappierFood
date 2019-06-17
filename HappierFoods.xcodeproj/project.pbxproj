@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		441045FD228AB3CD00BF6D92 /* detailContainer1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441045FC228AB3CD00BF6D92 /* detailContainer1.swift */; };
-		441045FF228AB3EE00BF6D92 /* detailContainer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441045FE228AB3EE00BF6D92 /* detailContainer2.swift */; };
-		44104601228AB3FB00BF6D92 /* detailContainer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104600228AB3FB00BF6D92 /* detailContainer3.swift */; };
-		44104603228AB40F00BF6D92 /* detailContainer4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104602228AB40F00BF6D92 /* detailContainer4.swift */; };
-		44104605228AB41D00BF6D92 /* detailContainer5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104604228AB41D00BF6D92 /* detailContainer5.swift */; };
-		4410460B228ACB6700BF6D92 /* detailContainer1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */; };
-		4410460D228ACB7C00BF6D92 /* detailContainer3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */; };
-		4410460F228ACB9100BF6D92 /* detailContainer4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */; };
-		44104611228ACBA000BF6D92 /* detailContainer5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */; };
 		4410BF3B2299907300FE7B90 /* shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4410BF3A2299907300FE7B90 /* shopping.png */; };
 		4410BF3D229990C000FE7B90 /* IMG_1974.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4410BF3C229990C000FE7B90 /* IMG_1974.PNG */; };
 		4410ECF42294031F00CC3515 /* NoCameraPlaceholder.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */; };
@@ -35,7 +26,6 @@
 		442113DE229962A300CBE431 /* topBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113DD229962A300CBE431 /* topBarViewController.swift */; };
 		4425CAF3225E6D1200A6DEE6 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4425CAF2225E6D1200A6DEE6 /* button.png */; };
 		4425CAF7225E701800A6DEE6 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4425CAF6225E701800A6DEE6 /* back.png */; };
-		442F870F2289628500F4CCB5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F870E2289628500F4CCB5 /* DetailView.swift */; };
 		443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B66BF228EBD48007DDACC /* historyViewController.swift */; };
 		443B66CA22905FB4007DDACC /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66C922905FB4007DDACC /* face.png */; };
 		443B66CC22906000007DDACC /* eyeBlinkLeft_browDownLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66CB22905FFF007DDACC /* eyeBlinkLeft_browDownLeft.png */; };
@@ -98,7 +88,6 @@
 		44D598632259535100267E71 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598622259535100267E71 /* mainViewController.swift */; };
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
 		44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44F07810228D99A400427FEB /* HappierFoods.xcdatamodeld */; };
-		44FC46A1229338CE00785901 /* Extensions_Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC46A0229338CE00785901 /* Extensions_Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,15 +101,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		441045FC228AB3CD00BF6D92 /* detailContainer1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer1.swift; sourceTree = "<group>"; };
-		441045FE228AB3EE00BF6D92 /* detailContainer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer2.swift; sourceTree = "<group>"; };
-		44104600228AB3FB00BF6D92 /* detailContainer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer3.swift; sourceTree = "<group>"; };
-		44104602228AB40F00BF6D92 /* detailContainer4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer4.swift; sourceTree = "<group>"; };
-		44104604228AB41D00BF6D92 /* detailContainer5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer5.swift; sourceTree = "<group>"; };
-		4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer1ViewController.swift; sourceTree = "<group>"; };
-		4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer3ViewController.swift; sourceTree = "<group>"; };
-		4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer4ViewController.swift; sourceTree = "<group>"; };
-		44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailContainer5ViewController.swift; sourceTree = "<group>"; };
 		4410BF3A2299907300FE7B90 /* shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopping.png; sourceTree = "<group>"; };
 		4410BF3C229990C000FE7B90 /* IMG_1974.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1974.PNG; sourceTree = "<group>"; };
 		4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoCameraPlaceholder.001.jpeg; sourceTree = "<group>"; };
@@ -140,7 +120,6 @@
 		442113DD229962A300CBE431 /* topBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topBarViewController.swift; sourceTree = "<group>"; };
 		4425CAF2225E6D1200A6DEE6 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		4425CAF6225E701800A6DEE6 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		442F870E2289628500F4CCB5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		443B66BF228EBD48007DDACC /* historyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		443B66C922905FB4007DDACC /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
 		443B66CB22905FFF007DDACC /* eyeBlinkLeft_browDownLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeBlinkLeft_browDownLeft.png; sourceTree = "<group>"; };
@@ -207,7 +186,6 @@
 		44D598622259535100267E71 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
 		44F07811228D99A400427FEB /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
-		44FC46A0229338CE00785901 /* Extensions_Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions_Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,27 +228,8 @@
 				443C3CB522B2A36600832AD1 /* Detail3ViewController.xib */,
 				443C3CB122B2996900832AD1 /* Detail4ViewController.xib */,
 				443C3CB322B2997600832AD1 /* Detail5ViewController.xib */,
-				443C3CA422B294A800832AD1 /* Old_Detail_Architecture */,
 			);
 			path = detailView;
-			sourceTree = "<group>";
-		};
-		443C3CA422B294A800832AD1 /* Old_Detail_Architecture */ = {
-			isa = PBXGroup;
-			children = (
-				4410460C228ACB7C00BF6D92 /* detailContainer3ViewController.swift */,
-				4410460E228ACB9100BF6D92 /* detailContainer4ViewController.swift */,
-				4410460A228ACB6700BF6D92 /* detailContainer1ViewController.swift */,
-				442F870E2289628500F4CCB5 /* DetailView.swift */,
-				441045FC228AB3CD00BF6D92 /* detailContainer1.swift */,
-				441045FE228AB3EE00BF6D92 /* detailContainer2.swift */,
-				44104610228ACBA000BF6D92 /* detailContainer5ViewController.swift */,
-				44104600228AB3FB00BF6D92 /* detailContainer3.swift */,
-				44104602228AB40F00BF6D92 /* detailContainer4.swift */,
-				44FC46A0229338CE00785901 /* Extensions_Notifications.swift */,
-				44104604228AB41D00BF6D92 /* detailContainer5.swift */,
-			);
-			path = Old_Detail_Architecture;
 			sourceTree = "<group>";
 		};
 		44BE3B8F22566A230090BB5F = {
@@ -538,16 +497,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4410460F228ACB9100BF6D92 /* detailContainer4ViewController.swift in Sources */,
 				443C3CA822B2967E00832AD1 /* Detail3ViewController.swift in Sources */,
 				449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */,
-				44FC46A1229338CE00785901 /* Extensions_Notifications.swift in Sources */,
 				443C3CAC22B2969B00832AD1 /* Detail5ViewController.swift in Sources */,
 				44AB154F225D9A6B004E070A /* FaceViewController2.swift in Sources */,
 				442113D82299625200CBE431 /* customTabBar.swift in Sources */,
-				441045FD228AB3CD00BF6D92 /* detailContainer1.swift in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
-				44104605228AB41D00BF6D92 /* detailContainer5.swift in Sources */,
 				442113D62299624C00CBE431 /* customTabBarController.swift in Sources */,
 				4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */,
 				44D598632259535100267E71 /* mainViewController.swift in Sources */,
@@ -556,9 +511,7 @@
 				442113DE229962A300CBE431 /* topBarViewController.swift in Sources */,
 				44D5986122594EC900267E71 /* footerViewController.swift in Sources */,
 				442113D42299623800CBE431 /* UIImage+PixelBuffer.swift in Sources */,
-				442F870F2289628500F4CCB5 /* DetailView.swift in Sources */,
 				443C3CA622B2963000832AD1 /* Detail2ViewController.swift in Sources */,
-				4410460B228ACB6700BF6D92 /* detailContainer1ViewController.swift in Sources */,
 				449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */,
 				442113D2229961D600CBE431 /* Extensions_UIImage.swift in Sources */,
 				44D5985B2259346700267E71 /* mainCollectionViewCell.swift in Sources */,
@@ -571,17 +524,12 @@
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
-				44104611228ACBA000BF6D92 /* detailContainer5ViewController.swift in Sources */,
-				44104601228AB3FB00BF6D92 /* detailContainer3.swift in Sources */,
-				4410460D228ACB7C00BF6D92 /* detailContainer3ViewController.swift in Sources */,
 				442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */,
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
-				441045FF228AB3EE00BF6D92 /* detailContainer2.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				442113DA2299627700CBE431 /* mainCollectionViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
 				44BE3BC52256797D0090BB5F /* FacialExpression.swift in Sources */,
-				44104603228AB40F00BF6D92 /* detailContainer4.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

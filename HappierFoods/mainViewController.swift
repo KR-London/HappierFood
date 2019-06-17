@@ -135,26 +135,26 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topBar.backButton.isHidden = true
-        topBar.titleLabel.text = "HappyFoods"
-        //mainCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell") as! mainCollectionViewCell
-        // Do any additional setup after loading the view.
-        self.view.addSubview(topBar)
-        self.view.addSubview(ddummyButton)
-        NSLayoutConstraint.activate([
-                topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-                 topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
-                  topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                   topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-        
-        NSLayoutConstraint.activate([
-            ddummyButton.widthAnchor.constraint(equalTo: view.widthAnchor),
-            ddummyButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
-            ddummyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            ddummyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-        
+//        topBar.backButton.isHidden = true
+//        topBar.titleLabel.text = "HappyFoods"
+//        //mainCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell") as! mainCollectionViewCell
+//        // Do any additional setup after loading the view.
+//        self.view.addSubview(topBar)
+//        self.view.addSubview(ddummyButton)
+//        NSLayoutConstraint.activate([
+//                topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+//                 topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
+//                  topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//                   topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+//            ])
+//
+//        NSLayoutConstraint.activate([
+//            ddummyButton.widthAnchor.constraint(equalTo: view.widthAnchor),
+//            ddummyButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
+//            ddummyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            ddummyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+//            ])
+//
         loadItems()
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
