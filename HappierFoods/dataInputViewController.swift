@@ -152,7 +152,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         self.view.addSubview(topBar)
         NSLayoutConstraint.activate([
             topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
             topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])

@@ -62,30 +62,30 @@ class customFaceARViewController: UIViewController, ARSessionDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if usingSimulator == false{
-            // Create a session configuration
-            let configuration = ARFaceTrackingConfiguration()
-            
-            var videoFormat = ARFaceTrackingConfiguration.supportedVideoFormats[0]
-            for format in ARFaceTrackingConfiguration.supportedVideoFormats {
-                if format.framesPerSecond < videoFormat.framesPerSecond {
-                    videoFormat = format
-                }
-            }
-            configuration.videoFormat = videoFormat
-            // Set the session's delegate
-            arSession.delegate = self
-            
-            // Run the session with the face tracking configuration
-            arSession.run(configuration)
-        }
+//        if usingSimulator == false{
+//            // Create a session configuration
+//            let configuration = ARFaceTrackingConfiguration()
+//
+//            var videoFormat = ARFaceTrackingConfiguration.supportedVideoFormats[0]
+//            for format in ARFaceTrackingConfiguration.supportedVideoFormats {
+//                if format.framesPerSecond < videoFormat.framesPerSecond {
+//                    videoFormat = format
+//                }
+//            }
+//            configuration.videoFormat = videoFormat
+//            // Set the session's delegate
+//            arSession.delegate = self
+//
+//            // Run the session with the face tracking configuration
+//            arSession.run(configuration)
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
-        arSession.pause()
+       // arSession.pause()
     }
     
     // MARK: - ARSessionDelegate

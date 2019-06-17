@@ -18,8 +18,8 @@ class topView: UIView{
         button.setTitle("< Back", for: .normal)
         button.titleLabel?.font  = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(back), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-
         return button
     }()
     
@@ -71,11 +71,16 @@ class topView: UIView{
         let activityViewController =
             UIActivityViewController(activityItems: [whatHaveITried],
                                      applicationActivities: nil)
-        
         let vc = UIViewController()
-        
         vc.present(activityViewController, animated: true)
     }
+    
+    @objc func back(){
+        print("I'm going back")
+ 
+        let vc = UIViewController()
+    }
+
     
     func applyLayoutConstraints()
     {
@@ -91,7 +96,6 @@ class topView: UIView{
             backButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             backButton.heightAnchor.constraint(equalTo: titleLabel.heightAnchor),
             backButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
-            
         ])
         
         NSLayoutConstraint.activate([
@@ -101,7 +105,5 @@ class topView: UIView{
             shareButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
             
             ])
-
-        
     }
 }

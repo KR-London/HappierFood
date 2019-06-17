@@ -61,11 +61,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 //faceView.isHidden = true
          topBar.titleLabel.text = "Rate It"
         
-        // Do any additional setup after loading the view.
+       //  Do any additional setup after loading the view.
         self.view.addSubview(topBar)
         NSLayoutConstraint.activate([
             topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
             topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
@@ -79,10 +79,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         {
             motivationText.delegate = self
         }
-        
+
         imagePlaceholder = cropImageToSquare(imagePlaceholder)
         foodImage.image = imagePlaceholder
-        
+
         foodImage.translatesAutoresizingMaskIntoConstraints = false
         foodImage.contentMode = .scaleAspectFill
         foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
@@ -91,9 +91,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         if foodName != nil{
             nameOfFood.text = foodName
         }
+
         
-        
-      //  detect(image: CIImage(image: imagePlaceholder)!)
+        //detect(image: CIImage(image: imagePlaceholder)!)
         
         
     }

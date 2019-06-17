@@ -61,7 +61,7 @@ class DetailViewController: UIViewController{
 
         
         detail2VC.foodName.text = self.detailToDisplay.foodName
-        detail2VC.foodPicture.image = UIImage(named: "chaos.jpg")
+        detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename ?? "chaos.jpg")
         
         setupLayout(container1: detail1VC.view, container2: detail2VC.view, container3: detail3VC.view, container4: detail4VC.view, container5: detail5VC.view)
 //        detail1VC.view.backgroundColor = UIColor.blue
