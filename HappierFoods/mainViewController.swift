@@ -23,21 +23,7 @@ enum location : String {
 
 var whereAmINowBeacon = location.Unknown
 
-//, UIActivityItemSource
-
 class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate {
-    @IBAction func dummyButton(_ sender: Any) {
-        
-            let whatHaveITried = "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
-            
-            let activityViewController =
-                UIActivityViewController(activityItems: [whatHaveITried],
-                                         applicationActivities: nil)
-            
-           present(activityViewController, animated: true)
-        
-        
-    }
     
     lazy var ddummyButton : UIButton = {
         let button = UIButton()
