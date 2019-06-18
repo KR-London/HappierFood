@@ -151,11 +151,11 @@ class customFaceARViewController: UIViewController, ARSessionDelegate {
         for blendShape in userFace.blendShapes {
             //if blendShape.key == .{}
             if blendShape.key == .mouthSmileLeft {
-                smileView.mouthCurvature = 2*Double(blendShape.value) - 1
+                smileView.mouthCurvature = 2*Double(truncating: blendShape.value) - 1
             } else if blendShape.key == .mouthSmileRight {
             }
             if blendShape.key == .browOuterUpLeft{
-                if Double(blendShape.value) > 0.5
+                if Double(truncating: blendShape.value) > 0.5
                 {faceView.topFace.image = UIImage(named:  "eyeLookDownLeft_browOuterUpLeft.png")}
                 else
                 {

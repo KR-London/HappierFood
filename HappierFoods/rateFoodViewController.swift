@@ -88,9 +88,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
         foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
         //print(foodImage)
-        if foodName != nil{
+       // if foodName != nil{
             nameOfFood.text = foodName
-        }
+        //}
         //detect(image: CIImage(image: imagePlaceholder)!)
         
         setUpNavigationBarItems()
@@ -105,10 +105,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     }
 
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         dismiss(animated: true, completion: nil)
         
-        guard let image = info["UIImagePickerControllerOriginalImage"] as? UIImage else {
+        guard (info["UIImagePickerControllerOriginalImage"] as? UIImage) != nil else {
             return
         }
     //    processImage(image)

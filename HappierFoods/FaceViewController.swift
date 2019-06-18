@@ -323,7 +323,7 @@ extension FaceViewController {
 //
 //        }
         
-        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+     //   guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         // executes request
       //  try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])

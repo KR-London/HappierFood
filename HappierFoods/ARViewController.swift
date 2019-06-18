@@ -91,7 +91,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
                             //if blendShape.key == .{}
                             if blendShape.key == .mouthSmileLeft {
                                 print("Smile Left: \(blendShape.value)")
-                                faceView.mouthCurvature = 2*Double(blendShape.value) - 1
+                                faceView.mouthCurvature = 2*Double(truncating: blendShape.value) - 1
                             } else if blendShape.key == .mouthSmileRight {
                                 print("Smile Right: \(blendShape.value)")
                             }

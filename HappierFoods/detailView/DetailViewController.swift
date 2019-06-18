@@ -38,7 +38,6 @@ class DetailViewController: UIViewController{
         self.view.addSubview(detail4VC.view)
         self.view.addSubview(detail5VC.view)
 
-        
         detail2VC.foodName.text = self.detailToDisplay.foodName
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename ?? "chaos.jpg")
         detail5VC.detailToDisplay = detailToDisplay

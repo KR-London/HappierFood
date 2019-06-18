@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         
 
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
  
        // UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIColor.black], for: .normal)

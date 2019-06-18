@@ -851,11 +851,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I can't see your face" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qx-wu-i9I">
-                                <rect key="frame" x="86.000000000000014" y="182.66666666666666" width="226.33333333333337" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="Bn6-QX-oDE"/>
-                                    <constraint firstAttribute="width" constant="226.33000000000001" id="Q9k-VQ-Bcv"/>
-                                </constraints>
+                                <rect key="frame" x="85.666666666666671" y="182.66666666666666" width="226.66666666666663" height="33"/>
                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -881,6 +877,7 @@
                             <constraint firstItem="Qpk-I8-Icn" firstAttribute="leading" secondItem="MUX-z0-EPg" secondAttribute="leading" constant="3" id="Xk7-wE-DCe"/>
                             <constraint firstItem="Qpk-I8-Icn" firstAttribute="height" secondItem="Ez1-HC-a5E" secondAttribute="height" multiplier="0.1" id="dLq-sl-oQ9"/>
                             <constraint firstItem="3qx-wu-i9I" firstAttribute="centerY" secondItem="MUX-z0-EPg" secondAttribute="centerY" id="dwT-Ws-DsK"/>
+                            <constraint firstItem="3qx-wu-i9I" firstAttribute="width" secondItem="rIt-bv-qS0" secondAttribute="width" multiplier="0.8" id="hYA-Ma-LPO"/>
                             <constraint firstItem="3qx-wu-i9I" firstAttribute="centerX" secondItem="MUX-z0-EPg" secondAttribute="centerX" id="hdM-Qf-U3j"/>
                             <constraint firstItem="rIt-bv-qS0" firstAttribute="height" secondItem="Ez1-HC-a5E" secondAttribute="height" multiplier="0.8" id="kzD-7i-I90"/>
                             <constraint firstItem="Qpk-I8-Icn" firstAttribute="top" secondItem="MUX-z0-EPg" secondAttribute="top" id="ltr-CV-Nyc"/>

@@ -123,7 +123,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         if image == nil 
         {
             ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
-            image = UIImage(named: "rice.jpeg")!
+            image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
         }
         
         if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg")
@@ -272,11 +272,11 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             {
                 dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
                 dvc1.presentState = presentState
-                if foodName != nil
-                {
+//                if foodName != nil
+//                {
                     dvc1.foodName = foodName
                    // dvc1.foodName = "Cherry tomatoes"
-                }
+               // }
             }
       //  if let dvc2 = segue.destination as! topBarViewController
         

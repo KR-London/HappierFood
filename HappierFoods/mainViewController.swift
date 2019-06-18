@@ -37,6 +37,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var rating = Double()
     var triedOn = Date()
     var notes = String()
+    var presentStatePlaceholder: Costume = Costume.Unknown
     
     var cellStatusDictionary = [ Int : cellState ]()
 
@@ -44,12 +45,25 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
         let buttonTag = sender.tag
+        print(buttonTag)
+        print(targetArray.count)
         if buttonTag < foodArray.count {
             photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
             foodName = foodArray[buttonTag].name ?? ""
             rating = foodArray[buttonTag].rating
             triedOn = foodArray[buttonTag].dateTried!
             notes = foodArray[buttonTag].motivation ?? " "
+            presentStatePlaceholder = .AddFoodViewController
+        }
+        else{
+            if 9 - buttonTag <= targetArray.count{
+                photoFilename = targetArray[9 - buttonTag - 1 ].filename ?? "chaos.jpg"
+                foodName = targetArray[9 - buttonTag - 1 ].name ?? ""
+                rating = 0.0
+                //triedOn = targetArray[9 - buttonTag - 1 ].dateTried!
+                notes = targetArray[9 - buttonTag - 1 ].motivation ?? " "
+                presentStatePlaceholder = .SetTargetViewController
+            }
         }
         
         //if buttonTag > 9 - targetArray.count
@@ -111,6 +125,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "expandDetail" {
             let dvc = segue.destination as! DetailViewController
             dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
+            dvc.PresentState = presentStatePlaceholder
         }
     }
     
