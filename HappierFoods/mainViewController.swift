@@ -66,6 +66,26 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         setUpNavigationBarItems()
         loadItems()
+        
+        if let fruits = getPlist(withName: "UsageStatus") {
+            print(fruits)
+        }
+        
+        if let path = Bundle.main.path(forResource: "UsageStatus", ofType: "plist") {
+            let dictRoot = NSDictionary(contentsOfFile: path)
+            if let dict = dictRoot  {
+                if dict["CelebrationTriggered"] as! Bool == false && foodArray.count == 9
+                {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
+                        self.present(newViewController, animated: true, completion: nil)
+                    }
+                    print("I'm ready to partay!!!")
+                }
+            }
+        }
+        
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
         print(datafilepath!)
@@ -263,6 +283,23 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         return session.canLoadObjects(ofClass: NSString.self)
     }
     
+//    func checkCelebrationStatus()
+//    {
+//        
+//        
+//    }
+    
+    
+    func getPlist(withName name: String) -> [AnyObject]?
+    {
+        if  let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let xml = FileManager.default.contents(atPath: path)
+        {
+            return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [AnyObject]
+        }
+        
+        return nil
+    }
   
 }
 
