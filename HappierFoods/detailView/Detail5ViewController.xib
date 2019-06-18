@@ -30,6 +30,9 @@
                                     <real key="value" value="9"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tryButtonPressed:" destination="-1" eventType="touchUpInside" id="Fgn-6q-kls"/>
+                            </connections>
                         </button>
                         <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8us-kx-SKC">
                             <rect key="frame" x="0.0" y="411" width="398" height="391"/>

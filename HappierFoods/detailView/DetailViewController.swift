@@ -41,6 +41,7 @@ class DetailViewController: UIViewController{
         
         detail2VC.foodName.text = self.detailToDisplay.foodName
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename ?? "chaos.jpg")
+        detail5VC.detailToDisplay = detailToDisplay
         
         switch PresentState {
         case .AddFoodViewController:
