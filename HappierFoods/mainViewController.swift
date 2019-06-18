@@ -23,7 +23,7 @@ enum location : String {
 
 var whereAmINowBeacon = location.Unknown
 
-class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate {
+class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     lazy var ddummyButton : UIButton = {
         let button = UIButton()
@@ -43,45 +43,16 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         content.translatesAutoresizingMaskIntoConstraints = false
         return content
     }()
-    
-    func expandDetailSegue(buttonTag: Int) {
-        print("hello world")
-        
-        photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
-        foodName = foodArray[buttonTag].name ?? ""
-        rating = foodArray[buttonTag].rating
-        triedOn = foodArray[buttonTag].dateTried!
-        notes = foodArray[buttonTag].motivation ?? " "
-        
- //       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "expandRecord"), object: self)
-        
-        
-        //prepare(for: UIStoryboardSegue., sender: <#T##Any!#>)
-        performSegue(withIdentifier: "expandDetail", sender: .none)
-    }
-    
-    
-    @IBOutlet weak var containerView: topView!
-    
     @IBOutlet weak var setTargetOutlet: UIButton!
     @IBAction func setTargetButton(_ sender: Any) {
-        performSegue(withIdentifier: "addFoodSegue", sender: setTargetOutlet)
+        //performSegue(withIdentifier: "addFoodSegue", sender: setTargetOutlet)
     }
-
-    @IBAction func hardRestButton(_ sender: Any) {
-        
-        deleteAllData("TriedFood")
-        deleteAllData("TargetFood")
-        loadItems()
-        self.mainCollectionView.reloadSections([0])
-    }
-    
     @IBOutlet weak var addFoodOutlet: UIButton!
     @IBAction func addFoodButton(_ sender: Any) {
-        
-//        imagePicker.sourceType = .photoLibrary
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.sourceType = .camera
 //        present(imagePicker, animated: true, completion: nil)
-        performSegue(withIdentifier: "addFoodSegue", sender: addFoodOutlet)
+    //    performSegue(withIdentifier: "addFoodSegue", sender: addFoodOutlet)
         
     }
     
@@ -203,7 +174,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
       //  cell.layer.borderWidth = 1.0
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
-        cell.delegate = self
+       // cell.delegate = self
        // cell.showDetailButton(self)
         cell.showDetailButtonProperties.tag = indexPath.row
        
