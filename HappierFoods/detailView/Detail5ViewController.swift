@@ -9,12 +9,11 @@
 import UIKit
 
 class Detail5ViewController: UIViewController {
-    
- //   @IBOutlet var detail1Label: UILabel?
+
+    @IBOutlet weak var tryButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
 }

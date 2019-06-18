@@ -10,15 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController{
     
-    
-//    func performSegueDelegate(recordToDelete: String) {
-//        performSegue(withIdentifier: "detailToMain", sender: self)
-//    }
-    
-//    weak var delegate: expandDetailDelegate?
-    
-   /// var messageFromTheOtherSide = "I'm talking from DetailViewController"
-    
     var photoFilename = String()
     var foodName = String()
     var rating = Double()
@@ -29,10 +20,7 @@ class DetailViewController: UIViewController{
     func expandDetailSegue(buttonTag: Int) {
         detailToDisplay = (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
     }
-    
-    //var detailView = DetailView()
-   // let detail1 = detailContainer1()
-    
+
     var PresentState = Costume.Unknown
     
     var detail1VC = Detail1ViewController(nibName: "Detail1ViewController", bundle: nil)
@@ -40,18 +28,10 @@ class DetailViewController: UIViewController{
     var detail3VC = Detail3ViewController(nibName: "Detail3ViewController", bundle: nil)
     var detail4VC = Detail4ViewController(nibName: "Detail4ViewController", bundle: nil)
     var detail5VC = Detail5ViewController(nibName: "Detail5ViewController", bundle: nil)
-    
-   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let container1 = detail1VC.view
-//        let container2 = detail2VC.view
-//        let container3 = detail3VC.view
-//        let container4 = detail4VC.view
-//        let container5 = detail5VC.view
-//
+
         self.view.addSubview(detail1VC.view)
         self.view.addSubview(detail2VC.view)
         self.view.addSubview(detail3VC.view)
@@ -62,69 +42,22 @@ class DetailViewController: UIViewController{
         detail2VC.foodName.text = self.detailToDisplay.foodName
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename ?? "chaos.jpg")
         
+        switch PresentState {
+        case .AddFoodViewController:
+            detail5VC.tryButton.setTitle("Try it again?", for: .normal)
+        case .SetTargetViewController:
+            detail5VC.tryButton.setTitle("Try this food?", for: .normal)
+        default:
+            detail5VC.tryButton.setTitle("Bug", for: .normal)
+        }
+       
+        
         setupLayout( container1 : detail1VC.view, container2: detail2VC.view, container3: detail3VC.view, container4: detail4VC.view, container5: detail5VC.view)
-//        detail1VC.view.backgroundColor = UIColor.blue
-//        NSLayoutConstraint.activate([
-//                    detail1VC.view.topAnchor.constraint(equalTo: view.topAnchor),
-//                    detail1VC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//                    detail1VC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//                    detail1VC.view.heightAnchor.constraint(equalTo: view.heightAnchor)
-//       ])
-    
-//        let fakeNavBar = storyboard!.instantiateViewController(withIdentifier: "topBarViewController") as! topBarViewController
-//        addChild(fakeNavBar)
-//        fakeNavBar.view.translatesAutoresizingMaskIntoConstraints = false
-//        fakeNavBar.delegate = self
-    //    detailView.container1.addSubview(fakeNavBar.view)
         
-//        NSLayoutConstraint.activate([
-//            fakeNavBar.view.topAnchor.constraint(equalTo: view.topAnchor),
-//            fakeNavBar.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            fakeNavBar.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            fakeNavBar.view.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
-//            ])
-        
-        //        NSLayoutConstraint.activate([
-        //            backButton.topAnchor.constraint(equalTo: topAnchor),
-        //            backButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-        //            backButton.widthAnchor.constraint(equalToConstant: 100),
-        //            backButton.heightAnchor.constraint(equalToConstant: 40)
-        //            ])
-    
-        
-setUpNavigationBarItems()
-       // self.navigationItem.title = "Hello"
-    //  loadView()
-     //   detailView.rating = -1
-        //detailView.data
-        //detailView.container2.food
-        //detailView.container3.mouth
-
-//        switch PresentState
-//        {
-//        case .ReviewTriedViewController:
-//            print("reviewing a tried food")
-//           // titleLabel.text = "Review Progress"
-//        case .ReviewTargetViewController:
-//            print("reviewing a target food")
-//           // titleLabel.text = "Review Target"
-//        default:
-//            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-//                let storyBoard: UIStoryboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
-//                let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen")
-//                self.present(newViewController, animated: true, completion: nil)
-//            }
-//        }
+        setUpNavigationBarItems()
     }
     
     func setUpNavigationBarItems(){
-
-      //  navigationItem.title = "Title"
-
-//        let backButton = UIButton(type: .system)
-//        backButton.setTitle("< Back", for: .normal)
-//        backButton.addTarget(self, action: #selector(goBackToMain), for: .touchUpInside)
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
 
         let deleteButton = UIButton(type: .system)
         //shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 100,height: 100)), for: .normal)
@@ -133,14 +66,8 @@ setUpNavigationBarItems()
         deleteButton.setTitle("Delete", for: .normal)
         deleteButton.addTarget(self, action: #selector(delete), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: deleteButton)
-        
-        //navigationItem.
     }
-////
-//    override  func loadView() {
-//        view = detailView
-//    }
-//
+
     @objc func goBackToMain(sender: UIButton!){
         performSegue(withIdentifier: "detailToMain", sender: self)
     }
@@ -148,18 +75,7 @@ setUpNavigationBarItems()
     @objc func delete(sender: UIButton!){
         /// delete record function
     }
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
-    
+
     private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
         
         container1.translatesAutoresizingMaskIntoConstraints = false

@@ -188,7 +188,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="setTargetButton:" destination="yA6-eK-gdw" eventType="touchUpInside" id="pN4-Sw-C2g"/>
+                                                    <segue destination="Rn2-G2-wFf" kind="show" identifier="setTargetSegue" id="7pT-VN-rva"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-lL-Bzf">
@@ -204,7 +204,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="addFoodButton:" destination="yA6-eK-gdw" eventType="touchUpInside" id="QbK-2A-Gwt"/>
                                                     <segue destination="Rn2-G2-wFf" kind="show" identifier="addFoodSegue" id="s13-Me-gb1"/>
                                                 </connections>
                                             </button>
@@ -241,9 +240,7 @@
                     <navigationItem key="navigationItem" id="SHa-QZ-8MV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addFoodOutlet" destination="KGE-lL-Bzf" id="Th6-Qr-Gax"/>
                         <outlet property="mainCollectionView" destination="ntM-vN-9DJ" id="gAl-Sm-8nk"/>
-                        <outlet property="setTargetOutlet" destination="vyO-Mw-g57" id="7Od-fM-cwY"/>
                         <segue destination="Q61-IA-lhv" kind="show" identifier="expandDetail" id="EyT-iX-Ahn"/>
                     </connections>
                 </viewController>
@@ -556,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5181" y="-88"/>
+            <point key="canvasLocation" x="2642" y="-191"/>
         </scene>
         <!--Motivation Input View Controller-->
         <scene sceneID="ewq-2n-46E">
@@ -966,5 +963,6 @@
         <segue reference="lJr-Ub-v2X"/>
         <segue reference="Bav-kw-SGD"/>
         <segue reference="8Jr-l3-dhP"/>
+        <segue reference="7pT-VN-rva"/>
     </inferredMetricsTieBreakers>
 </document>
