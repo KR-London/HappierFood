@@ -126,11 +126,13 @@ setUpNavigationBarItems()
 //        backButton.addTarget(self, action: #selector(goBackToMain), for: .touchUpInside)
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
 
-        let shareButton = UIButton(type: .system)
-        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 100,height: 100)), for: .normal)
+        let deleteButton = UIButton(type: .system)
+        //shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 100,height: 100)), for: .normal)
        // shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
        // shareButton.contentMode = .right
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.addTarget(self, action: #selector(delete), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: deleteButton)
         
         //navigationItem.
     }
@@ -141,6 +143,10 @@ setUpNavigationBarItems()
 //
     @objc func goBackToMain(sender: UIButton!){
         performSegue(withIdentifier: "detailToMain", sender: self)
+    }
+    
+    @objc func delete(sender: UIButton!){
+        /// delete record function
     }
 //
 //    /*

@@ -59,7 +59,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 //faceView.isHidden = true
-         topBar.titleLabel.text = "Rate It"
+        // topBar.titleLabel.text = "Rate It"
         
        //  Do any additional setup after loading the view.
 //        self.view.addSubview(topBar)
@@ -93,6 +93,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         //detect(image: CIImage(image: imagePlaceholder)!)
         
+        setUpNavigationBarItems()
         switch  presentState {
         case .AddFoodViewController:
             navigationItem.title = "Rate It!";
@@ -276,4 +277,58 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         return UIImage(cgImage: imageRef!, scale: 1.0, orientation: image.imageOrientation)
     }
     
+    @objc func share() {
+        
+        var message = String()
+
+        switch presentState {
+        case .AddFoodViewController:
+            let name = nameOfFood.text
+            if name != nil && name != ""
+            {
+                message = "I've just tried " + (name ?? "something") + ". In the release version of the app, I will also report whether I liked the food or not!"
+            }
+            else
+            {
+                message = "I've just tried a new food!"
+            }
+        case .SetTargetViewController:
+            let name = nameOfFood.text
+            if name != nil && name != ""
+            {
+                message = "I've just set myself a target of trying " + (name ?? "something") + ". In the release version of the app, I will also report my motivation for trying this food."
+            }
+            else
+            {
+                message = "I've just tried a new food!"
+            }
+        default:
+            message = "Debug message"
+        }
+        
+        let activityViewController =
+            UIActivityViewController(activityItems: [message],
+                                     applicationActivities: nil)
+        
+        present(activityViewController, animated: true)
+    }
+    
+    func setUpNavigationBarItems(){
+        
+        //  navigationItem.title = "Title"
+        
+        //        let backButton = UIButton(type: .system)
+        //        backButton.setTitle("< Back", for: .normal)
+        //        backButton.addTarget(self, action: #selector(goBackToMain), for: .touchUpInside)
+        //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
+        let shareButton = UIButton(type: .system)
+        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
+        // shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        // shareButton.contentMode = .right
+        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        
+        //navigationItem.
+    }
 }
