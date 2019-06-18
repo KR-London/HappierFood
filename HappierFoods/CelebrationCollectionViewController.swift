@@ -17,13 +17,13 @@ class CelebrationCollectionViewController: UICollectionViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [TriedFood]!
-    var targetArray: [TargetFood]!
+ //   var targetArray: [TargetFood]!
     
-    let dummyFood = ["rice.jpeg","rice.jpeg", "rice.jpeg", "shopping.png", "rice.jpeg","rice.jpeg", "rice.jpeg", "shopping.png", "shopping.png" ]
+  //  let dummyFood = ["rice.jpeg","rice.jpeg", "rice.jpeg", "shopping.png", "rice.jpeg","rice.jpeg", "rice.jpeg", "shopping.png", "shopping.png" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadItems()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -70,7 +70,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
    
                  //   let plate = foodArray[indexPath.row]
                    // let fileToLoad = plate.filename ?? "1.png"
-                    let fileToLoad = dummyFood[indexPath.row]
+                let fileToLoad = foodArray[indexPath.row].filename ?? "chaos.jpg"
                     //cell.cellImage.image = UIImage(named: "1.png")
                     cell.displayContent(image: fileToLoad)
                     cell.tickImage.isHidden = false
@@ -88,6 +88,17 @@ class CelebrationCollectionViewController: UICollectionViewController {
       //  cell.tickImage.isHidden = false
     
         return cell
+    }
+    
+    /// MARK: Setup
+    func loadItems(){
+        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        do{
+            try foodArray = context.fetch(request)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
     }
 
     // MARK: UICollectionViewDelegate
@@ -120,30 +131,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
     
     }
     */
-    /// MARK: Setup
-    func loadItems(){
-        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
-        do{
-            try
-                foodArray = context.fetch(request)
-            print("food array")
-            print(foodArray)
-        }
-        catch{
-            print("Error fetching data \(error)")
-        }
-        
-        let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
-        do{
-            try
-                targetArray = context.fetch(request2)
-            print("target array")
-            print(targetArray)
-        }
-        catch{
-            print("Error fetching data \(error)")
-        }
-    }
+
     
     public func canHandle(_ session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSString.self)

@@ -77,7 +77,6 @@ class topView: UIView{
     
     @objc func back(){
         print("I'm going back")
- 
         let vc = UIViewController()
     }
 
