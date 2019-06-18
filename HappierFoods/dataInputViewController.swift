@@ -20,7 +20,7 @@ enum dataInputMode: String{
 
 
 
-class dataInputViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate {
+class dataInputViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     var image : UIImage?
     var foodName = String()
@@ -118,6 +118,8 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         refreshButtonAppearance()
         self.captureSession?.stopRunning()
        // publicInformationBroadcast.isHidden = false
+        previewView.isHidden = true
+        captureImageView.isHidden = true
         if image == nil 
         {
             ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
@@ -149,31 +151,36 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         //usedCamera = true
         
-        self.view.addSubview(topBar)
-        NSLayoutConstraint.activate([
-            topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
-            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-        
+//        self.view.addSubview(topBar)
+//        NSLayoutConstraint.activate([
+//            topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+//            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
+//            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+//            ])
+//        
         imagePicker.allowsEditing = true
         writtenInputElements.isHidden = true
         pictureViewConstraints()
        // containerView.titleLabel.text = "Input Food"
+        nameOfFood.delegate = self
+        
+
         
         switch sourceViewController
         {
             case "Try Food":
-               topBar.titleLabel.text = "Log a Try"
+              // topBar.titleLabel.text = "Log a Try"
                 // buttonOutlet.setTitle("Add Food", for: .normal)
+                navigationItem.title = "What did you try?"
                 presentState = Costume.AddFoodViewController
             case "Set Target":
-               topBar.titleLabel.text = "Set a Target"
+             //  topBar.titleLabel.text = "Set a Target"
                 //buttonOutlet.setTitle("Add Target", for: .normal)
+                 navigationItem.title = "Set a target"
                 presentState = Costume.SetTargetViewController
             default:
-               topBar.titleLabel.text = "HappyFoods"
+             //  topBar.titleLabel.text = "HappyFoods"
              //   buttonOutlet.titleLabel?.text = "Click to proceed"
             presentState = Costume.Unknown
         }
@@ -367,6 +374,36 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
       // captureImageView.mask = maskView
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+//    func setUpNavigationBarItems(){
+//
+//        //  navigationItem.title = "Title"
+//
+//        let backButton = UIButton(type: .system)
+//        backButton.setTitle("< Back", for: .normal)
+//        backButton.addTarget(self, action: #selector(goBackToMain), for: .touchUpInside)
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+//
+//        let shareButton = UIButton(type: .system)
+//        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 100,height: 100)), for: .normal)
+//        // shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+//        // shareButton.contentMode = .right
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+//
+//        //navigationItem.
+//    }
+    
+    
+    /**
+//     * Called when the user click on the view (outside the UITextField).
+//     */
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
 }
 
 //extension UIButton{

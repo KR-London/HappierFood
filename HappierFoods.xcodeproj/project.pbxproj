@@ -87,6 +87,8 @@
 		44D5986122594EC900267E71 /* footerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5986022594EC900267E71 /* footerViewController.swift */; };
 		44D598632259535100267E71 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598622259535100267E71 /* mainViewController.swift */; };
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
+		44D8FCA622B7F2F900AF11FF /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8FCA522B7F2F900AF11FF /* CustomNavBar.swift */; };
+		44D8FCA822B8EF0E00AF11FF /* share2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D8FCA722B8EF0E00AF11FF /* share2.png */; };
 		44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44F07810228D99A400427FEB /* HappierFoods.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +187,8 @@
 		44D5986022594EC900267E71 /* footerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerViewController.swift; sourceTree = "<group>"; };
 		44D598622259535100267E71 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
+		44D8FCA522B7F2F900AF11FF /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		44D8FCA722B8EF0E00AF11FF /* share2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share2.png; sourceTree = "<group>"; };
 		44F07811228D99A400427FEB /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,6 +281,7 @@
 				44AB154C225D8F44004E070A /* 07891284.ttf */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
 				443D9739229A894000EFBBE5 /* databasePlaceholderImage.001.jpeg */,
+				44D8FCA722B8EF0E00AF11FF /* share2.png */,
 				445138F222887410001DC15B /* cross.png */,
 				44519033229B218E001C12D1 /* french fries.jpg */,
 				44A897022292AD31002A3381 /* blueShare.jpg */,
@@ -346,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				442113D32299623800CBE431 /* UIImage+PixelBuffer.swift */,
+				44D8FCA522B7F2F900AF11FF /* CustomNavBar.swift */,
 				442113D72299625200CBE431 /* customTabBar.swift */,
 				442113D92299627600CBE431 /* mainCollectionViewController.swift */,
 				442113D52299624C00CBE431 /* customTabBarController.swift */,
@@ -460,6 +466,7 @@
 				443D9738229A879A00EFBBE5 /* rice.jpeg in Resources */,
 				4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */,
 				44D519F1225E3301001BD7FB /* icons2.png in Resources */,
+				44D8FCA822B8EF0E00AF11FF /* share2.png in Resources */,
 				443B66EC2290606F007DDACC /* eyeWideLeft_browDownLeft.png in Resources */,
 				443B66CC22906000007DDACC /* eyeBlinkLeft_browDownLeft.png in Resources */,
 				4410BF3B2299907300FE7B90 /* shopping.png in Resources */,
@@ -531,6 +538,7 @@
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
 				44BE3BC52256797D0090BB5F /* FacialExpression.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
+				44D8FCA622B7F2F900AF11FF /* CustomNavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

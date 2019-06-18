@@ -23,9 +23,9 @@ enum location : String {
 
 var whereAmINowBeacon = location.Unknown
 
+//, UIActivityItemSource
 
-
-class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate, UIActivityItemSource  {
+class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, expandDetailDelegate {
     @IBAction func dummyButton(_ sender: Any) {
         
             let whatHaveITried = "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
@@ -135,6 +135,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "HappyFoods"
+        setUpNavigationBarItems()
 //        topBar.backButton.isHidden = true
 //        topBar.titleLabel.text = "HappyFoods"
 //        //mainCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell") as! mainCollectionViewCell
@@ -334,6 +337,25 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
+    func setUpNavigationBarItems(){
+        
+        //  navigationItem.title = "Title"
+        
+        //        let backButton = UIButton(type: .system)
+        //        backButton.setTitle("< Back", for: .normal)
+        //        backButton.addTarget(self, action: #selector(goBackToMain), for: .touchUpInside)
+        //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
+        let shareButton = UIButton(type: .system)
+        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
+        // shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        // shareButton.contentMode = .right
+        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        
+        //navigationItem.
+    }
+    
     func deleteAllData(_ entity:String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         fetchRequest.returnsObjectsAsFaults = false
@@ -348,19 +370,47 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
-        return "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
-    }
-    
-    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
-        return "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
-    }
+//    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+//        return "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
+//    }
+//
+//    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+//        return "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
+//    }
     
     @objc func share() {
-        let whatHaveITried = "My target is to try: RICE. I tried CARROTS on TUESDAY. I tried CARROTS on THURSDAY. "
-    
+        
+        var whatHaveITried = String()
+        var whatItarget = String()
+        
+        if foodArray.count > 0
+        {
+            let triedFoodReport = foodArray.flatMap{$0.name}
+            whatHaveITried = "This week I have tried" + triedFoodReport.flatMap{" " + $0 + ","}
+            whatHaveITried = String(whatHaveITried.dropLast())
+            whatHaveITried = whatHaveITried + "."
+        }
+        else
+        {
+            whatHaveITried = "I haven't tried anything new yet this week. "
+        }
+        
+        if targetArray.count > 0
+        {
+            let targetFoodReport = targetArray.flatMap{$0.name}
+            //foodArray.flatMap{$0.name}
+            whatItarget = "This week my targets are to try" + targetFoodReport.flatMap{" " + $0 + ","}
+            whatItarget = String(whatItarget.dropLast())
+            whatItarget = whatItarget + "."
+        }
+        else
+        {
+            whatItarget = "I haven't set any targets this week.  "
+        }
+        
+        
         let activityViewController =
-        UIActivityViewController(activityItems: [whatHaveITried],
+        UIActivityViewController(activityItems: [whatHaveITried, whatItarget],
         applicationActivities: nil)
     
         present(activityViewController, animated: true)

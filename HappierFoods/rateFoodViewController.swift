@@ -62,14 +62,14 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
          topBar.titleLabel.text = "Rate It"
         
        //  Do any additional setup after loading the view.
-        self.view.addSubview(topBar)
-        NSLayoutConstraint.activate([
-            topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
-            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-        
+//        self.view.addSubview(topBar)
+//        NSLayoutConstraint.activate([
+//            topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+//            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
+//            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+//            ])
+//        
         imagePickerView.allowsEditing = true
         nameOfFood.text = "Blueberries"
         loadItems()
@@ -91,11 +91,16 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         if foodName != nil{
             nameOfFood.text = foodName
         }
-
-        
         //detect(image: CIImage(image: imagePlaceholder)!)
         
-        
+        switch  presentState {
+        case .AddFoodViewController:
+            navigationItem.title = "Rate It!";
+        case .SetTargetViewController:
+            navigationItem.title = "Motivate It."
+        default:
+            navigationItem.title = "Report Bug"
+        }
     }
 
     
@@ -105,7 +110,6 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         guard let image = info["UIImagePickerControllerOriginalImage"] as? UIImage else {
             return
         }
-        
     //    processImage(image)
     }
     
@@ -128,7 +132,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 //        nameOfFood.text = "\(result.classLabel) - \(converted) %"
 //    }
 
- //   func detect(image: CIImage){
+//   func detect(image: CIImage){
 //        let model = try? VNCoreMLModel(for: Food101().model)
 //        
 //        let request = VNCoreMLRequest(model: model!){(request, error) in
@@ -201,8 +205,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                         menuItem.dateTried = Date()
                         saveItems()
                     }
-        case .SetTargetViewController:
-            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            case .SetTargetViewController:
+                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
                 menuItem.filename = imagePath
                 menuItem.name = imageName

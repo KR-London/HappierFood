@@ -31,7 +31,6 @@ class DetailViewController: UIViewController{
     }
     
     //var detailView = DetailView()
-    
    // let detail1 = detailContainer1()
     
     var PresentState = Costume.Unknown
@@ -63,7 +62,7 @@ class DetailViewController: UIViewController{
         detail2VC.foodName.text = self.detailToDisplay.foodName
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename ?? "chaos.jpg")
         
-        setupLayout(container1: detail1VC.view, container2: detail2VC.view, container3: detail3VC.view, container4: detail4VC.view, container5: detail5VC.view)
+        setupLayout( container1 : detail1VC.view, container2: detail2VC.view, container3: detail3VC.view, container4: detail4VC.view, container5: detail5VC.view)
 //        detail1VC.view.backgroundColor = UIColor.blue
 //        NSLayoutConstraint.activate([
 //                    detail1VC.view.topAnchor.constraint(equalTo: view.topAnchor),
@@ -93,7 +92,8 @@ class DetailViewController: UIViewController{
         //            ])
     
         
-       // setUpNavigationBarItems()
+setUpNavigationBarItems()
+       // self.navigationItem.title = "Hello"
     //  loadView()
      //   detailView.rating = -1
         //detailView.data
@@ -117,29 +117,31 @@ class DetailViewController: UIViewController{
 //        }
     }
     
-//    func setUpNavigationBarItems(){
-//
-//        navigationItem.title = "Nav Bar title"
-//
+    func setUpNavigationBarItems(){
+
+      //  navigationItem.title = "Title"
+
 //        let backButton = UIButton(type: .system)
 //        backButton.setTitle("< Back", for: .normal)
 //        backButton.addTarget(self, action: #selector(goBackToMain), for: .touchUpInside)
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
-//
-//        let shareButton = UIButton(type: .system)
-//        shareButton.setImage(UIImage(named: "share.png"), for: .normal)
-//        shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-//        shareButton.contentMode = .scaleAspectFit
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
-//    }
+
+        let shareButton = UIButton(type: .system)
+        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 100,height: 100)), for: .normal)
+       // shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+       // shareButton.contentMode = .right
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        
+        //navigationItem.
+    }
 ////
 //    override  func loadView() {
 //        view = detailView
 //    }
 //
-//    @objc func goBackToMain(sender: UIButton!){
-//        performSegue(withIdentifier: "detailToMain", sender: self)
-//    }
+    @objc func goBackToMain(sender: UIButton!){
+        performSegue(withIdentifier: "detailToMain", sender: self)
+    }
 //
 //    /*
 //    // MARK: - Navigation
@@ -152,15 +154,7 @@ class DetailViewController: UIViewController{
 //    */
 //
     
-    private func setupLayout(container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
-        
-        //        NSLayoutConstraint.activate([
-        //            backButton.topAnchor.constraint(equalTo: topAnchor),
-        //            backButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-        //            backButton.widthAnchor.constraint(equalToConstant: 600),
-        //            backButton.heightAnchor.constraint(equalToConstant: 600)
-        //            ])
-        //
+    private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
         
         container1.translatesAutoresizingMaskIntoConstraints = false
         container2.translatesAutoresizingMaskIntoConstraints = false
@@ -170,48 +164,35 @@ class DetailViewController: UIViewController{
         
         NSLayoutConstraint.activate([
             container1.topAnchor.constraint(equalTo: view.topAnchor),
-            container1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
+            container1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
             container1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            container1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.15),
+            container1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1),
             ])
         NSLayoutConstraint.activate([
             container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
-            container2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
+            container2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
             container2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             container2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
             ])
         
         NSLayoutConstraint.activate([
-            
             container3.topAnchor.constraint(equalTo: container2.bottomAnchor),
-            container3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
+            container3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
             container3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            container3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-            
+            container3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
             ])
         NSLayoutConstraint.activate([
             container4.topAnchor.constraint(equalTo: container3.bottomAnchor),
-            container4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
+            container4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
             container4.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             container4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
             ])
         
         NSLayoutConstraint.activate([
             container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
-            container5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
+            container5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
             container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
             ])
-        
-        
-        
-        
     }
-    
-    
-    
 }
-//
-//protocol goBackDelegate: class {
-//    func performSegueDelegate(recordToDelete: String)
-//}

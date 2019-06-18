@@ -17,7 +17,18 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="OeV-2S-k5d">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="OeV-2S-k5d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5Zj-q1-nGZ"/>
+                <constraint firstItem="OeV-2S-k5d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IBD-Kf-fW9"/>
+                <constraint firstAttribute="trailing" secondItem="OeV-2S-k5d" secondAttribute="trailing" id="Skl-No-BZV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OeV-2S-k5d" secondAttribute="bottom" id="ujd-aO-14B"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="163.768115942029" y="184.82142857142856"/>
         </view>

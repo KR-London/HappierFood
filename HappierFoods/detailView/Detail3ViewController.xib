@@ -20,20 +20,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="DbB-WG-ppC">
-                    <rect key="frame" x="-30" y="39" width="444" height="818"/>
+                    <rect key="frame" x="10" y="121" width="404" height="654"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" image="face.png" translatesAutoresizingMaskIntoConstraints="NO" id="EF6-sV-P5C">
-                            <rect key="frame" x="0.0" y="0.0" width="310.5" height="818"/>
+                            <rect key="frame" x="0.0" y="0.0" width="270.5" height="654"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="EF6-sV-P5C" secondAttribute="height" multiplier="1:1" id="dGd-gW-T4L"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" image="eyeOpen_browOuterUpLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-dU-WVb">
-                            <rect key="frame" x="324.5" y="0.0" width="0.0" height="818"/>
+                            <rect key="frame" x="284.5" y="0.0" width="0.0" height="654"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tried on 2/3/19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-4T-sIs">
-                            <rect key="frame" x="338.5" y="0.0" width="105.5" height="818"/>
+                            <rect key="frame" x="298.5" y="0.0" width="105.5" height="654"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -49,10 +49,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="DbB-WG-ppC" secondAttribute="leading" constant="30" id="WE8-h6-OZc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="DbB-WG-ppC" secondAttribute="leading" constant="-10" id="WE8-h6-OZc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DbB-WG-ppC" secondAttribute="trailing" id="ZJY-i9-FHY"/>
                 <constraint firstItem="DbB-WG-ppC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dwd-Ry-fMB"/>
-                <constraint firstItem="DbB-WG-ppC" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="wiG-OG-5VW"/>
+                <constraint firstItem="DbB-WG-ppC" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.8" id="wiG-OG-5VW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="163.768115942029" y="184.82142857142856"/>
