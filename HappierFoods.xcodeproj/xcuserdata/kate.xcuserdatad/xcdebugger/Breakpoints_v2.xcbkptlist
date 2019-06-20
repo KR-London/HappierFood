@@ -80,10 +80,10 @@
             filePath = "HappierFoods/rateFoodViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "loadItems()"
-            landmarkType = "7">
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "rateFoodViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,8 +128,8 @@
             filePath = "HappierFoods/mainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "getPlist(withName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -144,8 +144,8 @@
             filePath = "HappierFoods/mainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "getPlist(withName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -185,48 +185,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9E312C19-B35F-4AA8-9AA0-47ACA4E81669"
+            uuid = "6D93DD1A-93C3-493F-A66D-6A83E5D40DC0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HappierFoods/mainViewController.swift"
+            filePath = "HappierFoods/rateFoodViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "expandDetailButtonPressed(_:)"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "appsAndBiscuits(imageName:image:rating:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3245FF50-3BAF-4543-8051-820B6DA461B7"
-            shouldBeEnabled = "Yes"
+            uuid = "E6B82014-5AC5-49AC-9DA1-7A1232F8C39A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HappierFoods/mainViewController.swift"
+            filePath = "HappierFoods/rateFoodViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "expandDetailButtonPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CAA566B1-E6B2-45E2-829F-18F20E4574A3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HappierFoods/mainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "expandDetailButtonPressed(_:)"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "appsAndBiscuits(imageName:image:rating:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

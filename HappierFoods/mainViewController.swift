@@ -81,6 +81,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUpNavigationBarItems()
         loadItems()
         
+        print(targetArray.flatMap({$0.filename}))
+        
         if let fruits = getPlist(withName: "UsageStatus") {
             print(fruits)
         }

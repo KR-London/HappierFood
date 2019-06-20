@@ -16,7 +16,15 @@ class Detail5ViewController: UIViewController {
     @IBOutlet weak var tryButton: UIButton!
 
     @IBAction func tryButtonPressed(_ sender: Any) {
-        
+        ///load rate food view controller
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "rateFoodVC") as! rateFoodViewController
+        newViewController.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+     ///   newViewController.rating = 0.0
+        newViewController.foodName = detailToDisplay.foodName
+        newViewController.dateTargetSet = detailToDisplay.triedOn
+        newViewController.presentState = .ConvertTargetToTry
+        self.present(newViewController, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
