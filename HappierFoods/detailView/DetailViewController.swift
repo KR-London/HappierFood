@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController{
     
@@ -73,7 +74,75 @@ class DetailViewController: UIViewController{
     }
     
     @objc func delete(sender: UIButton!){
-        /// delete record function
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        var food: [NSManagedObject] = []
+        
+        switch PresentState{
+            case .AddFoodViewController:
+                var foodArray: [TriedFood]!
+                let dateTried = detailToDisplay.triedOn
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let targetSetString = formatter.string(from: dateTried)
+                
+                
+                let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+                do{
+                    try foodArray = context.fetch(request2)
+                }
+                catch{
+                    print("Error fetching data \(error)")
+                }
+                
+                print(foodArray)
+                
+                let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.dateTried!)}
+                print(listOfTimestamps)
+                let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
+                print("indexOfMyTimestamp")
+                print(indexOfMyTimestamp!)
+                print(foodArray[indexOfMyTimestamp!])
+                do{
+                    try  context.delete(foodArray[indexOfMyTimestamp!])
+                }
+                catch{  }
+            
+                performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
+            case .SetTargetViewController:
+                var targetArray: [TargetFood]!
+                let dateTargetSet = detailToDisplay.triedOn
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let targetSetString = formatter.string(from: dateTargetSet)
+                
+                
+                let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+                do{
+                    try targetArray = context.fetch(request2)
+                }
+                catch{
+                    print("Error fetching data \(error)")
+                }
+                
+                print(targetArray)
+                
+                let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
+                print(listOfTimestamps)
+                let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
+                print("indexOfMyTimestamp")
+                print(indexOfMyTimestamp!)
+                print(targetArray[indexOfMyTimestamp!])
+                do{
+                    try  context.delete(targetArray[indexOfMyTimestamp!])
+                }
+                catch{  }
+            
+            
+                performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
+            
+            
+            default:  break
+        }
     }
 
     private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {

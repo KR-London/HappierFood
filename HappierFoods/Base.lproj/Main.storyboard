@@ -279,7 +279,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44z-7b-o9p">
-                                        <rect key="frame" x="0.0" y="71.3333333333333" width="362.66666666666669" height="128.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="71.333333333333357" width="362.66666666666669" height="128.66666666666663"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -567,13 +567,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="108.66666666666667"/>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-Ev-8Zo">
-                                <rect key="frame" x="41.333333333333343" y="-68.333333333333314" width="331.33333333333326" height="949.33333333333326"/>
+                                <rect key="frame" x="41.333333333333343" y="-74.333333333333314" width="331.33333333333326" height="955.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-Zu-2J0" userLabel="Target Food Preview Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="192"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="198"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGs-EQ-3FX">
-                                                <rect key="frame" x="0.0" y="0.0" width="192" height="192"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="198"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pGs-EQ-3FX" secondAttribute="height" multiplier="1:1" id="BiA-7c-8qW"/>
                                                 </constraints>
@@ -584,7 +584,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter food name" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5ms-Pk-GMR">
-                                                <rect key="frame" x="222.33333333333337" y="0.0" width="109" height="192"/>
+                                                <rect key="frame" x="228.33333333333337" y="0.0" width="103" height="198"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
@@ -605,7 +605,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="hOU-fx-LMj" userLabel="Define Motivation Stack View">
-                                        <rect key="frame" x="0.0" y="200.00000000000006" width="331.33333333333331" height="749.33333333333348"/>
+                                        <rect key="frame" x="0.0" y="206.00000000000006" width="331.33333333333331" height="749.33333333333348"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="747" verticalCompressionResistancePriority="743" text="Why do you want to try this food?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bym-ZN-NZY">
                                                 <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="60"/>
@@ -830,6 +830,9 @@
                     <navigationItem key="navigationItem" title="Detail View" id="gdg-p7-H1s">
                         <barButtonItem key="backBarButtonItem" title="Back" id="6BY-qM-vQT"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="QlS-BC-ikQ" kind="show" identifier="detailToMain" id="8JQ-7V-ZRj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzo-Zc-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -963,7 +966,7 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lJr-Ub-v2X"/>
+        <segue reference="8JQ-7V-ZRj"/>
         <segue reference="Bav-kw-SGD"/>
         <segue reference="8Jr-l3-dhP"/>
         <segue reference="7pT-VN-rva"/>
