@@ -128,8 +128,8 @@
             filePath = "HappierFoods/mainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "getPlist(withName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -144,8 +144,8 @@
             filePath = "HappierFoods/mainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
             landmarkName = "getPlist(withName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,49 +217,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CCE24C4F-F673-47DB-9672-B937C8F3154A"
-            shouldBeEnabled = "Yes"
+            uuid = "036A03A0-63D4-4553-8E2F-3A35ED6B475D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/mainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CCE24C4F-F673-47DB-9672-B937C8F3154A - 17070d3896e81d96"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HappierFoods.mainViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "HappierFoods"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/mainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "3448">
-               </Location>
-               <Location
-                  uuid = "CCE24C4F-F673-47DB-9672-B937C8F3154A - 6bcc1291b9ac8b9b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in HappierFoods.mainViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "HappierFoods"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/mainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

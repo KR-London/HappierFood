@@ -30,6 +30,8 @@ enum cellState : String {
 
 var whereAmINowBeacon = location.Unknown
 
+let defaults = UserDefaults.standard
+
 class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var photoFilename = String()
@@ -74,6 +76,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var food: [NSManagedObject] = []
     var foodArray: [TriedFood]!
     var targetArray: [TargetFood]!
+   // var currentStatus: [CelebrationStatus]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,33 +84,41 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUpNavigationBarItems()
         loadItems()
         
-        print(targetArray.flatMap({$0.filename}))
-        
-        if let fruits = getPlist(withName: "UsageStatus") {
-            print(fruits)
+        // initialise celebration status
+        let dateNow = Date().timeIntervalSince1970
+        if dateNow - defaults.double(forKey: "Last Week Started") > 604800{
+            defaults.set(dateNow, forKey: "Last Week Started")
+            defaults.set(false, forKey: "Celebration Status")
+            
+            /// and trigger a user event to reassure them that it's okay
         }
         
-        if let path = Bundle.main.path(forResource: "UsageStatus", ofType: "plist") {
-            var dictRoot = NSMutableDictionary(contentsOfFile: path)
-            print(dictRoot)
-            if let dict = dictRoot  {
-                if dict["CelebrationTriggered"] as! Bool == false && foodArray.count == 9
-                {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
-                        self.present(newViewController, animated: true, completion: nil)
-                    }
-                    
-                    //dictRoot!["CelebrationTriggered"] = true
-                    dictRoot?.setValue(true, forKeyPath: "CelebrationTriggered")
-                
-                    print("I'm ready to partay!!!")
-                }
-            }
-            print(dictRoot)
+        if defaults.double(forKey: "Last Week Started")  == 0.0        {
+            print("No date set")
+
+            print(dateNow)
+            defaults.set(dateNow, forKey: "Last Week Started")
+            defaults.set(false, forKey: "Celebration Status")
+            
         }
         
+        print(defaults.double(forKey: "Last Week Started"))
+        print(defaults.bool(forKey: "Celebration Status"))
+        
+        if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
+        {
+            defaults.set(true, forKey: "Celebration Status")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
+                                        self.present(newViewController, animated: true, completion: nil)
+           }
+            
+            
+            
+        }
+
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
         print(datafilepath!)
@@ -300,6 +311,14 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         catch{
             print("Error fetching data \(error)")
         }
+        
+//        let request3 : NSFetchRequest<CelebrationStatus> = CelebrationStatus.fetchRequest()
+//        do{
+//            try CelebrationStatus = context.fetch(request3)
+//        }
+//        catch{
+//            print("Error fetching data \(error)")
+//        }
     }
     
     public func canHandle(_ session: UIDropSession) -> Bool {
