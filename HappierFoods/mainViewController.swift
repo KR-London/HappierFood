@@ -88,7 +88,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         if let path = Bundle.main.path(forResource: "UsageStatus", ofType: "plist") {
-            let dictRoot = NSDictionary(contentsOfFile: path)
+            var dictRoot = NSMutableDictionary(contentsOfFile: path)
+            print(dictRoot)
             if let dict = dictRoot  {
                 if dict["CelebrationTriggered"] as! Bool == false && foodArray.count == 9
                 {
@@ -97,9 +98,14 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                         let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
                         self.present(newViewController, animated: true, completion: nil)
                     }
+                    
+                    //dictRoot!["CelebrationTriggered"] = true
+                    dictRoot?.setValue(true, forKeyPath: "CelebrationTriggered")
+                
                     print("I'm ready to partay!!!")
                 }
             }
+            print(dictRoot)
         }
         
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
