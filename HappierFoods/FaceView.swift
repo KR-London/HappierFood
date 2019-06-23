@@ -106,10 +106,10 @@ class FaceView: UIView {
     {
      
         //let circle = UIBezierPath(ovalIn: rect)
-      UIColor.yellow.set()
+    //  UIColor.yellow.set()
        // circle.fill()
         
-        pathForCircleCenteredAtPoint(midPoint: skullCenter, withRadius: skullRadius).fill()
+     //   pathForCircleCenteredAtPoint(midPoint: skullCenter, withRadius: skullRadius).fill()
         
         UIColor.black.set()
        // circle.stroke()

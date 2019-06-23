@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Detail3ViewController" customModule="HappierFoods" customModuleProvider="target">
             <connections>
-                <outlet property="faceRating" destination="EF6-sV-P5C" id="qng-85-fmV"/>
+                <outlet property="faceView" destination="AOr-vx-hXl" id="fRs-xh-IT9"/>
+                <outlet property="topFaceView" destination="rI0-dU-WVb" id="Jom-Xl-GjY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,47 +20,46 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="DbB-WG-ppC">
-                    <rect key="frame" x="10" y="121" width="404" height="654"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="eyeOpen_browOuterUpLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-dU-WVb">
+                    <rect key="frame" x="0.0" y="121" width="318" height="159"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="ujV-d7-sC0">
+                    <rect key="frame" x="0.0" y="121" width="414" height="654"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" image="face.png" translatesAutoresizingMaskIntoConstraints="NO" id="EF6-sV-P5C">
-                            <rect key="frame" x="0.0" y="0.0" width="270.5" height="654"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-vx-hXl" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="318" height="318"/>
+                            <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="EF6-sV-P5C" secondAttribute="height" multiplier="1:1" id="dGd-gW-T4L"/>
+                                <constraint firstAttribute="width" secondItem="AOr-vx-hXl" secondAttribute="height" multiplier="1:1" id="txM-e8-3Qq"/>
                             </constraints>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" image="eyeOpen_browOuterUpLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-dU-WVb">
-                            <rect key="frame" x="284.5" y="0.0" width="0.0" height="654"/>
-                        </imageView>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tried on 2/3/19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-4T-sIs">
-                            <rect key="frame" x="298.5" y="0.0" width="105.5" height="654"/>
+                            <rect key="frame" x="414" y="0.0" width="0.0" height="19"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="rI0-dU-WVb" firstAttribute="trailing" secondItem="EF6-sV-P5C" secondAttribute="trailing" id="6K5-Vk-y1W"/>
-                        <constraint firstItem="rI0-dU-WVb" firstAttribute="leading" secondItem="EF6-sV-P5C" secondAttribute="leading" id="7Kk-6N-mP5"/>
-                        <constraint firstItem="rI0-dU-WVb" firstAttribute="height" secondItem="EF6-sV-P5C" secondAttribute="height" multiplier="0.5" id="KdM-mt-62s"/>
-                        <constraint firstItem="rI0-dU-WVb" firstAttribute="top" secondItem="EF6-sV-P5C" secondAttribute="top" id="syE-QX-JSd"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="DbB-WG-ppC" secondAttribute="leading" constant="-10" id="WE8-h6-OZc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DbB-WG-ppC" secondAttribute="trailing" id="ZJY-i9-FHY"/>
-                <constraint firstItem="DbB-WG-ppC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dwd-Ry-fMB"/>
-                <constraint firstItem="DbB-WG-ppC" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.8" id="wiG-OG-5VW"/>
+                <constraint firstItem="ujV-d7-sC0" firstAttribute="top" secondItem="rI0-dU-WVb" secondAttribute="top" id="2zz-wv-gfa"/>
+                <constraint firstItem="rI0-dU-WVb" firstAttribute="leading" secondItem="AOr-vx-hXl" secondAttribute="leading" id="Kgs-zj-oy4"/>
+                <constraint firstItem="ujV-d7-sC0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LIF-2k-SS7"/>
+                <constraint firstItem="rI0-dU-WVb" firstAttribute="top" secondItem="AOr-vx-hXl" secondAttribute="top" id="NE0-iJ-ln6"/>
+                <constraint firstItem="ujV-d7-sC0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O3M-px-j7l"/>
+                <constraint firstItem="rI0-dU-WVb" firstAttribute="trailing" secondItem="AOr-vx-hXl" secondAttribute="trailing" id="SH7-bs-AlU"/>
+                <constraint firstItem="ujV-d7-sC0" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.8" id="iZI-uz-EPp"/>
+                <constraint firstAttribute="trailing" secondItem="ujV-d7-sC0" secondAttribute="trailing" id="nf4-FS-P9h"/>
+                <constraint firstItem="ujV-d7-sC0" firstAttribute="leading" secondItem="rI0-dU-WVb" secondAttribute="leading" id="rUM-Jy-xSC"/>
+                <constraint firstItem="rI0-dU-WVb" firstAttribute="height" secondItem="AOr-vx-hXl" secondAttribute="height" multiplier="0.5" id="yHm-Ek-v4B"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="163.768115942029" y="184.82142857142856"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="73.660714285714278"/>
         </view>
     </objects>
     <resources>
         <image name="eyeOpen_browOuterUpLeft.png" width="1080" height="546"/>
-        <image name="face.png" width="1080" height="1080"/>
     </resources>
 </document>

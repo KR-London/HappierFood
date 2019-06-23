@@ -36,10 +36,12 @@ class smileView: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        backgroundColor = UIColor.clear
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+         backgroundColor = UIColor.clear
     }
 
     override func draw(_ rect: CGRect)
