@@ -20,6 +20,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="face.png" translatesAutoresizingMaskIntoConstraints="NO" id="plN-ec-1nj">
+                    <rect key="frame" x="87" y="384" width="240" height="128"/>
+                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="eyeOpen_browOuterUpLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-dU-WVb">
                     <rect key="frame" x="0.0" y="121" width="318" height="159"/>
                 </imageView>
@@ -45,11 +48,15 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="top" secondItem="rI0-dU-WVb" secondAttribute="top" id="2zz-wv-gfa"/>
+                <constraint firstItem="plN-ec-1nj" firstAttribute="bottom" secondItem="AOr-vx-hXl" secondAttribute="bottom" id="39t-gL-3TM"/>
+                <constraint firstItem="plN-ec-1nj" firstAttribute="top" secondItem="AOr-vx-hXl" secondAttribute="top" id="CSk-ZM-h5K"/>
                 <constraint firstItem="rI0-dU-WVb" firstAttribute="leading" secondItem="AOr-vx-hXl" secondAttribute="leading" id="Kgs-zj-oy4"/>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LIF-2k-SS7"/>
+                <constraint firstItem="plN-ec-1nj" firstAttribute="trailing" secondItem="AOr-vx-hXl" secondAttribute="trailing" id="Mbz-pI-GgF"/>
                 <constraint firstItem="rI0-dU-WVb" firstAttribute="top" secondItem="AOr-vx-hXl" secondAttribute="top" id="NE0-iJ-ln6"/>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O3M-px-j7l"/>
                 <constraint firstItem="rI0-dU-WVb" firstAttribute="trailing" secondItem="AOr-vx-hXl" secondAttribute="trailing" id="SH7-bs-AlU"/>
+                <constraint firstItem="plN-ec-1nj" firstAttribute="leading" secondItem="AOr-vx-hXl" secondAttribute="leading" id="aac-sJ-aA9"/>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.8" id="iZI-uz-EPp"/>
                 <constraint firstAttribute="trailing" secondItem="ujV-d7-sC0" secondAttribute="trailing" id="nf4-FS-P9h"/>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="leading" secondItem="rI0-dU-WVb" secondAttribute="leading" id="rUM-Jy-xSC"/>
@@ -61,5 +68,6 @@
     </objects>
     <resources>
         <image name="eyeOpen_browOuterUpLeft.png" width="1080" height="546"/>
+        <image name="face.png" width="1080" height="1080"/>
     </resources>
 </document>

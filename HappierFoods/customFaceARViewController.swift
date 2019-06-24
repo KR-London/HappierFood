@@ -52,6 +52,8 @@ class customFaceARViewController: UIViewController, ARSessionDelegate {
     
     @IBAction func sliderSliding(_ sender: Any) {
         updateUI(value: -1 + 2*slider!.value)
+        let nc = NotificationCenter.default
+        nc.post(name: NSNotification.Name(rawValue: "printValue"), object: nil, userInfo: ["value" : "Pass Me this string"])
     }
     
     override func viewDidLoad() {

@@ -40,6 +40,15 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var imageView: UIImageView!
 
     @IBAction func saveFood(_ sender: Any) {
+//        let nc = NotificationCenter.defaultCenter()
+//        nc.addObserver(self, selector: #selector(printValue), name: "printValue", object: nil)
+//        
+//        func printValue(notification:NSNotification) {
+//            let userInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
+//            let item = userInfo["value"]! as String
+//            
+//            print(item,self)
+//        }
         appsAndBiscuits(imageName: nameOfFood.text, image: foodImage.image ?? (UIImage(named: "tick.png") ?? nil)!, rating: rating)
         
         //performSegue(withIdentifier: "takeMeHome", sender: self)
@@ -231,7 +240,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 print(listOfTimestamps)
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
                 print("indexOfMyTimestamp")
-                 print(indexOfMyTimestamp!)
+                print(indexOfMyTimestamp!)
                 print(targetArray[indexOfMyTimestamp!])
                 
                  do{
@@ -261,7 +270,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 //                       // managedObjectContext.delete(thisOne[0])
 //                    }
 //                    catch{  }
-//
+
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
                 menuItem.filename = imagePath
                 menuItem.name = imageName

@@ -253,7 +253,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return foodArray.count + targetArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -261,9 +261,9 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
         cell.showDetailButtonProperties.tag = indexPath.row
+        let collectionViewSize = foodArray.count + targetArray.count
        
-       // if indexPath.row < 6 {
-            if foodArray != nil {
+        if foodArray != nil {
                 if indexPath.row < foodArray.count {
                     let plate = foodArray[indexPath.row]
                     let fileToLoad = plate.filename ?? "1.png"
@@ -276,21 +276,18 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                   cell.tickImage.isHidden = true
                 }
             }
-      //  }
-    //   else
-     //   {
         
             if targetArray != nil {
-                if indexPath.row < 9 && targetArray.count > 9 - indexPath.row - 1 {
-                    let plate = targetArray[9 - indexPath.row - 1]
+                if indexPath.row < collectionViewSize && targetArray.count > collectionViewSize - indexPath.row - 1 {
+                    let plate = targetArray[collectionViewSize
+                        - indexPath.row - 1]
                     let fileToLoad = plate.filename ?? "1.png"
                     cell.displayContent(image: fileToLoad)
                     cell.cellImage.alpha = 0.2
                     cell.tickImage.isHidden = true
                 }
             }
-       // }
-        
+
         return cell
     }
     
@@ -311,26 +308,11 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         catch{
             print("Error fetching data \(error)")
         }
-        
-//        let request3 : NSFetchRequest<CelebrationStatus> = CelebrationStatus.fetchRequest()
-//        do{
-//            try CelebrationStatus = context.fetch(request3)
-//        }
-//        catch{
-//            print("Error fetching data \(error)")
-//        }
     }
     
     public func canHandle(_ session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSString.self)
     }
-    
-//    func checkCelebrationStatus()
-//    {
-//        
-//        
-//    }
-    
     
     func getPlist(withName name: String) -> [AnyObject]?
     {

@@ -41,6 +41,10 @@ class DetailViewController: UIViewController{
 
         detail2VC.foodName.text = self.detailToDisplay.foodName
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename ?? "chaos.jpg")
+        detail3VC.detailToDisplay = detailToDisplay
+        print("Rating is " )
+        print(detailToDisplay.rating)
+        detail3VC.faceView.mouthCurvature = detailToDisplay.rating
         detail5VC.detailToDisplay = detailToDisplay
         
         switch PresentState {
