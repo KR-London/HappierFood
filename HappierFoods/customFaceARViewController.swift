@@ -47,13 +47,19 @@ class customFaceARViewController: UIViewController, ARSessionDelegate {
         shouldUpdateEmoji.toggle()
     }
     var arSession = ARSession()
+   // var sliderTransmit: ((_ value: Double) -> ())?
+    var sliderFeedback: ((_ value: Float) -> Void)?
     
     var shouldUpdateEmoji: Bool = true
     
     @IBAction func sliderSliding(_ sender: Any) {
+        //sliderTransmit( _ value : -1 + 2*slider!.value)
+        if let feedback = sliderFeedback{
+            feedback(slider!.value)
+        }
         updateUI(value: -1 + 2*slider!.value)
-        let nc = NotificationCenter.default
-        nc.post(name: NSNotification.Name(rawValue: "printValue"), object: nil, userInfo: ["value" : "Pass Me this string"])
+       // let nc = NotificationCenter.default
+      //  nc.post(name: NSNotification.Name(rawValue: "printValue"), object: nil, userInfo: ["value" : "Pass Me this string"])
     }
     
     override func viewDidLoad() {
@@ -89,6 +95,12 @@ class customFaceARViewController: UIViewController, ARSessionDelegate {
         // Pause the view's session
        // arSession.pause()
     }
+    
+    func sliderFeedback(handler: @escaping (_ value: Float) -> Void) {
+        
+        sliderFeedback = handler
+    }
+
     
     // MARK: - ARSessionDelegate
     

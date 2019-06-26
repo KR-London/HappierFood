@@ -253,7 +253,15 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return foodArray.count + targetArray.count
+        
+        if foodArray.count + targetArray.count < 9
+        {
+            return 9
+        }
+        else
+        {
+            return foodArray.count + targetArray.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -261,7 +269,17 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
         cell.showDetailButtonProperties.tag = indexPath.row
-        let collectionViewSize = foodArray.count + targetArray.count
+        
+        
+        var collectionViewSize = 9
+        
+        if foodArray.count + targetArray.count > 9
+        {
+            collectionViewSize = foodArray.count + targetArray.count
+        }
+        
+        
+        print("index path \(indexPath)")
        
         if foodArray != nil {
                 if indexPath.row < foodArray.count {

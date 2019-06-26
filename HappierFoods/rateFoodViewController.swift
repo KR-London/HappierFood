@@ -12,6 +12,8 @@ import AVFoundation
 import Vision
 import CoreData
 
+
+
 class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     var imagePlaceholder = UIImage()
@@ -40,13 +42,13 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var imageView: UIImageView!
 
     @IBAction func saveFood(_ sender: Any) {
-//        let nc = NotificationCenter.defaultCenter()
+//        let nc = NotificationCenter.default
 //        nc.addObserver(self, selector: #selector(printValue), name: "printValue", object: nil)
-//        
+//
 //        func printValue(notification:NSNotification) {
 //            let userInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
 //            let item = userInfo["value"]! as String
-//            
+//
 //            print(item,self)
 //        }
         appsAndBiscuits(imageName: nameOfFood.text, image: foodImage.image ?? (UIImage(named: "tick.png") ?? nil)!, rating: rating)
@@ -111,8 +113,22 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         default:
             navigationItem.title = "Report Bug"
         }
-    }
+        
+        //let nc = NotificationCenter.default
+       // nc.addObserver(self, selector: #selector( printValue(_:)), name: .printValue, object: nil)
 
+//        func printValue(notification:NSNotification) {
+//            let userInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
+//            let item = userInfo["value"]! as String
+//
+//            print(item,self)
+//        }
+      
+    }
+//
+//    @objc func printValue(_ notification:Notification) {
+//        // Do something now
+//    }
     
     private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         dismiss(animated: true, completion: nil)
@@ -330,6 +346,21 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         return true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "faceSegue" {
+            if let customFaceController = segue.destination as? customFaceARViewController{
+               // self.customFaceController = customFaceController
+                customFaceController.sliderFeedback( handler:  {value in
+                    print(value)
+                    self.rating = Double(-1 + 2*value )
+                })
+                print("Honey monster")
+            }
+            
+        }
+    }
+    
     func cropImageToSquare(_ image: UIImage) -> UIImage {
         let orientation: UIDeviceOrientation = UIDevice.current.orientation
         var imageWidth = image.size.width
@@ -405,3 +436,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         //navigationItem.
     }
 }
+
+//extension Notification.Name {
+//    static let didReceiveData = Notification.Name("didReceiveData")
+//    static let printValue = Notification.Name("printValue")
+//    static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
+//}
