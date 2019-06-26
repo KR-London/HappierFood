@@ -93,6 +93,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             /// and trigger a user event to reassure them that it's okay
         }
         
+
+        
         if defaults.double(forKey: "Last Week Started")  == 0.0        {
             print("No date set")
 
@@ -227,6 +229,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 extension mainViewController: UICollectionViewDelegateFlowLayout {
     
+//    if let layout: UICollectionViewFlowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
+//        layout.scrollDirection = .Vertical
+//    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -248,6 +256,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        
         return UIEdgeInsets.init(top: 0, left: 0, bottom: 10, right: 0)
     }
     
@@ -270,13 +280,16 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         cell.tickImage.isHidden = true
         cell.showDetailButtonProperties.tag = indexPath.row
         
-        
         var collectionViewSize = 9
         
         if foodArray.count + targetArray.count > 9
         {
             collectionViewSize = foodArray.count + targetArray.count
         }
+        
+//        if let layout: UICollectionViewFlowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
+//            layout.scrollDirection = .Vertical
+//        }
         
         
         print("index path \(indexPath)")

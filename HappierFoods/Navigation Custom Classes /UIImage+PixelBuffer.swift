@@ -12,6 +12,7 @@ enum Costume: String{
     case SetTargetViewController
     case AddFoodViewController
     case ConvertTargetToTry
+    case RetryTriedFood
     case Unknown
 }
 
