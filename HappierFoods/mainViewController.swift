@@ -299,14 +299,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         {
             collectionViewSize = foodArray.count + targetArray.count
         }
-        
-//        if let layout: UICollectionViewFlowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
-//            layout.scrollDirection = .Vertical
-//        }
-        
-        
-        print("index path \(indexPath)")
-       
+    
         if foodArray != nil {
                 if indexPath.row < foodArray.count {
                     let plate = foodArray[indexPath.row]

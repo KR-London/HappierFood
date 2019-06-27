@@ -40,7 +40,7 @@ class DetailViewController: UIViewController{
         self.view.addSubview(detail5VC.view)
 
         detail2VC.foodName.text = self.detailToDisplay.foodName
-        detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename ?? "chaos.jpg")
+        detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename)
         detail3VC.detailToDisplay = detailToDisplay
         print("Rating is " )
         print(detailToDisplay.rating)
@@ -88,7 +88,6 @@ class DetailViewController: UIViewController{
     
     @objc func delete(sender: UIButton!){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        var food: [NSManagedObject] = []
         
         switch PresentState{
             case .AddFoodViewController:

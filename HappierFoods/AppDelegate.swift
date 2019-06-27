@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
             print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
  
        // UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIColor.black], for: .normal)
         return true
