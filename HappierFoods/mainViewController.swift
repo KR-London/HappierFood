@@ -49,6 +49,13 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let buttonTag = sender.tag
         print(buttonTag)
         print(targetArray.count)
+        
+        var collectionViewSize = 9
+        
+        if foodArray.count + targetArray.count > 9
+        {
+            collectionViewSize = foodArray.count + targetArray.count
+        }
         if buttonTag < foodArray.count {
             photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
             foodName = foodArray[buttonTag].name ?? ""
@@ -56,20 +63,26 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             triedOn = foodArray[buttonTag].dateTried!
             notes = foodArray[buttonTag].motivation ?? " "
             presentStatePlaceholder = .AddFoodViewController
+               performSegue(withIdentifier: "expandDetail", sender: sender)
         }
         else{
-            if 9 - buttonTag <= targetArray.count{
-                photoFilename = targetArray[9 - buttonTag - 1 ].filename ?? "chaos.jpg"
-                foodName = targetArray[9 - buttonTag - 1 ].name ?? ""
+            if collectionViewSize - buttonTag <= targetArray.count{
+                photoFilename = targetArray[collectionViewSize - buttonTag - 1 ].filename ?? "chaos.jpg"
+                foodName = targetArray[collectionViewSize - buttonTag - 1 ].name ?? ""
                 rating = 0.0
                 //triedOn = targetArray[9 - buttonTag - 1 ].dateTried!
-                notes = targetArray[9 - buttonTag - 1 ].motivation ?? " "
+                notes = targetArray[collectionViewSize - buttonTag - 1 ].motivation ?? " "
                 presentStatePlaceholder = .SetTargetViewController
+                performSegue(withIdentifier: "expandDetail", sender: sender)
+            }
+            else
+            {
+                /// stop segue
             }
         }
         
         //if buttonTag > 9 - targetArray.count
-        performSegue(withIdentifier: "expandDetail", sender: sender)
+     
     }
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

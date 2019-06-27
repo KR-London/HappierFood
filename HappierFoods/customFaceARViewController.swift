@@ -64,7 +64,7 @@ class customFaceARViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateUI(value: 0)
         warningLabel.alpha = 0
         
     }

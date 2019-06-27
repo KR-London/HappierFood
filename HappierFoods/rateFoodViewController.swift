@@ -239,9 +239,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTargetSet)
-                
-            
-                
+     
                 let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
                 do{
                     try targetArray = context.fetch(request2)
@@ -294,6 +292,67 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.dateTried = Date()
                 saveItems()
             }
+            case .RetryTriedFood:
+                    if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//
+//                // let mngdCntxt = dataAppDelegate.persistentContainer.viewContext
+//
+//                let formatter = DateFormatter()
+//                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//                let targetSetString = formatter.string(from: dateTargetSet)
+//
+//                let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+//                do{
+//                    try foodArray = context.fetch(request2)
+//                }
+//                catch{
+//                    print("Error fetching data \(error)")
+//                }
+//
+//                print(targetArray)
+//
+//                let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.tried!)}
+//                print(listOfTimestamps)
+//                let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
+//                print("indexOfMyTimestamp")
+//                print(indexOfMyTimestamp!)
+//                print(targetArray[indexOfMyTimestamp!])
+//
+//                do{
+//                    try  managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
+//                }
+//                catch{  }
+                
+                // let thisOne = targetArray.filter{$0.dateAdded == targetSetString}
+                // print(thisOne)
+                
+                //                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TargetFood")
+                //                let predicate = NSPredicate(format: "dateAdded = %@", targetArray![indexOfMyTimestamp!].dateAdded as! CVarArg )
+                //                print(predicate)
+                //
+                //                print("date Target Set")
+                //                print(dateTargetSet)
+                //
+                //                fetchRequest.predicate = predicate
+                //                    do{
+                //                        let result = try managedObjectContext.fetch(fetchRequest)
+                //                            if result.count > 0 {
+                //                                managedObjectContext.delete(result.first as! NSManagedObject)
+                //                            }
+                //                            else{
+                //                                print("that's strange - you tried to delete a picture which didnt exist ")
+                //                            }
+                //                       // managedObjectContext.delete(thisOne[0])
+                //                    }
+                //                    catch{  }
+                
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                menuItem.filename = imagePath
+                menuItem.name = imageName
+                menuItem.rating = rating ?? 0
+                menuItem.dateTried = Date()
+                saveItems()
+                }
             case .SetTargetViewController:
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood

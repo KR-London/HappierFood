@@ -44,8 +44,17 @@ class DetailViewController: UIViewController{
         detail3VC.detailToDisplay = detailToDisplay
         print("Rating is " )
         print(detailToDisplay.rating)
-        detail3VC.faceView.mouthCurvature = detailToDisplay.rating
+        if PresentState == Costume.AddFoodViewController
+        {
+             detail3VC.faceView.isHidden = false
+            detail3VC.faceView.mouthCurvature = detailToDisplay.rating
+        }
+        else
+        {
+            detail3VC.faceView.isHidden = true
+        }
         detail5VC.detailToDisplay = detailToDisplay
+        detail5VC.whereAmI = PresentState
         
         switch PresentState {
         case .AddFoodViewController:
