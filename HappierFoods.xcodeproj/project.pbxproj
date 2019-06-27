@@ -64,6 +64,8 @@
 		44519036229B2426001C12D1 /* CelebrationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */; };
 		44519038229B3036001C12D1 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519037229B3036001C12D1 /* happy.png */; };
 		445FB801225C165C007C7746 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 445FB800225C165B007C7746 /* 1.png */; };
+		44775CEC22C4CB31008268AF /* appleHistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 44775CEB22C4CB30008268AF /* appleHistory.png */; };
+		44775CEE22C4CB38008268AF /* appleShare.png in Resources */ = {isa = PBXBuildFile; fileRef = 44775CED22C4CB38008268AF /* appleShare.png */; };
 		4495550B225BAB750094E317 /* PortholeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495550A225BAB750094E317 /* PortholeView.swift */; };
 		449ACB13226110B400C9F666 /* smileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB12226110B400C9F666 /* smileView.swift */; };
 		449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB14226110B900C9F666 /* handDrawnFaceView.swift */; };
@@ -88,7 +90,6 @@
 		44D598632259535100267E71 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598622259535100267E71 /* mainViewController.swift */; };
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
 		44D8FCA622B7F2F900AF11FF /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8FCA522B7F2F900AF11FF /* CustomNavBar.swift */; };
-		44D8FCA822B8EF0E00AF11FF /* share2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D8FCA722B8EF0E00AF11FF /* share2.png */; };
 		44D8FCAA22B9328300AF11FF /* UsageStatus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44D8FCA922B9328300AF11FF /* UsageStatus.plist */; };
 		44F07812228D99A400427FEB /* HappierFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44F07810228D99A400427FEB /* HappierFoods.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -161,6 +162,8 @@
 		44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationCollectionViewController.swift; sourceTree = "<group>"; };
 		44519037229B3036001C12D1 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
 		445FB800225C165B007C7746 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		44775CEB22C4CB30008268AF /* appleHistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleHistory.png; sourceTree = "<group>"; };
+		44775CED22C4CB38008268AF /* appleShare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleShare.png; sourceTree = "<group>"; };
 		4495550A225BAB750094E317 /* PortholeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortholeView.swift; sourceTree = "<group>"; };
 		449ACB12226110B400C9F666 /* smileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smileView.swift; sourceTree = "<group>"; };
 		449ACB14226110B900C9F666 /* handDrawnFaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = handDrawnFaceView.swift; sourceTree = "<group>"; };
@@ -189,7 +192,6 @@
 		44D598622259535100267E71 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
 		44D8FCA522B7F2F900AF11FF /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
-		44D8FCA722B8EF0E00AF11FF /* share2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share2.png; sourceTree = "<group>"; };
 		44D8FCA922B9328300AF11FF /* UsageStatus.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UsageStatus.plist; sourceTree = "<group>"; };
 		44F07811228D99A400427FEB /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -283,7 +285,8 @@
 				44AB154C225D8F44004E070A /* 07891284.ttf */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
 				443D9739229A894000EFBBE5 /* databasePlaceholderImage.001.jpeg */,
-				44D8FCA722B8EF0E00AF11FF /* share2.png */,
+				44775CED22C4CB38008268AF /* appleShare.png */,
+				44775CEB22C4CB30008268AF /* appleHistory.png */,
 				445138F222887410001DC15B /* cross.png */,
 				44519033229B218E001C12D1 /* french fries.jpg */,
 				44A897022292AD31002A3381 /* blueShare.jpg */,
@@ -462,6 +465,7 @@
 				443B66D822906034007DDACC /* eyeLookInLeft_browDownLeft.png in Resources */,
 				443B66EE22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png in Resources */,
 				44A897032292AD32002A3381 /* blueShare.jpg in Resources */,
+				44775CEE22C4CB38008268AF /* appleShare.png in Resources */,
 				44D519F2225E3301001BD7FB /* icons3.png in Resources */,
 				44D8FCAA22B9328300AF11FF /* UsageStatus.plist in Resources */,
 				443B66D62290602D007DDACC /* eyeLookDownLeft_browOuterUpLeft.png in Resources */,
@@ -469,8 +473,8 @@
 				443B66EA22906069007DDACC /* eyesShut_browOuterUpLeft.png in Resources */,
 				443D9738229A879A00EFBBE5 /* rice.jpeg in Resources */,
 				4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */,
+				44775CEC22C4CB31008268AF /* appleHistory.png in Resources */,
 				44D519F1225E3301001BD7FB /* icons2.png in Resources */,
-				44D8FCA822B8EF0E00AF11FF /* share2.png in Resources */,
 				443B66EC2290606F007DDACC /* eyeWideLeft_browDownLeft.png in Resources */,
 				443B66CC22906000007DDACC /* eyeBlinkLeft_browDownLeft.png in Resources */,
 				4410BF3B2299907300FE7B90 /* shopping.png in Resources */,

@@ -24,13 +24,13 @@
                     <rect key="frame" x="87" y="384" width="240" height="128"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="eyeOpen_browOuterUpLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-dU-WVb">
-                    <rect key="frame" x="0.0" y="121" width="318" height="159"/>
+                    <rect key="frame" x="0.0" y="121" width="409" height="204.5"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="ujV-d7-sC0">
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ujV-d7-sC0">
                     <rect key="frame" x="0.0" y="121" width="414" height="654"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-vx-hXl" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="318" height="318"/>
+                            <rect key="frame" x="0.0" y="0.0" width="409" height="409"/>
                             <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="AOr-vx-hXl" secondAttribute="height" multiplier="1:1" id="txM-e8-3Qq"/>

@@ -165,11 +165,25 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func setUpNavigationBarItems(){
         navigationItem.title = "HappyFoods"
+        navigationController?.navigationBar.tintColor = UIColor.black
+        
+        var bannerWidth = navigationController?.navigationBar.frame.size.width
+        var bannerHeight = navigationController?.navigationBar.frame.size.height
+       // var bannerx = bannerWidth! / 2 - banner!.size.width / 2
+      //  var bannery = bannerHeight! / 2 - banner!.size.height / 2
         
         let shareButton = UIButton(type: .system)
-        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
+        
+       // var shareImage =
+        shareButton.setImage(UIImage(named: "appleShare.png"), for: .normal)
+            //.resize(to: CGSize(width: 40,height: 40)), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        
+        let historyButton = UIButton(type: .system)
+        historyButton.setImage(UIImage(named: "appleHistory.png"), for: .normal)
+        historyButton.addTarget(self, action: #selector(goHistory), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: historyButton)
     }
     
     func deleteAllData(_ entity:String) {
@@ -185,6 +199,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         catch let error {
             print("Detele all data in \(entity) error :", error)
         }
+    }
+    
+     @objc func goHistory() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "history")
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     @objc func share() {
@@ -252,7 +272,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.bounds.size.width/3 - 16, height: collectionView.bounds.size.width/3 - 16)
+        return CGSize(width: collectionView.bounds.size.width/3 - 8 , height: collectionView.bounds.size.width/3 - 8 )
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
