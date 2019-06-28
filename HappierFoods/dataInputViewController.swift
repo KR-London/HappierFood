@@ -365,13 +365,17 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 
         
         previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
-        writtenInputElements.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
-        captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        //writtenInputElements.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        //captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
 
 
         buttonStack.translatesAutoresizingMaskIntoConstraints = false
        // buttonStack.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-        buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
+        let buttonStackHeightAnchorConstraint = buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+       // buttonStackHeightAnchorConstraint.priority = UILayoutPriority(750)
+        buttonStackHeightAnchorConstraint.isActive = true
+        
+        
         buttonStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true

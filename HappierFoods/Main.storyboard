@@ -298,45 +298,40 @@
                                     <action selector="didTakePhoto:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="rBq-6e-w68"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="188" translatesAutoresizingMaskIntoConstraints="NO" id="Nkc-U0-luP">
-                                <rect key="frame" x="0.0" y="1594.5" width="675" height="203"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6BR-a2-vRs">
+                                <rect key="frame" x="-131" y="346" width="675" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6BR-a2-vRs">
-                                        <rect key="frame" x="0.0" y="0.0" width="675" height="203"/>
-                                        <subviews>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iof-T5-m4I">
-                                                <rect key="frame" x="0.0" y="0.0" width="203" height="203"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="icons2.png"/>
-                                                <connections>
-                                                    <action selector="launchCamera:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="KZX-NW-1cA"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQy-Ow-fH7">
-                                                <rect key="frame" x="208" y="0.0" width="203" height="203"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="icons3.png"/>
-                                                <connections>
-                                                    <action selector="launchCameraRollButton:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="pAu-PR-xeb"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sj-ZQ-tRX">
-                                                <rect key="frame" x="416" y="0.0" width="259" height="203"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Write " image="icons1.png">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="writeTheFood:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="jtX-wj-KYZ"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iof-T5-m4I">
+                                        <rect key="frame" x="0.0" y="0.0" width="203" height="203"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="icons2.png"/>
+                                        <connections>
+                                            <action selector="launchCamera:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="KZX-NW-1cA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQy-Ow-fH7">
+                                        <rect key="frame" x="208" y="0.0" width="203" height="203"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="icons3.png"/>
+                                        <connections>
+                                            <action selector="launchCameraRollButton:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="pAu-PR-xeb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sj-ZQ-tRX">
+                                        <rect key="frame" x="416" y="0.0" width="259" height="203"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Write " image="icons1.png">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="writeTheFood:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="jtX-wj-KYZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -344,7 +339,6 @@
                         <viewLayoutGuide key="safeArea" id="3ck-3c-AQK"/>
                     </view>
                     <connections>
-                        <outlet property="bottomStack" destination="Nkc-U0-luP" id="1Kl-UC-sJe"/>
                         <outlet property="buttonOutlet" destination="hCb-V2-W5g" id="Ivf-n8-juv"/>
                         <outlet property="buttonStack" destination="6BR-a2-vRs" id="7Ku-uw-SqC"/>
                         <outlet property="cameraButton" destination="iof-T5-m4I" id="hX7-n9-wV6"/>
