@@ -289,20 +289,21 @@
                                 <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" fixedFrame="YES" placeholderIntrinsicWidth="220" placeholderIntrinsicHeight="220" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCb-V2-W5g">
+                                <rect key="frame" x="97" y="338" width="220" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="button.png"/>
+                                <connections>
+                                    <action selector="didTakePhoto:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="rBq-6e-w68"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="188" translatesAutoresizingMaskIntoConstraints="NO" id="Nkc-U0-luP">
-                                <rect key="frame" x="0.0" y="1594.5" width="675" height="611"/>
+                                <rect key="frame" x="0.0" y="1594.5" width="675" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="220" placeholderIntrinsicHeight="220" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCb-V2-W5g">
-                                        <rect key="frame" x="227.5" y="0.0" width="220" height="220"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="button.png"/>
-                                        <connections>
-                                            <action selector="didTakePhoto:" destination="Rn2-G2-wFf" eventType="touchUpInside" id="rBq-6e-w68"/>
-                                        </connections>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6BR-a2-vRs">
-                                        <rect key="frame" x="0.0" y="408" width="675" height="203"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="675" height="203"/>
                                         <subviews>
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iof-T5-m4I">
                                                 <rect key="frame" x="0.0" y="0.0" width="203" height="203"/>

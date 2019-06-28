@@ -353,42 +353,36 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         captureImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
         
         
-//        previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+
         previewView.layer.cornerRadius = 5
         previewView.layer.masksToBounds = true
-
-     //   writtenInputElements.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
         writtenInputElements.layer.cornerRadius = 5
         writtenInputElements.layer.masksToBounds = true
-
-        captureImageView.backgroundColor = UIColor.green
-
-
-     //   captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: 0).isActive = true
+        captureImageView.backgroundColor = UIColor.gray
         captureImageView.layer.cornerRadius = 5
         captureImageView.layer.masksToBounds = true
         captureImageView.contentMode = .scaleAspectFill
-//
-//        captureImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
-//        captureImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-//        captureImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        captureImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
+
+        
+        previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        writtenInputElements.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
 
 
-       // bottomStack.isHidden = true
         buttonStack.translatesAutoresizingMaskIntoConstraints = false
-        buttonStack.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-        buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
+       // buttonStack.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
         buttonStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor).isActive = true
-        //buttonStack.layer.masksToBounds = true
+        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor, constant: 10).isActive = true
+        buttonStack.layer.masksToBounds = true
 
         buttonOutlet.translatesAutoresizingMaskIntoConstraints = false
         buttonOutlet.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         buttonOutlet.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
-       // buttonOutlet.layer.masksToBounds = true
+        buttonOutlet.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        buttonOutlet.layer.masksToBounds = true
 
         
         //var dimension = 360
