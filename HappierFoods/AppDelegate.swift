@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //  let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         
         /// for testing
-        let launchedBefore = true
+        let launchedBefore = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)

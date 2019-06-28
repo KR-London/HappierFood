@@ -114,6 +114,16 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             navigationItem.title = "Report Bug"
         }
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+
+    
+
+        
         //let nc = NotificationCenter.default
        // nc.addObserver(self, selector: #selector( printValue(_:)), name: .printValue, object: nil)
 
@@ -185,6 +195,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.resignFirstResponder()
     return true
     }
+    
+   
     
     func saveItems(){
         do{ try
@@ -494,10 +506,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         //navigationItem.
     }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 }
 
-//extension Notification.Name {
-//    static let didReceiveData = Notification.Name("didReceiveData")
-//    static let printValue = Notification.Name("printValue")
-//    static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
-//}

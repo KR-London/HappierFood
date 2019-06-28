@@ -21,8 +21,9 @@ class OnboardingViewController: UIViewController {
     
     @IBAction func moveToMain(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage")
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
        // newViewController.presentS
+        newViewController.presentStatePlaceholder = Costume.FirstLaunch
         self.present(newViewController, animated: true, completion: nil)
         
     }

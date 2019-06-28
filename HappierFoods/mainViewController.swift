@@ -43,6 +43,11 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var cellStatusDictionary = [ Int : cellState ]()
 
+    @IBAction func resetCelebrationStatus(_ sender: UIButton) {
+        defaults.set(false, forKey: "Celebration Status")
+    }
+    @IBOutlet weak var targetButton: UIButton!
+    @IBOutlet weak var tryButton: UIButton!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
@@ -105,13 +110,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             /// and trigger a user event to reassure them that it's okay
         }
-        
 
         
         if defaults.double(forKey: "Last Week Started")  == 0.0        {
-            print("No date set")
+          //  print("No date set")
 
-            print(dateNow)
+           // print(dateNow)
             defaults.set(dateNow, forKey: "Last Week Started")
             defaults.set(false, forKey: "Celebration Status")
             
@@ -124,7 +128,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         {
             defaults.set(true, forKey: "Celebration Status")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                                         let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
                                         self.present(newViewController, animated: true, completion: nil)
@@ -141,6 +145,10 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        if presentStatePlaceholder == .FirstLaunch {
+            onboardingRoutine()
+        }
+    
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
@@ -161,6 +169,99 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
             dvc.PresentState = presentStatePlaceholder
         }
+    }
+    
+    func onboardingRoutine(){
+        /// add image subview in the middle
+        var onboardingInstruction: UIImage = UIImage(named: "onboarding1.png")!
+        var onboardingImageView = UIImageView(image: onboardingInstruction)
+        
+        //  onboardingImageView
+        self.view.addSubview(onboardingImageView)
+        onboardingImageView.translatesAutoresizingMaskIntoConstraints = false
+        onboardingImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        onboardingImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        onboardingImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        onboardingImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        onboardingImageView.contentMode = .scaleAspectFill
+        onboardingImageView.alpha = 0.0
+        
+        /// pulse the RH button
+        startAnimate(button: tryButton)
+        
+        /// fade it in & out with RH picture
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+            let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) {
+            onboardingImageView.alpha = 1
+            }
+            animator.startAnimation()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
+            let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn) {
+                onboardingImageView.alpha = 0
+            }
+            animator.startAnimation()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+            self.stopAnimate(button: self.tryButton)
+            onboardingImageView.image = UIImage(named: "onboarding2.png")
+            self.startAnimate(button: self.targetButton)
+            
+            let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) {
+                onboardingImageView.alpha = 1
+            }
+            animator.startAnimation()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7)){
+            let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn) {
+                onboardingImageView.alpha = 0
+            }
+            animator.startAnimation()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(9)){
+            self.stopAnimate(button: self.targetButton)
+
+        }
+        //
+        // swap to LH picture
+        
+        /// pulse LH button
+        
+        /// fade in and out with LH picture.
+        
+        
+        
+        
+    }
+    
+    func startAnimate(button: UIButton) {
+        let shakeAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        shakeAnimation.duration = 0.05
+        shakeAnimation.repeatCount = 4
+        shakeAnimation.autoreverses = true
+        shakeAnimation.duration = 0.2
+        shakeAnimation.repeatCount = 99999
+        
+        let startAngle: Float = (-2) * 3.14159/180
+        let stopAngle = -startAngle
+        
+        shakeAnimation.fromValue = NSNumber(value: startAngle as Float)
+        shakeAnimation.toValue = NSNumber(value: 3 * stopAngle as Float)
+        shakeAnimation.autoreverses = true
+        shakeAnimation.timeOffset = 290 * drand48()
+        
+        let layer: CALayer = button.layer
+        layer.add(shakeAnimation, forKey:"animate")
+ 
+    }
+    
+    func stopAnimate(button: UIButton) {
+        let layer: CALayer = button.layer
+        layer.removeAnimation(forKey: "animate")
     }
     
     func setUpNavigationBarItems(){
@@ -258,7 +359,11 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let activityViewController = UIActivityViewController(activityItems: [whatHaveITried, whatItarget], applicationActivities: nil)
         present(activityViewController, animated: true)
     }
+    
+    
 }
+
+
 
 extension mainViewController: UICollectionViewDelegateFlowLayout {
     

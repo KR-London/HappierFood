@@ -61,6 +61,8 @@
 		443D9738229A879A00EFBBE5 /* rice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 443D9737229A879A00EFBBE5 /* rice.jpeg */; };
 		443D973A229A894000EFBBE5 /* databasePlaceholderImage.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 443D9739229A894000EFBBE5 /* databasePlaceholderImage.001.jpeg */; };
 		44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44455A29228E7D01006A6652 /* DetailViewController.swift */; };
+		444FD3A422C6018100DD01A1 /* onboarding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 444FD3A322C6018100DD01A1 /* onboarding1.png */; };
+		444FD3A622C6018E00DD01A1 /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 444FD3A522C6018E00DD01A1 /* onboarding2.png */; };
 		445138F322887411001DC15B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 445138F222887410001DC15B /* cross.png */; };
 		44519034229B218E001C12D1 /* french fries.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44519033229B218E001C12D1 /* french fries.jpg */; };
 		44519036229B2426001C12D1 /* CelebrationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */; };
@@ -161,6 +163,8 @@
 		443D9737229A879A00EFBBE5 /* rice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rice.jpeg; sourceTree = "<group>"; };
 		443D9739229A894000EFBBE5 /* databasePlaceholderImage.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = databasePlaceholderImage.001.jpeg; path = ../../databasePlaceholderImage/databasePlaceholderImage.001.jpeg; sourceTree = "<group>"; };
 		44455A29228E7D01006A6652 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		444FD3A322C6018100DD01A1 /* onboarding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding1.png; sourceTree = "<group>"; };
+		444FD3A522C6018E00DD01A1 /* onboarding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2.png; sourceTree = "<group>"; };
 		445138F222887410001DC15B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		44519033229B218E001C12D1 /* french fries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "french fries.jpg"; sourceTree = "<group>"; };
 		44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationCollectionViewController.swift; sourceTree = "<group>"; };
@@ -298,6 +302,8 @@
 				44D5986022594EC900267E71 /* footerViewController.swift */,
 				44AB154C225D8F44004E070A /* 07891284.ttf */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
+				444FD3A322C6018100DD01A1 /* onboarding1.png */,
+				444FD3A522C6018E00DD01A1 /* onboarding2.png */,
 				443D9739229A894000EFBBE5 /* databasePlaceholderImage.001.jpeg */,
 				44775CED22C4CB38008268AF /* appleShare.png */,
 				44775CEB22C4CB30008268AF /* appleHistory.png */,
@@ -475,12 +481,14 @@
 				443B66DE22906046007DDACC /* eyeLookOutLeft_browOuterUpLeft.png in Resources */,
 				4414EE05225F9FB100D9B9CB /* tick.jpg in Resources */,
 				443B66CA22905FB4007DDACC /* face.png in Resources */,
+				444FD3A622C6018E00DD01A1 /* onboarding2.png in Resources */,
 				443D973A229A894000EFBBE5 /* databasePlaceholderImage.001.jpeg in Resources */,
 				443B66DC2290603E007DDACC /* eyeLookOutLeft_browDownLeft.png in Resources */,
 				443B66D822906034007DDACC /* eyeLookInLeft_browDownLeft.png in Resources */,
 				443B66EE22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png in Resources */,
 				44A897032292AD32002A3381 /* blueShare.jpg in Resources */,
 				44775CEE22C4CB38008268AF /* appleShare.png in Resources */,
+				444FD3A422C6018100DD01A1 /* onboarding1.png in Resources */,
 				44D519F2225E3301001BD7FB /* icons3.png in Resources */,
 				44D8FCAA22B9328300AF11FF /* UsageStatus.plist in Resources */,
 				443B66D62290602D007DDACC /* eyeLookDownLeft_browOuterUpLeft.png in Resources */,

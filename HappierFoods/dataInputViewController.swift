@@ -358,7 +358,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         previewView.layer.masksToBounds = true
         writtenInputElements.layer.cornerRadius = 5
         writtenInputElements.layer.masksToBounds = true
-        captureImageView.backgroundColor = UIColor.gray
+        //captureImageView.backgroundColor = UIColor.gray
         captureImageView.layer.cornerRadius = 5
         captureImageView.layer.masksToBounds = true
         captureImageView.contentMode = .scaleAspectFill
