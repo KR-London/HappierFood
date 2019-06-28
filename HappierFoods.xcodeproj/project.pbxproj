@@ -68,6 +68,7 @@
 		445FB801225C165C007C7746 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 445FB800225C165B007C7746 /* 1.png */; };
 		44775CEC22C4CB31008268AF /* appleHistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 44775CEB22C4CB30008268AF /* appleHistory.png */; };
 		44775CEE22C4CB38008268AF /* appleShare.png in Resources */ = {isa = PBXBuildFile; fileRef = 44775CED22C4CB38008268AF /* appleShare.png */; };
+		447DE07D22C5BFA200081414 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447DE07C22C5BFA200081414 /* OnboardingViewController.swift */; };
 		4495550B225BAB750094E317 /* PortholeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495550A225BAB750094E317 /* PortholeView.swift */; };
 		449ACB13226110B400C9F666 /* smileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB12226110B400C9F666 /* smileView.swift */; };
 		449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB14226110B900C9F666 /* handDrawnFaceView.swift */; };
@@ -167,6 +168,7 @@
 		445FB800225C165B007C7746 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		44775CEB22C4CB30008268AF /* appleHistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleHistory.png; sourceTree = "<group>"; };
 		44775CED22C4CB38008268AF /* appleShare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleShare.png; sourceTree = "<group>"; };
+		447DE07C22C5BFA200081414 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4495550A225BAB750094E317 /* PortholeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortholeView.swift; sourceTree = "<group>"; };
 		449ACB12226110B400C9F666 /* smileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smileView.swift; sourceTree = "<group>"; };
 		449ACB14226110B900C9F666 /* handDrawnFaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = handDrawnFaceView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,15 @@
 			path = detailView;
 			sourceTree = "<group>";
 		};
+		447DE07E22C5C79200081414 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				447DE07C22C5BFA200081414 /* OnboardingViewController.swift */,
+				441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		44BE3B8F22566A230090BB5F = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +274,7 @@
 		44BE3B9A22566A230090BB5F /* HappierFoods */ = {
 			isa = PBXGroup;
 			children = (
-				441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */,
+				447DE07E22C5C79200081414 /* Onboarding */,
 				441DB5EE22C513DB00E857C0 /* Main.storyboard */,
 				44BE3B9B22566A230090BB5F /* AppDelegate.swift */,
 				44A63E9022598D03002E656E /* rateFoodViewController.swift */,
@@ -523,6 +534,7 @@
 				442113D82299625200CBE431 /* customTabBar.swift in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
 				442113D62299624C00CBE431 /* customTabBarController.swift in Sources */,
+				447DE07D22C5BFA200081414 /* OnboardingViewController.swift in Sources */,
 				4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */,
 				44D598632259535100267E71 /* mainViewController.swift in Sources */,
 				443C3CAA22B2968F00832AD1 /* Detail4ViewController.swift in Sources */,
