@@ -223,7 +223,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         imageExtension = imageExtension + String(Date().timeIntervalSince1970) + ".png"
         
         /// get the image path
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension ?? "")
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension)
         
         let image2 = image.resizeImage(targetSize: CGSize(width: 300, height: 300))
         
@@ -269,10 +269,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 print(indexOfMyTimestamp!)
                 print(targetArray[indexOfMyTimestamp!])
                 
-                 do{
-                   try  managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
-                }
-                catch{  }
+ //                do{ try
+                managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
+//                }
+//                catch{  }
                 
                // let thisOne = targetArray.filter{$0.dateAdded == targetSetString}
                // print(thisOne)

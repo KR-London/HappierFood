@@ -32,7 +32,6 @@ class Detail5ViewController: UIViewController {
                 newViewController.presentState = .RetryTriedFood
             case Costume.SetTargetViewController:
                 newViewController.presentState = .ConvertTargetToTry
-            
             default:
                  newViewController.presentState = .Unknown
         }

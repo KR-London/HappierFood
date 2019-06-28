@@ -114,10 +114,10 @@ class DetailViewController: UIViewController{
                 print("indexOfMyTimestamp")
                 print(indexOfMyTimestamp!)
                 print(foodArray[indexOfMyTimestamp!])
-                do{
-                    try  context.delete(foodArray[indexOfMyTimestamp!])
-                }
-                catch{  }
+//                do{ try
+                context.delete(foodArray[indexOfMyTimestamp!])
+//                }
+//                catch{  }
             
                 performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             case .SetTargetViewController:
@@ -144,11 +144,9 @@ class DetailViewController: UIViewController{
                 print("indexOfMyTimestamp")
                 print(indexOfMyTimestamp!)
                 print(targetArray[indexOfMyTimestamp!])
-                do{
-                    try  context.delete(targetArray[indexOfMyTimestamp!])
-                }
-                catch{  }
-            
+                //               do{ try
+                context.delete(targetArray[indexOfMyTimestamp!])
+//                } catch{  }
             
                 performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             

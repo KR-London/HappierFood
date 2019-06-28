@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-Pg-QoH">
-                                <rect key="frame" x="8" y="238" width="398" height="567"/>
+                                <rect key="frame" x="8" y="229" width="398" height="576"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ntM-vN-9DJ">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="414"/>
@@ -198,10 +198,10 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uU-B9-gOO">
-                                        <rect key="frame" x="0.0" y="422" width="398" height="145"/>
+                                        <rect key="frame" x="0.0" y="422" width="398" height="154"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyO-Mw-g57">
-                                                <rect key="frame" x="0.0" y="53.5" width="184" height="38"/>
+                                                <rect key="frame" x="0.0" y="58" width="184" height="38"/>
                                                 <color key="backgroundColor" red="0.97361403703689575" green="0.84680634737014771" blue="0.47435027360916138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                                 <state key="normal" title="Set Target">
@@ -217,7 +217,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-lL-Bzf">
-                                                <rect key="frame" x="214" y="53.5" width="184" height="38"/>
+                                                <rect key="frame" x="214" y="58" width="184" height="38"/>
                                                 <color key="backgroundColor" red="0.97361403703689575" green="0.84680634737014771" blue="0.47435027360916138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                                 <state key="normal" title="Try Food">
@@ -458,7 +458,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-3w-Rav" userLabel="Maxi Stack View">
-                                <rect key="frame" x="8" y="113" width="398" height="692"/>
+                                <rect key="frame" x="8" y="69" width="398" height="692"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-Yc-vXq" userLabel=" Mini Horizontal Stack View">
                                         <rect key="frame" x="8" y="0.0" width="382" height="185"/>
@@ -568,7 +568,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-Ev-8Zo">
-                                <rect key="frame" x="8" y="113" width="398" height="775"/>
+                                <rect key="frame" x="8" y="69" width="398" height="819"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-Zu-2J0" userLabel="Target Food Preview Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="169.5"/>
@@ -631,7 +631,7 @@
                                         </subviews>
                                     </stackView>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-Va-k3r">
-                                        <rect key="frame" x="0.0" y="737" width="398" height="38"/>
+                                        <rect key="frame" x="0.0" y="737" width="398" height="82"/>
                                         <color key="backgroundColor" red="0.97361403700000004" green="0.84680634740000005" blue="0.47435027359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <state key="normal" title="Set The Target!">
@@ -675,10 +675,10 @@
             </objects>
             <point key="canvasLocation" x="2652" y="-1912"/>
         </scene>
-        <!--View Controller-->
+        <!--Celebration Screen View Controller-->
         <scene sceneID="LEZ-5X-w76">
             <objects>
-                <viewController storyboardIdentifier="celebrationScreen" id="a59-XC-I8L" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="celebrationScreen" id="a59-XC-I8L" customClass="celebrationScreenViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vS9-dP-qE5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,7 +694,7 @@
                                         </constraints>
                                     </imageView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-vh-OWh">
-                                        <rect key="frame" x="57" y="106" width="300" height="335.5"/>
+                                        <rect key="frame" x="57" y="106" width="300" height="396.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="J2K-ob-AoO"/>
                                             <constraint firstAttribute="height" constant="300" id="gXk-cA-OPH"/>
@@ -704,7 +704,7 @@
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done! You achieved the goal of trying 9 new foods this week. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK2-3K-eVT">
-                                        <rect key="frame" x="8" y="472.5" width="398" height="184"/>
+                                        <rect key="frame" x="8" y="533.5" width="398" height="123"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                         <nil key="textColor"/>
@@ -724,13 +724,13 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="QlS-BC-ikQ" kind="show" id="1eh-pN-zPn"/>
+                                            <segue destination="yA6-eK-gdw" kind="presentation" identifier="celebrationBackToMain" id="leJ-bI-6el"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="hw0-hy-FY5" firstAttribute="leading" secondItem="zoX-I4-nLe" secondAttribute="leading" constant="8" id="Jih-C8-0Wn"/>
-                                    <constraint firstItem="QK2-3K-eVT" firstAttribute="height" secondItem="hw0-hy-FY5" secondAttribute="height" multiplier="1.5" id="Lwo-Rd-o3N"/>
+                                    <constraint firstItem="QK2-3K-eVT" firstAttribute="height" secondItem="hw0-hy-FY5" secondAttribute="height" id="Lwo-Rd-o3N"/>
                                     <constraint firstAttribute="trailing" secondItem="QK2-3K-eVT" secondAttribute="trailing" constant="8" id="nCy-7y-gZ5"/>
                                     <constraint firstItem="QK2-3K-eVT" firstAttribute="leading" secondItem="zoX-I4-nLe" secondAttribute="leading" constant="8" id="p6w-M1-75i"/>
                                     <constraint firstAttribute="trailing" secondItem="hw0-hy-FY5" secondAttribute="trailing" constant="8" id="yEM-MX-Mjc"/>
@@ -761,7 +761,7 @@
             <objects>
                 <collectionViewController id="zIl-jd-FQp" customClass="CelebrationCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tS7-7X-oF5">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="335.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="396.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIw-gS-uDj">
@@ -927,8 +927,9 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1eh-pN-zPn"/>
+        <segue reference="lJr-Ub-v2X"/>
         <segue reference="87p-EZ-bh5"/>
         <segue reference="s13-Me-gb1"/>
+        <segue reference="leJ-bI-6el"/>
     </inferredMetricsTieBreakers>
 </document>

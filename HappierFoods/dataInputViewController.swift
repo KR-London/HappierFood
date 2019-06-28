@@ -150,7 +150,9 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBarItems()
-        //usedCamera = true
+        if TARGET_IPHONE_SIMULATOR != 1 {
+            usedCamera = true
+        }
 
         imagePicker.allowsEditing = true
         writtenInputElements.isHidden = true
@@ -162,18 +164,12 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         switch sourceViewController
         {
             case "Try Food":
-              // topBar.titleLabel.text = "Log a Try"
-                // buttonOutlet.setTitle("Add Food", for: .normal)
                 navigationItem.title = "What did you try?"
                 presentState = Costume.AddFoodViewController
             case "Set Target":
-             //  topBar.titleLabel.text = "Set a Target"
-                //buttonOutlet.setTitle("Add Target", for: .normal)
                  navigationItem.title = "Set a target"
                 presentState = Costume.SetTargetViewController
             default:
-             //  topBar.titleLabel.text = "HappyFoods"
-             //   buttonOutlet.titleLabel?.text = "Click to proceed"
             presentState = Costume.Unknown
         }
         

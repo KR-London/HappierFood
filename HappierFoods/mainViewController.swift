@@ -52,15 +52,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
         let buttonTag = sender.tag
-        print(buttonTag)
-        print(targetArray.count)
         
         var collectionViewSize = 9
-        
-        if foodArray.count + targetArray.count > 9
-        {
+        if foodArray.count + targetArray.count > 9{
             collectionViewSize = foodArray.count + targetArray.count
         }
+        
         if buttonTag < foodArray.count {
             photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
             foodName = foodArray[buttonTag].name ?? ""
@@ -68,7 +65,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             triedOn = foodArray[buttonTag].dateTried!
             notes = foodArray[buttonTag].motivation ?? " "
             presentStatePlaceholder = .AddFoodViewController
-               performSegue(withIdentifier: "expandDetail", sender: sender)
+            performSegue(withIdentifier: "expandDetail", sender: sender)
         }
         else{
             if collectionViewSize - buttonTag <= targetArray.count{
@@ -80,21 +77,13 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 presentStatePlaceholder = .SetTargetViewController
                 performSegue(withIdentifier: "expandDetail", sender: sender)
             }
-            else
-            {
-                /// stop segue
-            }
         }
-        
-        //if buttonTag > 9 - targetArray.count
-     
     }
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [TriedFood]!
     var targetArray: [TargetFood]!
-   // var currentStatus: [CelebrationStatus]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,22 +96,20 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if dateNow - defaults.double(forKey: "Last Week Started") > 604800{
             defaults.set(dateNow, forKey: "Last Week Started")
             defaults.set(false, forKey: "Celebration Status")
-            
-            /// and trigger a user event to reassure them that it's okay
+            if presentStatePlaceholder != .FirstLaunch{
+                presentStatePlaceholder = .ResetDataAtTheStartOfNewWeek
+            }
         }
 
         
         if defaults.double(forKey: "Last Week Started")  == 0.0        {
-          //  print("No date set")
-
-           // print(dateNow)
             defaults.set(dateNow, forKey: "Last Week Started")
             defaults.set(false, forKey: "Celebration Status")
             
         }
         
-        print(defaults.double(forKey: "Last Week Started"))
-        print(defaults.bool(forKey: "Celebration Status"))
+        //print(defaults.double(forKey: "Last Week Started"))
+        //print(defaults.bool(forKey: "Celebration Status"))
         
         if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
         {
@@ -140,13 +127,18 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-        print(datafilepath!)
+       // print(datafilepath!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        if presentStatePlaceholder == .FirstLaunch {
-            onboardingRoutine()
+        
+        switch presentStatePlaceholder
+        {
+            case .FirstLaunch : onboardingRoutine()
+            case .ResetDataAtTheStartOfNewWeek : publicInformationBroadcast(didTheyReachTheirTarget: false)
+            case .ReturnFromCelebrationScreen : publicInformationBroadcast(didTheyReachTheirTarget: true)
+            default: break
         }
     
     }
@@ -171,10 +163,61 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    func publicInformationBroadcast(didTheyReachTheirTarget: Bool){
+        let publicInformationText = UILabel()
+        
+        if didTheyReachTheirTarget == true
+        {
+            publicInformationText.text = "Well done! You tried 9 new foods. I'll keep tracking any new food you try. At the end of the week, I'll move the data to the history screen and reset. "
+        }
+        else
+        {
+            publicInformationText.text = "It's a new week! I've reset the log - but don't worry - the foods you've tried are still stored in the history page. Aim for 9 'tries' this week. It's okay to try the same new food several times!"
+        }
+        
+
+
+        
+        self.view.addSubview(publicInformationText)
+        publicInformationText.font  = UIFont(name: "07891284.ttf", size: 24)
+        publicInformationText.lineBreakMode = .byWordWrapping
+        publicInformationText.numberOfLines = 5
+        
+        publicInformationText.translatesAutoresizingMaskIntoConstraints = false
+        publicInformationText.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        publicInformationText.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        publicInformationText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
+        publicInformationText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
+       // onboardingImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+       // onboardingImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
+       // onboardingImageView.contentMode = .scaleAspectFill
+        publicInformationText.alpha = 0.0
+        publicInformationText.backgroundColor = UIColor.white
+        publicInformationText.cornerRadius = 5 
+        
+        
+        /// fade it in & out with RH picture
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+            let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) {
+                publicInformationText.alpha = 1
+            }
+            animator.startAnimation()
+        }
+        
+        /// fade it in & out with RH picture
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+            let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) {
+                publicInformationText.alpha = 0
+            }
+            animator.startAnimation()
+        }
+        
+    }
+    
     func onboardingRoutine(){
         /// add image subview in the middle
-        var onboardingInstruction: UIImage = UIImage(named: "onboarding1.png")!
-        var onboardingImageView = UIImageView(image: onboardingInstruction)
+        let onboardingInstruction: UIImage = UIImage(named: "onboarding1.png")!
+        let onboardingImageView = UIImageView(image: onboardingInstruction)
         
         //  onboardingImageView
         self.view.addSubview(onboardingImageView)
@@ -268,16 +311,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationItem.title = "HappyFoods"
         navigationController?.navigationBar.tintColor = UIColor.black
         
-        var bannerWidth = navigationController?.navigationBar.frame.size.width
-        var bannerHeight = navigationController?.navigationBar.frame.size.height
-       // var bannerx = bannerWidth! / 2 - banner!.size.width / 2
-      //  var bannery = bannerHeight! / 2 - banner!.size.height / 2
-        
         let shareButton = UIButton(type: .system)
-        
-       // var shareImage =
+    
         shareButton.setImage(UIImage(named: "appleShare.png"), for: .normal)
-            //.resize(to: CGSize(width: 40,height: 40)), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         
