@@ -21,6 +21,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+        
+        //  let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        /// for testing
+        let launchedBefore = false
+        
+        if launchedBefore{
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen" )
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+        }
+        else
+        {
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+        }
  
        // UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIColor.black], for: .normal)
         return true
