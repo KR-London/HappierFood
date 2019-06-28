@@ -25,14 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //  let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         
         /// for testing
-        let launchedBefore = false
+        let launchedBefore = true
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen" )
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
             

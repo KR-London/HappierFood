@@ -362,7 +362,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         captureImageView.layer.cornerRadius = 5
         captureImageView.layer.masksToBounds = true
         captureImageView.contentMode = .scaleAspectFill
-        captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: 0).isActive = true
 
 
        // bottomStack.isHidden = true
@@ -373,9 +373,10 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor).isActive = true
-        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: writtenInputElements.bottomAnchor).isActive = true
+        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor).isActive = true
         buttonStack.layer.masksToBounds = true
 
+        buttonOutlet.translatesAutoresizingMaskIntoConstraints = false
         buttonOutlet.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         buttonOutlet.translatesAutoresizingMaskIntoConstraints = false
         buttonOutlet.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true

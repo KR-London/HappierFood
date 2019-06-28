@@ -19,6 +19,13 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var block3: UILabel!
     @IBOutlet weak var button: UIButton!
     
+    @IBAction func moveToMain(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage")
+       // newViewController.presentS
+        self.present(newViewController, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutBlocks()
