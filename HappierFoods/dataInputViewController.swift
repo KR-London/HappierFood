@@ -338,49 +338,49 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         previewView.translatesAutoresizingMaskIntoConstraints = false
         previewView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         previewView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-      //  previewView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-       // previewView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
-      //  previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        previewView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        previewView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
+        previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
         previewView.layer.cornerRadius = 5
         previewView.layer.masksToBounds = true
-//        
-//        writtenInputElements.translatesAutoresizingMaskIntoConstraints = false
-//        writtenInputElements.widthAnchor.constraint(equalToConstant: 300).isActive = true
-//        writtenInputElements.heightAnchor.constraint(equalToConstant: 300).isActive = true
-//        writtenInputElements.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        writtenInputElements.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
-//        writtenInputElements.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
-//        writtenInputElements.layer.cornerRadius = 5
-//        writtenInputElements.layer.masksToBounds = true
-//
-//        captureImageView.backgroundColor = UIColor.green
-//        captureImageView.translatesAutoresizingMaskIntoConstraints = false
-//        captureImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
-//        captureImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-//        captureImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        captureImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
-//        captureImageView.layer.cornerRadius = 5
-//        captureImageView.layer.masksToBounds = true
-//        captureImageView.contentMode = .scaleAspectFill
-//        captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
-//        
-//        
-//       // bottomStack.isHidden = true
-//        buttonStack.translatesAutoresizingMaskIntoConstraints = false
-//        buttonStack.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-//        buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
-//        buttonStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-//        buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-//        buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-//        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor).isActive = true
-//        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: writtenInputElements.bottomAnchor).isActive = true
-//        buttonStack.layer.masksToBounds = true
-//        
-//        buttonOutlet.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
-//        buttonOutlet.translatesAutoresizingMaskIntoConstraints = false
-//        buttonOutlet.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
-//        buttonOutlet.layer.masksToBounds = true
-//        
+
+        writtenInputElements.translatesAutoresizingMaskIntoConstraints = false
+        writtenInputElements.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        writtenInputElements.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        writtenInputElements.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        writtenInputElements.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
+        writtenInputElements.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        writtenInputElements.layer.cornerRadius = 5
+        writtenInputElements.layer.masksToBounds = true
+
+        captureImageView.backgroundColor = UIColor.green
+        captureImageView.translatesAutoresizingMaskIntoConstraints = false
+        captureImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        captureImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        captureImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        captureImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
+        captureImageView.layer.cornerRadius = 5
+        captureImageView.layer.masksToBounds = true
+        captureImageView.contentMode = .scaleAspectFill
+        captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+
+
+       // bottomStack.isHidden = true
+        buttonStack.translatesAutoresizingMaskIntoConstraints = false
+        buttonStack.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
+        buttonStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor).isActive = true
+        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: writtenInputElements.bottomAnchor).isActive = true
+        buttonStack.layer.masksToBounds = true
+
+        buttonOutlet.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+        buttonOutlet.translatesAutoresizingMaskIntoConstraints = false
+        buttonOutlet.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+        buttonOutlet.layer.masksToBounds = true
+
         
         //var dimension = 360
        // var dimension = 375.0
@@ -394,7 +394,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 //        //view.addSubview(maskView)
 //        maskView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
 //        maskView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
-//        
+//
       // previewView.mask = maskView
       // captureImageView.mask = maskView
     }

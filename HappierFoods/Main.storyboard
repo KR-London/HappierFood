@@ -287,14 +287,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="188" translatesAutoresizingMaskIntoConstraints="NO" id="Nkc-U0-luP">
-                                <rect key="frame" x="0.0" y="1594.6666666666667" width="675" height="444.5"/>
+                                <rect key="frame" x="0.0" y="1594.6666666666667" width="675" height="589.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="220" placeholderIntrinsicHeight="220" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCb-V2-W5g">
-                                        <rect key="frame" x="300" y="0.0" width="75" height="75"/>
+                                        <rect key="frame" x="227.5" y="0.0" width="220" height="220"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hCb-V2-W5g" secondAttribute="height" multiplier="1:1" id="eRT-B1-u6a"/>
-                                            <constraint firstAttribute="height" constant="75" id="y3I-hU-wfZ"/>
                                         </constraints>
                                         <state key="normal" image="button.png"/>
                                         <connections>
@@ -302,7 +301,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6BR-a2-vRs">
-                                        <rect key="frame" x="0.0" y="263" width="675" height="181.5"/>
+                                        <rect key="frame" x="0.0" y="408" width="675" height="181.5"/>
                                         <subviews>
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iof-T5-m4I">
                                                 <rect key="frame" x="0.0" y="19.5" width="203" height="142"/>
