@@ -67,4 +67,7 @@ class OnboardingViewController: UIViewController {
 
     }
 
+    deinit{
+        print("OS reclaiming memory from onboarding view")
+    }
 }

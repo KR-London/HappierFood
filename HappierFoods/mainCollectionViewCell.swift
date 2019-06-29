@@ -8,25 +8,8 @@
 
 import UIKit
 
-protocol expandDetailDelegate: class {
-    
-    func expandDetailSegue(buttonTag: Int)
-    
-    var photoFilename: String {get set}
-    var foodName: String {get set}
-    var rating: Double {get set}
-    var triedOn: Date {get set }
-    var notes: String {get set}
-    
-    //(photoFilename: String(), foodName: String(), rating: Double(), triedOn: Date(), notes: String()){get, set}
-}
-
 class mainCollectionViewCell: UICollectionViewCell {
    
-    @IBOutlet weak var textLabel: UILabel!
-    
-   weak var delegate: expandDetailDelegate?
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -35,18 +18,7 @@ class mainCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var showDetailButtonProperties: UIButton!
     @IBOutlet weak var tickImage: UIImageView!
     @IBOutlet weak var cellImage: UIImageView!
-    @IBAction func showDetailButton(_ sender: UIButton) {
-        /// post information to notification centre
-        print("hello world")
-        /// why aren't i posting info here?
-        
-        //delegate?.photoFilename = cellImage.image
-        /// do segue
-        delegate?.expandDetailSegue(buttonTag: self.tag)
-        
-        
-    }
-    
+
     
     override init(frame: CGRect){
         super.init(frame: frame)

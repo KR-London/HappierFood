@@ -82,7 +82,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             navigationItem.title = "Report Bug"
         }
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
 
@@ -238,12 +238,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             default: return
     }
         
-        if let _ = navigationController{
-            navigationController?.popToRootViewController(animated: false)
-        }
-        else{
+//        if let _ = navigationController{
+//            navigationController?.popToRootViewController(animated: false)
+//        }
+//        else{
             performSegue(withIdentifier: "takeMeHome", sender: self)
-        }
+      //  }
     }
    
     
@@ -375,6 +375,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    deinit{
+        print("OS reclaiming memory from rate food view")
     }
 }
 

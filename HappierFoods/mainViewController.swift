@@ -11,24 +11,12 @@ import Foundation
 import Darwin
 import CoreData
 
-enum location : String {
-    case Main
-    case Input
-    case Rate
-    case History
-    case Customisation
-    case Celebrate
-    case Unknown
-}
-
-enum cellState : String {
-    case TriedFood
-    case TargetFood
-    case Empty
-    case Unknown
-}
-
-var whereAmINowBeacon = location.Unknown
+//enum cellState : String {
+//    case TriedFood
+//    case TargetFood
+//    case Empty
+//    case Unknown
+//}
 
 let defaults = UserDefaults.standard
 
@@ -42,12 +30,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var presentStatePlaceholder: Costume = Costume.Unknown
     var happyTracker = false
     
-    var cellStatusDictionary = [ Int : cellState ]()
+ //   var cellStatusDictionary = [ Int : cellState ]()
 
-    @IBAction func resetCelebrationStatus(_ sender: UIButton) {
-        defaults.set(false, forKey: "Celebration Status")
-        print("celebration status reset")
-    }
+
     @IBOutlet weak var targetButton: UIButton!
     @IBOutlet weak var tryButton: UIButton!
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -91,16 +76,16 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.popToRootViewController(animated: false)
         
-        
-         if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
-            view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
-        }
-        setUpNavigationBarItems()
-        loadItems()
-        
-        happy.alpha = 0
-        
+//         if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
+//            view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
+//        }
+//        setUpNavigationBarItems()
+//        loadItems()
+//
+//        happy.alpha = 0
+//
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
         if dateNow - defaults.double(forKey: "Last Week Started") > 604800{
@@ -122,21 +107,45 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //print(defaults.double(forKey: "Last Week Started"))
         //print(defaults.bool(forKey: "Celebration Status"))
         
+//        if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
+//        {
+//            defaults.set(true, forKey: "Celebration Status")
+//
+//            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+//                                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
+//                                        self.present(newViewController, animated: true, completion: nil)
+//           }
+//        }
+//
+       
+
+       // let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+       // print(datafilepath!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
+            view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
+        }
+        setUpNavigationBarItems()
+        loadItems()
+        
+        happy.alpha = 0
+        
         if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
         {
             defaults.set(true, forKey: "Celebration Status")
             
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
-                                        self.present(newViewController, animated: true, completion: nil)
-           }
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
+                self.present(newViewController, animated: true, completion: nil)
+            }
         }
         
-       
-
-       // let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-       // print(datafilepath!)
+       // mainCollectionView.
     }
     
     deinit{

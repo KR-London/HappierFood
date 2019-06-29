@@ -455,13 +455,10 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         //navigationItem.
     }
     
-    
-    /**
-//     * Called when the user click on the view (outside the UITextField).
-//     */
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
+    deinit{
+        print("OS reclaiming memory from data input view")
+    }
+
 }
 
 //extension UIButton{
