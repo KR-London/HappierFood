@@ -95,16 +95,10 @@ class DetailViewController: UIViewController{
                     print("Error fetching data \(error)")
                 }
                 
-               // print(foodArray)
-                
                 let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.dateTried!)}
-                print(listOfTimestamps)
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
-                print("indexOfMyTimestamp")
-                print(indexOfMyTimestamp!)
-                print(foodArray[indexOfMyTimestamp!])
-                do{ try
-                    context.delete(foodArray[indexOfMyTimestamp!])
+                  context.delete(foodArray[indexOfMyTimestamp!])
+                do{
                     try context.save()
                 } catch {
                     // Replace this implementation with code to handle the error appropriately.

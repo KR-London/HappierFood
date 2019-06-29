@@ -135,8 +135,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
        
 
-        let datafilepath = FileManager.default.urls(for: .documentDirectory,
-                                                    in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+       // let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
        // print(datafilepath!)
     }
     

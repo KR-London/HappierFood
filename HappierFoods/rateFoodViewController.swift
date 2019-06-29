@@ -42,26 +42,13 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     var foodArray: [TriedFood]!
     var targetArray: [TargetFood]!
 
-    
-    /// where am I using this....?
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     let imagePickerView = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//faceView.isHidden = true
-        // topBar.titleLabel.text = "Rate It"
-        
-       //  Do any additional setup after loading the view.
-//        self.view.addSubview(topBar)
-//        NSLayoutConstraint.activate([
-//            topBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-//            topBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
-//            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-//            ])
-//        
+
         imagePickerView.allowsEditing = true
         nameOfFood.text = "Blueberries"
         loadItems()
@@ -96,30 +83,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
         view.addGestureRecognizer(tap)
-
-    
-
-        
-        //let nc = NotificationCenter.default
-       // nc.addObserver(self, selector: #selector( printValue(_:)), name: .printValue, object: nil)
-
-//        func printValue(notification:NSNotification) {
-//            let userInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
-//            let item = userInfo["value"]! as String
-//
-//            print(item,self)
-//        }
-      
     }
-//
-//    @objc func printValue(_ notification:Notification) {
-//        // Do something now
-//    }
+
     
     private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         dismiss(animated: true, completion: nil)
@@ -223,9 +189,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                     }
             case .ConvertTargetToTry:
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-             
-               // let mngdCntxt = dataAppDelegate.persistentContainer.viewContext
-                
+   
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTargetSet)
@@ -238,48 +202,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                     print("Error fetching data \(error)")
                 }
                 
-                print(targetArray)
-                
                 let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
-                print(listOfTimestamps)
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
-                print("indexOfMyTimestamp")
-                print(indexOfMyTimestamp!)
-                print(targetArray[indexOfMyTimestamp!])
                 
-   //             do{
-                    try managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
-//                    try managedObjectContext.save()
-//                }
-//                catch {
-//                    // Replace this implementation with code to handle the error appropriately.
-//                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful         during development.
-//                    let nserror = error as NSError
-//                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//                }
-                
-               // let thisOne = targetArray.filter{$0.dateAdded == targetSetString}
-               // print(thisOne)
-                
-//                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TargetFood")
-//                let predicate = NSPredicate(format: "dateAdded = %@", targetArray![indexOfMyTimestamp!].dateAdded as! CVarArg )
-//                print(predicate)
-//
-//                print("date Target Set")
-//                print(dateTargetSet)
-//
-//                fetchRequest.predicate = predicate
-//                    do{
-//                        let result = try managedObjectContext.fetch(fetchRequest)
-//                            if result.count > 0 {
-//                                managedObjectContext.delete(result.first as! NSManagedObject)
-//                            }
-//                            else{
-//                                print("that's strange - you tried to delete a picture which didnt exist ")
-//                            }
-//                       // managedObjectContext.delete(thisOne[0])
-//                    }
-//                    catch{  }
+
+                try managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
                 menuItem.filename = imagePath
@@ -290,57 +217,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             }
             case .RetryTriedFood:
                     if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-//
-//                // let mngdCntxt = dataAppDelegate.persistentContainer.viewContext
-//
-//                let formatter = DateFormatter()
-//                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//                let targetSetString = formatter.string(from: dateTargetSet)
-//
-//                let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
-//                do{
-//                    try foodArray = context.fetch(request2)
-//                }
-//                catch{
-//                    print("Error fetching data \(error)")
-//                }
-//
-//                print(targetArray)
-//
-//                let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.tried!)}
-//                print(listOfTimestamps)
-//                let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
-//                print("indexOfMyTimestamp")
-//                print(indexOfMyTimestamp!)
-//                print(targetArray[indexOfMyTimestamp!])
-//
-//                do{
-//                    try  managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
-//                }
-//                catch{  }
-                
-                // let thisOne = targetArray.filter{$0.dateAdded == targetSetString}
-                // print(thisOne)
-                
-                //                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TargetFood")
-                //                let predicate = NSPredicate(format: "dateAdded = %@", targetArray![indexOfMyTimestamp!].dateAdded as! CVarArg )
-                //                print(predicate)
-                //
-                //                print("date Target Set")
-                //                print(dateTargetSet)
-                //
-                //                fetchRequest.predicate = predicate
-                //                    do{
-                //                        let result = try managedObjectContext.fetch(fetchRequest)
-                //                            if result.count > 0 {
-                //                                managedObjectContext.delete(result.first as! NSManagedObject)
-                //                            }
-                //                            else{
-                //                                print("that's strange - you tried to delete a picture which didnt exist ")
-                //                            }
-                //                       // managedObjectContext.delete(thisOne[0])
-                //                    }
-                //                    catch{  }
+
                 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
                 menuItem.filename = imagePath
@@ -406,8 +283,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         if segue.identifier == "faceSegue" {
             if let customFaceController = segue.destination as? customFaceARViewController{
                // self.customFaceController = customFaceController
-                customFaceController.sliderFeedback( handler:  {value in
-                    self.rating = Double(-1 + 2*value )
+                customFaceController.sliderFeedback( handler:  {[weak self] value in
+                    self?.rating = Double(-1 + 2*value )
                 })
             }
             
