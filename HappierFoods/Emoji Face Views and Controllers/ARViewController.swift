@@ -124,6 +124,5 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
         /// do i need a bit of safety code here - if I get a crazy input? Or is this handled as standard.
         faceView.mouthCurvature = Double(value)
-        //[FacialExpression.Mouth.Frown:-1.0,.Grin:0.5,.Smile:1.0,.Smirk:-0.5,.Neutral:0.0 ]
     }
 }

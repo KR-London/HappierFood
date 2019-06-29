@@ -21,15 +21,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     var foodName = String()
     var dateTargetSet = Date()
     var presentState: Costume = Costume.Unknown
-    
-    lazy var topBar : topView = {
-        let content = topView()
-        content.translatesAutoresizingMaskIntoConstraints = false
-        return content
-    }()
-    
-    @IBOutlet weak var containerViewAddFood: topView!
-    @IBOutlet weak var containerView: topView!
+
     @IBAction func endedEnteringName(_ sender: Any) {
         self.view.endEditing(true)
     }
@@ -42,18 +34,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var imageView: UIImageView!
 
     @IBAction func saveFood(_ sender: Any) {
-//        let nc = NotificationCenter.default
-//        nc.addObserver(self, selector: #selector(printValue), name: "printValue", object: nil)
-//
-//        func printValue(notification:NSNotification) {
-//            let userInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
-//            let item = userInfo["value"]! as String
-//
-//            print(item,self)
-//        }
         appsAndBiscuits(imageName: nameOfFood.text, image: foodImage.image ?? (UIImage(named: "tick.png") ?? nil)!, rating: rating)
-        
-        //performSegue(withIdentifier: "takeMeHome", sender: self)
     }
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

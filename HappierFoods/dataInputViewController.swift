@@ -134,14 +134,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         writtenInputElements.isHidden = false
         
     }
-    
-    lazy var topBar : topView = {
-        let content = topView()
-        content.translatesAutoresizingMaskIntoConstraints = false
-        return content
-    }()
-    
-    
+
     let imagePicker = UIImagePickerController()
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
