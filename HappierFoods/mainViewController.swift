@@ -150,8 +150,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
            
             /// fade it in & out with RH picture
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
-                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {
-                    self.happy.alpha = 1
+                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
+                    self?.happy.alpha = 1
                 }
                 animator.startAnimation()
             }

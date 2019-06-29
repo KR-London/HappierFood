@@ -206,7 +206,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
                 
 
-                try managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
+                managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
                 menuItem.filename = imagePath
@@ -238,7 +238,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             default: return
     }
         
-        performSegue(withIdentifier: "takeMeHome", sender: self)
+        if let _ = navigationController{
+            navigationController?.popToRootViewController(animated: false)
+        }
+        else{
+            performSegue(withIdentifier: "takeMeHome", sender: self)
+        }
     }
    
     
