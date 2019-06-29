@@ -91,6 +91,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
          if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
             view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
         }
@@ -136,6 +138,10 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
        // print(datafilepath!)
+    }
+    
+    deinit{
+        print("OS reclaiming memory from main view")
     }
     
     override func viewDidAppear(_ animated: Bool) {
