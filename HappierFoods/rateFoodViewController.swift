@@ -196,8 +196,6 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     return true
     }
     
-   
-    
     func saveItems(){
         do{ try
             context.save() }
@@ -207,7 +205,6 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             
         }
     }
-    
     
     func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?){
         
@@ -269,10 +266,16 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 print(indexOfMyTimestamp!)
                 print(targetArray[indexOfMyTimestamp!])
                 
- //                do{ try
-                managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
+   //             do{
+                    try managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
+//                    try managedObjectContext.save()
 //                }
-//                catch{  }
+//                catch {
+//                    // Replace this implementation with code to handle the error appropriately.
+//                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful         during development.
+//                    let nserror = error as NSError
+//                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                }
                 
                // let thisOne = targetArray.filter{$0.dateAdded == targetSetString}
                // print(thisOne)
@@ -423,10 +426,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             if let customFaceController = segue.destination as? customFaceARViewController{
                // self.customFaceController = customFaceController
                 customFaceController.sliderFeedback( handler:  {value in
-                    print(value)
                     self.rating = Double(-1 + 2*value )
                 })
-                print("Honey monster")
             }
             
         }

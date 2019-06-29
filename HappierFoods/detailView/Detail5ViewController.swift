@@ -22,10 +22,8 @@ class Detail5ViewController: UIViewController {
         newViewController.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
         ///   newViewController.rating = 0.0
         newViewController.foodName = detailToDisplay.foodName
-        //     newViewController.det
         newViewController.dateTargetSet = detailToDisplay.triedOn
-        
-        print(whereAmI)
+
         switch whereAmI
         {
             case Costume.AddFoodViewController:
@@ -39,7 +37,6 @@ class Detail5ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(detailToDisplay)
     }
 
 }

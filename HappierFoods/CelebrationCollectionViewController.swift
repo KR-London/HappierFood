@@ -36,13 +36,11 @@ class CelebrationCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! mainCollectionViewCell
         
         // I'm not handling the errors here
-        if indexPath.row < 9
-        {
+        if indexPath.row < 9{
                 let fileToLoad = foodArray[indexPath.row].filename ?? "chaos.jpg"
-                    cell.displayContent(image: fileToLoad)
-                    cell.tickImage.isHidden = false
+                cell.displayContent(image: fileToLoad)
+                cell.tickImage.isHidden = false
         }
-
         return cell
     }
     
@@ -60,9 +58,6 @@ class CelebrationCollectionViewController: UICollectionViewController {
     public func canHandle(_ session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSString.self)
     }
-    
-    
-
 }
 
 extension CelebrationCollectionViewController: UICollectionViewDelegateFlowLayout {

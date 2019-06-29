@@ -249,20 +249,32 @@
                                     <constraint firstAttribute="bottom" secondItem="1uU-B9-gOO" secondAttribute="bottom" id="SYI-W6-BLu"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-42-hyz">
-                                <rect key="frame" x="20" y="88" width="386" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-42-hyz">
+                                <rect key="frame" x="20" y="88" width="374" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="rpV-75-0Kr"/>
+                                    <constraint firstAttribute="height" constant="28" id="wof-zC-bSH"/>
+                                </constraints>
                                 <connections>
                                     <action selector="resetCelebrationStatus:" destination="yA6-eK-gdw" eventType="touchUpInside" id="3zu-zV-HfA"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wgu-Dh-CEe">
+                                <rect key="frame" x="8" y="177" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="puV-qo-kPr"/>
+                                    <constraint firstAttribute="height" constant="50" id="r98-1T-1GO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Wgu-Dh-CEe" firstAttribute="leading" secondItem="TnP-Rc-HIy" secondAttribute="leading" constant="8" id="2TF-fe-Q7m"/>
                             <constraint firstItem="1uU-B9-gOO" firstAttribute="height" secondItem="TnP-Rc-HIy" secondAttribute="height" multiplier="0.2" id="B79-YR-oEh"/>
                             <constraint firstItem="ntM-vN-9DJ" firstAttribute="height" secondItem="TnP-Rc-HIy" secondAttribute="width" id="Dnv-6f-Uou"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="trailing" secondItem="7YX-Pg-QoH" secondAttribute="trailing" constant="8" id="Lhi-jW-RnV"/>
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="leading" secondItem="TnP-Rc-HIy" secondAttribute="leading" constant="8" id="aq4-t0-Zye"/>
+                            <constraint firstItem="7YX-Pg-QoH" firstAttribute="top" secondItem="Wgu-Dh-CEe" secondAttribute="bottom" constant="2" id="dVZ-Mt-Y2q"/>
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="top" secondItem="TnP-Rc-HIy" secondAttribute="top" multiplier="1.2" priority="750" constant="8" id="jVq-nt-K0f"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="bottom" secondItem="7YX-Pg-QoH" secondAttribute="bottom" constant="8" id="uCR-aq-KKk"/>
                             <constraint firstItem="ntM-vN-9DJ" firstAttribute="centerY" secondItem="TnP-Rc-HIy" secondAttribute="centerY" multiplier="0.6" priority="750" id="yjL-mE-gcr"/>
@@ -273,10 +285,12 @@
                     <navigationItem key="navigationItem" id="SHa-QZ-8MV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="happy" destination="Wgu-Dh-CEe" id="Jfj-x2-ID3"/>
                         <outlet property="mainCollectionView" destination="ntM-vN-9DJ" id="gAl-Sm-8nk"/>
                         <outlet property="targetButton" destination="vyO-Mw-g57" id="Jam-9M-skw"/>
                         <outlet property="tryButton" destination="KGE-lL-Bzf" id="Yje-eD-jjg"/>
                         <segue destination="Q61-IA-lhv" kind="show" identifier="expandDetail" id="EyT-iX-Ahn"/>
+                        <segue destination="QlS-BC-ikQ" kind="presentation" identifier="resetMainWithNavBar" id="kEo-kV-ixy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fna-ov-CAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -927,7 +941,7 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lJr-Ub-v2X"/>
+        <segue reference="kEo-kV-ixy"/>
         <segue reference="87p-EZ-bh5"/>
         <segue reference="s13-Me-gb1"/>
         <segue reference="leJ-bI-6el"/>

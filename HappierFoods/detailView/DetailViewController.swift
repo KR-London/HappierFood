@@ -17,10 +17,6 @@ class DetailViewController: UIViewController{
     var triedOn = Date()
     var notes = String()
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
-    
-    func expandDetailSegue(buttonTag: Int) {
-        detailToDisplay = (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
-    }
 
     var PresentState = Costume.Unknown
     
@@ -38,19 +34,17 @@ class DetailViewController: UIViewController{
         self.view.addSubview(detail3VC.view)
         self.view.addSubview(detail4VC.view)
         self.view.addSubview(detail5VC.view)
-
+        
+        /// wrap this up so that it gives a placeholder when no food name provided.
         detail2VC.foodName.text = self.detailToDisplay.foodName
+        
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename)
         detail3VC.detailToDisplay = detailToDisplay
-        print("Rating is " )
-        print(detailToDisplay.rating)
-        if PresentState == Costume.AddFoodViewController
-        {
+        if PresentState == Costume.AddFoodViewController {
              detail3VC.faceView.isHidden = false
             detail3VC.faceView.mouthCurvature = detailToDisplay.rating
         }
-        else
-        {
+        else  {
             detail3VC.faceView.isHidden = true
         }
         detail5VC.detailToDisplay = detailToDisplay
@@ -65,7 +59,6 @@ class DetailViewController: UIViewController{
             detail5VC.tryButton.setTitle("Bug", for: .normal)
         }
        
-        
         setupLayout( container1 : detail1VC.view, container2: detail2VC.view, container3: detail3VC.view, container4: detail4VC.view, container5: detail5VC.view)
         
         setUpNavigationBarItems()
@@ -74,9 +67,6 @@ class DetailViewController: UIViewController{
     func setUpNavigationBarItems(){
 
         let deleteButton = UIButton(type: .system)
-        //shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 100,height: 100)), for: .normal)
-       // shareButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-       // shareButton.contentMode = .right
         deleteButton.setTitle("Delete", for: .normal)
         deleteButton.addTarget(self, action: #selector(delete), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: deleteButton)
@@ -97,7 +87,6 @@ class DetailViewController: UIViewController{
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTried)
                 
-                
                 let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
                 do{
                     try foodArray = context.fetch(request2)
@@ -106,7 +95,7 @@ class DetailViewController: UIViewController{
                     print("Error fetching data \(error)")
                 }
                 
-                print(foodArray)
+               // print(foodArray)
                 
                 let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.dateTried!)}
                 print(listOfTimestamps)
@@ -114,10 +103,15 @@ class DetailViewController: UIViewController{
                 print("indexOfMyTimestamp")
                 print(indexOfMyTimestamp!)
                 print(foodArray[indexOfMyTimestamp!])
-//                do{ try
-                context.delete(foodArray[indexOfMyTimestamp!])
-//                }
-//                catch{  }
+                do{ try
+                    context.delete(foodArray[indexOfMyTimestamp!])
+                    try context.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
             
                 performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             case .SetTargetViewController:
@@ -136,16 +130,21 @@ class DetailViewController: UIViewController{
                     print("Error fetching data \(error)")
                 }
                 
-                print(targetArray)
-                
                 let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
                 print(listOfTimestamps)
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
                 print("indexOfMyTimestamp")
                 print(indexOfMyTimestamp!)
                 print(targetArray[indexOfMyTimestamp!])
-                //               do{ try
-                context.delete(targetArray[indexOfMyTimestamp!])
+                do{
+                    try context.delete(targetArray[indexOfMyTimestamp!])
+                    try context.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
 //                } catch{  }
             
                 performSegue(withIdentifier: "detailToMain", sender: UIButton.self)

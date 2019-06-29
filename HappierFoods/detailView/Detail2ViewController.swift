@@ -10,6 +10,8 @@ import UIKit
 
 class Detail2ViewController: UIViewController {
     
+   // var detailToDisplay = (photoFilename: "tick.jpg", foodName: "Food Name", rating: 0.0, triedOn: Date(), notes: "" )
+
  //   @IBOutlet var detail1Label: UILabel?
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var foodPicture: UIImageView!
@@ -17,18 +19,10 @@ class Detail2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         foodName.font = UIFont(name: "07891284.ttf", size: 42)
+        if foodName.text!.count < 1 {
+            foodName.text = "No food name stored"
+        }
+        //foodName.text = detailToDisplay.foodName
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

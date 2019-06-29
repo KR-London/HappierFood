@@ -18,6 +18,7 @@ class celebrationScreenViewController: UIViewController {
         if segue.identifier == "celebrationBackToMain"{
             let dvc = segue.destination as! mainViewController
             dvc.presentStatePlaceholder = .ReturnFromCelebrationScreen
+            dvc.happyTracker = true
         }
     }
 

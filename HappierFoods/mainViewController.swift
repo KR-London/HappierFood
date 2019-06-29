@@ -40,16 +40,19 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var triedOn = Date()
     var notes = String()
     var presentStatePlaceholder: Costume = Costume.Unknown
+    var happyTracker = false
     
     var cellStatusDictionary = [ Int : cellState ]()
 
     @IBAction func resetCelebrationStatus(_ sender: UIButton) {
         defaults.set(false, forKey: "Celebration Status")
+        print("celebration status reset")
     }
     @IBOutlet weak var targetButton: UIButton!
     @IBOutlet weak var tryButton: UIButton!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
+    @IBOutlet weak var happy: UIImageView!
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
         let buttonTag = sender.tag
         
@@ -72,7 +75,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 photoFilename = targetArray[collectionViewSize - buttonTag - 1 ].filename ?? "chaos.jpg"
                 foodName = targetArray[collectionViewSize - buttonTag - 1 ].name ?? ""
                 rating = 0.0
-                //triedOn = targetArray[9 - buttonTag - 1 ].dateTried!
+                triedOn = targetArray[9 - buttonTag - 1 ].dateAdded!
                 notes = targetArray[collectionViewSize - buttonTag - 1 ].motivation ?? " "
                 presentStatePlaceholder = .SetTargetViewController
                 performSegue(withIdentifier: "expandDetail", sender: sender)
@@ -88,8 +91,13 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
+            view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
+        }
         setUpNavigationBarItems()
         loadItems()
+        
+        happy.alpha = 0
         
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
@@ -99,6 +107,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if presentStatePlaceholder != .FirstLaunch{
                 presentStatePlaceholder = .ResetDataAtTheStartOfNewWeek
             }
+            happyTracker = false
         }
 
         
@@ -120,10 +129,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                         let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
                                         self.present(newViewController, animated: true, completion: nil)
            }
-            
-            
-            
         }
+        
+       
 
         let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first?.appendingPathComponent("Items.plist")
@@ -132,6 +140,23 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        
+        if foodArray.count >= 9 && presentStatePlaceholder != .ReturnFromCelebrationScreen &&  defaults.bool(forKey: "Celebration Status") == true {
+           
+            /// fade it in & out with RH picture
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {
+                    self.happy.alpha = 1
+                }
+                animator.startAnimation()
+            }
+        
+        }
+        
+        if foodArray.count < 9
+        {
+            happyTracker = false
+        }
         
         switch presentStatePlaceholder
         {
@@ -166,17 +191,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func publicInformationBroadcast(didTheyReachTheirTarget: Bool){
         let publicInformationText = UILabel()
         
-        if didTheyReachTheirTarget == true
-        {
+        if didTheyReachTheirTarget == true{
             publicInformationText.text = "Well done! You tried 9 new foods. I'll keep tracking any new food you try. At the end of the week, I'll move the data to the history screen and reset. "
         }
-        else
-        {
+        else {
             publicInformationText.text = "It's a new week! I've reset the log - but don't worry - the foods you've tried are still stored in the history page. Aim for 9 'tries' this week. It's okay to try the same new food several times!"
         }
-        
-
-
         
         self.view.addSubview(publicInformationText)
         publicInformationText.font  = UIFont(name: "07891284.ttf", size: 24)
@@ -188,9 +208,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         publicInformationText.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         publicInformationText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
         publicInformationText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
-       // onboardingImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-       // onboardingImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
-       // onboardingImageView.contentMode = .scaleAspectFill
         publicInformationText.alpha = 0.0
         publicInformationText.backgroundColor = UIColor.white
         publicInformationText.cornerRadius = 5 
@@ -212,6 +229,16 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             animator.startAnimation()
         }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+            self.presentStatePlaceholder = .Unknown
+            self.reloadInputViews()
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Main")
+//            self.present(newViewController, animated: true, completion: nil)
+            //self.performSegue(withIdentifier: "resetMainWithNavBar", sender: self)
+        }
+
+        
     }
     
     func onboardingRoutine(){
@@ -230,24 +257,25 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         onboardingImageView.alpha = 0.0
         
         /// pulse the RH button
-        startAnimate(button: tryButton)
-        
+      
+        for i in 0 ... 2{
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7*i)){
+            self.startAnimate(button: self.tryButton)
             let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) {
             onboardingImageView.alpha = 1
             }
             animator.startAnimation()
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2 + 7*i)){
             let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn) {
                 onboardingImageView.alpha = 0
             }
             animator.startAnimation()
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3 + 7*i)){
             self.stopAnimate(button: self.tryButton)
             onboardingImageView.image = UIImage(named: "onboarding2.png")
             self.startAnimate(button: self.targetButton)
@@ -258,16 +286,17 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             animator.startAnimation()
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4 + 7*i)){
             let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn) {
                 onboardingImageView.alpha = 0
             }
             animator.startAnimation()
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(9)){
-            self.stopAnimate(button: self.targetButton)
-
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6 + 7*i)){
+                self.stopAnimate(button: self.targetButton)
+                onboardingImageView.image = UIImage(named: "onboarding1.png")
+            }
         }
         //
         // swap to LH picture
