@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class historyViewController: UIViewController {
 
+    @IBOutlet weak var resetToNewWeek: UIButton!
+    
+    @IBOutlet weak var clearAllData: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }

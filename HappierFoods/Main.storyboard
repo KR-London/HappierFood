@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,25 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TW3-xy-eiW">
-                                <rect key="frame" x="41.5" y="121" width="331" height="654"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-gS-U1w">
-                                        <rect key="frame" x="1" y="0.0" width="329" height="446"/>
-                                        <string key="text">Here you will see your historical data (if you have purchased the full version) - or an encouragement to upgrade to the full version. </string>
-                                        <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hahahahahahaha" translatesAutoresizingMaskIntoConstraints="NO" id="9vp-4V-aMd">
-                                        <rect key="frame" x="65.5" y="454" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="PPe-UM-1s1"/>
-                                            <constraint firstAttribute="height" constant="200" id="dmS-TE-imJ"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-gS-U1w">
+                                <rect key="frame" x="51" y="173" width="329" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Here you will see your historical data (if you have purchased the full version) - or an encouragement to upgrade to the full version. </string>
+                                <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-Qg-VdQ">
                                 <rect key="frame" x="8" y="52" width="398" height="100"/>
                                 <color key="backgroundColor" red="0.95678001639999999" green="0.74523562190000003" blue="0.2545614839" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -63,20 +51,50 @@
                                     <segue destination="QlS-BC-ikQ" kind="show" id="iRz-GL-Z9T"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-l5-H3m">
+                                <rect key="frame" x="20" y="654" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Cache this week data and start a new week">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="TwCenMT-CondensedExtraBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W23-4z-i6u">
+                                <rect key="frame" x="20" y="734" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Clear all data">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="TwCenMT-CondensedExtraBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TW3-xy-eiW" firstAttribute="centerX" secondItem="iVa-Lh-zfY" secondAttribute="centerX" id="0Vh-Gs-7gC"/>
                             <constraint firstItem="FL3-Qg-VdQ" firstAttribute="leading" secondItem="YtB-eQ-Bji" secondAttribute="leading" constant="8" id="2x8-FB-6De"/>
-                            <constraint firstItem="TW3-xy-eiW" firstAttribute="centerY" secondItem="iVa-Lh-zfY" secondAttribute="centerY" id="LH0-I6-QcE"/>
                             <constraint firstItem="YtB-eQ-Bji" firstAttribute="trailing" secondItem="FL3-Qg-VdQ" secondAttribute="trailing" constant="8" id="LIt-Qw-ifG"/>
                             <constraint firstItem="FL3-Qg-VdQ" firstAttribute="top" secondItem="YtB-eQ-Bji" secondAttribute="top" constant="8" id="pQ6-Gf-DO0"/>
-                            <constraint firstItem="TW3-xy-eiW" firstAttribute="width" secondItem="YtB-eQ-Bji" secondAttribute="width" multiplier="0.8" id="sS2-Av-LUb"/>
-                            <constraint firstItem="TW3-xy-eiW" firstAttribute="height" secondItem="YtB-eQ-Bji" secondAttribute="height" multiplier="0.8" id="wMk-xI-Yr8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YtB-eQ-Bji"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="WTQ-mb-hJS"/>
+                    <connections>
+                        <outlet property="clearAllData" destination="W23-4z-i6u" id="OL0-GS-a6a"/>
+                        <outlet property="resetToNewWeek" destination="XZk-l5-H3m" id="h65-2i-z7N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4x-Sk-XZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,16 +224,6 @@
                                     <constraint firstAttribute="bottom" secondItem="1uU-B9-gOO" secondAttribute="bottom" id="SYI-W6-BLu"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-42-hyz">
-                                <rect key="frame" x="20" y="88" width="374" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="rpV-75-0Kr"/>
-                                    <constraint firstAttribute="height" constant="28" id="wof-zC-bSH"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="resetCelebrationStatus:" destination="yA6-eK-gdw" eventType="touchUpInside" id="3zu-zV-HfA"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wgu-Dh-CEe">
                                 <rect key="frame" x="8" y="177" width="50" height="50"/>
                                 <constraints>
@@ -829,7 +837,6 @@
     </scenes>
     <resources>
         <image name="button.png" width="220" height="220"/>
-        <image name="hahahahahahaha" width="16" height="16"/>
         <image name="happy.png" width="180" height="180"/>
         <image name="icons1.png" width="203" height="203"/>
         <image name="icons2.png" width="203" height="203"/>

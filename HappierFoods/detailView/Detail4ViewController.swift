@@ -9,11 +9,7 @@
 import UIKit
 
 class Detail4ViewController: UIViewController {
-    
- //   @IBOutlet var detail1Label: UILabel?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }

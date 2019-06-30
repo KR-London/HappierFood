@@ -9,10 +9,7 @@
 import UIKit
 
 class Detail2ViewController: UIViewController {
-    
-   // var detailToDisplay = (photoFilename: "tick.jpg", foodName: "Food Name", rating: 0.0, triedOn: Date(), notes: "" )
 
- //   @IBOutlet var detail1Label: UILabel?
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var foodPicture: UIImageView!
     
@@ -22,7 +19,5 @@ class Detail2ViewController: UIViewController {
         if foodName.text!.count < 1 {
             foodName.text = "No food name stored"
         }
-        //foodName.text = detailToDisplay.foodName
-        // Do any additional setup after loading the view.
     }
 }

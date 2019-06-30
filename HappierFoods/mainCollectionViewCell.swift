@@ -25,30 +25,9 @@ class mainCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
-    public func displayContent(image: String)
-    {
-        //        if foodImage.image != nil
-        //        {
-        //foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
-        //}
+    public func displayContent(image: String){
         cellImage.image = UIImage(named: image)
-        //  foodName.text = title
-        // print("No ribbon should display \(title)")
     }
-//    @IBOutlet var foodImage: UIImageView!
-//    // @IBOutlet var foodName: UILabel!
-    
-//    public func displayContent(image: String, title: String)
-//    {
-//        //        if foodImage.image != nil
-//        //        {
-//        foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
-//        //}
-//        //foodImage.image = UIImage(named: image)
-//        //  foodName.text = title
-//        // print("No ribbon should display \(title)")
-//    }
-    
     func setup(){
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.red.cgColor

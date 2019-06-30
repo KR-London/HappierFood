@@ -11,7 +11,6 @@ import UIKit
 class Detail3ViewController: UIViewController {
     
       var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
- //   @IBOutlet var detail1Label: UILabel?
 
     @IBOutlet weak var topFaceView: UIImageView!
     @IBOutlet weak var faceView: smileView!
@@ -19,7 +18,6 @@ class Detail3ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     faceView.mouthCurvature = detailToDisplay.rating
-        // Do any additional setup after loading the view.
     }
 
 

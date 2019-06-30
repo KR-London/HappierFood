@@ -77,14 +77,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         navigationController?.popToRootViewController(animated: false)
-        
-//         if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
-//            view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
-//        }
-//        setUpNavigationBarItems()
-//        loadItems()
-//
-//        happy.alpha = 0
 //
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
@@ -203,6 +195,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func publicInformationBroadcast(didTheyReachTheirTarget: Bool){
+   
         let publicInformationText = UILabel()
         
         if didTheyReachTheirTarget == true{
