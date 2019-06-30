@@ -20,7 +20,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     var rating = 0.0
     var foodName = String()
     var dateTargetSet = Date()
-    var presentState: Costume = Costume.Unknown
+    
+    //KIRBY
+    
+    var presentState = String()
+   // var presentState: Costume = Costume.Unknown
 
     @IBAction func endedEnteringName(_ sender: Any) {
         self.view.endEditing(true)
@@ -50,11 +54,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
 
         imagePickerView.allowsEditing = true
-        nameOfFood.text = "Blueberries"
         loadItems()
         imagePickerView.delegate = self
         nameOfFood.delegate = self
-        if presentState == .SetTargetViewController
+        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        presentState = main!.myNav!.currentStateAsString()
+        if presentState == "SetTargetViewController"
         {
             motivationText.delegate = self
         }
@@ -73,13 +78,13 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         //detect(image: CIImage(image: imagePlaceholder)!)
         
         setUpNavigationBarItems()
-        switch  presentState {
-        case .AddFoodViewController:
-            navigationItem.title = "Rate It!";
-        case .SetTargetViewController:
-            navigationItem.title = "Motivate It."
-        default:
-            navigationItem.title = "Report Bug"
+        switch  main!.myNav!.presentState {
+            case .AddFoodViewController:
+                navigationItem.title = "Rate It!";
+            case .SetTargetViewController:
+                navigationItem.title = "Motivate It"
+            default:
+                navigationItem.title = "Report Bug"
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -175,10 +180,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         fileManager.createFile(atPath: imagePath as String, contents: data(), attributes: nil)
         
-        
+        ///KIRBY
         switch presentState {
      
-            case .AddFoodViewController:
+            case "AddFoodViewController":
+                
+                    /// this bit updates the database
                     if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                         let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
                         menuItem.filename = imagePath
@@ -186,8 +193,22 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                         menuItem.rating = rating ?? 0
                         menuItem.dateTried = Date()
                         saveItems()
+                        /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
+                        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+                        let currentNumberTried = main?.foodArray.count ?? 0
+                        main?.foodArray.append(menuItem)
+                        
+                        main?.mainCollectionView.performBatchUpdates({
+                           // main?.foodArray.append(menuItem)
+                           // main?.mainCollectionView.reloadData()
+                            //main?.mainCollectionView.reloadSections([0])
+                            main?.mainCollectionView.deleteItems(at: [IndexPath(row: currentNumberTried, section: 0)])
+                            main?.mainCollectionView.insertItems(at: [IndexPath(row: currentNumberTried, section: 0)])
+                           // main?.mainCollectionView.reloadInputViews()
+                        })
+                        
                     }
-            case .ConvertTargetToTry:
+            case "ConvertTargetToTry":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
    
                 let formatter = DateFormatter()
@@ -215,8 +236,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.dateTried = Date()
                 saveItems()
             }
-            case .RetryTriedFood:
-                    if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            case "RetryTriedFood":
+                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
 
                 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
@@ -226,7 +247,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.dateTried = Date()
                 saveItems()
                 }
-            case .SetTargetViewController:
+            case "SetTargetViewController":
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
                 menuItem.filename = imagePath
@@ -239,10 +260,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     }
         
 //        if let _ = navigationController{
-//            navigationController?.popToRootViewController(animated: false)
+        navigationController?.popToRootViewController(animated: true)
 //        }
 //        else{
-            performSegue(withIdentifier: "takeMeHome", sender: self)
+//           performSegue(withIdentifier: "takeMeHome", sender: self)
       //  }
     }
    
@@ -321,7 +342,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         var message = String()
 
         switch presentState {
-        case .AddFoodViewController:
+        case "AddFoodViewController":
             let name = nameOfFood.text
             if name != nil && name != ""
             {
@@ -331,7 +352,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             {
                 message = "I've just tried a new food!"
             }
-        case .SetTargetViewController:
+        case "SetTargetViewController":
             let name = nameOfFood.text
             if name != nil && name != ""
             {

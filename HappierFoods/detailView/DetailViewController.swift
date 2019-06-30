@@ -16,9 +16,10 @@ class DetailViewController: UIViewController{
     var rating = Double()
     var triedOn = Date()
     var notes = String()
+    var presentState = String()
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
 
-    var PresentState = Costume.Unknown
+  // KIRBY  var PresentState = Costume.Unknown
     
     var detail1VC = Detail1ViewController(nibName: "Detail1ViewController", bundle: nil)
     var detail2VC = Detail2ViewController(nibName: "Detail2ViewController", bundle: nil)
@@ -28,7 +29,8 @@ class DetailViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        
         self.view.addSubview(detail1VC.view)
         self.view.addSubview(detail2VC.view)
         self.view.addSubview(detail3VC.view)
@@ -40,17 +42,18 @@ class DetailViewController: UIViewController{
         
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename)
         detail3VC.detailToDisplay = detailToDisplay
-        if PresentState == Costume.AddFoodViewController {
-             detail3VC.faceView.isHidden = false
-            detail3VC.faceView.mouthCurvature = detailToDisplay.rating
-        }
-        else  {
-            detail3VC.faceView.isHidden = true
-        }
+        /// KIRBY
+//        if PresentState == Costume.AddFoodViewController {
+//             detail3VC.faceView.isHidden = false
+//            detail3VC.faceView.mouthCurvature = detailToDisplay.rating
+//        }
+//        else  {
+//            detail3VC.faceView.isHidden = true
+//        }
         detail5VC.detailToDisplay = detailToDisplay
-        detail5VC.whereAmI = PresentState
+       // KIRBY  detail5VC.whereAmI = main!.myNav!.presentState
         
-        switch PresentState {
+        switch main!.myNav!.presentState {
         case .AddFoodViewController:
             detail5VC.tryButton.setTitle("Try it again?", for: .normal)
         case .SetTargetViewController:
@@ -79,8 +82,10 @@ class DetailViewController: UIViewController{
     @objc func delete(sender: UIButton!){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        switch PresentState{
-            case .AddFoodViewController:
+        
+        /// KIRBY
+        switch presentState{
+            case "AddFoodViewController":
                 var foodArray: [TriedFood]!
                 let dateTried = detailToDisplay.triedOn
                 let formatter = DateFormatter()
@@ -108,7 +113,7 @@ class DetailViewController: UIViewController{
                 }
             
                 performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
-            case .SetTargetViewController:
+            case "SetTargetViewController":
                 var targetArray: [TargetFood]!
                 let dateTargetSet = detailToDisplay.triedOn
                 let formatter = DateFormatter()

@@ -43,8 +43,4 @@ extension UIImage {
         
         return newImage!
     }
-    
-
 }
-
-//extension UI

@@ -27,7 +27,8 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     
     var currentDataInputMode : dataInputMode = dataInputMode.camera
    
-    var presentState : Costume = Costume.Unknown
+    var presentState : String?
+   // var presentState : Costume = Costume.Unknown
     
     let haptic = UINotificationFeedbackGenerator()
   
@@ -42,11 +43,10 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var cameraRollButton: UIButton!
     @IBOutlet weak var writeButton: UIButton!
-    
-    @IBOutlet weak var bottomStack: UIStackView!
+
     @IBAction func nameOfFoodInput(_ sender: Any) {
         foodName = nameOfFood.text ?? ""
-        performSegue(withIdentifier: presentState.rawValue, sender: "dataInputViewController")
+        performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
     }
 
     @IBOutlet weak var buttonOutlet: UIButton!
@@ -63,7 +63,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         }
         else
         {
-             performSegue(withIdentifier: presentState.rawValue , sender: "dataInputViewController")
+            performSegue(withIdentifier: presentState ?? " Undefined " , sender: "dataInputViewController")
         }
     }
     
@@ -120,19 +120,16 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
        // publicInformationBroadcast.isHidden = false
         previewView.isHidden = true
         captureImageView.isHidden = true
-        if image == nil 
-        {
+        if image == nil {
             ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
             image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
         }
         
-        if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg")
-        {
+        if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg"){
             image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
         }
         captureImageView.isHidden = true
         writtenInputElements.isHidden = false
-        
     }
 
     let imagePicker = UIImagePickerController()
@@ -143,6 +140,8 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBarItems()
+        weak var main = navigationController?.viewControllers[0] as? mainViewController
+        presentState = main!.myNav!.currentStateAsString()
         if TARGET_IPHONE_SIMULATOR != 1 {
             usedCamera = true
         }
@@ -158,12 +157,15 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         {
             case "Try Food":
                 navigationItem.title = "What did you try?"
-                presentState = Costume.AddFoodViewController
+                main?.myNav?.presentState = .AddFoodViewController
+                presentState = "AddFoodViewController"
             case "Set Target":
-                 navigationItem.title = "Set a target"
-                presentState = Costume.SetTargetViewController
+                navigationItem.title = "Set a target"
+                main?.myNav?.presentState = .SetTargetViewController
+                presentState = "SetTargetViewController"
             default:
-            presentState = Costume.Unknown
+                main?.myNav?.presentState = .Unknown
+                presentState = "Unknown"
         }
         
         switch currentDataInputMode
@@ -220,7 +222,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             else { return }
         image = UIImage(data: imageData) ?? UIImage(named: "chaos.jpg")!
         captureImageView.image = image
-        performSegue(withIdentifier: presentState.rawValue, sender: "dataInputViewController")
+        performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
     }
     
     func recordTheFood() {
@@ -260,7 +262,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             if let dvc1 = segue.destination as? rateFoodViewController
             {
                 dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
-                dvc1.presentState = presentState
+                //dvc1.presentState = presentState
 //                if foodName != nil
 //                {
                     dvc1.foodName = foodName
@@ -404,30 +406,30 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         
         var message = String()
         
-        switch presentState {
-        case .AddFoodViewController:
-            let name = nameOfFood.text
-            if name != nil && name != ""
-            {
-                message = "I've just tried " + (name ?? "something") + ". In the release version of the app, I will also report whether I liked the food or not!"
+        switch presentState  {
+            case "AddFoodViewController":
+                let name = nameOfFood.text
+                if name != nil && name != ""
+                {
+                    message = "I've just tried " + (name ?? "something") + ". In the release version of the app, I will also report whether I liked the food or not!"
+                }
+                else
+                {
+                    message = "I've just tried a new food!"
+                }
+            case "SetTargetViewController":
+                let name = nameOfFood.text
+                if name != nil && name != ""
+                {
+                    message = "I've just set myself a target of trying " + (name ?? "something") + ". In the release version of the app, I will also report my motivation for trying this food."
+                }
+                else
+                {
+                    message = "I've just tried a new food!"
+                }
+            default:
+                message = "Debug message"
             }
-            else
-            {
-                message = "I've just tried a new food!"
-            }
-        case .SetTargetViewController:
-            let name = nameOfFood.text
-            if name != nil && name != ""
-            {
-                message = "I've just set myself a target of trying " + (name ?? "something") + ". In the release version of the app, I will also report my motivation for trying this food."
-            }
-            else
-            {
-                message = "I've just tried a new food!"
-            }
-        default:
-            message = "Debug message"
-        }
         
         let activityViewController =
             UIActivityViewController(activityItems: [message],

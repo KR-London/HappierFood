@@ -11,13 +11,6 @@ import Foundation
 import Darwin
 import CoreData
 
-//enum cellState : String {
-//    case TriedFood
-//    case TargetFood
-//    case Empty
-//    case Unknown
-//}
-
 let defaults = UserDefaults.standard
 
 class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -27,8 +20,10 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var rating = Double()
     var triedOn = Date()
     var notes = String()
-    var presentStatePlaceholder: Costume = Costume.Unknown
+    //var presentStatePlaceholder: Costume = Costume.Unknown
     var happyTracker = false
+    
+    weak var myNav : customNavigationController?
     
  //   var cellStatusDictionary = [ Int : cellState ]()
 
@@ -52,7 +47,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             rating = foodArray[buttonTag].rating
             triedOn = foodArray[buttonTag].dateTried!
             notes = foodArray[buttonTag].motivation ?? " "
-            presentStatePlaceholder = .AddFoodViewController
+            //presentStatePlaceholder = .AddFoodViewController
+            myNav!.presentState = .AddFoodViewController
             performSegue(withIdentifier: "expandDetail", sender: sender)
         }
         else{
@@ -62,7 +58,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 rating = 0.0
                 triedOn = targetArray[9 - buttonTag - 1 ].dateAdded!
                 notes = targetArray[collectionViewSize - buttonTag - 1 ].motivation ?? " "
-                presentStatePlaceholder = .SetTargetViewController
+               // presentStatePlaceholder = .SetTargetViewController
+                myNav!.presentState = .SetTargetViewController
                 performSegue(withIdentifier: "expandDetail", sender: sender)
             }
         }
@@ -77,15 +74,25 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         navigationController?.popToRootViewController(animated: false)
+        myNav = navigationController as! customNavigationController
+        setUpNavigationBarItems()
+        loadItems()
+        //
 //
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
         if dateNow - defaults.double(forKey: "Last Week Started") > 604800{
             defaults.set(dateNow, forKey: "Last Week Started")
             defaults.set(false, forKey: "Celebration Status")
-            if presentStatePlaceholder != .FirstLaunch{
-                presentStatePlaceholder = .ResetDataAtTheStartOfNewWeek
+//            if presentStatePlaceholder != .FirstLaunch{
+//                presentStatePlaceholder = .ResetDataAtTheStartOfNewWeek
+//            }
+            if myNav!.presentState != .FirstLaunch
+            {
+                myNav!.presentState = .ResetDataAtTheStartOfNewWeek
             }
+            
+            
             happyTracker = false
         }
 
@@ -121,9 +128,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
             view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
         }
-        setUpNavigationBarItems()
-        loadItems()
-        
+
+      //  self.mainCollectionView.reloadInputViews()
+        mainCollectionView.reloadData()
         happy.alpha = 0
         
         if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
@@ -146,8 +153,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        
-        if foodArray.count >= 9 && presentStatePlaceholder != .ReturnFromCelebrationScreen &&  defaults.bool(forKey: "Celebration Status") == true {
+        self.mainCollectionView.reloadInputViews()
+
+        if foodArray.count >= 9 && myNav?.presentState != .ReturnFromCelebrationScreen &&  defaults.bool(forKey: "Celebration Status") == true {
            
             /// fade it in & out with RH picture
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
@@ -164,7 +172,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             happyTracker = false
         }
         
-        switch presentStatePlaceholder
+        switch myNav!.presentState
         {
             case .FirstLaunch : onboardingRoutine()
             case .ResetDataAtTheStartOfNewWeek : publicInformationBroadcast(didTheyReachTheirTarget: false)
@@ -189,8 +197,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         if segue.identifier == "expandDetail" {
             let dvc = segue.destination as! DetailViewController
-            dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
-            dvc.PresentState = presentStatePlaceholder
+          //  dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
+           // dvc.PresentState = presentStatePlaceholder
         }
     }
     
@@ -237,7 +245,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
-            self.presentStatePlaceholder = .Unknown
+          //  self.presentStatePlaceholder = .Unknown
             self.reloadInputViews()
 //            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Main")
@@ -486,7 +494,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! mainCollectionViewCell
-        cell.cellImage.alpha = 1
+      //  cell.cellImage.isHidden = true
+        //cell.cellImage.alpha = 0
         cell.tickImage.isHidden = true
         cell.showDetailButtonProperties.tag = indexPath.row
         
@@ -499,20 +508,24 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     
         if foodArray != nil {
                 if indexPath.row < foodArray.count {
+                    //cell.cellImage.isHidden = true
+                  //  cell.cellImage.alpha = 1
                     let plate = foodArray[indexPath.row]
                     let fileToLoad = plate.filename ?? "1.png"
                     //cell.cellImage.image = UIImage(named: "1.png")
                     cell.displayContent(image: fileToLoad)
                     cell.tickImage.isHidden = false
+                
                 }
                 else
                 {
-                  cell.tickImage.isHidden = true
+                    cell.tickImage.isHidden = true
                 }
             }
         
             if targetArray != nil {
                 if indexPath.row < collectionViewSize && targetArray.count > collectionViewSize - indexPath.row - 1 {
+                     //cell.cellImage.isHidden = false
                     let plate = targetArray[collectionViewSize
                         - indexPath.row - 1]
                     let fileToLoad = plate.filename ?? "1.png"

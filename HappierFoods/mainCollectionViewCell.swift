@@ -29,6 +29,7 @@ class mainCollectionViewCell: UICollectionViewCell {
         cellImage.image = UIImage(named: image)
     }
     func setup(){
+        //cellImage.image
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.red.cgColor
         self.layer.cornerRadius = 5.0

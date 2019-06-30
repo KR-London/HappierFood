@@ -11,7 +11,8 @@ import UIKit
 class Detail5ViewController: UIViewController {
 
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
-    var whereAmI =  Costume.Unknown
+   // var whereAmI =  Costume.Unknown
+  /// KIRBY var presentState
     
     @IBOutlet weak var tryButton: UIButton!
 
@@ -24,15 +25,16 @@ class Detail5ViewController: UIViewController {
         newViewController.foodName = detailToDisplay.foodName
         newViewController.dateTargetSet = detailToDisplay.triedOn
 
-        switch whereAmI
-        {
-            case Costume.AddFoodViewController:
-                newViewController.presentState = .RetryTriedFood
-            case Costume.SetTargetViewController:
-                newViewController.presentState = .ConvertTargetToTry
-            default:
-                 newViewController.presentState = .Unknown
-        }
+        /// KIRBY
+//        switch main?.myNav?.presentState
+//        {
+//            case Costume.AddFoodViewController:
+//                newViewController.presentState = .RetryTriedFood
+//            case Costume.SetTargetViewController:
+//                newViewController.presentState = .ConvertTargetToTry
+//            default:
+//                 newViewController.presentState = .Unknown
+//        }
         self.present(newViewController, animated: true, completion: nil)
     }
     override func viewDidLoad() {

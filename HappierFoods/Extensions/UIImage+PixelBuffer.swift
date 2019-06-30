@@ -8,21 +8,6 @@
 
 import UIKit
 
-enum Costume: String{
-    case SetTargetViewController
-    case AddFoodViewController
-    // I will refactor at some point to use the cases below for clearer code 
-    case ExpandingTriedFoodDetail
-    case ExpandingTargetFoodDetail
-    case ConvertTargetToTry
-    case RetryTriedFood
-    case FirstLaunch
-    case ReturnFromCelebrationScreen
-    case ResetDataAtTheStartOfNewWeek
-    case Unknown
-}
-
-
 extension UIImage {
 
     func resize(to newSize: CGSize) -> UIImage? {

@@ -16,9 +16,11 @@ class celebrationScreenViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "celebrationBackToMain"{
-            let dvc = segue.destination as! mainViewController
-            dvc.presentStatePlaceholder = .ReturnFromCelebrationScreen
+            let dvc = segue.destination as! customNavigationController
+            dvc.presentState = .ReturnFromCelebrationScreen
             dvc.happyTracker = true
+            
+            
         }
     }
 
