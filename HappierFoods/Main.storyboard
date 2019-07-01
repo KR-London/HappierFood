@@ -23,70 +23,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-gS-U1w">
-                                <rect key="frame" x="51" y="173" width="329" height="391"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Here you will see your historical data (if you have purchased the full version) - or an encouragement to upgrade to the full version. </string>
-                                <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-Qg-VdQ">
-                                <rect key="frame" x="8" y="52" width="398" height="100"/>
-                                <color key="backgroundColor" red="0.95678001639999999" green="0.74523562190000003" blue="0.2545614839" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="XJ3-d7-Yey">
+                                <rect key="frame" x="8" y="96" width="398" height="709"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-Qg-VdQ">
+                                        <rect key="frame" x="76.5" y="0.0" width="245" height="100"/>
+                                        <color key="backgroundColor" red="0.95678001639999999" green="0.74523562190000003" blue="0.2545614839" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="9kJ-OU-va1"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Go Back ">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="TwCenMT-CondensedExtraBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <segue destination="QlS-BC-ikQ" kind="show" id="iRz-GL-Z9T"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-gS-U1w">
+                                        <rect key="frame" x="0.0" y="153" width="398" height="250"/>
+                                        <string key="text">Here you will see your historical data (if you have purchased the full version) - or an encouragement to upgrade to the full version. </string>
+                                        <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-l5-H3m">
+                                        <rect key="frame" x="76.5" y="456" width="245" height="100"/>
+                                        <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Cache this week data and start a new week">
+                                                    <attributes>
+                                                        <font key="NSFont" size="15" name="TwCenMT-CondensedExtraBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="cacheWeek:" destination="o5k-lo-mMm" eventType="touchUpInside" id="9zl-3N-a6X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W23-4z-i6u">
+                                        <rect key="frame" x="76.5" y="609" width="245" height="100"/>
+                                        <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Clear all data">
+                                                    <attributes>
+                                                        <font key="NSFont" size="15" name="TwCenMT-CondensedExtraBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearData:" destination="o5k-lo-mMm" eventType="touchUpInside" id="cXX-zL-w5p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="9kJ-OU-va1"/>
+                                    <constraint firstItem="W23-4z-i6u" firstAttribute="width" secondItem="XZk-l5-H3m" secondAttribute="width" id="2Y3-Y7-22T"/>
+                                    <constraint firstItem="XZk-l5-H3m" firstAttribute="height" secondItem="FL3-Qg-VdQ" secondAttribute="height" id="Pes-fe-fIh"/>
+                                    <constraint firstItem="W23-4z-i6u" firstAttribute="height" secondItem="XZk-l5-H3m" secondAttribute="height" id="YT9-SW-tCt"/>
+                                    <constraint firstItem="XZk-l5-H3m" firstAttribute="width" secondItem="FL3-Qg-VdQ" secondAttribute="width" id="zS8-YJ-LF3"/>
                                 </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Go Back ">
-                                            <attributes>
-                                                <font key="NSFont" size="18" name="TwCenMT-CondensedExtraBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <segue destination="QlS-BC-ikQ" kind="show" id="iRz-GL-Z9T"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-l5-H3m">
-                                <rect key="frame" x="20" y="654" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Cache this week data and start a new week">
-                                            <attributes>
-                                                <font key="NSFont" size="15" name="TwCenMT-CondensedExtraBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W23-4z-i6u">
-                                <rect key="frame" x="20" y="734" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Clear all data">
-                                            <attributes>
-                                                <font key="NSFont" size="15" name="TwCenMT-CondensedExtraBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FL3-Qg-VdQ" firstAttribute="leading" secondItem="YtB-eQ-Bji" secondAttribute="leading" constant="8" id="2x8-FB-6De"/>
-                            <constraint firstItem="YtB-eQ-Bji" firstAttribute="trailing" secondItem="FL3-Qg-VdQ" secondAttribute="trailing" constant="8" id="LIt-Qw-ifG"/>
-                            <constraint firstItem="FL3-Qg-VdQ" firstAttribute="top" secondItem="YtB-eQ-Bji" secondAttribute="top" constant="8" id="pQ6-Gf-DO0"/>
+                            <constraint firstItem="YtB-eQ-Bji" firstAttribute="bottom" secondItem="XJ3-d7-Yey" secondAttribute="bottom" constant="8" id="1qU-pj-Tj0"/>
+                            <constraint firstItem="XJ3-d7-Yey" firstAttribute="top" secondItem="YtB-eQ-Bji" secondAttribute="top" constant="8" id="XTT-dd-A7I"/>
+                            <constraint firstItem="XJ3-d7-Yey" firstAttribute="leading" secondItem="iVa-Lh-zfY" secondAttribute="leading" constant="8" id="XpT-KZ-xO8"/>
+                            <constraint firstAttribute="trailing" secondItem="XJ3-d7-Yey" secondAttribute="trailing" constant="8" id="hGJ-4j-QVW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YtB-eQ-Bji"/>
                     </view>
@@ -257,6 +272,7 @@
                         <outlet property="tryButton" destination="KGE-lL-Bzf" id="Yje-eD-jjg"/>
                         <segue destination="Q61-IA-lhv" kind="show" identifier="expandDetail" id="EyT-iX-Ahn"/>
                         <segue destination="QlS-BC-ikQ" kind="presentation" identifier="resetMainWithNavBar" id="kEo-kV-ixy"/>
+                        <segue destination="o5k-lo-mMm" kind="show" identifier="historySegue" id="bY1-rZ-0FJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fna-ov-CAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,13 +394,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-3w-Rav" userLabel="Maxi Stack View">
-                                <rect key="frame" x="8" y="113" width="398" height="736"/>
+                                <rect key="frame" x="8" y="113" width="398" height="692"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-Yc-vXq" userLabel=" Mini Horizontal Stack View">
-                                        <rect key="frame" x="8" y="0.0" width="382" height="229"/>
+                                        <rect key="frame" x="8" y="0.0" width="382" height="185"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-Th-Mzn">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="229"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="185"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="qZL-27-7id"/>
                                                     <constraint firstAttribute="height" constant="100" id="zf1-Sz-hHS"/>
@@ -396,7 +412,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="muC-uq-Gbv">
-                                                <rect key="frame" x="145" y="0.0" width="237" height="229"/>
+                                                <rect key="frame" x="145" y="0.0" width="237" height="185"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Baked Beans">
@@ -422,7 +438,7 @@
                                         </constraints>
                                     </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s04-OS-QFL" userLabel="Container Face View">
-                                        <rect key="frame" x="8" y="249" width="382" height="382"/>
+                                        <rect key="frame" x="8" y="205" width="382" height="382"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="s04-OS-QFL" secondAttribute="height" multiplier="1:1" id="7L5-Hl-tIW"/>
                                         </constraints>
@@ -431,7 +447,7 @@
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-FI-m5N">
-                                        <rect key="frame" x="8" y="651" width="382" height="85"/>
+                                        <rect key="frame" x="8" y="607" width="382" height="85"/>
                                         <color key="backgroundColor" red="0.97361403700000004" green="0.84680634740000005" blue="0.47435027359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="6HD-DS-dpG"/>
@@ -847,7 +863,7 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8JQ-7V-ZRj"/>
+        <segue reference="iRz-GL-Z9T"/>
         <segue reference="8Jr-l3-dhP"/>
         <segue reference="PZb-oU-Ng7"/>
         <segue reference="7pT-VN-rva"/>

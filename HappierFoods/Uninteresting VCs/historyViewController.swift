@@ -15,9 +15,25 @@ class historyViewController: UIViewController {
     
     @IBOutlet weak var clearAllData: UIButton!
     
+    @IBAction func cacheWeek(_ sender: UIButton) {
+        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        main?.cacheData()
+    }
+    
+    
+    @IBAction func clearData(_ sender: Any) {
+        
+        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        main?.deleteAllData("TargetFood")
+        main?.deleteAllData("TriedFood")
+        main?.mainCollectionView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    
+
     
     deinit{
         print("OS reclaiming memory from history view")

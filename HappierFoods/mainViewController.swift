@@ -383,9 +383,11 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
      @objc func goHistory() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "history")
-        self.present(newViewController, animated: true, completion: nil)
+       //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+       // let newViewController = storyBoard.instantiateViewController(withIdentifier: "history")
+       // self.present(newViewController, animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "historySegue", sender: UIButton())
     }
     
     @objc func share() {
@@ -573,6 +575,10 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
         
         return nil
+    }
+    
+    func cacheData(){
+        
     }
   
 }
