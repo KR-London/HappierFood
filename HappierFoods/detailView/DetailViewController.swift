@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class DetailViewController: UIViewController{
-    
 
     var photoFilename = String()
     var foodName = String()
@@ -19,8 +18,6 @@ class DetailViewController: UIViewController{
     var notes = String()
     var presentState = String()
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
-
-  // KIRBY  var PresentState = Costume.Unknown
     
     var detail1VC = Detail1ViewController(nibName: "Detail1ViewController", bundle: nil)
     var detail2VC = Detail2ViewController(nibName: "Detail2ViewController", bundle: nil)
@@ -101,6 +98,9 @@ class DetailViewController: UIViewController{
     }
     
     @objc func delete(sender: UIButton!){
+        
+        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         
@@ -133,7 +133,9 @@ class DetailViewController: UIViewController{
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
             
-                performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
+                main?.mainCollectionView.reloadData()
+                navigationController?.popViewController(animated: true)
+                //performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             case "SetTargetViewController":
                 var targetArray: [TargetFood]!
                 let dateTargetSet = detailToDisplay.triedOn
@@ -167,7 +169,9 @@ class DetailViewController: UIViewController{
                 }
 //                } catch{  }
             
-                performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
+                main?.mainCollectionView.reloadData()
+                navigationController?.popViewController(animated: true)
+                //performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             
             
             default:  break

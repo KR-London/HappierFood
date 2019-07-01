@@ -422,6 +422,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
        // }
         
         deleteAllData("TriedFood")
+        foodArray = []
+        
+        DispatchQueue.main.async{
+            self.mainCollectionView.reloadData()
+            self.mainCollectionView.reloadInputViews()
+        }
         /// reset markers
         let dateNow = Date().timeIntervalSince1970
         defaults.set(dateNow, forKey: "Last Week Started")

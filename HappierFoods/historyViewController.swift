@@ -21,6 +21,8 @@ class historyViewController: UIViewController {
     
     @IBAction func cacheWeek(_ sender: UIButton) {
         copyFoodToHistory()
+
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -31,7 +33,16 @@ class historyViewController: UIViewController {
         main?.deleteAllData("TriedFood")
         deleteAllData("HistoryTriedFoods")
         
-        main?.mainCollectionView.reloadData()
+        main?.foodArray = []
+        main?.targetArray = []
+        historyArray = []
+        
+        DispatchQueue.main.async{
+            main?.mainCollectionView.reloadData()
+             main?.mainCollectionView.reloadInputViews()
+
+        }
+        navigationController?.popViewController(animated: true)
     }
 
     override func viewDidLoad() {

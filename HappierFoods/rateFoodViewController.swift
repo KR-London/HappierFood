@@ -20,11 +20,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     var rating = 0.0
     var foodName = String()
     var dateTargetSet = Date()
-    
-    //KIRBY
-    
     var presentState = String()
-   // var presentState: Costume = Costume.Unknown
 
     @IBAction func endedEnteringName(_ sender: Any) {
         self.view.endEditing(true)
