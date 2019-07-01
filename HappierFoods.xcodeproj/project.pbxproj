@@ -211,7 +211,6 @@
 		447DE07E22C5C79200081414 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				44BE3B9B22566A230090BB5F /* AppDelegate.swift */,
 				447DE07C22C5BFA200081414 /* OnboardingViewController.swift */,
 				441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */,
 				4483901522C731E5002F8D2E /* onboarding1.png */,
@@ -307,6 +306,7 @@
 		44BE3B9A22566A230090BB5F /* HappierFoods */ = {
 			isa = PBXGroup;
 			children = (
+				44BE3B9B22566A230090BB5F /* AppDelegate.swift */,
 				447DE07E22C5C79200081414 /* Onboarding */,
 				441DB5EE22C513DB00E857C0 /* Main.storyboard */,
 				44A63E9022598D03002E656E /* rateFoodViewController.swift */,

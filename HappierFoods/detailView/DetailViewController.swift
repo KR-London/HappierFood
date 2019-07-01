@@ -28,6 +28,8 @@ class DetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         weak var main = navigationController?.viewControllers[0] as! mainViewController
+        presentState = (main?.myNav?.currentStateAsString())!
+        
         
         self.view.addSubview(detail1VC.view)
         self.view.addSubview(detail2VC.view)
@@ -40,14 +42,14 @@ class DetailViewController: UIViewController{
         
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename)
         detail3VC.detailToDisplay = detailToDisplay
-        /// KIRBY
-//        if PresentState == Costume.AddFoodViewController {
-//             detail3VC.faceView.isHidden = false
-//            detail3VC.faceView.mouthCurvature = detailToDisplay.rating
-//        }
-//        else  {
-//            detail3VC.faceView.isHidden = true
-//        }
+      
+        if presentState == "AddFoodViewController" {
+             detail3VC.faceView.isHidden = false
+            detail3VC.faceView.mouthCurvature = detailToDisplay.rating
+        }
+        else  {
+            detail3VC.faceView.isHidden = true
+        }
         detail5VC.detailToDisplay = detailToDisplay
        // KIRBY  detail5VC.whereAmI = main!.myNav!.presentState
         
@@ -103,8 +105,6 @@ class DetailViewController: UIViewController{
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        
-        /// KIRBY
         switch presentState{
             case "AddFoodViewController":
                 var foodArray: [TriedFood]!
@@ -133,7 +133,12 @@ class DetailViewController: UIViewController{
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
             
-                main?.mainCollectionView.reloadData()
+               // DispatchQueue.async{
+                    main?.foodArray.remove(at: indexOfMyTimestamp!)
+                   // main?.mainCollectionView.cellForItem(at: IndexPath(row: indexOfMyTimestamp!, section: 0))?.reloadInputViews()
+                   // main?.mainCollectionView.reloadData()
+                    main?.mainCollectionView.reloadInputViews()
+              // }
                 navigationController?.popViewController(animated: true)
                 //performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             case "SetTargetViewController":
@@ -153,23 +158,24 @@ class DetailViewController: UIViewController{
                 }
                 
                 let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
-                print(listOfTimestamps)
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
-                print("indexOfMyTimestamp")
-                print(indexOfMyTimestamp!)
-                print(targetArray[indexOfMyTimestamp!])
+
+                context.delete(targetArray[indexOfMyTimestamp!])
                 do{
-                    try context.delete(targetArray[indexOfMyTimestamp!])
                     try context.save()
-                } catch {
+                }
+                catch {
                     // Replace this implementation with code to handle the error appropriately.
                     // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+
                     let nserror = error as NSError
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
-//                } catch{  }
-            
-                main?.mainCollectionView.reloadData()
+                
+               // DispatchQueue.main.async{
+                    main?.mainCollectionView.reloadData()
+                    main?.mainCollectionView.reloadInputViews()
+               // }
                 navigationController?.popViewController(animated: true)
                 //performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             

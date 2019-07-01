@@ -36,6 +36,7 @@ class historyViewController: UIViewController {
         main?.foodArray = []
         main?.targetArray = []
         historyArray = []
+        defaults.set(0.0, forKey: "Last Week Started")
         
         DispatchQueue.main.async{
             main?.mainCollectionView.reloadData()

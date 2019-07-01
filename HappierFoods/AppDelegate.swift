@@ -16,16 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
-        
-//            print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-//        
-//        //  let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+  //      let font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+ 
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         
         /// for testing
-        let launchedBefore = false
+ //       let launchedBefore = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -49,8 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
             
         }
- 
-       // UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIColor.black], for: .normal)
         return true
     }
     
