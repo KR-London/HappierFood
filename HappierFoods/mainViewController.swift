@@ -23,7 +23,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //var presentStatePlaceholder: Costume = Costume.Unknown
     var happyTracker = false
     
-    weak var myNav : customNavigationController?
+    unowned var myNav : customNavigationController?
     
  //   var cellStatusDictionary = [ Int : cellState ]()
 
