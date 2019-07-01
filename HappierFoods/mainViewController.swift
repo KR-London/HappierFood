@@ -494,9 +494,10 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! mainCollectionViewCell
-      //  cell.cellImage.isHidden = true
-        //cell.cellImage.alpha = 0
+        cell.cellImage.isHidden = true
+        cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
+        cell.backgroundColor = UIColor.green
         cell.showDetailButtonProperties.tag = indexPath.row
         
         var collectionViewSize = 9
@@ -508,7 +509,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     
         if foodArray != nil {
                 if indexPath.row < foodArray.count {
-                    //cell.cellImage.isHidden = true
+                    cell.backgroundColor = UIColor.clear
+                    cell.cellImage.isHidden = false
                   //  cell.cellImage.alpha = 1
                     let plate = foodArray[indexPath.row]
                     let fileToLoad = plate.filename ?? "1.png"
@@ -525,7 +527,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         
             if targetArray != nil {
                 if indexPath.row < collectionViewSize && targetArray.count > collectionViewSize - indexPath.row - 1 {
-                     //cell.cellImage.isHidden = false
+                    cell.cellImage.isHidden = false
+                    cell.backgroundColor = UIColor.clear
                     let plate = targetArray[collectionViewSize
                         - indexPath.row - 1]
                     let fileToLoad = plate.filename ?? "1.png"

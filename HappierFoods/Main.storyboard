@@ -742,6 +742,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="QlS-BC-ikQ" kind="show" identifier="detailToMain" id="8JQ-7V-ZRj"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="detailToRate" id="PZb-oU-Ng7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzo-Zc-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -846,8 +847,9 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kEo-kV-ixy"/>
+        <segue reference="8JQ-7V-ZRj"/>
         <segue reference="8Jr-l3-dhP"/>
-        <segue reference="s13-Me-gb1"/>
+        <segue reference="PZb-oU-Ng7"/>
+        <segue reference="7pT-VN-rva"/>
     </inferredMetricsTieBreakers>
 </document>

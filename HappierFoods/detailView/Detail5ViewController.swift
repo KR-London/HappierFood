@@ -18,12 +18,14 @@ class Detail5ViewController: UIViewController {
 
     @IBAction func tryButtonPressed(_ sender: UIButton) {
         ///load rate food view controller
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "rateFoodVC") as! rateFoodViewController
-        newViewController.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
-        ///   newViewController.rating = 0.0
-        newViewController.foodName = detailToDisplay.foodName
-        newViewController.dateTargetSet = detailToDisplay.triedOn
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "rateFoodVC") as! rateFoodViewController
+//        newViewController.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+//        ///   newViewController.rating = 0.0
+//        newViewController.foodName = detailToDisplay.foodName
+//        newViewController.dateTargetSet = detailToDisplay.triedOn
+        
+        performSegue(withIdentifier: "detailToRate", sender: UIButton())
 
         /// KIRBY
 //        switch main?.myNav?.presentState
@@ -35,10 +37,20 @@ class Detail5ViewController: UIViewController {
 //            default:
 //                 newViewController.presentState = .Unknown
 //        }
-        self.present(newViewController, animated: true, completion: nil)
+       // self.present(newViewController, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailToRate"{
+            let dvc = segue.destination as! rateFoodViewController
+            dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+            ///   newViewController.rating = 0.0
+            dvc.foodName = detailToDisplay.foodName
+            dvc.dateTargetSet = detailToDisplay.triedOn
+        }
+    }
+ 
 }

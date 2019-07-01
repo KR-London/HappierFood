@@ -173,12 +173,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         /// get the image path
         let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension)
-        
         let image2 = image.resizeImage(targetSize: CGSize(width: 300, height: 300))
-        
         let data = UIImage.pngData(image2)
-        
         fileManager.createFile(atPath: imagePath as String, contents: data(), attributes: nil)
+        
+        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
         
         ///KIRBY
         switch presentState {
@@ -194,19 +193,22 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                         menuItem.dateTried = Date()
                         saveItems()
                         /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
-                        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-                        let currentNumberTried = main?.foodArray.count ?? 0
+                        //weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+                      // let currentNumberTried = main?.foodArray.count ?? 0
                         main?.foodArray.append(menuItem)
                         
-                        main?.mainCollectionView.performBatchUpdates({
-                           // main?.foodArray.append(menuItem)
-                           // main?.mainCollectionView.reloadData()
-                            //main?.mainCollectionView.reloadSections([0])
-                            main?.mainCollectionView.deleteItems(at: [IndexPath(row: currentNumberTried, section: 0)])
-                            main?.mainCollectionView.insertItems(at: [IndexPath(row: currentNumberTried, section: 0)])
-                           // main?.mainCollectionView.reloadInputViews()
-                        })
+//                        main?.mainCollectionView.performBatchUpdates({
+//                           // main?.foodArray.append(menuItem)
+//                           // main?.mainCollectionView.reloadData()
+//                            //main?.mainCollectionView.reloadSections([0])
+//                            main?.mainCollectionView.deleteItems(at: [IndexPath(row: currentNumberTried, section: 0)])
+//                            main?.mainCollectionView.insertItems(at: [IndexPath(row: currentNumberTried, section: 0)])
+//                           // main?.mainCollectionView.reloadInputViews()
+//                        })
                         
+                        DispatchQueue.main.async{
+                            main?.mainCollectionView.reloadData()
+                        }
                     }
             case "ConvertTargetToTry":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
@@ -235,6 +237,27 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
                 saveItems()
+                
+                main?.foodArray.append(menuItem)
+                main?.targetArray.remove(at: indexOfMyTimestamp!)
+   
+                /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
+//                weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+//                let currentNumberTried = main?.foodArray.count ?? 0
+//                main?.foodArray.append(menuItem)
+//                
+//                main?.mainCollectionView.performBatchUpdates({
+//                    // main?.foodArray.append(menuItem)
+//                    // main?.mainCollectionView.reloadData()
+//                    //main?.mainCollectionView.reloadSections([0])
+//                    main?.mainCollectionView.deleteItems(at: [IndexPath(row: currentNumberTried, section: 0)])
+//                    main?.mainCollectionView.insertItems(at: [IndexPath(row: currentNumberTried, section: 0)])
+//                    // main?.mainCollectionView.reloadInputViews()
+//                })
+                
+                DispatchQueue.main.async{
+                    main?.mainCollectionView.reloadData()
+                }
             }
             case "RetryTriedFood":
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
@@ -246,7 +269,13 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
                 saveItems()
+                    
+                main?.foodArray.append(menuItem)
+                    
+                DispatchQueue.main.async{
+                        main?.mainCollectionView.reloadData()
                 }
+            }
             case "SetTargetViewController":
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
@@ -254,6 +283,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.name = imageName
                 menuItem.dateAdded = Date()
                 saveItems()
+                
+                main?.targetArray.append(menuItem)
+                    DispatchQueue.main.async{
+                        main?.mainCollectionView.reloadData()
+                    }
             }
             
             default: return

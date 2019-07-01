@@ -29,7 +29,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/rateFoodViewController.swift"
-            timestampString = "583596218.540048"
+            timestampString = "583675798.347482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -46,7 +46,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/dataInputViewController.swift"
-            timestampString = "583596218.5401289"
+            timestampString = "583675798.347891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "262"
@@ -63,11 +63,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/rateFoodViewController.swift"
-            timestampString = "583596218.5401829"
+            timestampString = "583675798.348146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "rateFoodViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -80,7 +80,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/dataInputViewController.swift"
-            timestampString = "583596218.540241"
+            timestampString = "583675798.348243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "401"
@@ -148,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/mainViewController.swift"
-            timestampString = "583596218.540409"
+            timestampString = "583675798.348444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "499"
@@ -165,11 +165,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/detailView/Detail5ViewController.swift"
-            timestampString = "583596218.540817"
+            timestampString = "583675798.348716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "tryButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -182,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/detailView/Detail5ViewController.swift"
-            timestampString = "583596218.540867"
+            timestampString = "583675798.349463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "tryButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -199,7 +199,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/dataInputViewController.swift"
-            timestampString = "583596218.540911"
+            timestampString = "583675798.349898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "332"
@@ -215,7 +215,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/dataInputViewController.swift"
-            timestampString = "583596218.540958"
+            timestampString = "583675798.349981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -247,7 +247,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/detailView/DetailViewController.swift"
-            timestampString = "583596218.541041"
+            timestampString = "583675798.350131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -263,7 +263,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/detailView/DetailViewController.swift"
-            timestampString = "583596218.541087"
+            timestampString = "583675798.350457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -279,7 +279,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/detailView/DetailViewController.swift"
-            timestampString = "583596218.541128"
+            timestampString = "583675798.3505321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -327,7 +327,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/mainViewController.swift"
-            timestampString = "583596218.54117"
+            timestampString = "583675798.3506041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -343,11 +343,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/rateFoodViewController.swift"
-            timestampString = "583596218.5414799"
+            timestampString = "583675798.350705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>
@@ -391,7 +391,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/mainViewController.swift"
-            timestampString = "583596218.5415519"
+            timestampString = "583675798.3508019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
@@ -407,7 +407,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/Onboarding/OnboardingViewController.swift"
-            timestampString = "583596218.541855"
+            timestampString = "583675798.350895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -423,7 +423,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/mainViewController.swift"
-            timestampString = "583596218.5419"
+            timestampString = "583675798.351181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -439,7 +439,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/mainViewController.swift"
-            timestampString = "583596218.542172"
+            timestampString = "583675798.351266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -455,11 +455,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/mainViewController.swift"
-            timestampString = "583596218.542444"
+            timestampString = "583675798.351335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -471,11 +471,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/rateFoodViewController.swift"
-            timestampString = "583596218.54269"
+            timestampString = "583675798.351392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "appsAndBiscuits(imageName:image:rating:)"
             landmarkType = "7">
             <Locations>
@@ -508,6 +508,102 @@
                   startingLineNumber = "197"
                   endingLineNumber = "197"
                   offsetFromSymbolStart = "15142">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappierFoods/detailView/DetailViewController.swift"
+            timestampString = "583675798.35145"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappierFoods.DetailViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "HappierFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/detailView/DetailViewController.swift"
+                  timestampString = "583675798.631498"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "387">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappierFoods.DetailViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "HappierFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/detailView/DetailViewController.swift"
+                  timestampString = "583675798.633557"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "7973">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappierFoods/rateFoodViewController.swift"
+            timestampString = "583675847.903188"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappierFoods.rateFoodViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "HappierFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/rateFoodViewController.swift"
+                  timestampString = "583675847.909597"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "598">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappierFoods.rateFoodViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "HappierFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/rateFoodViewController.swift"
+                  timestampString = "583675847.912692"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "5012">
                </Location>
             </Locations>
          </BreakpointContent>
