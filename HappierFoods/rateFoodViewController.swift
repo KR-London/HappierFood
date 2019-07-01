@@ -61,7 +61,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         presentState = main!.myNav!.currentStateAsString()
         if presentState == "SetTargetViewController"
         {
-            motivationText.delegate = self
+ //           motivationText.delegate = self
         }
 
         imagePlaceholder = cropImageToSquare(imagePlaceholder)

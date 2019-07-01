@@ -197,7 +197,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         if segue.identifier == "expandDetail" {
             let dvc = segue.destination as! DetailViewController
-          //  dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
+            dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
            // dvc.PresentState = presentStatePlaceholder
         }
     }

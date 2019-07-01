@@ -12,4 +12,8 @@ class Detail4ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    deinit{
+        print("OS reclaiming memory from detail 4 view")
+    }
 }

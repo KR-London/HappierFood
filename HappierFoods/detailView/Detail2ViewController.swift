@@ -20,4 +20,7 @@ class Detail2ViewController: UIViewController {
             foodName.text = "No food name stored"
         }
     }
+    deinit{
+        print("OS reclaiming memory from detail 2 view")
+    }
 }

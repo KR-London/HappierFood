@@ -11,6 +11,7 @@ import CoreData
 
 class DetailViewController: UIViewController{
     
+
     var photoFilename = String()
     var foodName = String()
     var rating = Double()
@@ -52,6 +53,26 @@ class DetailViewController: UIViewController{
 //        }
         detail5VC.detailToDisplay = detailToDisplay
        // KIRBY  detail5VC.whereAmI = main!.myNav!.presentState
+        
+        detail5VC.buttonPress( handler:  {[weak self] value in
+            
+           // if main?.myNav?.presentState ==
+           if main?.myNav?.presentState == .AddFoodViewController{
+                main?.myNav?.presentState = .RetryTriedFood
+                }
+           else{
+                if main?.myNav?.presentState == .SetTargetViewController{
+                    main?.myNav?.presentState = .ConvertTargetToTry
+                }
+                else
+                {
+                    main?.myNav?.presentState = .Unknown
+                }
+            }
+            
+            self!.performSegue(withIdentifier: "detailToRate", sender: UIButton())
+            
+        })
         
         switch main!.myNav!.presentState {
         case .AddFoodViewController:
@@ -193,5 +214,18 @@ class DetailViewController: UIViewController{
             container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
             ])
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailToRate"{
+            let dvc = segue.destination as! rateFoodViewController
+            dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+            ///   newViewController.rating = 0.0
+            dvc.foodName = detailToDisplay.foodName
+            dvc.dateTargetSet = detailToDisplay.triedOn
+        }
+    }
+    
+    deinit{
+        print("OS reclaiming memory from detail view")
     }
 }

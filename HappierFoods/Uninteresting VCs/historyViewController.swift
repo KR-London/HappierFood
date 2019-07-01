@@ -18,4 +18,8 @@ class historyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    deinit{
+        print("OS reclaiming memory from history view")
+    }
 }

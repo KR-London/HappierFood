@@ -9,6 +9,8 @@
 import UIKit
 
 class Detail5ViewController: UIViewController {
+    
+    var buttonPress: ((_ value: String) -> Void)?
 
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
    // var whereAmI =  Costume.Unknown
@@ -17,6 +19,14 @@ class Detail5ViewController: UIViewController {
     @IBOutlet weak var tryButton: UIButton!
 
     @IBAction func tryButtonPressed(_ sender: UIButton) {
+        
+        if let feedback = buttonPress{
+            feedback("Try")
+        }
+        
+
+        
+
         ///load rate food view controller
 //        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let newViewController = storyBoard.instantiateViewController(withIdentifier: "rateFoodVC") as! rateFoodViewController
@@ -25,7 +35,7 @@ class Detail5ViewController: UIViewController {
 //        newViewController.foodName = detailToDisplay.foodName
 //        newViewController.dateTargetSet = detailToDisplay.triedOn
         
-        performSegue(withIdentifier: "detailToRate", sender: UIButton())
+       // performSegue(withIdentifier: "detailToRate", sender: UIButton())
 
         /// KIRBY
 //        switch main?.myNav?.presentState
@@ -51,6 +61,15 @@ class Detail5ViewController: UIViewController {
             dvc.foodName = detailToDisplay.foodName
             dvc.dateTargetSet = detailToDisplay.triedOn
         }
+    }
+    
+    func buttonPress(handler: @escaping (_ value: String) -> Void) {
+        
+        buttonPress = handler
+    }
+    
+    deinit{
+        print("OS reclaiming memory from detail 5 view")
     }
  
 }

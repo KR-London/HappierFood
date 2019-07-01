@@ -40,7 +40,7 @@ class customNavigationController: UINavigationController {
             // I will refactor at some point to use the cases below for clearer code
             case .ExpandingTriedFoodDetail: return "ExpandingTriedFoodDetail"
             case .ExpandingTargetFoodDetail: return "ExpandingTargetFoodDetail"
-            case .ConvertTargetToTry: return "ConvertTargetToTryr"
+            case .ConvertTargetToTry: return "ConvertTargetToTry"
             case .RetryTriedFood: return "RetryTriedFood"
             case .FirstLaunch: return "FirstLaunch"
             case .ReturnFromCelebrationScreen: return "ReturnFromCelebrationScreen"

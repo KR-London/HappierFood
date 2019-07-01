@@ -20,5 +20,7 @@ class Detail3ViewController: UIViewController {
     faceView.mouthCurvature = detailToDisplay.rating
     }
 
-
+    deinit{
+        print("OS reclaiming memory from detail 3 view")
+    }
 }
