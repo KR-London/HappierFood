@@ -20,18 +20,13 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var rating = Double()
     var triedOn = Date()
     var notes = String()
-    //var presentStatePlaceholder: Costume = Costume.Unknown
     var happyTracker = false
     
     unowned var myNav : customNavigationController?
-    
- //   var cellStatusDictionary = [ Int : cellState ]()
-
 
     @IBOutlet weak var targetButton: UIButton!
     @IBOutlet weak var tryButton: UIButton!
     @IBOutlet weak var mainCollectionView: UICollectionView!
-    
     @IBOutlet weak var happy: UIImageView!
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
         let buttonTag = sender.tag
@@ -47,7 +42,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             rating = foodArray[buttonTag].rating
             triedOn = foodArray[buttonTag].dateTried!
             notes = foodArray[buttonTag].motivation ?? " "
-            //presentStatePlaceholder = .AddFoodViewController
             myNav!.presentState = .AddFoodViewController
             performSegue(withIdentifier: "expandDetail", sender: sender)
         }
@@ -58,7 +52,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 rating = 0.0
                 triedOn = targetArray[9 - buttonTag - 1 ].dateAdded!
                 notes = targetArray[collectionViewSize - buttonTag - 1 ].motivation ?? " "
-               // presentStatePlaceholder = .SetTargetViewController
                 myNav!.presentState = .SetTargetViewController
                 performSegue(withIdentifier: "expandDetail", sender: sender)
             }
@@ -77,35 +70,20 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         myNav = navigationController as! customNavigationController
         setUpNavigationBarItems()
         loadItems()
-        //
-//
+
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
         if dateNow - defaults.double(forKey: "Last Week Started") > 604800{
-            defaults.set(dateNow, forKey: "Last Week Started")
-            defaults.set(false, forKey: "Celebration Status")
-//            if presentStatePlaceholder != .FirstLaunch{
-//                presentStatePlaceholder = .ResetDataAtTheStartOfNewWeek
-//            }
-            if myNav!.presentState != .FirstLaunch
-            {
-                myNav!.presentState = .ResetDataAtTheStartOfNewWeek
-            }
-            
-            
-            happyTracker = false
+            cacheData()
         }
 
-        
         if defaults.double(forKey: "Last Week Started")  == 0.0        {
             defaults.set(dateNow, forKey: "Last Week Started")
             defaults.set(false, forKey: "Celebration Status")
-            
         }
         
-        //print(defaults.double(forKey: "Last Week Started"))
-        //print(defaults.bool(forKey: "Celebration Status"))
-        
+//print(defaults.double(forKey: "Last Week Started"))
+//print(defaults.bool(forKey: "Celebration Status"))
 //        if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
 //        {
 //            defaults.set(true, forKey: "Celebration Status")
@@ -117,10 +95,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //           }
 //        }
 //
-       
-
-       // let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-       // print(datafilepath!)
+// let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+// print(datafilepath!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -313,15 +289,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 onboardingImageView.image = UIImage(named: "onboarding1.png")
             }
         }
-        //
-        // swap to LH picture
-        
-        /// pulse LH button
-        
-        /// fade in and out with LH picture.
-        
-        
-        
         
     }
     
@@ -442,6 +409,25 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         present(activityViewController, animated: true)
     }
     
+    func cacheData(){
+        
+        /// load in historical tried food
+       // if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+        //    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "HistoryTriedFoods", into: managedObjectContext) as! HistoryTriedFoods
+            //menuItem.filename = imagePath
+           // menuItem.name = imageName
+           // menuItem.rating = rating ?? 0
+           // menuItem.dateTried = Date()
+           // saveItems()
+       // }
+        
+        deleteAllData("TriedFood")
+        /// reset markers
+        let dateNow = Date().timeIntervalSince1970
+        defaults.set(dateNow, forKey: "Last Week Started")
+        defaults.set(false, forKey: "Celebration Status")
+        myNav!.presentState = .ResetDataAtTheStartOfNewWeek
+    }
     
 }
 
@@ -577,9 +563,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         return nil
     }
     
-    func cacheData(){
-        
-    }
+
   
 }
 

@@ -154,7 +154,6 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         catch{
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            
         }
     }
     
