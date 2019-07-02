@@ -20,7 +20,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var rating = Double()
     var triedOn = Date()
     var notes = String()
-    var happyTracker = false
+ //   var happyTracker = false
     
     unowned var myNav : customNavigationController?
 
@@ -67,7 +67,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         navigationController?.popToRootViewController(animated: false)
-        myNav = navigationController as! customNavigationController
+        myNav = navigationController as? customNavigationController
         setUpNavigationBarItems()
         loadItems()
 
@@ -82,32 +82,19 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             defaults.set(false, forKey: "Celebration Status")
         }
         
-//print(defaults.double(forKey: "Last Week Started"))
-//print(defaults.bool(forKey: "Celebration Status"))
-//        if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
-//        {
-//            defaults.set(true, forKey: "Celebration Status")
-//
-//            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-//                                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
-//                                        self.present(newViewController, animated: true, completion: nil)
-//           }
-//        }
-//
+
 // let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
 // print(datafilepath!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if defaults.bool(forKey: "Celebration Status") == true && happyTracker == false{
+        if defaults.bool(forKey: "Celebration Status") == true && foodArray.count >= 9 {
             view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
         }
-
-      //  self.mainCollectionView.reloadInputViews()
+        
         mainCollectionView.reloadData()
-        happy.alpha = 0
+
         
         if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
         {
@@ -119,8 +106,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.present(newViewController, animated: true, completion: nil)
             }
         }
-        
-       // mainCollectionView.
     }
     
     deinit{
@@ -131,21 +116,26 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidAppear(false)
         self.mainCollectionView.reloadInputViews()
 
-        if foodArray.count >= 9 && myNav?.presentState != .ReturnFromCelebrationScreen &&  defaults.bool(forKey: "Celebration Status") == true {
-           
-            /// fade it in & out with RH picture
+        
+    //    if foodArray.count >= 9 && myNav?.presentState != .ReturnFromCelebrationScreen &&  defaults.bool(forKey: "Celebration Status") == true {
+        if foodArray.count >= 9 && defaults.bool(forKey: "Celebration Status") == true{
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
                 let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
                     self?.happy.alpha = 1
                 }
                 animator.startAnimation()
+              //  self.happyTracker = true
             }
-        
         }
-        
-        if foodArray.count < 9
+        else
         {
-            happyTracker = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
+                    self?.happy.alpha = 0
+                }
+                animator.startAnimation()
+            }
+           // happyTracker = false
         }
         
         switch myNav!.presentState
@@ -332,6 +322,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         historyButton.setImage(UIImage(named: "appleHistory.png"), for: .normal)
         historyButton.addTarget(self, action: #selector(goHistory), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: historyButton)
+        
+        happy.alpha = 0
     }
     
     func deleteAllData(_ entity:String) {

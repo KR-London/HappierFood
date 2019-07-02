@@ -75,7 +75,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         setUpNavigationBarItems()
         switch  main!.myNav!.presentState {
-            case .AddFoodViewController:
+            case .AddFoodViewController, .RetryTriedFood, .ConvertTargetToTry :
                 navigationItem.title = "Rate It!";
             case .SetTargetViewController:
                 navigationItem.title = "Motivate It"
