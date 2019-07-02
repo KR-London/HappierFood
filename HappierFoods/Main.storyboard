@@ -26,36 +26,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="XJ3-d7-Yey">
                                 <rect key="frame" x="8" y="96" width="398" height="709"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-Qg-VdQ">
-                                        <rect key="frame" x="76.5" y="0.0" width="245" height="100"/>
-                                        <color key="backgroundColor" red="0.95678001639999999" green="0.74523562190000003" blue="0.2545614839" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="9kJ-OU-va1"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Go Back ">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="TwCenMT-CondensedExtraBold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <segue destination="QlS-BC-ikQ" kind="show" id="iRz-GL-Z9T"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2b-gS-U1w">
-                                        <rect key="frame" x="0.0" y="153" width="398" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="435"/>
                                         <string key="text">Here you will see your historical data (if you have purchased the full version) - or an encouragement to upgrade to the full version. </string>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-l5-H3m">
-                                        <rect key="frame" x="76.5" y="456" width="245" height="100"/>
+                                        <rect key="frame" x="0.0" y="488" width="398" height="84"/>
                                         <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Cache this week data and start a new week">
@@ -71,8 +52,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W23-4z-i6u">
-                                        <rect key="frame" x="76.5" y="609" width="245" height="100"/>
+                                        <rect key="frame" x="0.0" y="625" width="398" height="84"/>
                                         <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Clear all data">
@@ -90,9 +72,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="W23-4z-i6u" firstAttribute="width" secondItem="XZk-l5-H3m" secondAttribute="width" id="2Y3-Y7-22T"/>
-                                    <constraint firstItem="XZk-l5-H3m" firstAttribute="height" secondItem="FL3-Qg-VdQ" secondAttribute="height" id="Pes-fe-fIh"/>
+                                    <constraint firstItem="XZk-l5-H3m" firstAttribute="width" secondItem="XJ3-d7-Yey" secondAttribute="width" id="RxH-9s-yXo"/>
                                     <constraint firstItem="W23-4z-i6u" firstAttribute="height" secondItem="XZk-l5-H3m" secondAttribute="height" id="YT9-SW-tCt"/>
-                                    <constraint firstItem="XZk-l5-H3m" firstAttribute="width" secondItem="FL3-Qg-VdQ" secondAttribute="width" id="zS8-YJ-LF3"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -102,6 +83,7 @@
                             <constraint firstItem="XJ3-d7-Yey" firstAttribute="top" secondItem="YtB-eQ-Bji" secondAttribute="top" constant="8" id="XTT-dd-A7I"/>
                             <constraint firstItem="XJ3-d7-Yey" firstAttribute="leading" secondItem="iVa-Lh-zfY" secondAttribute="leading" constant="8" id="XpT-KZ-xO8"/>
                             <constraint firstAttribute="trailing" secondItem="XJ3-d7-Yey" secondAttribute="trailing" constant="8" id="hGJ-4j-QVW"/>
+                            <constraint firstItem="m2b-gS-U1w" firstAttribute="height" secondItem="YtB-eQ-Bji" secondAttribute="height" multiplier="0.6" id="tjB-y6-DGb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YtB-eQ-Bji"/>
                     </view>
@@ -273,6 +255,7 @@
                         <segue destination="Q61-IA-lhv" kind="show" identifier="expandDetail" id="EyT-iX-Ahn"/>
                         <segue destination="QlS-BC-ikQ" kind="presentation" identifier="resetMainWithNavBar" id="kEo-kV-ixy"/>
                         <segue destination="o5k-lo-mMm" kind="show" identifier="historySegue" id="bY1-rZ-0FJ"/>
+                        <segue destination="a59-XC-I8L" kind="show" identifier="celebrationSegue" id="QId-2G-l4q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fna-ov-CAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -620,7 +603,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-I4-nLe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="810"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="717"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Owk-4Z-H6s">
                                         <rect key="frame" x="169.5" y="0.0" width="75" height="75"/>
@@ -630,7 +613,7 @@
                                         </constraints>
                                     </imageView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-vh-OWh">
-                                        <rect key="frame" x="57" y="106" width="300" height="396.5"/>
+                                        <rect key="frame" x="57" y="106" width="300" height="467"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="J2K-ob-AoO"/>
                                             <constraint firstAttribute="height" constant="300" id="gXk-cA-OPH"/>
@@ -640,42 +623,21 @@
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done! You achieved the goal of trying 9 new foods this week. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK2-3K-eVT">
-                                        <rect key="frame" x="8" y="533.5" width="398" height="123"/>
+                                        <rect key="frame" x="8" y="604" width="398" height="113"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hw0-hy-FY5">
-                                        <rect key="frame" x="8" y="687.5" width="398" height="122.5"/>
-                                        <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Go Back ">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="30" name="TwCenMT-CondensedExtraBold"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <segue destination="QlS-BC-ikQ" kind="show" identifier="celebrationBackToMain" id="3nC-Ai-uuc"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="hw0-hy-FY5" firstAttribute="leading" secondItem="zoX-I4-nLe" secondAttribute="leading" constant="8" id="Jih-C8-0Wn"/>
-                                    <constraint firstItem="QK2-3K-eVT" firstAttribute="height" secondItem="hw0-hy-FY5" secondAttribute="height" id="Lwo-Rd-o3N"/>
                                     <constraint firstAttribute="trailing" secondItem="QK2-3K-eVT" secondAttribute="trailing" constant="8" id="nCy-7y-gZ5"/>
                                     <constraint firstItem="QK2-3K-eVT" firstAttribute="leading" secondItem="zoX-I4-nLe" secondAttribute="leading" constant="8" id="p6w-M1-75i"/>
-                                    <constraint firstAttribute="trailing" secondItem="hw0-hy-FY5" secondAttribute="trailing" constant="8" id="yEM-MX-Mjc"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hw0-hy-FY5" firstAttribute="height" secondItem="0ej-fB-Jb0" secondAttribute="height" multiplier="0.15" id="1Ra-H9-9Rp"/>
                             <constraint firstAttribute="trailing" secondItem="zoX-I4-nLe" secondAttribute="trailing" id="OFX-Ib-gIY"/>
                             <constraint firstItem="zoX-I4-nLe" firstAttribute="top" secondItem="0ej-fB-Jb0" secondAttribute="top" id="VGb-nU-pl4"/>
                             <constraint firstItem="zoX-I4-nLe" firstAttribute="trailing" secondItem="0ej-fB-Jb0" secondAttribute="trailing" id="VSP-EX-iKF"/>
@@ -697,7 +659,7 @@
             <objects>
                 <collectionViewController id="zIl-jd-FQp" customClass="CelebrationCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tS7-7X-oF5">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="396.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="467"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIw-gS-uDj">
@@ -863,7 +825,7 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3nC-Ai-uuc"/>
+        <segue reference="kEo-kV-ixy"/>
         <segue reference="8Jr-l3-dhP"/>
         <segue reference="PZb-oU-Ng7"/>
         <segue reference="7pT-VN-rva"/>

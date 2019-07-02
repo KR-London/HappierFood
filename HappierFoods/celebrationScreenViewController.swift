@@ -12,14 +12,16 @@ class celebrationScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        unowned var nav = navigationController as! customNavigationController
+        nav.presentState = .ReturnFromCelebrationScreen
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "celebrationBackToMain"{
-            let dvc = segue.destination as! customNavigationController
-            dvc.presentState = .ReturnFromCelebrationScreen
-            dvc.happyTracker = true
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "celebrationBackToMain"{
+//            let dvc = segue.destination as! customNavigationController
+//            dvc.presentState = .ReturnFromCelebrationScreen
+//            dvc.happyTracker = true
+//        }
+//    }
 
 }

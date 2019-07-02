@@ -27,7 +27,7 @@ class DetailViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        weak var main = navigationController?.viewControllers[0] as? mainViewController
         presentState = (main?.myNav?.currentStateAsString())!
         
         

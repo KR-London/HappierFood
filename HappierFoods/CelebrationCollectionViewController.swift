@@ -20,6 +20,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadItems()
+
     }
 
 

@@ -105,10 +105,13 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             defaults.set(true, forKey: "Celebration Status")
             
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
-                self.present(newViewController, animated: true, completion: nil)
+              //  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+              ///  let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
+               // self.present(newViewController, animated: true, completion: nil)
+               self.performSegue(withIdentifier: "celebrationSegue", sender: nil )
             }
+            
+            // performSegue(withIdentifier: "celebrationSegue", sender: self )
         }
     }
     
