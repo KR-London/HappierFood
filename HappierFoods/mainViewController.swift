@@ -89,8 +89,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if defaults.bool(forKey: "Celebration Status") == true && foodArray.count >= 9 {
+        if defaults.bool(forKey: "Celebration Status") == true {
             view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
+        }
+        else
+        {
+            view.backgroundColor = UIColor.white
         }
         
         mainCollectionView.reloadData()

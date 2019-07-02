@@ -19,8 +19,6 @@ class celebrationScreenViewController: UIViewController {
             let dvc = segue.destination as! customNavigationController
             dvc.presentState = .ReturnFromCelebrationScreen
             dvc.happyTracker = true
-            
-            
         }
     }
 
