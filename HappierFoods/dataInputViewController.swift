@@ -47,28 +47,27 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func didTakePhoto(_ sender: Any) {
         
         haptic.notificationOccurred(.success)
-        if usedCamera == true
-        {
-            let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-            stillImageOutput.capturePhoto(with: settings, delegate: self)
+        if usedCamera == true {
+            if AVCaptureDevice.authorizationStatus(for: .video) != .denied
+            {   let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+                stillImageOutput.capturePhoto(with: settings, delegate: self)
+            }
         }
-        else
-        {
+        else {
             performSegue(withIdentifier: presentState ?? " Undefined " , sender: "dataInputViewController")
         }
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
-        
     }
     
     @IBAction func launchCameraRollButton(_ sender: Any) {
         writtenInputElements.isHidden = true
         currentDataInputMode = .cameraRoll
         refreshButtonAppearance()
-        if usedCamera == true
+        if usedCamera == true && AVCaptureDevice.authorizationStatus(for: .video) != .denied
         {
-        self.captureSession.stopRunning()
+            self.captureSession.stopRunning()
         }
         usedCamera = false
        // publicInformationBroadcast.isHidden = true
@@ -133,8 +132,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBarItems()
-        weak var main = navigationController?.viewControllers[0] as? mainViewController
-        presentState = main!.myNav!.currentStateAsString()
+        
         if TARGET_IPHONE_SIMULATOR != 1 {
             usedCamera = true
         }
@@ -143,54 +141,13 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         writtenInputElements.isHidden = true
         pictureViewConstraints()
         nameOfFood.delegate = self
-        
 
-        
-        switch sourceViewController
-        {
-            case "Try Food":
-                navigationItem.title = "What did you try?"
-                main?.myNav?.presentState = .AddFoodViewController
-                presentState = "AddFoodViewController"
-            case "Set Target":
-                navigationItem.title = "Set a target"
-                main?.myNav?.presentState = .SetTargetViewController
-                presentState = "SetTargetViewController"
-            default:
-                main?.myNav?.presentState = .Unknown
-                presentState = "Unknown"
-        }
-        
-        switch currentDataInputMode
-        {
-            case .camera:
-                cameraButton.alpha = 0.5
-                cameraRollButton.alpha = 1
-                writeButton.alpha = 1
-            case .cameraRoll:
-                cameraButton.alpha = 1
-                cameraRollButton.alpha = 0.5
-                writeButton.alpha = 1
-            case .write:
-                cameraButton.alpha = 1
-                cameraRollButton.alpha = 1
-                writeButton.alpha = 0.5
-            default:
-                cameraButton.alpha = 1
-                cameraRollButton.alpha = 1
-                writeButton.alpha = 1
-        }
-        
-        
-        
+        refreshButtonAppearance()
 }
-   
-    
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if usedCamera == true
-        {
+        if usedCamera == true {
             recordTheFood()
         }
         haptic.prepare()
@@ -198,12 +155,21 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if usedCamera == true
-        {
+        if usedCamera == true {
             self.captureSession.stopRunning()
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier != "back" {
+            if let dvc1 = segue.destination as? rateFoodViewController {
+                dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+                dvc1.foodName = foodName
+            }
+        }
+    }
     
+    // MARK: Functions to manage the image input
     func setupLivePreview() {
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer.videoGravity = .resizeAspectFill
@@ -218,55 +184,81 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
     }
     
+    func presentCameraSettings() {
+        let alertController = UIAlertController(title: "Error",
+                                                message: "Camera access is denied",
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default))
+        alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: { _ in
+                    // Handle
+                })
+            }
+        })
+        
+        present(alertController, animated: true)
+    }
+    
+    
+    func checkCameraAccess() -> Bool {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .denied:
+            print("Denied, request permission from settings")
+            presentCameraSettings()
+            return false
+        case .restricted:
+            print("Restricted, device owner must approve")
+        case .authorized:
+            print("Authorized, proceed")
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { success in
+                if success {
+                    print("Permission granted, proceed")
+                } else {
+                    print("Permission denied")
+                }
+            }
+        }
+        
+        return true
+    }
+    
+    
     func recordTheFood() {
-        captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .medium
+
+        if checkCameraAccess() == true {
+            captureSession = AVCaptureSession()
+            captureSession.sessionPreset = .medium
         
-        guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
-            .first else {
-                fatalError("No front facing camera found")
-        }
+            guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
+                .first else {
+                    fatalError("No front facing camera found")
+                }
         
-        do {
-            let input = try AVCaptureDeviceInput(device: backCamera)
-            stillImageOutput = AVCapturePhotoOutput()
+            do {
+                let input = try AVCaptureDeviceInput(device: backCamera)
+                stillImageOutput = AVCapturePhotoOutput()
             
-            if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
-                captureSession.addInput(input)
-                captureSession.addOutput(stillImageOutput)
-                setupLivePreview()
+                if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
+                    captureSession.addInput(input)
+                    captureSession.addOutput(stillImageOutput)
+                    setupLivePreview()
+                }
+            }
+            catch let error  {
+                print("Error Unable to initialize back camera:  \(error.localizedDescription)")
+            }
+        
+            DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
+                self.captureSession.startRunning()
+            }
+        
+            DispatchQueue.main.async {
+                self.videoPreviewLayer.frame = self.previewView.bounds
             }
         }
-        catch let error  {
-            print("Error Unable to initialize back camera:  \(error.localizedDescription)")
-        }
-        
-        DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
-            self.captureSession.startRunning()
-        }
-        
-        DispatchQueue.main.async {
-            self.videoPreviewLayer.frame = self.previewView.bounds
-        }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier != "back" {
-            if let dvc1 = segue.destination as? rateFoodViewController
-            {
-                dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
-                //dvc1.presentState = presentState
-//                if foodName != nil
-//                {
-                    dvc1.foodName = foodName
-                   // dvc1.foodName = "Cherry tomatoes"
-               // }
-            }
-      //  if let dvc2 = segue.destination as! topBarViewController
-        
-     }
-    }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // Local variable inserted by Swift 4.2 migrator.
@@ -274,24 +266,56 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
-        if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage
-        {
+        if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
             captureImageView.image = userPickedImage
             image = userPickedImage
-            
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    // Helper function inserted by Swift 4.2 migrator.
-    fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-        return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    // MARK: User interaction handlers
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
-    // Helper function inserted by Swift 4.2 migrator.
-    fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-        return input.rawValue
+    @objc func share() {
+        
+        var message = String()
+        
+        switch presentState  {
+        case "AddFoodViewController":
+            let name = nameOfFood.text
+            if name != nil && name != ""
+            {
+                message = "I've just tried " + (name ?? "something") + ". In the release version of the app, I will also report whether I liked the food or not!"
+            }
+            else
+            {
+                message = "I've just tried a new food!"
+            }
+        case "SetTargetViewController":
+            let name = nameOfFood.text
+            if name != nil && name != ""
+            {
+                message = "I've just set myself a target of trying " + (name ?? "something") + ". In the release version of the app, I will also report my motivation for trying this food."
+            }
+            else
+            {
+                message = "I've just tried a new food!"
+            }
+        default:
+            message = "Debug message"
+        }
+        
+        let activityViewController =
+            UIActivityViewController(activityItems: [message],
+                                     applicationActivities: nil)
+        
+        present(activityViewController, animated: true)
     }
+    
+    // MARK: Layout and appearance subroutines
     
     func refreshButtonAppearance(){
         switch currentDataInputMode
@@ -315,8 +339,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     
-    // MARK: Layout subroutines
-    
     func pictureViewConstraints(){
         
         previewView.translatesAutoresizingMaskIntoConstraints = false
@@ -337,8 +359,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         captureImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         captureImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         captureImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
-        
-        
 
         previewView.layer.cornerRadius = 5
         previewView.layer.masksToBounds = true
@@ -349,19 +369,12 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         captureImageView.layer.masksToBounds = true
         captureImageView.contentMode = .scaleAspectFill
 
-        
         previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
-        //writtenInputElements.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
-        //captureImageView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
-
 
         buttonStack.translatesAutoresizingMaskIntoConstraints = false
-       // buttonStack.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         let buttonStackHeightAnchorConstraint = buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
-       // buttonStackHeightAnchorConstraint.priority = UILayoutPriority(750)
         buttonStackHeightAnchorConstraint.isActive = true
-        
-        
+ 
         buttonStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
@@ -373,64 +386,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         buttonOutlet.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         buttonOutlet.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         buttonOutlet.layer.masksToBounds = true
-
-        
-        //var dimension = 360
-       // var dimension = 375.0
-//        if previewView.frame.height < previewView.frame.width
-//        {
-//           dimension = dimension * ( Double(previewView.frame.height) / Double(previewView.frame.width) )
-//        }
-//        let maskView = UIView(frame: CGRect(x: 7, y: 165, width: dimension , height: dimension))
-//        maskView.backgroundColor = .blue
-//        maskView.layer.cornerRadius = 5
-//        //view.addSubview(maskView)
-//        maskView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        maskView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
-//
-      // previewView.mask = maskView
-      // captureImageView.mask = maskView
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    @objc func share() {
-        
-        var message = String()
-        
-        switch presentState  {
-            case "AddFoodViewController":
-                let name = nameOfFood.text
-                if name != nil && name != ""
-                {
-                    message = "I've just tried " + (name ?? "something") + ". In the release version of the app, I will also report whether I liked the food or not!"
-                }
-                else
-                {
-                    message = "I've just tried a new food!"
-                }
-            case "SetTargetViewController":
-                let name = nameOfFood.text
-                if name != nil && name != ""
-                {
-                    message = "I've just set myself a target of trying " + (name ?? "something") + ". In the release version of the app, I will also report my motivation for trying this food."
-                }
-                else
-                {
-                    message = "I've just tried a new food!"
-                }
-            default:
-                message = "Debug message"
-            }
-        
-        let activityViewController =
-            UIActivityViewController(activityItems: [message],
-                                     applicationActivities: nil)
-        
-        present(activityViewController, animated: true)
     }
     
     func setUpNavigationBarItems(){
@@ -439,11 +394,41 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        
+        weak var main = navigationController?.viewControllers[0] as? mainViewController
+        presentState = main!.myNav!.currentStateAsString()
+        
+        switch sourceViewController{
+            case "Try Food":
+                        navigationItem.title = "What did you try?"
+                        main?.myNav?.presentState = .AddFoodViewController
+                        presentState = "AddFoodViewController"
+            
+            case "Set Target":
+                        navigationItem.title = "Set a target"
+                        main?.myNav?.presentState = .SetTargetViewController
+                        presentState = "SetTargetViewController"
+            
+            default:
+                        main?.myNav?.presentState = .Unknown
+                        presentState = "Unknown"
+            
+        }
+
     }
     
-    deinit{
-        print("OS reclaiming memory from data input view")
+    // MARK: Boilerplate
+
+    // Helper function inserted by Swift 4.2 migrator.
+    fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+        return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
     }
+    
+    // Helper function inserted by Swift 4.2 migrator.
+    fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+        return input.rawValue
+    }
+    
 
 }
 

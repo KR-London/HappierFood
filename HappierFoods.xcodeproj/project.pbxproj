@@ -77,7 +77,6 @@
 		44D5985B2259346700267E71 /* mainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5985A2259346700267E71 /* mainCollectionViewCell.swift */; };
 		44D598632259535100267E71 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598622259535100267E71 /* mainViewController.swift */; };
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
-		44D8FCAA22B9328300AF11FF /* UsageStatus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44D8FCA922B9328300AF11FF /* UsageStatus.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,7 +164,6 @@
 		44D5985A2259346700267E71 /* mainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionViewCell.swift; sourceTree = "<group>"; };
 		44D598622259535100267E71 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
-		44D8FCA922B9328300AF11FF /* UsageStatus.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UsageStatus.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +193,8 @@
 				443C3CA722B2967E00832AD1 /* Detail3ViewController.swift */,
 				443C3CA922B2968F00832AD1 /* Detail4ViewController.swift */,
 				443C3CAB22B2969B00832AD1 /* Detail5ViewController.swift */,
-				443C3CA022B2920F00832AD1 /* Detail1ViewController.xib */,
 				443C3CAD22B2994900832AD1 /* Detail2ViewController.xib */,
+				443C3CA022B2920F00832AD1 /* Detail1ViewController.xib */,
 				443C3CB522B2A36600832AD1 /* Detail3ViewController.xib */,
 				443C3CB122B2996900832AD1 /* Detail4ViewController.xib */,
 				443C3CB322B2997600832AD1 /* Detail5ViewController.xib */,
@@ -318,7 +316,6 @@
 				4483901922C7CD93002F8D2E /* Face Graphics */,
 				4483901A22C7CDE4002F8D2E /* Placeholder Images */,
 				4483901B22C7CE01002F8D2E /* Icons */,
-				44D8FCA922B9328300AF11FF /* UsageStatus.plist */,
 				44BE3BAA22566A250090BB5F /* Info.plist */,
 				44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */,
 				44D5985322592F0D00267E71 /* Navigation Custom Classes  */,
@@ -455,7 +452,6 @@
 				4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */,
 				4483901622C731E6002F8D2E /* onboarding1.png in Resources */,
 				44D519F2225E3301001BD7FB /* icons3.png in Resources */,
-				44D8FCAA22B9328300AF11FF /* UsageStatus.plist in Resources */,
 				443B66D62290602D007DDACC /* eyeLookDownLeft_browOuterUpLeft.png in Resources */,
 				443B66DA22906039007DDACC /* eyeLookInLeft_browOuterUpLeft.png in Resources */,
 				443B66EA22906069007DDACC /* eyesShut_browOuterUpLeft.png in Resources */,

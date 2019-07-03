@@ -56,20 +56,17 @@ class DetailViewController: UIViewController{
             detail3VC.faceView.isHidden = true
         }
         detail5VC.detailToDisplay = detailToDisplay
-       // KIRBY  detail5VC.whereAmI = main!.myNav!.presentState
         
         detail5VC.buttonPress( handler:  {[weak self] value in
-            
-           // if main?.myNav?.presentState ==
-           if main?.myNav?.presentState == .AddFoodViewController{
+
+        if main?.myNav?.presentState == .AddFoodViewController{
                 main?.myNav?.presentState = .RetryTriedFood
                 }
            else{
                 if main?.myNav?.presentState == .SetTargetViewController{
                     main?.myNav?.presentState = .ConvertTargetToTry
                 }
-                else
-                {
+                else {
                     main?.myNav?.presentState = .Unknown
                 }
             }
@@ -88,7 +85,6 @@ class DetailViewController: UIViewController{
         }
        
         setupLayout( container1 : detail1VC.view, container2: detail2VC.view, container3: detail3VC.view, container4: detail4VC.view, container5: detail5VC.view)
-        
         setUpNavigationBarItems()
     }
     
@@ -137,22 +133,18 @@ class DetailViewController: UIViewController{
                     let nserror = error as NSError
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
-            
-               // DispatchQueue.async{
-                    main?.foodArray.remove(at: indexOfMyTimestamp!)
-                   // main?.mainCollectionView.cellForItem(at: IndexPath(row: indexOfMyTimestamp!, section: 0))?.reloadInputViews()
-                   // main?.mainCollectionView.reloadData()
-                    main?.mainCollectionView.reloadInputViews()
-              // }
+
+                main?.foodArray.remove(at: indexOfMyTimestamp!)
+                main?.mainCollectionView.reloadInputViews()
+                
                 navigationController?.popViewController(animated: true)
-                //performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
+
             case "SetTargetViewController":
                 var targetArray: [TargetFood]!
                 let dateTargetSet = detailToDisplay.triedOn
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTargetSet)
-                
                 
                 let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
                 do{
@@ -180,14 +172,21 @@ class DetailViewController: UIViewController{
                 main?.targetArray.remove(at: indexOfMyTimestamp!)
                 main?.mainCollectionView.reloadInputViews()
                 navigationController?.popViewController(animated: true)
-            
-            
+    
             default:  break
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailToRate"{
+            let dvc = segue.destination as! rateFoodViewController
+            dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+            dvc.foodName = detailToDisplay.foodName
+            dvc.dateTargetSet = detailToDisplay.triedOn
+        }
+    }
+    
     // MARK: Layout subroutines
-
     private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
         
         container1.translatesAutoresizingMaskIntoConstraints = false
@@ -228,13 +227,5 @@ class DetailViewController: UIViewController{
             container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
             ])
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailToRate"{
-            let dvc = segue.destination as! rateFoodViewController
-            dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
-            dvc.foodName = detailToDisplay.foodName
-            dvc.dateTargetSet = detailToDisplay.triedOn
-        }
     }
 }

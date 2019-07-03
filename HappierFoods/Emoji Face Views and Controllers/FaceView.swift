@@ -104,15 +104,7 @@ class FaceView: UIView {
     
     override func draw(_ rect: CGRect)
     {
-     
-        //let circle = UIBezierPath(ovalIn: rect)
-    //  UIColor.yellow.set()
-       // circle.fill()
-        
-     //   pathForCircleCenteredAtPoint(midPoint: skullCenter, withRadius: skullRadius).fill()
-        
         UIColor.black.set()
-       // circle.stroke()
         pathForEye(eye: .Left).stroke()
         pathForEye(eye: .Right).stroke()
         pathForMouth().stroke()

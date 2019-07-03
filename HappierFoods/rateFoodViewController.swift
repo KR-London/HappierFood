@@ -12,8 +12,6 @@ import AVFoundation
 import Vision
 import CoreData
 
-
-
 class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     var imagePlaceholder = UIImage()
@@ -21,7 +19,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     var foodName = String()
     var dateTargetSet = Date()
     var presentState = String()
+    let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    let imagePickerView = UIImagePickerController()
 
+    // MARK: Actions and outlets
     @IBAction func endedEnteringName(_ sender: Any) {
         self.view.endEditing(true)
     }
@@ -37,15 +38,14 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         appsAndBiscuits(imageName: nameOfFood.text, image: foodImage.image ?? (UIImage(named: "tick.png") ?? nil)!, rating: rating)
     }
     
+    // MARK: Core Data helpers
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [TriedFood]!
     var targetArray: [TargetFood]!
 
-    let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-    
-    let imagePickerView = UIImagePickerController()
-    
+
+    // MARK: page lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,8 +53,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         loadItems()
         imagePickerView.delegate = self
         nameOfFood.delegate = self
-        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-        presentState = main!.myNav!.currentStateAsString()
+//        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+//        presentState = main!.myNav!.currentStateAsString()
         if presentState == "SetTargetViewController"
         {
  //           motivationText.delegate = self
@@ -67,82 +67,49 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         foodImage.contentMode = .scaleAspectFill
         foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
         foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        //print(foodImage)
-       // if foodName != nil{
-            nameOfFood.text = foodName
-        //}
-        //detect(image: CIImage(image: imagePlaceholder)!)
+        nameOfFood.text = foodName
         
         setUpNavigationBarItems()
-        switch  main!.myNav!.presentState {
-            case .AddFoodViewController, .RetryTriedFood, .ConvertTargetToTry :
-                navigationItem.title = "Rate It!";
-            case .SetTargetViewController:
-                navigationItem.title = "Motivate It"
-            default:
-                navigationItem.title = "Report Bug"
-        }
-        
+
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-
     
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        dismiss(animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard (info["UIImagePickerControllerOriginalImage"] as? UIImage) != nil else {
-            return
+        if segue.identifier == "faceSegue" {
+            if let customFaceController = segue.destination as? customFaceARViewController{
+                // self.customFaceController = customFaceController
+                customFaceController.sliderFeedback( handler:  {[weak self] value in
+                    self?.rating = Double(-1 + 2*value )
+                })
+            }
         }
-    //    processImage(image)
     }
     
-//    func processImage(_ image: UIImage) {
-//        let model = Food101()
-//        let size = CGSize(width: 299, height: 299)
-//
-//        guard let buffer = image.resize(to: size)?.pixelBuffer() else {
-//            fatalError("Scaling or converting to pixel buffer failed!")
-//        }
-//
-//        guard let result = try? model.prediction(image: buffer) else {
-//            fatalError("Prediction failed!")
-//        }
-//
-//        let confidence = result.foodConfidence["\(result.classLabel)"]! * 100.0
-//        let converted = String(format: "%.2f", confidence)
-//
-//        foodImage.image = image
-//        nameOfFood.text = "\(result.classLabel) - \(converted) %"
-//    }
-
-//   func detect(image: CIImage){
-//        let model = try? VNCoreMLModel(for: Food101().model)
-//        
-//        let request = VNCoreMLRequest(model: model!){(request, error) in
-//            let result = request.results as! [VNClassificationObservation]
-//            
-//            print(result)
-//            
-//            let topHit = result.first
-//            
-//            if Double((topHit?.confidence)!) >= 0.7
-//            {
-//                self.nameOfFood.text = topHit?.identifier
-//            }
-//  
-//        }
-//        
-//        let handler = VNImageRequestHandler(ciImage: image)
-//        
-//        try! handler.perform([request])
-//    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        textField.resignFirstResponder()
-    return true
+    /// MARK: Setup
+    func loadItems(){
+        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        do{
+            try
+                foodArray = context.fetch(request)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
+        
+        
+        let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+        do{
+            try
+                targetArray = context.fetch(request2)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
     }
+    
+    // MARK: Save data
     
     func saveItems(){
         do{ try
@@ -162,7 +129,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         var imageExtension = imageName ?? ""
         if imageExtension == ""
         {
-           imageExtension = "temp"
+            imageExtension = "temp"
         }
         imageExtension = imageExtension + String(Date().timeIntervalSince1970) + ".png"
         
@@ -174,44 +141,31 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
         
-        ///KIRBY
         switch presentState {
-     
-            case "AddFoodViewController":
-                
-                    /// this bit updates the database
-                    if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                        let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-                        menuItem.filename = imagePath
-                        menuItem.name = imageName
-                        menuItem.rating = rating ?? 0
-                        menuItem.dateTried = Date()
-                        saveItems()
-                        /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
-                        //weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-                      // let currentNumberTried = main?.foodArray.count ?? 0
-                        main?.foodArray.append(menuItem)
-                        
-//                        main?.mainCollectionView.performBatchUpdates({
-//                           // main?.foodArray.append(menuItem)
-//                           // main?.mainCollectionView.reloadData()
-//                            //main?.mainCollectionView.reloadSections([0])
-//                            main?.mainCollectionView.deleteItems(at: [IndexPath(row: currentNumberTried, section: 0)])
-//                            main?.mainCollectionView.insertItems(at: [IndexPath(row: currentNumberTried, section: 0)])
-//                           // main?.mainCollectionView.reloadInputViews()
-//                        })
-                        
-                        DispatchQueue.main.async{
-                            main?.mainCollectionView.reloadData()
-                        }
-                    }
-            case "ConvertTargetToTry":
+            
+        case "AddFoodViewController":
+            /// this bit updates the database
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-   
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                menuItem.filename = imagePath
+                menuItem.name = imageName
+                menuItem.rating = rating ?? 0
+                menuItem.dateTried = Date()
+                saveItems()
+                /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
+                main?.foodArray.append(menuItem)
+                
+                DispatchQueue.main.async{
+                    main?.mainCollectionView.reloadData()
+                }
+            }
+            
+        case "ConvertTargetToTry":
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTargetSet)
-     
+                
                 let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
                 do{
                     try targetArray = context.fetch(request2)
@@ -223,9 +177,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
                 
-
                 managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
-
+                
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
                 menuItem.filename = imagePath
                 menuItem.name = imageName
@@ -235,28 +188,14 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 main?.foodArray.append(menuItem)
                 main?.targetArray.remove(at: indexOfMyTimestamp!)
-   
-                /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
-//                weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-//                let currentNumberTried = main?.foodArray.count ?? 0
-//                main?.foodArray.append(menuItem)
-//                
-//                main?.mainCollectionView.performBatchUpdates({
-//                    // main?.foodArray.append(menuItem)
-//                    // main?.mainCollectionView.reloadData()
-//                    //main?.mainCollectionView.reloadSections([0])
-//                    main?.mainCollectionView.deleteItems(at: [IndexPath(row: currentNumberTried, section: 0)])
-//                    main?.mainCollectionView.insertItems(at: [IndexPath(row: currentNumberTried, section: 0)])
-//                    // main?.mainCollectionView.reloadInputViews()
-//                })
                 
                 DispatchQueue.main.async{
                     main?.mainCollectionView.reloadData()
                 }
             }
-            case "RetryTriedFood":
-                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-
+            
+        case "RetryTriedFood":
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
                 menuItem.filename = imagePath
@@ -264,15 +203,16 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
                 saveItems()
-                    
+                
                 main?.foodArray.append(menuItem)
-                    
+                
                 DispatchQueue.main.async{
-                        main?.mainCollectionView.reloadData()
+                    main?.mainCollectionView.reloadData()
                 }
             }
-            case "SetTargetViewController":
-                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+        case "SetTargetViewController":
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
                 menuItem.filename = imagePath
                 menuItem.name = imageName
@@ -280,69 +220,23 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 saveItems()
                 
                 main?.targetArray.append(menuItem)
-                    DispatchQueue.main.async{
-                        main?.mainCollectionView.reloadData()
-                    }
+                DispatchQueue.main.async{
+                    main?.mainCollectionView.reloadData()
+                }
             }
-            
-            default: return
-    }
+        default: return
+        }
         
-//        if let _ = navigationController{
         navigationController?.popToRootViewController(animated: true)
-//        }
-//        else{
-//           performSegue(withIdentifier: "takeMeHome", sender: self)
-      //  }
-    }
-   
-    
-    /// MARK: Setup
-    func loadItems(){
-        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
-        do{
-            try
-                foodArray = context.fetch(request)
-        }
-        catch
-        {
-            print("Error fetching data \(error)")
-        }
-        
-        
-        let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
-        do{
-            try
-                targetArray = context.fetch(request2)
-        }
-        catch
-        {
-            print("Error fetching data \(error)")
-        }
     }
     
-//    public func canHandle(_ session: UIDropSession) -> Bool {
-//        return session.canLoadObjects(ofClass: NSString.self)
-//    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    // MARK: Image processing
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        dismiss(animated: true, completion: nil)
         
-        if segue.identifier == "faceSegue" {
-            if let customFaceController = segue.destination as? customFaceARViewController{
-               // self.customFaceController = customFaceController
-                customFaceController.sliderFeedback( handler:  {[weak self] value in
-                    self?.rating = Double(-1 + 2*value )
-                })
-            }
-            
+        guard (info["UIImagePickerControllerOriginalImage"] as? UIImage) != nil else {
+            return
         }
     }
     
@@ -366,29 +260,55 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         return UIImage(cgImage: imageRef!, scale: 1.0, orientation: image.imageOrientation)
     }
     
+    // MARK: Layout
+ 
+    func setUpNavigationBarItems(){
+        let shareButton = UIButton(type: .system)
+        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
+        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        
+        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        presentState = main!.myNav!.currentStateAsString()
+
+        switch  main!.myNav!.presentState {
+        case .AddFoodViewController, .RetryTriedFood, .ConvertTargetToTry :
+            navigationItem.title = "Rate It!";
+        case .SetTargetViewController:
+            navigationItem.title = "Motivate It"
+        default:
+            navigationItem.title = "Report Bug"
+        }
+    }
+    
+    // MARK: Handling user interaction
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     @objc func share() {
         
         var message = String()
-
+        
         switch presentState {
         case "AddFoodViewController":
             let name = nameOfFood.text
-            if name != nil && name != ""
-            {
+            if name != nil && name != "" {
                 message = "I've just tried " + (name ?? "something") + ". In the release version of the app, I will also report whether I liked the food or not!"
             }
-            else
-            {
+            else {
                 message = "I've just tried a new food!"
             }
         case "SetTargetViewController":
             let name = nameOfFood.text
-            if name != nil && name != ""
-            {
+            if name != nil && name != "" {
                 message = "I've just set myself a target of trying " + (name ?? "something") + ". In the release version of the app, I will also report my motivation for trying this food."
             }
-            else
-            {
+            else {
                 message = "I've just tried a new food!"
             }
         default:
@@ -402,12 +322,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         present(activityViewController, animated: true)
     }
     
-    func setUpNavigationBarItems(){
-        let shareButton = UIButton(type: .system)
-        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
-        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        return true
     }
     
     //Calls this function when the tap is recognized.

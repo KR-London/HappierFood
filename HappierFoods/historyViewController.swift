@@ -21,10 +21,8 @@ class historyViewController: UIViewController {
     
     @IBAction func cacheWeek(_ sender: UIButton) {
         copyFoodToHistory()
-
         navigationController?.popViewController(animated: true)
     }
-    
     
     @IBAction func clearData(_ sender: Any) {
         
@@ -78,8 +76,8 @@ class historyViewController: UIViewController {
                 }
             }
         }
-         
-            main?.cacheData()
+        
+        main?.cacheData()
     }
     
     func deleteAllData(_ entity:String) {
