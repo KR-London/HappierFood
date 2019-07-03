@@ -23,16 +23,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="DbB-WG-ppC">
-                    <rect key="frame" x="0.0" y="121" width="414" height="654"/>
+                    <rect key="frame" x="8" y="120.5" width="398" height="654"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-4T-sIs">
-                            <rect key="frame" x="0.0" y="0.0" width="42" height="654"/>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-4T-sIs">
+                            <rect key="frame" x="0.0" y="0.0" width="26" height="654"/>
+                            <attributedString key="attributedText"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EF6-sV-P5C">
-                            <rect key="frame" x="56" y="0.0" width="358" height="654"/>
+                            <rect key="frame" x="40" y="0.0" width="358" height="654"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="EF6-sV-P5C" secondAttribute="height" id="K4x-2x-wYp"/>
                             </constraints>
@@ -42,8 +41,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="DbB-WG-ppC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JNW-8x-jJD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DbB-WG-ppC" secondAttribute="trailing" id="ZJY-i9-FHY"/>
+                <constraint firstItem="DbB-WG-ppC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="JNW-8x-jJD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DbB-WG-ppC" secondAttribute="trailing" constant="8" id="ZJY-i9-FHY"/>
                 <constraint firstItem="DbB-WG-ppC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dwd-Ry-fMB"/>
                 <constraint firstItem="DbB-WG-ppC" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.8" id="wiG-OG-5VW"/>
             </constraints>

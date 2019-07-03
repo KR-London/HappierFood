@@ -15,12 +15,9 @@ class Detail2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        foodName.font = UIFont(name: "07891284.ttf", size: 42)
+        foodName.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
         if foodName.text!.count < 1 {
             foodName.text = "No food name stored"
         }
-    }
-    deinit{
-        print("OS reclaiming memory from detail 2 view")
     }
 }

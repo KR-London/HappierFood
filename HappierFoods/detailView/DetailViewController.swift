@@ -38,7 +38,12 @@ class DetailViewController: UIViewController{
         self.view.addSubview(detail5VC.view)
         
         /// wrap this up so that it gives a placeholder when no food name provided.
-        detail2VC.foodName.text = self.detailToDisplay.foodName
+        if detailToDisplay.foodName.count > 0{
+            detail2VC.foodName.text = detailToDisplay.foodName
+        }
+        else {
+            detail2VC.foodName.text = "No food name stored"
+        }
         
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename)
         detail3VC.detailToDisplay = detailToDisplay
@@ -101,7 +106,7 @@ class DetailViewController: UIViewController{
     
     @objc func delete(sender: UIButton!){
         
-        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        weak var main = navigationController?.viewControllers[0] as? mainViewController
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -171,13 +176,10 @@ class DetailViewController: UIViewController{
                     let nserror = error as NSError
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
-                
-               // DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
-                    main?.mainCollectionView.reloadInputViews()
-               // }
+
+                main?.targetArray.remove(at: indexOfMyTimestamp!)
+                main?.mainCollectionView.reloadInputViews()
                 navigationController?.popViewController(animated: true)
-                //performSegue(withIdentifier: "detailToMain", sender: UIButton.self)
             
             
             default:  break
@@ -229,13 +231,8 @@ class DetailViewController: UIViewController{
         if segue.identifier == "detailToRate"{
             let dvc = segue.destination as! rateFoodViewController
             dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
-            ///   newViewController.rating = 0.0
             dvc.foodName = detailToDisplay.foodName
             dvc.dateTargetSet = detailToDisplay.triedOn
         }
-    }
-    
-    deinit{
-        print("OS reclaiming memory from detail view")
     }
 }

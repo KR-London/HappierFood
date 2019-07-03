@@ -96,8 +96,4 @@ class historyViewController: UIViewController {
             print("Detele all data in \(entity) error :", error)
         }
     }
-    
-    deinit{
-        print("OS reclaiming memory from history view")
-    }
 }

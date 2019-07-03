@@ -97,28 +97,19 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             view.backgroundColor = UIColor.white
         }
         
+        // do I REALLY need this?
         mainCollectionView.reloadData()
 
         
         if defaults.bool(forKey: "Celebration Status") == false && foodArray.count == 9
         {
             defaults.set(true, forKey: "Celebration Status")
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-              //  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-              ///  let newViewController = storyBoard.instantiateViewController(withIdentifier: "celebrationScreen")
-               // self.present(newViewController, animated: true, completion: nil)
                self.performSegue(withIdentifier: "celebrationSegue", sender: nil )
             }
-            
-            // performSegue(withIdentifier: "celebrationSegue", sender: self )
         }
     }
-    
-    deinit{
-        print("OS reclaiming memory from main view")
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
         self.mainCollectionView.reloadInputViews()
@@ -554,9 +545,9 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    public func canHandle(_ session: UIDropSession) -> Bool {
-        return session.canLoadObjects(ofClass: NSString.self)
-    }
+//    public func canHandle(_ session: UIDropSession) -> Bool {
+//        return session.canLoadObjects(ofClass: NSString.self)
+//    }
     
     func getPlist(withName name: String) -> [AnyObject]?
     {

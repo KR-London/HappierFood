@@ -55,10 +55,10 @@ class CelebrationCollectionViewController: UICollectionViewController {
             print("Error fetching data \(error)")
         }
     }
-    
-    public func canHandle(_ session: UIDropSession) -> Bool {
-        return session.canLoadObjects(ofClass: NSString.self)
-    }
+//    
+//    public func canHandle(_ session: UIDropSession) -> Bool {
+//        return session.canLoadObjects(ofClass: NSString.self)
+//    }
 }
 
 extension CelebrationCollectionViewController: UICollectionViewDelegateFlowLayout {

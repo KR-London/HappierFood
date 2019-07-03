@@ -321,9 +321,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-    public func canHandle(_ session: UIDropSession) -> Bool {
-        return session.canLoadObjects(ofClass: NSString.self)
-    }
+//    public func canHandle(_ session: UIDropSession) -> Bool {
+//        return session.canLoadObjects(ofClass: NSString.self)
+//    }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
@@ -414,10 +414,6 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
-    }
-    
-    deinit{
-        print("OS reclaiming memory from rate food view")
     }
 }
 

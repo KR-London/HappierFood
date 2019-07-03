@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,22 +26,28 @@
                     <rect key="frame" x="87" y="384" width="240" height="128"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="eyeOpen_browOuterUpLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-dU-WVb">
-                    <rect key="frame" x="0.0" y="121" width="409" height="204.5"/>
+                    <rect key="frame" x="8" y="121" width="393" height="196.5"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ujV-d7-sC0">
-                    <rect key="frame" x="0.0" y="121" width="414" height="654"/>
+                    <rect key="frame" x="8" y="121" width="398" height="654"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-vx-hXl" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="409" height="409"/>
-                            <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="AOr-vx-hXl" secondAttribute="height" multiplier="1:1" id="txM-e8-3Qq"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Added Goes Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-4T-sIs">
-                            <rect key="frame" x="414" y="0.0" width="0.0" height="19"/>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-4T-sIs">
+                            <rect key="frame" x="398" y="0.0" width="0.0" height="19.5"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Date Added Goes Here">
+                                    <attributes>
+                                        <font key="NSFont" size="18" name="TwCenMT-CondensedExtraBold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -51,14 +59,14 @@
                 <constraint firstItem="plN-ec-1nj" firstAttribute="bottom" secondItem="AOr-vx-hXl" secondAttribute="bottom" id="39t-gL-3TM"/>
                 <constraint firstItem="plN-ec-1nj" firstAttribute="top" secondItem="AOr-vx-hXl" secondAttribute="top" id="CSk-ZM-h5K"/>
                 <constraint firstItem="rI0-dU-WVb" firstAttribute="leading" secondItem="AOr-vx-hXl" secondAttribute="leading" id="Kgs-zj-oy4"/>
-                <constraint firstItem="ujV-d7-sC0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LIF-2k-SS7"/>
+                <constraint firstItem="ujV-d7-sC0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="LIF-2k-SS7"/>
                 <constraint firstItem="plN-ec-1nj" firstAttribute="trailing" secondItem="AOr-vx-hXl" secondAttribute="trailing" id="Mbz-pI-GgF"/>
                 <constraint firstItem="rI0-dU-WVb" firstAttribute="top" secondItem="AOr-vx-hXl" secondAttribute="top" id="NE0-iJ-ln6"/>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O3M-px-j7l"/>
                 <constraint firstItem="rI0-dU-WVb" firstAttribute="trailing" secondItem="AOr-vx-hXl" secondAttribute="trailing" id="SH7-bs-AlU"/>
                 <constraint firstItem="plN-ec-1nj" firstAttribute="leading" secondItem="AOr-vx-hXl" secondAttribute="leading" id="aac-sJ-aA9"/>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.8" id="iZI-uz-EPp"/>
-                <constraint firstAttribute="trailing" secondItem="ujV-d7-sC0" secondAttribute="trailing" id="nf4-FS-P9h"/>
+                <constraint firstAttribute="trailing" secondItem="ujV-d7-sC0" secondAttribute="trailing" constant="8" id="nf4-FS-P9h"/>
                 <constraint firstItem="ujV-d7-sC0" firstAttribute="leading" secondItem="rI0-dU-WVb" secondAttribute="leading" id="rUM-Jy-xSC"/>
                 <constraint firstItem="rI0-dU-WVb" firstAttribute="height" secondItem="AOr-vx-hXl" secondAttribute="height" multiplier="0.5" id="yHm-Ek-v4B"/>
             </constraints>

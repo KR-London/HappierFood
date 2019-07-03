@@ -24,25 +24,11 @@ class Detail5ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        tryButton.titleLabel?.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "detailToRate"{
-//            let dvc = segue.destination as! rateFoodViewController
-//            dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
-//            ///   newViewController.rating = 0.0
-//            dvc.foodName = detailToDisplay.foodName
-//            dvc.dateTargetSet = detailToDisplay.triedOn
-//        }
-//    }
     
     func buttonPress(handler: @escaping (_ value: String) -> Void) {
         
         buttonPress = handler
     }
-    
-    deinit{
-        print("OS reclaiming memory from detail 5 view")
-    }
- 
 }

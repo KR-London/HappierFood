@@ -12,7 +12,7 @@ class celebrationScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        unowned var nav = navigationController as! customNavigationController
+        unowned let nav = navigationController as! customNavigationController
         nav.presentState = .ReturnFromCelebrationScreen
     }
     

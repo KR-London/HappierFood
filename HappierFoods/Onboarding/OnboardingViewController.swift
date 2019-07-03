@@ -30,6 +30,9 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutBlocks()
+        let dateNow = Date().timeIntervalSince1970
+        defaults.set(dateNow, forKey: "Last Week Started")
+        defaults.set(false, forKey: "Celebration Status")
     }
     
     func layoutBlocks(){
@@ -65,9 +68,5 @@ class OnboardingViewController: UIViewController {
         button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -8).isActive = true
 
 
-    }
-
-    deinit{
-        print("OS reclaiming memory from onboarding view")
     }
 }
