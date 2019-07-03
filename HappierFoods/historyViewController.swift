@@ -28,7 +28,7 @@ class historyViewController: UIViewController {
     
     @IBAction func clearData(_ sender: Any) {
         
-        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        weak var main = navigationController?.viewControllers[0] as? mainViewController
         main?.deleteAllData("TargetFood")
         main?.deleteAllData("TriedFood")
         deleteAllData("HistoryTriedFoods")
@@ -62,7 +62,7 @@ class historyViewController: UIViewController {
         
     func copyFoodToHistory(){
         
-        weak var main = navigationController?.viewControllers[0] as! mainViewController
+        weak var main = navigationController?.viewControllers[0] as? mainViewController
         let size = main?.foodArray.count ?? -1
         
         if size >  0 {
