@@ -88,9 +88,9 @@ class DetailViewController: UIViewController{
     }
     
     func setUpNavigationBarItems(){
-
         let deleteButton = UIButton(type: .system)
         deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.titleLabel?.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 )
         deleteButton.addTarget(self, action: #selector(delete), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: deleteButton)
     }

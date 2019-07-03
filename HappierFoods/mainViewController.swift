@@ -317,16 +317,17 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func setUpNavigationBarItems(){
         navigationItem.title = "HappyFoods"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:  UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!]
         navigationController?.navigationBar.tintColor = UIColor.black
         
         let shareButton = UIButton(type: .system)
     
-        shareButton.setImage(UIImage(named: "appleShare.png"), for: .normal)
+        shareButton.setImage(UIImage(named: "appleShare" ), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         
         let historyButton = UIButton(type: .system)
-        historyButton.setImage(UIImage(named: "appleHistory.png"), for: .normal)
+        historyButton.setImage(UIImage(named: "appleHistory"), for: .normal)
         historyButton.addTarget(self, action: #selector(goHistory), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: historyButton)
         
