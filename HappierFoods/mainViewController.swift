@@ -401,7 +401,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         catch let error {
-            print("Detele all data in \(entity) error :", error)
+            print("Delete all data in \(entity) error :", error)
         }
     }
     

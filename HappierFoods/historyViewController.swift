@@ -35,7 +35,8 @@ class historyViewController: UIViewController {
         main?.targetArray = []
         historyArray = []
         defaults.set(0.0, forKey: "Last Week Started")
-        
+        defaults.set(false, forKey: "Celebration Status")
+        UserDefaults.standard.set(false, forKey: "launchedBefore")
         DispatchQueue.main.async{
             main?.mainCollectionView.reloadData()
              main?.mainCollectionView.reloadInputViews()
