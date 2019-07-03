@@ -9,34 +9,6 @@
 import UIKit
 
 class handDrawnFaceView: UIView {
-    
-//    var scale: CGFloat = 0.90
-//    var boundingBox = CGRect.zero
-//    
-//    @IBInspectable
-//    var mouthCurvature: Double = 1.0 { didSet { setNeedsDisplay() } }
-//    
-//    private var skullRadius: CGFloat{
-//        return min(bounds.size.width, bounds.size.height)/2
-//    }
-//    
-//    private var skullCenter: CGPoint {
-//        return CGPoint(x: bounds.midX, y: bounds.midY)
-//    }
-//    
-// 
-//    
-//    private struct Ratios {
-//        static let SkullRadiusToEyeOffset: CGFloat = 3
-//        static let SkullRadiusToEyeRadius: CGFloat = 10
-//        static let SkullRadiusToMouthWidth: CGFloat = 1
-//        static let SkullRadiusToMouthHeight: CGFloat = 3
-//        static let SkullRadiusToMouthOffset: CGFloat = 3
-//    }
-//    
-//    override init(frame: CGRect){
-//        super.init(frame: frame)
-//    }
 
     lazy var backgroundView: UIView = {
         let contentView = UIView()
@@ -55,24 +27,6 @@ class handDrawnFaceView: UIView {
         return contentView
     }()
     
-//    lazy var smile: UIView = {
-//
-//        let contentView = UIView()
-//
-////        let path = UIBezierPath()
-////        path.move(to: start)
-////        path.addCurve(to: end, controlPoint1: cp1, controlPoint2: cp2)
-////        path.lineWidth = 5.0
-//
-//            UIColor.green.set()
-//            pathForMouth().stroke()
-////
-////        }
-    
-//       
-//        return contentView
-//    }()
-//    
     override init(frame: CGRect) {
         super.init(frame: frame)
         assembleFace()
@@ -81,9 +35,9 @@ class handDrawnFaceView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         assembleFace()
-
     }
     
+    // MARK: Layout subroutines
     func assembleFace(){
         addSubview(bottomFace)
         addSubview(topFace)

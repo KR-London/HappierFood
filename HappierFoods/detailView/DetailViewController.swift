@@ -185,6 +185,8 @@ class DetailViewController: UIViewController{
             default:  break
         }
     }
+    
+    // MARK: Layout subroutines
 
     private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
         

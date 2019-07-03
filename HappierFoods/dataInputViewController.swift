@@ -18,26 +18,17 @@ enum dataInputMode: String{
     case unknown
 }
 
-
-
 class dataInputViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     var image : UIImage?
     var foodName = String()
-    
     var currentDataInputMode : dataInputMode = dataInputMode.camera
-   
     var presentState : String?
-   // var presentState : Costume = Costume.Unknown
-    
     let haptic = UINotificationFeedbackGenerator()
-  
-   
     var sourceViewController = ""
 
-    /// mode selecting buttons
+    // MARK: Outlets & actions
     @IBOutlet weak var writtenInputElements: UIStackView!
-    
     @IBOutlet weak var buttonStack: UIStackView!
     @IBOutlet weak var nameOfFood: UITextField!
     @IBOutlet weak var cameraButton: UIButton!
@@ -132,11 +123,13 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         writtenInputElements.isHidden = false
     }
 
+    // MARK: AV init helpers
     let imagePicker = UIImagePickerController()
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
 
+    // MARK: Page lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBarItems()
@@ -321,6 +314,8 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             writeButton.alpha = 1
         }
     }
+    
+    // MARK: Layout subroutines
     
     func pictureViewConstraints(){
         

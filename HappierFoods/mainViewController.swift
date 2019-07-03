@@ -20,14 +20,22 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var rating = Double()
     var triedOn = Date()
     var notes = String()
- //   var happyTracker = false
+    
+    // MARK: Core Data variables
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var food: [NSManagedObject] = []
+    var foodArray: [TriedFood]!
+    var targetArray: [TargetFood]!
     
     unowned var myNav : customNavigationController?
-
+    
+    // MARK: Outlets
     @IBOutlet weak var targetButton: UIButton!
     @IBOutlet weak var tryButton: UIButton!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var happy: UIImageView!
+    
+    // MARK: Actions
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
         let buttonTag = sender.tag
         
@@ -58,10 +66,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var food: [NSManagedObject] = []
-    var foodArray: [TriedFood]!
-    var targetArray: [TargetFood]!
+
+    
+    // MARK: Page lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,29 +119,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        self.mainCollectionView.reloadInputViews()
-
-        
-    //    if foodArray.count >= 9 && myNav?.presentState != .ReturnFromCelebrationScreen &&  defaults.bool(forKey: "Celebration Status") == true {
-        if foodArray.count >= 9 && defaults.bool(forKey: "Celebration Status") == true{
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
-                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
-                    self?.happy.alpha = 1
-                }
-                animator.startAnimation()
-              //  self.happyTracker = true
-            }
-        }
-        else
-        {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
-                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
-                    self?.happy.alpha = 0
-                }
-                animator.startAnimation()
-            }
-           // happyTracker = false
-        }
+      ////  self.mainCollectionView.reloadInputViews()
+        happyIcon()
         
         switch myNav!.presentState
         {
@@ -154,7 +140,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "addFoodSegue" || segue.identifier == "setTargetSegue"{
             
             let dvc = segue.destination as! dataInputViewController
-            
+            /// I want the rate food screen to look different depending if I'm trying a food or setting a target. This is a marker I'm sending forward, so that I can largely reuse the same class with small changes.
             if let button = sender as? UIButton{
                 dvc.sourceViewController = button.titleLabel?.text ?? "Dunno"
             }
@@ -162,12 +148,35 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "expandDetail" {
             let dvc = segue.destination as! DetailViewController
             dvc.detailToDisplay =  (photoFilename: photoFilename, foodName: foodName, rating: rating, triedOn: triedOn, notes: notes)
-           // dvc.PresentState = presentStatePlaceholder
+        }
+    }
+    
+    // MARK: Widgets to communicate with the user
+    
+    func happyIcon(){
+        // this subroutine animates the appearance/disappearance of the little Happy character in the top left corner, to 'reward' the user for trying 9 new foods.
+        
+        if foodArray.count >= 9 && defaults.bool(forKey: "Celebration Status") == true{
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
+                    self?.happy.alpha = 1
+                }
+                animator.startAnimation()
+            }
+        }
+        else
+        {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
+                    self?.happy.alpha = 0
+                }
+                animator.startAnimation()
+            }
         }
     }
     
     func publicInformationBroadcast(didTheyReachTheirTarget: Bool){
-   
+        /// This subroutine is to make sure the user knows what's going on, and doesn;t worry when we remove their data from view
         let publicInformationText = UILabel()
         
         if didTheyReachTheirTarget == true{
@@ -209,12 +218,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
-          //  self.presentStatePlaceholder = .Unknown
             self.reloadInputViews()
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Main")
-//            self.present(newViewController, animated: true, completion: nil)
-            //self.performSegue(withIdentifier: "resetMainWithNavBar", sender: self)
         }
 
         
@@ -325,26 +329,10 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         happy.alpha = 0
     }
     
-    func deleteAllData(_ entity:String) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.returnsObjectsAsFaults = false
-        do {
-            let results = try context.fetch(fetchRequest)
-            for object in results {
-                guard let objectData = object as? NSManagedObject else {continue}
-                context.delete(objectData)
-            }
-        }
-        catch let error {
-            print("Detele all data in \(entity) error :", error)
-        }
-    }
+
     
+    // MARK: Action functions
      @objc func goHistory() {
-       //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-       // let newViewController = storyBoard.instantiateViewController(withIdentifier: "history")
-       // self.present(newViewController, animated: true, completion: nil)
-        
         performSegue(withIdentifier: "historySegue", sender: UIButton())
     }
     
@@ -400,18 +388,25 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         present(activityViewController, animated: true)
     }
     
+    // MARK: Delete and archive functions
+    
+    func deleteAllData(_ entity:String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                context.delete(objectData)
+            }
+        }
+        catch let error {
+            print("Detele all data in \(entity) error :", error)
+        }
+    }
+    
     func cacheData(){
-        
-        /// load in historical tried food
-       // if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-        //    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "HistoryTriedFoods", into: managedObjectContext) as! HistoryTriedFoods
-            //menuItem.filename = imagePath
-           // menuItem.name = imageName
-           // menuItem.rating = rating ?? 0
-           // menuItem.dateTried = Date()
-           // saveItems()
-       // }
-        
+
         deleteAllData("TriedFood")
         foodArray = []
         
@@ -428,15 +423,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 }
 
-
-
+// MARK: Collection View extension
 extension mainViewController: UICollectionViewDelegateFlowLayout {
-    
-//    if let layout: UICollectionViewFlowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
-//        layout.scrollDirection = .Vertical
-//    }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -545,21 +533,18 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-//    public func canHandle(_ session: UIDropSession) -> Bool {
-//        return session.canLoadObjects(ofClass: NSString.self)
+    
+//    func getPlist(withName name: String) -> [AnyObject]?
+//    {
+//        if  let path = Bundle.main.path(forResource: name, ofType: "plist"),
+//            let xml = FileManager.default.contents(atPath: path)
+//        {
+//            return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [AnyObject]
+//        }
+//
+//        return nil
 //    }
-    
-    func getPlist(withName name: String) -> [AnyObject]?
-    {
-        if  let path = Bundle.main.path(forResource: name, ofType: "plist"),
-            let xml = FileManager.default.contents(atPath: path)
-        {
-            return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [AnyObject]
-        }
-        
-        return nil
-    }
-    
+//
 
   
 }

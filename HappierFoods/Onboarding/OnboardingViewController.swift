@@ -22,7 +22,6 @@ class OnboardingViewController: UIViewController {
     @IBAction func moveToMain(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "Main") as! customNavigationController
-       // newViewController.presentS
         newViewController.presentState = .FirstLaunch
         self.present(newViewController, animated: true, completion: nil)
         
@@ -30,10 +29,15 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutBlocks()
+        
+        // make sure everything is starting from a clean slate
         let dateNow = Date().timeIntervalSince1970
         defaults.set(dateNow, forKey: "Last Week Started")
         defaults.set(false, forKey: "Celebration Status")
     }
+    
+    
+    // MARK: Layout subroutines
     
     func layoutBlocks(){
         block1.translatesAutoresizingMaskIntoConstraints = false
