@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,46 +43,7 @@
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="18" name="TwCenMT-CondensedExtraBold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -102,46 +61,7 @@
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="TwCenMT-CondensedExtraBold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -171,7 +91,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nH-la-1qO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-975.36231884057975" y="-507.58928571428567"/>
+            <point key="canvasLocation" x="-1286" y="-504"/>
+        </scene>
+        <!--Onboarding1 View Controller-->
+        <scene sceneID="hki-zN-U7l">
+            <objects>
+                <viewController storyboardIdentifier="o1" id="ihH-80-I3S" customClass="Onboarding1ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="efO-cD-sLZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mOB-dP-BOy"/>
+                    </view>
+                    <connections>
+                        <segue destination="Y4M-5b-8iH" kind="show" identifier="o1-02" id="2o0-ak-dRD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ip2-co-XYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="249" y="-504"/>
+        </scene>
+        <!--Onboarding2 View Controller-->
+        <scene sceneID="oh1-nC-yv0">
+            <objects>
+                <viewController storyboardIdentifier="o2" id="Y4M-5b-8iH" customClass="Onboarding2ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F8O-pf-dxO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lgJ-qk-ETL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYn-1o-50h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="-504"/>
         </scene>
     </scenes>
     <resources>

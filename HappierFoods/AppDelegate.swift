@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   //      let font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
  
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+   //     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")//
         
         /// for testing
- //       let launchedBefore = false
+       let launchedBefore = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
             
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Tutorial" )
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "o1" )
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
             

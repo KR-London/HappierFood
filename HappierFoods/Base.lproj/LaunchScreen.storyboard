@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,26 +16,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading Screens1.png" translatesAutoresizingMaskIntoConstraints="NO" id="egd-sd-prl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-s2-XyC">
+                                <rect key="frame" x="36" y="144" width="342" height="618"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM4-Qd-fiO">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="68.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="HappyFoods">
+                                                <attributes>
+                                                    <font key="NSFont" size="36" name="TwCenMT-CondensedExtraBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06P-Av-FQB">
+                                        <rect key="frame" x="0.0" y="111.5" width="342" height="352.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="hTF-06-KEf"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="A food diary to track and motivate trying new foods. ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="24" name="TwCenMT-CondensedExtraBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1v-5J-piy">
+                                        <rect key="frame" x="0.0" y="507" width="342" height="111"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Shake if you have a suggestion or you get stuck. ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="24" name="TwCenMT-CondensedExtraBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="egd-sd-prl" secondAttribute="bottom" id="9B9-JW-ThO"/>
-                            <constraint firstItem="egd-sd-prl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OVz-0p-OIx"/>
-                            <constraint firstItem="egd-sd-prl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YYf-fY-m2R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egd-sd-prl" secondAttribute="trailing" id="mDl-j0-fPS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C1K-s2-XyC" secondAttribute="bottom" constant="100" id="4Bx-IM-1vg"/>
+                            <constraint firstItem="C1K-s2-XyC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="fEx-6d-8tV"/>
+                            <constraint firstItem="C1K-s2-XyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="tWX-pC-nao"/>
+                            <constraint firstAttribute="trailing" secondItem="C1K-s2-XyC" secondAttribute="trailing" constant="36" id="ug6-1s-5Gt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Loading Screens1.png" width="2700" height="4800"/>
-    </resources>
 </document>
