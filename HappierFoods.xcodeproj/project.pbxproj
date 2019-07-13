@@ -81,6 +81,14 @@
 		44B52FF022DA14C000CF730D /* areYouReady2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FED22DA14C000CF730D /* areYouReady2.jpg */; };
 		44B52FF122DA14C000CF730D /* areYouReady1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FEE22DA14C000CF730D /* areYouReady1.jpg */; };
 		44B52FF322DA18A400CF730D /* Onboarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B52FF222DA18A400CF730D /* Onboarding4ViewController.swift */; };
+		44B52FF522DA211900CF730D /* preTryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B52FF422DA211900CF730D /* preTryViewController.swift */; };
+		44B52FFC22DA213800CF730D /* b4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FF622DA213700CF730D /* b4.jpg */; };
+		44B52FFD22DA213800CF730D /* preTry2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FF722DA213800CF730D /* preTry2.jpg */; };
+		44B52FFE22DA213800CF730D /* preTry1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FF822DA213800CF730D /* preTry1.jpg */; };
+		44B52FFF22DA213800CF730D /* b2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FF922DA213800CF730D /* b2.jpg */; };
+		44B5300022DA213800CF730D /* b3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FFA22DA213800CF730D /* b3.jpg */; };
+		44B5300122DA213800CF730D /* b1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FFB22DA213800CF730D /* b1.jpg */; };
+		44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */; };
 		44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9B22566A230090BB5F /* AppDelegate.swift */; };
 		44BE3BA622566A250090BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA522566A250090BB5F /* Assets.xcassets */; };
 		44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */; };
@@ -184,6 +192,14 @@
 		44B52FED22DA14C000CF730D /* areYouReady2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = areYouReady2.jpg; sourceTree = "<group>"; };
 		44B52FEE22DA14C000CF730D /* areYouReady1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = areYouReady1.jpg; sourceTree = "<group>"; };
 		44B52FF222DA18A400CF730D /* Onboarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4ViewController.swift; sourceTree = "<group>"; };
+		44B52FF422DA211900CF730D /* preTryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preTryViewController.swift; sourceTree = "<group>"; };
+		44B52FF622DA213700CF730D /* b4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b4.jpg; sourceTree = "<group>"; };
+		44B52FF722DA213800CF730D /* preTry2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = preTry2.jpg; sourceTree = "<group>"; };
+		44B52FF822DA213800CF730D /* preTry1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = preTry1.jpg; sourceTree = "<group>"; };
+		44B52FF922DA213800CF730D /* b2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b2.jpg; sourceTree = "<group>"; };
+		44B52FFA22DA213800CF730D /* b3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b3.jpg; sourceTree = "<group>"; };
+		44B52FFB22DA213800CF730D /* b1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b1.jpg; sourceTree = "<group>"; };
+		44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding5ViewController.swift; sourceTree = "<group>"; };
 		44BE3B9822566A230090BB5F /* HappierFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappierFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BE3B9B22566A230090BB5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44BE3BA522566A250090BB5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -248,12 +264,14 @@
 		447DE07E22C5C79200081414 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */,
 				447DE07C22C5BFA200081414 /* OnboardingViewController.swift */,
 				44B52F8322D9FDC700CF730D /* Onboarding1ViewController.swift */,
-				441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */,
+				44B52FE022DA0D5400CF730D /* Onboarding2ViewController.swift */,
 				44B52FEA22DA10AF00CF730D /* Onboarding3ViewController.swift */,
 				44B52FF222DA18A400CF730D /* Onboarding4ViewController.swift */,
-				44B52FE022DA0D5400CF730D /* Onboarding2ViewController.swift */,
+				44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */,
+				44B52FF422DA211900CF730D /* preTryViewController.swift */,
 				4483901522C731E5002F8D2E /* onboarding1.png */,
 				4483901722C731EC002F8D2E /* onboarding2.png */,
 			);
@@ -327,6 +345,12 @@
 		44B52F7E22D9EDCB00CF730D /* OnboardingHandwrittenLetter */ = {
 			isa = PBXGroup;
 			children = (
+				44B52FFB22DA213800CF730D /* b1.jpg */,
+				44B52FF922DA213800CF730D /* b2.jpg */,
+				44B52FFA22DA213800CF730D /* b3.jpg */,
+				44B52FF622DA213700CF730D /* b4.jpg */,
+				44B52FF822DA213800CF730D /* preTry1.jpg */,
+				44B52FF722DA213800CF730D /* preTry2.jpg */,
 				44B52FEE22DA14C000CF730D /* areYouReady1.jpg */,
 				44B52FED22DA14C000CF730D /* areYouReady2.jpg */,
 				44B52FEC22DA14C000CF730D /* shakeMe.jpg */,
@@ -539,6 +563,8 @@
 				443B66E222906051007DDACC /* eyeLookUpLeft_browOuterUpLeft.png in Resources */,
 				44B52F7D22D9EDA200CF730D /* this_app_is_for_people.png in Resources */,
 				44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */,
+				44B5300022DA213800CF730D /* b3.jpg in Resources */,
+				44B52FFF22DA213800CF730D /* b2.jpg in Resources */,
 				44B52FF022DA14C000CF730D /* areYouReady2.jpg in Resources */,
 				44B52FDF22DA05C500CF730D /* helloJ.jpg in Resources */,
 				443C3CB222B2996900832AD1 /* Detail4ViewController.xib in Resources */,
@@ -552,6 +578,7 @@
 				44B52FEF22DA14C000CF730D /* shakeMe.jpg in Resources */,
 				443B66EE22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png in Resources */,
 				44B52FE722DA0EF800CF730D /* screen2_block2.jpg in Resources */,
+				44B52FFC22DA213800CF730D /* b4.jpg in Resources */,
 				4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */,
 				4483901622C731E6002F8D2E /* onboarding1.png in Resources */,
 				44D519F2225E3301001BD7FB /* icons3.png in Resources */,
@@ -559,9 +586,11 @@
 				443B66DA22906039007DDACC /* eyeLookInLeft_browOuterUpLeft.png in Resources */,
 				443B66EA22906069007DDACC /* eyesShut_browOuterUpLeft.png in Resources */,
 				4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */,
+				44B52FFE22DA213800CF730D /* preTry1.jpg in Resources */,
 				44D519F1225E3301001BD7FB /* icons2.png in Resources */,
 				443B66EC2290606F007DDACC /* eyeWideLeft_browDownLeft.png in Resources */,
 				443B66CC22906000007DDACC /* eyeBlinkLeft_browDownLeft.png in Resources */,
+				44B52FFD22DA213800CF730D /* preTry2.jpg in Resources */,
 				443C3CB422B2997600832AD1 /* Detail5ViewController.xib in Resources */,
 				44519038229B3036001C12D1 /* happy.png in Resources */,
 				443C3CA122B2920F00832AD1 /* Detail1ViewController.xib in Resources */,
@@ -573,6 +602,7 @@
 				441DB5F122C5ADDA00E857C0 /* Onboarding.storyboard in Resources */,
 				443B66D222906019007DDACC /* eyeBlinkRight_browOuterUpLeft.png in Resources */,
 				443B66E62290605F007DDACC /* eyeOpen_browOuterUpLeft.png in Resources */,
+				44B5300122DA213800CF730D /* b1.jpg in Resources */,
 				443B66CE22906006007DDACC /* eyeBlinkLeft_browOuterUpLeft.png in Resources */,
 				443B66D022906014007DDACC /* eyeBlinkRight_browDownLeft.png in Resources */,
 				443B66E422906055007DDACC /* eyeOpen_browDownLeft.png in Resources */,
@@ -700,6 +730,7 @@
 				44BE3BC1225673F60090BB5F /* FaceViewController.swift in Sources */,
 				44519036229B2426001C12D1 /* CelebrationCollectionViewController.swift in Sources */,
 				44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */,
+				44B52FF522DA211900CF730D /* preTryViewController.swift in Sources */,
 				44B52F8222D9FDB200CF730D /* ViewController.swift in Sources */,
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
@@ -710,6 +741,7 @@
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
+				44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

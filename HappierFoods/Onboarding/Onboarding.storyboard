@@ -158,10 +158,44 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="systemYellowColor"/>
                         <viewLayoutGuide key="safeArea" id="zw8-SB-iFe"/>
                     </view>
+                    <connections>
+                        <segue destination="FeB-us-TIK" kind="show" identifier="try" id="9jP-kJ-YIj"/>
+                        <segue destination="J5K-m7-rnN" kind="show" identifier="noTry" id="nda-tY-AeD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgl-LG-4U3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2619" y="-504"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="m2u-TM-Tww">
+            <objects>
+                <viewController id="J5K-m7-rnN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dt4-Pd-psG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YAL-yK-n07"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDU-NL-piN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4542" y="-69"/>
+        </scene>
+        <!--Pre Try View Controller-->
+        <scene sceneID="HYn-tE-ho0">
+            <objects>
+                <viewController id="FeB-us-TIK" customClass="preTryViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lF3-W8-IJi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hZP-V9-RhI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SK7-SB-Haj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4506" y="-748"/>
         </scene>
     </scenes>
     <resources>
