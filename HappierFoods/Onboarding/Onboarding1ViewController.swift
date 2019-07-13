@@ -101,7 +101,7 @@ class Onboarding1ViewController: UINavigationController {
             }
     
             /// fade it in & out with RH picture
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
                 let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                     self.block2.alpha = 1
                 }
@@ -109,7 +109,7 @@ class Onboarding1ViewController: UINavigationController {
             }
     
             /// fade it in & out with RH picture
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(9)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7)){
                 let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                     self.block3.alpha = 1
                 }
@@ -117,7 +117,7 @@ class Onboarding1ViewController: UINavigationController {
             }
         
             /// fade it in & out with RH picture
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(12)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)){
             let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                 self.moveOnButton.alpha = 1
             }

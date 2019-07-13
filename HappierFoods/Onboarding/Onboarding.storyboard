@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="iOS 13.0 system colors" minToolsVersion="11.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="07891284.ttf">
@@ -104,7 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="mOB-dP-BOy"/>
                     </view>
                     <connections>
-                        <segue destination="Y4M-5b-8iH" kind="show" identifier="o1-02" id="2o0-ak-dRD"/>
+                        <segue destination="Y4M-5b-8iH" kind="show" identifier="o1-o2" id="2o0-ak-dRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ip2-co-XYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,10 +122,46 @@
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="lgJ-qk-ETL"/>
                     </view>
+                    <connections>
+                        <segue destination="PIB-5Q-FPW" kind="show" identifier="o2-o3" id="ekx-it-QrP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYn-1o-50h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1006" y="-504"/>
+        </scene>
+        <!--Onboarding3 View Controller-->
+        <scene sceneID="lSs-ts-pBh">
+            <objects>
+                <viewController id="PIB-5Q-FPW" customClass="Onboarding3ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tuw-nw-7cR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Bw9-Rd-mjF"/>
+                    </view>
+                    <connections>
+                        <segue destination="tnf-Lq-BSP" kind="show" identifier="o3-o4" id="aVd-rT-8Za"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXM-dj-ELT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.0000000000002" y="-504.24107142857139"/>
+        </scene>
+        <!--Onboarding4 View Controller-->
+        <scene sceneID="o7w-tF-DSJ">
+            <objects>
+                <viewController id="tnf-Lq-BSP" customClass="Onboarding4ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JhR-g8-bS6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="systemYellowColor"/>
+                        <viewLayoutGuide key="safeArea" id="zw8-SB-iFe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgl-LG-4U3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2619" y="-504"/>
         </scene>
     </scenes>
     <resources>
