@@ -295,7 +295,17 @@ override func viewDidAppear(_ animated: Bool) {
 
 
 @objc func injectIntoMainFlow(sender: UIButton!) {
-    performSegue(withIdentifier: "goToTry", sender: self)
+    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+    newViewController.sourceViewController = "Try Food"
+    self.present(newViewController, animated: true, completion: nil)
 }
+    
+@objc func presetTarget(sender: UIButton!) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+        newViewController.sourceViewController = "Try Food"
+        self.present(newViewController, animated: true, completion: nil)
+    }
 
 }

@@ -89,6 +89,7 @@
 		44B5300022DA213800CF730D /* b3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FFA22DA213800CF730D /* b3.jpg */; };
 		44B5300122DA213800CF730D /* b1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FFB22DA213800CF730D /* b1.jpg */; };
 		44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */; };
+		44B5300522DA2F4E00CF730D /* preTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5300422DA2F4E00CF730D /* preTargetViewController.swift */; };
 		44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9B22566A230090BB5F /* AppDelegate.swift */; };
 		44BE3BA622566A250090BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA522566A250090BB5F /* Assets.xcassets */; };
 		44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */; };
@@ -200,6 +201,7 @@
 		44B52FFA22DA213800CF730D /* b3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b3.jpg; sourceTree = "<group>"; };
 		44B52FFB22DA213800CF730D /* b1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b1.jpg; sourceTree = "<group>"; };
 		44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding5ViewController.swift; sourceTree = "<group>"; };
+		44B5300422DA2F4E00CF730D /* preTargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preTargetViewController.swift; sourceTree = "<group>"; };
 		44BE3B9822566A230090BB5F /* HappierFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappierFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BE3B9B22566A230090BB5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44BE3BA522566A250090BB5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				44B52FF222DA18A400CF730D /* Onboarding4ViewController.swift */,
 				44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */,
 				44B52FF422DA211900CF730D /* preTryViewController.swift */,
+				44B5300422DA2F4E00CF730D /* preTargetViewController.swift */,
 				4483901522C731E5002F8D2E /* onboarding1.png */,
 				4483901722C731EC002F8D2E /* onboarding2.png */,
 			);
@@ -741,6 +744,7 @@
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
+				44B5300522DA2F4E00CF730D /* preTargetViewController.swift in Sources */,
 				44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="2619" y="-504"/>
         </scene>
-        <!--View Controller-->
+        <!--Pre Target View Controller-->
         <scene sceneID="m2u-TM-Tww">
             <objects>
-                <viewController id="J5K-m7-rnN" sceneMemberID="viewController">
+                <viewController id="J5K-m7-rnN" customClass="preTargetViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dt4-Pd-psG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
