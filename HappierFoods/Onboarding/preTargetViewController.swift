@@ -43,7 +43,7 @@ class preTargetViewController: UINavigationController {
     lazy var b4: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.blue
-        button.setTitle("Set My Own Target", for: .normal)
+        button.setTitle("Other", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
@@ -59,9 +59,11 @@ class preTargetViewController: UINavigationController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.white
+        
+        
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
-        block1.alpha = 0
+        block1.alpha = 1
         NSLayoutConstraint.activate(
             [
                 block1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10),
@@ -71,13 +73,25 @@ class preTargetViewController: UINavigationController {
             ]
         )
         
+        view.addSubview(block2)
+        block2.translatesAutoresizingMaskIntoConstraints = false
+        block2.alpha = 1
+        NSLayoutConstraint.activate(
+            [
+                block2.bottomAnchor.constraint(equalTo: self.view.centerYAnchor),
+                block2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+                block2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25)
+            ]
+        )
+        
         self.view.addSubview(b1)
         b1.translatesAutoresizingMaskIntoConstraints = false
         b1.addTarget(self, action: #selector(injectIntoMainFlow), for: .touchUpInside)
         b1.alpha = 0
         NSLayoutConstraint.activate(
             [
-                b1.topAnchor.constraint(equalTo: block2.bottomAnchor, constant: 20),
+                b1.topAnchor.constraint(equalTo: block2.bottomAnchor, constant: 10),
                 b1.widthAnchor.constraint(equalTo: b1.heightAnchor),
                 // b1.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
                 b1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 20),
@@ -127,17 +141,7 @@ class preTargetViewController: UINavigationController {
             ]
         )
         
-        view.addSubview(block2)
-        block2.translatesAutoresizingMaskIntoConstraints = false
-        block2.alpha = 0
-        NSLayoutConstraint.activate(
-            [
-                block2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 10),
-                block2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-                block2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25)
-            ]
-        )
+
         
         
         
