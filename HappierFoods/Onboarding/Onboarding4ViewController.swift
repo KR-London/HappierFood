@@ -164,15 +164,16 @@ class Onboarding4ViewController: UINavigationController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.white
+        let margins = view.layoutMarginsGuide
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
         block1.alpha = 0
         NSLayoutConstraint.activate(
             [
                 //block1.topAnchor.constraint(equalTo: self.view.topAnchor),
-                block1.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-                block1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)
+                block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.3)
             ]
         )
         
@@ -183,10 +184,10 @@ class Onboarding4ViewController: UINavigationController {
         NSLayoutConstraint.activate(
             [
                 b1.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 20),
-                b1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.45),
-                b1.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                b1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 5),
-                b1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+                b1.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.45),
+                b1.centerYAnchor.constraint(equalTo: margins.centerYAnchor),
+                b1.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 5),
+                b1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
             ]
         )
         
@@ -197,10 +198,10 @@ class Onboarding4ViewController: UINavigationController {
         NSLayoutConstraint.activate(
             [
                 b2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 20),
-                b2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.45),
-                b2.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                b2.trailingAnchor.constraint(equalTo: self.view.trailingAnchor , constant: -5),
-                b2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+                b2.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.45),
+                b2.centerYAnchor.constraint(equalTo: margins.centerYAnchor),
+                b2.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -5),
+                b2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
             ]
         )
         
@@ -212,9 +213,9 @@ class Onboarding4ViewController: UINavigationController {
         NSLayoutConstraint.activate(
             [
                 block2.topAnchor.constraint(equalTo: b1.bottomAnchor, constant: 20),
-                block2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-                block2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)
+                block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                block2.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                block2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.3)
             ]
         )
         
@@ -227,7 +228,7 @@ class Onboarding4ViewController: UINavigationController {
         }
         
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
             let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                 self.block2.alpha = 1
             }
@@ -236,7 +237,7 @@ class Onboarding4ViewController: UINavigationController {
         
         
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
             let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                 self.b1.alpha = 1
                 self.b2.alpha = 1

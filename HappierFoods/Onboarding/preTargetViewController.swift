@@ -161,7 +161,7 @@ class preTargetViewController: UINavigationController {
         }
         
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
             let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                 self.block2.alpha = 1
             }

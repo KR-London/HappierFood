@@ -135,39 +135,48 @@ class preTryViewController: UINavigationController {
 
 lazy var block1: UIImageView = {
     let contentView = UIImageView()
-    contentView.image = UIImage(named: "preTry1.jpg")
+    contentView.image = UIImage(named: "preTry1B.jpg")
     return contentView
 }()
 
 
 lazy var b1: UIButton = {
     let button = UIButton()
-    button.setImage(UIImage(named: "b1.jpg"), for: .normal)
+    //button.setImage(UIImage(named: "b1.jpg"), for: .normal)
+    button.backgroundColor = UIColor.blue
+    button.setTitle("Smell It", for: .normal)
+    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 
 lazy var b2: UIButton = {
     let button = UIButton()
-    button.setImage(UIImage(named: "b2.jpg"), for: .normal)
+    button.backgroundColor = UIColor.blue
+    button.setTitle("Taste It", for: .normal)
+    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 
 lazy var b3: UIButton = {
     let button = UIButton()
-    button.setImage(UIImage(named:"b3.jpg"), for: .normal)
+    button.backgroundColor = UIColor.blue
+    button.setTitle("Nibble It", for: .normal)
+    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 
 lazy var b4: UIButton = {
     let button = UIButton()
-    button.setImage(UIImage(named: "b4.jpg"), for: .normal)
+    button.backgroundColor = UIColor.blue
+    button.setTitle("Finish It", for: .normal)
+    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 
 
 lazy var block2: UIImageView = {
     let contentView = UIImageView()
-    contentView.image = UIImage(named: "preTry2.jpg")
+    contentView.image = UIImage(named: "preTry2B.jpg")
     return contentView
 }()
 
@@ -175,15 +184,16 @@ lazy var block2: UIImageView = {
 
 override func viewDidLoad() {
     view.backgroundColor = UIColor.white
+      let margins = view.layoutMarginsGuide
     view.addSubview(block1)
     block1.translatesAutoresizingMaskIntoConstraints = false
     block1.alpha = 0
     NSLayoutConstraint.activate(
         [
-            block1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10),
-            block1.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            block1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            block1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25)
+            block1.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
+            block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
+            block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+            block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.25)
         ]
     )
     
@@ -193,11 +203,11 @@ override func viewDidLoad() {
     b1.alpha = 0
     NSLayoutConstraint.activate(
         [
-            b1.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 20),
+            b1.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 10),
             b1.widthAnchor.constraint(equalTo: b1.heightAnchor),
            // b1.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            b1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 20),
-            b1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+            b1.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 20),
+            b1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
         ]
     )
     
@@ -210,8 +220,8 @@ override func viewDidLoad() {
             b2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 10),
             b2.widthAnchor.constraint(equalTo: b2.heightAnchor),
             //b2.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            b2.trailingAnchor.constraint(equalTo: self.view.trailingAnchor , constant: -20),
-            b2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+            b2.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -20),
+            b2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
         ]
     )
     
@@ -224,8 +234,8 @@ override func viewDidLoad() {
             b3.topAnchor.constraint(equalTo: b1.bottomAnchor, constant: 10),
             b3.widthAnchor.constraint(equalTo: b3.heightAnchor),
            // b3.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            b3.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 20),
-            b3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+            b3.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 20),
+            b3.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
         ]
     )
     
@@ -238,8 +248,8 @@ override func viewDidLoad() {
             b4.topAnchor.constraint(equalTo: b2.bottomAnchor, constant: 10),
             b4.widthAnchor.constraint(equalTo: b4.heightAnchor),
            // b4.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            b4.trailingAnchor.constraint(equalTo: self.view.trailingAnchor , constant: -20),
-            b4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+            b4.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -20),
+            b4.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
         ]
     )
     
@@ -249,9 +259,9 @@ override func viewDidLoad() {
     NSLayoutConstraint.activate(
         [
             block2.topAnchor.constraint(equalTo: b3.bottomAnchor, constant: 10),
-            block2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            block2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25)
+            block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
+            block2.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+            block2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.25)
         ]
     )
     
@@ -272,7 +282,7 @@ override func viewDidAppear(_ animated: Bool) {
     }
     
     /// fade it in & out with RH picture
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
         let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
             self.block2.alpha = 1
         }
@@ -282,7 +292,7 @@ override func viewDidAppear(_ animated: Bool) {
     
     
     /// fade it in & out with RH picture
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
         let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
             self.b1.alpha = 1
             self.b2.alpha = 1

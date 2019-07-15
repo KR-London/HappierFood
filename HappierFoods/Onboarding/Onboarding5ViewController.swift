@@ -44,15 +44,17 @@ class Onboarding5ViewController: UINavigationController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.white
+        
+        let margins = view.layoutMarginsGuide
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
         block1.alpha = 0
         NSLayoutConstraint.activate(
             [
                 //block1.topAnchor.constraint(equalTo: self.view.topAnchor),
-                block1.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-                block1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25)
+                block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.25)
             ]
         )
         
@@ -64,9 +66,9 @@ class Onboarding5ViewController: UINavigationController {
             [
                 b1.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 20),
                 b1.widthAnchor.constraint(equalTo: b1.heightAnchor),
-                b1.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                b1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 20),
-                b1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+                b1.centerYAnchor.constraint(equalTo: margins.centerYAnchor),
+                b1.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 20),
+                b1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
             ]
         )
         
@@ -78,9 +80,9 @@ class Onboarding5ViewController: UINavigationController {
             [
                 b2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 20),
                 b2.widthAnchor.constraint(equalTo: b2.heightAnchor),
-                b2.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                b2.leadingAnchor.constraint(equalTo: self.view.leadingAnchor , constant: 20),
-                b2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+                b2.centerYAnchor.constraint(equalTo: margins.centerYAnchor),
+                b2.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 20),
+                b2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
             ]
         )
         
@@ -92,9 +94,9 @@ class Onboarding5ViewController: UINavigationController {
         NSLayoutConstraint.activate(
             [
                 block2.topAnchor.constraint(equalTo: b1.bottomAnchor, constant: 20),
-                block2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-                block2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25)
+                block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                block2.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                block2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.25)
             ]
         )
         

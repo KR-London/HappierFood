@@ -20,7 +20,7 @@
                                 <rect key="frame" x="36" y="144" width="342" height="618"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM4-Qd-fiO">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="85.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="HappyFoods">
                                                 <attributes>
@@ -32,25 +32,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06P-Av-FQB">
-                                        <rect key="frame" x="0.0" y="111.5" width="342" height="352.5"/>
+                                        <rect key="frame" x="0.0" y="128.5" width="342" height="489.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="hTF-06-KEf"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="A food diary to track and motivate trying new foods. ">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="24" name="TwCenMT-CondensedExtraBold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1v-5J-piy">
-                                        <rect key="frame" x="0.0" y="507" width="342" height="111"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Shake if you have a suggestion or you get stuck. ">
                                                 <attributes>
                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <font key="NSFont" size="24" name="TwCenMT-CondensedExtraBold"/>

@@ -141,15 +141,13 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         fileManager.createFile(atPath: imagePath as String, contents: data(), attributes: nil)
         
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-        print(main)
-        print("present state = \(presentState)")
+
         if firstPass == "Target" {
             presentState = "First Target"
             //self.navigationController?.navigationItem.hidesBackButton = true
             self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
         }
-         print("first Pass = \(firstPass)")
-         print("present state = \(presentState)")
+
         
         switch presentState {
             

@@ -25,16 +25,16 @@ class Onboarding3ViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let margins = view.layoutMarginsGuide
         view.backgroundColor = UIColor.white
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
-                block1.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-                block1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block1.topAnchor.constraint(equalTo: self.view.topAnchor),
-                block1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8),
+                block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                block1.topAnchor.constraint(equalTo: margins.topAnchor),
+                block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8),
             ]
         )
         
@@ -43,16 +43,16 @@ class Onboarding3ViewController: UINavigationController {
         shakeMe.alpha = 0
         NSLayoutConstraint.activate(
             [
-                shakeMe.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-                shakeMe.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                shakeMe.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.8),
+                shakeMe.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
                 shakeMe.topAnchor.constraint(equalTo: block1.bottomAnchor),
-                shakeMe.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+                shakeMe.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2),
             ]
         )
         
     
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
             self.startAnimate(text: self.shakeMe)
             let animator = UIViewPropertyAnimator(duration: 6, curve: .easeOut) {
                 self.shakeMe.alpha = 1
@@ -61,7 +61,7 @@ class Onboarding3ViewController: UINavigationController {
        
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)){
             self.performSegue(withIdentifier: "o3-o4", sender: self)
         }
     }
