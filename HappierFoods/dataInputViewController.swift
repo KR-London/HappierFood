@@ -396,7 +396,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
-        presentState = main!.myNav!.currentStateAsString()
+        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
         
         switch sourceViewController{
             case "Try Food":

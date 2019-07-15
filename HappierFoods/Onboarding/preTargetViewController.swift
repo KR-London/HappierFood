@@ -11,7 +11,7 @@ import UIKit
 class preTargetViewController: UINavigationController {
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "preTarget1.jpg")
+        contentView.image = UIImage(named: "preTarget1B.jpg")
         return contentView
     }()
     
@@ -19,7 +19,7 @@ class preTargetViewController: UINavigationController {
     lazy var b1: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.blue
-        button.setTitle("Cheese", for: .normal)
+        button.setTitle("Egg", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
@@ -27,7 +27,7 @@ class preTargetViewController: UINavigationController {
     lazy var b2: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.blue
-        button.setTitle("Brown Bread", for: .normal)
+        button.setTitle("Rice", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
@@ -44,6 +44,7 @@ class preTargetViewController: UINavigationController {
         let button = UIButton()
         button.backgroundColor = UIColor.blue
         button.setTitle("Other", for: .normal)
+        button.alpha = 0.2
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
@@ -51,7 +52,7 @@ class preTargetViewController: UINavigationController {
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "preTarget2.jpg")
+        contentView.image = UIImage(named: "preTarget2B.jpg.jpg")
         return contentView
     }()
     
@@ -160,7 +161,7 @@ class preTargetViewController: UINavigationController {
         }
         
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
             let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                 self.block2.alpha = 1
             }
@@ -170,7 +171,7 @@ class preTargetViewController: UINavigationController {
         
         
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
             let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                 self.b1.alpha = 1
                 self.b2.alpha = 1
@@ -183,10 +184,75 @@ class preTargetViewController: UINavigationController {
     
     
     @objc func injectIntoMainFlow(sender: UIButton!) {
+        /// i need to jump into the second screen but preserve the navigation stack.
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "targetSettingScreen") as! dataInputViewController
+        //        let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+        //        newViewController.sourceViewController = "Try Food"
+        //        self.present(newViewController, animated: true, completion: nil)
+        
+        
+        let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
+        print(rootViewController)
+        let myNav = customNavigationController()
+        print(myNav)
+        
+        //clean up
+        rootViewController.deleteAllData("TargetFood")
+        rootViewController.deleteAllData("TriedFood")
+        //deleteAllData("HistoryTriedFoods")
+        
+//        rootViewController.foodArray = []
+//        rootViewController.targetArray = []
+//        defaults.set(0.0, forKey: "Last Week Started")
+//        defaults.set(false, forKey: "Celebration Status")
+        
+        rootViewController.myNav?.presentState = .SetTargetViewController
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+        
         newViewController.sourceViewController = "Set Target"
-        self.present(newViewController, animated: true, completion: nil)
+        
+        //  myNav.roo
+        myNav.pushViewController(rootViewController, animated: false)
+        myNav.pushViewController(newViewController, animated: false)
+        
+        let motivationViewController = storyBoard.instantiateViewController(withIdentifier: "targetSettingScreen") as! rateFoodViewController
+        
+        switch sender.titleLabel?.text{
+            case "Egg":
+                motivationViewController.imagePlaceholder = UIImage(named: "boiled_eggs.jpeg")!
+                motivationViewController.foodName = "Boiled Egg"
+            
+            case "Apple":
+            
+                motivationViewController.imagePlaceholder = UIImage(named: "apple.jpg")!
+                motivationViewController.foodName = "Apple"
+            
+            case "Rice":
+            
+                motivationViewController.imagePlaceholder = UIImage(named: "rice.jpeg")!
+                motivationViewController.foodName = "Rice"
+            
+            case "Other":
+            
+                motivationViewController.imagePlaceholder = UIImage(named: "chaos.jpg")!
+            
+            default:
+            
+                motivationViewController.imagePlaceholder = UIImage(named: "chaos.jpg")!
+        }
+      
+        
+        
+        
+        motivationViewController.presentState = "First Target"
+        motivationViewController.firstPass = "Target"
+        
+        myNav.navigationItem.setHidesBackButton(true, animated: true)
+        myNav.pushViewController(motivationViewController, animated: false)
+        
+        
+        self.present(myNav, animated: true, completion: nil)
     }
 
 }

@@ -132,7 +132,7 @@ class Onboarding4ViewController: UINavigationController {
 
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "areYouReady1.jpg")
+        contentView.image = UIImage(named: "areYouReady1B.jpg")
         return contentView
     }()
     
@@ -157,7 +157,7 @@ class Onboarding4ViewController: UINavigationController {
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "areYouReady2.jpg")
+        contentView.image = UIImage(named: "areYouReady2B.jpg")
         return contentView
     }()
     

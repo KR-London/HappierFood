@@ -12,19 +12,19 @@ class Onboarding2ViewController: UINavigationController {
 
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "screen2_Block1.jpg")
+        contentView.image = UIImage(named: "screen2_block1_B.jpg")
         return contentView
     }()
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "screen2_block2.jpg")
+        contentView.image = UIImage(named: "screen2_block2_B.jpg")
         return contentView
     }()
     
     lazy var block3: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "screen2_block3.jpg")
+        contentView.image = UIImage(named: "screen2_block3_B.jpg")
         return contentView
     }()
     
@@ -44,10 +44,10 @@ class Onboarding2ViewController: UINavigationController {
         block1.alpha = 0
         NSLayoutConstraint.activate(
             [
-                block1.topAnchor.constraint(equalTo: self.view.topAnchor),
+                block1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10),
                 block1.widthAnchor.constraint(equalTo: self.view.widthAnchor),
                 block1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)
+                block1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8/3)
             ]
         )
         view.addSubview(block2)
@@ -58,7 +58,7 @@ class Onboarding2ViewController: UINavigationController {
                 block2.topAnchor.constraint(equalTo: block1.bottomAnchor),
                 block2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
                 block2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)
+                block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8/3)
             ]
         )
         
@@ -70,7 +70,7 @@ class Onboarding2ViewController: UINavigationController {
                 block3.topAnchor.constraint(equalTo: block2.bottomAnchor),
                 block3.widthAnchor.constraint(equalTo: self.view.widthAnchor),
                 block3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                block3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)
+                block3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8/3)
             ]
         )
         
@@ -83,7 +83,7 @@ class Onboarding2ViewController: UINavigationController {
                 moveOnButton.topAnchor.constraint(equalTo: block3.bottomAnchor),
                 moveOnButton.widthAnchor.constraint(equalTo: self.view.widthAnchor),
                 moveOnButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                moveOnButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1)
+                moveOnButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
             ]
         )
         

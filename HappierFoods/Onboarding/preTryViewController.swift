@@ -282,7 +282,7 @@ override func viewDidAppear(_ animated: Bool) {
     
     
     /// fade it in & out with RH picture
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)){
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
         let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
             self.b1.alpha = 1
             self.b2.alpha = 1
@@ -295,17 +295,62 @@ override func viewDidAppear(_ animated: Bool) {
 
 
 @objc func injectIntoMainFlow(sender: UIButton!) {
+    
+    /// i need to jump into the second screen but preserve the navigation stack.
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
+    print(rootViewController)
+    let myNav = customNavigationController()
+    print(myNav)
+    
+    //clean up 
+    rootViewController.deleteAllData("TargetFood")
+    rootViewController.deleteAllData("TriedFood")
+    //deleteAllData("HistoryTriedFoods")
+    
+   // rootViewController.foodArray = []
+ //   rootViewController.targetArray = []
+  //  defaults.set(0.0, forKey: "Last Week Started")
+   // defaults.set(false, forKey: "Celebration Status")
+    
+    rootViewController.myNav?.presentState = .AddFoodViewController
+    
+    
     let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+    
     newViewController.sourceViewController = "Try Food"
-    self.present(newViewController, animated: true, completion: nil)
+    
+    myNav.pushViewController(rootViewController, animated: false)
+    myNav.pushViewController(newViewController, animated: false)
+    
+    self.present(myNav, animated: true, completion: nil)
+//    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//    let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+//    newViewController.sourceViewController = "Try Food"
+//    self.present(newViewController, animated: true, completion: nil)
 }
     
 @objc func presetTarget(sender: UIButton!) {
+    
+        /// i need to jump into the second screen but preserve the navigation stack.
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
+        let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
+        print(rootViewController)
+        let myNav = customNavigationController()
+        print(myNav)
+        rootViewController.myNav?.presentState = .AddFoodViewController
+    
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+    
         newViewController.sourceViewController = "Try Food"
-        self.present(newViewController, animated: true, completion: nil)
+    
+        myNav.pushViewController(rootViewController, animated: false)
+        myNav.pushViewController(newViewController, animated: false)
+    
+        self.present(myNav, animated: true, completion: nil)
+    
     }
 
 }

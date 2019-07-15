@@ -21,6 +21,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     var presentState = String()
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let imagePickerView = UIImagePickerController()
+    var firstPass = String()
 
     // MARK: Actions and outlets
     @IBAction func endedEnteringName(_ sender: Any) {
@@ -140,6 +141,15 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         fileManager.createFile(atPath: imagePath as String, contents: data(), attributes: nil)
         
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        print(main)
+        print("present state = \(presentState)")
+        if firstPass == "Target" {
+            presentState = "First Target"
+            //self.navigationController?.navigationItem.hidesBackButton = true
+            self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
+        }
+         print("first Pass = \(firstPass)")
+         print("present state = \(presentState)")
         
         switch presentState {
             
@@ -224,6 +234,37 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                     main?.mainCollectionView.reloadData()
                 }
             }
+            
+        case "First Pass":
+            /// this bit updates the database
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                menuItem.filename = imagePath
+                menuItem.name = imageName
+                menuItem.rating = rating ?? 0
+                menuItem.dateTried = Date()
+                saveItems()
+                /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
+                main?.foodArray = [menuItem]
+                
+                DispatchQueue.main.async{
+                    main?.mainCollectionView.reloadData()
+                }
+            }
+            
+        case "First Target":
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
+                menuItem.filename = imagePath
+                menuItem.name = imageName
+                menuItem.dateAdded = Date()
+                saveItems()
+                
+                main?.targetArray = [menuItem]
+                DispatchQueue.main.async{
+                    main?.mainCollectionView.reloadData()
+                }
+            }
         default: return
         }
         
@@ -269,9 +310,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-        presentState = main!.myNav!.currentStateAsString()
+        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
+        
+     
 
-        switch  main!.myNav!.presentState {
+        switch  main?.myNav?.presentState {
         case .AddFoodViewController, .RetryTriedFood, .ConvertTargetToTry :
             navigationItem.title = "Rate It!";
         case .SetTargetViewController:
@@ -279,6 +322,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         default:
             navigationItem.title = "Report Bug"
         }
+        
+        if presentState == "First Pass"{navigationItem.title = ""}
     }
     
     // MARK: Handling user interaction

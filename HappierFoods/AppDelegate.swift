@@ -18,10 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  //      let font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
  
    //     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")//
-        
         /// for testing
        let launchedBefore = false
         
@@ -55,8 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
        // registerForPushNotifications()
+    
+      
+       // BugReporting.bugReportingOptions = [.]
+     Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
         
-     Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake, .screenshot])
+        BugReporting.shakingThresholdForiPhone = 1.0
+        BugReporting.bugReportingOptions = [.emailFieldHidden]
+        //view.instabug_privateView = true
         
         return true
     }

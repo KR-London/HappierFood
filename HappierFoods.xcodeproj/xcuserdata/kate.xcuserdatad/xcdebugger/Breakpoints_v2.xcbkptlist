@@ -136,8 +136,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "clearData(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "9FCF8D55-2ED8-45EC-B910-DB0F4F9207CE - f2d08edaa5423648"
@@ -185,8 +185,8 @@
             timestampString = "583856872.44794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -303,8 +303,8 @@
             filePath = "HappierFoods/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>

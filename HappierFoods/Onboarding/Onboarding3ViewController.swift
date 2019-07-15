@@ -13,7 +13,7 @@ class Onboarding3ViewController: UINavigationController {
     
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "screen3.jpg")
+        contentView.image = UIImage(named: "screen3_B.jpg")
         return contentView
     }()
     
@@ -61,7 +61,7 @@ class Onboarding3ViewController: UINavigationController {
        
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(12)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)){
             self.performSegue(withIdentifier: "o3-o4", sender: self)
         }
     }
