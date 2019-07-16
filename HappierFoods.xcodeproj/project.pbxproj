@@ -73,7 +73,6 @@
 		4483901822C731EC002F8D2E /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483901722C731EC002F8D2E /* onboarding2.png */; };
 		4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */; };
 		4483902122C7D187002F8D2E /* Loading Screens1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483902022C7D187002F8D2E /* Loading Screens1.png */; };
-		449613C922DC9720001CCE37 /* cheese.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 449613C822DC9720001CCE37 /* cheese.JPG */; };
 		449613CB22DC9CBC001CCE37 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CA22DC9CBB001CCE37 /* apple.jpg */; };
 		449613CD22DC9CD6001CCE37 /* rice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CC22DC9CD6001CCE37 /* rice.jpeg */; };
 		449613CF22DC9CF6001CCE37 /* boiled_eggs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */; };
@@ -204,7 +203,6 @@
 		4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = databasePlaceholderImage.001.jpeg; sourceTree = "<group>"; };
 		4483902022C7D187002F8D2E /* Loading Screens1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Screens1.png"; sourceTree = "<group>"; };
 		448813BE22D6434F00E3A78F /* HappierFoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HappierFoods.entitlements; sourceTree = "<group>"; };
-		449613C822DC9720001CCE37 /* cheese.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cheese.JPG; sourceTree = "<group>"; };
 		449613CA22DC9CBB001CCE37 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		449613CC22DC9CD6001CCE37 /* rice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rice.jpeg; sourceTree = "<group>"; };
 		449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boiled_eggs.jpeg; sourceTree = "<group>"; };
@@ -461,7 +459,6 @@
 				4483901F22C7D103002F8D2E /* Emoji Face Views and Controllers */,
 				44AB154C225D8F44004E070A /* 07891284.ttf */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
-				449613C822DC9720001CCE37 /* cheese.JPG */,
 				449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */,
 				449613CC22DC9CD6001CCE37 /* rice.jpeg */,
 				449613CA22DC9CBB001CCE37 /* apple.jpg */,
@@ -677,7 +674,6 @@
 				443C3CB622B2A36600832AD1 /* Detail3ViewController.xib in Resources */,
 				441DB5F122C5ADDA00E857C0 /* Onboarding.storyboard in Resources */,
 				443B66D222906019007DDACC /* eyeBlinkRight_browOuterUpLeft.png in Resources */,
-				449613C922DC9720001CCE37 /* cheese.JPG in Resources */,
 				443B66E62290605F007DDACC /* eyeOpen_browOuterUpLeft.png in Resources */,
 				44B5300122DA213800CF730D /* b1.jpg in Resources */,
 				443B66CE22906006007DDACC /* eyeBlinkLeft_browOuterUpLeft.png in Resources */,
@@ -979,12 +975,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -999,12 +997,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
