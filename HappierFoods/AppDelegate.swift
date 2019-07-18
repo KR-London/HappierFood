@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
             
         }
-        
+//        
       //    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:  UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!]
         if let customFont = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 ) {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)

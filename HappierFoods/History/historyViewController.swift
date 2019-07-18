@@ -9,7 +9,8 @@
 import UIKit
 import CoreData
 
-class historyViewController: UIViewController {
+private let reuseIdentifier = "HistoryCell"
+class historyViewController: UIViewController{
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
@@ -96,3 +97,24 @@ class historyViewController: UIViewController {
         }
     }
 }
+//
+//extension historyViewController: UICollectionViewDataSource{
+//    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 5
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 5
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoryCell", for: indexPath) as! HistoryCollectionViewCell
+//       // cell.textLabel.text = String(indexPath.row + 1)
+//        cell.backgroundColor = UIColor.green
+//        return cell
+//    }
+//
+//
+//
+//}

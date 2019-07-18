@@ -59,7 +59,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
 
 // MARK: Collection View extension
 
-extension CelebrationCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension HistoryCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
