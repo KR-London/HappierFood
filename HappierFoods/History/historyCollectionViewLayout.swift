@@ -10,18 +10,15 @@ import UIKit
 
 class historyCollectionViewLayout: UICollectionViewLayout {
 
-
-
         fileprivate var numberOfColumns = 3
         fileprivate var cellPadding: CGFloat = 6
         fileprivate let cellHeight: CGFloat = 150
-        
+    
         weak var delegate: HistoryCollectionViewDelegate?
-        
-        
+    
         //An array to cache the calculated attributes
         fileprivate var cache = [UICollectionViewLayoutAttributes]()
-        
+    
         //For content size
         fileprivate var contentHeight: CGFloat = 0
         fileprivate var contentWidth: CGFloat {
@@ -29,12 +26,12 @@ class historyCollectionViewLayout: UICollectionViewLayout {
             let insets = collectionView.contentInset
             return collectionView.bounds.width - (insets.left + insets.right)
         }
-        
+    
         //Setting the content size
         override var collectionViewContentSize: CGSize {
             return CGSize(width: contentWidth, height: contentHeight)
         }
-        
+    
         override func prepare() {
             //We begin measuring the location of items only if the cache is empty
             guard cache.isEmpty == true, let collectionView = collectionView else {return}
@@ -128,8 +125,8 @@ class historyCollectionViewLayout: UICollectionViewLayout {
             }
             
         }
-        
-        
+    
+    
         //Is called  to determine which items are visible in the given rect
         override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
             var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
@@ -143,12 +140,12 @@ class historyCollectionViewLayout: UICollectionViewLayout {
             
             return visibleLayoutAttributes
         }
-        
+    
         //The attributes for the item at the indexPath
         override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
             return cache[indexPath.item]
         }
-        
+    
 }
 
 

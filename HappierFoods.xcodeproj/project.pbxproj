@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
 		4410ECF42294031F00CC3515 /* NoCameraPlaceholder.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */; };
 		44146634225D358900DD4751 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44146633225D358900DD4751 /* ARViewController.swift */; };
 		4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EDFE225F0AFC00D9B9CB /* chaos.jpg */; };
@@ -130,6 +131,7 @@
 
 /* Begin PBXFileReference section */
 		1FE003BF8D73E498BC5B1788 /* Pods_HappierFoodsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappierFoodsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
 		4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoCameraPlaceholder.001.jpeg; sourceTree = "<group>"; };
 		44146633225D358900DD4751 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		4414EDFE225F0AFC00D9B9CB /* chaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos.jpg; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		44329E9422DE28DD002DA0FA /* History */ = {
 			isa = PBXGroup;
 			children = (
+				4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */,
 				443B2F9822DF5EDE0024EC6E /* historyCollectionViewLayout.swift */,
 				44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */,
 				44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */,
@@ -804,6 +807,7 @@
 				442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */,
 				44329E9722DE292D002DA0FA /* HistoryCollectionViewController.swift in Sources */,
 				44B52FE122DA0D5400CF730D /* Onboarding2ViewController.swift in Sources */,
+				4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */,
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,

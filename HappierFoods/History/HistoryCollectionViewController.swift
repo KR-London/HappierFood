@@ -18,9 +18,10 @@ class HistoryCollectionViewController: UICollectionViewController {
     var historyArray: [HistoryTriedFoods]!
     
    // @IBOutlet var collectionView: UICollectionView!
+    // @IBOutlet var collectionView: UICollectionView!
     
-  // collectionView.dataSource = self
-  //  collectionView.delegate = self
+    //collectionView.dataSource = self
+   // collectionView.delegate = self
     
     
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class HistoryCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 4
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> HistoryCollectionViewCell {
@@ -63,34 +64,83 @@ class HistoryCollectionViewController: UICollectionViewController {
             print("Error fetching data \(error)")
         }
     }
-}
-
-// MARK: Collection View extension
-
-extension CelebrationCollectionViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: collectionView.bounds.size.width/3 - 16, height: collectionView.bounds.size.width/3 - 16)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if (kind == UICollectionView.elementKindSectionHeader ){
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WeekHeaderView", for: indexPath) as! WeekHeaderView
+            headerView.backgroundColor = UIColor.blue
+            headerView.weekLabel.text = "Save \(indexPath.section)"
+            return headerView
+        }
+        fatalError()
     }
 }
+
+// MARK: History View extension
+//
+//extension HistoryCollectionViewController: UICollectionViewDelegateFlowLayout {
+////
+////    func collectionView(_ collectionView: UICollectionView,
+////                        layout collectionViewLayout: UICollectionViewLayout,
+////                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+////
+////        return CGSize(width: collectionView.bounds.size.width/3 - 16, height: collectionView.bounds.size.width/3 - 16)
+////    }
+////
+////    func collectionView(_ collectionView: UICollectionView,
+////                        layout collectionViewLayout: UICollectionViewLayout,
+////                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+////        return 8
+////    }
+////
+////    func collectionView(_ collectionView: UICollectionView,
+////                        layout collectionViewLayout: UICollectionViewLayout,
+////                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+////        return 8
+////    }
+////
+////    func collectionView(_ collectionView: UICollectionView,
+////                        layout collectionViewLayout: UICollectionViewLayout,
+////                        insetForSectionAt section: Int) -> UIEdgeInsets {
+////        return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+////    }
+////}
+////
+////extension HistoryCollectionViewController: UICollectionViewDataSource{
+//
+////    override func collectionView(_ collectionView: UICollectionView,
+////                                 viewForSupplementaryElementOfKind kind: String,
+////                                 at indexPath: IndexPath) -> WeekHeaderView {
+////        // 1
+////        switch kind {
+////        // 2
+////        case UICollectionView.elementKindSectionHeader:
+////            // 3
+////            guard
+////                let headerView = collectionView.dequeueReusableSupplementaryView(
+////                    ofKind: kind,
+////                    withReuseIdentifier: "\(WeekHeaderView.self)",
+////                    for: indexPath) as? WeekHeaderView
+////                else {
+////                    fatalError("Invalid view type")
+////            }
+////
+////         //   let searchTerm = searches[indexPath.section].searchTerm
+////          //  headerView.label.text = searchTerm
+////            return headerView
+////        default:
+////            // 4
+////            assert(false, "Invalid element type")
+////        }
+////    }
+//
+//    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//         if (kind == UICollectionView.elementKindSectionHeader ){
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WeekHeaderView", for: indexPath)
+//            self.backgroundColor = UIColor.blue
+//            return headerView
+//        }
+//        fatalError()
+//    }
+//
+//}
