@@ -17,14 +17,11 @@ class historyViewController: UIViewController{
     var historyArray: [HistoryTriedFoods]!
 
     @IBOutlet weak var resetToNewWeek: UIButton!
-    
     @IBOutlet weak var clearAllData: UIButton!
-    
     @IBAction func cacheWeek(_ sender: UIButton) {
         copyFoodToHistory()
         navigationController?.popViewController(animated: true)
     }
-    
     @IBAction func clearData(_ sender: Any) {
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
@@ -38,11 +35,10 @@ class historyViewController: UIViewController{
         defaults.set(0.0, forKey: "Last Week Started")
         defaults.set(false, forKey: "Celebration Status")
         UserDefaults.standard.set(false, forKey: "launchedBefore")
-      //  DispatchQueue.main.async{
+        //  DispatchQueue.main.async{
             main?.mainCollectionView.reloadData()
             main?.mainCollectionView.reloadInputViews()
-
-      //  }
+        //  }
         navigationController?.popViewController(animated: true)
     }
 
@@ -63,6 +59,14 @@ class historyViewController: UIViewController{
     func copyFoodToHistory(){
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
+        
+        /// find the current maximum save number
+       loadItems()
+       let maximumSaveNumber = historyArray?.flatMap({$0.saveNumber}).max() ?? 0
+      
+            print(historyArray?.flatMap({$0.saveNumber}))
+            print("Current maximum save number is \(maximumSaveNumber)")
+ 
         let size = main?.foodArray.count ?? -1
         
         if size >  0 {
@@ -73,7 +77,7 @@ class historyViewController: UIViewController{
                     menuItem.filename = foodToMove?.filename
                     menuItem.name = foodToMove?.name
                     menuItem.rating = foodToMove?.rating ?? 0
-                    menuItem.dateTried = foodToMove!.dateTried
+                    menuItem.saveNumber = maximumSaveNumber + 1
                     saveItems()
                 }
             }
@@ -96,25 +100,15 @@ class historyViewController: UIViewController{
             print("Detele all data in \(entity) error :", error)
         }
     }
+    
+    /// MARK: Setup
+    func loadItems(){
+        let request : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+        do{
+            try historyArray = context.fetch(request)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
+    }
 }
-//
-//extension historyViewController: UICollectionViewDataSource{
-//    
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 5
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 5
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoryCell", for: indexPath) as! HistoryCollectionViewCell
-//       // cell.textLabel.text = String(indexPath.row + 1)
-//        cell.backgroundColor = UIColor.green
-//        return cell
-//    }
-//
-//
-//
-//}

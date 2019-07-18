@@ -15,7 +15,8 @@ private let reuseIdentifier = "HistoryCell"
 class HistoryCollectionViewController: UICollectionViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var history: [NSManagedObject] = []
-    var historyArray: [HistoryTriedFoods]!
+    var historyArray: [HistoryTriedFoods]?
+    var maximumSaveNumber = 0
     
    // @IBOutlet var collectionView: UICollectionView!
     // @IBOutlet var collectionView: UICollectionView!
@@ -26,31 +27,48 @@ class HistoryCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
         loadItems()
         
+        if let temp = historyArray?.flatMap({$0.saveNumber})
+        {
+            let sections = temp.max()!
+            maximumSaveNumber = Int(sections)
+        }
     }
     
     
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        
+         if maximumSaveNumber > 0
+         {
+            return maximumSaveNumber + 1
+        }
+         else{
+            return 0
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        
+       // let thisData = historyArray?.filter({$0.saveNumber == maximumSaveNumber - section}).count
+        
+        return historyArray?.filter({$0.saveNumber == maximumSaveNumber - section}).count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> HistoryCollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HistoryCollectionViewCell
         
-         ///I'm not handling the errors here
-        if indexPath.row < historyArray.count{
-            let fileToLoad = historyArray[indexPath.row].filename ?? "chaos.jpg"
-            cell.displayContent(image: fileToLoad)
+        if let thisData = historyArray?.filter({$0.saveNumber == maximumSaveNumber - indexPath.section})
+        {
+            ///I'm not handling the errors here
+            if indexPath.row < thisData.count {
+                let fileToLoadRow = thisData[indexPath.row]
+                let fileToLoad = fileToLoadRow.filename ?? "chaos.jpg"
+                cell.displayContent(image: fileToLoad)
+            }
         }
-        cell.backgroundColor = UIColor.green
+        //cell.backgroundColor = UIColor.green
         return cell
     }
     
@@ -69,7 +87,7 @@ class HistoryCollectionViewController: UICollectionViewController {
         if (kind == UICollectionView.elementKindSectionHeader ){
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WeekHeaderView", for: indexPath) as! WeekHeaderView
             headerView.backgroundColor = UIColor.blue
-            headerView.weekLabel.text = "Save \(indexPath.section)"
+            headerView.weekLabel.text = "Save \(maximumSaveNumber - indexPath.section + 1)"
             return headerView
         }
         fatalError()
