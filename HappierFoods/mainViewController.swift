@@ -21,6 +21,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var triedOn = Date()
     var notes = String()
     
+    @IBAction func instructionReminder(_ sender: UIButton) {
+        onboardingRoutine()
+    }
     // MARK: Core Data variables
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
@@ -243,7 +246,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         /// pulse the RH button
       
-        for i in 0 ... 2{
+        for i in 0 ... 0{
         /// fade it in & out with RH picture
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7*i)){
             self.startAnimate(button: self.tryButton)
@@ -470,6 +473,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! mainCollectionViewCell
         cell.cellImage.isHidden = true
+        cell.instructionReminder.isHidden = false
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
         cell.backgroundColor = UIColor.green
@@ -492,11 +496,13 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                     //cell.cellImage.image = UIImage(named: "1.png")
                     cell.displayContent(image: fileToLoad)
                     cell.tickImage.isHidden = false
+                    cell.instructionReminder.isHidden = true
                 
                 }
                 else
                 {
                     cell.tickImage.isHidden = true
+                    cell.instructionReminder.isHidden = false
                 }
             }
         
@@ -510,6 +516,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                     cell.displayContent(image: fileToLoad)
                     cell.cellImage.alpha = 0.2
                     cell.tickImage.isHidden = true
+                    cell.instructionReminder.isHidden = true
                 }
             }
 

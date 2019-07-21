@@ -15,6 +15,8 @@ class mainCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
+    @IBOutlet weak var instructionReminder: UIButton!
+  
     @IBOutlet weak var showDetailButtonProperties: UIButton!
     @IBOutlet weak var tickImage: UIImageView!
     @IBOutlet weak var cellImage: UIImageView!

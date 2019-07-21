@@ -219,23 +219,35 @@
                                                                 <action selector="expandDetailButtonPressed:" destination="yA6-eK-gdw" eventType="touchUpInside" id="rRB-Ee-TyB"/>
                                                             </connections>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r4-VY-kuH">
+                                                            <rect key="frame" x="11" y="10" width="27" height="30"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <connections>
+                                                                <action selector="instructionReminder:" destination="yA6-eK-gdw" eventType="touchUpInside" id="din-Cx-cgT"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="jY7-4K-eUj" secondAttribute="trailing" id="93F-oZ-6h1"/>
+                                                    <constraint firstItem="0r4-VY-kuH" firstAttribute="top" secondItem="jY7-4K-eUj" secondAttribute="top" id="Ebc-nG-znj"/>
                                                     <constraint firstItem="jY7-4K-eUj" firstAttribute="top" secondItem="P12-fL-dBa" secondAttribute="top" id="JU0-fG-cIR"/>
                                                     <constraint firstItem="jY7-4K-eUj" firstAttribute="leading" secondItem="P12-fL-dBa" secondAttribute="leading" id="JX1-Rt-6kz"/>
                                                     <constraint firstAttribute="bottom" secondItem="SKk-Rc-MKZ" secondAttribute="bottom" id="Qhh-vx-LTs"/>
                                                     <constraint firstAttribute="bottom" secondItem="jY7-4K-eUj" secondAttribute="bottom" id="URK-TN-Irf"/>
+                                                    <constraint firstItem="0r4-VY-kuH" firstAttribute="leading" secondItem="jY7-4K-eUj" secondAttribute="leading" id="YgX-86-ICY"/>
                                                     <constraint firstItem="SKk-Rc-MKZ" firstAttribute="leading" secondItem="P12-fL-dBa" secondAttribute="leading" id="Znr-3r-Zyx"/>
                                                     <constraint firstItem="SKk-Rc-MKZ" firstAttribute="top" secondItem="P12-fL-dBa" secondAttribute="top" id="ddt-4k-MRC"/>
+                                                    <constraint firstItem="0r4-VY-kuH" firstAttribute="bottom" secondItem="jY7-4K-eUj" secondAttribute="bottom" id="efL-rT-dWg"/>
                                                     <constraint firstItem="pcT-UX-f0s" firstAttribute="bottom" secondItem="SKk-Rc-MKZ" secondAttribute="bottom" id="j04-ZJ-lnV"/>
                                                     <constraint firstAttribute="trailing" secondItem="SKk-Rc-MKZ" secondAttribute="trailing" id="nfe-Bp-ZAu"/>
                                                     <constraint firstItem="pcT-UX-f0s" firstAttribute="trailing" secondItem="SKk-Rc-MKZ" secondAttribute="trailing" id="p9a-d9-HcW"/>
+                                                    <constraint firstItem="0r4-VY-kuH" firstAttribute="trailing" secondItem="jY7-4K-eUj" secondAttribute="trailing" id="uge-XQ-kjf"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="cellImage" destination="SKk-Rc-MKZ" id="fUS-Yd-bvt"/>
+                                                    <outlet property="instructionReminder" destination="0r4-VY-kuH" id="s50-xn-pwv"/>
                                                     <outlet property="showDetailButtonProperties" destination="jY7-4K-eUj" id="FEw-k6-pKy"/>
                                                     <outlet property="tickImage" destination="pcT-UX-f0s" id="Zeb-JI-8np"/>
                                                 </connections>
