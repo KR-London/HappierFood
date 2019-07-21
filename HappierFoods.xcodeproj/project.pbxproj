@@ -14,7 +14,6 @@
 		4414EE05225F9FB100D9B9CB /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EE04225F9FB000D9B9CB /* tick.jpg */; };
 		4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */; };
 		441DB5EF22C513DB00E857C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441DB5EE22C513DB00E857C0 /* Main.storyboard */; };
-		441DB5F122C5ADDA00E857C0 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */; };
 		442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CD2299619E00CBE431 /* UIViewExtension.swift */; };
 		442113D0229961BB00CBE431 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */; };
 		442113D2229961D600CBE431 /* Extensions_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113D1229961D600CBE431 /* Extensions_UIImage.swift */; };
@@ -138,7 +137,6 @@
 		4414EE04225F9FB000D9B9CB /* tick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick.jpg; sourceTree = "<group>"; };
 		4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celebrationScreenViewController.swift; sourceTree = "<group>"; };
 		441DB5EE22C513DB00E857C0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		442113CD2299619E00CBE431 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		442113D1229961D600CBE431 /* Extensions_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions_UIImage.swift; sourceTree = "<group>"; };
@@ -313,7 +311,6 @@
 		447DE07E22C5C79200081414 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				441DB5F022C5ADDA00E857C0 /* Onboarding.storyboard */,
 				447DE07C22C5BFA200081414 /* OnboardingViewController.swift */,
 				44B52F8322D9FDC700CF730D /* Onboarding1ViewController.swift */,
 				44B52FE022DA0D5400CF730D /* Onboarding2ViewController.swift */,
@@ -667,7 +664,6 @@
 				44497FC222DCD204007CE3D3 /* preTarget1B.jpg in Resources */,
 				443C3CAE22B2994900832AD1 /* Detail2ViewController.xib in Resources */,
 				443C3CB622B2A36600832AD1 /* Detail3ViewController.xib in Resources */,
-				441DB5F122C5ADDA00E857C0 /* Onboarding.storyboard in Resources */,
 				443B66D222906019007DDACC /* eyeBlinkRight_browOuterUpLeft.png in Resources */,
 				443B66E62290605F007DDACC /* eyeOpen_browOuterUpLeft.png in Resources */,
 				44B5300122DA213800CF730D /* b1.jpg in Resources */,
