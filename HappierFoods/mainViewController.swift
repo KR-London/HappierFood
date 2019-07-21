@@ -78,15 +78,16 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUpNavigationBarItems()
         loadItems()
 
+    
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
-        if dateNow - defaults.double(forKey: "Last Week Started") > 604800{
-            cacheData()
-        }
-
         if defaults.double(forKey: "Last Week Started")  == 0.0        {
             defaults.set(dateNow, forKey: "Last Week Started")
             defaults.set(false, forKey: "Celebration Status")
+        }
+        
+        if dateNow - defaults.double(forKey: "Last Week Started") > 604800{
+            cacheData()
         }
         
 
@@ -531,6 +532,44 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
         catch{
             print("Error fetching data \(error)")
+        }
+        
+        /// clean data
+        if foodArray.count > 0  {
+            for i in 0 ... foodArray.count - 1
+            {
+                if UIImage(named: foodArray[foodArray.count - 1  - i].filename ?? "neverUsed") == nil
+                {
+                    context.delete(foodArray[foodArray.count - 1 - i])
+                    do{
+                        try context.save()
+                    } catch {
+                        // Replace this implementation with code to handle the error appropriately.
+                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                        let nserror = error as NSError
+                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    }
+                    foodArray.remove(at: foodArray.count - 1 - i)
+                }
+            }
+        }
+        if targetArray.count > 0  {
+            for i in 0 ... targetArray.count - 1
+            {
+                if UIImage(named: targetArray[targetArray.count - 1  - i].filename ?? "neverUsed") == nil
+                {
+                    context.delete(targetArray[targetArray.count - 1 - i])
+                    do{
+                        try context.save()
+                    } catch {
+                        // Replace this implementation with code to handle the error appropriately.
+                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                        let nserror = error as NSError
+                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    }
+                    targetArray.remove(at: targetArray.count - 1 - i)
+                }
+            }
         }
     }
     

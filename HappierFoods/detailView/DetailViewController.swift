@@ -53,21 +53,23 @@ class DetailViewController: UIViewController{
         /// I'm going to do something else - I'm going to load in from history and count the number of tries
         ///
         ///
-        var countOfThisFood = foodArray.filter({ $0.filename == photoFilename || $0.name == foodName }).filter({$0.name != ""}).count
         
-        print(foodArray)
-        print(foodArray.filter({ $0.filename == photoFilename}))
-        print(foodArray.filter({ $0.name == foodName}))
+        var countOfThisFood = Int()
         
-        print( foodArray.filter({ $0.filename == photoFilename || $0.name == foodName }))
+        if foodName == "" {
+            countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename }).count
+        }
+        else{
+            countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+        }
         
-        if let history = historyArray
-        {
-            print(history)
-            
-            countOfThisFood = countOfThisFood + history.filter({ $0.filename == photoFilename || $0.name == foodName }).count
-            
-            print(countOfThisFood)
+        if let history = historyArray{
+            if foodName == "" {
+                countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename }).count
+            }
+             else{
+                countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+            }
         }
         
         if countOfThisFood == 1
