@@ -13,6 +13,10 @@ class Detail3ViewController: UIViewController {
     @IBOutlet weak var topFaceView: UIImageView!
     @IBOutlet weak var faceView: smileView!
     @IBOutlet weak var faceRating: UIImageView!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     faceView.mouthCurvature = detailToDisplay.rating

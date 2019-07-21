@@ -19,6 +19,11 @@ class DetailViewController: UIViewController{
     var presentState = String()
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var historyArray: [HistoryTriedFoods]?
+    var foodArray: [TriedFood]!
+    
+    
     var detail1VC = Detail1ViewController(nibName: "Detail1ViewController", bundle: nil)
     var detail2VC = Detail2ViewController(nibName: "Detail2ViewController", bundle: nil)
     var detail3VC = Detail3ViewController(nibName: "Detail3ViewController", bundle: nil)
@@ -27,9 +32,9 @@ class DetailViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadItems()
         weak var main = navigationController?.viewControllers[0] as? mainViewController
         presentState = (main?.myNav?.currentStateAsString())!
-        
         
         self.view.addSubview(detail1VC.view)
         self.view.addSubview(detail2VC.view)
@@ -43,6 +48,35 @@ class DetailViewController: UIViewController{
         }
         else {
             detail2VC.foodName.text = "No food name stored"
+        }
+        
+        /// I'm going to do something else - I'm going to load in from history and count the number of tries
+        ///
+        ///
+        var countOfThisFood = foodArray.filter({ $0.filename == photoFilename || $0.name == foodName }).filter({$0.name != ""}).count
+        
+        print(foodArray)
+        print(foodArray.filter({ $0.filename == photoFilename}))
+        print(foodArray.filter({ $0.name == foodName}))
+        
+        print( foodArray.filter({ $0.filename == photoFilename || $0.name == foodName }))
+        
+        if let history = historyArray
+        {
+            print(history)
+            
+            countOfThisFood = countOfThisFood + history.filter({ $0.filename == photoFilename || $0.name == foodName }).count
+            
+            print(countOfThisFood)
+        }
+        
+        if countOfThisFood == 1
+        {
+           detail3VC.dateLabel.text = "Tried once"
+        }
+        else
+        {
+             detail3VC.dateLabel.text = "Tried \(countOfThisFood) times"
         }
         
         detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename)
@@ -108,19 +142,19 @@ class DetailViewController: UIViewController{
         
         switch presentState{
             case "AddFoodViewController":
-                var foodArray: [TriedFood]!
+ 
                 let dateTried = detailToDisplay.triedOn
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTried)
                 
-                let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
-                do{
-                    try foodArray = context.fetch(request2)
-                }
-                catch{
-                    print("Error fetching data \(error)")
-                }
+//                let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+//                do{
+//                    try foodArray = context.fetch(request2)
+//                }
+//                catch{
+//                    print("Error fetching data \(error)")
+//                }
                 
                 let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.dateTried!)}
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
@@ -181,10 +215,31 @@ class DetailViewController: UIViewController{
         if segue.identifier == "detailToRate"{
             let dvc = segue.destination as! rateFoodViewController
             dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+            dvc.imagePath = detailToDisplay.photoFilename
             dvc.foodName = detailToDisplay.foodName
             dvc.dateTargetSet = detailToDisplay.triedOn
         }
     }
+    
+    /// MARK: Setup
+    func loadItems(){
+        let request : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+        do{
+            try historyArray = context.fetch(request)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
+        
+        let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        do{
+            try foodArray = context.fetch(request2)
+        }
+        catch{
+            print("Error fetching data \(error)")
+        }
+    }
+
     
     // MARK: Layout subroutines
     private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {

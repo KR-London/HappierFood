@@ -124,7 +124,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         switch myNav!.presentState
         {
-            case .FirstLaunch : onboardingRoutine()
+            case .FirstLaunch : print("In first launch.")
+                //onboardingRoutine()
             case .ResetDataAtTheStartOfNewWeek : publicInformationBroadcast(didTheyReachTheirTarget: false)
             case .ReturnFromCelebrationScreen : publicInformationBroadcast(didTheyReachTheirTarget: true)
             default: break

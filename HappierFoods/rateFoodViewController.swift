@@ -15,6 +15,8 @@ import CoreData
 class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     var imagePlaceholder = UIImage()
+    var imagePath: String?
+    
     var rating = 0.0
     var foodName = String()
     var dateTargetSet = Date()
@@ -122,32 +124,35 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?){
-        
-        /// create an instance of filemanager
-        let fileManager = FileManager.default
-        
-        /// make sure that this has a filename. Currently though this is a flawed implementation because it doesn't have a unique index for the foon
-        var imageExtension = imageName ?? ""
-        if imageExtension == ""
-        {
-            imageExtension = "temp"
-        }
-        imageExtension = imageExtension + String(Date().timeIntervalSince1970) + ".png"
-        
-        /// get the image path
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension)
-        let image2 = image.resizeImage(targetSize: CGSize(width: 300, height: 300))
-        let data = UIImage.pngData(image2)
-        fileManager.createFile(atPath: imagePath as String, contents: data(), attributes: nil)
-        
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-
+        
         if firstPass == "Target" {
             presentState = "First Target"
             //self.navigationController?.navigationItem.hidesBackButton = true
             self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
         }
 
+
+        /// create an instance of filemanager
+        let fileManager = FileManager.default
+        
+        /// make sure that this has a filename. Currently though this is a flawed implementation because it doesn't have a unique index for the food
+        if let path = imagePath {print("Path is \(path)")}
+        else{
+            var imageExtension = imageName ?? ""
+            if imageExtension == ""
+            {
+                imageExtension = "temp"
+            }
+            imageExtension = imageExtension + String(Date().timeIntervalSince1970) + ".png"
+            
+            imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension) 
+        }
+        let image2 = image.resizeImage(targetSize: CGSize(width: 300, height: 300))
+        let data = UIImage.pngData(image2)
+        fileManager.createFile(atPath: imagePath!, contents: data(), attributes: nil)
+        
+        
         
         switch presentState {
             
@@ -313,9 +318,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
      
 
         switch  main?.myNav?.presentState {
-        case .AddFoodViewController, .RetryTriedFood, .ConvertTargetToTry :
+        case .AddFoodViewController?, .RetryTriedFood?, .ConvertTargetToTry? :
             navigationItem.title = "Rate It!";
-        case .SetTargetViewController:
+        case .SetTargetViewController?:
             navigationItem.title = "Motivate It"
         default:
             navigationItem.title = "Report Bug"

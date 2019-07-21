@@ -31,7 +31,8 @@ class HistoryCollectionViewController: UICollectionViewController {
         
         if let temp = historyArray?.flatMap({$0.saveNumber})
         {
-            let sections = temp.max()!
+            print(temp)
+            let sections = temp.max() ?? 0
             maximumSaveNumber = Int(sections)
         }
     }
@@ -40,13 +41,17 @@ class HistoryCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         
-         if maximumSaveNumber > 0
-         {
-            return maximumSaveNumber + 1
-        }
-         else{
-            return 0
-        }
+//         if maximumSaveNumber > 0 {
+//            print(maximumSaveNumber)
+//            return maximumSaveNumber
+//        }
+//         else{
+//            return 0
+//        }
+        
+        print("The sections section will request \(maximumSaveNumber) sections")
+        
+        return maximumSaveNumber
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,9 +68,11 @@ class HistoryCollectionViewController: UICollectionViewController {
         {
             ///I'm not handling the errors here
             if indexPath.row < thisData.count {
+                
                 let fileToLoadRow = thisData[indexPath.row]
                 let fileToLoad = fileToLoadRow.filename ?? "chaos.jpg"
                 cell.displayContent(image: fileToLoad)
+                
             }
         }
         //cell.backgroundColor = UIColor.green
@@ -87,11 +94,20 @@ class HistoryCollectionViewController: UICollectionViewController {
         if (kind == UICollectionView.elementKindSectionHeader ){
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WeekHeaderView", for: indexPath) as! WeekHeaderView
             headerView.backgroundColor = UIColor.blue
-            headerView.weekLabel.text = "Save \(maximumSaveNumber - indexPath.section + 1)"
+            headerView.weekLabel.text = "Save \(maximumSaveNumber - indexPath.section)"
             return headerView
         }
         fatalError()
     }
+    
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//
+//        return UIEdgeInsets.init(top: 10, left: 0, bottom: 10, right: 0)
+//    }
+    
 }
 
 // MARK: History View extension

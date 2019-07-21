@@ -313,7 +313,7 @@ override func viewDidAppear(_ animated: Bool) {
     print(rootViewController)
     let myNav = customNavigationController()
     print(myNav)
-    
+   // myNav.presentState = .FirstLaunch
     //clean up 
     rootViewController.deleteAllData("TargetFood")
     rootViewController.deleteAllData("TriedFood")

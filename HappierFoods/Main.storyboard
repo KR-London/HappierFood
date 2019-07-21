@@ -5,7 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+       // <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,20 +19,20 @@
             <objects>
                 <viewController storyboardIdentifier="history" title="History " id="o5k-lo-mMm" customClass="historyViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iVa-Lh-zfY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="XJ3-d7-Yey">
-                                <rect key="frame" x="8" y="52" width="398" height="753"/>
+                                <rect key="frame" x="8" y="64" width="398" height="687"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLb-kD-lVr">
-                                        <rect key="frame" x="8" y="0.0" width="382" height="461.5"/>
+                                        <rect key="frame" x="8" y="0.0" width="382" height="422"/>
                                         <connections>
                                             <segue destination="OA9-jO-tzG" kind="embed" id="FVX-8x-aIt"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-l5-H3m">
-                                        <rect key="frame" x="0.0" y="514.5" width="398" height="92.5"/>
+                                        <rect key="frame" x="0.0" y="475" width="398" height="79.5"/>
                                         <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W23-4z-i6u">
-                                        <rect key="frame" x="0.0" y="660" width="398" height="93"/>
+                                        <rect key="frame" x="0.0" y="607.5" width="398" height="79.5"/>
                                         <color key="backgroundColor" red="0.95733517410000002" green="0.77555882929999997" blue="0.48615008589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
@@ -98,72 +98,72 @@
             <point key="canvasLocation" x="-3835" y="-1037"/>
         </scene>
         <!--History Collection View Controller-->
-        <scene sceneID="HYG-GY-poR">
-            <objects>
-                <collectionViewController id="OA9-jO-tzG" customClass="HistoryCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eg5-e5-yUB">
-                        <rect key="frame" x="0.0" y="0.0" width="382" height="461.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gWc-Te-jxJ">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HistoryCell" id="Fh6-am-7gz" customClass="HistoryCollectionViewCell" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H1m-hg-bJn">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-ym-iLx">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="WcF-ym-iLx" secondAttribute="bottom" id="AfO-aC-bgm"/>
-                                        <constraint firstItem="WcF-ym-iLx" firstAttribute="leading" secondItem="H1m-hg-bJn" secondAttribute="leading" id="XuH-ma-j91"/>
-                                        <constraint firstItem="WcF-ym-iLx" firstAttribute="top" secondItem="H1m-hg-bJn" secondAttribute="top" id="avh-gP-6fa"/>
-                                        <constraint firstAttribute="trailing" secondItem="WcF-ym-iLx" secondAttribute="trailing" id="bix-Qs-MDc"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="foodImage" destination="WcF-ym-iLx" id="eHt-3t-S28"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="WeekHeaderView" id="u7J-0c-9P8" customClass="WeekHeaderView" customModule="HappierFoods" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBi-n7-83x">
-                                    <rect key="frame" x="8" y="15" width="366" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <connections>
-                                <outlet property="weekLabel" destination="EBi-n7-83x" id="1vj-YS-fRR"/>
-                            </connections>
-                        </collectionReusableView>
-                        <connections>
-                            <outlet property="dataSource" destination="OA9-jO-tzG" id="0tt-OD-b3q"/>
-                            <outlet property="delegate" destination="OA9-jO-tzG" id="g17-AQ-Y9q"/>
-                        </connections>
-                    </collectionView>
-                    <connections>
-                        <outlet property="collectionView" destination="eg5-e5-yUB" id="E7p-hW-UL0"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lLX-VL-eEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3139.130434782609" y="-1055.3571428571429"/>
-        </scene>
+       // <scene sceneID="HYG-GY-poR">
+        //    <objects>
+          //      <collectionViewController id="OA9-jO-tzG" customClass="HistoryCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+           //         <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eg5-e5-yUB">
+           //             <rect key="frame" x="0.0" y="0.0" width="382" height="422"/>
+            //            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            //            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+             //           <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gWc-Te-jxJ">
+              //              <size key="itemSize" width="50" height="50"/>
+              //              <size key="headerReferenceSize" width="50" height="50"/>
+              //              <size key="footerReferenceSize" width="0.0" height="0.0"/>
+              //              <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+              //          </collectionViewFlowLayout>
+              //          <cells>
+               //             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HistoryCell" id="Fh6-am-7gz" customClass="HistoryCollectionViewCell" customModule="HappierFoods" customModuleProvider="target">
+               //                 <rect key="frame" x="10" y="60" width="50" height="50"/>
+                     //           <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                     //           <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H1m-hg-bJn">
+                     //               <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    //                <autoresizingMask key="autoresizingMask"/>
+                    //                <subviews>
+                     //                   <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-ym-iLx">
+                     //                       <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                     //                   </imageView>
+                     //               </subviews>
+                      //              <constraints>
+                        //                <constraint firstAttribute="bottom" secondItem="WcF-ym-iLx" secondAttribute="bottom" id="AfO-aC-bgm"/>
+                        //                <constraint firstItem="WcF-ym-iLx" firstAttribute="leading" secondItem="H1m-hg-bJn" secondAttribute="leading" id="XuH-ma-j91"/>
+                          //              <constraint firstItem="WcF-ym-iLx" firstAttribute="top" secondItem="H1m-hg-bJn" secondAttribute="top" id="avh-gP-6fa"/>
+                          //              <constraint firstAttribute="trailing" secondItem="WcF-ym-iLx" secondAttribute="trailing" id="bix-Qs-MDc"/>
+                          //          </constraints>
+                          //      </collectionViewCellContentView>
+                           //     <connections>
+                           //         <outlet property="foodImage" destination="WcF-ym-iLx" id="eHt-3t-S28"/>
+                           //     </connections>
+                         //   </collectionViewCell>
+                     //   </cells>
+                     //   <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="WeekHeaderView" id="u7J-0c-9P8" customClass="WeekHeaderView" customModule="HappierFoods" customModuleProvider="target">
+                       //     <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                       //     <autoresizingMask key="autoresizingMask"/>
+                        //    <subviews>
+                        //        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBi-n7-83x">
+                         //           <rect key="frame" x="8" y="15" width="366" height="21"/>
+                         //           <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                         //           <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                          //          <nil key="textColor"/>
+                          //          <nil key="highlightedColor"/>
+                          //      </label>
+                          //  </subviews>
+                          //  <connections>
+                         //       <outlet property="weekLabel" destination="EBi-n7-83x" id="1vj-YS-fRR"/>
+                        //    </connections>
+                     //   </collectionReusableView>
+                    //    <connections>
+                   //         <outlet property="dataSource" destination="OA9-jO-tzG" id="0tt-OD-b3q"/>
+                   //         <outlet property="delegate" destination="OA9-jO-tzG" id="g17-AQ-Y9q"/>
+                  //      </connections>
+                 //   </collectionView>
+                //    <connections>
+                //        <outlet property="collectionView" destination="eg5-e5-yUB" id="E7p-hW-UL0"/>
+                //    </connections>
+              //  </collectionViewController>
+            //    <placeholder placeholderIdentifier="IBFirstResponder" id="lLX-VL-eEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+           // </objects>
+          //  <point key="canvasLocation" x="-3106" y="-1038"/>
+      //  </scene>
         <!--Main View Controller-->
         <scene sceneID="w5O-mg-vTN">
             <objects>
@@ -343,7 +343,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="UKJ-s4-WG9">
-                                <rect key="frame" x="11" y="348" width="392" height="84"/>
+                                <rect key="frame" x="11" y="348" width="392" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please write the name of the food you'd like to try: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbJ-AV-uRv">
                                         <rect key="frame" x="0.0" y="0.0" width="392" height="22"/>
@@ -352,7 +352,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44z-7b-o9p">
-                                        <rect key="frame" x="0.0" y="50" width="392" height="34"/>
+                                        <rect key="frame" x="0.0" y="50" width="392" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="gVa-c5-Oy4"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -438,11 +441,11 @@
             <objects>
                 <viewController storyboardIdentifier="rateFoodVC" id="BYZ-38-t0r" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-3w-Rav" userLabel="Maxi Stack View">
-                                <rect key="frame" x="8" y="69" width="398" height="736"/>
+                                <rect key="frame" x="8" y="25" width="398" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-Yc-vXq" userLabel=" Mini Horizontal Stack View">
                                         <rect key="frame" x="8" y="0.0" width="382" height="229"/>
@@ -678,7 +681,7 @@
                                         </constraints>
                                     </imageView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-vh-OWh">
-                                        <rect key="frame" x="57" y="106" width="300" height="437.5"/>
+                                        <rect key="frame" x="57" y="106" width="300" height="448"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="J2K-ob-AoO"/>
                                             <constraint firstAttribute="height" constant="300" id="gXk-cA-OPH"/>
@@ -688,7 +691,7 @@
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done! You achieved the goal of trying 9 new foods this week. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK2-3K-eVT">
-                                        <rect key="frame" x="8" y="574.5" width="398" height="120.5"/>
+                                        <rect key="frame" x="8" y="585" width="398" height="110"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                         <nil key="textColor"/>
@@ -724,7 +727,7 @@
             <objects>
                 <collectionViewController id="zIl-jd-FQp" customClass="CelebrationCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tS7-7X-oF5">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="437.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIw-gS-uDj">
@@ -777,7 +780,7 @@
             <objects>
                 <viewController id="Q61-IA-lhv" customClass="DetailViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fVB-ZT-yiI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TVJ-x8-UMY"/>
@@ -892,9 +895,9 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kEo-kV-ixy"/>
+        <segue reference="lJr-Ub-v2X"/>
         <segue reference="8Jr-l3-dhP"/>
-        <segue reference="PZb-oU-Ng7"/>
+        <segue reference="hJy-3j-Gll"/>
         <segue reference="7pT-VN-rva"/>
     </inferredMetricsTieBreakers>
 </document>

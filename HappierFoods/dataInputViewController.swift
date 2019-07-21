@@ -165,6 +165,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             if let dvc1 = segue.destination as? rateFoodViewController {
                 dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
                 dvc1.foodName = foodName
+             //   dvc1.imageExtension = filename
             }
         }
     }
