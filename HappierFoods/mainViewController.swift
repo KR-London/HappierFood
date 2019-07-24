@@ -161,12 +161,13 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // this subroutine animates the appearance/disappearance of the little Happy character in the top left corner, to 'reward' the user for trying 9 new foods.
         
         if foodArray.count >= 9 && defaults.bool(forKey: "Celebration Status") == true{
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
-                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
-                    self?.happy.alpha = 1
-                }
-                animator.startAnimation()
-            }
+            print("commented while i decide what to do with happy")
+//            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+//                let animator = UIViewPropertyAnimator(duration: 2, curve: .easeOut) {  [weak self] in
+//                    self?.happy.alpha = 1
+//                }
+//                animator.startAnimation()
+//            }
         }
         else
         {
