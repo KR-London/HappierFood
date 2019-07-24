@@ -114,7 +114,7 @@ class DetailViewController: UIViewController{
             faceContainer.isHidden = true
         }
 
-        foodNameOutlet.text = detailToDisplay.notes
+        notesOutlet.text = detailToDisplay.notes
 //
 //        detail5VC.detailToDisplay = detailToDisplay
 //        detail5VC.buttonPress( handler:  {[weak self] value in
