@@ -334,8 +334,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         happy.alpha = 0
     }
     
-
-    
     // MARK: Action functions
      @objc func goHistory() {
         performSegue(withIdentifier: "historySegue", sender: UIButton())
@@ -394,7 +392,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     // MARK: Delete and archive functions
-    
     func deleteAllData(_ entity:String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         fetchRequest.returnsObjectsAsFaults = false
@@ -411,7 +408,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func cacheData(){
-
         deleteAllData("TriedFood")
         foodArray = []
         

@@ -23,39 +23,41 @@ class DetailViewController: UIViewController{
     var historyArray: [HistoryTriedFoods]?
     var foodArray: [TriedFood]!
     
+    @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var faceContainer: smileView!
+    @IBOutlet weak var foodNameOutlet: UILabel!
+    @IBOutlet weak var numberOfTries: UILabel!
+    @IBOutlet weak var notesOutlet: UITextField!
     
-    var detail1VC = Detail1ViewController(nibName: "Detail1ViewController", bundle: nil)
-    var detail2VC = Detail2ViewController(nibName: "Detail2ViewController", bundle: nil)
-    var detail3VC = Detail3ViewController(nibName: "Detail3ViewController", bundle: nil)
-    var detail4VC = Detail4ViewController(nibName: "Detail4ViewController", bundle: nil)
-    var detail5VC = Detail5ViewController(nibName: "Detail5ViewController", bundle: nil)
-
+    
+    @IBAction func tryItAgainButton(_ sender: Any) {
+        
+        tryItAgain()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadItems()
         weak var main = navigationController?.viewControllers[0] as? mainViewController
         presentState = (main?.myNav?.currentStateAsString())!
         
-        self.view.addSubview(detail1VC.view)
-        self.view.addSubview(detail2VC.view)
-        self.view.addSubview(detail3VC.view)
-        self.view.addSubview(detail4VC.view)
-        self.view.addSubview(detail5VC.view)
-        
+        foodImage.image = UIImage(named: detailToDisplay.photoFilename)
+
+
         /// wrap this up so that it gives a placeholder when no food name provided.
         if detailToDisplay.foodName.count > 0{
-            detail2VC.foodName.text = detailToDisplay.foodName
+            foodNameOutlet.text = detailToDisplay.foodName
         }
         else {
-            detail2VC.foodName.text = "No food name stored"
+            foodNameOutlet.text = "No food name stored, but"
         }
-        
+//
         /// I'm going to do something else - I'm going to load in from history and count the number of tries
         ///
         ///
-        
+
         var countOfThisFood = Int()
-        
+
         if foodName == "" {
             if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
             {
@@ -75,7 +77,7 @@ class DetailViewController: UIViewController{
                  countOfThisFood = foodArray.filter({ $0.name == detailToDisplay.foodName }).count
             }
         }
-        
+
         if let history = historyArray{
             if foodName == "" {
                 if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
@@ -93,58 +95,55 @@ class DetailViewController: UIViewController{
                 }
             }
         }
-        
+
         if countOfThisFood == 1
         {
-           detail3VC.dateLabel.text = "Tried once"
+           numberOfTries.text = "tried once."
         }
         else
         {
-             detail3VC.dateLabel.text = "Tried \(countOfThisFood) times"
+             numberOfTries.text = "tried \(countOfThisFood) times."
         }
-        
-        detail2VC.foodPicture.image = UIImage(named: detailToDisplay.photoFilename)
-        detail3VC.detailToDisplay = detailToDisplay
-      
+
+
         if presentState == "AddFoodViewController" {
-             detail3VC.faceView.isHidden = false
-            detail3VC.faceView.mouthCurvature = detailToDisplay.rating
+             faceContainer.isHidden = false
+            faceContainer.mouthCurvature = detailToDisplay.rating
         }
         else  {
-            detail3VC.faceView.isHidden = true
+            faceContainer.isHidden = true
         }
-        
-        detail4VC.notes.text = detailToDisplay.notes
-        
-        detail5VC.detailToDisplay = detailToDisplay
-        detail5VC.buttonPress( handler:  {[weak self] value in
 
-        if main?.myNav?.presentState == .AddFoodViewController{
-                main?.myNav?.presentState = .RetryTriedFood
-                }
-           else{
-                if main?.myNav?.presentState == .SetTargetViewController{
-                    main?.myNav?.presentState = .ConvertTargetToTry
-                }
-                else {
-                    main?.myNav?.presentState = .Unknown
-                }
-            }
-            
-            self!.performSegue(withIdentifier: "detailToRate", sender: UIButton())
-            
-        })
+        foodNameOutlet.text = detailToDisplay.notes
+//
+//        detail5VC.detailToDisplay = detailToDisplay
+//        detail5VC.buttonPress( handler:  {[weak self] value in
+//
+//        if main?.myNav?.presentState == .AddFoodViewController{
+//                main?.myNav?.presentState = .RetryTriedFood
+//                }
+//           else{
+//                if main?.myNav?.presentState == .SetTargetViewController{
+//                    main?.myNav?.presentState = .ConvertTargetToTry
+//                }
+//                else {
+//                    main?.myNav?.presentState = .Unknown
+//                }
+//            }
+//
+//            self!.performSegue(withIdentifier: "detailToRate", sender: UIButton())
+//
+//        })
+//
+//        switch main!.myNav!.presentState {
+//        case .AddFoodViewController:
+//            detail5VC.tryButton.setTitle("Try it again?", for: .normal)
+//        case .SetTargetViewController:
+//            detail5VC.tryButton.setTitle("Try this food?", for: .normal)
+//        default:
+//            detail5VC.tryButton.setTitle("Bug", for: .normal)
+//        }
         
-        switch main!.myNav!.presentState {
-        case .AddFoodViewController:
-            detail5VC.tryButton.setTitle("Try it again?", for: .normal)
-        case .SetTargetViewController:
-            detail5VC.tryButton.setTitle("Try this food?", for: .normal)
-        default:
-            detail5VC.tryButton.setTitle("Bug", for: .normal)
-        }
-       
-        setupLayout( container1 : detail1VC.view, container2: detail2VC.view, container3: detail3VC.view, container4: detail4VC.view, container5: detail5VC.view)
         setUpNavigationBarItems()
     }
     
@@ -265,49 +264,120 @@ class DetailViewController: UIViewController{
         catch{
             print("Error fetching data \(error)")
         }
+   
+        
+    
+        
+//        switch main!.myNav!.presentState {
+//        case .AddFoodViewController:
+//            detail5VC.tryButton.setTitle("Try it again?", for: .normal)
+//        case .SetTargetViewController:
+//            detail5VC.tryButton.setTitle("Try this food?", for: .normal)
+//        default:
+//            detail5VC.tryButton.setTitle("Bug", for: .normal)
+//        }
+    }
+    
+    func tryItAgain(){
+        
+        weak var main = navigationController?.viewControllers[0] as? mainViewController
+        if main?.myNav?.presentState == .AddFoodViewController{
+            main?.myNav?.presentState = .RetryTriedFood
+        }
+        else{
+            if main?.myNav?.presentState == .SetTargetViewController{
+                main?.myNav?.presentState = .ConvertTargetToTry
+            }
+            else {
+                main?.myNav?.presentState = .Unknown
+            }
+        }
+        
+        performSegue(withIdentifier: "detailToRate", sender: UIButton())
+        
     }
 
     
     // MARK: Layout subroutines
-    private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
-        
-        container1.translatesAutoresizingMaskIntoConstraints = false
-        container2.translatesAutoresizingMaskIntoConstraints = false
-        container3.translatesAutoresizingMaskIntoConstraints = false
-        container4.translatesAutoresizingMaskIntoConstraints = false
-        container5.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            container1.topAnchor.constraint(equalTo: view.topAnchor),
-            container1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-            container1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            container1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1),
-            ])
-        NSLayoutConstraint.activate([
-            container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
-            container2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
-            container2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            container2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-            ])
-        
-        NSLayoutConstraint.activate([
-            container3.topAnchor.constraint(equalTo: container2.bottomAnchor),
-            container3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
-            container3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            container3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
-            ])
-        NSLayoutConstraint.activate([
-            container4.topAnchor.constraint(equalTo: container3.bottomAnchor),
-            container4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-            container4.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            container4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-            ])
-        
-        NSLayoutConstraint.activate([
-            container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
-            container5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-            container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-            ])
-    }
+    
+//    private func setupLayoutNew( container1 : UIView, container2 : UIView) {
+//
+//        container1.translatesAutoresizingMaskIntoConstraints = false
+//        container2.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            container1.topAnchor.constraint(equalTo: self.view.topAnchor),
+//            container1.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+//            container1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container1.heightAnchor.constraint(equalTo: self.view.widthAnchor),
+//            ])
+//        NSLayoutConstraint.activate([
+//            container2.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+//            container2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+//            container2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
+//            ])
+
+//        NSLayoutConstraint.activate([
+//            container3.topAnchor.constraint(equalTo: container2.bottomAnchor),
+//            container3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
+//            container3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
+//            ])
+//        NSLayoutConstraint.activate([
+//            container4.topAnchor.constraint(equalTo: container3.bottomAnchor),
+//            container4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
+//            container4.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+//            ])
+//
+//        NSLayoutConstraint.activate([
+//            container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
+//            container5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
+//            container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+//            ])
+//    }
+//
+//    private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
+//
+//        container1.translatesAutoresizingMaskIntoConstraints = false
+//        container2.translatesAutoresizingMaskIntoConstraints = false
+//        container3.translatesAutoresizingMaskIntoConstraints = false
+//        container4.translatesAutoresizingMaskIntoConstraints = false
+//        container5.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            container1.topAnchor.constraint(equalTo: view.topAnchor),
+//            container1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
+//            container1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1),
+//            ])
+//        NSLayoutConstraint.activate([
+//            container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
+//            container2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
+//            container2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+//            ])
+//
+//        NSLayoutConstraint.activate([
+//            container3.topAnchor.constraint(equalTo: container2.bottomAnchor),
+//            container3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
+//            container3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
+//            ])
+//        NSLayoutConstraint.activate([
+//            container4.topAnchor.constraint(equalTo: container3.bottomAnchor),
+//            container4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
+//            container4.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+//            ])
+//
+//        NSLayoutConstraint.activate([
+//            container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
+//            container5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
+//            container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+//            ])
+//    }
 }
