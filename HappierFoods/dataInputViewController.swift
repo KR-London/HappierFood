@@ -57,9 +57,9 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         else {
             performSegue(withIdentifier: presentState ?? " Undefined " , sender: "dataInputViewController")
         }
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: self.presentState ?? " Undefined " , sender: "dataInputViewController")
-        }
+//        DispatchQueue.main.async {
+//            self.performSegue(withIdentifier: self.presentState ?? " Undefined " , sender: "dataInputViewController")
+//        }
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {

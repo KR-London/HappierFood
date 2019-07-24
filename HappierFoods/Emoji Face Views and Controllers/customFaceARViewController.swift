@@ -43,7 +43,7 @@ class customFaceARViewController: UIViewController {
         sliderFeedback = handler
     }
     
-    private func updateUI(value: Float){
+    func updateUI(value: Float){
         /// do i need a bit of safety code here - if I get a crazy input? Or is this handled as standard.
         smileView.mouthCurvature = Double(value)
     }

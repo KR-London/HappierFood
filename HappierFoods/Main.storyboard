@@ -464,9 +464,9 @@
                         <outlet property="previewView" destination="8AX-hO-TEp" id="8LX-1z-QAt"/>
                         <outlet property="writeButton" destination="5Sj-ZQ-tRX" id="46m-36-7Kh"/>
                         <outlet property="writtenInputElements" destination="UKJ-s4-WG9" id="wu5-ZM-4Em"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="AddFoodViewController" id="hJy-3j-Gll"/>
                         <segue destination="0Wu-Q4-rwe" kind="show" identifier="SetTargetViewController" id="8Jr-l3-dhP"/>
                         <segue destination="0Wu-Q4-rwe" kind="show" identifier="Unknown" id="87p-EZ-bh5"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="AddFoodViewController" id="ae0-Ld-T5R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lr-MS-c1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -847,9 +847,15 @@
                                     <constraint firstAttribute="width" secondItem="HG1-uc-2PC" secondAttribute="height" multiplier="1:1" id="IdH-5r-uHW"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Enu-sb-nhH" kind="embed" id="4PX-Nd-CRr"/>
+                                    <segue destination="Enu-sb-nhH" kind="embed" identifier="faceSegue" id="4PX-Nd-CRr"/>
                                 </connections>
                             </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBh-s8-uWT">
+                                <rect key="frame" x="263" y="351" width="141" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lBh-s8-uWT" secondAttribute="height" multiplier="1:1" id="NKa-VF-OMl"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-ZW-R16">
                                 <rect key="frame" x="20" y="522" width="374" height="236"/>
                                 <subviews>
@@ -919,14 +925,18 @@
                             <constraint firstItem="7S8-3G-13Q" firstAttribute="height" secondItem="fVB-ZT-yiI" secondAttribute="height" multiplier="0.1" id="0yK-T1-jrh"/>
                             <constraint firstItem="ibH-ZW-R16" firstAttribute="leading" secondItem="TVJ-x8-UMY" secondAttribute="leading" constant="20" id="7fH-5r-lzN"/>
                             <constraint firstItem="ibH-ZW-R16" firstAttribute="top" secondItem="kgm-k9-itT" secondAttribute="bottom" constant="20" id="98r-qh-Ud5"/>
+                            <constraint firstItem="lBh-s8-uWT" firstAttribute="leading" secondItem="HG1-uc-2PC" secondAttribute="leading" id="Ig1-ha-fbG"/>
                             <constraint firstItem="kgm-k9-itT" firstAttribute="leading" secondItem="TVJ-x8-UMY" secondAttribute="leading" id="Kaw-7y-cn8"/>
                             <constraint firstItem="HG1-uc-2PC" firstAttribute="trailing" secondItem="kgm-k9-itT" secondAttribute="trailing" constant="-10" id="Lxo-YN-zGj"/>
+                            <constraint firstItem="lBh-s8-uWT" firstAttribute="bottom" secondItem="HG1-uc-2PC" secondAttribute="bottom" id="Vtl-o9-363"/>
                             <constraint firstItem="kgm-k9-itT" firstAttribute="trailing" secondItem="TVJ-x8-UMY" secondAttribute="trailing" id="Wju-HA-8qf"/>
                             <constraint firstItem="TVJ-x8-UMY" firstAttribute="bottom" secondItem="ibH-ZW-R16" secondAttribute="bottom" constant="20" id="bHv-Ce-QDF"/>
                             <constraint firstItem="HG1-uc-2PC" firstAttribute="height" secondItem="kgm-k9-itT" secondAttribute="height" multiplier="0.34" id="eL4-st-MSs"/>
                             <constraint firstItem="TVJ-x8-UMY" firstAttribute="trailing" secondItem="ibH-ZW-R16" secondAttribute="trailing" constant="20" id="feX-YD-A0U"/>
+                            <constraint firstItem="lBh-s8-uWT" firstAttribute="trailing" secondItem="HG1-uc-2PC" secondAttribute="trailing" id="hF1-o0-BLY"/>
                             <constraint firstItem="kgm-k9-itT" firstAttribute="top" secondItem="TVJ-x8-UMY" secondAttribute="top" id="moe-Qj-3G8"/>
                             <constraint firstItem="kgm-k9-itT" firstAttribute="bottom" secondItem="HG1-uc-2PC" secondAttribute="bottom" constant="10" id="rd8-GR-yX0"/>
+                            <constraint firstItem="lBh-s8-uWT" firstAttribute="top" secondItem="HG1-uc-2PC" secondAttribute="top" id="zM2-f1-UVU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TVJ-x8-UMY"/>
                     </view>
@@ -1036,18 +1046,25 @@
             </objects>
             <point key="canvasLocation" x="188" y="-1078.1109445277361"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom FaceAR View Controller-->
         <scene sceneID="Cbc-WJ-JCY">
             <objects>
-                <viewController id="Enu-sb-nhH" sceneMemberID="viewController">
+                <viewController id="Enu-sb-nhH" customClass="customFaceARViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CDG-t3-Trt" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face.png" translatesAutoresizingMaskIntoConstraints="NO" id="ET2-4f-9x4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face.png" translatesAutoresizingMaskIntoConstraints="NO" id="ET2-4f-9x4">
                                 <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13x-yI-zvZ">
+                                <rect key="frame" x="16" y="60" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1057,10 +1074,14 @@
                             <constraint firstItem="ET2-4f-9x4" firstAttribute="leading" secondItem="CDG-t3-Trt" secondAttribute="leading" id="o7v-ES-hvn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="smileView" destination="CDG-t3-Trt" id="o3l-dd-rKp"/>
+                        <outlet property="warningLabel" destination="13x-yI-zvZ" id="krQ-Ji-IB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKc-Yp-e9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="-224"/>
+            <point key="canvasLocation" x="855.79710144927537" y="-224.66517857142856"/>
         </scene>
     </scenes>
     <resources>

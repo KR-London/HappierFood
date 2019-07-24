@@ -42,7 +42,8 @@ class DetailViewController: UIViewController{
         presentState = (main?.myNav?.currentStateAsString())!
         
         foodImage.image = UIImage(named: detailToDisplay.photoFilename)
-
+        faceContainer.mouthCurvature = -1
+       // faceContainer.reloadI
 
         /// wrap this up so that it gives a placeholder when no food name provided.
         if detailToDisplay.foodName.count > 0{
@@ -145,7 +146,10 @@ class DetailViewController: UIViewController{
 //        }
         
         setUpNavigationBarItems()
+        
+ 
     }
+
     
     func setUpNavigationBarItems(){
         let deleteButton = UIButton(type: .system)
@@ -245,6 +249,17 @@ class DetailViewController: UIViewController{
             dvc.dateTargetSet = detailToDisplay.triedOn
             dvc.existingMotivationText = detailToDisplay.notes
         }
+        
+     //   if segue.identifier == "faceSegue" {
+         //   if let customFaceController = segue.destination as? customFaceARViewController{
+                // self.customFaceController = customFaceController
+//                customFaceController.sliderFeedback( handler:  {[weak self] value in
+//                    self?.rating = Double(-1 + 2*value )
+             //   guard let dvc = segue.destination as! customFaceARViewController
+             //       else {  dvc.updateUI(-1)}
+              //  }
+         //   }
+      //  }
     }
     
     /// MARK: Setup
