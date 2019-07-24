@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,13 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-s2-XyC">
-                                <rect key="frame" x="36" y="144" width="342" height="618"/>
+                                <rect key="frame" x="36" y="544" width="342" height="278"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM4-Qd-fiO">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="85.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="35"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <color key="tintColor" red="0.57924190149999999" green="0.76939731840000003" blue="0.58882177599999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <attributedString key="attributedText">
                                             <fragment content="HappyFoods">
                                                 <attributes>
+                                                    <color key="NSColor" red="0.30192233620570713" green="0.45645621827411165" blue="0.22470162906163069" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <font key="NSFont" size="36" name="TwCenMT-CondensedExtraBold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -32,14 +37,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06P-Av-FQB">
-                                        <rect key="frame" x="0.0" y="128.5" width="342" height="489.5"/>
+                                        <rect key="frame" x="0.0" y="78" width="342" height="200"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="hTF-06-KEf"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="A food diary to track and motivate trying new foods. ">
                                                 <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="NSColor" red="0.24088208630556115" green="0.36417354060913709" blue="0.1792732458447398" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <font key="NSFont" size="24" name="TwCenMT-CondensedExtraBold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -48,14 +54,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="0.57647058819999997" green="0.70980392160000005" blue="0.77647058820000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl_and_pizza.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="oWe-Gc-fUC">
+                                <rect key="frame" x="-218" y="0.0" width="850" height="896"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="850" id="S6R-RP-fDr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C1K-s2-XyC" secondAttribute="bottom" constant="100" id="4Bx-IM-1vg"/>
-                            <constraint firstItem="C1K-s2-XyC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="fEx-6d-8tV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C1K-s2-XyC" secondAttribute="bottom" constant="40" id="4Bx-IM-1vg"/>
+                            <constraint firstItem="oWe-Gc-fUC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="COj-AD-znP"/>
+                            <constraint firstItem="C1K-s2-XyC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="500" id="fEx-6d-8tV"/>
+                            <constraint firstItem="oWe-Gc-fUC" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="qad-Xe-bqI"/>
                             <constraint firstItem="C1K-s2-XyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="tWX-pC-nao"/>
                             <constraint firstAttribute="trailing" secondItem="C1K-s2-XyC" secondAttribute="trailing" constant="36" id="ug6-1s-5Gt"/>
+                            <constraint firstItem="oWe-Gc-fUC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yXi-Hy-j92"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -65,4 +81,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="girl_and_pizza.jpeg" width="2042.4000244140625" height="1361.760009765625"/>
+    </resources>
 </document>

@@ -114,6 +114,7 @@
 		44C313C322E8DE58002FB0AC /* DetailTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C313C222E8DE58002FB0AC /* DetailTopViewController.swift */; };
 		44C313C522E8E075002FB0AC /* DetailBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C313C422E8E075002FB0AC /* DetailBottomViewController.swift */; };
 		44C313C722E8E980002FB0AC /* detailBottomNew.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44C313C622E8E980002FB0AC /* detailBottomNew.xib */; };
+		44C313C922E90988002FB0AC /* girl_and_pizza.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */; };
 		44D519F0225E3301001BD7FB /* icons1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519ED225E3301001BD7FB /* icons1.png */; };
 		44D519F1225E3301001BD7FB /* icons2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EE225E3301001BD7FB /* icons2.png */; };
 		44D519F2225E3301001BD7FB /* icons3.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EF225E3301001BD7FB /* icons3.png */; };
@@ -248,6 +249,7 @@
 		44C313C222E8DE58002FB0AC /* DetailTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopViewController.swift; sourceTree = "<group>"; };
 		44C313C422E8E075002FB0AC /* DetailBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBottomViewController.swift; sourceTree = "<group>"; };
 		44C313C622E8E980002FB0AC /* detailBottomNew.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailBottomNew.xib; sourceTree = "<group>"; };
+		44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl_and_pizza.jpeg; sourceTree = "<group>"; };
 		44D519ED225E3301001BD7FB /* icons1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons1.png; sourceTree = "<group>"; };
 		44D519EE225E3301001BD7FB /* icons2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons2.png; sourceTree = "<group>"; };
 		44D519EF225E3301001BD7FB /* icons3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons3.png; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		4483901A22C7CDE4002F8D2E /* Placeholder Images */ = {
 			isa = PBXGroup;
 			children = (
+				44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */,
 				4483902022C7D187002F8D2E /* Loading Screens1.png */,
 				4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */,
 				4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */,
@@ -653,6 +656,7 @@
 				44B52FEF22DA14C000CF730D /* shakeMe.jpg in Resources */,
 				44497FB622DCCEDE007CE3D3 /* screen2_block2_B.jpg in Resources */,
 				44C313C122E8D9BD002FB0AC /* detailTopNew.xib in Resources */,
+				44C313C922E90988002FB0AC /* girl_and_pizza.jpeg in Resources */,
 				443B66EE22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png in Resources */,
 				449613CD22DC9CD6001CCE37 /* rice.jpeg in Resources */,
 				44B52FFC22DA213800CF730D /* b4.jpg in Resources */,
