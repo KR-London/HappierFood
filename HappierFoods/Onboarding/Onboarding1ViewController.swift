@@ -29,12 +29,12 @@ class Onboarding1ViewController: UINavigationController {
     }()
     
     lazy var moveOnButton: UIButton = {
-            let button = UIButton()
-            button.backgroundColor = UIColor.blue
-            button.setTitle("I'll give it a try", for: .normal)
-            button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
-
-            return button
+        let button = UIButton()
+        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.setTitle("I'll give it a try", for: .normal)
+        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+        return button
         }()
 
     override func viewDidLoad() {

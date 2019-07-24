@@ -49,10 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       //    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:  UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!]
         if let customFont = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 ) {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
-           // UIBarButtonItem.appearance().
         }
-        
-       // registerForPushNotifications()
+       
+        //UIBarButtonItem.appearance().titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.orange]
+//        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 233, green: 2, blue: 3, alpha: 1.0)]
+//        UINavigationBar.appearance().titleTextAttributes = textAttributes
+//       // registerForPushNotifications()
     
       
        // BugReporting.bugReportingOptions = [.]

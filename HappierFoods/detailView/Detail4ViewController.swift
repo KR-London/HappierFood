@@ -9,6 +9,7 @@
 import UIKit
 
 class Detail4ViewController: UIViewController {
+    @IBOutlet weak var notes: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

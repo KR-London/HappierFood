@@ -143,7 +143,8 @@ lazy var block1: UIImageView = {
 lazy var b1: UIButton = {
     let button = UIButton()
     //button.setImage(UIImage(named: "b1.jpg"), for: .normal)
-    button.backgroundColor = UIColor.blue
+    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Smell It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
@@ -151,7 +152,8 @@ lazy var b1: UIButton = {
 
 lazy var b2: UIButton = {
     let button = UIButton()
-    button.backgroundColor = UIColor.blue
+    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Taste It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
@@ -159,7 +161,8 @@ lazy var b2: UIButton = {
 
 lazy var b3: UIButton = {
     let button = UIButton()
-    button.backgroundColor = UIColor.blue
+    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Nibble It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
@@ -167,7 +170,8 @@ lazy var b3: UIButton = {
 
 lazy var b4: UIButton = {
     let button = UIButton()
-    button.backgroundColor = UIColor.blue
+    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Finish It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button

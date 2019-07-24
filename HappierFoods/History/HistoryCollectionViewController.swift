@@ -17,14 +17,7 @@ class HistoryCollectionViewController: UICollectionViewController {
     var history: [NSManagedObject] = []
     var historyArray: [HistoryTriedFoods]?
     var maximumSaveNumber = 0
-    
-   // @IBOutlet var collectionView: UICollectionView!
-    // @IBOutlet var collectionView: UICollectionView!
-    
-    //collectionView.dataSource = self
-   // collectionView.delegate = self
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadItems()
@@ -40,24 +33,10 @@ class HistoryCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-//         if maximumSaveNumber > 0 {
-//            print(maximumSaveNumber)
-//            return maximumSaveNumber
-//        }
-//         else{
-//            return 0
-//        }
-        
-        print("The sections section will request \(maximumSaveNumber) sections")
-        
         return maximumSaveNumber
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-       // let thisData = historyArray?.filter({$0.saveNumber == maximumSaveNumber - section}).count
-        
         return historyArray?.filter({$0.saveNumber == maximumSaveNumber - section}).count ?? 0
     }
     
@@ -68,14 +47,11 @@ class HistoryCollectionViewController: UICollectionViewController {
         {
             ///I'm not handling the errors here
             if indexPath.row < thisData.count {
-                
                 let fileToLoadRow = thisData[indexPath.row]
                 let fileToLoad = fileToLoadRow.filename ?? "chaos.jpg"
                 cell.displayContent(image: fileToLoad)
-                
             }
         }
-        //cell.backgroundColor = UIColor.green
         return cell
     }
     
@@ -88,18 +64,55 @@ class HistoryCollectionViewController: UICollectionViewController {
         catch{
             print("Error fetching data \(error)")
         }
+        
+        /// clean data
+        if let history = historyArray{
+            if historyArray!.count > 0  {
+                let historyArrayCount = historyArray!.count
+                for i in 0 ... (historyArray!.count - 1){
+                    if UIImage(named: historyArray![historyArrayCount - 1  - i].filename ?? "neverUsed") == nil
+                {
+                    context.delete(historyArray![historyArrayCount - 1 - i])
+                    do{
+                        try context.save()
+                    } catch {
+                        // Replace this implementation with code to handle the error appropriately.
+                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                        let nserror = error as NSError
+                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    }
+                    //historyArray.remove(at: historyArrayCount - 1 - i)
+                }
+            }
+        }
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if (kind == UICollectionView.elementKindSectionHeader ){
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WeekHeaderView", for: indexPath) as! WeekHeaderView
-            headerView.backgroundColor = UIColor.blue
+            headerView.backgroundColor = UIColor().HexToColor(hexString: "#93b5C6", alpha: 1.0)
+            headerView.tintColor = UIColor().HexToColor(hexString: "#DDEDAA", alpha: 1.0)
             headerView.weekLabel.text = "Save \(maximumSaveNumber - indexPath.section)"
+            
             return headerView
         }
         fatalError()
     }
     
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets.init(top: 40, left: 0, bottom: 10, right: 0)
+//    }
+    
+    //3
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return sectionInsets
+//    }
+//
 //    func collectionView(_ collectionView: UICollectionView,
 //                        layout collectionViewLayout: UICollectionViewLayout,
 //                        insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -111,8 +124,14 @@ class HistoryCollectionViewController: UICollectionViewController {
 }
 
 // MARK: History View extension
-//
-//extension HistoryCollectionViewController: UICollectionViewDelegateFlowLayout {
+
+extension HistoryCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+        func collectionView(_ collectionView: UICollectionView,
+                            layout collectionViewLayout: UICollectionViewLayout,
+                            insetForSectionAt section: Int) -> UIEdgeInsets {
+            return UIEdgeInsets.init(top: 10, left: 0, bottom: 10, right: 0)
+        }
 ////
 ////    func collectionView(_ collectionView: UICollectionView,
 ////                        layout collectionViewLayout: UICollectionViewLayout,
@@ -133,11 +152,10 @@ class HistoryCollectionViewController: UICollectionViewController {
 ////        return 8
 ////    }
 ////
-////    func collectionView(_ collectionView: UICollectionView,
-////                        layout collectionViewLayout: UICollectionViewLayout,
-////                        insetForSectionAt section: Int) -> UIEdgeInsets {
-////        return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-////    }
+
+
+//let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//layout.sectionInset = UIEdgeInsets(top: 10.0, left: 1.0, bottom: 1.0, right: 1.0)
 ////}
 ////
 ////extension HistoryCollectionViewController: UICollectionViewDataSource{
@@ -177,4 +195,4 @@ class HistoryCollectionViewController: UICollectionViewController {
 //        fatalError()
 //    }
 //
-//}
+}

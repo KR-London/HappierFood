@@ -30,7 +30,8 @@ class Onboarding2ViewController: UINavigationController {
     
     lazy var moveOnButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("....Okay....", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         

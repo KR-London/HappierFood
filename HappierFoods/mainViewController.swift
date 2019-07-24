@@ -1,7 +1,6 @@
 //
 //  mainViewController.swift
 //  HappierFoods
-//
 //  Created by Kate Roberts on 06/04/2019.
 //  Copyright © 2019 Kate Roberts. All rights reserved.
 //
@@ -476,7 +475,8 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         cell.instructionReminder.isHidden = false
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
-        cell.backgroundColor = UIColor.green
+        cell.backgroundColor = UIColor().HexToColor(hexString: "#D3B99F", alpha: 1.0)
+            //UIColor(hex: "#D3B99F")
         cell.showDetailButtonProperties.tag = indexPath.row
         
         var collectionViewSize = 9
@@ -543,11 +543,11 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         
         /// clean data
         if foodArray.count > 0  {
-            for i in 0 ... foodArray.count - 1
-            {
-                if UIImage(named: foodArray[foodArray.count - 1  - i].filename ?? "neverUsed") == nil
+            let foodArrayCount = foodArray.count
+            for i in 0 ... (foodArray.count - 1){
+                if UIImage(named: foodArray[foodArrayCount - 1  - i].filename ?? "neverUsed") == nil
                 {
-                    context.delete(foodArray[foodArray.count - 1 - i])
+                    context.delete(foodArray[foodArrayCount - 1 - i])
                     do{
                         try context.save()
                     } catch {
@@ -556,16 +556,17 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                         let nserror = error as NSError
                         fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                     }
-                    foodArray.remove(at: foodArray.count - 1 - i)
+                    foodArray.remove(at: foodArrayCount - 1 - i)
                 }
             }
         }
         if targetArray.count > 0  {
-            for i in 0 ... targetArray.count - 1
+            let targetArrayCount = targetArray.count
+            for i in 0 ... targetArrayCount - 1
             {
-                if UIImage(named: targetArray[targetArray.count - 1  - i].filename ?? "neverUsed") == nil
+                if UIImage(named: targetArray[targetArrayCount - 1  - i].filename ?? "neverUsed") == nil
                 {
-                    context.delete(targetArray[targetArray.count - 1 - i])
+                    context.delete(targetArray[targetArrayCount - 1 - i])
                     do{
                         try context.save()
                     } catch {
@@ -574,7 +575,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                         let nserror = error as NSError
                         fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                     }
-                    targetArray.remove(at: targetArray.count - 1 - i)
+                    targetArray.remove(at: targetArrayCount - 1 - i)
                 }
             }
         }

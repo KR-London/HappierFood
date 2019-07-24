@@ -57,18 +57,40 @@ class DetailViewController: UIViewController{
         var countOfThisFood = Int()
         
         if foodName == "" {
-            countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename }).count
+            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+            {
+                countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename }).count
+            }
+            else
+            {
+                countOfThisFood = 1
+            }
         }
         else{
-            countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+            {
+                countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+            }
+            else{
+                 countOfThisFood = foodArray.filter({ $0.name == detailToDisplay.foodName }).count
+            }
         }
         
         if let history = historyArray{
             if foodName == "" {
-                countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename }).count
+                if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+                {
+                    countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename }).count
+                }
             }
              else{
-                countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+                if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+                {
+                    countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+                }
+                else{
+                    countOfThisFood = countOfThisFood + history.filter({ $0.name == detailToDisplay.foodName }).count
+                }
             }
         }
         
@@ -91,8 +113,10 @@ class DetailViewController: UIViewController{
         else  {
             detail3VC.faceView.isHidden = true
         }
-        detail5VC.detailToDisplay = detailToDisplay
         
+        detail4VC.notes.text = detailToDisplay.notes
+        
+        detail5VC.detailToDisplay = detailToDisplay
         detail5VC.buttonPress( handler:  {[weak self] value in
 
         if main?.myNav?.presentState == .AddFoodViewController{
@@ -220,6 +244,7 @@ class DetailViewController: UIViewController{
             dvc.imagePath = detailToDisplay.photoFilename
             dvc.foodName = detailToDisplay.foodName
             dvc.dateTargetSet = detailToDisplay.triedOn
+            dvc.existingMotivationText = detailToDisplay.notes
         }
     }
     

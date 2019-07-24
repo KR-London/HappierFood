@@ -18,7 +18,8 @@ class preTargetViewController: UINavigationController {
     
     lazy var b1: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Egg", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
@@ -26,7 +27,8 @@ class preTargetViewController: UINavigationController {
     
     lazy var b2: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Rice", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
@@ -34,7 +36,8 @@ class preTargetViewController: UINavigationController {
     
     lazy var b3: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Apple", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
@@ -42,7 +45,8 @@ class preTargetViewController: UINavigationController {
     
     lazy var b4: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Other", for: .normal)
         button.alpha = 0.2
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )

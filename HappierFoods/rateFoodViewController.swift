@@ -16,7 +16,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 
     var imagePlaceholder = UIImage()
     var imagePath: String?
-    
+    var existingMotivationText: String?
+    var placeHolderImage: String? 
     var rating = 0.0
     var foodName = String()
     var dateTargetSet = Date()
@@ -38,7 +39,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var imageView: UIImageView!
 
     @IBAction func saveFood(_ sender: Any) {
-        appsAndBiscuits(imageName: nameOfFood.text, image: foodImage.image ?? (UIImage(named: "tick.png") ?? nil)!, rating: rating)
+        appsAndBiscuits(imageName: nameOfFood.text, image: foodImage.image ?? (UIImage(named: "tick.png") ?? nil)!, rating: rating, notes: motivationText?.text ?? existingMotivationText  )
     }
     
     // MARK: Core Data helpers
@@ -58,11 +59,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         nameOfFood.delegate = self
 //        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
 //        presentState = main!.myNav!.currentStateAsString()
-        if presentState == "SetTargetViewController"
-        {
- //           motivationText.delegate = self
-        }
-
+ 
         imagePlaceholder = cropImageToSquare(imagePlaceholder)
         foodImage.image = imagePlaceholder
 
@@ -71,6 +68,25 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
         foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
         nameOfFood.text = foodName
+    //   motivationText?.text = existingMotivationText
+        
+        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
+        if presentState == "SetTargetViewController" || presentState ==  "First Target"
+        {
+            motivationText.delegate = self
+        }
+
+        switch  main?.myNav?.presentState {
+        case .AddFoodViewController?, .RetryTriedFood?, .ConvertTargetToTry? :
+            navigationItem.title = "Rate It!";
+        case .SetTargetViewController?:
+            navigationItem.title = "Motivate It"
+        default:
+            navigationItem.title = "Report Bug"
+        }
+        
+        if presentState == "First Pass"{navigationItem.title = ""}
         
         setUpNavigationBarItems()
 
@@ -123,7 +139,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-    func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?){
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.view.endEditing(true)
+//        return false
+//    }
+    
+    func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?, notes: String?){
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
         
         if firstPass == "Target" {
@@ -139,14 +160,20 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         /// make sure that this has a filename. Currently though this is a flawed implementation because it doesn't have a unique index for the food
         if let path = imagePath {print("Path is \(path)")}
         else{
-            var imageExtension = imageName ?? ""
-            if imageExtension == ""
+            if let imageExtension = placeHolderImage
             {
-                imageExtension = "temp"
+                 imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension)
             }
-            imageExtension = imageExtension + String(Date().timeIntervalSince1970) + ".png"
+            else{
+                var imageExtension =  imageName ?? ""
+                if imageExtension == ""
+                {
+                    imageExtension = "temp"
+                }
+                imageExtension = imageExtension + String(Date().timeIntervalSince1970) + ".png"
             
-            imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension) 
+            imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension)
+            }
         }
         let image2 = image.resizeImage(targetSize: CGSize(width: 300, height: 300))
         let data = UIImage.pngData(image2)
@@ -197,6 +224,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
+                menuItem.motivation = existingMotivationText
                 saveItems()
                 
                 main?.foodArray.append(menuItem)
@@ -215,6 +243,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
+                menuItem.motivation = existingMotivationText
                 saveItems()
                 
                 main?.foodArray.append(menuItem)
@@ -230,6 +259,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.filename = imagePath
                 menuItem.name = imageName
                 menuItem.dateAdded = Date()
+                menuItem.motivation = notes
                 saveItems()
                 
                 main?.targetArray.append(menuItem)
@@ -261,6 +291,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.filename = imagePath
                 menuItem.name = imageName
                 menuItem.dateAdded = Date()
+                menuItem.motivation = notes
                 saveItems()
                 
                 main?.targetArray = [menuItem]
@@ -312,27 +343,37 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         
-        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
-        
-     
-
-        switch  main?.myNav?.presentState {
-        case .AddFoodViewController?, .RetryTriedFood?, .ConvertTargetToTry? :
-            navigationItem.title = "Rate It!";
-        case .SetTargetViewController?:
-            navigationItem.title = "Motivate It"
-        default:
-            navigationItem.title = "Report Bug"
-        }
-        
-        if presentState == "First Pass"{navigationItem.title = ""}
+//        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+//        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
+//
+//
+//
+//        switch  main?.myNav?.presentState {
+//        case .AddFoodViewController?, .RetryTriedFood?, .ConvertTargetToTry? :
+//            navigationItem.title = "Rate It!";
+//        case .SetTargetViewController?:
+//            navigationItem.title = "Motivate It"
+//        default:
+//            navigationItem.title = "Report Bug"
+//        }
+//
+//        if presentState == "First Pass"{navigationItem.title = ""}
     }
     
     // MARK: Handling user interaction
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        if(text == "\n") {
+//            textView.resignFirstResponder()
+//            return false
+//        }
+//        return true
+//    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn _: NSRange, replacementText text: String) -> Bool {
+        let resultRange = text.rangeOfCharacter(from: CharacterSet.newlines, options: .backwards)
+        if text.count == 1 && resultRange != nil {
             textView.resignFirstResponder()
+            // Do any additional stuff here
             return false
         }
         return true

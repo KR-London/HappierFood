@@ -30,6 +30,8 @@ class customNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 233, green: 2, blue: 3, alpha: 1.0)]
+//        UINavigationBar.appearance().titleTextAttributes = textAttributes
     }
     
     func currentStateAsString()-> String{

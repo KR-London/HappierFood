@@ -26,6 +26,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     var presentState : String?
     let haptic = UINotificationFeedbackGenerator()
     var sourceViewController = ""
+    var placeholderImage: String?
 
     // MARK: Outlets & actions
     @IBOutlet weak var writtenInputElements: UIStackView!
@@ -37,7 +38,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 
     @IBAction func nameOfFoodInput(_ sender: Any) {
         foodName = nameOfFood.text ?? ""
-        performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
+       // performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
     }
 
     @IBOutlet weak var buttonOutlet: UIButton!
@@ -55,6 +56,9 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         }
         else {
             performSegue(withIdentifier: presentState ?? " Undefined " , sender: "dataInputViewController")
+        }
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: self.presentState ?? " Undefined " , sender: "dataInputViewController")
         }
     }
     
@@ -97,6 +101,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             if image == nil
             {
                 image = UIImage(named: "NoCameraPlaceholder.001.jpeg")!
+                placeholderImage = "NoCameraPlaceholder.001.jpeg"
             }
             captureImageView.isHidden = false
             captureImageView.image = UIImage(named: "NoCameraPlaceholder.001.jpeg")
@@ -113,10 +118,12 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         if image == nil {
             ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
             image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            placeholderImage = "databasePlaceholderImage.001.jpeg"
         }
         
         if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg"){
             image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            placeholderImage = "databasePlaceholderImage.001.jpeg"
         }
         captureImageView.isHidden = true
         writtenInputElements.isHidden = false
@@ -165,6 +172,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             if let dvc1 = segue.destination as? rateFoodViewController {
                 dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
                 dvc1.foodName = foodName
+                dvc1.placeHolderImage = placeholderImage
              //   dvc1.imageExtension = filename
             }
         }
@@ -352,9 +360,12 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         previewView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
         
         writtenInputElements.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        writtenInputElements.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        writtenInputElements.heightAnchor.constraint(equalToConstant: 200).isActive = true
         writtenInputElements.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        writtenInputElements.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
+        writtenInputElements.bottomAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        nameOfFood.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 ) 
+        //writtenInputElements.font = UIFont(name: "Courier", size: 24)
+        //writtenInputElements.heightAnchor.constraint(equalToConstant: 200)
         
         captureImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         captureImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
