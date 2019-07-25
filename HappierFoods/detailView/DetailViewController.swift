@@ -50,9 +50,14 @@ class DetailViewController: UIViewController{
         let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
         foodImage.image = UIImage(named: filepath)
         
-        if notes == nil || notes == ""
+        if detailToDisplay.notes == nil || detailToDisplay.notes == ""
         {
             notesOutlet.isHidden = true
+        }
+        else
+        {
+            notesOutlet.isHidden = false
+
         }
         
         // MARK: Colour

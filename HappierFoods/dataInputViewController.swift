@@ -38,7 +38,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 
     @IBAction func nameOfFoodInput(_ sender: Any) {
         foodName = nameOfFood.text ?? ""
-       // performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
+        performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
     }
 
     @IBOutlet weak var buttonOutlet: UIButton!
