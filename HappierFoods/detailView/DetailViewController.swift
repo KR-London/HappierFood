@@ -29,6 +29,11 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var numberOfTries: UILabel!
     @IBOutlet weak var notesOutlet: UITextField!
     
+    @IBAction func notesEdited(_ sender: Any) {
+        detailToDisplay.notes = notesOutlet.text ?? ""
+        notes = notesOutlet.text ?? ""
+    }
+    @IBOutlet weak var topFace: UIImageView!
     
     @IBAction func tryItAgainButton(_ sender: Any) {
         
@@ -43,7 +48,31 @@ class DetailViewController: UIViewController{
         
         let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
         foodImage.image = UIImage(named: filepath)
-        faceContainer.mouthCurvature = -1
+        
+        if notes == nil || notes == ""
+        {
+            notesOutlet.isHidden = true
+        }
+        
+//        switch detailToDisplay.rating {
+//        case -1...(-0.7) :
+//            topFace.image = UIImage(named: "eyesShut_browDownLeft.png")
+//        case -0.7...(-0.4) :
+//            topFace.image = UIImage(named: "eyesLookUpLeft_browDownLeft.png")
+//        case -0.4...(-0.1) :
+//            topFace.image = UIImage(named: "eyesLookOutLeft_browOuterUpLeft.png")
+//        case 0.1...(0.4) :
+//             topFace.image = UIImage(named: "eyesWideLeft_browDownLeft.png")
+//        case 0.4...(0.7) :
+//            topFace.image = UIImage(named: "eyesBlinkLeft_browOuterUpLeft.png")
+//        case 0.7...1 :
+//            topFace.image = UIImage(named: "eyesLookUpLeft_browOuterUpLeft.png")
+//        default:
+//            topFace.image = UIImage(named: "eyesOpen_browDownLeft.png")
+//        }
+        
+        
+        
        // faceContainer.reloadI
 
         /// wrap this up so that it gives a placeholder when no food name provided.
