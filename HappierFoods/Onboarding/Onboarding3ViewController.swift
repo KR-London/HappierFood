@@ -10,6 +10,11 @@ import UIKit
 
 class Onboarding3ViewController: UINavigationController {
     
+    lazy var happy: UIImageView = {
+        let contentView = UIImageView()
+        contentView.image = UIImage(named: "little dude6.png")
+        return contentView
+    }()
     
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
@@ -35,6 +40,17 @@ class Onboarding3ViewController: UINavigationController {
                 block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
                 block1.topAnchor.constraint(equalTo: margins.topAnchor),
                 block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8),
+            ]
+        )
+        
+        view.addSubview(happy)
+        happy.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                happy.centerYAnchor.constraint(equalTo: block1.bottomAnchor),
+                happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor),
+                happy.heightAnchor.constraint(equalToConstant: 100),
+                happy.widthAnchor.constraint(equalToConstant: 100),
             ]
         )
         

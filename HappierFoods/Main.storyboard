@@ -143,17 +143,18 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqj-qo-3yL">
                                     <rect key="frame" x="8" y="8" width="382" height="34"/>
-                                    <color key="backgroundColor" red="0.57647058823529407" green="0.70980392156862748" blue="0.77647058823529413" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.37254901960784315" green="0.84313725490196079" blue="0.69019607843137254" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                     <color key="tintColor" red="0.8666666666666667" green="0.92941176470588238" blue="0.66666666666666663" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Label">
                                             <attributes>
                                                 <font key="NSFont" size="18" name="TwCenMT-CondensedExtraBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                     <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </label>
                             </subviews>
                             <constraints>
@@ -359,7 +360,9 @@
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="top" secondItem="TnP-Rc-HIy" secondAttribute="top" multiplier="1.1" priority="750" constant="8" id="jVq-nt-K0f"/>
                             <constraint firstItem="8G5-gk-whZ" firstAttribute="centerX" secondItem="AXY-ie-rmn" secondAttribute="centerX" id="jnI-xA-Tlg"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="bottom" secondItem="7YX-Pg-QoH" secondAttribute="bottom" constant="8" id="uCR-aq-KKk"/>
+                            <constraint firstItem="TnP-Rc-HIy" firstAttribute="trailing" secondItem="7YX-Pg-QoH" secondAttribute="trailing" constant="8" id="vdM-dN-X6r"/>
                             <constraint firstItem="ntM-vN-9DJ" firstAttribute="centerY" secondItem="TnP-Rc-HIy" secondAttribute="centerY" multiplier="0.4" priority="750" id="yjL-mE-gcr"/>
+                            <constraint firstItem="7YX-Pg-QoH" firstAttribute="leading" secondItem="TnP-Rc-HIy" secondAttribute="leading" constant="8" id="z6V-QF-AlF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TnP-Rc-HIy"/>
                     </view>
@@ -592,6 +595,7 @@
                     </view>
                     <connections>
                         <outlet property="foodImage" destination="JSa-Th-Mzn" id="Mbc-wR-lTc"/>
+                        <outlet property="moveOnButton" destination="XDv-FI-m5N" id="1R1-DC-asx"/>
                         <outlet property="nameOfFood" destination="muC-uq-Gbv" id="ttZ-8u-I49"/>
                         <segue destination="QlS-BC-ikQ" kind="presentation" identifier="takeMeHome" modalTransitionStyle="partialCurl" id="lJr-Ub-v2X"/>
                     </connections>
@@ -725,18 +729,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-I4-nLe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="717"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-I4-nLe">
+                                <rect key="frame" x="0.0" y="88" width="300" height="808"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Owk-4Z-H6s">
-                                        <rect key="frame" x="169.5" y="0.0" width="75" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="60h-Lc-mX3"/>
-                                            <constraint firstAttribute="width" constant="75" id="gxF-22-ETJ"/>
-                                        </constraints>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLL-7u-2dj">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cle-s6-d6b">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="B92-2G-EDk"/>
+                                                    <constraint firstAttribute="width" constant="100" id="ojJ-Sa-Nhe"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude6.png" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-AP-OeG">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="3Rl-1X-9mb"/>
+                                                    <constraint firstAttribute="width" constant="100" id="tma-Da-wxf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude7.png" translatesAutoresizingMaskIntoConstraints="NO" id="wJ8-6p-Paz">
+                                                <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="6hW-Ia-NLe"/>
+                                                    <constraint firstAttribute="height" constant="100" id="xwc-tk-xqa"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-vh-OWh">
-                                        <rect key="frame" x="57" y="106" width="300" height="441"/>
+                                        <rect key="frame" x="0.0" y="131" width="300" height="472.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="J2K-ob-AoO"/>
                                             <constraint firstAttribute="height" constant="300" id="gXk-cA-OPH"/>
@@ -746,7 +769,7 @@
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well done! You achieved the goal of trying 9 new foods this week. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK2-3K-eVT">
-                                        <rect key="frame" x="8" y="578" width="398" height="139"/>
+                                        <rect key="frame" x="0.0" y="634.5" width="300" height="173.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                         <nil key="textColor"/>
@@ -754,6 +777,9 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SLL-7u-2dj" secondAttribute="trailing" id="N4U-QT-5hh"/>
+                                    <constraint firstItem="SLL-7u-2dj" firstAttribute="top" secondItem="zoX-I4-nLe" secondAttribute="top" id="Umx-ps-9Wu"/>
+                                    <constraint firstItem="SLL-7u-2dj" firstAttribute="leading" secondItem="zoX-I4-nLe" secondAttribute="leading" id="YHu-cJ-mj1"/>
                                     <constraint firstAttribute="trailing" secondItem="QK2-3K-eVT" secondAttribute="trailing" constant="8" id="nCy-7y-gZ5"/>
                                     <constraint firstItem="QK2-3K-eVT" firstAttribute="leading" secondItem="zoX-I4-nLe" secondAttribute="leading" constant="8" id="p6w-M1-75i"/>
                                 </constraints>
@@ -761,28 +787,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zoX-I4-nLe" secondAttribute="trailing" id="OFX-Ib-gIY"/>
-                            <constraint firstItem="zoX-I4-nLe" firstAttribute="top" secondItem="0ej-fB-Jb0" secondAttribute="top" id="VGb-nU-pl4"/>
-                            <constraint firstItem="zoX-I4-nLe" firstAttribute="trailing" secondItem="0ej-fB-Jb0" secondAttribute="trailing" id="VSP-EX-iKF"/>
-                            <constraint firstItem="0ej-fB-Jb0" firstAttribute="bottom" secondItem="zoX-I4-nLe" secondAttribute="bottom" constant="8" id="Z4r-pA-0gb"/>
-                            <constraint firstItem="zoX-I4-nLe" firstAttribute="leading" secondItem="0ej-fB-Jb0" secondAttribute="leading" id="jda-Z8-RVR"/>
-                            <constraint firstItem="zoX-I4-nLe" firstAttribute="leading" secondItem="0ej-fB-Jb0" secondAttribute="leading" id="kQY-C0-iZ8"/>
-                            <constraint firstItem="0ej-fB-Jb0" firstAttribute="bottom" secondItem="zoX-I4-nLe" secondAttribute="bottom" constant="8" id="uCe-bi-JYh"/>
-                            <constraint firstItem="zoX-I4-nLe" firstAttribute="top" secondItem="0ej-fB-Jb0" secondAttribute="top" id="vgA-ej-T5e"/>
+                            <constraint firstItem="zoX-I4-nLe" firstAttribute="leading" secondItem="0ej-fB-Jb0" secondAttribute="leading" id="VAx-7n-2eV"/>
+                            <constraint firstItem="zoX-I4-nLe" firstAttribute="top" secondItem="0ej-fB-Jb0" secondAttribute="top" id="ahE-3d-BeK"/>
+                            <constraint firstAttribute="bottom" secondItem="zoX-I4-nLe" secondAttribute="bottom" id="xj9-K2-YHN"/>
+                            <constraint firstItem="0ej-fB-Jb0" firstAttribute="trailing" secondItem="zoX-I4-nLe" secondAttribute="trailing" id="zrb-Xf-wUv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0ej-fB-Jb0"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBj-ns-yhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3584" y="-1977"/>
+            <point key="canvasLocation" x="-3584.057971014493" y="-1977.4553571428571"/>
         </scene>
         <!--Celebration Collection View Controller-->
         <scene sceneID="XCL-SC-dAH">
             <objects>
                 <collectionViewController id="zIl-jd-FQp" customClass="CelebrationCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tS7-7X-oF5">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="441"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="472.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIw-gS-uDj">
@@ -976,6 +998,7 @@
                         <outlet property="faceContainer" destination="HG1-uc-2PC" id="y0L-2t-A3o"/>
                         <outlet property="foodImage" destination="kgm-k9-itT" id="xoh-mx-Ybq"/>
                         <outlet property="foodNameOutlet" destination="PBE-a3-NlB" id="ZlU-WB-tUG"/>
+                        <outlet property="moveOnButton" destination="7S8-3G-13Q" id="NNM-me-tvf"/>
                         <outlet property="notesOutlet" destination="Wkr-B2-W0t" id="jmI-tJ-4R1"/>
                         <outlet property="numberOfTries" destination="pXR-ZB-jMk" id="yZd-c1-TGJ"/>
                         <outlet property="topFace" destination="phM-20-yXU" id="hgA-SD-rqz"/>
@@ -1124,12 +1147,15 @@
         <image name="icons1.png" width="203" height="203"/>
         <image name="icons2.png" width="203" height="203"/>
         <image name="icons3.png" width="203" height="203"/>
+        <image name="little dude3.png" width="800" height="800"/>
         <image name="little dude4.png" width="800" height="800"/>
+        <image name="little dude6.png" width="800" height="800"/>
+        <image name="little dude7.png" width="800" height="800"/>
         <image name="tick" width="86" height="86"/>
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kEo-kV-ixy"/>
+        <segue reference="8JQ-7V-ZRj"/>
         <segue reference="8Jr-l3-dhP"/>
         <segue reference="PZb-oU-Ng7"/>
         <segue reference="s13-Me-gb1"/>

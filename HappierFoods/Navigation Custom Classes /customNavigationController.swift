@@ -32,6 +32,15 @@ class customNavigationController: UINavigationController {
         super.viewDidLoad()
 //        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 233, green: 2, blue: 3, alpha: 1.0)]
 //        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        
+        
+        // MARK: Colour
+        navigationBar.barTintColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
+        
+        navigationBar.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+        
+        
+       // R103 G230 B194
     }
     
     func currentStateAsString()-> String{

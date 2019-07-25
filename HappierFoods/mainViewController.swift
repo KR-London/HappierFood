@@ -96,7 +96,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cacheData()
         }
         
-
+        /// MARK: colourScheme
+        
+        targetButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+        tryButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 251/255, green: 254/255, blue: 252/255, alpha: 1)
+        
 // let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
 // print(datafilepath!)
     }
@@ -104,7 +109,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if defaults.bool(forKey: "Celebration Status") == true {
-            view.backgroundColor = UIColor(red: 0, green: 206/255, blue: 250/255, alpha: 1)
+            view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
+      
         }
         else
         {
@@ -285,7 +291,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             animator.startAnimation()
         }
         
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4 + 7*i)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5 + 7*i)){
                 self.stopAnimate(button: self.targetButton)
                 onboardingImageView.image = UIImage(named: "onboarding1.png")
             }
@@ -476,7 +482,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         cell.instructionReminder.isHidden = false
         cell.cellImage.alpha = 1
         cell.tickImage.isHidden = true
-        cell.backgroundColor = UIColor().HexToColor(hexString: "#D3B99F", alpha: 1.0)
+        cell.backgroundColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1)
             //UIColor(hex: "#D3B99F")
         cell.showDetailButtonProperties.tag = indexPath.row
         

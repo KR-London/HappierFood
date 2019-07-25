@@ -44,6 +44,12 @@ class historyViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: Colour
+        
+        resetToNewWeek.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+        clearAllData.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+        
     }
         
     func saveItems(){

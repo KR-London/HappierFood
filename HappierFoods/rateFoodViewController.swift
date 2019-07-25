@@ -30,6 +30,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func endedEnteringName(_ sender: Any) {
         self.view.endEditing(true)
     }
+  
+    @IBOutlet weak var moveOnButton: UIButton!
     @IBOutlet weak var nameOfFood: UITextField!
     @IBOutlet weak var faceView: FaceView!
     @IBOutlet weak var foodImage: UIImageView!
@@ -69,6 +71,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
         nameOfFood.text = foodName
     //   motivationText?.text = existingMotivationText
+        
+        // MARK: Colour
+        
+        moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
         presentState = main?.myNav?.currentStateAsString() ?? "First Pass"

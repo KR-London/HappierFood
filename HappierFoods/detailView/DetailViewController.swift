@@ -23,6 +23,7 @@ class DetailViewController: UIViewController{
     var historyArray: [HistoryTriedFoods]?
     var foodArray: [TriedFood]!
     
+    @IBOutlet weak var moveOnButton: UIButton!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var faceContainer: smileView!
     @IBOutlet weak var foodNameOutlet: UILabel!
@@ -53,6 +54,10 @@ class DetailViewController: UIViewController{
         {
             notesOutlet.isHidden = true
         }
+        
+        // MARK: Colour
+        
+        moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
 //        switch detailToDisplay.rating {
 //        case -1...(-0.7) :

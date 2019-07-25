@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
  
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+       let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
-       // let launchedBefore = false
+     // let launchedBefore = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 //        
       //    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:  UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!]
+        
+    
         if let customFont = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 ) {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         }

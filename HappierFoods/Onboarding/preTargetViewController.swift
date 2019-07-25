@@ -9,17 +9,25 @@
 import UIKit
 
 class preTargetViewController: UINavigationController {
+
+    lazy var happy: UIImageView = {
+        let contentView = UIImageView()
+        contentView.image = UIImage(named: "little dude1.png")
+        return contentView
+    }()
+
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
         contentView.image = UIImage(named: "preTarget1B.jpg")
         return contentView
     }()
+  
     
     
     lazy var b1: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+        //button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Egg", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
@@ -27,8 +35,8 @@ class preTargetViewController: UINavigationController {
     
     lazy var b2: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+       // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Rice", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
@@ -87,6 +95,17 @@ class preTargetViewController: UINavigationController {
                 block2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
                 block2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 block2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25)
+            ]
+        )
+        
+        view.addSubview(happy)
+        happy.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                happy.centerYAnchor.constraint(equalTo: block2.bottomAnchor),
+                happy.trailingAnchor.constraint(equalTo: block2.trailingAnchor),
+                happy.heightAnchor.constraint(equalToConstant: 100),
+                happy.widthAnchor.constraint(equalToConstant: 100),
             ]
         )
         
@@ -201,8 +220,8 @@ class preTargetViewController: UINavigationController {
         print(myNav)
         
         //clean up
-        rootViewController.deleteAllData("TargetFood")
-        rootViewController.deleteAllData("TriedFood")
+    //    rootViewController.deleteAllData("TargetFood")
+    //    rootViewController.deleteAllData("TriedFood")
         //deleteAllData("HistoryTriedFoods")
         
 //        rootViewController.foodArray = []
@@ -225,25 +244,30 @@ class preTargetViewController: UINavigationController {
         switch sender.titleLabel?.text{
             case "Egg":
                 motivationViewController.imagePlaceholder = UIImage(named: "boiled_eggs.jpeg")!
+                motivationViewController.placeHolderImage = "boiled_eggs.jpeg"
                 motivationViewController.foodName = "Boiled Egg"
             
             case "Apple":
             
                 motivationViewController.imagePlaceholder = UIImage(named: "apple.jpg")!
+                motivationViewController.placeHolderImage = "apple.jpg"
                 motivationViewController.foodName = "Apple"
             
             case "Rice":
             
                 motivationViewController.imagePlaceholder = UIImage(named: "rice.jpeg")!
+                motivationViewController.placeHolderImage = "rice.jpeg"
                 motivationViewController.foodName = "Rice"
             
             case "Other":
             
                 motivationViewController.imagePlaceholder = UIImage(named: "chaos.jpg")!
+                motivationViewController.placeHolderImage = "chaos.jpg"
             
             default:
             
                 motivationViewController.imagePlaceholder = UIImage(named: "chaos.jpg")!
+                motivationViewController.placeHolderImage = "chaos.jpg"
         }
       
         

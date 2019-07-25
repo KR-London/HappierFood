@@ -9,6 +9,13 @@
 import UIKit
 
 class Onboarding2ViewController: UINavigationController {
+    
+    lazy var happy: UIImageView = {
+        let contentView = UIImageView()
+        contentView.image = UIImage(named: "little dude2.png")
+        return contentView
+    }()
+
 
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
@@ -30,8 +37,8 @@ class Onboarding2ViewController: UINavigationController {
     
     lazy var moveOnButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+         button.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+       // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("....Okay....", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         
@@ -87,6 +94,17 @@ class Onboarding2ViewController: UINavigationController {
                 moveOnButton.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 moveOnButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
                 moveOnButton.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
+            ]
+        )
+        
+        view.addSubview(happy)
+        happy.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                happy.centerYAnchor.constraint(equalTo: block3.bottomAnchor),
+                happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor),
+                happy.heightAnchor.constraint(equalToConstant: 100),
+                happy.widthAnchor.constraint(equalToConstant: 100),
             ]
         )
         

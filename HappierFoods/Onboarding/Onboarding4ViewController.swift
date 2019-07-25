@@ -129,6 +129,12 @@ class Onboarding4ViewController: UINavigationController {
 //    @objc func goOn(sender: UIButton!) {
 //        performSegue(withIdentifier: "o4-o5", sender: self)
 //    }
+    
+    lazy var happy: UIImageView = {
+        let contentView = UIImageView()
+        contentView.image = UIImage(named: "little dude3.png")
+        return contentView
+    }()
 
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
@@ -139,8 +145,9 @@ class Onboarding4ViewController: UINavigationController {
     
     lazy var b1: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+          //  R95 G215 B176  )
+       // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Try Food", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
@@ -148,7 +155,7 @@ class Onboarding4ViewController: UINavigationController {
     
     lazy var b2: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
+          button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
         button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Not Eating Now", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
@@ -176,6 +183,17 @@ class Onboarding4ViewController: UINavigationController {
                 block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
                 block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.3)
+            ]
+        )
+        
+        view.addSubview(happy)
+        happy.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                happy.centerYAnchor.constraint(equalTo: block1.bottomAnchor),
+                happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor),
+                happy.heightAnchor.constraint(equalToConstant: 100),
+                happy.widthAnchor.constraint(equalToConstant: 100),
             ]
         )
         

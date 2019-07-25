@@ -132,6 +132,12 @@ class preTryViewController: UINavigationController {
 
 
 //}
+    
+    lazy var happy: UIImageView = {
+        let contentView = UIImageView()
+        contentView.image = UIImage(named: "little dude1.png")
+        return contentView
+    }()
 
 lazy var block1: UIImageView = {
     let contentView = UIImageView()
@@ -143,8 +149,8 @@ lazy var block1: UIImageView = {
 lazy var b1: UIButton = {
     let button = UIButton()
     //button.setImage(UIImage(named: "b1.jpg"), for: .normal)
-    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+    //button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Smell It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
@@ -152,8 +158,8 @@ lazy var b1: UIButton = {
 
 lazy var b2: UIButton = {
     let button = UIButton()
-    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+   // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Taste It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
@@ -161,8 +167,8 @@ lazy var b2: UIButton = {
 
 lazy var b3: UIButton = {
     let button = UIButton()
-    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+   // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Nibble It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
@@ -170,8 +176,8 @@ lazy var b3: UIButton = {
 
 lazy var b4: UIButton = {
     let button = UIButton()
-    button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-    button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+   // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Finish It", for: .normal)
     button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
@@ -269,6 +275,16 @@ override func viewDidLoad() {
         ]
     )
     
+    view.addSubview(happy)
+    happy.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate(
+        [
+            happy.bottomAnchor.constraint(equalTo: block2.bottomAnchor),
+            happy.trailingAnchor.constraint(equalTo: block2.trailingAnchor),
+            happy.heightAnchor.constraint(equalToConstant: 100),
+            happy.widthAnchor.constraint(equalToConstant: 100),
+        ]
+    )
     
     
     
@@ -319,8 +335,8 @@ override func viewDidAppear(_ animated: Bool) {
     print(myNav)
    // myNav.presentState = .FirstLaunch
     //clean up 
-    rootViewController.deleteAllData("TargetFood")
-    rootViewController.deleteAllData("TriedFood")
+   // rootViewController.deleteAllData("TargetFood")
+   // rootViewController.deleteAllData("TriedFood")
     //deleteAllData("HistoryTriedFoods")
     
    // rootViewController.foodArray = []

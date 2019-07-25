@@ -26,7 +26,9 @@ class WeekHeaderView: UICollectionReusableView {
     
     func myCustomInit() {
         print("hello there from SupView")
-        backgroundColor = UIColor().HexToColor(hexString: "#93b5C6", alpha: 1.0)
+        backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+        
+       // R95 G215 B176
         tintColor = UIColor().HexToColor(hexString: "#DDEDAA", alpha: 1.0)
         
     }
