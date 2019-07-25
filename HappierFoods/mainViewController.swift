@@ -241,7 +241,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func onboardingRoutine(){
         /// add image subview in the middle
-        let onboardingInstruction: UIImage = UIImage(named: "onboarding1.png")!
+        let onboardingInstruction: UIImage = UIImage(named: "bub 1.png")!
         let onboardingImageView = UIImageView(image: onboardingInstruction)
         
         //  onboardingImageView
@@ -275,7 +275,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3 + 7*i)){
             self.stopAnimate(button: self.tryButton)
-            onboardingImageView.image = UIImage(named: "onboarding2.png")
+            onboardingImageView.image = UIImage(named: "bub 2.png")
             self.startAnimate(button: self.targetButton)
             
             let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) {
@@ -291,7 +291,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             animator.startAnimation()
         }
         
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5 + 7*i)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6 + 7*i)){
                 self.stopAnimate(button: self.targetButton)
                 onboardingImageView.image = UIImage(named: "onboarding1.png")
             }

@@ -65,7 +65,7 @@ class OnboardingViewController: UIViewController {
         block3.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
 
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.topAnchor.constraint(greaterThanOrEqualTo: block3.bottomAnchor, constant: 8).isActive = true
+        button.topAnchor.constraint(greaterThanOrEqualTo: block3.bottomAnchor, constant: 25).isActive = true
         button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 8).isActive = true
         button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -8).isActive = true
         button.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true

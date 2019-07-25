@@ -18,7 +18,7 @@ class preTargetViewController: UINavigationController {
 
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "preTarget1B.jpg")
+        contentView.image = UIImage(named: "text 5 1.png")
         return contentView
     }()
   
@@ -44,8 +44,8 @@ class preTargetViewController: UINavigationController {
     
     lazy var b3: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+       // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Apple", for: .normal)
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
@@ -53,8 +53,8 @@ class preTargetViewController: UINavigationController {
     
     lazy var b4: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor().HexToColor(hexString: "#C17767", alpha: 1.0)
-        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+        //button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Other", for: .normal)
         button.alpha = 0.2
         button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
@@ -64,14 +64,14 @@ class preTargetViewController: UINavigationController {
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "preTarget2B.jpg.jpg")
+        contentView.image = UIImage(named: "text 5 2.png")
         return contentView
     }()
     
     
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.white
+               view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
         
         
         view.addSubview(block1)
@@ -104,8 +104,8 @@ class preTargetViewController: UINavigationController {
             [
                 happy.centerYAnchor.constraint(equalTo: block2.bottomAnchor),
                 happy.trailingAnchor.constraint(equalTo: block2.trailingAnchor),
-                happy.heightAnchor.constraint(equalToConstant: 100),
-                happy.widthAnchor.constraint(equalToConstant: 100),
+                happy.heightAnchor.constraint(equalToConstant: 150),
+                happy.widthAnchor.constraint(equalToConstant: 150),
             ]
         )
         

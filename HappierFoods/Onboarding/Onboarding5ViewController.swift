@@ -45,7 +45,7 @@ class Onboarding5ViewController: UINavigationController {
     
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.white
+               view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
         
         let margins = view.layoutMarginsGuide
         view.addSubview(block1)

@@ -74,7 +74,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         // MARK: Colour
         
-        moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+    //    moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
         weak var main = (navigationController?.viewControllers[0] as! mainViewController)
         presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
@@ -305,7 +305,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 main?.targetArray = [menuItem]
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    if let colView  = main?.mainCollectionView{
+                        colView.reloadData()
+                        print("I have a collection view")
+                    }
                 }
             }
         default: return

@@ -65,10 +65,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="C1K-s2-XyC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zfm-YD-oyD" secondAttribute="top" constant="-20" id="EbO-rm-ZSx"/>
+                            <constraint firstItem="C1K-s2-XyC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zfm-YD-oyD" secondAttribute="top" constant="20" id="EbO-rm-ZSx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zfm-YD-oyD" secondAttribute="trailing" id="JVb-ef-M4p"/>
                             <constraint firstItem="zfm-YD-oyD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bnj-VL-eRO"/>
-                            <constraint firstItem="C1K-s2-XyC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="fEx-6d-8tV"/>
+                            <constraint firstItem="C1K-s2-XyC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="750" constant="50" id="fEx-6d-8tV"/>
                             <constraint firstItem="zfm-YD-oyD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hWA-Ge-vmD"/>
                             <constraint firstItem="C1K-s2-XyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="tWX-pC-nao"/>
                             <constraint firstAttribute="trailing" secondItem="C1K-s2-XyC" secondAttribute="trailing" constant="36" id="ug6-1s-5Gt"/>

@@ -18,20 +18,20 @@ class Onboarding3ViewController: UINavigationController {
     
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "screen3_B.jpg")
+        contentView.image = UIImage(named: "text 3 1.png")
         return contentView
     }()
     
     lazy var shakeMe: UIButton = {
         let contentView = UIButton()
-        contentView.setImage(UIImage(named: "shakeMe.jpg"), for: .normal)
+        contentView.setImage(UIImage(named: "text 3 2.png"), for: .normal)
         return contentView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let margins = view.layoutMarginsGuide
-        view.backgroundColor = UIColor.white
+               view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
@@ -49,8 +49,8 @@ class Onboarding3ViewController: UINavigationController {
             [
                 happy.centerYAnchor.constraint(equalTo: block1.bottomAnchor),
                 happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor),
-                happy.heightAnchor.constraint(equalToConstant: 100),
-                happy.widthAnchor.constraint(equalToConstant: 100),
+                happy.heightAnchor.constraint(equalToConstant: 150),
+                happy.widthAnchor.constraint(equalToConstant: 150),
             ]
         )
         
@@ -61,7 +61,7 @@ class Onboarding3ViewController: UINavigationController {
             [
                 shakeMe.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.8),
                 shakeMe.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                shakeMe.topAnchor.constraint(equalTo: block1.bottomAnchor),
+                shakeMe.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 20),
                 shakeMe.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2),
             ]
         )

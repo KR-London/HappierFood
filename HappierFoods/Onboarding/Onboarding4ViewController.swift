@@ -138,7 +138,7 @@ class Onboarding4ViewController: UINavigationController {
 
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "areYouReady1B.jpg")
+        contentView.image = UIImage(named: "speech.png")
         return contentView
     }()
     
@@ -166,13 +166,13 @@ class Onboarding4ViewController: UINavigationController {
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "areYouReady2B.jpg")
+        contentView.image = UIImage(named: "speech 2.png")
         return contentView
     }()
     
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.white
+               view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
         let margins = view.layoutMarginsGuide
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
@@ -192,8 +192,8 @@ class Onboarding4ViewController: UINavigationController {
             [
                 happy.centerYAnchor.constraint(equalTo: block1.bottomAnchor),
                 happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor),
-                happy.heightAnchor.constraint(equalToConstant: 100),
-                happy.widthAnchor.constraint(equalToConstant: 100),
+                happy.heightAnchor.constraint(equalToConstant: 150),
+                happy.widthAnchor.constraint(equalToConstant: 150),
             ]
         )
         

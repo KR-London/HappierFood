@@ -141,7 +141,7 @@ class preTryViewController: UINavigationController {
 
 lazy var block1: UIImageView = {
     let contentView = UIImageView()
-    contentView.image = UIImage(named: "preTry1B.jpg")
+    contentView.image = UIImage(named: "text 4 0.png")
     return contentView
 }()
 
@@ -186,14 +186,14 @@ lazy var b4: UIButton = {
 
 lazy var block2: UIImageView = {
     let contentView = UIImageView()
-    contentView.image = UIImage(named: "preTry2B.jpg")
+    contentView.image = UIImage(named: "text 4 1.png")
     return contentView
 }()
 
 
 
 override func viewDidLoad() {
-    view.backgroundColor = UIColor.white
+           view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
       let margins = view.layoutMarginsGuide
     view.addSubview(block1)
     block1.translatesAutoresizingMaskIntoConstraints = false
@@ -281,8 +281,8 @@ override func viewDidLoad() {
         [
             happy.bottomAnchor.constraint(equalTo: block2.bottomAnchor),
             happy.trailingAnchor.constraint(equalTo: block2.trailingAnchor),
-            happy.heightAnchor.constraint(equalToConstant: 100),
-            happy.widthAnchor.constraint(equalToConstant: 100),
+            happy.heightAnchor.constraint(equalToConstant: 150),
+            happy.widthAnchor.constraint(equalToConstant: 150),
         ]
     )
     

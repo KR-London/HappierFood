@@ -18,19 +18,19 @@ class Onboarding1ViewController: UINavigationController {
     
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "hello2.jpg")
+        contentView.image = UIImage(named: "text 1 1.png")
         return contentView
     }()
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "this_app_is_for_people2.jpg")
+        contentView.image = UIImage(named: "text 1 2.png")
         return contentView
     }()
     
     lazy var block3: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "nerds2.jpg")
+        contentView.image = UIImage(named: "text 1 3.png")
         return contentView
     }()
     
@@ -47,7 +47,9 @@ class Onboarding1ViewController: UINavigationController {
         
         let margins = view.layoutMarginsGuide
         
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
+        
+  
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
         block1.alpha = 0
@@ -65,8 +67,8 @@ class Onboarding1ViewController: UINavigationController {
             [
                 happy.topAnchor.constraint(equalTo: block1.topAnchor),
                 happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor),
-                happy.heightAnchor.constraint(equalToConstant: 100),
-                 happy.widthAnchor.constraint(equalToConstant: 100),
+                happy.heightAnchor.constraint(equalToConstant: 150),
+                 happy.widthAnchor.constraint(equalToConstant: 150),
             ]
         )
         
@@ -90,7 +92,7 @@ class Onboarding1ViewController: UINavigationController {
                 block3.topAnchor.constraint(equalTo: block2.bottomAnchor),
                 block3.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block3.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block3.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: (2.5*0.8)/4.5)
+                block3.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: (2.4*0.8)/4.5)
             ]
         )
         
