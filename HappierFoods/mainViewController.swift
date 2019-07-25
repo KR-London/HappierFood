@@ -38,6 +38,9 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var happy: UIImageView!
     
+    @IBAction func happyTickled(_ sender: Any) {
+        onboardingRoutine()
+    }
     // MARK: Actions
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
         let buttonTag = sender.tag
@@ -282,7 +285,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             animator.startAnimation()
         }
         
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6 + 7*i)){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4 + 7*i)){
                 self.stopAnimate(button: self.targetButton)
                 onboardingImageView.image = UIImage(named: "onboarding1.png")
             }

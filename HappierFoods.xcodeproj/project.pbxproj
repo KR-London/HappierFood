@@ -86,6 +86,14 @@
 		449ACB13226110B400C9F666 /* smileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB12226110B400C9F666 /* smileView.swift */; };
 		449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB14226110B900C9F666 /* handDrawnFaceView.swift */; };
 		449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACB16226110F300C9F666 /* customFaceARViewController.swift */; };
+		44A4100222E98755002289AD /* little dude2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A40FFA22E98755002289AD /* little dude2.png */; };
+		44A4100322E98755002289AD /* little dude3.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A40FFB22E98755002289AD /* little dude3.png */; };
+		44A4100422E98755002289AD /* little dude5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A40FFC22E98755002289AD /* little dude5.png */; };
+		44A4100522E98755002289AD /* little dude6.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A40FFD22E98755002289AD /* little dude6.png */; };
+		44A4100622E98755002289AD /* little dude8.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A40FFE22E98755002289AD /* little dude8.png */; };
+		44A4100722E98755002289AD /* little dude4.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A40FFF22E98755002289AD /* little dude4.png */; };
+		44A4100822E98755002289AD /* little dude1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4100022E98755002289AD /* little dude1.png */; };
+		44A4100922E98755002289AD /* little dude7.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4100122E98755002289AD /* little dude7.png */; };
 		44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A63E9022598D03002E656E /* rateFoodViewController.swift */; };
 		44AB154D225D94CF004E070A /* 07891284.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44AB154C225D8F44004E070A /* 07891284.ttf */; };
 		44B52F8422D9FDC700CF730D /* Onboarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B52F8322D9FDC700CF730D /* Onboarding1ViewController.swift */; };
@@ -217,6 +225,14 @@
 		449ACB12226110B400C9F666 /* smileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smileView.swift; sourceTree = "<group>"; };
 		449ACB14226110B900C9F666 /* handDrawnFaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = handDrawnFaceView.swift; sourceTree = "<group>"; };
 		449ACB16226110F300C9F666 /* customFaceARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customFaceARViewController.swift; sourceTree = "<group>"; };
+		44A40FFA22E98755002289AD /* little dude2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude2.png"; sourceTree = "<group>"; };
+		44A40FFB22E98755002289AD /* little dude3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude3.png"; sourceTree = "<group>"; };
+		44A40FFC22E98755002289AD /* little dude5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude5.png"; sourceTree = "<group>"; };
+		44A40FFD22E98755002289AD /* little dude6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude6.png"; sourceTree = "<group>"; };
+		44A40FFE22E98755002289AD /* little dude8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude8.png"; sourceTree = "<group>"; };
+		44A40FFF22E98755002289AD /* little dude4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude4.png"; sourceTree = "<group>"; };
+		44A4100022E98755002289AD /* little dude1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude1.png"; sourceTree = "<group>"; };
+		44A4100122E98755002289AD /* little dude7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "little dude7.png"; sourceTree = "<group>"; };
 		44A63E9022598D03002E656E /* rateFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateFoodViewController.swift; sourceTree = "<group>"; };
 		44AB154C225D8F44004E070A /* 07891284.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07891284.ttf; sourceTree = "<group>"; };
 		44B52F8322D9FDC700CF730D /* Onboarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1ViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +389,14 @@
 		4483901A22C7CDE4002F8D2E /* Placeholder Images */ = {
 			isa = PBXGroup;
 			children = (
+				44A4100022E98755002289AD /* little dude1.png */,
+				44A40FFA22E98755002289AD /* little dude2.png */,
+				44A40FFB22E98755002289AD /* little dude3.png */,
+				44A40FFF22E98755002289AD /* little dude4.png */,
+				44A40FFC22E98755002289AD /* little dude5.png */,
+				44A40FFD22E98755002289AD /* little dude6.png */,
+				44A4100122E98755002289AD /* little dude7.png */,
+				44A40FFE22E98755002289AD /* little dude8.png */,
 				44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */,
 				4483902022C7D187002F8D2E /* Loading Screens1.png */,
 				4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */,
@@ -635,6 +659,7 @@
 				44D519F0225E3301001BD7FB /* icons1.png in Resources */,
 				443B66E822906064007DDACC /* eyesShut_browDownLeft.png in Resources */,
 				443B66E222906051007DDACC /* eyeLookUpLeft_browOuterUpLeft.png in Resources */,
+				44A4100322E98755002289AD /* little dude3.png in Resources */,
 				44497FC622DCD4BF007CE3D3 /* screen2_block1_B.jpg in Resources */,
 				44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */,
 				44B5300022DA213800CF730D /* b3.jpg in Resources */,
@@ -654,15 +679,18 @@
 				443B66D822906034007DDACC /* eyeLookInLeft_browDownLeft.png in Resources */,
 				44497FBE22DCD132007CE3D3 /* areYouReady1B.jpg in Resources */,
 				44B52FEF22DA14C000CF730D /* shakeMe.jpg in Resources */,
+				44A4100422E98755002289AD /* little dude5.png in Resources */,
 				44497FB622DCCEDE007CE3D3 /* screen2_block2_B.jpg in Resources */,
 				44C313C122E8D9BD002FB0AC /* detailTopNew.xib in Resources */,
 				44C313C922E90988002FB0AC /* girl_and_pizza.jpeg in Resources */,
+				44A4100522E98755002289AD /* little dude6.png in Resources */,
 				443B66EE22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png in Resources */,
 				449613CD22DC9CD6001CCE37 /* rice.jpeg in Resources */,
 				44B52FFC22DA213800CF730D /* b4.jpg in Resources */,
 				44497FB822DCCEE4007CE3D3 /* screen2_block3_B.jpg in Resources */,
 				44497FBA22DCD058007CE3D3 /* screen3_B.jpg in Resources */,
 				449613D222DC9E66001CCE37 /* preTarget2.jpg in Resources */,
+				44A4100722E98755002289AD /* little dude4.png in Resources */,
 				4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */,
 				4483901622C731E6002F8D2E /* onboarding1.png in Resources */,
 				44D519F2225E3301001BD7FB /* icons3.png in Resources */,
@@ -678,6 +706,7 @@
 				44D519F1225E3301001BD7FB /* icons2.png in Resources */,
 				443B66EC2290606F007DDACC /* eyeWideLeft_browDownLeft.png in Resources */,
 				44497FB222DCCC20007CE3D3 /* hello2.jpg in Resources */,
+				44A4100222E98755002289AD /* little dude2.png in Resources */,
 				443B66CC22906000007DDACC /* eyeBlinkLeft_browDownLeft.png in Resources */,
 				44B52FFD22DA213800CF730D /* preTry2.jpg in Resources */,
 				443C3CB422B2997600832AD1 /* Detail5ViewController.xib in Resources */,
@@ -688,7 +717,9 @@
 				44AB154D225D94CF004E070A /* 07891284.ttf in Resources */,
 				4483902122C7D187002F8D2E /* Loading Screens1.png in Resources */,
 				44497FC222DCD204007CE3D3 /* preTarget1B.jpg in Resources */,
+				44A4100622E98755002289AD /* little dude8.png in Resources */,
 				443C3CAE22B2994900832AD1 /* Detail2ViewController.xib in Resources */,
+				44A4100822E98755002289AD /* little dude1.png in Resources */,
 				443C3CB622B2A36600832AD1 /* Detail3ViewController.xib in Resources */,
 				443B66D222906019007DDACC /* eyeBlinkRight_browOuterUpLeft.png in Resources */,
 				443B66E62290605F007DDACC /* eyeOpen_browOuterUpLeft.png in Resources */,
@@ -700,6 +731,7 @@
 				443B66E02290604C007DDACC /* eyeLookUpLeft_browDownLeft.png in Resources */,
 				449613CF22DC9CF6001CCE37 /* boiled_eggs.jpeg in Resources */,
 				443B66D422906021007DDACC /* eyeLookDownLeft_browDownLeft.png in Resources */,
+				44A4100922E98755002289AD /* little dude7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

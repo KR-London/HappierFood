@@ -186,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-Pg-QoH">
-                                <rect key="frame" x="8" y="-421" width="398" height="1226"/>
+                                <rect key="frame" x="8" y="105" width="398" height="1226"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ntM-vN-9DJ">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="414"/>
@@ -264,7 +264,7 @@
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-ie-rmn">
                                         <rect key="frame" x="0.0" y="422" width="398" height="398"/>
-                                        <color key="backgroundColor" red="0.72270542380000002" green="0.57504594330000003" blue="0.32537555689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AXY-ie-rmn" secondAttribute="height" multiplier="1:1" id="l65-aR-JjL"/>
                                         </constraints>
@@ -326,12 +326,25 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wgu-Dh-CEe">
-                                <rect key="frame" x="8" y="-473" width="50" height="50"/>
+                                <rect key="frame" x="8" y="53" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="puV-qo-kPr"/>
                                     <constraint firstAttribute="height" constant="50" id="r98-1T-1GO"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G5-gk-whZ">
+                                <rect key="frame" x="8" y="527" width="398" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8G5-gk-whZ" secondAttribute="height" multiplier="1:1" id="rjl-kO-i3o"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="little dude4.png">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="happyTickled:" destination="yA6-eK-gdw" eventType="touchUpInside" id="n6V-rA-MI0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -339,9 +352,12 @@
                             <constraint firstItem="1uU-B9-gOO" firstAttribute="height" secondItem="TnP-Rc-HIy" secondAttribute="height" multiplier="0.15" id="B79-YR-oEh"/>
                             <constraint firstItem="ntM-vN-9DJ" firstAttribute="height" secondItem="TnP-Rc-HIy" secondAttribute="width" id="Dnv-6f-Uou"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="trailing" secondItem="7YX-Pg-QoH" secondAttribute="trailing" constant="8" id="Lhi-jW-RnV"/>
+                            <constraint firstItem="8G5-gk-whZ" firstAttribute="top" secondItem="AXY-ie-rmn" secondAttribute="top" id="McU-pU-kvF"/>
+                            <constraint firstItem="8G5-gk-whZ" firstAttribute="bottom" secondItem="AXY-ie-rmn" secondAttribute="bottom" id="RVQ-YC-ceY"/>
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="leading" secondItem="TnP-Rc-HIy" secondAttribute="leading" constant="8" id="aq4-t0-Zye"/>
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="top" secondItem="Wgu-Dh-CEe" secondAttribute="bottom" constant="2" id="dVZ-Mt-Y2q"/>
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="top" secondItem="TnP-Rc-HIy" secondAttribute="top" multiplier="1.1" priority="750" constant="8" id="jVq-nt-K0f"/>
+                            <constraint firstItem="8G5-gk-whZ" firstAttribute="centerX" secondItem="AXY-ie-rmn" secondAttribute="centerX" id="jnI-xA-Tlg"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="bottom" secondItem="7YX-Pg-QoH" secondAttribute="bottom" constant="8" id="uCR-aq-KKk"/>
                             <constraint firstItem="ntM-vN-9DJ" firstAttribute="centerY" secondItem="TnP-Rc-HIy" secondAttribute="centerY" multiplier="0.4" priority="750" id="yjL-mE-gcr"/>
                         </constraints>
@@ -1108,11 +1124,12 @@
         <image name="icons1.png" width="203" height="203"/>
         <image name="icons2.png" width="203" height="203"/>
         <image name="icons3.png" width="203" height="203"/>
+        <image name="little dude4.png" width="800" height="800"/>
         <image name="tick" width="86" height="86"/>
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8JQ-7V-ZRj"/>
+        <segue reference="kEo-kV-ixy"/>
         <segue reference="8Jr-l3-dhP"/>
         <segue reference="PZb-oU-Ng7"/>
         <segue reference="s13-Me-gb1"/>
