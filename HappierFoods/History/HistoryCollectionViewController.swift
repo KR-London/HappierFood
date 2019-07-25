@@ -47,9 +47,11 @@ class HistoryCollectionViewController: UICollectionViewController {
         {
             ///I'm not handling the errors here
             if indexPath.row < thisData.count {
+              
                 let fileToLoadRow = thisData[indexPath.row]
                 let fileToLoad = fileToLoadRow.filename ?? "chaos.jpg"
-                cell.displayContent(image: fileToLoad)
+                let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileToLoad)
+                cell.displayContent(image: filepath)
             }
         }
         return cell
@@ -66,26 +68,27 @@ class HistoryCollectionViewController: UICollectionViewController {
         }
         
         /// clean data
-        if let history = historyArray{
-            if historyArray!.count > 0  {
-                let historyArrayCount = historyArray!.count
-                for i in 0 ... (historyArray!.count - 1){
-                    if UIImage(named: historyArray![historyArrayCount - 1  - i].filename ?? "neverUsed") == nil
-                {
-                    context.delete(historyArray![historyArrayCount - 1 - i])
-                    do{
-                        try context.save()
-                    } catch {
-                        // Replace this implementation with code to handle the error appropriately.
-                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                        let nserror = error as NSError
-                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-                    }
-                    //historyArray.remove(at: historyArrayCount - 1 - i)
-                }
-            }
-        }
-        }
+//        if let history = historyArray{
+//            if historyArray!.count > 0  {
+//                let historyArrayCount = historyArray!.count
+//                for i in 0 ... (historyArray!.count - 1){
+//                     //   let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
+//                    if UIImage(named: historyArray![historyArrayCount - 1  - i].filename ?? "neverUsed") == nil
+//                {
+//                    context.delete(historyArray![historyArrayCount - 1 - i])
+//                    do{
+//                        try context.save()
+//                    } catch {
+//                        // Replace this implementation with code to handle the error appropriately.
+//                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                        let nserror = error as NSError
+//                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                    }
+//                    //historyArray.remove(at: historyArrayCount - 1 - i)
+//                }
+//            }
+//        }
+//        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

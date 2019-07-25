@@ -19,6 +19,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var rating = Double()
     var triedOn = Date()
     var notes = String()
+  
     
     @IBAction func instructionReminder(_ sender: UIButton) {
         onboardingRoutine()
@@ -489,7 +490,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                     cell.cellImage.isHidden = false
                   //  cell.cellImage.alpha = 1
                     let plate = foodArray[indexPath.row]
-                    let fileToLoad = plate.filename ?? "1.png"
+                    let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
                     //cell.cellImage.image = UIImage(named: "1.png")
                     cell.displayContent(image: fileToLoad)
                     cell.tickImage.isHidden = false
@@ -509,7 +510,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
                     cell.backgroundColor = UIColor.clear
                     let plate = targetArray[collectionViewSize
                         - indexPath.row - 1]
-                    let fileToLoad = plate.filename ?? "1.png"
+                    let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
                     cell.displayContent(image: fileToLoad)
                     cell.cellImage.alpha = 0.2
                     cell.tickImage.isHidden = true
@@ -539,43 +540,43 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         }
         
         /// clean data
-        if foodArray.count > 0  {
-            let foodArrayCount = foodArray.count
-            for i in 0 ... (foodArray.count - 1){
-                if UIImage(named: foodArray[foodArrayCount - 1  - i].filename ?? "neverUsed") == nil
-                {
-                    context.delete(foodArray[foodArrayCount - 1 - i])
-                    do{
-                        try context.save()
-                    } catch {
-                        // Replace this implementation with code to handle the error appropriately.
-                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                        let nserror = error as NSError
-                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-                    }
-                    foodArray.remove(at: foodArrayCount - 1 - i)
-                }
-            }
-        }
-        if targetArray.count > 0  {
-            let targetArrayCount = targetArray.count
-            for i in 0 ... targetArrayCount - 1
-            {
-                if UIImage(named: targetArray[targetArrayCount - 1  - i].filename ?? "neverUsed") == nil
-                {
-                    context.delete(targetArray[targetArrayCount - 1 - i])
-                    do{
-                        try context.save()
-                    } catch {
-                        // Replace this implementation with code to handle the error appropriately.
-                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                        let nserror = error as NSError
-                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-                    }
-                    targetArray.remove(at: targetArrayCount - 1 - i)
-                }
-            }
-        }
+//        if foodArray.count > 0  {
+//            let foodArrayCount = foodArray.count
+//            for i in 0 ... (foodArray.count - 1){
+//                if UIImage(named: foodArray[foodArrayCount - 1  - i].filename ?? "neverUsed") == nil
+//                {
+//                    context.delete(foodArray[foodArrayCount - 1 - i])
+//                    do{
+//                        try context.save()
+//                    } catch {
+//                        // Replace this implementation with code to handle the error appropriately.
+//                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                        let nserror = error as NSError
+//                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                    }
+//                    foodArray.remove(at: foodArrayCount - 1 - i)
+//                }
+//            }
+//        }
+//        if targetArray.count > 0  {
+//            let targetArrayCount = targetArray.count
+//            for i in 0 ... targetArrayCount - 1
+//            {
+//                if UIImage(named: targetArray[targetArrayCount - 1  - i].filename ?? "neverUsed") == nil
+//                {
+//                    context.delete(targetArray[targetArrayCount - 1 - i])
+//                    do{
+//                        try context.save()
+//                    } catch {
+//                        // Replace this implementation with code to handle the error appropriately.
+//                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                        let nserror = error as NSError
+//                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                    }
+//                    targetArray.remove(at: targetArrayCount - 1 - i)
+//                }
+//            }
+//        }
     }
     
     

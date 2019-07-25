@@ -39,7 +39,8 @@ class CelebrationCollectionViewController: UICollectionViewController {
         // I'm not handling the errors here
         if indexPath.row < 9{
                 let fileToLoad = foodArray[indexPath.row].filename ?? "chaos.jpg"
-                cell.displayContent(image: fileToLoad)
+                let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileToLoad)
+                cell.displayContent(image: filepath)
                 cell.tickImage.isHidden = false
         }
         return cell

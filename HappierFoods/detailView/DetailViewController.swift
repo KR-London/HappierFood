@@ -41,7 +41,8 @@ class DetailViewController: UIViewController{
         weak var main = navigationController?.viewControllers[0] as? mainViewController
         presentState = (main?.myNav?.currentStateAsString())!
         
-        foodImage.image = UIImage(named: detailToDisplay.photoFilename)
+        let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
+        foodImage.image = UIImage(named: filepath)
         faceContainer.mouthCurvature = -1
        // faceContainer.reloadI
 
@@ -243,7 +244,9 @@ class DetailViewController: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailToRate"{
             let dvc = segue.destination as! rateFoodViewController
-            dvc.imagePlaceholder = UIImage(named: detailToDisplay.photoFilename) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+            let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
+            dvc.imagePlaceholder = UIImage(named: filepath) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+            dvc.placeHolderImage = detailToDisplay.photoFilename
             dvc.imagePath = detailToDisplay.photoFilename
             dvc.foodName = detailToDisplay.foodName
             dvc.dateTargetSet = detailToDisplay.triedOn

@@ -171,8 +171,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                     imageExtension = "temp"
                 }
                 imageExtension = imageExtension + String(Date().timeIntervalSince1970) + ".png"
+                
+                placeHolderImage = imageExtension
             
-            imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension)
+                imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageExtension)
             }
         }
         let image2 = image.resizeImage(targetSize: CGSize(width: 300, height: 300))
@@ -187,7 +189,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             /// this bit updates the database
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-                menuItem.filename = imagePath
+                //menuItem.filename = imagePath
+                menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
@@ -220,7 +223,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
                 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-                menuItem.filename = imagePath
+                menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
@@ -239,7 +242,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-                menuItem.filename = imagePath
+                menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
@@ -256,7 +259,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         case "SetTargetViewController":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
-                menuItem.filename = imagePath
+                menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.dateAdded = Date()
                 menuItem.motivation = notes
@@ -272,7 +275,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             /// this bit updates the database
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-                menuItem.filename = imagePath
+                menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.dateTried = Date()
@@ -288,7 +291,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         case "First Target":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
-                menuItem.filename = imagePath
+                menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.dateAdded = Date()
                 menuItem.motivation = notes
