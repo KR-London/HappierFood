@@ -38,6 +38,34 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 
     @IBAction func nameOfFoodInput(_ sender: Any) {
         foodName = nameOfFood.text ?? ""
+        
+        if image == nil {
+            ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            
+            if UIImage(named: foodName + ".jpeg") == nil
+            {
+                placeholderImage = "databasePlaceholderImage.001.jpeg"
+            }
+            else
+            {
+                placeholderImage = foodName + ".jpeg"
+            }
+        }
+        
+        if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg"){
+            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            
+            if UIImage(named: foodName + ".jpeg") == nil
+            {
+                placeholderImage = "databasePlaceholderImage.001.jpeg"
+            }
+            else
+            {
+                placeholderImage = foodName + ".jpeg"
+            }
+        }
+        
         performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
     }
 
@@ -115,16 +143,32 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
        // publicInformationBroadcast.isHidden = false
         previewView.isHidden = true
         captureImageView.isHidden = true
-        if image == nil {
-            ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
-            image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
-            placeholderImage = "databasePlaceholderImage.001.jpeg"
-        }
-        
-        if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg"){
-            image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
-            placeholderImage = "databasePlaceholderImage.001.jpeg"
-        }
+//        if image == nil {
+//            ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
+//            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+//
+//            if UIImage(named: foodName + ".jpeg") == nil
+//            {
+//                placeholderImage = "databasePlaceholderImage.001.jpeg"
+//            }
+//            else
+//            {
+//                placeholderImage = foodName + ".jpeg"
+//            }
+//        }
+//
+//        if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg"){
+//            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+//
+//            if UIImage(named: foodName + ".jpeg") == nil
+//            {
+//                placeholderImage = "databasePlaceholderImage.001.jpeg"
+//            }
+//            else
+//            {
+//                placeholderImage = foodName + ".jpeg"
+//            }
+//        }
         captureImageView.isHidden = true
         writtenInputElements.isHidden = false
     }
@@ -170,6 +214,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier != "back" {
             if let dvc1 = segue.destination as? rateFoodViewController {
+                print(foodName + ".jpeg")
                 dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
                 dvc1.foodName = foodName
                 dvc1.placeHolderImage = placeholderImage
