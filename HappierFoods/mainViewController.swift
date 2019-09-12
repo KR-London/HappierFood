@@ -64,7 +64,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 photoFilename = targetArray[collectionViewSize - buttonTag - 1 ].filename ?? "chaos.jpg"
                 foodName = targetArray[collectionViewSize - buttonTag - 1 ].name ?? ""
                 rating = 0.0
-                triedOn = targetArray[9 - buttonTag - 1 ].dateAdded!
+                triedOn = targetArray[collectionViewSize - buttonTag - 1 ].dateAdded!
                 notes = targetArray[collectionViewSize - buttonTag - 1 ].motivation ?? " "
                 myNav!.presentState = .SetTargetViewController
                 performSegue(withIdentifier: "expandDetail", sender: sender)
@@ -547,60 +547,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         catch{
             print("Error fetching data \(error)")
         }
-        
-        /// clean data
-//        if foodArray.count > 0  {
-//            let foodArrayCount = foodArray.count
-//            for i in 0 ... (foodArray.count - 1){
-//                if UIImage(named: foodArray[foodArrayCount - 1  - i].filename ?? "neverUsed") == nil
-//                {
-//                    context.delete(foodArray[foodArrayCount - 1 - i])
-//                    do{
-//                        try context.save()
-//                    } catch {
-//                        // Replace this implementation with code to handle the error appropriately.
-//                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                        let nserror = error as NSError
-//                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//                    }
-//                    foodArray.remove(at: foodArrayCount - 1 - i)
-//                }
-//            }
-//        }
-//        if targetArray.count > 0  {
-//            let targetArrayCount = targetArray.count
-//            for i in 0 ... targetArrayCount - 1
-//            {
-//                if UIImage(named: targetArray[targetArrayCount - 1  - i].filename ?? "neverUsed") == nil
-//                {
-//                    context.delete(targetArray[targetArrayCount - 1 - i])
-//                    do{
-//                        try context.save()
-//                    } catch {
-//                        // Replace this implementation with code to handle the error appropriately.
-//                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                        let nserror = error as NSError
-//                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//                    }
-//                    targetArray.remove(at: targetArrayCount - 1 - i)
-//                }
-//            }
-//        }
     }
-    
-    
-//    func getPlist(withName name: String) -> [AnyObject]?
-//    {
-//        if  let path = Bundle.main.path(forResource: name, ofType: "plist"),
-//            let xml = FileManager.default.contents(atPath: path)
-//        {
-//            return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [AnyObject]
-//        }
-//
-//        return nil
-//    }
-//
-
   
 }
 

@@ -64,22 +64,24 @@ class DetailViewController: UIViewController{
         
         moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
-//        switch detailToDisplay.rating {
-//        case -1...(-0.7) :
-//            topFace.image = UIImage(named: "eyesShut_browDownLeft.png")
-//        case -0.7...(-0.4) :
-//            topFace.image = UIImage(named: "eyesLookUpLeft_browDownLeft.png")
-//        case -0.4...(-0.1) :
-//            topFace.image = UIImage(named: "eyesLookOutLeft_browOuterUpLeft.png")
-//        case 0.1...(0.4) :
-//             topFace.image = UIImage(named: "eyesWideLeft_browDownLeft.png")
-//        case 0.4...(0.7) :
-//            topFace.image = UIImage(named: "eyesBlinkLeft_browOuterUpLeft.png")
-//        case 0.7...1 :
-//            topFace.image = UIImage(named: "eyesLookUpLeft_browOuterUpLeft.png")
-//        default:
-//            topFace.image = UIImage(named: "eyesOpen_browDownLeft.png")
-//        }
+        switch detailToDisplay.rating {
+        case -1...(-0.7) :
+            topFace.image = UIImage(named: "eyesShut_browDownLeft.png")
+        case -0.7...(-0.4) :
+            topFace.image = UIImage(named: "eyeLookUpLeft_browDownLeft.png")
+        case -0.4...(-0.1) :
+            topFace.image = UIImage(named: "eyeLookOutLeft_browOuterUpLeft.png")
+        case 0.1...(0.4) :
+             topFace.image = UIImage(named: "eyeWideLeft_browDownLeft.png")
+        case 0.4...(0.7) :
+            topFace.image = UIImage(named: "eyeBlinkLeft_browOuterUpLeft.png")
+        case 0.7...1 :
+            topFace.image = UIImage(named: "eyeLookUpLeft_browDownLeft.png")
+        default:
+            topFace.image = UIImage(named: "eyeOpen_browDownLeft.png")
+        }
+        
+
         
         
         

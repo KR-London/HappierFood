@@ -330,9 +330,7 @@ override func viewDidAppear(_ animated: Bool) {
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
-    print(rootViewController)
     let myNav = customNavigationController()
-    print(myNav)
    // myNav.presentState = .FirstLaunch
     //clean up 
    // rootViewController.deleteAllData("TargetFood")
@@ -367,9 +365,7 @@ override func viewDidAppear(_ animated: Bool) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
         let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
-        print(rootViewController)
         let myNav = customNavigationController()
-        print(myNav)
         rootViewController.myNav?.presentState = .AddFoodViewController
     
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController

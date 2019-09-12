@@ -23,7 +23,6 @@
 		4425CAF3225E6D1200A6DEE6 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4425CAF2225E6D1200A6DEE6 /* button.png */; };
 		44329E9322DE1225002DA0FA /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */; };
 		44329E9722DE292D002DA0FA /* HistoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */; };
-		443B2F9922DF5EDE0024EC6E /* historyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B2F9822DF5EDE0024EC6E /* historyCollectionViewLayout.swift */; };
 		443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B66BF228EBD48007DDACC /* historyViewController.swift */; };
 		443B66CA22905FB4007DDACC /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66C922905FB4007DDACC /* face.png */; };
 		443B66CC22906000007DDACC /* eyeBlinkLeft_browDownLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66CB22905FFF007DDACC /* eyeBlinkLeft_browDownLeft.png */; };
@@ -215,7 +214,6 @@
 		4425CAF2225E6D1200A6DEE6 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewController.swift; sourceTree = "<group>"; };
-		443B2F9822DF5EDE0024EC6E /* historyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyCollectionViewLayout.swift; sourceTree = "<group>"; };
 		443B66BF228EBD48007DDACC /* historyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		443B66C922905FB4007DDACC /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
 		443B66CB22905FFF007DDACC /* eyeBlinkLeft_browDownLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeBlinkLeft_browDownLeft.png; sourceTree = "<group>"; };
@@ -433,7 +431,6 @@
 			isa = PBXGroup;
 			children = (
 				4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */,
-				443B2F9822DF5EDE0024EC6E /* historyCollectionViewLayout.swift */,
 				44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */,
 				44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */,
 				443B66BF228EBD48007DDACC /* historyViewController.swift */,
@@ -541,7 +538,7 @@
 			path = "Emoji Face Views and Controllers";
 			sourceTree = "<group>";
 		};
-		4496896F22EA5AD300224601 /* New Group */ = {
+		4496896F22EA5AD300224601 /* Food Photos */ = {
 			isa = PBXGroup;
 			children = (
 				44A75AD422EA6805007AE545 /* avocado.jpeg */,
@@ -583,7 +580,7 @@
 				44A75AC222EA6804007AE545 /* yoghurt.jpeg */,
 				44A75ABC22EA6803007AE545 /* zucchini.jpeg */,
 			);
-			path = "New Group";
+			path = "Food Photos";
 			sourceTree = "<group>";
 		};
 		44B52F7E22D9EDCB00CF730D /* OnboardingHandwrittenLetter */ = {
@@ -674,7 +671,7 @@
 				44329E9522DE28EF002DA0FA /* Celebration */,
 				44329E9422DE28DD002DA0FA /* History */,
 				446D220822CA487200FF56E3 /* HappierFoods.xcdatamodeld */,
-				4496896F22EA5AD300224601 /* New Group */,
+				4496896F22EA5AD300224601 /* Food Photos */,
 				4483901F22C7D103002F8D2E /* Emoji Face Views and Controllers */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
 				4483901922C7CD93002F8D2E /* Face Graphics */,
@@ -1078,7 +1075,6 @@
 				44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */,
 				44B52FF522DA211900CF730D /* preTryViewController.swift in Sources */,
 				44329E9322DE1225002DA0FA /* HistoryCollectionViewCell.swift in Sources */,
-				443B2F9922DF5EDE0024EC6E /* historyCollectionViewLayout.swift in Sources */,
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				44C313C322E8DE58002FB0AC /* DetailTopViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,

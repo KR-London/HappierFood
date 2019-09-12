@@ -25,7 +25,6 @@ class WeekHeaderView: UICollectionReusableView {
     @IBOutlet weak var weekLabel: UILabel!
     
     func myCustomInit() {
-        print("hello there from SupView")
         backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
         
        // R95 G215 B176

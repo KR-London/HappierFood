@@ -215,19 +215,7 @@ class preTargetViewController: UINavigationController {
         
         
         let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
-        print(rootViewController)
         let myNav = customNavigationController()
-        print(myNav)
-        
-        //clean up
-    //    rootViewController.deleteAllData("TargetFood")
-    //    rootViewController.deleteAllData("TriedFood")
-        //deleteAllData("HistoryTriedFoods")
-        
-//        rootViewController.foodArray = []
-//        rootViewController.targetArray = []
-//        defaults.set(0.0, forKey: "Last Week Started")
-//        defaults.set(false, forKey: "Celebration Status")
         
         rootViewController.myNav?.presentState = .SetTargetViewController
         
