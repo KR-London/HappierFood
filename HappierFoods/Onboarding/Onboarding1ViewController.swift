@@ -48,7 +48,7 @@ class Onboarding1ViewController: UINavigationController {
         let margins = view.layoutMarginsGuide
         
         view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
-        
+        self.navigationBar.isHidden = true
   
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
