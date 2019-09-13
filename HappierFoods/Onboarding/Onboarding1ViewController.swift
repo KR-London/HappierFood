@@ -111,7 +111,7 @@ class Onboarding1ViewController: UINavigationController {
                 moveOnButton.bottomAnchor.constraint(lessThanOrEqualTo: margins.bottomAnchor),
                 moveOnButton.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.8),
                 moveOnButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                moveOnButton.heightAnchor.constraint(equalTo: block2.heightAnchor)
+                moveOnButton.heightAnchor.constraint(equalTo: block2.heightAnchor, multiplier: 0.6)
                /// moveOnButton.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 5/8),
                 //moveOnButton.topAnchor.constraint(greaterThanOrEqualTo: block3.bottomAnchor, constant: 10)
             ]
@@ -134,7 +134,7 @@ class Onboarding1ViewController: UINavigationController {
                 block2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant:spacer),
                 block3.topAnchor.constraint(equalTo: block2.bottomAnchor, constant:spacer),
                 moveOnButton.topAnchor.constraint(equalTo: block3.bottomAnchor, constant:spacer),
-                moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant:spacer)
+                moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -2*spacer)
             ]
         )
 }
