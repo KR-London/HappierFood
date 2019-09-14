@@ -195,6 +195,7 @@ lazy var block2: UIImageView = {
 override func viewDidLoad() {
            view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
       let margins = view.layoutMarginsGuide
+    self.navigationBar.isHidden = true
     view.addSubview(block1)
     block1.translatesAutoresizingMaskIntoConstraints = false
     block1.alpha = 0
