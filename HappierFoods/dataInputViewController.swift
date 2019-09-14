@@ -450,9 +450,9 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         /// MARK: Set up nav bar items
         
         let navBarHeight = navigationController?.navigationBar.frame.height
-        
+        print("navbar height is", navBarHeight)
         let shareButton = UIButton(type: .system)
-        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
+        shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 0.5*(navBarHeight ?? 100),height: navBarHeight ?? 100 )), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         

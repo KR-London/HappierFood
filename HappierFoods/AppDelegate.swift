@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
  
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+       // let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
-     //let launchedBefore = false
+     let launchedBefore = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
