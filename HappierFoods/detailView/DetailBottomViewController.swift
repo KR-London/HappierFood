@@ -13,6 +13,7 @@ class DetailBottomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("I am in the bottom")
         // Do any additional setup after loading the view.
     }
 }

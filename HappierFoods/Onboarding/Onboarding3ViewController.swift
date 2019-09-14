@@ -37,10 +37,12 @@ class Onboarding3ViewController: UINavigationController {
         block1.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
-                block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
+              //  block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block1.topAnchor.constraint(equalTo: margins.topAnchor),
-                block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8),
+               // block1.topAnchor.constraint(equalTo: margins.topAnchor),
+                block1.heightAnchor.constraint(lessThanOrEqualTo: margins.heightAnchor, multiplier: 0.8*(676/888)),
+                block1.widthAnchor.constraint(lessThanOrEqualTo: margins.widthAnchor),
+                block1.widthAnchor.constraint(equalTo: block1.heightAnchor, multiplier: 583/616)
             ]
         )
         

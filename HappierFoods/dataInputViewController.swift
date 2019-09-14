@@ -447,6 +447,10 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     
     func setUpNavigationBarItems(){
 
+        /// MARK: Set up nav bar items
+        
+        let navBarHeight = navigationController?.navigationBar.frame.height
+        
         let shareButton = UIButton(type: .system)
         shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)

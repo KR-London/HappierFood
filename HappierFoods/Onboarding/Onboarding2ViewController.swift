@@ -54,10 +54,12 @@ class Onboarding2ViewController: UINavigationController {
         block1.alpha = 0
         NSLayoutConstraint.activate(
             [
-                block1.topAnchor.constraint(equalTo: margins.topAnchor),
-                block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                //block1.topAnchor.constraint(equalTo: margins.topAnchor),
+                block1.widthAnchor.constraint(lessThanOrEqualTo: margins.widthAnchor),
                 block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8/3)
+                //block1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8/3)
+                block1.heightAnchor.constraint(lessThanOrEqualTo: margins.heightAnchor, multiplier: 0.8/3),
+                block1.widthAnchor.constraint(equalTo: block1.heightAnchor, multiplier: 640/296),
             ]
         )
         view.addSubview(block2)
@@ -65,10 +67,13 @@ class Onboarding2ViewController: UINavigationController {
         block2.alpha = 0
         NSLayoutConstraint.activate(
             [
-                block2.topAnchor.constraint(equalTo: block1.bottomAnchor),
-                block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                //block2.topAnchor.constraint(equalTo: block1.bottomAnchor),
+                //block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block2.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8/3)
+                //block2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8/3)
+                block2.heightAnchor.constraint(lessThanOrEqualTo: margins.heightAnchor, multiplier: (0.8/3)),
+                block2.widthAnchor.constraint(lessThanOrEqualTo: margins.widthAnchor),
+                block2.widthAnchor.constraint(equalTo: block2.heightAnchor, multiplier: 640/296)
             ]
         )
         
@@ -77,10 +82,13 @@ class Onboarding2ViewController: UINavigationController {
         block3.alpha = 0
         NSLayoutConstraint.activate(
             [
-                block3.topAnchor.constraint(equalTo: block2.bottomAnchor),
-                block3.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                //block3.topAnchor.constraint(equalTo: block2.bottomAnchor),
+                //block3.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block3.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block3.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.8/3)
+                block3.heightAnchor.constraint(lessThanOrEqualTo: margins.heightAnchor, multiplier: 0.8/3),
+                
+                block3.widthAnchor.constraint(lessThanOrEqualTo: margins.widthAnchor),
+                block3.widthAnchor.constraint(equalTo: block3.heightAnchor, multiplier: 640/296)
             ]
         )
         
@@ -105,6 +113,26 @@ class Onboarding2ViewController: UINavigationController {
                 happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor),
                 happy.heightAnchor.constraint(equalToConstant: 150),
                 happy.widthAnchor.constraint(equalToConstant: 150),
+            ]
+        )
+        
+        let ratio: CGFloat = (296*4/640)
+        let contentSize = self.view.frame.width*ratio
+        // let content = ( self.view.frame.width as CGFloat)*ratio
+        let spacer = ( self.view.frame.height - contentSize )/6
+        //let spacer = CGFloat(0)
+        print(self.view.frame.height)
+        // print("total heights = ", totalHeights)
+        //   print("spacer = ", spacer)
+        
+        
+        NSLayoutConstraint.activate(
+            [
+                block1.topAnchor.constraint(equalTo: margins.topAnchor, constant:spacer),
+                block2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant:spacer),
+                block3.topAnchor.constraint(equalTo: block2.bottomAnchor, constant:spacer),
+                moveOnButton.topAnchor.constraint(equalTo: block3.bottomAnchor, constant:spacer),
+                moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -2*spacer)
             ]
         )
         

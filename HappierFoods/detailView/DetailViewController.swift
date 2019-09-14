@@ -49,6 +49,8 @@ class DetailViewController: UIViewController{
         
         let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
         foodImage.image = UIImage(named: filepath)
+        notesOutlet.borderStyle = UITextField.BorderStyle.none
+        notesOutlet.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 )
         
         if detailToDisplay.notes == nil || detailToDisplay.notes == ""
         {
