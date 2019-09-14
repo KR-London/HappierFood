@@ -88,9 +88,10 @@ class Onboarding2ViewController: UINavigationController {
         NSLayoutConstraint.activate(
             [
                 moveOnButton.topAnchor.constraint(equalTo: block3.bottomAnchor),
-                moveOnButton.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                moveOnButton.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.9),
                 moveOnButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                moveOnButton.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1/6 )            ]
+                moveOnButton.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1/6 )
+            ]
         )
         
         view.addSubview(happy)
