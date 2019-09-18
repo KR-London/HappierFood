@@ -53,7 +53,7 @@ class smileView: UIView {
     
     public func drawSmile(mouthCurve: Double){
       //  privateDrawSmile(mouthCurve: mouthCurve).stroke()
-        pathForMouth().removeAllPoints()
+        pathForMouth().stroke()
     }
 //
 //    func privateDrawSmile(mouthCurve: Double) -> UIBezierPath{

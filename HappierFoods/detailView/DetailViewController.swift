@@ -41,8 +41,10 @@ class DetailViewController: UIViewController{
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         loadItems()
+        
         weak var main = navigationController?.viewControllers[0] as? mainViewController
         presentState = (main?.myNav?.currentStateAsString())!
         
@@ -51,14 +53,11 @@ class DetailViewController: UIViewController{
         notesOutlet.borderStyle = UITextField.BorderStyle.none
         notesOutlet.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 )
         
-        if detailToDisplay.notes == ""
-        {
+        if detailToDisplay.notes == "" {
             notesOutlet.isHidden = true
         }
-        else
-        {
+        else {
             notesOutlet.isHidden = false
-
         }
         
         // MARK: Colour
@@ -88,23 +87,22 @@ class DetailViewController: UIViewController{
         }
         else {
             //foodNameOutlet.text = "No food name stored, but"
+            let unknownFood = ["Thingi-mi-bob", "Whatsit", "This", "That thing"]
+            foodNameOutlet.text = unknownFood.randomElement()!
         }
 
         var countOfThisFood = Int()
 
         if foodName == "" {
-            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
-            {
+            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
                 countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename }).count
             }
-            else
-            {
+            else {
                 countOfThisFood = 1
             }
         }
         else{
-            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
-            {
+            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
                 countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
             }
             else{
@@ -112,19 +110,26 @@ class DetailViewController: UIViewController{
             }
         }
 
-        if let history = historyArray{
-            if foodName == "" {
+        if let history = historyArray
+        {
+            
+            if foodName == ""
+            {
+                
                 if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
                 {
                     countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename }).count
                 }
             }
-             else{
+            else
+            {
+                
                 if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
                 {
                     countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
                 }
-                else{
+                else
+                {
                     countOfThisFood = countOfThisFood + history.filter({ $0.name == detailToDisplay.foodName }).count
                 }
             }
@@ -132,60 +137,34 @@ class DetailViewController: UIViewController{
 
         if countOfThisFood == 1
         {
-           numberOfTries.text = "tried once."
+            
+           numberOfTries.text = ", tried once."
         }
         else
         {
-             numberOfTries.text = "tried \(countOfThisFood) times."
+            
+             numberOfTries.text = ", tried \(countOfThisFood) times."
         }
 
-
-        if presentState == "AddFoodViewController" {
-            faceContainer.isHidden = false
+        if presentState == "AddFoodViewController"
+        {
+           // faceContainer.isHidden = false
            // faceContainer.mouthCurvature = detailToDisplay.rating
-            faceContainer.drawSmile(mouthCurve: detailToDisplay.rating)
+            //faceContainer.drawSmile(mouthCurve: detailToDisplay.rating)
+            //faceContainer.drawSmile(mouthCurve: <#T##Double#>)
         }
-        else  {
+        else
+        {
             faceContainer.isHidden = true
         }
 
         notesOutlet.text = detailToDisplay.notes
-//
-//        detail5VC.detailToDisplay = detailToDisplay
-//        detail5VC.buttonPress( handler:  {[weak self] value in
-//
-//        if main?.myNav?.presentState == .AddFoodViewController{
-//                main?.myNav?.presentState = .RetryTriedFood
-//                }
-//           else{
-//                if main?.myNav?.presentState == .SetTargetViewController{
-//                    main?.myNav?.presentState = .ConvertTargetToTry
-//                }
-//                else {
-//                    main?.myNav?.presentState = .Unknown
-//                }
-//            }
-//
-//            self!.performSegue(withIdentifier: "detailToRate", sender: UIButton())
-//
-//        })
-//
-//        switch main!.myNav!.presentState {
-//        case .AddFoodViewController:
-//            detail5VC.tryButton.setTitle("Try it again?", for: .normal)
-//        case .SetTargetViewController:
-//            detail5VC.tryButton.setTitle("Try this food?", for: .normal)
-//        default:
-//            detail5VC.tryButton.setTitle("Bug", for: .normal)
-//        }
-        
         setUpNavigationBarItems()
-        
- 
     }
 
     
     func setUpNavigationBarItems(){
+        
         let deleteButton = UIButton(type: .system)
         deleteButton.setTitle("Delete", for: .normal)
         deleteButton.titleLabel?.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 )
@@ -200,7 +179,6 @@ class DetailViewController: UIViewController{
     @objc func delete(sender: UIButton!){
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
-        
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         switch presentState{
@@ -210,14 +188,6 @@ class DetailViewController: UIViewController{
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTried)
-                
-//                let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
-//                do{
-//                    try foodArray = context.fetch(request2)
-//                }
-//                catch{
-//                    print("Error fetching data \(error)")
-//                }
                 
                 let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.dateTried!)}
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
@@ -286,16 +256,6 @@ class DetailViewController: UIViewController{
             dvc.existingMotivationText = detailToDisplay.notes
         }
         
-     //   if segue.identifier == "faceSegue" {
-         //   if let customFaceController = segue.destination as? customFaceARViewController{
-                // self.customFaceController = customFaceController
-//                customFaceController.sliderFeedback( handler:  {[weak self] value in
-//                    self?.rating = Double(-1 + 2*value )
-             //   guard let dvc = segue.destination as! customFaceARViewController
-             //       else {  dvc.updateUI(-1)}
-              //  }
-         //   }
-      //  }
     }
     
     /// MARK: Setup
@@ -315,18 +275,7 @@ class DetailViewController: UIViewController{
         catch{
             print("Error fetching data \(error)")
         }
-   
-        
-    
-        
-//        switch main!.myNav!.presentState {
-//        case .AddFoodViewController:
-//            detail5VC.tryButton.setTitle("Try it again?", for: .normal)
-//        case .SetTargetViewController:
-//            detail5VC.tryButton.setTitle("Try this food?", for: .normal)
-//        default:
-//            detail5VC.tryButton.setTitle("Bug", for: .normal)
-//        }
+
     }
     
     func tryItAgain(){

@@ -18,6 +18,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face.png" translatesAutoresizingMaskIntoConstraints="NO" id="Icc-iL-AiT">
                     <rect key="frame" x="0.0" y="448" width="414" height="414"/>
+                    <color key="backgroundColor" red="0.72941176470000002" green="0.94901960780000005" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Icc-iL-AiT" secondAttribute="height" multiplier="1:1" id="xU9-hb-zdc"/>
                     </constraints>
@@ -25,7 +26,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="eyeLookOutLeft_browDownLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="06Y-xP-9JF">
                     <rect key="frame" x="0.0" y="44" width="414" height="206"/>
                 </imageView>
-                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-Zo-8Ej" customClass="FaceView" customModule="HappierFoods" customModuleProvider="target">
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-Zo-8Ej">
                     <rect key="frame" x="0.0" y="44" width="414" height="414"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
