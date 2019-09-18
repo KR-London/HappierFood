@@ -214,7 +214,7 @@ override func viewDidLoad() {
     b1.alpha = 0
     NSLayoutConstraint.activate(
         [
-            b1.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 10),
+            b1.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: view.frame.width/100),
             b1.widthAnchor.constraint(equalTo: b1.heightAnchor),
            // b1.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             b1.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 20),
@@ -228,7 +228,7 @@ override func viewDidLoad() {
     b2.alpha = 0
     NSLayoutConstraint.activate(
         [
-            b2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: 10),
+            b2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant: view.frame.width/100),
             b2.widthAnchor.constraint(equalTo: b2.heightAnchor),
             //b2.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             b2.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -20),
@@ -269,7 +269,7 @@ override func viewDidLoad() {
     block2.alpha = 0
     NSLayoutConstraint.activate(
         [
-            block2.topAnchor.constraint(equalTo: b3.bottomAnchor, constant: 10),
+            block2.topAnchor.constraint(equalTo: b3.bottomAnchor, constant: view.frame.width/100),
             block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
             block2.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
             block2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.25)
@@ -280,8 +280,8 @@ override func viewDidLoad() {
     happy.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate(
         [
-            happy.bottomAnchor.constraint(equalTo: block2.bottomAnchor),
-            happy.trailingAnchor.constraint(equalTo: block2.trailingAnchor),
+            happy.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 5),
+            happy.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 40),
             happy.heightAnchor.constraint(equalToConstant: 150),
             happy.widthAnchor.constraint(equalToConstant: 150),
         ]

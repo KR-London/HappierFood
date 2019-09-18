@@ -63,17 +63,7 @@ class Onboarding2ViewController: UINavigationController {
         )
         
         
-        view.addSubview(happy)
-        // view.sendSubviewToBack(happy)
-        happy.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(
-            [
-                happy.centerYAnchor.constraint(equalTo: block1.bottomAnchor, constant: 0),
-                happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor, constant: 45),
-                happy.heightAnchor.constraint(equalToConstant: 150),
-                happy.widthAnchor.constraint(equalToConstant: 150),
-            ]
-        )
+       
         
         view.addSubview(block2)
         block2.translatesAutoresizingMaskIntoConstraints = false
@@ -85,6 +75,7 @@ class Onboarding2ViewController: UINavigationController {
                 block2.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 290/545)
             ]
         )
+
 
         
         view.addSubview(block3)
@@ -98,7 +89,17 @@ class Onboarding2ViewController: UINavigationController {
             ]
         )
         
-        
+        view.addSubview(happy)
+        // view.sendSubviewToBack(happy)
+        happy.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                happy.centerYAnchor.constraint(equalTo: block2.bottomAnchor, constant: 0),
+                happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor, constant: 40),
+                happy.heightAnchor.constraint(equalToConstant: 120),
+                happy.widthAnchor.constraint(equalToConstant: 120),
+            ]
+        )
      
         
         self.view.addSubview(moveOnButton)
