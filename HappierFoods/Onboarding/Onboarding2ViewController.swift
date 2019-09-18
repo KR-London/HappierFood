@@ -19,19 +19,19 @@ class Onboarding2ViewController: UINavigationController {
 
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "text 2 1.png")
+        contentView.image = UIImage(named: "9.png")
         return contentView
     }()
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "text 2 2.png")
+        contentView.image = UIImage(named: "8.png")
         return contentView
     }()
     
     lazy var block3: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "text 2 3.png")
+        contentView.image = UIImage(named: "2.png")
         return contentView
     }()
     
@@ -49,6 +49,8 @@ class Onboarding2ViewController: UINavigationController {
          self.navigationBar.isHidden = true
          let margins = view.layoutMarginsGuide
                view.backgroundColor = UIColor(red: 224, green: 250, blue: 233, alpha: 1)
+        
+     
         view.addSubview(block1)
         block1.translatesAutoresizingMaskIntoConstraints = false
         block1.alpha = 0
@@ -56,9 +58,23 @@ class Onboarding2ViewController: UINavigationController {
             [
                 block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block1.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 296/640)
+                block1.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 290/545)
             ]
         )
+        
+        
+        view.addSubview(happy)
+        // view.sendSubviewToBack(happy)
+        happy.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                happy.centerYAnchor.constraint(equalTo: block1.bottomAnchor, constant: 0),
+                happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor, constant: 45),
+                happy.heightAnchor.constraint(equalToConstant: 150),
+                happy.widthAnchor.constraint(equalToConstant: 150),
+            ]
+        )
+        
         view.addSubview(block2)
         block2.translatesAutoresizingMaskIntoConstraints = false
         block2.alpha = 0
@@ -66,9 +82,10 @@ class Onboarding2ViewController: UINavigationController {
             [
                 block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block2.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block2.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 296/640)
+                block2.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 290/545)
             ]
         )
+
         
         view.addSubview(block3)
         block3.translatesAutoresizingMaskIntoConstraints = false
@@ -77,9 +94,12 @@ class Onboarding2ViewController: UINavigationController {
             [
                 block3.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block3.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block3.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 296/640)
+                block3.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 227/545)
             ]
         )
+        
+        
+     
         
         self.view.addSubview(moveOnButton)
         moveOnButton.translatesAutoresizingMaskIntoConstraints = false
@@ -94,28 +114,21 @@ class Onboarding2ViewController: UINavigationController {
             ]
         )
         
-        view.addSubview(happy)
-        happy.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(
-            [
-                happy.centerYAnchor.constraint(equalTo: block3.topAnchor, constant: -20),
-                happy.trailingAnchor.constraint(equalTo: block1.trailingAnchor, constant: 30),
-                happy.heightAnchor.constraint(equalToConstant: 150),
-                happy.widthAnchor.constraint(equalToConstant: 150),
-            ]
-        )
+    
         
-        let ratio: CGFloat = (296*3 + (self.view.frame.width/6))/640
+       // block3.bringSubviewToFront(view)
+        let ratio: CGFloat = (290*2 + 227 + (self.view.frame.width/6))/545
         let contentSize = self.view.frame.width*ratio
         let spacer = ( self.view.frame.height - contentSize )/5
+        print("spacer 2 = ", spacer)
         
         NSLayoutConstraint.activate(
             [
-                block1.topAnchor.constraint(equalTo: margins.topAnchor, constant:spacer),
-                block2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant:spacer),
-                block3.topAnchor.constraint(equalTo: block2.bottomAnchor, constant:spacer),
-                moveOnButton.topAnchor.constraint(equalTo: block3.bottomAnchor, constant:spacer),
-                moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -2*spacer)
+                block1.topAnchor.constraint(lessThanOrEqualTo: margins.topAnchor, constant:spacer),
+                block2.topAnchor.constraint(lessThanOrEqualTo: block1.bottomAnchor, constant:1.5*spacer),
+                block3.topAnchor.constraint(lessThanOrEqualTo: block2.bottomAnchor, constant:0.5*spacer),
+                moveOnButton.topAnchor.constraint(lessThanOrEqualTo: block3.bottomAnchor, constant:spacer),
+                moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -40)
             ]
         )
         

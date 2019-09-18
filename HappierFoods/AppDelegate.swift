@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
  
-       // let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+     // let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
-     let launchedBefore = false
+    let launchedBefore = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -60,10 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
       
        // BugReporting.bugReportingOptions = [.]
-     Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
+   //  Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
         
-        BugReporting.shakingThresholdForiPhone = 1.0
-        BugReporting.bugReportingOptions = [.emailFieldHidden]
+     //   BugReporting.shakingThresholdForiPhone = 1.0
+     //   BugReporting.bugReportingOptions = [.emailFieldHidden]
         //view.instabug_privateView = true
         
         return true

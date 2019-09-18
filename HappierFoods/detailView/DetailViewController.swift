@@ -37,7 +37,6 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var topFace: UIImageView!
     
     @IBAction func tryItAgainButton(_ sender: Any) {
-        
         tryItAgain()
     }
     
@@ -52,7 +51,7 @@ class DetailViewController: UIViewController{
         notesOutlet.borderStyle = UITextField.BorderStyle.none
         notesOutlet.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 )
         
-        if detailToDisplay.notes == nil || detailToDisplay.notes == ""
+        if detailToDisplay.notes == ""
         {
             notesOutlet.isHidden = true
         }
@@ -67,39 +66,29 @@ class DetailViewController: UIViewController{
         moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
         switch detailToDisplay.rating {
-        case -1...(-0.7) :
-            topFace.image = UIImage(named: "eyesShut_browDownLeft.png")
-        case -0.7...(-0.4) :
-            topFace.image = UIImage(named: "eyeLookUpLeft_browDownLeft.png")
-        case -0.4...(-0.1) :
-            topFace.image = UIImage(named: "eyeLookOutLeft_browOuterUpLeft.png")
-        case 0.1...(0.4) :
-             topFace.image = UIImage(named: "eyeWideLeft_browDownLeft.png")
-        case 0.4...(0.7) :
-            topFace.image = UIImage(named: "eyeBlinkLeft_browOuterUpLeft.png")
-        case 0.7...1 :
-            topFace.image = UIImage(named: "eyeLookUpLeft_browDownLeft.png")
-        default:
-            topFace.image = UIImage(named: "eyeOpen_browDownLeft.png")
+            case -1...(-0.7) :
+                topFace.image = UIImage(named: "eyesShut_browDownLeft.png")
+            case -0.7...(-0.4) :
+                topFace.image = UIImage(named: "eyeLookUpLeft_browDownLeft.png")
+            case -0.4...(-0.1) :
+                topFace.image = UIImage(named: "eyeLookOutLeft_browOuterUpLeft.png")
+            case 0.1...(0.4) :
+                topFace.image = UIImage(named: "eyeWideLeft_browDownLeft.png")
+            case 0.4...(0.7) :
+                topFace.image = UIImage(named: "eyeBlinkLeft_browOuterUpLeft.png")
+            case 0.7...1 :
+                topFace.image = UIImage(named: "eyeLookUpLeft_browDownLeft.png")
+            default:
+                topFace.image = UIImage(named: "eyeOpen_browDownLeft.png")
         }
-        
-
-        
-        
-        
-       // faceContainer.reloadI
 
         /// wrap this up so that it gives a placeholder when no food name provided.
         if detailToDisplay.foodName.count > 0{
             foodNameOutlet.text = detailToDisplay.foodName
         }
         else {
-            foodNameOutlet.text = "No food name stored, but"
+            //foodNameOutlet.text = "No food name stored, but"
         }
-//
-        /// I'm going to do something else - I'm going to load in from history and count the number of tries
-        ///
-        ///
 
         var countOfThisFood = Int()
 
@@ -152,8 +141,9 @@ class DetailViewController: UIViewController{
 
 
         if presentState == "AddFoodViewController" {
-             faceContainer.isHidden = false
-            faceContainer.mouthCurvature = detailToDisplay.rating
+            faceContainer.isHidden = false
+           // faceContainer.mouthCurvature = detailToDisplay.rating
+            faceContainer.drawSmile(mouthCurve: detailToDisplay.rating)
         }
         else  {
             faceContainer.isHidden = true
@@ -357,88 +347,4 @@ class DetailViewController: UIViewController{
         performSegue(withIdentifier: "detailToRate", sender: UIButton())
         
     }
-
-    
-    // MARK: Layout subroutines
-    
-//    private func setupLayoutNew( container1 : UIView, container2 : UIView) {
-//
-//        container1.translatesAutoresizingMaskIntoConstraints = false
-//        container2.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            container1.topAnchor.constraint(equalTo: self.view.topAnchor),
-//            container1.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-//            container1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container1.heightAnchor.constraint(equalTo: self.view.widthAnchor),
-//            ])
-//        NSLayoutConstraint.activate([
-//            container2.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-//            container2.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-//            container2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
-//            ])
-
-//        NSLayoutConstraint.activate([
-//            container3.topAnchor.constraint(equalTo: container2.bottomAnchor),
-//            container3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
-//            container3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
-//            ])
-//        NSLayoutConstraint.activate([
-//            container4.topAnchor.constraint(equalTo: container3.bottomAnchor),
-//            container4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-//            container4.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-//            ])
-//
-//        NSLayoutConstraint.activate([
-//            container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
-//            container5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-//            container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-//            ])
-//    }
-//
-//    private func setupLayout( container1 : UIView, container2 : UIView, container3 : UIView, container4 : UIView, container5 : UIView) {
-//
-//        container1.translatesAutoresizingMaskIntoConstraints = false
-//        container2.translatesAutoresizingMaskIntoConstraints = false
-//        container3.translatesAutoresizingMaskIntoConstraints = false
-//        container4.translatesAutoresizingMaskIntoConstraints = false
-//        container5.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            container1.topAnchor.constraint(equalTo: view.topAnchor),
-//            container1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-//            container1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1),
-//            ])
-//        NSLayoutConstraint.activate([
-//            container2.topAnchor.constraint(equalTo: container1.bottomAnchor),
-//            container2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
-//            container2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-//            ])
-//
-//        NSLayoutConstraint.activate([
-//            container3.topAnchor.constraint(equalTo: container2.bottomAnchor),
-//            container3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1 ),
-//            container3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3),
-//            ])
-//        NSLayoutConstraint.activate([
-//            container4.topAnchor.constraint(equalTo: container3.bottomAnchor),
-//            container4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-//            container4.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-//            ])
-//
-//        NSLayoutConstraint.activate([
-//            container5.topAnchor.constraint(equalTo: container4.bottomAnchor),
-//            container5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1),
-//            container5.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            container5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
-//            ])
-//    }
 }

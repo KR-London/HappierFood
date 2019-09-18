@@ -18,7 +18,7 @@ class Onboarding3ViewController: UINavigationController {
     
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "text 3 1.png")
+        contentView.image = UIImage(named: "10.png")
         return contentView
     }()
     
@@ -39,7 +39,7 @@ class Onboarding3ViewController: UINavigationController {
             [
                 block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block1.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 616/583),
+                block1.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 522/545),
                 block1.centerYAnchor.constraint(equalTo: margins.centerYAnchor, constant: -100)
             ]
         )

@@ -37,6 +37,7 @@ class smileView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         backgroundColor = UIColor.clear
+//        self.clearsContextBeforeDrawing = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,8 +48,34 @@ class smileView: UIView {
     override func draw(_ rect: CGRect)
     {
             UIColor.black.set()
-             pathForMouth().stroke()
+            pathForMouth().stroke()
    }
+    
+    public func drawSmile(mouthCurve: Double){
+      //  privateDrawSmile(mouthCurve: mouthCurve).stroke()
+        pathForMouth().removeAllPoints()
+    }
+//
+//    func privateDrawSmile(mouthCurve: Double) -> UIBezierPath{
+//        let mouthWidth = skullRadius / Ratios.SkullRadiusToMouthWidth
+//        let mouthHeight = skullRadius / Ratios.SkullRadiusToMouthHeight
+//        let mouthOffset = skullRadius / Ratios.SkullRadiusToMouthOffset
+//        
+//        let mouthRect = CGRect(x: skullCenter.x - mouthWidth/2, y: skullCenter.y + mouthOffset, width: mouthWidth, height: mouthHeight)
+//        
+//        let smileOffset = CGFloat(max(-1, min(mouthCurve, 1))) * mouthRect.height
+//        let start = CGPoint(x: mouthRect.minX, y: mouthRect.minY)
+//        let end = CGPoint(x: mouthRect.maxX, y: mouthRect.minY)
+//        let cp1 = CGPoint(x: mouthRect.minX + mouthRect.width / 3, y: mouthRect.minY + smileOffset)
+//        let cp2 = CGPoint(x: mouthRect.maxX - mouthRect.width / 3, y: mouthRect.minY + smileOffset)
+//        
+//        let path = UIBezierPath()
+//        path.move(to: start)
+//        path.addCurve(to: end, controlPoint1: cp1, controlPoint2: cp2)
+//        path.lineWidth = 5.0
+//        
+//        return path
+//    }
     
     func pathForMouth() -> UIBezierPath
     {

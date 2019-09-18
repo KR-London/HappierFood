@@ -19,6 +19,6 @@ class Detail3ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    faceView.mouthCurvature = detailToDisplay.rating
+        faceView.mouthCurvature = detailToDisplay.rating
     }
 }

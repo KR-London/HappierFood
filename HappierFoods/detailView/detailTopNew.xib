@@ -25,10 +25,11 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="eyeLookOutLeft_browDownLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="06Y-xP-9JF">
                     <rect key="frame" x="0.0" y="44" width="414" height="206"/>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-Zo-8Ej" customClass="FaceView" customModule="HappierFoods" customModuleProvider="target">
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-Zo-8Ej" customClass="FaceView" customModule="HappierFoods" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="414"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" red="0.42560498930000001" green="0.63618337560000005" blue="0.30702089669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

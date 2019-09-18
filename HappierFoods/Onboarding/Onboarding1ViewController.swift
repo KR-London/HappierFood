@@ -18,19 +18,19 @@ class Onboarding1ViewController: UINavigationController {
     
     lazy var block1: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "text 1 1.png")
+        contentView.image = UIImage(named: "1.png")
         return contentView
     }()
     
     lazy var block2: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "text 1 2.png")
+        contentView.image = UIImage(named: "1 2.png")
         return contentView
     }()
     
     lazy var block3: UIImageView = {
         let contentView = UIImageView()
-        contentView.image = UIImage(named: "text 1 3.png")
+        contentView.image = UIImage(named: "11.png")
         return contentView
     }()
     
@@ -56,7 +56,7 @@ class Onboarding1ViewController: UINavigationController {
             [
                 block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
                 block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block1.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 169/640)
+                block1.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 78/545)
             ]
         )
         
@@ -77,7 +77,7 @@ class Onboarding1ViewController: UINavigationController {
         NSLayoutConstraint.activate(
             [
                 block2.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block2.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 169/640),
+                block2.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 163/545),
                 block2.widthAnchor.constraint(equalTo: margins.widthAnchor),
             ]
         )
@@ -88,7 +88,7 @@ class Onboarding1ViewController: UINavigationController {
         NSLayoutConstraint.activate(
             [
                 block3.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                block3.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 419/640),
+                block3.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 375/545),
                 block3.widthAnchor.constraint(equalTo: margins.widthAnchor)
             ]
         )
@@ -106,17 +106,18 @@ class Onboarding1ViewController: UINavigationController {
             ]
         )
         
-        let ratio: CGFloat = (169 + 169 + 419 + (self.view.frame.width/6) )/640
+        let ratio: CGFloat = (375 + 163 + 78 + (self.view.frame.width/6) )/545
         let contentSize = self.view.frame.width*ratio
         let spacer = ( self.view.frame.height - contentSize )/5
+        print("spacer 1 = ", spacer)
 
         NSLayoutConstraint.activate(
             [
-                block1.topAnchor.constraint(equalTo: margins.topAnchor, constant:spacer),
-                block2.topAnchor.constraint(equalTo: block1.bottomAnchor, constant:spacer),
-                block3.topAnchor.constraint(equalTo: block2.bottomAnchor, constant:spacer),
-                moveOnButton.topAnchor.constraint(equalTo: block3.bottomAnchor, constant:spacer),
-                moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -spacer)
+                block1.topAnchor.constraint(lessThanOrEqualTo: margins.topAnchor, constant:spacer),
+                block2.topAnchor.constraint(lessThanOrEqualTo: block1.bottomAnchor, constant:spacer),
+                block3.topAnchor.constraint(lessThanOrEqualTo: block2.bottomAnchor, constant:spacer),
+                moveOnButton.topAnchor.constraint(lessThanOrEqualTo: block3.bottomAnchor, constant:spacer),
+                moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -40)
             ]
         )
 }

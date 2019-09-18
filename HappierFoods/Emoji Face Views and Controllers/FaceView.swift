@@ -26,6 +26,9 @@ class FaceView: UIView {
     
     @IBInspectable
     var mouthCurvature: Double = 1.0 { didSet { setNeedsDisplay() } }
+    
+    @IBInspectable
+    var mouthPresent: Bool = false { didSet { setNeedsDisplay()}}
 
     private var skullRadius: CGFloat{
         return min(bounds.size.width, bounds.size.height)/3
@@ -107,7 +110,9 @@ class FaceView: UIView {
         UIColor.black.set()
         pathForEye(eye: .Left).stroke()
         pathForEye(eye: .Right).stroke()
-        pathForMouth().stroke()
+        if mouthPresent == true{
+            pathForMouth().stroke()
+        }
         
         guard let context = UIGraphicsGetCurrentContext() else {
             return
