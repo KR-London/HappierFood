@@ -4,7 +4,6 @@
 //
 //  Created by Kate Roberts on 17/05/2019.
 //  Copyright © 2019 Kate Roberts. All rights reserved.
-//
 
 import UIKit
 import CoreData
@@ -34,6 +33,7 @@ class DetailViewController: UIViewController{
         detailToDisplay.notes = notesOutlet.text ?? ""
         notes = notesOutlet.text ?? ""
     }
+    
     @IBOutlet weak var topFace: UIImageView!
     
     @IBAction func tryItAgainButton(_ sender: Any) {
@@ -148,10 +148,7 @@ class DetailViewController: UIViewController{
 
         if presentState == "AddFoodViewController"
         {
-           // faceContainer.isHidden = false
-           // faceContainer.mouthCurvature = detailToDisplay.rating
-            //faceContainer.drawSmile(mouthCurve: detailToDisplay.rating)
-            //faceContainer.drawSmile(mouthCurve: <#T##Double#>)
+            faceContainer.mouthCurvature = detailToDisplay.rating
         }
         else
         {
