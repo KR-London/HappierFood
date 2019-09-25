@@ -245,7 +245,7 @@ class DetailViewController: UIViewController{
         if segue.identifier == "detailToRate"{
             let dvc = segue.destination as! rateFoodViewController
             let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
-            dvc.imagePlaceholder = UIImage(named: filepath) ?? UIImage(named: "databasePlaceholderImage.001.jpg")!
+            dvc.imagePlaceholder = UIImage(named: filepath) ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
             dvc.placeHolderImage = detailToDisplay.photoFilename
             dvc.imagePath = detailToDisplay.photoFilename
             dvc.foodName = detailToDisplay.foodName

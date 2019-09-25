@@ -99,8 +99,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         tryButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         view.backgroundColor = UIColor(red: 251/255, green: 254/255, blue: 252/255, alpha: 1)
         
-// let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-// print(datafilepath!)
+ let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+ print(datafilepath!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -443,7 +443,6 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: collectionView.bounds.size.width/3 - 8 , height: collectionView.bounds.size.width/3 - 8 )
     }
     func collectionView(_ collectionView: UICollectionView,
@@ -461,8 +460,6 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        
         return UIEdgeInsets.init(top: 0, left: 0, bottom: 10, right: 0)
     }
     
