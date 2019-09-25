@@ -72,19 +72,17 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-
-    
     // MARK: Page lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //performSegue(withIdentifier: "celebrationSegue", sender: nil )
         
         navigationController?.popToRootViewController(animated: false)
         myNav = navigationController as? customNavigationController
         setUpNavigationBarItems()
         loadItems()
 
-    
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
         if defaults.double(forKey: "Last Week Started")  == 0.0        {
@@ -97,7 +95,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         /// MARK: colourScheme
-        
         targetButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         tryButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         view.backgroundColor = UIColor(red: 251/255, green: 254/255, blue: 252/255, alpha: 1)

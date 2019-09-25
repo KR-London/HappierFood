@@ -106,7 +106,8 @@ class Onboarding1ViewController: UINavigationController {
             ]
         )
         
-        let ratio: CGFloat = (375 + 163 + 78 + (self.view.frame.width/6) )/545
+        var ratio: CGFloat = (375 + 163 + 78 + (self.view.frame.width/6) )
+        ratio = ratio/545
         let contentSize = self.view.frame.width*ratio
         let spacer = ( self.view.frame.height - contentSize )/5
         print("spacer 1 = ", spacer)

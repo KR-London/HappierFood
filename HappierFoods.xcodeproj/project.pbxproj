@@ -44,6 +44,7 @@
 		443B66EC2290606F007DDACC /* eyeWideLeft_browDownLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66EB2290606F007DDACC /* eyeWideLeft_browDownLeft.png */; };
 		443B66EE22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66ED22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png */; };
 		44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44455A29228E7D01006A6652 /* DetailViewController.swift */; };
+		44471EC72338CE8300FFE0E6 /* HappierFoods.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 44471EC62338CE8300FFE0E6 /* HappierFoods.xcdatamodel */; };
 		44497FB022DCCC20007CE3D3 /* this_app_is_for_people2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44497FAD22DCCC20007CE3D3 /* this_app_is_for_people2.jpg */; };
 		44497FB122DCCC20007CE3D3 /* nerds2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44497FAE22DCCC20007CE3D3 /* nerds2.jpg */; };
 		44497FB222DCCC20007CE3D3 /* hello2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44497FAF22DCCC20007CE3D3 /* hello2.jpg */; };
@@ -61,7 +62,6 @@
 		44519036229B2426001C12D1 /* CelebrationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */; };
 		44519038229B3036001C12D1 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519037229B3036001C12D1 /* happy.png */; };
 		446D220722C8C67E00FF56E3 /* customNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D220622C8C67E00FF56E3 /* customNavigationController.swift */; };
-		446D220A22CA487300FF56E3 /* HappierFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 446D220822CA487200FF56E3 /* HappierFoods.xcdatamodeld */; };
 		447DE07D22C5BFA200081414 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447DE07C22C5BFA200081414 /* OnboardingViewController.swift */; };
 		4483901622C731E6002F8D2E /* onboarding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483901522C731E5002F8D2E /* onboarding1.png */; };
 		4483901822C731EC002F8D2E /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483901722C731EC002F8D2E /* onboarding2.png */; };
@@ -100,7 +100,6 @@
 		44A4102722E9ACFF002289AD /* bub 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4102522E9ACFF002289AD /* bub 2.png */; };
 		44A4102922E9AD7B002289AD /* text 4 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4102822E9AD7B002289AD /* text 4 0.png */; };
 		44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A63E9022598D03002E656E /* rateFoodViewController.swift */; };
-		44A75AD522EA6806007AE545 /* pineapple.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44A75AAF22EA6802007AE545 /* pineapple.jpeg */; };
 		44A75AD622EA6806007AE545 /* sandwich.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44A75AB022EA6802007AE545 /* sandwich.jpeg */; };
 		44A75AD722EA6806007AE545 /* noodles.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44A75AB122EA6802007AE545 /* noodles.jpeg */; };
 		44A75AD822EA6806007AE545 /* sardines.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44A75AB222EA6802007AE545 /* sardines.jpeg */; };
@@ -233,6 +232,7 @@
 		443B66EB2290606F007DDACC /* eyeWideLeft_browDownLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeWideLeft_browDownLeft.png; sourceTree = "<group>"; };
 		443B66ED22906074007DDACC /* eyeWideLeft_browOuterUpLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeWideLeft_browOuterUpLeft.png; sourceTree = "<group>"; };
 		44455A29228E7D01006A6652 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		44471EC62338CE8300FFE0E6 /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
 		44497FAD22DCCC20007CE3D3 /* this_app_is_for_people2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = this_app_is_for_people2.jpg; sourceTree = "<group>"; };
 		44497FAE22DCCC20007CE3D3 /* nerds2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nerds2.jpg; sourceTree = "<group>"; };
 		44497FAF22DCCC20007CE3D3 /* hello2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hello2.jpg; sourceTree = "<group>"; };
@@ -250,7 +250,6 @@
 		44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationCollectionViewController.swift; sourceTree = "<group>"; };
 		44519037229B3036001C12D1 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
 		446D220622C8C67E00FF56E3 /* customNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customNavigationController.swift; sourceTree = "<group>"; };
-		446D220922CA487200FF56E3 /* HappierFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HappierFoods.xcdatamodel; sourceTree = "<group>"; };
 		447DE07C22C5BFA200081414 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4483901522C731E5002F8D2E /* onboarding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding1.png; sourceTree = "<group>"; };
 		4483901722C731EC002F8D2E /* onboarding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2.png; sourceTree = "<group>"; };
@@ -290,7 +289,6 @@
 		44A4102522E9ACFF002289AD /* bub 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bub 2.png"; sourceTree = "<group>"; };
 		44A4102822E9AD7B002289AD /* text 4 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text 4 0.png"; sourceTree = "<group>"; };
 		44A63E9022598D03002E656E /* rateFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateFoodViewController.swift; sourceTree = "<group>"; };
-		44A75AAF22EA6802007AE545 /* pineapple.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pineapple.jpeg; path = "../../../Food_Photos copy/pineapple.jpeg"; sourceTree = "<group>"; };
 		44A75AB022EA6802007AE545 /* sandwich.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sandwich.jpeg; sourceTree = "<group>"; };
 		44A75AB122EA6802007AE545 /* noodles.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noodles.jpeg; sourceTree = "<group>"; };
 		44A75AB222EA6802007AE545 /* sardines.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sardines.jpeg; sourceTree = "<group>"; };
@@ -544,7 +542,6 @@
 				44A75AC022EA6804007AE545 /* orange.jpeg */,
 				44A75AB622EA6803007AE545 /* peanut butter.jpeg */,
 				44A75AB922EA6803007AE545 /* pie.jpeg */,
-				44A75AAF22EA6802007AE545 /* pineapple.jpeg */,
 				44A75ABA22EA6803007AE545 /* popcorn.jpeg */,
 				44A75AC122EA6804007AE545 /* pork chop.jpeg */,
 				44A75ACE22EA6805007AE545 /* potatoes.jpeg */,
@@ -651,6 +648,7 @@
 		44BE3B9A22566A230090BB5F /* HappierFoods */ = {
 			isa = PBXGroup;
 			children = (
+				44471EC62338CE8300FFE0E6 /* HappierFoods.xcdatamodel */,
 				448813BE22D6434F00E3A78F /* HappierFoods.entitlements */,
 				44AB154C225D8F44004E070A /* 07891284.ttf */,
 				44BE3B9B22566A230090BB5F /* AppDelegate.swift */,
@@ -664,7 +662,6 @@
 				442F8713228962DF00F4CCB5 /* detailView */,
 				44329E9522DE28EF002DA0FA /* Celebration */,
 				44329E9422DE28DD002DA0FA /* History */,
-				446D220822CA487200FF56E3 /* HappierFoods.xcdatamodeld */,
 				4496896F22EA5AD300224601 /* Food Photos */,
 				4483901F22C7D103002F8D2E /* Emoji Face Views and Controllers */,
 				44BE3BA522566A250090BB5F /* Assets.xcassets */,
@@ -845,7 +842,6 @@
 				4414EE05225F9FB100D9B9CB /* tick.jpg in Resources */,
 				443B66CA22905FB4007DDACC /* face.png in Resources */,
 				4410084222E4A5280096E47F /* Storyboard.storyboard in Resources */,
-				44A75AD522EA6806007AE545 /* pineapple.jpeg in Resources */,
 				4483901822C731EC002F8D2E /* onboarding2.png in Resources */,
 				44BFAD6A232D738900CD5CA8 /* 11.png in Resources */,
 				44A75AD622EA6806007AE545 /* sandwich.jpeg in Resources */,
@@ -1066,12 +1062,12 @@
 				442113D0229961BB00CBE431 /* CoreGraphicsExtensions.swift in Sources */,
 				44BE3BC1225673F60090BB5F /* FaceViewController.swift in Sources */,
 				44519036229B2426001C12D1 /* CelebrationCollectionViewController.swift in Sources */,
+				44471EC72338CE8300FFE0E6 /* HappierFoods.xcdatamodel in Sources */,
 				44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */,
 				44B52FF522DA211900CF730D /* preTryViewController.swift in Sources */,
 				44329E9322DE1225002DA0FA /* HistoryCollectionViewCell.swift in Sources */,
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
-				446D220A22CA487300FF56E3 /* HappierFoods.xcdatamodeld in Sources */,
 				442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */,
 				44329E9722DE292D002DA0FA /* HistoryCollectionViewController.swift in Sources */,
 				44B52FE122DA0D5400CF730D /* Onboarding2ViewController.swift in Sources */,
@@ -1349,20 +1345,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		446D220822CA487200FF56E3 /* HappierFoods.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				446D220922CA487200FF56E3 /* HappierFoods.xcdatamodel */,
-			);
-			currentVersion = 446D220922CA487200FF56E3 /* HappierFoods.xcdatamodel */;
-			name = HappierFoods.xcdatamodeld;
-			path = ../../HappierFoods/HappierFoods/HappierFoods.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 44BE3B9022566A230090BB5F /* Project object */;
 }

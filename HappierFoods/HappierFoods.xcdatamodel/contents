@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CelebrationStatus" representedClassName="CelebrationStatus" syncable="YES" codeGenerationType="class">
+        <attribute name="celebrationTriggered" optional="YES" attributeType="Boolean" usesScalarValueType="YES">
+            <userInfo/>
+        </attribute>
+        <attribute name="dateLastWeekStarted" optional="YES" attributeType="Date" usesScalarValueType="NO">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="HistoryTriedFoods" representedClassName="HistoryTriedFoods" syncable="YES" codeGenerationType="class">
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="saveNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="TargetFood" representedClassName="TargetFood" syncable="YES" codeGenerationType="class">
+        <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO">
+            <userInfo/>
+        </attribute>
+        <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO">
+            <userInfo/>
+        </attribute>
+        <attribute name="filename" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="motivation" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <entity name="TriedFood" representedClassName="TriedFood" syncable="YES" codeGenerationType="class">
+        <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO">
+            <userInfo/>
+        </attribute>
+        <attribute name="filename" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="motivation" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES">
+            <userInfo/>
+        </attribute>
+    </entity>
+    <elements>
+        <element name="CelebrationStatus" positionX="-54" positionY="27" width="128" height="73"/>
+        <element name="TargetFood" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="TriedFood" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="HistoryTriedFoods" positionX="-54" positionY="27" width="128" height="105"/>
+    </elements>
+</model>
