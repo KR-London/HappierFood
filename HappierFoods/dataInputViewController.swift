@@ -35,17 +35,22 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var cameraRollButton: UIButton!
     @IBOutlet weak var writeButton: UIButton!
+    
+    let placeholderImages = ["1plate.jpeg", "2plate.jpeg", "3plate.jpeg", "4plate.jpeg", "5plate.jpeg"]
+    
+   
 
     @IBAction func nameOfFoodInput(_ sender: Any) {
         foodName = nameOfFood.text ?? ""
         
         if image == nil {
             ///image = UIImage(named: "databasePlaceholderImage.001.jpeg")!
-            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named:
+               placeholderImages.randomElement()!)!
             
             if UIImage(named: foodName + ".jpeg") == nil
             {
-                placeholderImage = "databasePlaceholderImage.001.jpeg"
+                placeholderImage =  placeholderImages.randomElement()
             }
             else
             {
@@ -54,11 +59,11 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         if  image == UIImage(named: "NoCameraPlaceholder.001.jpeg"){
-            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+            image = UIImage(named: foodName + ".jpeg") ?? UIImage(named:  placeholderImages.randomElement()!)!
             
             if UIImage(named: foodName + ".jpeg") == nil
             {
-                placeholderImage = "databasePlaceholderImage.001.jpeg"
+                placeholderImage =  placeholderImages.randomElement()
             }
             else
             {
@@ -215,7 +220,8 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
       if segue.identifier != "back" {
             if let dvc1 = segue.destination as? rateFoodViewController {
                 print(foodName + ".jpeg")
-                dvc1.imagePlaceholder = image ?? UIImage(named: "databasePlaceholderImage.001.jpeg")!
+                dvc1.imagePlaceholder = image ?? UIImage(named:
+                   placeholderImages.randomElement()!)!
                 dvc1.foodName = foodName
                 dvc1.placeHolderImage = placeholderImage
              //   dvc1.imageExtension = filename

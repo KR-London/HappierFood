@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
+		440886D9233E09C600A76800 /* 1plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886D8233E09C600A76800 /* 1plate.jpeg */; };
+		440886DB233E0D4300A76800 /* 2plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DA233E0D4300A76800 /* 2plate.jpeg */; };
+		440886DD233E0D4900A76800 /* 3plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DC233E0D4900A76800 /* 3plate.jpeg */; };
+		440886DF233E0D5000A76800 /* 4plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DE233E0D4F00A76800 /* 4plate.jpeg */; };
+		440886E1233E0D5500A76800 /* 5plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886E0233E0D5500A76800 /* 5plate.jpeg */; };
 		4410084022E4A0BB0096E47F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4410083F22E4A0BB0096E47F /* Onboarding.storyboard */; };
 		4410084222E4A5280096E47F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4410084122E4A5280096E47F /* Storyboard.storyboard */; };
 		4410ECF42294031F00CC3515 /* NoCameraPlaceholder.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */; };
@@ -196,6 +201,11 @@
 /* Begin PBXFileReference section */
 		1FE003BF8D73E498BC5B1788 /* Pods_HappierFoodsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappierFoodsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
+		440886D8233E09C600A76800 /* 1plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1plate.jpeg; sourceTree = "<group>"; };
+		440886DA233E0D4300A76800 /* 2plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2plate.jpeg; sourceTree = "<group>"; };
+		440886DC233E0D4900A76800 /* 3plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3plate.jpeg; sourceTree = "<group>"; };
+		440886DE233E0D4F00A76800 /* 4plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4plate.jpeg; sourceTree = "<group>"; };
+		440886E0233E0D5500A76800 /* 5plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5plate.jpeg; sourceTree = "<group>"; };
 		4410083F22E4A0BB0096E47F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Onboarding.storyboard; path = HappierFoods/Onboarding.storyboard; sourceTree = SOURCE_ROOT; };
 		4410084122E4A5280096E47F /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoCameraPlaceholder.001.jpeg; sourceTree = "<group>"; };
@@ -484,6 +494,11 @@
 				44A40FFE22E98755002289AD /* little dude8.png */,
 				44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */,
 				4483902022C7D187002F8D2E /* Loading Screens1.png */,
+				440886D8233E09C600A76800 /* 1plate.jpeg */,
+				440886DA233E0D4300A76800 /* 2plate.jpeg */,
+				440886DC233E0D4900A76800 /* 3plate.jpeg */,
+				440886DE233E0D4F00A76800 /* 4plate.jpeg */,
+				440886E0233E0D5500A76800 /* 5plate.jpeg */,
 				4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */,
 				4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */,
 				4414EDFE225F0AFC00D9B9CB /* chaos.jpg */,
@@ -851,6 +866,7 @@
 				44497FBE22DCD132007CE3D3 /* areYouReady1B.jpg in Resources */,
 				44A4102022E9ABD5002289AD /* text 5 2.png in Resources */,
 				44B52FEF22DA14C000CF730D /* shakeMe.jpg in Resources */,
+				440886E1233E0D5500A76800 /* 5plate.jpeg in Resources */,
 				44A75ADC22EA6806007AE545 /* peanut butter.jpeg in Resources */,
 				44A75AE222EA6806007AE545 /* zucchini.jpeg in Resources */,
 				44A75AE322EA6806007AE545 /* tacos.jpeg in Resources */,
@@ -887,14 +903,17 @@
 				44497FB122DCCC20007CE3D3 /* nerds2.jpg in Resources */,
 				44497FB022DCCC20007CE3D3 /* this_app_is_for_people2.jpg in Resources */,
 				443B66DA22906039007DDACC /* eyeLookInLeft_browOuterUpLeft.png in Resources */,
+				440886DF233E0D5000A76800 /* 4plate.jpeg in Resources */,
 				443B66EA22906069007DDACC /* eyesShut_browOuterUpLeft.png in Resources */,
 				44A75AF422EA6806007AE545 /* potatoes.jpeg in Resources */,
 				44497FBD22DCD132007CE3D3 /* areYouReady2B.jpg in Resources */,
 				44A75AF622EA6806007AE545 /* mash.jpeg in Resources */,
 				4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */,
+				440886DB233E0D4300A76800 /* 2plate.jpeg in Resources */,
 				44B52FFE22DA213800CF730D /* preTry1.jpg in Resources */,
 				44D519F1225E3301001BD7FB /* icons2.png in Resources */,
 				443B66EC2290606F007DDACC /* eyeWideLeft_browDownLeft.png in Resources */,
+				440886D9233E09C600A76800 /* 1plate.jpeg in Resources */,
 				44A4101C22E9AB7D002289AD /* speech 2.png in Resources */,
 				44497FB222DCCC20007CE3D3 /* hello2.jpg in Resources */,
 				44A75AF922EA6806007AE545 /* cheese.jpeg in Resources */,
@@ -905,6 +924,7 @@
 				44519038229B3036001C12D1 /* happy.png in Resources */,
 				44BFAD70232D7A2F00CD5CA8 /* 1 2.png in Resources */,
 				44497FC922DCD705007CE3D3 /* preTry1B.jpg in Resources */,
+				440886DD233E0D4900A76800 /* 3plate.jpeg in Resources */,
 				44A75AE422EA6806007AE545 /* fried_rice.jpeg in Resources */,
 				44BFAD6E232D738900CD5CA8 /* 7.png in Resources */,
 				44A4102622E9ACFF002289AD /* bub 1.png in Resources */,
