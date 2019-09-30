@@ -34,11 +34,12 @@ class Onboarding1ViewController: UINavigationController {
         return contentView
     }()
     
-    lazy var moveOnButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
-        button.setTitle("I'll give it a try", for: .normal)
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+    lazy var moveOnButton: myButton = {
+        let button = myButton()
+         button.setTitle("I'll give it a try", for: .normal)
+//        button.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+//       
+//        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
 

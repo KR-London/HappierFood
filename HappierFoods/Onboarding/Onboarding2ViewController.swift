@@ -35,12 +35,12 @@ class Onboarding2ViewController: UINavigationController {
         return contentView
     }()
     
-    lazy var moveOnButton: UIButton = {
-        let button = UIButton()
-         button.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+    lazy var moveOnButton: myButton = {
+        let button = myButton()
+        // button.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
        // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("....Okay....", for: .normal)
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+       // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         
         return button
     }()

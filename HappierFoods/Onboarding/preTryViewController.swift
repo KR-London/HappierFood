@@ -146,40 +146,40 @@ lazy var block1: UIImageView = {
 }()
 
 
-lazy var b1: UIButton = {
-    let button = UIButton()
+lazy var b1: myButton = {
+    let button = myButton()
     //button.setImage(UIImage(named: "b1.jpg"), for: .normal)
-    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+   // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
     //button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Smell It", for: .normal)
-    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+   // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 
-lazy var b2: UIButton = {
-    let button = UIButton()
-    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+lazy var b2: myButton = {
+    let button = myButton()
+    //button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
    // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Taste It", for: .normal)
-    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+    //button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 
-lazy var b3: UIButton = {
-    let button = UIButton()
-    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+lazy var b3: myButton = {
+    let button = myButton()
+    //button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
    // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Nibble It", for: .normal)
-    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+    //button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 
-lazy var b4: UIButton = {
-    let button = UIButton()
-    button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+lazy var b4: myButton = {
+    let button = myButton()
+    //button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
    // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
     button.setTitle("Finish It", for: .normal)
-    button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+   // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
     return button
 }()
 

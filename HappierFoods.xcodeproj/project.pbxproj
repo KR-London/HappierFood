@@ -13,6 +13,7 @@
 		440886DD233E0D4900A76800 /* 3plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DC233E0D4900A76800 /* 3plate.jpeg */; };
 		440886DF233E0D5000A76800 /* 4plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DE233E0D4F00A76800 /* 4plate.jpeg */; };
 		440886E1233E0D5500A76800 /* 5plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886E0233E0D5500A76800 /* 5plate.jpeg */; };
+		440886E3233E3E3A00A76800 /* myButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440886E2233E3E3A00A76800 /* myButton.swift */; };
 		4410084022E4A0BB0096E47F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4410083F22E4A0BB0096E47F /* Onboarding.storyboard */; };
 		4410084222E4A5280096E47F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4410084122E4A5280096E47F /* Storyboard.storyboard */; };
 		4410ECF42294031F00CC3515 /* NoCameraPlaceholder.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */; };
@@ -206,6 +207,7 @@
 		440886DC233E0D4900A76800 /* 3plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3plate.jpeg; sourceTree = "<group>"; };
 		440886DE233E0D4F00A76800 /* 4plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4plate.jpeg; sourceTree = "<group>"; };
 		440886E0233E0D5500A76800 /* 5plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5plate.jpeg; sourceTree = "<group>"; };
+		440886E2233E3E3A00A76800 /* myButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myButton.swift; sourceTree = "<group>"; };
 		4410083F22E4A0BB0096E47F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Onboarding.storyboard; path = HappierFoods/Onboarding.storyboard; sourceTree = SOURCE_ROOT; };
 		4410084122E4A5280096E47F /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoCameraPlaceholder.001.jpeg; sourceTree = "<group>"; };
@@ -715,6 +717,7 @@
 			isa = PBXGroup;
 			children = (
 				446D220622C8C67E00FF56E3 /* customNavigationController.swift */,
+				440886E2233E3E3A00A76800 /* myButton.swift */,
 			);
 			path = "Navigation Custom Classes ";
 			sourceTree = "<group>";
@@ -1097,6 +1100,7 @@
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
 				44B5300522DA2F4E00CF730D /* preTargetViewController.swift in Sources */,
+				440886E3233E3E3A00A76800 /* myButton.swift in Sources */,
 				44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1255,7 +1259,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1277,7 +1281,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

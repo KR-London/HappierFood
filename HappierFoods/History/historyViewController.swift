@@ -16,9 +16,9 @@ class historyViewController: UIViewController{
     var food: [NSManagedObject] = []
     var historyArray: [HistoryTriedFoods]!
 
-    @IBOutlet weak var resetToNewWeek: UIButton!
-    @IBOutlet weak var clearAllData: UIButton!
-    @IBAction func cacheWeek(_ sender: UIButton) {
+    @IBOutlet weak var resetToNewWeek: myButton!
+    @IBOutlet weak var clearAllData: myButton!
+    @IBAction func cacheWeek(_ sender: myButton) {
         copyFoodToHistory()
         navigationController?.popViewController(animated: true)
     }

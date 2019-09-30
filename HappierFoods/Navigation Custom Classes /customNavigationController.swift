@@ -23,26 +23,57 @@ class customNavigationController: UINavigationController {
         case ResetDataAtTheStartOfNewWeek
         case Unknown
     }
-    
+
     var presentState = Costume.Unknown
-    
+
     var happyTracker = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 233, green: 2, blue: 3, alpha: 1.0)]
-//        UINavigationBar.appearance().titleTextAttributes = textAttributes
         
-        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 233, green: 2, blue: 3, alpha: 1.0),  NSAttributedString.Key.font: UIFont(name: "TwCenMT-CondensedExtraBold", size: 21)]
+     //   let font = UIFont(name: "Verdana", size: 2.0)
+     //   UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
+       // //(textAttributes, for: .normal)
+
+
         // MARK: Colour
-        navigationBar.barTintColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
-        
+       navigationBar.barTintColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
         navigationBar.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
         
-        
+      //  navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
+       // navigationBar.backItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
+
        // R103 G230 B194
+        
+        
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+        [
+            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+            NSAttributedString.Key.foregroundColor : UIColor.white,
+        ], for: .normal )
+        
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+              [
+                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+                  NSAttributedString.Key.foregroundColor : UIColor.white,
+        ], for: .disabled )
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+              [
+                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+                  NSAttributedString.Key.foregroundColor : UIColor.white,
+        ], for: .reserved )
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+                     [
+                         NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+                         NSAttributedString.Key.foregroundColor : UIColor.white,
+        ], for: .application )
     }
-    
+
     func currentStateAsString()-> String{
         switch presentState
         {
@@ -60,3 +91,13 @@ class customNavigationController: UINavigationController {
         }
     }
 }
+
+//
+//extension UIBarButtonItem {
+//
+//    var substituteFontName : String {
+//        get { return self.style.font.fontName }
+//        set { self.font = UIFont(name: newValue, size: self.font.pointSize) }
+//    }
+//
+//}

@@ -23,22 +23,22 @@ class Onboarding4ViewController: UINavigationController {
     }()
     
     
-    lazy var b1: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+    lazy var b1: myButton = {
+        let button = myButton()
+       // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
           //  R95 G215 B176  )
        // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Try Food", for: .normal)
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+       // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
     
-    lazy var b2: UIButton = {
-        let button = UIButton()
-          button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
-        button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+    lazy var b2: myButton = {
+        let button = myButton()
+         // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+       // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Not Eating Now", for: .normal)
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+       // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
     

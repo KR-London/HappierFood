@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -118,11 +116,11 @@
             <objects>
                 <viewController storyboardIdentifier="o2" id="Y4M-5b-8iH" customClass="Onboarding2ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F8O-pf-dxO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xnu-sq-smD">
-                                <rect key="frame" x="314" y="44" width="100" height="100"/>
+                                <rect key="frame" x="314" y="0.0" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="G96-I6-7qy"/>
                                     <constraint firstAttribute="height" constant="100" id="kqa-Ln-gNE"/>
@@ -148,11 +146,11 @@
             <objects>
                 <viewController id="PIB-5Q-FPW" customClass="Onboarding3ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tuw-nw-7cR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wi0-JI-3wc">
-                                <rect key="frame" x="0.0" y="44" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Lcd-G2-8qq"/>
                                     <constraint firstAttribute="height" constant="100" id="ian-u4-aAC"/>
@@ -176,13 +174,13 @@
         <!--Onboarding4 View Controller-->
         <scene sceneID="o7w-tF-DSJ">
             <objects>
-                <viewController id="tnf-Lq-BSP" customClass="Onboarding4ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="happy" id="tnf-Lq-BSP" customClass="Onboarding4ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JhR-g8-bS6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude3.png" translatesAutoresizingMaskIntoConstraints="NO" id="GYi-pO-2PA">
-                                <rect key="frame" x="0.0" y="762" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="708" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="IPr-HO-sa5"/>
                                     <constraint firstAttribute="width" constant="100" id="Z8y-96-3JB"/>
@@ -209,11 +207,11 @@
             <objects>
                 <viewController id="J5K-m7-rnN" customClass="preTargetViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dt4-Pd-psG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude1.png" translatesAutoresizingMaskIntoConstraints="NO" id="uNX-7Y-hNp">
-                                <rect key="frame" x="0.0" y="398" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="371" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="JAN-hO-4dq"/>
                                     <constraint firstAttribute="height" constant="100" id="xDe-AH-ODg"/>
@@ -236,11 +234,11 @@
             <objects>
                 <viewController id="FeB-us-TIK" customClass="preTryViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lF3-W8-IJi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude1.png" translatesAutoresizingMaskIntoConstraints="NO" id="qNL-Sf-Ne9">
-                                <rect key="frame" x="0.0" y="398" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="371" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2je-3n-GTW"/>
                                     <constraint firstAttribute="height" constant="100" id="kud-j9-eOc"/>

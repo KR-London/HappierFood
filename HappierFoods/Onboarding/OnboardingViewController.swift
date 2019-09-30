@@ -17,7 +17,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var pic: UIImageView!
   
     @IBOutlet weak var block3: UILabel!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var button: myButton!
     
     @IBAction func moveToMain(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

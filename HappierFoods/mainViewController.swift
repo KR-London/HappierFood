@@ -39,7 +39,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var happy: UIImageView!
     
     @IBAction func happyTickled(_ sender: Any) {
-        onboardingRoutine()
+        ///onboardingRoutine()
+      //elen  segu
     }
     // MARK: Actions
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
@@ -191,6 +192,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         /// This subroutine is to make sure the user knows what's going on, and doesn;t worry when we remove their data from view
         let publicInformationText = UILabel()
         
+
+        
         if didTheyReachTheirTarget == true{
             publicInformationText.text = "Well done! You tried 9 new foods. I'll keep tracking any new food you try. At the end of the week, I'll move the data to the history screen and reset. "
         }
@@ -210,7 +213,10 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         publicInformationText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
         publicInformationText.alpha = 0.0
         publicInformationText.backgroundColor = UIColor.white
-        publicInformationText.cornerRadius = 5 
+       // publicInformationText.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+        publicInformationText.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+        
+        publicInformationText.cornerRadius = 5
         
         
         /// fade it in & out with RH picture
@@ -330,7 +336,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
        // let shareButton = UIButton(type: .system)
         
         let navBarHeight = navigationController?.navigationBar.frame.height
-        print("navbar height is", navBarHeight)
         let shareButton = UIButton(type: .system)
         shareButton.setImage(UIImage(named:"appleShare" )?.resize(to: CGSize(width: (36/53)*0.7*(navBarHeight ?? 100),height: 0.7*(navBarHeight ?? 100) )), for: .normal)
     

@@ -355,6 +355,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         
+      //  let font = UIFont(name: "Arial", size: 2.0)
+      //  navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
+        
+        //   let font = UIFont(name: "Verdana", size: 2.0)
+        //   UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!],
 //        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
 //        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
 //

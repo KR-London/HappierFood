@@ -24,40 +24,40 @@ class preTargetViewController: UINavigationController {
   
     
     
-    lazy var b1: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+    lazy var b1: myButton = {
+        let button = myButton()
+        //button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
         //button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Egg", for: .normal)
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+        //button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
     
-    lazy var b2: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+    lazy var b2: myButton = {
+        let button = myButton()
+       // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
        // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Rice", for: .normal)
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+      //  button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
     
-    lazy var b3: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+    lazy var b3: myButton = {
+        let button = myButton()
+        //button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
        // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Apple", for: .normal)
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+        //button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
     
-    lazy var b4: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+    lazy var b4: myButton = {
+        let button = myButton()
+        // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
         //button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
         button.setTitle("Other", for: .normal)
-        button.alpha = 0.2
-        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+       // button.alpha = 0.2
+        //button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
         return button
     }()
     
