@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
  
-       let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+       //let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
-       // let launchedBefore = false
+        let launchedBefore = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -62,12 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //       // registerForPushNotifications()
     
       
-       // BugReporting.bugReportingOptions = [.]
-   //  Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
+        BugReporting.bugReportingOptions = [.]
+     Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
         
-     //   BugReporting.shakingThresholdForiPhone = 1.0
-     //   BugReporting.bugReportingOptions = [.emailFieldHidden]
-        //view.instabug_privateView = true
+        BugReporting.shakingThresholdForiPhone = 1.0
+        BugReporting.bugReportingOptions = [.emailFieldHidden]
+        view.instabug_privateView = true
         
         return true
     }
