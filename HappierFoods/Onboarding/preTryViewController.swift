@@ -353,6 +353,13 @@ override func viewDidAppear(_ animated: Bool) {
     myNav.pushViewController(rootViewController, animated: false)
     myNav.pushViewController(newViewController, animated: false)
     
+    
+    if #available(iOS 13.0, *) {
+        //newViewController.isModalInPresentation = true
+       /// newViewController.modalPresentationStyle = .fullScreen
+          myNav.modalPresentationStyle = .fullScreen
+    }
+    
     self.present(myNav, animated: true, completion: nil)
 //    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //    let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController

@@ -104,7 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="mOB-dP-BOy"/>
                     </view>
                     <connections>
-                        <segue destination="Y4M-5b-8iH" kind="show" identifier="o1-o2" id="2o0-ak-dRD"/>
+                        <segue destination="Y4M-5b-8iH" kind="presentation" identifier="o1-o2" modalPresentationStyle="overFullScreen" id="2o0-ak-dRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ip2-co-XYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -116,11 +116,11 @@
             <objects>
                 <viewController storyboardIdentifier="o2" id="Y4M-5b-8iH" customClass="Onboarding2ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F8O-pf-dxO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xnu-sq-smD">
-                                <rect key="frame" x="314" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="314" y="44" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="G96-I6-7qy"/>
                                     <constraint firstAttribute="height" constant="100" id="kqa-Ln-gNE"/>
@@ -134,7 +134,7 @@
                         <viewLayoutGuide key="safeArea" id="lgJ-qk-ETL"/>
                     </view>
                     <connections>
-                        <segue destination="PIB-5Q-FPW" kind="show" identifier="o2-o3" id="ekx-it-QrP"/>
+                        <segue destination="PIB-5Q-FPW" kind="presentation" identifier="o2-o3" modalPresentationStyle="fullScreen" id="ekx-it-QrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYn-1o-50h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,11 +146,11 @@
             <objects>
                 <viewController id="PIB-5Q-FPW" customClass="Onboarding3ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tuw-nw-7cR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wi0-JI-3wc">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="44" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Lcd-G2-8qq"/>
                                     <constraint firstAttribute="height" constant="100" id="ian-u4-aAC"/>
@@ -163,8 +163,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bw9-Rd-mjF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="evt-ex-1LJ"/>
                     <connections>
-                        <segue destination="tnf-Lq-BSP" kind="show" identifier="o3-o4" id="aVd-rT-8Za"/>
+                        <segue destination="tnf-Lq-BSP" kind="presentation" identifier="o3-o4" modalPresentationStyle="fullScreen" id="aVd-rT-8Za"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXM-dj-ELT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -176,11 +177,11 @@
             <objects>
                 <viewController storyboardIdentifier="happy" id="tnf-Lq-BSP" customClass="Onboarding4ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JhR-g8-bS6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude3.png" translatesAutoresizingMaskIntoConstraints="NO" id="GYi-pO-2PA">
-                                <rect key="frame" x="0.0" y="708" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="762" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="IPr-HO-sa5"/>
                                     <constraint firstAttribute="width" constant="100" id="Z8y-96-3JB"/>
@@ -193,9 +194,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zw8-SB-iFe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="v7s-HB-5fN"/>
                     <connections>
-                        <segue destination="FeB-us-TIK" kind="show" identifier="try" id="9jP-kJ-YIj"/>
-                        <segue destination="J5K-m7-rnN" kind="show" identifier="noTry" id="nda-tY-AeD"/>
+                        <segue destination="FeB-us-TIK" kind="presentation" identifier="try" modalPresentationStyle="fullScreen" id="9jP-kJ-YIj"/>
+                        <segue destination="J5K-m7-rnN" kind="presentation" identifier="noTry" modalPresentationStyle="fullScreen" id="nda-tY-AeD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgl-LG-4U3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -207,11 +209,11 @@
             <objects>
                 <viewController id="J5K-m7-rnN" customClass="preTargetViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dt4-Pd-psG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude1.png" translatesAutoresizingMaskIntoConstraints="NO" id="uNX-7Y-hNp">
-                                <rect key="frame" x="0.0" y="371" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="398" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="JAN-hO-4dq"/>
                                     <constraint firstAttribute="height" constant="100" id="xDe-AH-ODg"/>
@@ -224,6 +226,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YAL-yK-n07"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mB8-wZ-dcx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDU-NL-piN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,11 +237,11 @@
             <objects>
                 <viewController id="FeB-us-TIK" customClass="preTryViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lF3-W8-IJi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude1.png" translatesAutoresizingMaskIntoConstraints="NO" id="qNL-Sf-Ne9">
-                                <rect key="frame" x="0.0" y="371" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="398" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2je-3n-GTW"/>
                                     <constraint firstAttribute="height" constant="100" id="kud-j9-eOc"/>
@@ -251,6 +254,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hZP-V9-RhI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6A6-rO-1WR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SK7-SB-Haj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

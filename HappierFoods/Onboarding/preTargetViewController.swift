@@ -227,7 +227,11 @@ class preTargetViewController: UINavigationController {
         myNav.pushViewController(rootViewController, animated: false)
         myNav.pushViewController(newViewController, animated: false)
         
+      
+        
         let motivationViewController = storyBoard.instantiateViewController(withIdentifier: "targetSettingScreen") as! rateFoodViewController
+        
+        
         
         switch sender.titleLabel?.text{
             case "Egg":
@@ -267,6 +271,13 @@ class preTargetViewController: UINavigationController {
         myNav.navigationItem.setHidesBackButton(true, animated: true)
         myNav.pushViewController(motivationViewController, animated: false)
         
+        if #available(iOS 13.0, *) {
+           // motivationViewController.isModalInPresentation = true
+           // newViewController.modalPresentationStyle = .fullScreen
+            myNav.modalPresentationStyle = .fullScreen
+        } else {
+            // Fallback on earlier versions
+        }
         
         self.present(myNav, animated: true, completion: nil)
     }

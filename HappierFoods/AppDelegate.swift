@@ -62,12 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //       // registerForPushNotifications()
     
       
-        BugReporting.bugReportingOptions = [.]
+     //   BugReporting.bugReportingOptions = [.]
      Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
         
         BugReporting.shakingThresholdForiPhone = 1.0
         BugReporting.bugReportingOptions = [.emailFieldHidden]
-        view.instabug_privateView = true
+       // view.instabug_privateView = true
         
         return true
     }
