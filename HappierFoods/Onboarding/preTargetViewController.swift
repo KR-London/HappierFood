@@ -267,17 +267,14 @@ class preTargetViewController: UINavigationController {
         
         motivationViewController.presentState = "First Target"
         motivationViewController.firstPass = "Target"
+        motivationViewController.navigationItem.setHidesBackButton(true, animated: true)
         
         myNav.navigationItem.setHidesBackButton(true, animated: true)
         myNav.pushViewController(motivationViewController, animated: false)
         
         if #available(iOS 13.0, *) {
-           // motivationViewController.isModalInPresentation = true
-           // newViewController.modalPresentationStyle = .fullScreen
             myNav.modalPresentationStyle = .fullScreen
-        } else {
-            // Fallback on earlier versions
-        }
+        } 
         
         self.present(myNav, animated: true, completion: nil)
     }

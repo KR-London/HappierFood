@@ -69,7 +69,7 @@ class Onboarding3ViewController: UINavigationController {
         
     
         /// fade it in & out with RH picture
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
             self.startAnimate(text: self.shakeMe)
             let animator = UIViewPropertyAnimator(duration: 6, curve: .easeOut) {
                 self.shakeMe.alpha = 1
@@ -78,7 +78,7 @@ class Onboarding3ViewController: UINavigationController {
        
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
             self.performSegue(withIdentifier: "o3-o4", sender: self)
         }
     }

@@ -290,7 +290,13 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.foodArray = [menuItem]
                 
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    if main?.mainCollectionView != nil
+                    {
+                        main?.mainCollectionView.reloadData()
+                    }
+                    else{
+                        print("NIL MCV CAUGHT!!!!!")
+                    }
                 }
             }
             

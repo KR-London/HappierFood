@@ -349,8 +349,10 @@ override func viewDidAppear(_ animated: Bool) {
     let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
     
     newViewController.sourceViewController = "Try Food"
+
     
     myNav.pushViewController(rootViewController, animated: false)
+    newViewController.navigationItem.setHidesBackButton(true, animated: true)
     myNav.pushViewController(newViewController, animated: false)
     
     
