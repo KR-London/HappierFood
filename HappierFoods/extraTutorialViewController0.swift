@@ -8,21 +8,18 @@
 
 import UIKit
 
-class extraTutorialViewController: UIViewController {
+class extraTutorialViewController0: UIViewController {
 
     @IBOutlet weak var tutorial: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
       
-        for i in 2...11
-        {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2*Double(i - 1 )) {
-                let pic = "T" + String(i) + ".png"
-                print(pic)
-                self.tutorial.image = UIImage(named: pic)
+        tutorial.image = UIImage(named: "T1.png")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.performSegue(withIdentifier: "segue", sender: self)
             }
-        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
                // let myNav = customNavigationController()

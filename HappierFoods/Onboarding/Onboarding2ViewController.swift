@@ -173,7 +173,7 @@ class Onboarding2ViewController: UINavigationController {
     
     
     @objc func goOn(sender: UIButton!) {
-        performSegue(withIdentifier: "o2-o3", sender: self)
+        performSegue(withIdentifier: "o2-o4", sender: self)
     }
 
 }

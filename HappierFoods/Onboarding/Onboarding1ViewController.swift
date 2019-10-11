@@ -36,7 +36,7 @@ class Onboarding1ViewController: UINavigationController {
     
     lazy var moveOnButton: myButton = {
         let button = myButton()
-         button.setTitle("I'll give it a try", for: .normal)
+         button.setTitle("Is this for me?", for: .normal)
 //        button.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
 //       
 //        button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
@@ -161,6 +161,8 @@ class Onboarding1ViewController: UINavigationController {
 
 
     @objc func goOn(sender: UIButton!) {
-        performSegue(withIdentifier: "o1-o2", sender: self)
+       // performSegue(withIdentifier: "o1-o2", sender: self)
+       performSegue(withIdentifier: "toQuiz", sender: self)
+        
     }
 }

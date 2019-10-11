@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Extra Tutorial View Controller-->
+        <!--Extra Tutorial View Controller0-->
         <scene sceneID="BdA-Of-jWZ">
             <objects>
-                <viewController storyboardIdentifier="p1" id="v7T-DF-zg1" customClass="extraTutorialViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="p1" id="v7T-DF-zg1" customClass="extraTutorialViewController0" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aqM-E6-vrE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,12 +30,42 @@
                         <viewLayoutGuide key="safeArea" id="Cdb-CQ-DQF"/>
                     </view>
                     <connections>
-                        <outlet property="tutorial" destination="upk-Jo-LnE" id="lAq-05-cj8"/>
+                        <outlet property="tutorial" destination="upk-Jo-LnE" id="TLX-as-4Cn"/>
+                        <segue destination="NgM-fz-uOS" kind="presentation" identifier="segue" id="q51-LH-vdt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRL-VS-zFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1059" y="-56"/>
+        </scene>
+        <!--Extra Tutorial View Controller-->
+        <scene sceneID="Ufa-EF-mE9">
+            <objects>
+                <viewController storyboardIdentifier="p2" id="NgM-fz-uOS" customClass="extraTutorialViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ojz-sm-ohd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5O-Yc-Vaf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vhJ-TY-PNO" firstAttribute="trailing" secondItem="P5O-Yc-Vaf" secondAttribute="trailing" id="MUJ-Bi-moI"/>
+                            <constraint firstItem="vhJ-TY-PNO" firstAttribute="bottom" secondItem="P5O-Yc-Vaf" secondAttribute="bottom" id="S7K-Qq-Pks"/>
+                            <constraint firstItem="P5O-Yc-Vaf" firstAttribute="leading" secondItem="vhJ-TY-PNO" secondAttribute="leading" id="k4z-Kg-Ceh"/>
+                            <constraint firstItem="P5O-Yc-Vaf" firstAttribute="top" secondItem="vhJ-TY-PNO" secondAttribute="top" id="xN3-Oq-mlw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vhJ-TY-PNO"/>
+                    </view>
+                    <connections>
+                        <outlet property="tutorial" destination="P5O-Yc-Vaf" id="4BL-ZC-h2J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jKg-Im-NO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-323" y="-56"/>
         </scene>
     </scenes>
 </document>
