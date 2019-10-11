@@ -22,7 +22,7 @@ class HistoryCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         loadItems()
         
-        if let temp = historyArray?.flatMap({$0.saveNumber})
+        if let temp = historyArray?.compactMap({$0.saveNumber})
         {
             print(temp)
             let sections = temp.max() ?? 0

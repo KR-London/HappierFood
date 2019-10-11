@@ -460,12 +460,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 0.5*(navBarHeight ?? 100),height: navBarHeight ?? 100 )), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
-        let font = UIFont(name: "Verdana", size: 25.0)
-       
-      //  navigationItem.backBarButtonItem = UIBarButtonItem()
-   // navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
-        
-        
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
         presentState = main?.myNav?.currentStateAsString() ?? "First Pass"

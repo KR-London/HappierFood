@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7T-DF-zg1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Extra Tutorial View Controller-->
+        <scene sceneID="BdA-Of-jWZ">
+            <objects>
+                <viewController storyboardIdentifier="p1" id="v7T-DF-zg1" customClass="extraTutorialViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aqM-E6-vrE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="upk-Jo-LnE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="upk-Jo-LnE" firstAttribute="top" secondItem="Cdb-CQ-DQF" secondAttribute="top" id="AiJ-a8-yRg"/>
+                            <constraint firstItem="upk-Jo-LnE" firstAttribute="leading" secondItem="Cdb-CQ-DQF" secondAttribute="leading" id="bhJ-uL-Elv"/>
+                            <constraint firstItem="Cdb-CQ-DQF" firstAttribute="bottom" secondItem="upk-Jo-LnE" secondAttribute="bottom" id="v1k-PD-8dy"/>
+                            <constraint firstItem="Cdb-CQ-DQF" firstAttribute="trailing" secondItem="upk-Jo-LnE" secondAttribute="trailing" id="wbA-rd-pKy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cdb-CQ-DQF"/>
+                    </view>
+                    <connections>
+                        <outlet property="tutorial" destination="upk-Jo-LnE" id="lAq-05-cj8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRL-VS-zFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1059" y="-56"/>
+        </scene>
+    </scenes>
+</document>

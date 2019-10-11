@@ -30,12 +30,6 @@ class customNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 233, green: 2, blue: 3, alpha: 1.0),  NSAttributedString.Key.font: UIFont(name: "TwCenMT-CondensedExtraBold", size: 21)]
-     //   let font = UIFont(name: "Verdana", size: 2.0)
-     //   UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
-       // //(textAttributes, for: .normal)
-
 
         // MARK: Colour
        navigationBar.barTintColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
@@ -46,32 +40,38 @@ class customNavigationController: UINavigationController {
 
        // R103 G230 B194
         
-        
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-        [
-            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-            NSAttributedString.Key.foregroundColor : UIColor.white,
-        ], for: .normal )
-        
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-              [
-                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-                  NSAttributedString.Key.foregroundColor : UIColor.white,
-        ], for: .disabled )
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-              [
-                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-                  NSAttributedString.Key.foregroundColor : UIColor.white,
-        ], for: .reserved )
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-                     [
-                         NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-                         NSAttributedString.Key.foregroundColor : UIColor.white,
-        ], for: .application )
+      if #available(iOS 13.0, *) {
+         let app = UINavigationBarAppearance()
+              app.backButtonAppearance.normal.titleTextAttributes = [
+                  NSAttributedString.Key.font: UIFont(name:"TwCenMT-CondensedExtraBold", size: 24)!
+              ]
+              UINavigationBar.appearance().standardAppearance = app
+        }
+//
+//        UIBarButtonItem.appearance().setTitleTextAttributes(
+//        [
+//            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+//            NSAttributedString.Key.foregroundColor : UIColor.white,
+//        ], for: .normal )
+//
+//
+//        UIBarButtonItem.appearance().setTitleTextAttributes(
+//              [
+//                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+//                  NSAttributedString.Key.foregroundColor : UIColor.white,
+//        ], for: .disabled )
+//
+//        UIBarButtonItem.appearance().setTitleTextAttributes(
+//              [
+//                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+//                  NSAttributedString.Key.foregroundColor : UIColor.white,
+//        ], for: .reserved )
+//
+//        UIBarButtonItem.appearance().setTitleTextAttributes(
+//                     [
+//                         NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+//                         NSAttributedString.Key.foregroundColor : UIColor.white,
+//        ], for: .application )
     }
 
     func currentStateAsString()-> String{

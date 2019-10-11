@@ -67,12 +67,9 @@ class historyViewController: UIViewController{
         weak var main = navigationController?.viewControllers[0] as? mainViewController
         
         /// find the current maximum save number
-       loadItems()
-       let maximumSaveNumber = historyArray?.flatMap({$0.saveNumber}).max() ?? 0
-      
-            print(historyArray?.flatMap({$0.saveNumber}))
-            print("Current maximum save number is \(maximumSaveNumber)")
- 
+        loadItems()
+        let maximumSaveNumber = historyArray?.compactMap({$0.saveNumber}).max() ?? 0
+
         let size = main?.foodArray.count ?? -1
         
         if size >  0 {
