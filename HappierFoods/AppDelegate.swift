@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
  
-       // let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
-        let launchedBefore = false
-        let newTutorial = true
+       // let launchedBefore = false
+        let newTutorial = false
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                self.window?.rootViewController = initialViewController
             }
             else{
-                UserDefaults.standard.set(true, forKey: "launchedBefore")
+               // UserDefaults.standard.set(true, forKey: "launchedBefore")
                 self.window = UIWindow(frame: UIScreen.main.bounds)
             
                 let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)

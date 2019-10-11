@@ -25,11 +25,13 @@ class extraTutorialViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
-                let myNav = customNavigationController()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
+               // let myNav = customNavigationController()
+               // let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               // let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
               //  myNav.pushViewController(initialViewController, animated: false)
-                self.present(initialViewController, animated: true, completion: nil)
+            //self.present(initialViewController, animated: true, completion: nil)
+            
+            self.dismiss(animated: true, completion: nil)
         }
         }
 }

@@ -77,7 +77,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //performSegue(withIdentifier: "celebrationSegue", sender: nil )
+        if  UserDefaults.standard.bool(forKey: "launchedBefore") == false
+        {
+             UserDefaults.standard.set(true, forKey: "launchedBefore")
+            LaunchExtraTutorial()       // if myNav?.presentState ==
+        }
+            //performSegue(withIdentifier: "celebrationSegue", sender: nil )
         
         navigationController?.popToRootViewController(animated: false)
         myNav = navigationController as? customNavigationController
@@ -136,7 +141,11 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         switch myNav!.presentState
         {
             case .FirstLaunch : print("In first launch.")
-                //onboardingRoutine()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+                    let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)                                                                                
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
+                    self.present(initialViewController, animated: true, completion: nil)
+                }
             case .ResetDataAtTheStartOfNewWeek : publicInformationBroadcast(didTheyReachTheirTarget: false)
             case .ReturnFromCelebrationScreen : publicInformationBroadcast(didTheyReachTheirTarget: true)
             default: break
@@ -147,6 +156,13 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
         return "HappyFoods Update"
     }
+    
+    func LaunchExtraTutorial(){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+                let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
+                self.present(initialViewController, animated: true, completion: nil)
+            }    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "addFoodSegue" || segue.identifier == "setTargetSegue"{
