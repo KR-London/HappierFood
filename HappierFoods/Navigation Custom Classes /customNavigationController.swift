@@ -32,22 +32,25 @@ class customNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // MARK: Colour
-       navigationBar.barTintColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
-        navigationBar.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+         navigationBar.barTintColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
+         navigationBar.backgroundColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
+       //// navigationBar.barTintColor = UIColor(red: 0/255, green: 0/255, blue: 194/255, alpha: 1)
+
+      navigationBar.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
         
       //  navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
        // navigationBar.backItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
 
        // R103 G230 B194
         
-      if #available(iOS 13.0, *) {
-         let app = UINavigationBarAppearance()
-              app.backButtonAppearance.normal.titleTextAttributes = [
-                  NSAttributedString.Key.font: UIFont(name:"TwCenMT-CondensedExtraBold", size: 24)!
-              ]
-              UINavigationBar.appearance().standardAppearance = app
-        }
-//
+//      if #available(iOS 13.0, *) {
+//         let app = UINavigationBarAppearance()
+//              app.backButtonAppearance.normal.titleTextAttributes = [
+//                  NSAttributedString.Key.font: UIFont(name:"TwCenMT-CondensedExtraBold", size: 24)!
+//              ]
+//              UINavigationBar.appearance().standardAppearance = app
+//        }
+////
 //        UIBarButtonItem.appearance().setTitleTextAttributes(
 //        [
 //            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,

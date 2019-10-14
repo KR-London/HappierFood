@@ -162,7 +162,7 @@ class Onboarding1ViewController: UINavigationController {
 
     @objc func goOn(sender: UIButton!) {
        // performSegue(withIdentifier: "o1-o2", sender: self)
-       performSegue(withIdentifier: "toQuiz", sender: self)
+      performSegue(withIdentifier: "toQuiz", sender: self)
         
     }
 }
