@@ -36,7 +36,8 @@ class customNavigationController: UINavigationController {
          navigationBar.backgroundColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
        //// navigationBar.barTintColor = UIColor(red: 0/255, green: 0/255, blue: 194/255, alpha: 1)
 
-      navigationBar.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+        navigationBar.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+       // navigationItem.title.
         
       //  navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
        // navigationBar.backItem?.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
@@ -50,31 +51,31 @@ class customNavigationController: UINavigationController {
 //              ]
 //              UINavigationBar.appearance().standardAppearance = app
 //        }
-////
-//        UIBarButtonItem.appearance().setTitleTextAttributes(
-//        [
-//            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-//            NSAttributedString.Key.foregroundColor : UIColor.white,
-//        ], for: .normal )
 //
-//
-//        UIBarButtonItem.appearance().setTitleTextAttributes(
-//              [
-//                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-//                  NSAttributedString.Key.foregroundColor : UIColor.white,
-//        ], for: .disabled )
-//
-//        UIBarButtonItem.appearance().setTitleTextAttributes(
-//              [
-//                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-//                  NSAttributedString.Key.foregroundColor : UIColor.white,
-//        ], for: .reserved )
-//
-//        UIBarButtonItem.appearance().setTitleTextAttributes(
-//                     [
-//                         NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
-//                         NSAttributedString.Key.foregroundColor : UIColor.white,
-//        ], for: .application )
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+        [
+            NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+            NSAttributedString.Key.foregroundColor : UIColor.blue,
+        ], for: .normal )
+
+
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+              [
+                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+                  NSAttributedString.Key.foregroundColor : UIColor.blue,
+        ], for: .disabled )
+
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+              [
+                  NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+                  NSAttributedString.Key.foregroundColor : UIColor.blue,
+        ], for: .reserved )
+
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+                     [
+                         NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Light", size: 12)!,
+                         NSAttributedString.Key.foregroundColor : UIColor.white,
+        ], for: .application )
     }
 
     func currentStateAsString()-> String{

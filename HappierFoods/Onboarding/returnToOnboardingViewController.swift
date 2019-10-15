@@ -19,6 +19,7 @@ class returnToOnboardingViewController: UIViewController {
         lazy var block1: UILabel = {
             let contentView = UILabel()
             contentView.text = "Welcome back! How can I help?"
+            contentView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             return contentView
         }()
         

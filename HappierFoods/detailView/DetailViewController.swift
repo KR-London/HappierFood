@@ -22,7 +22,7 @@ class DetailViewController: UIViewController{
     var historyArray: [HistoryTriedFoods]?
     var foodArray: [TriedFood]!
     
-    @IBOutlet weak var moveOnButton: UIButton!
+    @IBOutlet weak var moveOnButton: myButton!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var faceContainer: smileView!
     @IBOutlet weak var foodNameOutlet: UILabel!
@@ -44,6 +44,7 @@ class DetailViewController: UIViewController{
         
         super.viewDidLoad()
         loadItems()
+        numberOfTries.textColor = #colorLiteral(red: 0.05645794421, green: 0.001110887388, blue: 0, alpha: 1)
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
         presentState = (main?.myNav?.currentStateAsString())!
@@ -278,16 +279,20 @@ class DetailViewController: UIViewController{
     func tryItAgain(){
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
-        if main?.myNav?.presentState == .AddFoodViewController{
-            main?.myNav?.presentState = .RetryTriedFood
-        }
-        else{
-            if main?.myNav?.presentState == .SetTargetViewController{
-                main?.myNav?.presentState = .ConvertTargetToTry
-            }
-            else {
-                main?.myNav?.presentState = .Unknown
-            }
+        
+        // passing the message along about what the original cell was
+        let presentState = main?.myNav?.presentState
+        
+        switch presentState{
+            case .AddFoodViewController:
+                main?.myNav?.presentState = .RetryTriedFood
+            case .SetTargetViewController:
+                 main?.myNav?.presentState = .ConvertTargetToTry
+            case .RetryTriedFood:
+                main?.myNav?.presentState = .RetryTriedFood
+            case .ConvertTargetToTry:
+                 main?.myNav?.presentState = .ConvertTargetToTry
+            default: main?.myNav?.presentState = .Unknown
         }
         
         performSegue(withIdentifier: "detailToRate", sender: UIButton())

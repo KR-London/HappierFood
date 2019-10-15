@@ -188,6 +188,8 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBarItems()
+        formatTextInput()
+       
         
         if TARGET_IPHONE_SIMULATOR != 1 {
             usedCamera = true
@@ -197,7 +199,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         writtenInputElements.isHidden = true
         pictureViewConstraints()
         nameOfFood.delegate = self
-
         refreshButtonAppearance()
 }
 
@@ -478,6 +479,18 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             
         }
 
+    }
+    
+    func formatTextInput(){
+        nameOfFood.backgroundColor = UIColor(red: 251/255, green: 254/255, blue: 252/255, alpha: 1)
+        nameOfFood.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+        nameOfFood.borderStyle = .roundedRect
+        nameOfFood.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        nameOfFood.layer.borderWidth = 1.0
+        
+        
+      //  nameOfFood.borderRect(forBounds: <#T##CGRect#>)
+            //= UIFont(descriptor: <#T##UIFontDescriptor#>, size: <#T##CGFloat#>)
     }
     
     // MARK: Boilerplate

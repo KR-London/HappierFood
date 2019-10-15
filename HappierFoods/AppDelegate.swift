@@ -59,9 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
       
      //   BugReporting.bugReportingOptions = [.]
-        Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
-        BugReporting.shakingThresholdForiPhone = 1.0
-        BugReporting.bugReportingOptions = [.emailFieldHidden]
+//        Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
+//        BugReporting.shakingThresholdForiPhone = 1.0
+//        BugReporting.bugReportingOptions = [.emailFieldHidden]
 
         return true
     }
