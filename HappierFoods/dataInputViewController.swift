@@ -220,11 +220,9 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
       if segue.identifier != "back" {
             if let dvc1 = segue.destination as? rateFoodViewController {
                 print(foodName + ".jpeg")
-                dvc1.imagePlaceholder = image ?? UIImage(named:
-                   placeholderImages.randomElement()!)!
+                dvc1.imagePlaceholder = image ?? UIImage(named: placeholderImages.randomElement()!)!
                 dvc1.foodName = foodName
                 dvc1.placeHolderImage = placeholderImage
-             //   dvc1.imageExtension = filename
             }
         }
     }
@@ -252,7 +250,6 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
             if let url = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(url, options: [:], completionHandler: { _ in
-                    // Handle
                 })
             }
         })
@@ -328,7 +325,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         
         if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
             captureImageView.image = userPickedImage
-            image = userPickedImage
+            image = userPickedImage.scaleImage(toSize: CGSize(width: 150, height: 150))
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
