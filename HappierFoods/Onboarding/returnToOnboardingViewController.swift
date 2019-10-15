@@ -19,6 +19,7 @@ class returnToOnboardingViewController: UIViewController {
         lazy var block1: UILabel = {
             let contentView = UILabel()
             contentView.text = "Welcome back! How can I help?"
+            contentView.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
             contentView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             return contentView
         }()
@@ -29,7 +30,11 @@ class returnToOnboardingViewController: UIViewController {
            // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
               //  R95 G215 B176  )
            // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
-            button.setTitle("Try Food", for: .normal)
+            button.setTitle("Hold my hand - I'm gonna try something", for: .normal)
+            button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+             button.titleLabel?.allowsDefaultTighteningForTruncation = true
+            button.titleLabel?.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+            button.titleLabel?.textAlignment = .center
            // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
             return button
         }()
@@ -38,7 +43,12 @@ class returnToOnboardingViewController: UIViewController {
             let button = myButton()
              // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
            // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
-            button.setTitle("Not Eating Now", for: .normal)
+            button.setTitle("Gimme a target! ", for: .normal)
+            button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+            button.titleLabel?.allowsDefaultTighteningForTruncation = true
+            button.titleLabel?.allowsDefaultTighteningForTruncation = true
+            button.titleLabel?.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+            //button.titleLabel?.adjustsFontForContentSizeCategory
            // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
             return button
         }()
@@ -48,7 +58,11 @@ class returnToOnboardingViewController: UIViewController {
                // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
                   //  R95 G215 B176  )
                // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
-                button.setTitle("Info", for: .normal)
+                button.setTitle("How will this app help me?", for: .normal)
+                button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+                button.titleLabel?.textAlignment = .center
+                button.titleLabel?.allowsDefaultTighteningForTruncation = true
+                button.titleLabel?.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
                // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
                 return button
             }()
@@ -57,7 +71,11 @@ class returnToOnboardingViewController: UIViewController {
                 let button = myButton()
                  // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
                // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
-                button.setTitle("Motivation", for: .normal)
+                button.setTitle("I'm feeling down", for: .normal)
+                button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+                button.titleLabel?.allowsDefaultTighteningForTruncation = true
+                 button.titleLabel?.allowsDefaultTighteningForTruncation = true
+                button.titleLabel?.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
                // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
                 return button
             }()
