@@ -214,6 +214,8 @@
 		44D5985B2259346700267E71 /* mainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5985A2259346700267E71 /* mainCollectionViewCell.swift */; };
 		44D598632259535100267E71 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598622259535100267E71 /* mainViewController.swift */; };
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
+		44FE744B2357718100CDC2E5 /* BlankAward.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44FE744A2357718100CDC2E5 /* BlankAward.jpeg */; };
+		44FE744D2357737800CDC2E5 /* certificateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE744C2357737800CDC2E5 /* certificateViewController.swift */; };
 		6D1B9A1C50A2A3F1748EDEF2 /* Pods_HappierFoodsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE003BF8D73E498BC5B1788 /* Pods_HappierFoodsTests.framework */; };
 		FF77330A49533229A29CC12E /* Pods_HappierFoods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9552811D9036030A884AA59C /* Pods_HappierFoods.framework */; };
 /* End PBXBuildFile section */
@@ -442,6 +444,8 @@
 		44D5985A2259346700267E71 /* mainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainCollectionViewCell.swift; sourceTree = "<group>"; };
 		44D598622259535100267E71 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
+		44FE744A2357718100CDC2E5 /* BlankAward.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BlankAward.jpeg; sourceTree = "<group>"; };
+		44FE744C2357737800CDC2E5 /* certificateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = certificateViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/Onboarding/certificateViewController.swift; sourceTree = "<absolute>"; };
 		505B2D1BFFFBAD71593F40F8 /* Pods-HappierFoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.release.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.release.xcconfig"; sourceTree = "<group>"; };
 		9552811D9036030A884AA59C /* Pods_HappierFoods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappierFoods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A17AD28183A020BB276BFAE0 /* Pods-HappierFoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.debug.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -501,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				4410083F22E4A0BB0096E47F /* Onboarding.storyboard */,
+				44FE744C2357737800CDC2E5 /* certificateViewController.swift */,
 				442EAEE923510F0500232E52 /* returnToOnboardingViewController.swift */,
 				44B41CF42350BD1A00A750E0 /* quizViewController.swift */,
 				447DE07C22C5BFA200081414 /* OnboardingViewController.swift */,
@@ -674,6 +679,7 @@
 		44B52F7E22D9EDCB00CF730D /* OnboardingHandwrittenLetter */ = {
 			isa = PBXGroup;
 			children = (
+				44FE744A2357718100CDC2E5 /* BlankAward.jpeg */,
 				44BFAD5D232D738800CD5CA8 /* 1.png */,
 				44BFAD6F232D7A2E00CD5CA8 /* 1 2.png */,
 				44BFAD5A232D738800CD5CA8 /* 2.png */,
@@ -960,6 +966,7 @@
 				44B41CEF2350AB5500A750E0 /* T11.png in Resources */,
 				4483901822C731EC002F8D2E /* onboarding2.png in Resources */,
 				44BFAD6A232D738900CD5CA8 /* 11.png in Resources */,
+				44FE744B2357718100CDC2E5 /* BlankAward.jpeg in Resources */,
 				44A75AD622EA6806007AE545 /* sandwich.jpeg in Resources */,
 				44B41CFF2350BE3100A750E0 /* NewPromoPics.007.jpeg in Resources */,
 				443B66DC2290603E007DDACC /* eyeLookOutLeft_browDownLeft.png in Resources */,
@@ -1211,6 +1218,7 @@
 				44455A2A228E7D01006A6652 /* DetailViewController.swift in Sources */,
 				44B52FF522DA211900CF730D /* preTryViewController.swift in Sources */,
 				44329E9322DE1225002DA0FA /* HistoryCollectionViewCell.swift in Sources */,
+				44FE744D2357737800CDC2E5 /* certificateViewController.swift in Sources */,
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
 				442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */,

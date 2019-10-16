@@ -562,28 +562,52 @@
             </objects>
             <point key="canvasLocation" x="4540.579710144928" y="-69.642857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Certificate View Controller-->
         <scene sceneID="IAU-cW-1Wc">
             <objects>
-                <viewController id="aAA-y7-CVG" sceneMemberID="viewController">
+                <viewController id="aAA-y7-CVG" customClass="certificateViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TIT-x2-JvD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="certificate.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="dGj-Uv-hsX">
-                                <rect key="frame" x="20" y="0.0" width="374" height="842"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlankAward.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="dGj-Uv-hsX">
+                                <rect key="frame" x="20" y="37" width="374" height="768"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Fak-8o-vw4">
+                                <rect key="frame" x="95" y="431.5" width="224" height="63.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-lf-TXv">
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="21"/>
+                                        <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ7-3k-5fL">
+                                        <rect key="frame" x="0.0" y="45" width="224" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Fak-8o-vw4" firstAttribute="centerX" secondItem="TIT-x2-JvD" secondAttribute="centerX" id="LYl-bO-4ee"/>
                             <constraint firstItem="dGj-Uv-hsX" firstAttribute="centerX" secondItem="TIT-x2-JvD" secondAttribute="centerX" id="UDj-V8-XVW"/>
                             <constraint firstItem="dGj-Uv-hsX" firstAttribute="leading" secondItem="YLg-Ci-G3U" secondAttribute="leading" constant="20" id="VuG-ig-B9s"/>
                             <constraint firstItem="YLg-Ci-G3U" firstAttribute="trailing" secondItem="dGj-Uv-hsX" secondAttribute="trailing" constant="20" id="dka-tQ-9GA"/>
                             <constraint firstItem="dGj-Uv-hsX" firstAttribute="centerY" secondItem="TIT-x2-JvD" secondAttribute="centerY" id="dno-sO-Nnv"/>
+                            <constraint firstItem="Fak-8o-vw4" firstAttribute="centerY" secondItem="TIT-x2-JvD" secondAttribute="centerY" multiplier="1.1" id="n5w-SS-V7Q"/>
+                            <constraint firstItem="Fak-8o-vw4" firstAttribute="width" secondItem="dGj-Uv-hsX" secondAttribute="width" multiplier="0.6" id="sNb-6g-hkG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLg-Ci-G3U"/>
                     </view>
                     <navigationItem key="navigationItem" id="6NV-kF-4WS"/>
+                    <connections>
+                        <outlet property="date" destination="DQ7-3k-5fL" id="0Mc-8C-VIy"/>
+                        <outlet property="message" destination="ccw-lf-TXv" id="qeA-Ah-MPD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0o-so-uZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -619,8 +643,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BlankAward.jpeg" width="1024" height="768"/>
         <image name="NewPromoPics.004.jpeg" width="1024" height="768"/>
-        <image name="certificate.jpeg" width="1081" height="842"/>
         <image name="happy.png" width="180" height="180"/>
         <image name="little dude1.png" width="800" height="800"/>
         <image name="little dude2.png" width="800" height="800"/>
