@@ -58,3 +58,49 @@ extension UIImage {
         return newImage
     }
 }
+
+
+class RadioButton: UIButton {
+    
+    /// I've inverted the implementation, because I liked the default animations in different places. This is untidy. 
+    var alternateButton:Array<RadioButton>?
+
+    override func awakeFromNib() {
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2.0
+        self.layer.masksToBounds = true
+        self.isSelected = false
+    }
+
+    func unselectAlternateButtons(){
+        if alternateButton != nil {
+            self.isSelected = false
+
+            for aButton:RadioButton in alternateButton! {
+                aButton.isSelected = true
+            }
+        }else{
+            toggleButton()
+        }
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        unselectAlternateButtons()
+        super.touchesBegan(touches, with: event)
+    }
+
+    func toggleButton(){
+        self.isSelected = !isSelected
+    }
+
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                self.layer.borderColor = UIColor.lightGray.cgColor
+            } else {
+                
+                self.layer.borderColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1).cgColor
+            }
+        }
+    }
+}
