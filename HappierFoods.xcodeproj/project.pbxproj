@@ -32,6 +32,7 @@
 		442132FE234CB08500F4624D /* AdobeStock_232732756.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442132FA234CB08400F4624D /* AdobeStock_232732756.jpeg */; };
 		442132FF234CB08500F4624D /* AdobeStock_243078492.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442132FB234CB08500F4624D /* AdobeStock_243078492.jpeg */; };
 		4425CAF3225E6D1200A6DEE6 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4425CAF2225E6D1200A6DEE6 /* button.png */; };
+		442D5585235CBF9C00E9C8EB /* web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442D5584235CBF9C00E9C8EB /* web.swift */; };
 		442EAEEA23510F0500232E52 /* returnToOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442EAEE923510F0500232E52 /* returnToOnboardingViewController.swift */; };
 		442EAEEC235116D100232E52 /* certificate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442EAEEB235116D100232E52 /* certificate.jpeg */; };
 		442EAEEE235118F300232E52 /* extraTutorialViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442EAEED235118F300232E52 /* extraTutorialViewController0.swift */; };
@@ -260,6 +261,7 @@
 		442132FA234CB08400F4624D /* AdobeStock_232732756.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AdobeStock_232732756.jpeg; sourceTree = "<group>"; };
 		442132FB234CB08500F4624D /* AdobeStock_243078492.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AdobeStock_243078492.jpeg; sourceTree = "<group>"; };
 		4425CAF2225E6D1200A6DEE6 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		442D5584235CBF9C00E9C8EB /* web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = web.swift; sourceTree = "<group>"; };
 		442EAEE923510F0500232E52 /* returnToOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = returnToOnboardingViewController.swift; sourceTree = "<group>"; };
 		442EAEEB235116D100232E52 /* certificate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = certificate.jpeg; sourceTree = "<group>"; };
 		442EAEED235118F300232E52 /* extraTutorialViewController0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extraTutorialViewController0.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 			children = (
 				4410083F22E4A0BB0096E47F /* Onboarding.storyboard */,
 				44A5AB84235CA351009C0F8A /* resourcesViewController.swift */,
+				442D5584235CBF9C00E9C8EB /* web.swift */,
 				44FE744C2357737800CDC2E5 /* certificateViewController.swift */,
 				442EAEE923510F0500232E52 /* returnToOnboardingViewController.swift */,
 				44B41CF42350BD1A00A750E0 /* quizViewController.swift */,
@@ -1233,6 +1236,7 @@
 				44FE744D2357737800CDC2E5 /* certificateViewController.swift in Sources */,
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,
+				442D5585235CBF9C00E9C8EB /* web.swift in Sources */,
 				442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */,
 				44B41CF52350BD1A00A750E0 /* quizViewController.swift in Sources */,
 				44329E9722DE292D002DA0FA /* HistoryCollectionViewController.swift in Sources */,
