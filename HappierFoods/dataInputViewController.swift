@@ -175,7 +175,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 //            }
 //        }
         captureImageView.isHidden = true
-        writtenInputElements.isHidden = false
+      //  writtenInputElements.isHidden = false
     }
 
     // MARK: AV init helpers
@@ -196,7 +196,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         }
 
         imagePicker.allowsEditing = true
-        writtenInputElements.isHidden = true
+      //  writtenInputElements.isHidden = true
         pictureViewConstraints()
         nameOfFood.delegate = self
         refreshButtonAppearance()
@@ -376,31 +376,31 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
     // MARK: Layout and appearance subroutines
     
     func refreshButtonAppearance(){
-        switch currentDataInputMode
-        {
-        case .camera:
-            cameraButton.alpha = 0.5
-            cameraRollButton.alpha = 1
-            writeButton.alpha = 1
-        case .cameraRoll:
-            cameraButton.alpha = 1
-            cameraRollButton.alpha = 0.5
-            writeButton.alpha = 1
-        case .write:
-            cameraButton.alpha = 1
-            cameraRollButton.alpha = 1
-            writeButton.alpha = 0.5
-        default:
-            cameraButton.alpha = 1
-            cameraRollButton.alpha = 1
-            writeButton.alpha = 1
-        }
+//        switch currentDataInputMode
+//        {
+//        case .camera:
+//            cameraButton.alpha = 0.5
+//            cameraRollButton.alpha = 1
+//            writeButton.alpha = 1
+//        case .cameraRoll:
+//            cameraButton.alpha = 1
+//            cameraRollButton.alpha = 0.5
+//            writeButton.alpha = 1
+//        case .write:
+//            cameraButton.alpha = 1
+//            cameraRollButton.alpha = 1
+//            writeButton.alpha = 0.5
+//        default:
+//            cameraButton.alpha = 1
+//            cameraRollButton.alpha = 1
+//            writeButton.alpha = 1
+//        }
     }
     
     func pictureViewConstraints(){
         
         previewView.translatesAutoresizingMaskIntoConstraints = false
-        writtenInputElements.translatesAutoresizingMaskIntoConstraints = false
+        //writtenInputElements.translatesAutoresizingMaskIntoConstraints = false
         captureImageView.translatesAutoresizingMaskIntoConstraints = false
         
         previewView.widthAnchor.constraint(equalToConstant: 300).isActive = true
@@ -408,10 +408,10 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         previewView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         previewView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
         
-        writtenInputElements.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        writtenInputElements.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        writtenInputElements.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        writtenInputElements.bottomAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+       // writtenInputElements.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        //writtenInputElements.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        //writtenInputElements.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+       // writtenInputElements.bottomAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         nameOfFood.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 ) 
         //writtenInputElements.font = UIFont(name: "Courier", size: 24)
         //writtenInputElements.heightAnchor.constraint(equalToConstant: 200)
@@ -423,8 +423,8 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 
         previewView.layer.cornerRadius = 5
         previewView.layer.masksToBounds = true
-        writtenInputElements.layer.cornerRadius = 5
-        writtenInputElements.layer.masksToBounds = true
+       // writtenInputElements.layer.cornerRadius = 5
+        //writtenInputElements.layer.masksToBounds = true
         //captureImageView.backgroundColor = UIColor.gray
         captureImageView.layer.cornerRadius = 5
         captureImageView.layer.masksToBounds = true
@@ -432,21 +432,21 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 
         previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
 
-        buttonStack.translatesAutoresizingMaskIntoConstraints = false
-        let buttonStackHeightAnchorConstraint = buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
-        buttonStackHeightAnchorConstraint.isActive = true
+     //   buttonStack.translatesAutoresizingMaskIntoConstraints = false
+     //   let buttonStackHeightAnchorConstraint = buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
+      //  buttonStackHeightAnchorConstraint.isActive = true
  
-        buttonStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor, constant: 10).isActive = true
-        buttonStack.layer.masksToBounds = true
-
-        buttonOutlet.translatesAutoresizingMaskIntoConstraints = false
-        buttonOutlet.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
-        buttonOutlet.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
-        buttonOutlet.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        buttonOutlet.layer.masksToBounds = true
+      //  buttonStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+      //  buttonStack.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+      //  buttonStack.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+      //  buttonStack.topAnchor.constraint(greaterThanOrEqualTo: buttonOutlet.bottomAnchor, constant: 10).isActive = true
+      //  buttonStack.layer.masksToBounds = true
+//
+      //  buttonOutlet.translatesAutoresizingMaskIntoConstraints = false
+      //  buttonOutlet.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+      //  buttonOutlet.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+      //  buttonOutlet.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+     //   buttonOutlet.layer.masksToBounds = true
     }
     
     func setUpNavigationBarItems(){

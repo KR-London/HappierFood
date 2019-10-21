@@ -30,10 +30,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
+           // let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
+           // self.window?.rootViewController = initialViewController
+            //self.window?.makeKeyAndVisible()
             
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+               
+               let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
+               let myNav = customNavigationController()
+                // myNav.presentState = .FirstLaunch
+                //clean up
+                // rootViewController.deleteAllData("TargetFood")
+                // rootViewController.deleteAllData("TriedFood")
+                //deleteAllData("HistoryTriedFoods")
+               
+                // rootViewController.foodArray = []
+                //   rootViewController.targetArray = []
+                //  defaults.set(0.0, forKey: "Last Week Started")
+                // defaults.set(false, forKey: "Celebration Status")
+               
+               rootViewController.myNav?.presentState = .AddFoodViewController
+               
+               
+               let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+               
+               newViewController.sourceViewController = "Try Food"
+
+               myNav.pushViewController(rootViewController, animated: false)
+               newViewController.navigationItem.setHidesBackButton(true, animated: true)
+               myNav.pushViewController(newViewController, animated: false)
+            
+            //self.window?.pushViewController = myNav
+            //rootViewController = myNav
+                //self.window?.present(myNav, animated: true, completion: nil)
+             // self.window?.rootViewController = newViewController
+            
+                self.window?.rootViewController = myNav
+                
+                self.window?.makeKeyAndVisible()
         }
         else
         {
@@ -41,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window = UIWindow(frame: UIScreen.main.bounds)
                            
                                let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
-                                                                                                                     
                                let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
                                self.window?.rootViewController = initialViewController
             }
