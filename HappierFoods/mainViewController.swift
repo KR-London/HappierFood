@@ -349,11 +349,20 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         let navBarHeight = navigationController?.navigationBar.frame.height
        
-        let shareButton = UIButton(type: .system)
-        shareButton.setImage(UIImage(named:"appleShare" )?.resize(to: CGSize(width: (36/53)*0.7*(navBarHeight ?? 100),height: 0.7*(navBarHeight ?? 100) )), for: .normal)
+      //  let shareButton = UIButton(type: .system)
+       // shareButton.setImage(UIImage(named:"appleShare" )?.resize(to: CGSize(width: (36/53)*0.7*(navBarHeight ?? 100),height: 0.7*(navBarHeight ?? 100) )), for: .normal)
 
-        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+      //  shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+       // navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+        
+        let statsButton = UIButton(type: .system)
+       // statsButton.setImage(UIImage(named: "appleHistory")?.resize(to: CGSize(width: 0.55*(navBarHeight ?? 100),height: 0.55*(navBarHeight ?? 100) )), for: .normal)
+        statsButton.addTarget(self, action: #selector(goStats), for: .touchUpInside)
+        statsButton.titleLabel?.text = "Stats"
+        statsButton.titleLabel?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: statsButton)
+        
+       // NAVIGATE TO STATS
         
         let historyButton = UIButton(type: .system)
         historyButton.setImage(UIImage(named: "appleHistory")?.resize(to: CGSize(width: 0.55*(navBarHeight ?? 100),height: 0.55*(navBarHeight ?? 100) )), for: .normal)
@@ -367,6 +376,12 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
      @objc func goHistory() {
         performSegue(withIdentifier: "historySegue", sender: UIButton())
     }
+    
+    // MARK: Action functions
+     @objc func goStats() {
+        performSegue(withIdentifier: "statsSegue", sender: UIButton())
+    }
+    
     
     @objc func share() {
         
