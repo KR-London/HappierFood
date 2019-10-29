@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
  
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+       // let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
-        //let launchedBefore = false
+       let launchedBefore = false
         let newTutorial = false
         
         if launchedBefore{
@@ -84,8 +84,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
                 let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
                                                                                                       
-                //let initialViewController = storyboard.instantiateViewController(withIdentifier: "o1" )
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "o1" )
+               let initialViewController = storyboard.instantiateViewController(withIdentifier: "o1" )
+                //let initialViewController = storyboard.instantiateViewController(withIdentifier: "dudeControlCentre" )
            
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()

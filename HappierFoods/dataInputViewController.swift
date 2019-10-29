@@ -20,6 +20,17 @@ enum dataInputMode: String{
 
 class dataInputViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+   lazy var tryButton: myButton = {
+            let button = myButton()
+             button.setTitle("Try", for: .normal)
+            return button
+        }()
+    lazy var targetButton: myButton = {
+               let button = myButton()
+                button.setTitle("Target", for: .normal)
+               return button
+           }()
+    
     var image : UIImage?
     var foodName = String()
     var currentDataInputMode : dataInputMode = dataInputMode.camera
@@ -197,9 +208,16 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
 
         imagePicker.allowsEditing = true
       //  writtenInputElements.isHidden = true
+        
+        view.addSubview(tryButton)
+        view.addSubview(targetButton)
+        
         pictureViewConstraints()
         nameOfFood.delegate = self
         refreshButtonAppearance()
+        
+        captureImageView.image = UIImage(named: "chaos.jpg")
+
 }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -429,8 +447,35 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         captureImageView.layer.cornerRadius = 5
         captureImageView.layer.masksToBounds = true
         captureImageView.contentMode = .scaleAspectFill
+        
+        nameOfFood.translatesAutoresizingMaskIntoConstraints = false
+        nameOfFood.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        nameOfFood.leadingAnchor.constraint(equalTo: captureImageView.leadingAnchor).isActive = true
+        nameOfFood.trailingAnchor.constraint(equalTo: captureImageView.trailingAnchor).isActive = true
+        nameOfFood.topAnchor.constraint(greaterThanOrEqualTo: captureImageView.bottomAnchor, constant: 10).isActive = true
 
-        previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
+        tryButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+                    [
+                       tryButton.widthAnchor.constraint(equalTo: captureImageView.widthAnchor, multiplier: 0.48),
+                       tryButton.leadingAnchor.constraint(equalTo: captureImageView.leadingAnchor),
+                       tryButton.heightAnchor.constraint(equalToConstant: 50),
+                       tryButton.topAnchor.constraint(equalTo: nameOfFood.bottomAnchor, constant: 10)
+                    ]
+                )
+        
+        targetButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+                    [
+                       targetButton.widthAnchor.constraint(equalTo: captureImageView.widthAnchor, multiplier: 0.48),
+                       targetButton.trailingAnchor.constraint(equalTo: captureImageView.trailingAnchor),
+                       targetButton.heightAnchor.constraint(equalToConstant: 50),
+                       targetButton.topAnchor.constraint(equalTo: nameOfFood.bottomAnchor, constant: 10)
+                    ]
+                )
+        
+
+       // previewView.bottomAnchor.constraint(lessThanOrEqualTo: buttonOutlet.topAnchor, constant: -20).isActive = true
 
      //   buttonStack.translatesAutoresizingMaskIntoConstraints = false
      //   let buttonStackHeightAnchorConstraint = buttonStack.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2)
@@ -464,7 +509,7 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
         
         switch sourceViewController{
             case "Try Food":
-                        navigationItem.title = "What did you try?"
+                        navigationItem.title = "Happy Your Food"
                         main?.myNav?.presentState = .AddFoodViewController
                         presentState = "AddFoodViewController"
             
