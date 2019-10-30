@@ -10,6 +10,11 @@ import UIKit
 
 class statsCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var titleOfStatistic: UILabel!
+    @IBOutlet weak var valueOfStatistic: UILabel!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
