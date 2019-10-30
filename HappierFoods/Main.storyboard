@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -177,11 +176,11 @@
             </objects>
             <point key="canvasLocation" x="-3597" y="-1177"/>
         </scene>
-        <!--Stats Table View Controller-->
+        <!--Stats-->
         <scene sceneID="TjQ-ni-NZ6">
             <objects>
-                <tableViewController id="Q6B-AB-fPC" customClass="statsTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iW-jp-JDM">
+                <tableViewController title="Stats" id="Q6B-AB-fPC" customClass="statsTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iW-jp-JDM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -200,18 +199,20 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gtk-b3-ONA">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="3G2-Xv-EdD"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Dgj-ow-efF"/>
                                                         <constraint firstAttribute="width" secondItem="gtk-b3-ONA" secondAttribute="height" multiplier="1:1" id="nAU-8E-fL7"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Of Stat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvP-tQ-YFW">
-                                                    <rect key="frame" x="91" y="30" width="234" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Of Stat" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvP-tQ-YFW">
+                                                    <rect key="frame" x="91" y="30.5" width="234" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57b-2F-JOC">
-                                                    <rect key="frame" x="336" y="30" width="78" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="336" y="30.5" width="78" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -246,80 +247,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCI-qv-HMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1386.9565217391305" y="-2472.3214285714284"/>
-        </scene>
-        <!--Stats Collection View Controller-->
-        <scene sceneID="NrX-Nw-oCY">
-            <objects>
-                <collectionViewController id="HHU-At-uLd" customClass="statsCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g6d-A4-Ber">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mTy-Jm-tGP">
-                            <size key="itemSize" width="414" height="146"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="statsCell" id="GCP-6K-E8r" customClass="statsCollectionViewCell" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="42" y="0.0" width="330" height="146"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UKq-dr-DdI">
-                                    <rect key="frame" x="0.0" y="0.0" width="330" height="146"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K59-Q3-TQU">
-                                            <rect key="frame" x="0.0" y="0.0" width="330" height="146"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-qd-DiJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="146" height="146"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Nm2-qd-DiJ" secondAttribute="height" multiplier="1:1" id="7jU-oc-mHc"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Stat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbc-K5-syN">
-                                                    <rect key="frame" x="154" y="63" width="126" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2b1-E9-WtX">
-                                                    <rect key="frame" x="288" y="63" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="2b1-E9-WtX" firstAttribute="width" secondItem="tbc-K5-syN" secondAttribute="width" multiplier="1/3" priority="750" id="GTa-1n-aWi"/>
-                                            </constraints>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="K59-Q3-TQU" secondAttribute="bottom" id="DMd-8j-d6h"/>
-                                        <constraint firstItem="K59-Q3-TQU" firstAttribute="leading" secondItem="UKq-dr-DdI" secondAttribute="leading" id="Lus-6T-7c6"/>
-                                        <constraint firstItem="K59-Q3-TQU" firstAttribute="top" secondItem="UKq-dr-DdI" secondAttribute="top" id="UHi-PA-zv2"/>
-                                        <constraint firstAttribute="trailing" secondItem="K59-Q3-TQU" secondAttribute="trailing" id="k5Z-e1-ux1"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="image" destination="Nm2-qd-DiJ" id="cC5-4d-1zv"/>
-                                    <outlet property="titleOfStatistic" destination="tbc-K5-syN" id="G1W-G6-f0i"/>
-                                    <outlet property="valueOfStatistic" destination="2b1-E9-WtX" id="1UH-kc-tY7"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="HHU-At-uLd" id="w1W-Om-0fg"/>
-                            <outlet property="delegate" destination="HHU-At-uLd" id="MAP-oo-zoa"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="N3o-L8-7rW"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gbd-xh-Z63" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2085.507246376812" y="-2468.3035714285711"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2OS-jh-RZS">

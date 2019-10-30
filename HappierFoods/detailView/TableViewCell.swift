@@ -31,5 +31,11 @@ class statsTableViewCell: UITableViewCell {
         self.layer.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
         self.layer.cornerRadius = 5.0
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+    }
 
 }

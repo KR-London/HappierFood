@@ -16,6 +16,7 @@ class statsTableViewController: UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var historyArray: [HistoryTriedFoods]?
     var foodArray: [TriedFood]!
+    var logons: [Logons]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class statsTableViewController: UITableViewController {
                   cell.titleOfStatistic.text = "Total Foods Tried"
               case 2:
                   cell.titleOfStatistic.text = "Total Logons"
+                  cell.valueOfStatistic.text = String( (logons?.count ?? -1) )
               case 3:
                   cell.titleOfStatistic.text = "Average Logon per week"
               case 4:
@@ -120,6 +122,12 @@ class statsTableViewController: UITableViewController {
     
     /// MARK: Stats calculating subroutines
     
+    func compress() {
+        //
+       // var AllFoods = history + tried
+        // whereever I miss a foodname,
+    }
+    
     func countTriesOrThisFood(foodName: String, photoFilename: String ) -> Int{
         var countOfThisFood = Int()
 
@@ -145,8 +153,8 @@ class statsTableViewController: UITableViewController {
              
              if foodName == ""
              {
-                 
-                 if photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+
+                if photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
                  {
                      countOfThisFood = countOfThisFood + history.filter({ $0.filename == photoFilename }).count
                  }
@@ -185,6 +193,14 @@ class statsTableViewController: UITableViewController {
         catch{
             print("Error fetching data \(error)")
         }
+        
+        let request3 : NSFetchRequest<Logons> = Logons.fetchRequest()
+              do{
+                  try logons = context.fetch(request3)
+              }
+              catch{
+                  print("Error fetching data \(error)")
+              }
 
     }
 

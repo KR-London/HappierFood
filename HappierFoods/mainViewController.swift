@@ -29,6 +29,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var food: [NSManagedObject] = []
     var foodArray: [TriedFood]!
     var targetArray: [TargetFood]!
+    var logons: [Logons]!
     
     unowned var myNav : customNavigationController?
     
@@ -355,12 +356,14 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
       //  shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
        // navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
         
-        let statsButton = UIButton(type: .system)
-       // statsButton.setImage(UIImage(named: "appleHistory")?.resize(to: CGSize(width: 0.55*(navBarHeight ?? 100),height: 0.55*(navBarHeight ?? 100) )), for: .normal)
-        statsButton.addTarget(self, action: #selector(goStats), for: .touchUpInside)
-        statsButton.titleLabel?.text = "Stats"
-        statsButton.titleLabel?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: statsButton)
+//        let statsButton = UIButton(type: .system)
+//       // statsButton.setImage(UIImage(named: "appleHistory")?.resize(to: CGSize(width: 0.55*(navBarHeight ?? 100),height: 0.55*(navBarHeight ?? 100) )), for: .normal)
+//        statsButton.addTarget(self, action: #selector(goStats), for: .touchUpInside)
+//        statsButton.titleLabel?.text = "Stats"
+//        //statsButton.titleLabel?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: statsButton)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Stats", style: .plain, target: self, action: #selector(goStats))
         
        // NAVIGATE TO STATS
         
@@ -578,6 +581,49 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
         catch{
             print("Error fetching data \(error)")
         }
+        
+        let request3 : NSFetchRequest<Logons> = Logons.fetchRequest()
+              do{
+                  try logons = context.fetch(request3)
+              }
+              catch{
+                  print("Error fetching data \(error)")
+              }
+        
+//        if thisIsANewLogon(){
+//           kjhh logons
+//        }
+        
+    }
+    
+    func thisIsANewLogon() -> Bool{
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+
+        for entry in logons{
+            if entry.day == Int16(day) && entry.month == Int16(month) && entry.year == Int16(year){
+                return false
+            }
+        }
+        
+        let newLogin = NSEntityDescription.insertNewObject(forEntityName: "Logons", into: context) as! Logons
+        
+        newLogin.day = Int16(day)
+        newLogin.month = Int16(month)
+        newLogin.year = Int16(year)
+        
+        do{ try
+               context.save() }
+           catch{
+               let nserror = error as NSError
+               fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+         }
+        
+        return true
     }
   
 }
