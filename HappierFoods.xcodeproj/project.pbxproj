@@ -84,6 +84,7 @@
 		4483901822C731EC002F8D2E /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483901722C731EC002F8D2E /* onboarding2.png */; };
 		4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */; };
 		4483902122C7D187002F8D2E /* Loading Screens1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483902022C7D187002F8D2E /* Loading Screens1.png */; };
+		448F0819236AB95E002B96BE /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448F0818236AB95E002B96BE /* historyTableViewController.swift */; };
 		449613CB22DC9CBC001CCE37 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CA22DC9CBB001CCE37 /* apple.jpg */; };
 		449613CD22DC9CD6001CCE37 /* rice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CC22DC9CD6001CCE37 /* rice.jpeg */; };
 		449613CF22DC9CF6001CCE37 /* boiled_eggs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */; };
@@ -316,6 +317,7 @@
 		4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = databasePlaceholderImage.001.jpeg; sourceTree = "<group>"; };
 		4483902022C7D187002F8D2E /* Loading Screens1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Screens1.png"; sourceTree = "<group>"; };
 		448813BE22D6434F00E3A78F /* HappierFoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HappierFoods.entitlements; sourceTree = "<group>"; };
+		448F0818236AB95E002B96BE /* historyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
 		449613CA22DC9CBB001CCE37 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		449613CC22DC9CD6001CCE37 /* rice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rice.jpeg; sourceTree = "<group>"; };
 		449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boiled_eggs.jpeg; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 		44329E9422DE28DD002DA0FA /* History */ = {
 			isa = PBXGroup;
 			children = (
+				448F0818236AB95E002B96BE /* historyTableViewController.swift */,
 				4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */,
 				44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */,
 				44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */,
@@ -1252,6 +1255,7 @@
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
+				448F0819236AB95E002B96BE /* historyTableViewController.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
 				44B5300522DA2F4E00CF730D /* preTargetViewController.swift in Sources */,
 				4449A5622369653B0070099F /* statsTableViewController.swift in Sources */,

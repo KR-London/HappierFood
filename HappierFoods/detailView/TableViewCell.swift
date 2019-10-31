@@ -14,6 +14,11 @@ class statsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleOfStatistic: UILabel!
     @IBOutlet weak var valueOfStatistic: UILabel!
     
+    
+    public func displayContent(image: String){
+        imageForStat.image = UIImage(named: image)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()

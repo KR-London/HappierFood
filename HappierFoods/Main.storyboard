@@ -23,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="XJ3-d7-Yey">
-                                <rect key="frame" x="8" y="52" width="398" height="753"/>
+                                <rect key="frame" x="8" y="52" width="398" height="802"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYw-Hq-2GV">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="461.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="491"/>
                                         <connections>
                                             <segue destination="Bpq-Ys-zch" kind="embed" id="yxO-IK-okY"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-l5-H3m" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="514.5" width="398" height="92.5"/>
+                                        <rect key="frame" x="0.0" y="544" width="398" height="102.5"/>
                                         <color key="backgroundColor" red="0.75686274509803919" green="0.46666666666666667" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W23-4z-i6u" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="660" width="398" height="93"/>
+                                        <rect key="frame" x="0.0" y="699.5" width="398" height="102.5"/>
                                         <color key="backgroundColor" red="0.75686274509803919" green="0.46666666666666667" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.12941176470588234" green="0.0078431372549019607" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal">
@@ -102,7 +102,7 @@
             <objects>
                 <collectionViewController id="Bpq-Ys-zch" customClass="HistoryCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hiF-J6-D93">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="461.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="491"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="layoutMargins" id="me0-gT-HUG">
@@ -176,12 +176,81 @@
             </objects>
             <point key="canvasLocation" x="-3597" y="-1177"/>
         </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="Gbx-ep-yp3">
+            <objects>
+                <tableViewController id="nO6-oq-xBK" customClass="historyTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jVY-68-ZNf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableCell" rowHeight="241" id="Ffu-r3-WmW" customClass="statsTableViewCell" customModule="HappierFoods" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="241"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ffu-r3-WmW" id="zcK-U6-v1B">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="241"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="fAU-6u-V3r">
+                                            <rect key="frame" x="20" y="11" width="374" height="219"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="16h-dj-nX7">
+                                                    <rect key="frame" x="0.0" y="69.5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="nrx-2V-8Z5"/>
+                                                        <constraint firstAttribute="width" constant="80" id="rMY-xD-xrT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26T-c3-0bP">
+                                                    <rect key="frame" x="132" y="99.5" width="142.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hb-o4-EAF">
+                                                    <rect key="frame" x="326.5" y="99.5" width="47.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="26T-c3-0bP" firstAttribute="width" secondItem="3hb-o4-EAF" secondAttribute="width" multiplier="3" id="1gB-mj-4hp"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fAU-6u-V3r" firstAttribute="top" secondItem="zcK-U6-v1B" secondAttribute="topMargin" id="G5N-N3-Yvc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fAU-6u-V3r" secondAttribute="bottom" id="HRY-7t-TcB"/>
+                                        <constraint firstItem="fAU-6u-V3r" firstAttribute="leading" secondItem="zcK-U6-v1B" secondAttribute="leadingMargin" id="MRW-Ag-sjQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fAU-6u-V3r" secondAttribute="trailing" id="sYs-cP-pgJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageForStat" destination="16h-dj-nX7" id="AGp-qD-dQ8"/>
+                                    <outlet property="titleOfStatistic" destination="26T-c3-0bP" id="QAg-pF-b0G"/>
+                                    <outlet property="valueOfStatistic" destination="3hb-o4-EAF" id="hqR-pz-fox"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nO6-oq-xBK" id="xT7-ge-36V"/>
+                            <outlet property="delegate" destination="nO6-oq-xBK" id="5JL-nq-xju"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eFZ-5a-QfI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAm-O5-aD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2267" y="-2514"/>
+        </scene>
         <!--Stats-->
         <scene sceneID="TjQ-ni-NZ6">
             <objects>
                 <tableViewController title="Stats" id="Q6B-AB-fPC" customClass="statsTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iW-jp-JDM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -246,14 +315,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCI-qv-HMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386.9565217391305" y="-2472.3214285714284"/>
+            <point key="canvasLocation" x="-580" y="-2468"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2OS-jh-RZS">
             <objects>
                 <viewController id="qmP-m1-D8L" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsB-1N-q0f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qNx-uH-cd7"/>
@@ -262,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A26-ZS-3YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057" y="-2467"/>
+            <point key="canvasLocation" x="3271" y="-829"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="w5O-mg-vTN">
@@ -463,10 +532,10 @@
                         <outlet property="tryButton" destination="KGE-lL-Bzf" id="Yje-eD-jjg"/>
                         <segue destination="Q61-IA-lhv" kind="show" identifier="expandDetail" id="EyT-iX-Ahn"/>
                         <segue destination="QlS-BC-ikQ" kind="presentation" identifier="resetMainWithNavBar" id="kEo-kV-ixy"/>
-                        <segue destination="o5k-lo-mMm" kind="show" identifier="historySegue" id="bY1-rZ-0FJ"/>
                         <segue destination="a59-XC-I8L" kind="show" identifier="celebrationSegue" id="QId-2G-l4q"/>
                         <segue destination="qmP-m1-D8L" kind="show" identifier="" id="8v9-S1-2Gp"/>
                         <segue destination="Q6B-AB-fPC" kind="show" identifier="statsSegue" id="Gpb-ZL-zEG"/>
+                        <segue destination="nO6-oq-xBK" kind="show" identifier="historySegue" id="a6c-6F-0Ek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fna-ov-CAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -478,7 +547,7 @@
             <objects>
                 <viewController storyboardIdentifier="photoInputScreen" id="Rn2-G2-wFf" customClass="dataInputViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rNj-9r-DZ6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8AX-hO-TEp">
@@ -611,11 +680,11 @@
             <objects>
                 <viewController storyboardIdentifier="rateFoodVC" id="BYZ-38-t0r" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-3w-Rav" userLabel="Maxi Stack View">
-                                <rect key="frame" x="8" y="48.5" width="398" height="756.5"/>
+                                <rect key="frame" x="8" y="0.0" width="398" height="729"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-Yc-vXq" userLabel=" Mini Horizontal Stack View">
                                         <rect key="frame" x="8" y="0.0" width="382" height="100"/>
@@ -659,7 +728,7 @@
                                         </constraints>
                                     </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s04-OS-QFL" userLabel="Container Face View">
-                                        <rect key="frame" x="8" y="175.5" width="382" height="420.5"/>
+                                        <rect key="frame" x="8" y="162" width="382" height="420"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="s04-OS-QFL" secondAttribute="height" multiplier="1:1.1" id="7L5-Hl-tIW"/>
                                         </constraints>
@@ -668,7 +737,7 @@
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-FI-m5N">
-                                        <rect key="frame" x="8" y="671.5" width="382" height="85"/>
+                                        <rect key="frame" x="8" y="644" width="382" height="85"/>
                                         <color key="backgroundColor" red="0.72941176470588232" green="0.94901960784313721" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="6HD-DS-dpG"/>
@@ -723,11 +792,11 @@
             <objects>
                 <viewController storyboardIdentifier="targetSettingScreen" id="0Wu-Q4-rwe" userLabel="Motivation Input View Controller" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjk-aB-xtG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-Ev-8Zo">
-                                <rect key="frame" x="8" y="69" width="398" height="819"/>
+                                <rect key="frame" x="8" y="25" width="398" height="753"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-Zu-2J0" userLabel="Target Food Preview Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="153.5"/>
@@ -790,7 +859,7 @@
                                         </subviews>
                                     </stackView>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-Va-k3r">
-                                        <rect key="frame" x="0.0" y="715" width="398" height="104"/>
+                                        <rect key="frame" x="0.0" y="715" width="398" height="38"/>
                                         <color key="backgroundColor" red="0.72941176470588232" green="0.94901960784313721" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <color key="tintColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -994,13 +1063,13 @@
                                 </constraints>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-ZW-R16">
-                                <rect key="frame" x="20" y="478" width="374" height="315"/>
+                                <rect key="frame" x="20" y="478" width="374" height="295.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rze-FO-sRM">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="26"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PBE-a3-NlB">
-                                                <rect key="frame" x="0.0" y="8" width="184.5" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="26"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -1014,7 +1083,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXR-ZB-jMk">
-                                                <rect key="frame" x="189.5" y="8" width="184.5" height="26"/>
+                                                <rect key="frame" x="189.5" y="0.0" width="184.5" height="26"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
@@ -1029,7 +1098,7 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wkr-B2-W0t">
-                                        <rect key="frame" x="0.0" y="89" width="374" height="89.5"/>
+                                        <rect key="frame" x="0.0" y="73" width="374" height="87.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
@@ -1037,7 +1106,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7S8-3G-13Q" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="225.5" width="374" height="89.5"/>
+                                        <rect key="frame" x="0.0" y="207.5" width="374" height="88"/>
                                         <color key="backgroundColor" red="0.75686274509999996" green="0.46666666670000001" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.12941176469999999" green="0.0078431372550000003" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal">
@@ -1109,30 +1178,30 @@
             <objects>
                 <viewController storyboardIdentifier="emojiFaceController" id="ohA-g8-JKs" customClass="customFaceARViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MUX-z0-EPg">
-                        <rect key="frame" x="0.0" y="0.0" width="382" height="420.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIt-bv-qS0" customClass="handDrawnFaceView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
+                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rIt-bv-qS0" secondAttribute="height" multiplier="1:1" id="Age-AX-JgG"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I can't see your face" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qx-wu-i9I">
-                                <rect key="frame" x="70.5" y="194" width="241" height="32.5"/>
+                                <rect key="frame" x="78" y="182.5" width="226.5" height="32.5"/>
                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qpk-I8-Icn">
-                                <rect key="frame" x="1" y="383" width="380" height="38.5"/>
+                                <rect key="frame" x="1" y="362.5" width="380" height="36.5"/>
                                 <connections>
                                     <action selector="sliderSliding:" destination="ohA-g8-JKs" eventType="valueChanged" id="1bH-IM-bft"/>
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ow-TI-vBP" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
+                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
