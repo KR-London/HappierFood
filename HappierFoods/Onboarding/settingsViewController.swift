@@ -71,6 +71,8 @@ class settingsViewController: UIViewController {
     
     func cacheData(){
         
+        loadItems()
+        
         let maximumSaveNumber = historyArray?.compactMap({$0.saveNumber}).max() ?? 0
 
         let size = foodArray?.count ?? -1
@@ -91,7 +93,6 @@ class settingsViewController: UIViewController {
         
         deleteAllData("TriedFood")
         
-
         /// reset markers
         let dateNow = Date().timeIntervalSince1970
         defaults.set(dateNow, forKey: "Last Week Started")
@@ -101,9 +102,7 @@ class settingsViewController: UIViewController {
         
         main?.foodArray = []
         main?.targetArray = []
-        defaults.set(0.0, forKey: "Last Week Started")
-        defaults.set(false, forKey: "Celebration Status")
-        UserDefaults.standard.set(false, forKey: "launchedBefore")
+
         DispatchQueue.main.async{
             main?.mainCollectionView.reloadData()
             main?.mainCollectionView.reloadInputViews()
@@ -138,6 +137,16 @@ class settingsViewController: UIViewController {
        }
         navigationController?.popViewController(animated: true)
     }
+    
+        func loadItems(){
+            let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+            do{
+                try foodArray = context.fetch(request)
+            }
+            catch{
+                print("Error fetching data \(error)")
+            }
+        }
     
 
 }
