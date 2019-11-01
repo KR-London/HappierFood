@@ -79,6 +79,32 @@ class returnToOnboardingViewController: UIViewController {
                // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
                 return button
             }()
+    
+    lazy var b5: myButton = {
+        let button = myButton()
+         // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+       // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.setTitle("I want to play!", for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        button.titleLabel?.allowsDefaultTighteningForTruncation = true
+         button.titleLabel?.allowsDefaultTighteningForTruncation = true
+        button.titleLabel?.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+       // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+        return button
+    }()
+    
+    lazy var b6: myButton = {
+        let button = myButton()
+         // button.backgroundColor = UIColor(red: 95/255, green: 215/255, blue: 176/255, alpha: 1)
+       // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
+        button.setTitle("Settings", for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        button.titleLabel?.allowsDefaultTighteningForTruncation = true
+         button.titleLabel?.allowsDefaultTighteningForTruncation = true
+        button.titleLabel?.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+       // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
+        return button
+    }()
         lazy var block2: UILabel = {
         let contentView = UILabel()
         contentView.text = "You're doing great!"
@@ -119,10 +145,10 @@ class returnToOnboardingViewController: UIViewController {
             NSLayoutConstraint.activate(
                 [
                     b1.topAnchor.constraint(equalTo: happy.bottomAnchor, constant: view.frame.width/100),
-                    b1.widthAnchor.constraint(equalTo: b1.heightAnchor),
+                    b1.widthAnchor.constraint(equalTo: b1.heightAnchor, multiplier: 1.5),
                    // b1.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                    b1.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 20),
-                    b1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
+                    b1.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 10),
+                    b1.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.15)
                 ]
             )
             
@@ -133,10 +159,10 @@ class returnToOnboardingViewController: UIViewController {
             NSLayoutConstraint.activate(
                 [
                     b2.topAnchor.constraint(equalTo: happy.bottomAnchor, constant: view.frame.width/100),
-                    b2.widthAnchor.constraint(equalTo: b2.heightAnchor),
+                    b2.widthAnchor.constraint(equalTo: b2.heightAnchor, multiplier: 1.5),
                     //b2.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                    b2.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -20),
-                    b2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
+                    b2.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -10),
+                    b2.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.15)
                 ]
             )
             
@@ -147,10 +173,10 @@ class returnToOnboardingViewController: UIViewController {
             NSLayoutConstraint.activate(
                 [
                     b3.topAnchor.constraint(equalTo: b1.bottomAnchor, constant: 10),
-                    b3.widthAnchor.constraint(equalTo: b3.heightAnchor),
+                    b3.widthAnchor.constraint(equalTo: b3.heightAnchor, multiplier: 1.5),
                    // b3.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                    b3.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 20),
-                    b3.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
+                    b3.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 10),
+                    b3.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.15)
                 ]
             )
             
@@ -161,12 +187,42 @@ class returnToOnboardingViewController: UIViewController {
             NSLayoutConstraint.activate(
                 [
                     b4.topAnchor.constraint(equalTo: b2.bottomAnchor, constant: 10),
-                    b4.widthAnchor.constraint(equalTo: b4.heightAnchor),
+                    b4.widthAnchor.constraint(equalTo: b4.heightAnchor, multiplier: 1.5),
                    // b4.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-                    b4.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -20),
-                    b4.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.2)
+                    b4.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -10),
+                    b4.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.15)
                 ]
             )
+            
+            self.view.addSubview(b5)
+            b5.translatesAutoresizingMaskIntoConstraints = false
+            b5.addTarget(self, action: #selector(play), for: .touchUpInside)
+            b5.alpha = 0
+            NSLayoutConstraint.activate(
+                [
+                    b5.topAnchor.constraint(equalTo: b3.bottomAnchor, constant: 10),
+                    b5.widthAnchor.constraint(equalTo: b5.heightAnchor, multiplier: 1.5),
+                   // b4.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                    b5.leadingAnchor.constraint(equalTo: margins.leadingAnchor , constant: 10),
+                    b5.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.15)
+                ]
+            )
+            
+            
+            self.view.addSubview(b6)
+            b6.translatesAutoresizingMaskIntoConstraints = false
+            b6.addTarget(self, action: #selector(settings), for: .touchUpInside)
+            b6.alpha = 0
+            NSLayoutConstraint.activate(
+                [
+                    b6.topAnchor.constraint(equalTo: b4.bottomAnchor, constant: 10),
+                    b6.widthAnchor.constraint(equalTo: b6.heightAnchor, multiplier: 1.5),
+                   // b4.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                    b6.trailingAnchor.constraint(equalTo: margins.trailingAnchor , constant: -10),
+                    b6.heightAnchor.constraint(equalTo: margins.heightAnchor, multiplier: 0.15)
+                ]
+            )
+            
             
 //
 //            self.view.addSubview(b1)
@@ -235,6 +291,8 @@ class returnToOnboardingViewController: UIViewController {
                     self.b2.alpha = 1
                      self.b3.alpha = 1
                      self.b4.alpha = 1
+                    self.b5.alpha = 1
+                    self.b6.alpha = 1
                 }
                 animator.startAnimation()
             }
@@ -255,11 +313,20 @@ class returnToOnboardingViewController: UIViewController {
               let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
               let initialViewController = storyboard.instantiateViewController(withIdentifier: "p2" )
               self.present(initialViewController, animated: true, completion: nil)
-          }
+        }
           
-          
-          @objc func motivate(sender: UIButton!) {
+        @objc func motivate(sender: UIButton!) {
               performSegue(withIdentifier: "motivate", sender: self)
-          }
+        }
+    
+        @objc func settings(sender: UIButton!) {
+                 performSegue(withIdentifier: "settingSegue", sender: self)
+        }
+    
+        @objc func play(sender: UIButton!) {
+             performSegue(withIdentifier: "playSegue", sender: self)
+        }
+    
+    
         
     }

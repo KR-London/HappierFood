@@ -85,6 +85,7 @@
 		4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */; };
 		4483902122C7D187002F8D2E /* Loading Screens1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483902022C7D187002F8D2E /* Loading Screens1.png */; };
 		448F0819236AB95E002B96BE /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448F0818236AB95E002B96BE /* historyTableViewController.swift */; };
+		448F081B236AC954002B96BE /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448F081A236AC954002B96BE /* settingsViewController.swift */; };
 		449613CB22DC9CBC001CCE37 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CA22DC9CBB001CCE37 /* apple.jpg */; };
 		449613CD22DC9CD6001CCE37 /* rice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CC22DC9CD6001CCE37 /* rice.jpeg */; };
 		449613CF22DC9CF6001CCE37 /* boiled_eggs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */; };
@@ -318,6 +319,7 @@
 		4483902022C7D187002F8D2E /* Loading Screens1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Screens1.png"; sourceTree = "<group>"; };
 		448813BE22D6434F00E3A78F /* HappierFoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HappierFoods.entitlements; sourceTree = "<group>"; };
 		448F0818236AB95E002B96BE /* historyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
+		448F081A236AC954002B96BE /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		449613CA22DC9CBB001CCE37 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		449613CC22DC9CD6001CCE37 /* rice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rice.jpeg; sourceTree = "<group>"; };
 		449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boiled_eggs.jpeg; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				4410083F22E4A0BB0096E47F /* Onboarding.storyboard */,
+				448F081A236AC954002B96BE /* settingsViewController.swift */,
 				44A5AB84235CA351009C0F8A /* resourcesViewController.swift */,
 				442D5584235CBF9C00E9C8EB /* web.swift */,
 				44FE744C2357737800CDC2E5 /* certificateViewController.swift */,
@@ -1226,6 +1229,7 @@
 				4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */,
 				44B41CDC2350A8CB00A750E0 /* extraTutorialViewController.swift in Sources */,
 				44D598632259535100267E71 /* mainViewController.swift in Sources */,
+				448F081B236AC954002B96BE /* settingsViewController.swift in Sources */,
 				442113D42299623800CBE431 /* UIImage+PixelBuffer.swift in Sources */,
 				446D220722C8C67E00FF56E3 /* customNavigationController.swift in Sources */,
 				449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */,

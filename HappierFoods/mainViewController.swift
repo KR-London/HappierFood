@@ -142,9 +142,18 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         switch myNav!.presentState
         {
             case .FirstLaunch : print("In first launch.")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                           
+                               let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
+                               let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
+                               self.present(initialViewController, animated: true, completion: nil)
+                           }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+                
                     let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)                                                                                
-                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "p2" )
                     self.present(initialViewController, animated: true, completion: nil)
                 }
             case .ResetDataAtTheStartOfNewWeek : publicInformationBroadcast(didTheyReachTheirTarget: false)
@@ -161,7 +170,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func LaunchExtraTutorial(){
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
                 let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "p2" )
                 self.present(initialViewController, animated: true, completion: nil)
             }    }
     
