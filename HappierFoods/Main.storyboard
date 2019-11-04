@@ -250,7 +250,7 @@
             <objects>
                 <tableViewController title="Stats" id="Q6B-AB-fPC" customClass="statsTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iW-jp-JDM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -547,7 +547,7 @@
             <objects>
                 <viewController storyboardIdentifier="photoInputScreen" id="Rn2-G2-wFf" customClass="dataInputViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rNj-9r-DZ6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8AX-hO-TEp">
@@ -680,11 +680,11 @@
             <objects>
                 <viewController storyboardIdentifier="rateFoodVC" id="BYZ-38-t0r" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-3w-Rav" userLabel="Maxi Stack View">
-                                <rect key="frame" x="8" y="48.5" width="398" height="756.5"/>
+                                <rect key="frame" x="8" y="0.0" width="398" height="729"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-Yc-vXq" userLabel=" Mini Horizontal Stack View">
                                         <rect key="frame" x="8" y="0.0" width="382" height="100"/>
@@ -728,7 +728,7 @@
                                         </constraints>
                                     </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s04-OS-QFL" userLabel="Container Face View">
-                                        <rect key="frame" x="8" y="175.5" width="382" height="420.5"/>
+                                        <rect key="frame" x="8" y="162" width="382" height="420"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="s04-OS-QFL" secondAttribute="height" multiplier="1:1.1" id="7L5-Hl-tIW"/>
                                         </constraints>
@@ -737,7 +737,7 @@
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-FI-m5N">
-                                        <rect key="frame" x="8" y="671.5" width="382" height="85"/>
+                                        <rect key="frame" x="8" y="644" width="382" height="85"/>
                                         <color key="backgroundColor" red="0.72941176470588232" green="0.94901960784313721" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="6HD-DS-dpG"/>
@@ -792,11 +792,11 @@
             <objects>
                 <viewController storyboardIdentifier="targetSettingScreen" id="0Wu-Q4-rwe" userLabel="Motivation Input View Controller" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjk-aB-xtG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-Ev-8Zo">
-                                <rect key="frame" x="8" y="69" width="398" height="819"/>
+                                <rect key="frame" x="8" y="25" width="398" height="753"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-Zu-2J0" userLabel="Target Food Preview Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="153.5"/>
@@ -859,7 +859,7 @@
                                         </subviews>
                                     </stackView>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-Va-k3r">
-                                        <rect key="frame" x="0.0" y="715" width="398" height="104"/>
+                                        <rect key="frame" x="0.0" y="715" width="398" height="38"/>
                                         <color key="backgroundColor" red="0.72941176470588232" green="0.94901960784313721" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <color key="tintColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1178,30 +1178,30 @@
             <objects>
                 <viewController storyboardIdentifier="emojiFaceController" id="ohA-g8-JKs" customClass="customFaceARViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MUX-z0-EPg">
-                        <rect key="frame" x="0.0" y="0.0" width="382" height="420.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIt-bv-qS0" customClass="handDrawnFaceView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
+                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rIt-bv-qS0" secondAttribute="height" multiplier="1:1" id="Age-AX-JgG"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I can't see your face" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qx-wu-i9I">
-                                <rect key="frame" x="78" y="182.5" width="226.5" height="32.5"/>
+                                <rect key="frame" x="70.5" y="194" width="241" height="32.5"/>
                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qpk-I8-Icn">
-                                <rect key="frame" x="1" y="362.5" width="380" height="36.5"/>
+                                <rect key="frame" x="1" y="382.5" width="380" height="38.5"/>
                                 <connections>
                                     <action selector="sliderSliding:" destination="ohA-g8-JKs" eventType="valueChanged" id="1bH-IM-bft"/>
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ow-TI-vBP" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
+                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1279,7 +1279,7 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kEo-kV-ixy"/>
+        <segue reference="lJr-Ub-v2X"/>
         <segue reference="8Jr-l3-dhP"/>
         <segue reference="ae0-Ld-T5R"/>
         <segue reference="s13-Me-gb1"/>
