@@ -1,0 +1,6 @@
+framework module Pods_HappierFoodsTests {
+  umbrella header "Pods-HappierFoodsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
