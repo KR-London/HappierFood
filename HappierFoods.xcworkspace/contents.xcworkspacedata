@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:newMainViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:HappierFoods.xcodeproj">
    </FileRef>
    <FileRef

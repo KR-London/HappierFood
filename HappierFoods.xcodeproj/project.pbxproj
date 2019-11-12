@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
+		440758B5237B5265007C8153 /* newMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440758B4237B5264007C8153 /* newMainViewController.swift */; };
 		440886D9233E09C600A76800 /* 1plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886D8233E09C600A76800 /* 1plate.jpeg */; };
 		440886DB233E0D4300A76800 /* 2plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DA233E0D4300A76800 /* 2plate.jpeg */; };
 		440886DD233E0D4900A76800 /* 3plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DC233E0D4900A76800 /* 3plate.jpeg */; };
@@ -215,6 +216,7 @@
 		44BFAD6D232D738900CD5CA8 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BFAD62232D738900CD5CA8 /* 10.png */; };
 		44BFAD6E232D738900CD5CA8 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BFAD63232D738900CD5CA8 /* 7.png */; };
 		44BFAD70232D7A2F00CD5CA8 /* 1 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BFAD6F232D7A2E00CD5CA8 /* 1 2.png */; };
+		44BFE3AD237B5828009D05F4 /* bubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE3AC237B5828009D05F4 /* bubbleView.swift */; };
 		44C313C922E90988002FB0AC /* girl_and_pizza.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */; };
 		44D519F0225E3301001BD7FB /* icons1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519ED225E3301001BD7FB /* icons1.png */; };
 		44D519F1225E3301001BD7FB /* icons2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EE225E3301001BD7FB /* icons2.png */; };
@@ -241,6 +243,7 @@
 /* Begin PBXFileReference section */
 		1FE003BF8D73E498BC5B1788 /* Pods_HappierFoodsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappierFoodsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
+		440758B4237B5264007C8153 /* newMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newMainViewController.swift; sourceTree = "<group>"; };
 		440886D8233E09C600A76800 /* 1plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1plate.jpeg; sourceTree = "<group>"; };
 		440886DA233E0D4300A76800 /* 2plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2plate.jpeg; sourceTree = "<group>"; };
 		440886DC233E0D4900A76800 /* 3plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3plate.jpeg; sourceTree = "<group>"; };
@@ -453,6 +456,7 @@
 		44BFAD62232D738900CD5CA8 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		44BFAD63232D738900CD5CA8 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		44BFAD6F232D7A2E00CD5CA8 /* 1 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1 2.png"; sourceTree = "<group>"; };
+		44BFE3AC237B5828009D05F4 /* bubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bubbleView.swift; sourceTree = "<group>"; };
 		44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl_and_pizza.jpeg; sourceTree = "<group>"; };
 		44D519ED225E3301001BD7FB /* icons1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons1.png; sourceTree = "<group>"; };
 		44D519EE225E3301001BD7FB /* icons2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons2.png; sourceTree = "<group>"; };
@@ -798,6 +802,8 @@
 				44B41CDB2350A8CB00A750E0 /* extraTutorialViewController.swift */,
 				442EAEED235118F300232E52 /* extraTutorialViewController0.swift */,
 				44D598622259535100267E71 /* mainViewController.swift */,
+				440758B4237B5264007C8153 /* newMainViewController.swift */,
+				44BFE3AC237B5828009D05F4 /* bubbleView.swift */,
 				44D5985A2259346700267E71 /* mainCollectionViewCell.swift */,
 				44A63E9022598D03002E656E /* rateFoodViewController.swift */,
 				44D598642259582B00267E71 /* dataInputViewController.swift */,
@@ -1224,6 +1230,7 @@
 			files = (
 				449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */,
 				44B52F8422D9FDC700CF730D /* Onboarding1ViewController.swift in Sources */,
+				440758B5237B5265007C8153 /* newMainViewController.swift in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
 				447DE07D22C5BFA200081414 /* OnboardingViewController.swift in Sources */,
 				4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */,
@@ -1265,6 +1272,7 @@
 				4449A5622369653B0070099F /* statsTableViewController.swift in Sources */,
 				440886E3233E3E3A00A76800 /* myButton.swift in Sources */,
 				44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */,
+				44BFE3AD237B5828009D05F4 /* bubbleView.swift in Sources */,
 				442EAEEE235118F300232E52 /* extraTutorialViewController0.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
