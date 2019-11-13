@@ -1,8 +1,11 @@
 import UIKit
+import Foundation
+import Darwin
+import CoreData
 
 class newMainViewController: UIViewController {
     
-    /// declare my blocks
+
     
     /// happy and his hidden button
     lazy var happyButton: UIButton = {
@@ -23,22 +26,23 @@ class newMainViewController: UIViewController {
     
     lazy var myCollectionView: UICollectionView = {
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
-        collection.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         return collection
     }()
     
     /// stats view
     lazy var statsView: UIView = {
         let stats = UIView()
-        stats.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        //stats.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         return stats
     }()
     
     /// add fodd button
     
-    lazy var addFoodButton: UIButton = {
-       let button = UIButton()
-        button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+    lazy var addFoodButton: myButton = {
+       let button = myButton()
+        //button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        button.setTitle("+", for: .normal)
+        button.titleLabel?.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 72)
         return button
     }()
 
@@ -46,6 +50,7 @@ class newMainViewController: UIViewController {
         super.viewDidLoad()
         setUpSubview()
         showMessage(text: "HELLO, MY NAME IS HAPPY")
+        displayStats(text: "3 login streak!")
         // Do any additional setup after loading the view.
     }
     
@@ -58,6 +63,7 @@ class newMainViewController: UIViewController {
         
         view.addSubview(happyButton)
         happyButton.translatesAutoresizingMaskIntoConstraints = false
+        happyButton.addTarget(self, action: #selector(happyCoachingSegue), for: .touchUpInside)
         NSLayoutConstraint.activate([
             happyButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
             happyButton.heightAnchor.constraint(equalToConstant: bubbleHeight),
@@ -76,8 +82,9 @@ class newMainViewController: UIViewController {
         
         view.addSubview(addFoodButton)
         addFoodButton.translatesAutoresizingMaskIntoConstraints = false
+        addFoodButton.addTarget(self, action: #selector(addFood), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            addFoodButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
+            addFoodButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
             addFoodButton.heightAnchor.constraint(equalToConstant: bubbleHeight),
             addFoodButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
             addFoodButton.widthAnchor.constraint(equalToConstant: bubbleHeight)
@@ -86,12 +93,16 @@ class newMainViewController: UIViewController {
         view.addSubview(statsView)
         statsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            statsView.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
+            statsView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
             statsView.heightAnchor.constraint(equalToConstant: bubbleHeight),
             statsView.trailingAnchor.constraint(equalTo: addFoodButton.leadingAnchor),
-            statsView.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+            statsView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
         ])
         
+        myCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell")
+        myCollectionView.delegate = self
+        myCollectionView.dataSource = self as! UICollectionViewDataSource
+        //myCollectionView.backgroundColor = UIColor.cyan
         view.addSubview(myCollectionView)
         myCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -105,12 +116,11 @@ class newMainViewController: UIViewController {
         let label =  UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = .white
+        //label.textColor = .white
+        label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
         label.text = text
 
         let constraintRect = bubbleBox.frame.size
-            //CGSize(width: 0.66 * bubbleBox.frame.width,
-                                  //  height: .greatestFiniteMagnitude)
         let boundingBox = text.boundingRect(with: constraintRect,
                                             options: .usesLineFragmentOrigin,
                                             attributes: [.font: label.font],
@@ -124,21 +134,96 @@ class newMainViewController: UIViewController {
         let bubbleView = BubbleView()
         bubbleView.frame.size = bubbleSize
         bubbleView.backgroundColor = .clear
-        //ubbleView.center = bubbleBox.center
-       // bubbleView.leftAnchor = bubbleBox.leftAnchor
         
         bubbleBox.addSubview(bubbleView)
         bubbleView.translatesAutoresizingMaskIntoConstraints = true
-        
-//        NSLayoutConstraint.activate([
-//              bubbleView.centerXAnchor.constraint(equalTo: bubbleBox.centerXAnchor),
-//              bubbleView.centerYAnchor.constraint(equalTo: bubbleBox.centerYAnchor),
-//              bubbleView.leadingAnchor.constraint(equalTo: bubbleBox.leadingAnchor)
-//          ])
-        
 
         label.center = bubbleView.center
         bubbleView.addSubview(label)
     }
+    
+    func displayStats(text: String){
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
+        label.textAlignment = .center
+        label.baselineAdjustment = .alignCenters
+        
+        //let constraintRect = statsView.frame.size
+       // let boundingBox = text.boundingRect(with: constraintRect,
+                                          //  options: .usesLineFragmentOrigin,
+                                              //   attributes: [.font: label.font],
+                                              //   context: nil)
+       // label.frame.size = CGSize(width: ceil(boundingBox.width),
+                                     //  height: ceil(boundingBox.height))
+        statsView.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: statsView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: statsView.centerYAnchor)
+               ])
+    }
+    
+    @objc func happyCoachingSegue(sender: UIButton!) {
+         //performSegue(withIdentifier: "noTry", sender: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "dudeControlCentre")
+        self.navigationController?.pushViewController(newViewController, animated: true)
+
+     }
+    
+    @objc func addFood(sender: myButton!){
+        print("Plus button pressed")
+    }
 }
 
+extension newMainViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+          return CGSize(width: collectionView.bounds.size.width/3 - 8 , height: collectionView.bounds.size.width/3 - 8 )
+    }
+    
+       func collectionView(_ collectionView: UICollectionView,
+                         layout collectionViewLayout: UICollectionViewLayout,
+                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+         return 8
+     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                          layout collectionViewLayout: UICollectionViewLayout,
+                          minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+          return 8
+      }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                         layout collectionViewLayout: UICollectionViewLayout,
+                         insetForSectionAt section: Int) -> UIEdgeInsets {
+         return UIEdgeInsets.init(top: 0, left: 0, bottom: 10, right: 0)
+     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+        
+        
+        return 9
+        
+//        if foodArray.count + targetArray.count < 9
+//        {
+//            return 9
+//        }
+//        else
+//        {
+//            return foodArray.count + targetArray.count
+//        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! mainCollectionViewCell
+//        let label = UILabel()
+//        label.text = "Hello"
+//        cell.addSubview(label)
+        cell.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+        cell.cellImage!.image = UIImage(named: "chaos.jpg")
+        return cell
+        }
+}

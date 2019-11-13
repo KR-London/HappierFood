@@ -41,7 +41,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func happyTickled(_ sender: Any) {
         ///onboardingRoutine()
-      //elen  segu
     }
     // MARK: Actions
     @IBAction func expandDetailButtonPressed(_ sender: UIButton) {
