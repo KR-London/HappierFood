@@ -32,8 +32,9 @@ class statsTableViewCell: UITableViewCell {
     func setup(){
         //cellImage.image
         self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        self.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            
+        self.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 0.8) 
         self.layer.cornerRadius = 5.0
     }
     
