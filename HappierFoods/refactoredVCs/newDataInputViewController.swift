@@ -78,7 +78,8 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         let foodName = UITextField()
         foodName.layer.borderWidth = 5.0
         foodName.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        foodName.placeholder = "Name of food...."
+        foodName.placeholder = "Name of food"
+        foodName.textAlignment = .center
         foodName.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
         foodName.setLeftPaddingPoints(15)
         return foodName
@@ -251,6 +252,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
       // MARK: User interaction handlers
       func textFieldShouldReturn(_ textField: UITextField) -> Bool {
           textField.resignFirstResponder()
+      //  textField.endEditing(true)
           return true
       }
       
@@ -286,6 +288,18 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
             targetsCollectionView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor)
             
         ])
+        
+        view.addSubview(textInput)
+        textInput.delegate = self
+        textInput.translatesAutoresizingMaskIntoConstraints = false
+        textInput.cornerRadius = 5
+        NSLayoutConstraint.activate([
+            textInput.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 10),
+            textInput.heightAnchor.constraint(equalToConstant: 0.65*layoutUnit),
+            textInput.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.85),
+            textInput.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
+        ])
+
     
     
 
@@ -297,7 +311,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         foodImage.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
         NSLayoutConstraint.activate([
-            foodImage.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 10),
+            foodImage.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 10),
             foodImage.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
             foodImage.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
             foodImage.widthAnchor.constraint(equalTo: foodImage.heightAnchor)
@@ -313,7 +327,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
             previewView.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             
             NSLayoutConstraint.activate([
-                previewView.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 6),
+                previewView.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 6),
                 previewView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
                 previewView.heightAnchor.constraint(equalToConstant: 3*layoutUnit + 2),
                 previewView.widthAnchor.constraint(equalTo: foodImage.heightAnchor)
@@ -323,22 +337,13 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         view.addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            addButton.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 10),
+            addButton.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 10),
             addButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
            addButton.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
             addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor)
         ])
         addButton.cornerRadius = 1.5*layoutUnit
         
-        view.addSubview(textInput)
-        textInput.translatesAutoresizingMaskIntoConstraints = false
-        textInput.cornerRadius = 5
-        NSLayoutConstraint.activate([
-            textInput.topAnchor.constraint(equalTo: foodImage.bottomAnchor, constant: 10),
-            textInput.heightAnchor.constraint(equalToConstant: 0.65*layoutUnit),
-            textInput.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.85),
-            textInput.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
-        ])
 
         buttonStackView.addArrangedSubview(eatNowButton)
         buttonStackView.addArrangedSubview(eatLaterButton)
