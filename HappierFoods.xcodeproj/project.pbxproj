@@ -219,6 +219,7 @@
 		44BFE3AD237B5828009D05F4 /* bubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE3AC237B5828009D05F4 /* bubbleView.swift */; };
 		44C313C922E90988002FB0AC /* girl_and_pizza.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */; };
 		44C74E5C237C065B0070AC87 /* newDataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C74E5B237C065B0070AC87 /* newDataInputViewController.swift */; };
+		44C74E5E237C4A020070AC87 /* confettiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C74E5D237C4A020070AC87 /* confettiViewController.swift */; };
 		44D519F0225E3301001BD7FB /* icons1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519ED225E3301001BD7FB /* icons1.png */; };
 		44D519F1225E3301001BD7FB /* icons2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EE225E3301001BD7FB /* icons2.png */; };
 		44D519F2225E3301001BD7FB /* icons3.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EF225E3301001BD7FB /* icons3.png */; };
@@ -460,6 +461,7 @@
 		44BFE3AC237B5828009D05F4 /* bubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bubbleView.swift; sourceTree = "<group>"; };
 		44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl_and_pizza.jpeg; sourceTree = "<group>"; };
 		44C74E5B237C065B0070AC87 /* newDataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = newDataInputViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/refactoredVCs/newDataInputViewController.swift; sourceTree = "<absolute>"; };
+		44C74E5D237C4A020070AC87 /* confettiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confettiViewController.swift; sourceTree = "<group>"; };
 		44D519ED225E3301001BD7FB /* icons1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons1.png; sourceTree = "<group>"; };
 		44D519EE225E3301001BD7FB /* icons2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons2.png; sourceTree = "<group>"; };
 		44D519EF225E3301001BD7FB /* icons3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons3.png; sourceTree = "<group>"; };
@@ -849,6 +851,7 @@
 		44C74E5A237C03E50070AC87 /* refactoredVCs */ = {
 			isa = PBXGroup;
 			children = (
+				44C74E5D237C4A020070AC87 /* confettiViewController.swift */,
 				44C74E5B237C065B0070AC87 /* newDataInputViewController.swift */,
 				440758B4237B5264007C8153 /* newMainViewController.swift */,
 			);
@@ -1241,6 +1244,7 @@
 			files = (
 				449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */,
 				44B52F8422D9FDC700CF730D /* Onboarding1ViewController.swift in Sources */,
+				44C74E5E237C4A020070AC87 /* confettiViewController.swift in Sources */,
 				440758B5237B5265007C8153 /* newMainViewController.swift in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
 				447DE07D22C5BFA200081414 /* OnboardingViewController.swift in Sources */,

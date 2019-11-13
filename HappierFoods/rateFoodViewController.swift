@@ -151,7 +151,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 //    }
     
     func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?, notes: String?){
-        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
         
         if firstPass == "Target" {
             presentState = "First Target"
@@ -205,7 +205,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.foodArray.append(menuItem)
                 
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -240,7 +240,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.targetArray.remove(at: indexOfMyTimestamp!)
                 
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -258,7 +258,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.foodArray.append(menuItem)
                 
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -273,7 +273,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 main?.targetArray.append(menuItem)
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -290,9 +290,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.foodArray = [menuItem]
                 
                 DispatchQueue.main.async{
-                    if main?.mainCollectionView != nil
+                    if main?.myCollectionView != nil
                     {
-                        main?.mainCollectionView.reloadData()
+                        main?.myCollectionView.reloadData()
                     }
                     else{
                         print("NIL MCV CAUGHT!!!!!")
@@ -311,7 +311,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 main?.targetArray = [menuItem]
                 DispatchQueue.main.async{
-                    if let colView  = main?.mainCollectionView{
+                    if let colView  = main?.myCollectionView{
                         colView.reloadData()
                         print("I have a collection view")
                     }
@@ -320,7 +320,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         default: return
         }
         
-        navigationController?.popToRootViewController(animated: true)
+        //navigationController?.popToRootViewController(animated: true)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
+        let myNav = self.navigationController
+        myNav?.pushViewController(nextViewController, animated: true)
     }
     
 
