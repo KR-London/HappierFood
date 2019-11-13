@@ -76,7 +76,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
     //    moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
-        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
         presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
         if presentState == "SetTargetViewController" || presentState ==  "First Target"
         {

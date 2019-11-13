@@ -68,8 +68,10 @@ class newMainViewController: UIViewController {
             //  self.present(nextViewController, animated: true, completion: nil)
         
         setUpSubview()
-        showMessage(text: "HELLO, MY NAME IS HAPPY")
+        
+        showMessage(text: "HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY")
         displayStats(text: "3 login streak!")
+        
         if  UserDefaults.standard.bool(forKey: "launchedBefore") == false
         {
              UserDefaults.standard.set(true, forKey: "launchedBefore")
@@ -195,7 +197,7 @@ class newMainViewController: UIViewController {
         NSLayoutConstraint.activate([
             bubbleBox.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
             bubbleBox.heightAnchor.constraint(equalToConstant: bubbleHeight),
-            bubbleBox.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+            bubbleBox.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
             bubbleBox.leadingAnchor.constraint(equalTo: happyButton.trailingAnchor)
         ])
         
@@ -235,20 +237,23 @@ class newMainViewController: UIViewController {
     ///MARK: Functions to communicate with the user
     
     func showMessage(text: String) {
+        
+       let bubbleHeight = 0.25*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
         let label =  UILabel()
+        
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18)
-        //label.textColor = .white
         label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
         label.text = text
+        label.layoutIfNeeded()
+        label.sizeToFit()
 
         let constraintRect = bubbleBox.frame.size
         let boundingBox = text.boundingRect(with: constraintRect,
                                             options: .usesLineFragmentOrigin,
                                             attributes: [.font: label.font],
                                             context: nil)
-        label.frame.size = CGSize(width: ceil(boundingBox.width),
-                                  height: ceil(boundingBox.height))
+        label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 30),
+                                  height: ceil(bubbleHeight))
 
         let bubbleSize = CGSize(width: label.frame.width + 28,
                                      height: label.frame.height + 20)
@@ -258,10 +263,18 @@ class newMainViewController: UIViewController {
         bubbleView.backgroundColor = .clear
         
         bubbleBox.addSubview(bubbleView)
-        bubbleView.translatesAutoresizingMaskIntoConstraints = true
+        
 
         label.center = bubbleView.center
         bubbleView.addSubview(label)
+        
+        bubbleView.translatesAutoresizingMaskIntoConstraints = true
+//        NSLayoutConstraint.activate([
+//            label.centerXAnchor.constraint(equalTo: statsView.centerXAnchor),
+//            label.centerYAnchor.constraint(equalTo: statsView.centerYAnchor)
+//           ])
+        
+        
     }
     
     func displayStats(text: String){

@@ -36,12 +36,14 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     lazy var eatNowButton: myButton = {
         let button = myButton()
         button.setTitle("Eat Now", for: .normal)
+        button.addTarget(self, action: #selector(eatNowSegue), for: .touchUpInside)
         return button
     }()
 
     lazy var eatLaterButton: myButton = {
           let button = myButton()
-        button.setTitle("Eat Later", for: .normal)
+            button.setTitle("Eat Later", for: .normal)
+         button.addTarget(self, action: #selector(eatLaterSegue), for: .touchUpInside)
           return button
       }()
     
@@ -96,6 +98,9 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     
     var image: UIImage?
     let haptic = UINotificationFeedbackGenerator()
+    unowned var myNav : customNavigationController?
+    
+    let placeholderImages = ["1plate.jpeg", "2plate.jpeg", "3plate.jpeg", "4plate.jpeg", "5plate.jpeg"]
     
     // MARK: AV init helpers
     let imagePicker = UIImagePickerController()
@@ -359,15 +364,9 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         
     }
     
-    /// define the collection view layout
-    
     /// fill in the data for the two collection view sources
     
     /// make a click on the collection view send a message to populate the main screen
-    
-    /// put in button in the middle of the image view
-    
-    /// launch camera from image view button, and input picture
     
     /// define the segue out of the screen
 
@@ -427,5 +426,34 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
             }
         }
       
+    }
+    
+    @objc func eatNowSegue(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
+        passData(dvc1: nextViewController)
+        //myNav?.pushViewController(nextViewController, animated: true)
+        myNav = self.navigationController as! customNavigationController
+          /// this will nedd more nuance if i pull foods off the ribbons 
+        myNav?.presentState = .AddFoodViewController
+        myNav?.pushViewController(nextViewController, animated: true)
+        //present(nextViewController, animated: true, completion: nil)
+    }
+    
+    @objc func eatLaterSegue(){
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
+          passData(dvc1: nextViewController)
+          //myNav?.pushViewController(nextViewController, animated: true)
+          myNav = self.navigationController as! customNavigationController
+        /// this will nedd more nuance if i pull foods off the ribbons
+            myNav?.presentState = .SetTargetViewController
+           myNav?.pushViewController(nextViewController, animated: true)
+       }
+    
+    func passData(dvc1: rateFoodViewController){
+        dvc1.imagePlaceholder = image ?? UIImage(named: placeholderImages.randomElement()!)!
+        dvc1.foodName = textInput.text ?? ""
+        //dvc1.placeHolderImage = foodImage.image ?? UIImage(named: "1plate.jpeg")
     }
 }
