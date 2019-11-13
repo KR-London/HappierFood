@@ -179,7 +179,7 @@
         <!--History Table View Controller-->
         <scene sceneID="Gbx-ep-yp3">
             <objects>
-                <tableViewController id="nO6-oq-xBK" customClass="historyTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="historyScreen" id="nO6-oq-xBK" customClass="historyTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jVY-68-ZNf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,7 +248,7 @@
         <!--Stats-->
         <scene sceneID="TjQ-ni-NZ6">
             <objects>
-                <tableViewController title="Stats" id="Q6B-AB-fPC" customClass="statsTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="statsScreen" title="Stats" id="Q6B-AB-fPC" customClass="statsTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iW-jp-JDM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +347,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgT-ro-sDU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="-2997.3214285714284"/>
+            <point key="canvasLocation" x="1613" y="-4143"/>
+        </scene>
+        <!--New Data Input View Controller-->
+        <scene sceneID="fOY-21-YKH">
+            <objects>
+                <viewController storyboardIdentifier="newDataInputViewController" id="RxY-VO-Qis" customClass="newDataInputViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zzf-zh-tTC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QPC-EK-imM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEJ-cF-aWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2714" y="-4148"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="w5O-mg-vTN">
@@ -930,18 +945,18 @@
             <objects>
                 <viewController storyboardIdentifier="celebrationScreen" title="Celebration" id="a59-XC-I8L" customClass="celebrationScreenViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="celebration" id="vS9-dP-qE5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nXD-bf-W6g">
-                                <rect key="frame" x="132" y="0.0" width="150" height="150"/>
+                                <rect key="frame" x="132" y="44" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="HDI-69-jJP"/>
                                     <constraint firstAttribute="width" constant="150" id="wK3-90-ava"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-I4-nLe">
-                                <rect key="frame" x="10" y="158" width="394" height="547"/>
+                                <rect key="frame" x="10" y="202" width="394" height="547"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-vh-OWh">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="516"/>
@@ -1203,26 +1218,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIt-bv-qS0" customClass="handDrawnFaceView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
+                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rIt-bv-qS0" secondAttribute="height" multiplier="1:1" id="Age-AX-JgG"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I can't see your face" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qx-wu-i9I">
-                                <rect key="frame" x="70.5" y="194" width="241" height="32.5"/>
+                                <rect key="frame" x="78" y="182.5" width="226.5" height="32.5"/>
                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qpk-I8-Icn">
-                                <rect key="frame" x="1" y="383" width="380" height="38.5"/>
+                                <rect key="frame" x="1" y="362.5" width="380" height="36.5"/>
                                 <connections>
                                     <action selector="sliderSliding:" destination="ohA-g8-JKs" eventType="valueChanged" id="1bH-IM-bft"/>
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ow-TI-vBP" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
+                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1300,10 +1315,10 @@
             </objects>
             <point key="canvasLocation" x="4158" y="-1827"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="riH-LV-78M">
             <objects>
-                <navigationController storyboardIdentifier="testNav" automaticallyAdjustsScrollViewInsets="NO" id="EO8-Hl-9C4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="testNav" automaticallyAdjustsScrollViewInsets="NO" id="EO8-Hl-9C4" customClass="customNavigationController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p03-YU-dgA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1316,7 +1331,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0k-js-K4M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589.8550724637682" y="-2997.3214285714284"/>
+            <point key="canvasLocation" x="352" y="-4143"/>
         </scene>
     </scenes>
     <resources>

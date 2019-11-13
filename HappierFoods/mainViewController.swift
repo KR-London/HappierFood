@@ -10,7 +10,7 @@ import Foundation
 import Darwin
 import CoreData
 
-let defaults = UserDefaults.standard
+//let defaults = UserDefaults.standard
 
 class mainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 

@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "testNav" )
             self.window?.rootViewController = initialViewController
+            
+               //   let nextViewController = storyboard.instantiateViewController(withIdentifier: "newDataInputViewController" )
+            //self.window?.rootViewController!.push(nextViewController, animated: true, completion: nil)
             self.window?.makeKeyAndVisible()
             
         }
