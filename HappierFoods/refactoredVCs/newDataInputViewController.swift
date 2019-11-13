@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
-class newDataInputViewController: UIViewController {
+class newDataInputViewController: UIViewController,UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     /// initialise all the elements programatically
     lazy var triesCollectionView: UICollectionView = {
@@ -44,6 +45,14 @@ class newDataInputViewController: UIViewController {
           return button
       }()
     
+    lazy var previewView: UIImageView = {
+        let imageView = UIImageView()
+        
+
+        /// stretch
+        return imageView
+    }()
+    
     lazy var foodImage: UIImageView = {
         let imageView = UIImageView()
         
@@ -61,6 +70,7 @@ class newDataInputViewController: UIViewController {
         button.titleLabel?.textAlignment = .center
         button.layer.borderWidth = 5.0
         button.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        button.addTarget(self, action: #selector(pictureInput), for: .touchUpInside)
         return button
     }()
     
@@ -82,7 +92,16 @@ class newDataInputViewController: UIViewController {
         stack.spacing = 10
         return stack
     }()
-
+    
+    var image: UIImage?
+    let haptic = UINotificationFeedbackGenerator()
+    
+    // MARK: AV init helpers
+    let imagePicker = UIImagePickerController()
+    var captureSession: AVCaptureSession!
+    var stillImageOutput: AVCapturePhotoOutput!
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSubview()
@@ -90,7 +109,153 @@ class newDataInputViewController: UIViewController {
         
     }
     
-    /// set up contstraints to lay them out
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        if usedCamera == true {
+//            recordTheFood()
+//        }
+        haptic.prepare()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+           super.viewWillDisappear(animated)
+           if usedCamera == true {
+               self.captureSession?.stopRunning()
+           }
+       }
+    
+    //MARK: Data Input Subroutines
+    
+    func launchCamera(){
+        previewView.isHidden = false
+        recordTheFood()
+    }
+    
+    func pickFromCameraRoll(){
+        imagePicker.delegate = self
+              imagePicker.sourceType = .photoLibrary
+              foodImage.isHidden = false
+              present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    // MARK: Functions to manage the image input
+      func setupLivePreview() {
+        let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8 as! CGFloat
+          videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+          videoPreviewLayer.videoGravity = .resizeAspectFill
+          videoPreviewLayer.connection?.videoOrientation = .portrait
+        videoPreviewLayer.cornerRadius = 1.5*layoutUnit
+          previewView.layer.addSublayer(videoPreviewLayer)
+      }
+    
+      func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+          guard let imageData = photo.fileDataRepresentation()
+              else { return }
+          image = UIImage(data: imageData) ?? UIImage(named: "chaos.jpg")!
+          foodImage.image = image
+        foodImage.layer.masksToBounds = true
+         /// performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
+      }
+      
+      func presentCameraSettings() {
+          let alertController = UIAlertController(title: "Error",
+                                                  message: "Camera access is denied",
+                                                  preferredStyle: .alert)
+          alertController.addAction(UIAlertAction(title: "Cancel", style: .default))
+          alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
+              if let url = URL(string: UIApplication.openSettingsURLString) {
+                  UIApplication.shared.open(url, options: [:], completionHandler: { _ in
+                  })
+              }
+          })
+          
+          present(alertController, animated: true)
+      }
+      
+      
+      func checkCameraAccess() -> Bool {
+          switch AVCaptureDevice.authorizationStatus(for: .video) {
+          case .denied:
+              print("Denied, request permission from settings")
+              //presentCameraSettings()
+              pickFromCameraRoll()
+              return false
+          case .restricted:
+              print("Restricted, device owner must approve")
+          case .authorized:
+              print("Authorized, proceed")
+          case .notDetermined:
+              AVCaptureDevice.requestAccess(for: .video) { success in
+                  if success {
+                      print("Permission granted, proceed")
+                  } else {
+                      print("Permission denied")
+                  }
+              }
+          }
+          
+          return true
+      }
+      
+      
+      func recordTheFood() {
+
+        
+          if checkCameraAccess() == true {
+              captureSession = AVCaptureSession()
+              captureSession.sessionPreset = .medium
+          
+              guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
+                  .first else {
+                      fatalError("No front facing camera found")
+                  }
+          
+              do {
+                  let input = try AVCaptureDeviceInput(device: backCamera)
+                  stillImageOutput = AVCapturePhotoOutput()
+              
+                  if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
+                      captureSession.addInput(input)
+                      captureSession.addOutput(stillImageOutput)
+                    setupLivePreview()
+                  }
+              }
+              catch let error  {
+                  print("Error Unable to initialize back camera:  \(error.localizedDescription)")
+              }
+          
+              DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
+                  self.captureSession.startRunning()
+              }
+          
+              DispatchQueue.main.async {
+                  self.videoPreviewLayer.frame = self.previewView.bounds
+              }
+          }
+      }
+      
+      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+          // Local variable inserted by Swift 4.2 migrator.
+          
+          
+          let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+          
+          if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
+              foodImage.image = userPickedImage
+            image = userPickedImage.scaleImage(toSize: CGSize(width: 150, height: 150)) ?? UIImage(named: "chaos.jpg")!
+          }
+          imagePicker.dismiss(animated: true, completion: nil)
+      }
+      
+      // MARK: User interaction handlers
+      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          return true
+      }
+      
+    
+    //MARK: set up contstraints to lay them out
     func setUpSubview(){
         let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8 as! CGFloat
         let margins = view.layoutMarginsGuide
@@ -139,6 +304,22 @@ class newDataInputViewController: UIViewController {
         ])
         foodImage.cornerRadius = 1.5*layoutUnit
         
+        view.addSubview(previewView)
+        previewView.isHidden = true
+            previewView.translatesAutoresizingMaskIntoConstraints = false
+            previewView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+           // foodImage.image = UIImage(named: "cracker.jpeg")
+            previewView.layer.borderWidth = 6.0
+            previewView.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            
+            NSLayoutConstraint.activate([
+                previewView.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 6),
+                previewView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                previewView.heightAnchor.constraint(equalToConstant: 3*layoutUnit + 2),
+                previewView.widthAnchor.constraint(equalTo: foodImage.heightAnchor)
+            ])
+            previewView.cornerRadius = 1.5*layoutUnit
+        
         view.addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -154,7 +335,7 @@ class newDataInputViewController: UIViewController {
         textInput.cornerRadius = 5
         NSLayoutConstraint.activate([
             textInput.topAnchor.constraint(equalTo: foodImage.bottomAnchor, constant: 10),
-            textInput.heightAnchor.constraint(equalToConstant: layoutUnit),
+            textInput.heightAnchor.constraint(equalToConstant: 0.65*layoutUnit),
             textInput.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.85),
             textInput.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
         ])
@@ -209,4 +390,37 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
           return UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 0)
       }
     
+    // MARK: Boilerplate
+
+    // Helper function inserted by Swift 4.2 migrator.
+    fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+        return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    }
+    
+    // Helper function inserted by Swift 4.2 migrator.
+    fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+        return input.rawValue
+    }
+    
+    @objc func pictureInput(){
+        addButton.alpha = 0.2
+        if previewView.isHidden
+        {
+             previewView.isHidden = false
+              recordTheFood()
+        }
+        else{
+            previewView.isHidden = true
+            
+            haptic.notificationOccurred(.success)
+            if AVCaptureDevice.authorizationStatus(for: .video) != .denied
+            {   let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+                
+                stillImageOutput.capturePhoto(with: settings, delegate: self)
+                //foodImage.cornerRadius = 50
+                ///previewView.cornerRadius = 50
+            }
+        }
+      
+    }
 }
