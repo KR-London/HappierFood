@@ -18,7 +18,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
                 layout.scrollDirection = .horizontal
         
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collection.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        collection.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
   
     
         return collection
@@ -29,7 +29,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         layout.scrollDirection = .horizontal
         
           let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-          collection.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+          collection.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
           return collection
       }()
     
@@ -65,10 +65,10 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     
     lazy var addButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        button.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         button.setTitle("+", for: .normal)
         button.titleLabel?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        button.titleLabel?.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 72 )
+        button.titleLabel?.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 106 )
         button.titleLabel?.textAlignment = .center
         button.layer.borderWidth = 5.0
         button.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -80,10 +80,14 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         let foodName = UITextField()
         foodName.layer.borderWidth = 5.0
         foodName.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        foodName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         foodName.placeholder = "Name of food"
+        foodName.adjustsFontSizeToFitWidth = true
+       // foodName.insertTextPlaceholder(with: <#T##CGSize#>)
+        //textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
         foodName.textAlignment = .center
         foodName.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
-        foodName.setLeftPaddingPoints(15)
+        foodName.setLeftPaddingPoints(5)
         return foodName
     }()
         
@@ -110,6 +114,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
         
         
@@ -275,7 +280,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         triesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             triesCollectionView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
-            triesCollectionView.heightAnchor.constraint(equalToConstant: layoutUnit),
+            triesCollectionView.heightAnchor.constraint(equalToConstant: 0.7*layoutUnit),
             triesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             triesCollectionView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor)
             
@@ -288,7 +293,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         targetsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             targetsCollectionView.topAnchor.constraint(equalTo: triesCollectionView.bottomAnchor, constant: 10),
-            targetsCollectionView.heightAnchor.constraint(equalToConstant: layoutUnit),
+            targetsCollectionView.heightAnchor.constraint(equalToConstant: 0.7*layoutUnit),
             targetsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             targetsCollectionView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor)
             
@@ -297,6 +302,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         view.addSubview(textInput)
         textInput.delegate = self
         textInput.translatesAutoresizingMaskIntoConstraints = false
+        textInput.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         textInput.cornerRadius = 5
         NSLayoutConstraint.activate([
             textInput.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 10),
@@ -356,10 +362,11 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         view.addSubview(buttonStackView)
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonStackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
-            buttonStackView.heightAnchor.constraint(equalToConstant: layoutUnit),
+            buttonStackView.bottomAnchor.constraint(greaterThanOrEqualTo: margins.bottomAnchor, constant: -10),
+            buttonStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: layoutUnit),
             buttonStackView.widthAnchor.constraint(equalTo: margins.widthAnchor),
-            buttonStackView.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
+            buttonStackView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+            buttonStackView.topAnchor.constraint(lessThanOrEqualTo: foodImage.bottomAnchor, constant: 10)
         ])
         
     }

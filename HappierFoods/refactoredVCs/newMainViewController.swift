@@ -82,10 +82,10 @@ class newMainViewController: UIViewController {
         navigationController?.popToRootViewController(animated: false)
         myNav = navigationController as? customNavigationController
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-              let nextViewController = storyboard.instantiateViewController(withIdentifier: "newDataInputViewController" )
-        myNav?.pushViewController(nextViewController, animated: true)
-        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//              let nextViewController = storyboard.instantiateViewController(withIdentifier: "newDataInputViewController" )
+//        myNav?.pushViewController(nextViewController, animated: true)
+//        
         setUpNavigationBarItems()
         loadItems()
 
@@ -153,7 +153,7 @@ class newMainViewController: UIViewController {
             case .ResetDataAtTheStartOfNewWeek : //publicInformationBroadcast(didTheyReachTheirTarget: false)
                 print("Should be a comiseration message here")
             case .ReturnFromCelebrationScreen :
-                    print("Should be a congrats message here")//publicInformationBroadcast(didTheyReachTheirTarget: true)
+                 print("Should be a congrats message here")//publicInformationBroadcast(didTheyReachTheirTarget: true)
             default: break
         }
  
@@ -223,7 +223,7 @@ class newMainViewController: UIViewController {
         myCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell")
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        //myCollectionView.backgroundColor = UIColor.cyan
+        myCollectionView.backgroundColor = UIColor.clear
         view.addSubview(myCollectionView)
         myCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -281,8 +281,11 @@ class newMainViewController: UIViewController {
         let label = UILabel()
         label.text = text
         label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
+      
+        label.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+
         label.textAlignment = .center
-        label.baselineAdjustment = .alignCenters
+       label.baselineAdjustment = .alignCenters
         
         //let constraintRect = statsView.frame.size
        // let boundingBox = text.boundingRect(with: constraintRect,
@@ -295,7 +298,9 @@ class newMainViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: statsView.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: statsView.centerYAnchor)
+            label.centerYAnchor.constraint(equalTo: statsView.centerYAnchor),
+            label.widthAnchor.constraint(equalToConstant: 200),
+            label.heightAnchor.constraint(equalToConstant: 100)
                ])
     }
     
@@ -463,8 +468,34 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 //        let label = UILabel()
 //        label.text = "Hello"
 //        cell.addSubview(label)
-        cell.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
-        cell.cellImage!.image = UIImage(named: "chaos.jpg")
+        
+        cell.backgroundColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1)
+        
+        var collectionViewSize = 9
+            
+            if foodArray.count  > 9
+            {
+                collectionViewSize = foodArray.count
+            }
+        
+            if foodArray != nil {
+                    if indexPath.row < foodArray.count {
+                        cell.backgroundColor = UIColor.clear
+                        cell.cellImage.isHidden = false
+                      //  cell.cellImage.alpha = 1
+                        let plate = foodArray[indexPath.row]
+                        let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
+                        //cell.cellImage.image = UIImage(named: "1.png")
+                        cell.displayContent(image: fileToLoad)
+                    
+                    }
+                    else
+                    {
+                        cell.cellImage.isHidden = true
+
+                    }
+                }
+
         return cell
         }
 }

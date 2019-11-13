@@ -34,6 +34,7 @@ class confettiViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
         showMessage(text: "Well done! Trying a new food is hard and you did it!")
         // Do any additional setup after loading the view.
@@ -50,7 +51,7 @@ class confettiViewController: UIViewController {
         NSLayoutConstraint.activate([
                  moveOnButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
                  moveOnButton.heightAnchor.constraint(equalToConstant: bubbleHeight/4),
-                 moveOnButton.widthAnchor.constraint(equalTo:margins.widthAnchor , multiplier: 0.65),
+                 moveOnButton.widthAnchor.constraint(equalTo:margins.widthAnchor , multiplier: 1),
                //  moveOnButton.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.65),
                  moveOnButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
              ])

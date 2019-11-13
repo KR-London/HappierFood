@@ -31,7 +31,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         self.view.endEditing(true)
     }
   
-    @IBOutlet weak var moveOnButton: UIButton!
+    @IBOutlet weak var moveOnButton: myButton!
     @IBOutlet weak var nameOfFood: UITextField!
     @IBOutlet weak var faceView: FaceView!
     @IBOutlet weak var foodImage: UIImageView!
@@ -54,7 +54,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     // MARK: page lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         imagePickerView.allowsEditing = true
         loadItems()
         imagePickerView.delegate = self
