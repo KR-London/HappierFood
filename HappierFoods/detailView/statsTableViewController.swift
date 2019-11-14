@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Darwin
 
 private let reuseIdentifier = "statsTableCell"
 
@@ -17,6 +18,9 @@ class statsTableViewController: UITableViewController {
     var historyArray: [HistoryTriedFoods]?
     var foodArray: [TriedFood]!
     var logons: [Logons]!
+    
+    var loginRecord = UserDefaults.standard.object(forKey: "loginRecord") as? [ Date ] ?? [ Date ]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +50,14 @@ class statsTableViewController: UITableViewController {
               case 1:
                   cell.titleOfStatistic.text = "Total Foods Tried"
               case 2:
-                  cell.titleOfStatistic.text = "Total Logons"
-                  cell.valueOfStatistic.text = String( (logons?.count ?? -1) )
+                  cell.titleOfStatistic.text = "All Logons"
+                  cell.valueOfStatistic.text = String( loginRecord.count)
+//                case 3:
+//                   cell.titleOfStatistic.text = "Days logged on"
+//                   cell.valueOfStatistic.text = String( loginRecord.count)
               case 3:
                   cell.titleOfStatistic.text = "Average Logon per week"
+                  cell.valueOfStatistic.text = String( loginRecord.count/numberOfWeeks() )
               case 4:
                   cell.titleOfStatistic.text = "Average Tries Per Week"
               case 5:
@@ -68,9 +76,50 @@ class statsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    func distinctDaysLoggedIn(){
+//        var text = String()
+//        var streak = 1
+//        var streaking = true
+//        var dateBefore = Date()
+//
+//        while streaking == true
+//        {
+//            if loginRecord.count > 0
+//            {
+//                let nextDateToCheck = loginRecord.popLast()!
+//                if Calendar.current.isDate(dateBefore.addingTimeInterval(86400), inSameDayAs: nextDateToCheck) || Calendar.current.isDate(dateBefore, inSameDayAs: nextDateToCheck)
+//                {
+//                    loginRecord = loginRecord.dropLast()
+//                    dateBefore = nextDateToCheck
+//                    if Calendar.current.isDate(dateBefore.addingTimeInterval(86400), inSameDayAs: nextDateToCheck)
+//                    {
+//                        streak = streak + 1
+//                    }
+//                }
+//                else
+//                {
+//                    streaking = false
+//                }
+//            }
+//            else
+//            {
+//                streaking = false
+//            }
+    }
+    
+    func numberOfWeeks() -> Int{
+        var numberOfDays = Calendar.current.dateComponents([.day], from: loginRecord.first ?? Date(), to: loginRecord.last ?? Date()).day
+        print(numberOfDays)
+        
+        if numberOfDays == 0 || numberOfDays == nil {numberOfDays = 1}
+        print(numberOfDays)
+        return  Int(ceil(Double(numberOfDays!)/7.0))
+    }
 
 
-    /*
+    /*Date
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.

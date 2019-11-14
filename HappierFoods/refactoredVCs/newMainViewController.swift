@@ -291,11 +291,14 @@ class newMainViewController: UIViewController {
             if loginRecord.count > 0
             {
                 let nextDateToCheck = loginRecord.popLast()!
-                if Calendar.current.isDate(dateBefore.addingTimeInterval(86400), inSameDayAs: nextDateToCheck)
+                if Calendar.current.isDate(dateBefore.addingTimeInterval(86400), inSameDayAs: nextDateToCheck) || Calendar.current.isDate(dateBefore, inSameDayAs: nextDateToCheck)
                 {
                     loginRecord = loginRecord.dropLast()
-                    streak = streak + 1
                     dateBefore = nextDateToCheck
+                    if Calendar.current.isDate(dateBefore.addingTimeInterval(86400), inSameDayAs: nextDateToCheck)
+                    {
+                        streak = streak + 1
+                    }
                 }
                 else
                 {

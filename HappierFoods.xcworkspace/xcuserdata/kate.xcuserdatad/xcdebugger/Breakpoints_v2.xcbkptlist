@@ -1233,5 +1233,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F039BDB-CD59-4D0C-9CEC-217090ACE0D1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappierFoods/detailView/statsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "numberOfWeeks()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2F039BDB-CD59-4D0C-9CEC-217090ACE0D1 - 5322acf09e9600a6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappierFoods.statsTableViewController.numberOfWeeks() -&gt; Swift.Double"
+                  moduleName = "HappierFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/detailView/statsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1917">
+               </Location>
+               <Location
+                  uuid = "2F039BDB-CD59-4D0C-9CEC-217090ACE0D1 - 5322acf09e9600a6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappierFoods.statsTableViewController.numberOfWeeks() -&gt; Swift.Double"
+                  moduleName = "HappierFoods"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/detailView/statsTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "2118">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

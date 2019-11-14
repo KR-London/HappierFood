@@ -131,14 +131,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("login record")
         print(loginRecord)
         
-        if let lastStamp = loginRecord.popLast()
-        {
-            if Calendar.current.isDateInToday(lastStamp)
-            {
-                loginRecord = loginRecord + [now]
-                UserDefaults.standard.set(loginRecord, forKey: "loginRecord")
-            }
-        }
+        loginRecord = loginRecord + [now]
+        UserDefaults.standard.set(loginRecord, forKey: "loginRecord")
+        
+//        if let lastStamp = loginRecord.popLast()
+//        {
+//            if Calendar.current.isDateInToday(lastStamp)
+//            {
+//                loginRecord = loginRecord + [now]
+//                UserDefaults.standard.set(loginRecord, forKey: "loginRecord")
+//            }
+//        }
         
         
         
