@@ -70,7 +70,7 @@ class newMainViewController: UIViewController {
         setUpSubview()
         
         showMessage(text: "HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY")
-        displayStats(text: "3 login streak!")
+        displayStats()
         
         if  UserDefaults.standard.bool(forKey: "launchedBefore") == false
         {
@@ -277,9 +277,39 @@ class newMainViewController: UIViewController {
         
     }
     
-    func displayStats(text: String){
+    func displayStats(){
+        
+        var loginRecord = UserDefaults.standard.object(forKey: "loginRecord") as? [ Date ] ?? [ Date ]()
+        
+        var text = String()
+        var streak = 1
+        var streaking = true
+        var dateBefore = Date()
+        
+        while streaking == true
+        {
+            if loginRecord.count > 0
+            {
+                let nextDateToCheck = loginRecord.popLast()!
+                if Calendar.current.isDate(dateBefore.addingTimeInterval(86400), inSameDayAs: nextDateToCheck)
+                {
+                    loginRecord = loginRecord.dropLast()
+                    streak = streak + 1
+                    dateBefore = nextDateToCheck
+                }
+                else
+                {
+                    streaking = false
+                }
+            }
+            else
+            {
+                streaking = false
+            }
+        }
+        
         let label = UILabel()
-        label.text = text
+        label.text = String(streak) + " Day Logon Streak!"
         label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
       
         label.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)

@@ -732,8 +732,8 @@
             filePath = "HappierFoods/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1149,7 +1149,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "2828">
+                  offsetFromSymbolStart = "2971">
                </Location>
                <Location
                   uuid = "1150913F-5A63-4008-8368-5D9F76D66665 - b51055a17bf1bf9a"
@@ -1164,7 +1164,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "5908">
+                  offsetFromSymbolStart = "6506">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1214,6 +1214,22 @@
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A98161F4-16F2-412D-9E7A-70C76EBDF0A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappierFoods/refactoredVCs/newMainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "displayStats()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

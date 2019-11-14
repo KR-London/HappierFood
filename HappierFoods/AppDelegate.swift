@@ -20,9 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
  
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        //let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
-        //let launchedBefore = false
+        doIPlaceANewDatestamp()
+        let launchedBefore = true
         let newTutorial = false
         
         if launchedBefore{
@@ -121,6 +122,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func doIPlaceANewDatestamp(){
+        let now = Date()
+        print(Date())
+        var loginRecord = UserDefaults.standard.object(forKey: "loginRecord") as? [ Date ] ?? [ Date ]()
+        print("login record")
+        print(loginRecord)
+        
+        if let lastStamp = loginRecord.popLast()
+        {
+            if Calendar.current.isDateInToday(lastStamp)
+            {
+                loginRecord = loginRecord + [now]
+                UserDefaults.standard.set(loginRecord, forKey: "loginRecord")
+            }
+        }
+        
+        
+        
     }
 }
 
