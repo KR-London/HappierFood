@@ -18,6 +18,9 @@ class statsTableViewController: UITableViewController {
     var historyArray: [HistoryTriedFoods]?
     var foodArray: [TriedFood]!
     var logons: [Logons]!
+    var uniqueFoods = [ (String, String)]()
+    
+   var tryCounts = [ String: Int ]()
     
     var loginRecord = UserDefaults.standard.object(forKey: "loginRecord") as? [ Date ] ?? [ Date ]()
 
@@ -26,6 +29,7 @@ class statsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadItems()
+        listOfFoodsTried()
 
     }
 
@@ -48,26 +52,28 @@ class statsTableViewController: UITableViewController {
                   cell.titleOfStatistic.text = "Total Tries"
                   cell.valueOfStatistic.text = String( (historyArray?.count ?? 0) + (foodArray?.count ?? 0) )
               case 1:
-                  cell.titleOfStatistic.text = "Total Foods Tried"
+                  cell.titleOfStatistic.text = "Total Distinct Foods Tried"
+                  cell.valueOfStatistic.text  = String(tryCounts.count)
               case 2:
                   cell.titleOfStatistic.text = "All Logons"
                   cell.valueOfStatistic.text = String( loginRecord.count)
-//                case 3:
-//                   cell.titleOfStatistic.text = "Days logged on"
-//                   cell.valueOfStatistic.text = String( loginRecord.count)
               case 3:
                   cell.titleOfStatistic.text = "Average Logon per week"
-                  cell.valueOfStatistic.text = String( loginRecord.count/numberOfWeeks() )
+                  cell.valueOfStatistic.text = String( Double(loginRecord.count)/Double(numberOfWeeks() ))
               case 4:
                   cell.titleOfStatistic.text = "Average Tries Per Week"
+                  cell.valueOfStatistic.text = String( Double(tryCounts.count)/Double(numberOfWeeks()) )
               case 5:
                   cell.titleOfStatistic.text = "Most Retried Food"
+                  cell.valueOfStatistic.text =  maxTries()
               case 6:
-                  cell.titleOfStatistic.text = "Count Pond Fish (< 5 Tries)"
+                  cell.titleOfStatistic.text = "Number of foods tried 5 times of more"
+                  cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 5}).count)
               case 7:
-                  cell.titleOfStatistic.text = "Count Lake Fish (< 12 Tries)"
-              case 8:
-                  cell.titleOfStatistic.text = "Count Sea Fish (> 12 Tries)"
+                  cell.titleOfStatistic.text = "Number of foods tried 12 times of more"
+                  cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 12}).count)
+             // case 8:
+               //   cell.titleOfStatistic.text = "Favourite food this week"
               default:
                   cell.titleOfStatistic.text = " "
           }
@@ -75,6 +81,122 @@ class statsTableViewController: UITableViewController {
           cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 
         return cell
+    }
+    
+    func maxTries() -> String
+    {
+        let maximum = tryCounts.values.max()
+        var maxTriedFoods = [String]()
+        
+        for tries in tryCounts{
+            if tries.value == maximum
+            {
+                maxTriedFoods.append(tries.key)
+            }
+        }
+        
+        return maxTriedFoods.randomElement()!
+        
+    }
+    
+    func listOfFoodsTried(){
+        
+        var foodNames = Array(Set(foodArray.compactMap({$0.name})))
+        foodNames = foodNames.filter({$0 != ""})
+        print(foodNames)
+        
+      
+        
+        for uniqueFood in foodNames{
+            let count = foodArray.filter({$0.name == uniqueFood })
+            tryCounts[uniqueFood] = count.count
+        }
+        
+        print(tryCounts)
+        
+        var orphans  = foodArray.filter({ $0.name == ""})
+        orphans = orphans.filter({["1plate.jpeg", "2plate.jpeg", "3plate.jpeg", "4plate.jpeg", "5plate.jpeg"].contains($0.filename!.components(separatedBy: "/").last) == false })
+        
+        for x in (0 ... orphans.count - 1).reversed() {
+            var relations = foodArray.filter{$0.filename == orphans[x].filename}
+            relations = relations.filter({$0.name != ""})
+            let candidateNames = relations.compactMap({$0.name})
+            
+            print(candidateNames)
+            
+            if candidateNames.count > 0{
+                tryCounts[candidateNames.first!] = tryCounts[candidateNames.first!]! + 1
+                orphans.remove(at: x)
+            }
+    
+        }
+        
+        let remainingOrphanFilenames = Array(Set(orphans.compactMap({$0.filename})))
+        var placeholder = "."
+        
+        for remainingOrphans in remainingOrphanFilenames{
+            tryCounts[placeholder] = orphans.filter({$0.filename == remainingOrphans}).count
+            placeholder = placeholder +  "."
+        }
+        // What makes a distinct food
+        /// matching written name
+        
+        /// list of unique names
+        
+        /// matching photo
+        
+        /// excluding placeholders
+        
+        /// step 1
+        
+       //
+        //var unallocatedFoods =
+        
+//        var countOfThisFood = Int()
+//
+//              if foodName == "" {
+//                  if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
+//                      countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename }).count
+//                  }
+//                  else {
+//                      countOfThisFood = 1
+//                  }
+//              }
+//              else{
+//                  if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
+//                      countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+//                  }
+//                  else{
+//                       countOfThisFood = foodArray.filter({ $0.name == detailToDisplay.foodName }).count
+//                  }
+//              }
+//
+//              if let history = historyArray
+//              {
+//
+//                  if foodName == ""
+//                  {
+//
+//                      if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+//                      {
+//                          countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename }).count
+//                      }
+//                  }
+//                  else
+//                  {
+//
+//                      if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+//                      {
+//                          countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+//                      }
+//                      else
+//                      {
+//                          countOfThisFood = countOfThisFood + history.filter({ $0.name == detailToDisplay.foodName }).count
+//                      }
+//                  }
+//              }
+
+        
     }
     
     
