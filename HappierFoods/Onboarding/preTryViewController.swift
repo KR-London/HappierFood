@@ -330,7 +330,7 @@ override func viewDidAppear(_ animated: Bool) {
     /// i need to jump into the second screen but preserve the navigation stack.
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
-    let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! newMainViewController
+    let rootViewController = storyBoard.instantiateViewController(withIdentifier: "newMainViewController") as! newMainViewController
     let myNav = customNavigationController()
    // myNav.presentState = .FirstLaunch
     //clean up 
@@ -374,7 +374,7 @@ override func viewDidAppear(_ animated: Bool) {
         /// i need to jump into the second screen but preserve the navigation stack.
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
-        let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! newMainViewController
+        let rootViewController = storyBoard.instantiateViewController(withIdentifier: "newMainViewController") as! newMainViewController
         let myNav = customNavigationController()
         rootViewController.myNav?.presentState = .AddFoodViewController
     

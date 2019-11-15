@@ -64,6 +64,7 @@ class statsTableViewController: UITableViewController {
                   cell.titleOfStatistic.text = "Average Tries Per Week"
                   cell.valueOfStatistic.text = String( Double(tryCounts.count)/Double(numberOfWeeks()) )
               case 5:
+                //cell.imageForStat.image = UIImage(named: "1plate.jpeg")
                   cell.titleOfStatistic.text = "Most Retried Food"
                   cell.valueOfStatistic.text =  maxTries()
               case 6:
@@ -72,8 +73,9 @@ class statsTableViewController: UITableViewController {
               case 7:
                   cell.titleOfStatistic.text = "Number of foods tried 12 times of more"
                   cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 12}).count)
-             // case 8:
-               //   cell.titleOfStatistic.text = "Favourite food this week"
+             case 8:
+                cell.titleOfStatistic.text = "What stat do you want to see... "
+                cell.valueOfStatistic.text =  "..here!"
               default:
                   cell.titleOfStatistic.text = " "
           }

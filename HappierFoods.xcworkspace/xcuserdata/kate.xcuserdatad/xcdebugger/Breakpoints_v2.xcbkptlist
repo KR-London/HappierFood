@@ -1131,8 +1131,8 @@
             filePath = "HappierFoods/detailView/statsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "listOfFoodsTried()"
             landmarkType = "7">
             <Locations>
