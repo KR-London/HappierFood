@@ -214,14 +214,14 @@ class preTargetViewController: UINavigationController {
         //        self.present(newViewController, animated: true, completion: nil)
         
         
-        let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! mainViewController
+        let rootViewController = storyBoard.instantiateViewController(withIdentifier: "FrontPage") as! newMainViewController
         let myNav = customNavigationController()
         
         rootViewController.myNav?.presentState = .SetTargetViewController
         
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! dataInputViewController
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "photoInputScreen") as! newDataInputViewController
         
-        newViewController.sourceViewController = "Set Target"
+       // newViewController.sourceViewController = "Set Target"
         
         //  myNav.roo
         myNav.pushViewController(rootViewController, animated: false)

@@ -112,6 +112,8 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
+    var nextViewController = rateFoodViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
@@ -161,12 +163,16 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
       }
     
       func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-          guard let imageData = photo.fileDataRepresentation()
+            guard let imageData = photo.fileDataRepresentation()
               else { return }
-          image = UIImage(data: imageData) ?? UIImage(named: "chaos.jpg")!
-          foodImage.image = image
-        foodImage.layer.masksToBounds = true
+            image = UIImage(data: imageData) ?? UIImage(named: "chaos.jpg")!
+            foodImage.image = image
+            foodImage.layer.masksToBounds = true
          /// performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
+            passData(dvc1: nextViewController)
+            nextViewController.formatImage()
+           // nextViewController.foodImage.image = image
+        
       }
       
       func presentCameraSettings() {
@@ -436,20 +442,43 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     }
     
     @objc func eatNowSegue(){
+        haptic.notificationOccurred(.success)
+        if captureSession != nil
+        {
+            if AVCaptureDevice.authorizationStatus(for: .video) != .denied
+            {    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+            
+                stillImageOutput.capturePhoto(with: settings, delegate: self)
+            //foodImage.cornerRadius = 50
+            ///previewView.cornerRadius = 50
+            }
+        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextViewController = storyboard.instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
+        nextViewController = storyboard.instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
         passData(dvc1: nextViewController)
         //myNav?.pushViewController(nextViewController, animated: true)
         myNav = self.navigationController as! customNavigationController
-          /// this will nedd more nuance if i pull foods off the ribbons 
+          /// this will nedd more nuance if I pull foods off the ribbons
         myNav?.presentState = .AddFoodViewController
         myNav?.pushViewController(nextViewController, animated: true)
         //present(nextViewController, animated: true, completion: nil)
     }
     
     @objc func eatLaterSegue(){
+        haptic.notificationOccurred(.success)
+        if captureSession != nil
+        {
+            if AVCaptureDevice.authorizationStatus(for: .video) != .denied
+            {
+                let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+            
+                stillImageOutput.capturePhoto(with: settings, delegate: self)
+                //foodImage.cornerRadius = 50
+                ///previewView.cornerRadius = 50
+            }
+        }
            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-           let nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
+            nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
           passData(dvc1: nextViewController)
           //myNav?.pushViewController(nextViewController, animated: true)
           myNav = self.navigationController as! customNavigationController

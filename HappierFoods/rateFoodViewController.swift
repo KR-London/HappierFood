@@ -62,14 +62,16 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 //        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
 //        presentState = main!.myNav!.currentStateAsString()
  
-        imagePlaceholder = cropImageToSquare(imagePlaceholder)
-        foodImage.image = imagePlaceholder
-
-        foodImage.translatesAutoresizingMaskIntoConstraints = false
-        foodImage.contentMode = .scaleAspectFill
-        foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        nameOfFood.text = foodName
+//        imagePlaceholder = cropImageToSquare(imagePlaceholder)
+//        foodImage.image = imagePlaceholder
+//
+//        foodImage.translatesAutoresizingMaskIntoConstraints = false
+//        foodImage.contentMode = .scaleAspectFill
+//        foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+            formatImage()
+            nameOfFood.text = foodName
     //   motivationText?.text = existingMotivationText
         
         // MARK: Colour
@@ -132,6 +134,16 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         catch{
             print("Error fetching data \(error)")
         }
+    }
+    
+    func formatImage(){
+            imagePlaceholder = cropImageToSquare(imagePlaceholder)
+             foodImage.image = imagePlaceholder
+
+             foodImage.translatesAutoresizingMaskIntoConstraints = false
+             foodImage.contentMode = .scaleAspectFill
+             foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
+             foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: Save data

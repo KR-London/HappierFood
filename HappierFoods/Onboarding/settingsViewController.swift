@@ -98,14 +98,14 @@ class settingsViewController: UIViewController {
         defaults.set(dateNow, forKey: "Last Week Started")
         defaults.set(false, forKey: "Celebration Status")
        
-        weak var main = navigationController?.viewControllers[0] as? mainViewController
+        weak var main = navigationController?.viewControllers[0] as? newMainViewController
         
         main?.foodArray = []
         main?.targetArray = []
 
         DispatchQueue.main.async{
-            main?.mainCollectionView.reloadData()
-            main?.mainCollectionView.reloadInputViews()
+            main?.myCollectionView.reloadData()
+            main?.myCollectionView.reloadInputViews()
         }
         
         navigationController?.popViewController(animated: true)
@@ -123,7 +123,7 @@ class settingsViewController: UIViewController {
         
     
     func returnToMain(){
-        weak var main = navigationController?.viewControllers[0] as? mainViewController
+        weak var main = navigationController?.viewControllers[0] as? newMainViewController
         
         main?.foodArray = []
         main?.targetArray = []
@@ -132,8 +132,8 @@ class settingsViewController: UIViewController {
         defaults.set(false, forKey: "Celebration Status")
         UserDefaults.standard.set(false, forKey: "launchedBefore")
        DispatchQueue.main.async{
-            main?.mainCollectionView.reloadData()
-            main?.mainCollectionView.reloadInputViews()
+            main?.myCollectionView.reloadData()
+            main?.myCollectionView.reloadInputViews()
        }
         navigationController?.popViewController(animated: true)
     }
