@@ -47,6 +47,8 @@ class mainCollectionViewCell: UICollectionViewCell {
         cellImage.contentMode = .scaleToFill
         cellImage.cornerRadius = 5
         self.addSubview(cellImage)
+        
+        
     }
     
     override func layoutSubviews() {

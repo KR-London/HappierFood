@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
  
-        //let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
         doIPlaceANewDatestamp()
-        let launchedBefore = false
+        //let launchedBefore = false
         let newTutorial = false
         
         if launchedBefore{

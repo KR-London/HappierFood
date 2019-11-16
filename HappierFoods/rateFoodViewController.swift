@@ -138,12 +138,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func formatImage(){
             imagePlaceholder = cropImageToSquare(imagePlaceholder)
-             foodImage.image = imagePlaceholder
+             foodImage?.image = imagePlaceholder
 
-             foodImage.translatesAutoresizingMaskIntoConstraints = false
-             foodImage.contentMode = .scaleAspectFill
-             foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
-             foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
+             foodImage?.translatesAutoresizingMaskIntoConstraints = false
+             foodImage?.contentMode = .scaleAspectFill
+             foodImage?.widthAnchor.constraint(equalToConstant: 100).isActive = true
+             foodImage?.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     // MARK: Save data

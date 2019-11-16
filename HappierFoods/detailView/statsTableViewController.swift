@@ -107,6 +107,7 @@ class statsTableViewController: UITableViewController {
         foodNames = foodNames.filter({$0 != ""})
         print(foodNames)
         
+        /// check for random spaces
       
         
         for uniqueFood in foodNames{

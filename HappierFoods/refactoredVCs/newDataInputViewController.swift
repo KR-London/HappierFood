@@ -114,8 +114,18 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     
     var nextViewController = rateFoodViewController()
     
+    // MARK: Core Data variables
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var food: [NSManagedObject] = []
+    var foodArray: [TriedFood]!
+    var targetArray: [TargetFood]!
+    var logons: [Logons]!
+    
+    var selectedIndexPath : IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadItems()
         view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
         
@@ -282,6 +292,9 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         triesCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "tryCell")
         triesCollectionView.delegate = self
         triesCollectionView.dataSource = self
+        triesCollectionView.allowsSelection = true
+        
+        
         view.addSubview(triesCollectionView)
         triesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -295,6 +308,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     targetsCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "tryCell")
         targetsCollectionView.delegate = self
         targetsCollectionView.dataSource = self
+        targetsCollectionView.allowsSelection = true
         view.addSubview(targetsCollectionView)
         targetsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -387,13 +401,60 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
 
 extension newDataInputViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+          if collectionView == self.triesCollectionView
+              {
+                return foodArray.count
+              }
+        
+        if collectionView == self.targetsCollectionView
+                     {
+                       return targetArray.count
+                     }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tryCell", for: indexPath) as! mainCollectionViewCell
-            cell.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+        
+
+        
+        /* Set some settings */
+         if let selected = selectedIndexPath, selected == indexPath {
+             cell.layer.borderColor = UIColor.gray.cgColor
+         } else {
+             cell.layer.borderColor = UIColor.clear.cgColor
+         }
+        
+            if collectionView == self.triesCollectionView
+                   {
+                      let plate = foodArray[indexPath.row]
+                      let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
+                      cell.displayContent(image: fileToLoad)
+                    
+                    let editButton = UIButton(frame: CGRect(x:0, y:20, width:40,height:40))
+                    //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
+                    editButton.tag = indexPath.row
+                    editButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
+                    cell.addSubview(editButton)
+                    // cell.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+                   }
+             
+             if collectionView == self.targetsCollectionView
+                          {
+                             let plate = targetArray[indexPath.row]
+                                                  let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
+                                                  cell.displayContent(image: fileToLoad)
+                            
+                            let editButton = UIButton(frame: CGRect(x:0, y:20, width:40,height:40))
+                            //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
+                            editButton.tag = indexPath.row
+                            editButton.addTarget(self, action: #selector(targetTryButtonTapped), for: .touchUpInside)
+                            cell.addSubview(editButton)
+                          }
          
+        
+        
             return cell
     }
     
@@ -407,6 +468,51 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
           return UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 0)
       }
     
+   
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        print("hello")
+        
+        if collectionView == self.triesCollectionView
+         {
+            foodImage.image = UIImage(named: (foodArray?[indexPath.row].filename)!)
+            textInput.text = foodArray?[indexPath.row].name ?? ""
+            addButton.alpha = 0.2
+         }
+         
+         if collectionView == self.targetsCollectionView
+         {
+             foodImage.image = UIImage(named: (targetArray?[indexPath.row].filename)!)
+            textInput.text = targetArray?[indexPath.row].name ?? ""
+            addButton.alpha = 0.2
+            self.reloadInputViews()
+         }
+        
+        var cellsToReload = [indexPath]
+          if let selected = selectedIndexPath {
+              cellsToReload.append(selected)
+          }
+          selectedIndexPath = indexPath
+          collectionView.reloadItems(at: cellsToReload)
+    }
+    
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+////        addToList.append(objectsArray[indexPath.row])
+////        let cell = collectionView.cellForItem(at: indexPath)
+////        cell?.layer.borderWidth = 2.0
+////        cell?.layer.borderColor = UIColor.gray.cgColor
+//
+//        if collectionView == self.triesCollectionView
+//                         {
+//        }
+//
+//        if collectionView == self.targetsCollectionView
+//        {
+//
+//        }
+//    }
+//
     // MARK: Boilerplate
 
     // Helper function inserted by Swift 4.2 migrator.
@@ -492,4 +598,68 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         dvc1.foodName = textInput.text ?? ""
         //dvc1.placeHolderImage = foodImage.image ?? UIImage(named: "1plate.jpeg")
     }
+    
+            /// MARK: Setup
+            func loadItems(){
+                let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+                do{
+                    try foodArray = context.fetch(request)
+                }
+                catch{
+                    print("Error fetching data \(error)")
+                }
+
+                let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+                do{
+                    try targetArray = context.fetch(request2)
+                }
+                catch{
+                    print("Error fetching data \(error)")
+                }
+
+                let request3 : NSFetchRequest<Logons> = Logons.fetchRequest()
+                      do{
+                          try logons = context.fetch(request3)
+                      }
+                      catch{
+                          print("Error fetching data \(error)")
+                      }
+
+        //        if thisIsANewLogon(){
+        //           kjhh logons
+        //        }
+    }
+    
+    @objc func retryButtonTapped(sender: mainCollectionViewCell) -> Void {
+        print("Hello retry Button")
+        print(sender.tag)
+        let plate = foodArray[sender.tag]
+        let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
+        foodImage.image = UIImage(named: fileToLoad)
+        foodImage.layer.masksToBounds = true
+        image = UIImage(named: fileToLoad)
+        textInput.text = foodArray![sender.tag].name ?? ""
+        addButton.alpha = 0.2
+        passData(dvc1: nextViewController)
+        nextViewController.formatImage()
+    }
+    
+    @objc func targetTryButtonTapped(sender: mainCollectionViewCell) -> Void {
+        print("Hello retarget Button")
+        print(sender.tag)
+        let plate = targetArray[sender.tag]
+        let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
+        
+        foodImage.image = UIImage(named: fileToLoad)
+        image = UIImage(named: fileToLoad)
+        foodImage.layer.masksToBounds = true
+        textInput.text = targetArray![sender.tag].name ?? ""
+        addButton.alpha = 0.2
+        passData(dvc1: nextViewController)
+        nextViewController.formatImage()
+    }
 }
+
+
+
+

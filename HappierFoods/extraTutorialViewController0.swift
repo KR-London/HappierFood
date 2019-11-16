@@ -21,7 +21,7 @@ class extraTutorialViewController0: UIViewController {
 //            self.performSegue(withIdentifier: "segue", sender: self)
 //            }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                // let myNav = customNavigationController()
                // let storyboard = UIStoryboard(name: "Main", bundle: nil)
                // let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
