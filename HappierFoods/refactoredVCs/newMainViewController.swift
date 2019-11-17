@@ -75,7 +75,7 @@ class newMainViewController: UIViewController {
         setUpSubview()
         
         // MARK: UI customisations
-        showMessage(text: "HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY")
+        showMessage(text: "### YOUR MESSAGE 1 HERE! ### ")
         displayStats()
 
         
@@ -509,7 +509,7 @@ class newMainViewController: UIViewController {
 extension newMainViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          return CGSize(width: collectionView.bounds.size.width/3 - 8 , height: collectionView.bounds.size.width/3 - 8 )
+          return CGSize(width: collectionView.bounds.size.width/4 - 8 , height: collectionView.bounds.size.width/4 - 8 )
     }
     
        func collectionView(_ collectionView: UICollectionView,
@@ -534,7 +534,7 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
     
         
         
-        return 9
+        return 16
         
 //        if foodArray.count + targetArray.count < 9
 //        {
@@ -560,9 +560,9 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
         
         cell.backgroundColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1)
         
-        var collectionViewSize = 9
+        var collectionViewSize = 16
             
-            if foodArray.count  > 9
+            if foodArray.count  > 16
             {
                 collectionViewSize = foodArray.count
             }
