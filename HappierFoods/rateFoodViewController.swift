@@ -336,6 +336,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
+        nextViewController.message = "Well done! Trying a new food is hard and you did it!"
         let myNav = self.navigationController
         myNav?.pushViewController(nextViewController, animated: true)
     }

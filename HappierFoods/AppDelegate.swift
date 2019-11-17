@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Instabug
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

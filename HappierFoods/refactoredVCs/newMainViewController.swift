@@ -2,6 +2,7 @@ import UIKit
 import Foundation
 import Darwin
 import CoreData
+//import SAConfettiView
 
 let defaults = UserDefaults.standard
 
@@ -59,6 +60,10 @@ class newMainViewController: UIViewController {
     var targetArray: [TargetFood]!
     var logons: [Logons]!
     
+    // MARK: Confetti variables
+    var confettiView: SAConfettiView!
+    var isRainingConfetti = false
+    
     unowned var myNav : customNavigationController?
 
     override func viewDidLoad() {
@@ -69,8 +74,10 @@ class newMainViewController: UIViewController {
         
         setUpSubview()
         
+        // MARK: UI customisations
         showMessage(text: "HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY HELLO, MY NAME IS HAPPY")
         displayStats()
+
         
         if  UserDefaults.standard.bool(forKey: "launchedBefore") == false
         {
@@ -133,6 +140,22 @@ class newMainViewController: UIViewController {
       ////  self.mainCollectionView.reloadInputViews()
         //happyIcon()
         
+        if isRainingConfetti == true{
+            confettiView.isHidden = false
+            confettiView.alpha = 1 
+            confettiView.startConfetti()
+            let animator = UIViewPropertyAnimator(duration: 3, curve: .easeIn) {  [weak self] in
+                    self?.confettiView.alpha = 0
+            }
+            animator.startAnimation()
+            
+             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                self.confettiView.stopConfetti()
+                self.isRainingConfetti = false
+                self.confettiView.isHidden = true
+            }
+        }
+        
         switch myNav!.presentState
         {
             case .FirstLaunch : print("In first launch.")
@@ -180,13 +203,15 @@ class newMainViewController: UIViewController {
         let margins = view.layoutMarginsGuide
         let myNav = self.navigationController
         
-        let bubbleHeight = 0.25*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
+       
+        
+        let bubbleHeight = 0.3*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
         
         view.addSubview(happyButton)
         happyButton.translatesAutoresizingMaskIntoConstraints = false
         happyButton.addTarget(self, action: #selector(happyCoachingSegue), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            happyButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
+            happyButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0.5*bubbleHeight),
             happyButton.heightAnchor.constraint(equalToConstant: bubbleHeight),
             happyButton.widthAnchor.constraint(equalToConstant: bubbleHeight),
             happyButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
@@ -220,6 +245,8 @@ class newMainViewController: UIViewController {
             statsView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
         ])
         
+   
+        
         myCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell")
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
@@ -232,13 +259,36 @@ class newMainViewController: UIViewController {
             myCollectionView.heightAnchor.constraint(equalTo: margins.widthAnchor),
             myCollectionView.widthAnchor.constraint(equalTo: margins.widthAnchor)
         ])
+        
+        confettiView = SAConfettiView()
+                        // Create confetti view
+                         confettiView = SAConfettiView(frame: self.view.bounds)
+                         confettiView.colors = [UIColor(red:0.95, green:0.40, blue:0.27, alpha:1.0),
+                                                      UIColor(red:1.00, green:0.78, blue:0.36, alpha:1.0),
+                                                      UIColor(red:0.48, green:0.78, blue:0.64, alpha:1.0),
+                                                      UIColor(red:0.30, green:0.76, blue:0.85, alpha:1.0),
+                                                      UIColor(red:0.58, green:0.39, blue:0.55, alpha:1.0)]
+                               
+                       // Set intensity (from 0 - 1, default intensity is 0.5)
+                       confettiView.intensity = 0.9
+                               
+                       // Set type
+                       confettiView.type = .diamond
+                       //triangle,  star,  diamond
+                       // For custom image
+                       // confettiView.type = .Image(UIImage(named: "diamond")!)
+                               
+                       // Add subview
+           view.addSubview(confettiView)
+           confettiView.isHidden = !isRainingConfetti
+      
     }
     
     ///MARK: Functions to communicate with the user
     
     func showMessage(text: String) {
         
-       let bubbleHeight = 0.25*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
+       let bubbleHeight = 0.3*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
         let label =  UILabel()
         
         label.numberOfLines = 0
@@ -255,7 +305,7 @@ class newMainViewController: UIViewController {
         label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 30),
                                   height: ceil(bubbleHeight))
 
-        let bubbleSize = CGSize(width: label.frame.width + 28,
+        let bubbleSize = CGSize(width: label.frame.width + 18,
                                      height: label.frame.height + 20)
 
         let bubbleView = BubbleView()
@@ -501,6 +551,12 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 //        let label = UILabel()
 //        label.text = "Hello"
 //        cell.addSubview(label)
+        
+//        let expandDetailButton = UIButton(frame: CGRect(x:0, y:0, width: cell.frame.width,height:cell.frame.height))
+//        //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
+//        editButton.tag = indexPath.row
+//        editButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
+//        cell.addSubview(editButton)
         
         cell.backgroundColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1)
         

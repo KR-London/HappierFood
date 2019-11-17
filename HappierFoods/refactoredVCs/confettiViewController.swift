@@ -10,6 +10,8 @@ import UIKit
 
 class confettiViewController: UIViewController {
     
+    var message = "You're doing great!"
+    
       lazy var happyButton: UIButton = {
           var button = UIButton()
           button.setImage(#imageLiteral(resourceName: "little dude1.png"), for: .normal)
@@ -28,7 +30,7 @@ class confettiViewController: UIViewController {
           let button = myButton()
           button.setTitle("I'm a superstar", for: .normal)
           button.titleLabel?.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
-         button.addTarget(self, action: #selector(goHome), for: .touchUpInside)
+            button.addTarget(self, action: #selector(goHome), for: .touchUpInside)
           return button
       }()
 
@@ -36,7 +38,7 @@ class confettiViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
-        showMessage(text: "Well done! Trying a new food is hard and you did it!")
+        showMessage(text: message)
         // Do any additional setup after loading the view.
     }
     
@@ -61,7 +63,7 @@ class confettiViewController: UIViewController {
         happyButton.addTarget(self, action: #selector(happyWobble), for: .touchUpInside)
         NSLayoutConstraint.activate([
             happyButton.bottomAnchor.constraint(equalTo: moveOnButton.topAnchor, constant: -10),
-            happyButton.heightAnchor.constraint(equalToConstant: bubbleHeight/3),
+            happyButton.heightAnchor.constraint(lessThanOrEqualToConstant: bubbleHeight/3),
             happyButton.widthAnchor.constraint(equalToConstant: bubbleHeight/3),
             happyButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
         ])
@@ -71,7 +73,7 @@ class confettiViewController: UIViewController {
         NSLayoutConstraint.activate([
             bubbleBox.topAnchor.constraint(greaterThanOrEqualTo: margins.topAnchor, constant: 10),
             bubbleBox.heightAnchor.constraint(lessThanOrEqualToConstant: bubbleHeight),
-            bubbleBox.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 40),
+            bubbleBox.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -40),
             bubbleBox.leadingAnchor.constraint(equalTo: happyButton.trailingAnchor),
             bubbleBox.bottomAnchor.constraint(equalTo: happyButton.topAnchor, constant: 10)
         ])
@@ -83,7 +85,7 @@ class confettiViewController: UIViewController {
         
             let myNav = self.navigationController
             
-           let bubbleHeight = 0.25*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
+           let bubbleHeight = 0.35*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
             let label =  UILabel()
             
             label.numberOfLines = 0
@@ -97,10 +99,10 @@ class confettiViewController: UIViewController {
                                                 options: .usesLineFragmentOrigin,
                                                 attributes: [.font: label.font],
                                                 context: nil)
-            label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 30),
+            label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 50),
                                       height: ceil(bubbleHeight))
 
-            let bubbleSize = CGSize(width: label.frame.width + 28,
+            let bubbleSize = CGSize(width: label.frame.width + 18,
                                          height: label.frame.height + 20)
 
             let bubbleView = BubbleView()
@@ -113,10 +115,11 @@ class confettiViewController: UIViewController {
             label.center = bubbleView.center
             bubbleView.addSubview(label)
             
-            bubbleView.translatesAutoresizingMaskIntoConstraints = false
+          bubbleView.translatesAutoresizingMaskIntoConstraints = true
             NSLayoutConstraint.activate([
-                bubbleView.bottomAnchor.constraint(equalTo: bubbleBox.bottomAnchor, constant: -10),
-                bubbleView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor)
+                bubbleView.bottomAnchor.constraint(lessThanOrEqualTo: happyButton.topAnchor, constant: 10),
+                bubbleView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor),
+                bubbleView.leadingAnchor.constraint(lessThanOrEqualTo: happyButton.trailingAnchor)
                ])
 
         }
@@ -126,6 +129,9 @@ class confettiViewController: UIViewController {
     }
     
     @objc func goHome(){
+        weak var main = navigationController?.viewControllers[0] as? newMainViewController
+        main?.isRainingConfetti = true
+        main?.reloadInputViews()
         navigationController?.popToRootViewController(animated: true)
     }
 }

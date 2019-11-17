@@ -416,15 +416,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tryCell", for: indexPath) as! mainCollectionViewCell
-        
 
-        
-        /* Set some settings */
-         if let selected = selectedIndexPath, selected == indexPath {
-             cell.layer.borderColor = UIColor.gray.cgColor
-         } else {
-             cell.layer.borderColor = UIColor.clear.cgColor
-         }
         
             if collectionView == self.triesCollectionView
                    {
@@ -583,11 +575,11 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                 ///previewView.cornerRadius = 50
             }
         }
-           let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
-          passData(dvc1: nextViewController)
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
+         passData(dvc1: nextViewController)
           //myNav?.pushViewController(nextViewController, animated: true)
-          myNav = self.navigationController as! customNavigationController
+         myNav = self.navigationController as! customNavigationController
         /// this will nedd more nuance if i pull foods off the ribbons
             myNav?.presentState = .SetTargetViewController
            myNav?.pushViewController(nextViewController, animated: true)

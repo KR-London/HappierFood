@@ -3,15 +3,16 @@
 
 target 'HappierFoods' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
+ # use_frameworks!
+pod 'SAConfettiView'
   # Pods for HappierFoods
-pod 'Instabug'
-  target 'HappierFoodsTests' do
-    inherit! :search_paths
-    # Pods for testing
-pod 'Instabug'
+#pod 'Instabug'
+#  target 'HappierFoodsTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#pod 'Instabug'
+#pod 'SAConfettiView'
 
-  end
+#  end
 
 end
