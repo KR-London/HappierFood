@@ -19,7 +19,6 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var rating = Double()
     var triedOn = Date()
     var notes = String()
-  
     
     @IBAction func instructionReminder(_ sender: UIButton) {
         onboardingRoutine()
@@ -52,13 +51,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         if buttonTag < foodArray.count {
-            photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
-            foodName = foodArray[buttonTag].name ?? ""
-            rating = foodArray[buttonTag].rating
-            triedOn = foodArray[buttonTag].dateTried!
-            notes = foodArray[buttonTag].motivation ?? " "
-            myNav!.presentState = .AddFoodViewController
-            performSegue(withIdentifier: "expandDetail", sender: sender)
+          
+            
         }
         else{
             if collectionViewSize - buttonTag <= targetArray.count{

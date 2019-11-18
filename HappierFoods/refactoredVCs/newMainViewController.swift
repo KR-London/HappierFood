@@ -251,6 +251,9 @@ class newMainViewController: UIViewController {
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         myCollectionView.backgroundColor = UIColor.clear
+        if let layout = myCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+        }
         view.addSubview(myCollectionView)
         myCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -386,6 +389,34 @@ class newMainViewController: UIViewController {
             label.heightAnchor.constraint(equalToConstant: 100)
                ])
     }
+    
+    
+    // MARK: Animations
+    func startAnimate(button: UIButton) {
+           let shakeAnimation = CABasicAnimation(keyPath: "transform.rotation")
+           shakeAnimation.duration = 0.05
+           shakeAnimation.repeatCount = 4
+           shakeAnimation.autoreverses = true
+           shakeAnimation.duration = 0.2
+           shakeAnimation.repeatCount = 99999
+           
+           let startAngle: Float = (-2) * 3.14159/180
+           let stopAngle = -startAngle
+           
+           shakeAnimation.fromValue = NSNumber(value: startAngle as Float)
+           shakeAnimation.toValue = NSNumber(value: 3 * stopAngle as Float)
+           shakeAnimation.autoreverses = true
+           shakeAnimation.timeOffset = 290 * drand48()
+           
+           let layer: CALayer = button.layer
+           layer.add(shakeAnimation, forKey:"animate")
+    
+       }
+       
+       func stopAnimate(button: UIButton) {
+           let layer: CALayer = button.layer
+           layer.removeAnimation(forKey: "animate")
+       }
     
     //MARK: Data handling subroutines
         func loadItems(){
@@ -527,7 +558,7 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView,
                          layout collectionViewLayout: UICollectionViewLayout,
                          insetForSectionAt section: Int) -> UIEdgeInsets {
-         return UIEdgeInsets.init(top: 0, left: 0, bottom: 10, right: 0)
+         return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
      }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -558,6 +589,9 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 //        editButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
 //        cell.addSubview(editButton)
         
+
+        
+        
         cell.backgroundColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1)
         
         var collectionViewSize = 16
@@ -576,6 +610,14 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
                         let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
                         //cell.cellImage.image = UIImage(named: "1.png")
                         cell.displayContent(image: fileToLoad)
+                        
+                        let expandDetailButton = UIButton(frame: CGRect(x:0, y:0, width:cell.frame.width,height:cell.frame.width))
+                         //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
+                        
+                        /// alter this if i have uneven filling
+                        expandDetailButton.tag = indexPath.row
+                        expandDetailButton.addTarget(self, action: #selector(expandDetailButtonTapped), for: .touchUpInside)
+                        cell.addSubview(expandDetailButton)
                     
                     }
                     else
@@ -587,4 +629,25 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 
         return cell
         }
+    
+    @objc func expandDetailButtonTapped(sender: UIButton){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "detailVC" ) as! DetailViewController
+        let buttonTag = sender.tag
+        detailViewController.detailToDisplay.photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
+        detailViewController.detailToDisplay.foodName = foodArray[buttonTag].name ?? ""
+        detailViewController.detailToDisplay.rating = foodArray[buttonTag].rating
+        detailViewController.detailToDisplay.triedOn = foodArray[buttonTag].dateTried!
+        detailViewController.detailToDisplay.notes = foodArray[buttonTag].motivation ?? " "
+        detailViewController.presentState = "AddFoodViewController"
+        myNav?.presentState = .AddFoodViewController
+
+        myNav?.pushViewController(detailViewController, animated: true)
+       // present(detailViewController, animated: true, completion: nil)
+  
+                
+    }
+    
+
 }

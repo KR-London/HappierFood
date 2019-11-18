@@ -118,6 +118,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [TriedFood]!
+     var historyArray: [HistoryTriedFoods]!
     var targetArray: [TargetFood]!
     var logons: [Logons]!
     
@@ -403,12 +404,12 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           if collectionView == self.triesCollectionView
               {
-                return foodArray.count
+                return (foodArray?.count ?? 0) + (historyArray?.count ?? 0)
               }
         
         if collectionView == self.targetsCollectionView
                      {
-                       return targetArray.count
+                       return targetArray?.count ?? 0
                      }
         
         return 0
@@ -420,9 +421,16 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         
             if collectionView == self.triesCollectionView
                    {
+                    if indexPath.row < (foodArray?.count ?? 0){
                       let plate = foodArray[indexPath.row]
                       let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
                       cell.displayContent(image: fileToLoad)
+                    }
+                    else{
+                        let plate = historyArray[indexPath.row - (foodArray?.count ?? 0)]
+                        let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
+                        cell.displayContent(image: fileToLoad)
+                    }
                     
                     let editButton = UIButton(frame: CGRect(x:0, y:20, width:40,height:40))
                     //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
@@ -464,23 +472,25 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        print("hello")
-        
-        if collectionView == self.triesCollectionView
-         {
-            foodImage.image = UIImage(named: (foodArray?[indexPath.row].filename)!)
-            textInput.text = foodArray?[indexPath.row].name ?? ""
-            addButton.alpha = 0.2
-         }
-         
-         if collectionView == self.targetsCollectionView
-         {
-             foodImage.image = UIImage(named: (targetArray?[indexPath.row].filename)!)
-            textInput.text = targetArray?[indexPath.row].name ?? ""
-            addButton.alpha = 0.2
-            self.reloadInputViews()
-         }
-        
+//        print("hello")
+//        
+//        if collectionView == self.triesCollectionView
+//         {
+////            if indexPath.row < (foodArray?.count ?? 0)
+////            {
+////            foodImage.image = UIImage(named: (foodArray?[indexPath.row].filename)!)
+////            textInput.text = foodArray?[indexPath.row].name ?? ""
+////            addButton.alpha = 0.2
+//         }
+//         
+//         if collectionView == self.targetsCollectionView
+//         {
+//             foodImage.image = UIImage(named: (targetArray?[indexPath.row].filename)!)
+//            textInput.text = targetArray?[indexPath.row].name ?? ""
+//            addButton.alpha = 0.2
+//            self.reloadInputViews()
+//         }
+//        
         var cellsToReload = [indexPath]
           if let selected = selectedIndexPath {
               cellsToReload.append(selected)
@@ -616,6 +626,14 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                       catch{
                           print("Error fetching data \(error)")
                       }
+                
+                let request4 : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+                             do{
+                                 try historyArray = context.fetch(request4)
+                             }
+                             catch{
+                                 print("Error fetching data \(error)")
+                             }
 
         //        if thisIsANewLogon(){
         //           kjhh logons
@@ -623,8 +641,9 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     }
     
     @objc func retryButtonTapped(sender: mainCollectionViewCell) -> Void {
-        print("Hello retry Button")
-        print(sender.tag)
+
+        if sender.tag < (foodArray?.count ?? 0)
+        {
         let plate = foodArray[sender.tag]
         let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
         foodImage.image = UIImage(named: fileToLoad)
@@ -634,6 +653,18 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         addButton.alpha = 0.2
         passData(dvc1: nextViewController)
         nextViewController.formatImage()
+        }
+        else{
+            let plate = historyArray[sender.tag - (foodArray?.count ?? 0)]
+            let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
+            foodImage.image = UIImage(named: fileToLoad)
+            foodImage.layer.masksToBounds = true
+            image = UIImage(named: fileToLoad)
+            textInput.text = historyArray![sender.tag - (foodArray?.count ?? 0)].name ?? ""
+            addButton.alpha = 0.2
+            passData(dvc1: nextViewController)
+            nextViewController.formatImage()
+        }
     }
     
     @objc func targetTryButtonTapped(sender: mainCollectionViewCell) -> Void {
