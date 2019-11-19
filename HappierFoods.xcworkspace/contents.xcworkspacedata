@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kate/Desktop/HappierFoodsCopy/HappierFoods/refactoredVCs/newDataInputViewController.swift">
+      location = "group:/Users/kate/Desktop/HappierFoodsCopy/HappierFoods/coreVCs/newDataInputViewController.swift">
    </FileRef>
    <FileRef
       location = "group:HappierFoods.xcodeproj">

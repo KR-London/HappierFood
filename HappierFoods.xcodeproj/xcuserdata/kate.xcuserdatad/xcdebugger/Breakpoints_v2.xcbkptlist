@@ -51,8 +51,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "406"
             endingLineNumber = "406"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pictureViewConstraints()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -153,8 +153,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "314"
             endingLineNumber = "314"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "recordTheFood()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "CEC98763-3BE6-455C-B97E-567B70D33BFE - 4331e66c71c873c8"

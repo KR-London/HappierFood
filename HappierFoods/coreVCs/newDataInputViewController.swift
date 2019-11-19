@@ -4,7 +4,6 @@
 //
 //  Created by Kate Roberts on 13/11/2019.
 //
-
 import UIKit
 import CoreData
 import AVFoundation
@@ -397,7 +396,6 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     /// make a click on the collection view send a message to populate the main screen
     
     /// define the segue out of the screen
-
 }
 
 extension newDataInputViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
@@ -473,7 +471,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
 //        print("hello")
-//        
+//
 //        if collectionView == self.triesCollectionView
 //         {
 ////            if indexPath.row < (foodArray?.count ?? 0)
@@ -482,7 +480,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
 ////            textInput.text = foodArray?[indexPath.row].name ?? ""
 ////            addButton.alpha = 0.2
 //         }
-//         
+//
 //         if collectionView == self.targetsCollectionView
 //         {
 //             foodImage.image = UIImage(named: (targetArray?[indexPath.row].filename)!)
@@ -490,7 +488,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
 //            addButton.alpha = 0.2
 //            self.reloadInputViews()
 //         }
-//        
+//
         var cellsToReload = [indexPath]
           if let selected = selectedIndexPath {
               cellsToReload.append(selected)
@@ -516,7 +514,6 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
 //    }
 //
     // MARK: Boilerplate
-
     // Helper function inserted by Swift 4.2 migrator.
     fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
         return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
@@ -682,7 +679,3 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         nextViewController.formatImage()
     }
 }
-
-
-
-
