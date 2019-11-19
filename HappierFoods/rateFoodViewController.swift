@@ -25,6 +25,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let imagePickerView = UIImagePickerController()
     var firstPass = String()
+    
+    var historyArray: [HistoryTriedFoods]?
 
     // MARK: Actions and outlets
     @IBAction func endedEnteringName(_ sender: Any) {
@@ -333,10 +335,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         //navigationController?.popToRootViewController(animated: true)
+        let happyUtterance = happySays()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
-        nextViewController.message = "### Your Message number 2 goes here ### "
+        nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.afterTryingaFoodScreen )
         let myNav = self.navigationController
         myNav?.pushViewController(nextViewController, animated: true)
     }
@@ -462,6 +465,55 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    func countOfThisFood() -> Int{
+        var countOfThisFood = Int()
+
+        if foodName == "" {
+//            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
+//                countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename }).count
+//            }
+//            else {
+//                countOfThisFood = 1
+//            }
+//        }
+//        else{
+//            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
+//                countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+//            }
+//            else{
+//                 countOfThisFood = foodArray.filter({ $0.name == detailToDisplay.foodName }).count
+//            }
+        }
+
+        
+        if let history = historyArray
+        {
+            print(history)
+//            if foodName == ""
+//            {
+//
+//                if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+//                {
+//                    countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename }).count
+//                }
+//            }
+//            else
+//            {
+//
+//                if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+//                {
+//                    countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+//                }
+//                else
+//                {
+//                    countOfThisFood = countOfThisFood + history.filter({ $0.name == detailToDisplay.foodName }).count
+//                }
+//            }
+        }
+        
+        return countOfThisFood
     }
 }
 

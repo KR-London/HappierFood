@@ -10,9 +10,9 @@ import UIKit
 
 class confettiViewController: UIViewController {
     
-    var message = "You're doing great!"
+        var message : String?
     
-      lazy var happyButton: UIButton = {
+        lazy var happyButton: UIButton = {
           var button = UIButton()
           button.setImage(#imageLiteral(resourceName: "little dude1.png"), for: .normal)
           return button
@@ -38,7 +38,7 @@ class confettiViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
-        showMessage(text: message)
+        showMessage(text: message ?? "That's fantastic progress!")
         // Do any additional setup after loading the view.
     }
     

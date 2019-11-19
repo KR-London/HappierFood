@@ -75,7 +75,7 @@ class newMainViewController: UIViewController {
         setUpSubview()
         
         // MARK: UI customisations
-        showMessage(text: "### YOUR MESSAGE 1 HERE! ### ")
+        showMessage()
         displayStats()
 
         
@@ -289,9 +289,13 @@ class newMainViewController: UIViewController {
     
     ///MARK: Functions to communicate with the user
     
-    func showMessage(text: String) {
+    func showMessage() {
         
-       let bubbleHeight = 0.3*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
+        let happyUtterance = happySays()
+        let logonCount = UserDefaults.standard.object(forKey: "loginRecord") as! [ Date ]
+    
+        let text = happyUtterance.identifyContext(foodName: nil, tryNumber: nil, logonNumber: logonCount.count, screen: .mainScreen)
+        let bubbleHeight = 0.3*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
         let label =  UILabel()
         
         label.numberOfLines = 0
@@ -583,7 +587,7 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 //        label.text = "Hello"
 //        cell.addSubview(label)
         
-//        let expandDetailButton = UIButton(frame: CGRect(x:0, y:0, width: cell.frame.width,height:cell.frame.height))
+//        let expandDetailButton = UIButton(frame: CGRect(x:0, y:0, width:      cell.frame.width,height:cell.frame.height))
 //        //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
 //        editButton.tag = indexPath.row
 //        editButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)

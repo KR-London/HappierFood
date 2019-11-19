@@ -659,6 +659,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
             image = UIImage(named: fileToLoad)
             textInput.text = historyArray![sender.tag - (foodArray?.count ?? 0)].name ?? ""
             addButton.alpha = 0.2
+            nextViewController.historyArray = historyArray
             passData(dvc1: nextViewController)
             nextViewController.formatImage()
         }

@@ -13,7 +13,8 @@ struct happySays{
     let firstUseMessages =
             [   "Welcome to HappyFoods",
                 "Click on my tummy if you ever need a bit more help",
-                "Logon every day to maintain your streak!"
+                "Logon every day to maintain your streak!",
+                "Check out the stats and the history on the top bar!"
             ]
     
     let generalSupportiveMessages =
@@ -48,24 +49,30 @@ struct happySays{
     
     
     /// define a function which screens the food input for if it is froma particular class - e.g. vegetables
-    func identifyContext(foodName: String, tryNumber: Int, logonNumber: Int){
+    func identifyContext(foodName: String?, tryNumber: Int?, logonNumber: Int?, screen: screen) -> String{
         if [5, 10, 15, 20, 25].contains(tryNumber)
         {
-            celebrateRetrying(tryNumber: tryNumber, name: foodName)
+            return celebrateRetrying(tryNumber: tryNumber!, name: foodName ?? "this food")
         }
         if [5, 10, 15, 20, 25].contains(logonNumber)
         {
-            celebrateUsage(logonNumber: logonNumber)
+            return celebrateUsage(logonNumber: logonNumber!)
+        }
+        if [1,2,3,4].contains(logonNumber)
+        {
+                   return firstUseMessages[logonNumber! - 1]
         }
         if ["carrots", "broccoli", "tomatoes", "avocado", "cauliflower"].contains(foodName)
         {
-            celebrateVegetables(name: foodName)
+            return celebrateVegetables(name: foodName ?? "this food")
         }
         
         if ["lasagna", "curry", "stew"].contains(foodName)
         {
-            celebrateMixedUpFood(name: foodName)
+            return celebrateMixedUpFood(name: foodName ?? "this food")
         }
+        
+        return generalSupportiveMessages.randomElement() ?? "Well done - you are doing great!"
     }
     
     func celebrateRetrying(tryNumber: Int, name: String) -> String{
@@ -83,4 +90,11 @@ struct happySays{
     func celebrateMixedUpFood(name: String) -> String{
               return mixedFoodMessages.randomElement()!
           }
+}
+
+enum screen{
+    case mainScreen
+    case afterTryingaFoodScreen
+    case afterSettingTargetScreen
+    case coachingScreen
 }
