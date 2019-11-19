@@ -1040,35 +1040,14 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LNg-jB-bXJ">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fyb-pQ-OFv">
-                                            <rect key="frame" x="0.0" y="0.0" width="58" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh6-fH-QKI">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="yh6-fH-QKI" firstAttribute="leading" secondItem="KZU-ZT-cmq" secondAttribute="leading" id="1Ck-qZ-Qgy"/>
                                     <constraint firstItem="LNg-jB-bXJ" firstAttribute="top" secondItem="KZU-ZT-cmq" secondAttribute="top" id="4yk-WP-tcm"/>
                                     <constraint firstItem="LNg-jB-bXJ" firstAttribute="leading" secondItem="KZU-ZT-cmq" secondAttribute="leading" id="5FB-E5-ygZ"/>
-                                    <constraint firstItem="yh6-fH-QKI" firstAttribute="top" secondItem="KZU-ZT-cmq" secondAttribute="top" id="Dvz-GG-DaA"/>
-                                    <constraint firstAttribute="bottom" secondItem="yh6-fH-QKI" secondAttribute="bottom" id="X7s-Bp-iY5"/>
                                     <constraint firstAttribute="trailing" secondItem="LNg-jB-bXJ" secondAttribute="trailing" id="a9G-gg-Jdm"/>
                                     <constraint firstAttribute="bottom" secondItem="LNg-jB-bXJ" secondAttribute="bottom" id="scx-bI-wQh"/>
-                                    <constraint firstItem="yh6-fH-QKI" firstAttribute="centerX" secondItem="KZU-ZT-cmq" secondAttribute="centerX" id="ufj-RY-FwZ"/>
-                                    <constraint firstItem="yh6-fH-QKI" firstAttribute="centerY" secondItem="KZU-ZT-cmq" secondAttribute="centerY" id="vce-wk-McZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="yh6-fH-QKI" secondAttribute="trailing" id="wfJ-cG-t6X"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="cellImage" destination="LNg-jB-bXJ" id="K8m-b7-khG"/>
-                                    <outlet property="cellLabel" destination="yh6-fH-QKI" id="O99-JY-b3G"/>
-                                    <outlet property="tickImage" destination="fyb-pQ-OFv" id="uuR-fK-1me"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1360,7 +1339,6 @@
         <image name="icons3.png" width="203" height="203"/>
         <image name="little dude4.png" width="800" height="800"/>
         <image name="tick" width="86" height="86"/>
-        <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8JQ-7V-ZRj"/>

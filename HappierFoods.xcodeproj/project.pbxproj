@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E5E1247D6D5C8D9794E82D /* libPods-HappierFoods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CA5319AE70667C7BA207FC /* libPods-HappierFoods.a */; };
 		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
 		440758B5237B5265007C8153 /* newMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440758B4237B5264007C8153 /* newMainViewController.swift */; };
 		440828572381153F00EC2C0F /* testingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440828562381153F00EC2C0F /* testingViewController.swift */; };
@@ -231,7 +232,6 @@
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
 		44FE744B2357718100CDC2E5 /* BlankAward.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44FE744A2357718100CDC2E5 /* BlankAward.jpeg */; };
 		44FE744D2357737800CDC2E5 /* certificateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE744C2357737800CDC2E5 /* certificateViewController.swift */; };
-		ED380D403CF2CA821C51ADDC /* libPods-HappierFoods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4448F531D483AEC9117D194 /* libPods-HappierFoods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -245,6 +245,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1281EC49C6CA870A8B5F097E /* Pods-HappierFoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.debug.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.debug.xcconfig"; sourceTree = "<group>"; };
 		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
 		440758B4237B5264007C8153 /* newMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newMainViewController.swift; sourceTree = "<group>"; };
 		440828562381153F00EC2C0F /* testingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testingViewController.swift; sourceTree = "<group>"; };
@@ -474,9 +475,8 @@
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
 		44FE744A2357718100CDC2E5 /* BlankAward.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BlankAward.jpeg; sourceTree = "<group>"; };
 		44FE744C2357737800CDC2E5 /* certificateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = certificateViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/Onboarding/certificateViewController.swift; sourceTree = "<absolute>"; };
-		7FD10492F49D4262210C69AB /* Pods-HappierFoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.release.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.release.xcconfig"; sourceTree = "<group>"; };
-		B4448F531D483AEC9117D194 /* libPods-HappierFoods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappierFoods.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D985C6A565AE1579212BA30D /* Pods-HappierFoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.debug.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.debug.xcconfig"; sourceTree = "<group>"; };
+		B2C35C1B1B528C761431B6B3 /* Pods-HappierFoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.release.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.release.xcconfig"; sourceTree = "<group>"; };
+		F6CA5319AE70667C7BA207FC /* libPods-HappierFoods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappierFoods.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -484,7 +484,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED380D403CF2CA821C51ADDC /* libPods-HappierFoods.a in Frameworks */,
+				05E5E1247D6D5C8D9794E82D /* libPods-HappierFoods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,8 +790,8 @@
 				44BE3BB222566A250090BB5F /* HappierFoodsTests */,
 				44BE3B9922566A230090BB5F /* Products */,
 				8EB6978B33F755039C073DA5 /* Pods */,
-				93EC7140F67B8062FC6FEE25 /* Frameworks */,
 				44B6F21D2383B9A40098AF84 /* DecomissionedVCs */,
+				BC8162CAFC8DD947D13A3331 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -882,16 +882,16 @@
 		8EB6978B33F755039C073DA5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D985C6A565AE1579212BA30D /* Pods-HappierFoods.debug.xcconfig */,
-				7FD10492F49D4262210C69AB /* Pods-HappierFoods.release.xcconfig */,
+				1281EC49C6CA870A8B5F097E /* Pods-HappierFoods.debug.xcconfig */,
+				B2C35C1B1B528C761431B6B3 /* Pods-HappierFoods.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		93EC7140F67B8062FC6FEE25 /* Frameworks */ = {
+		BC8162CAFC8DD947D13A3331 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B4448F531D483AEC9117D194 /* libPods-HappierFoods.a */,
+				F6CA5319AE70667C7BA207FC /* libPods-HappierFoods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -903,11 +903,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44BE3BB822566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoods" */;
 			buildPhases = (
-				CE987560931A1EB70720BB43 /* [CP] Check Pods Manifest.lock */,
+				C77B69704694C458688C87CF /* [CP] Check Pods Manifest.lock */,
 				44BE3B9422566A230090BB5F /* Sources */,
 				44BE3B9522566A230090BB5F /* Frameworks */,
 				44BE3B9622566A230090BB5F /* Resources */,
-				F12FDD23E751ED6DE2D56789 /* [CP] Copy Pods Resources */,
+				32DD6845468E8856BF05CCC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1164,7 +1164,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CE987560931A1EB70720BB43 /* [CP] Check Pods Manifest.lock */ = {
+		32DD6845468E8856BF05CCC7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C77B69704694C458688C87CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1184,23 +1201,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F12FDD23E751ED6DE2D56789 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1413,7 +1413,7 @@
 		};
 		44BE3BB922566A250090BB5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D985C6A565AE1579212BA30D /* Pods-HappierFoods.debug.xcconfig */;
+			baseConfigurationReference = 1281EC49C6CA870A8B5F097E /* Pods-HappierFoods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
@@ -1436,7 +1436,7 @@
 		};
 		44BE3BBA22566A250090BB5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FD10492F49D4262210C69AB /* Pods-HappierFoods.release.xcconfig */;
+			baseConfigurationReference = B2C35C1B1B528C761431B6B3 /* Pods-HappierFoods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;

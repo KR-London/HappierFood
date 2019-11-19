@@ -119,19 +119,21 @@ class statsTableViewController: UITableViewController {
         
         var orphans  = foodArray.filter({ $0.name == ""})
         orphans = orphans.filter({["1plate.jpeg", "2plate.jpeg", "3plate.jpeg", "4plate.jpeg", "5plate.jpeg"].contains($0.filename!.components(separatedBy: "/").last) == false })
-        
-        for x in (0 ... orphans.count - 1).reversed() {
-            var relations = foodArray.filter{$0.filename == orphans[x].filename}
-            relations = relations.filter({$0.name != ""})
-            let candidateNames = relations.compactMap({$0.name})
+        if orphans.count > 0
+        {
+            for x in (0 ... orphans.count - 1).reversed() {
+                var relations = foodArray.filter{$0.filename == orphans[x].filename}
+                relations = relations.filter({$0.name != ""})
+                let candidateNames = relations.compactMap({$0.name})
             
-            print(candidateNames)
+                print(candidateNames)
             
-            if candidateNames.count > 0{
-                tryCounts[candidateNames.first!] = tryCounts[candidateNames.first!]! + 1
-                orphans.remove(at: x)
-            }
+                if candidateNames.count > 0{
+                    tryCounts[candidateNames.first!] = tryCounts[candidateNames.first!]! + 1
+                    orphans.remove(at: x)
+                }
     
+            }
         }
         
         let remainingOrphanFilenames = Array(Set(orphans.compactMap({$0.filename})))

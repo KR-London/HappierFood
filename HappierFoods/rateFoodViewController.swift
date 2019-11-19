@@ -217,6 +217,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 saveItems()
                 /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                 main?.foodArray.append(menuItem)
+                foodArray.append(menuItem)
                 
                 DispatchQueue.main.async{
                     main?.myCollectionView.reloadData()
@@ -251,6 +252,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 saveItems()
                 
                 main?.foodArray.append(menuItem)
+                foodArray.append(menuItem)
                 main?.targetArray.remove(at: indexOfMyTimestamp!)
                 
                 DispatchQueue.main.async{
@@ -268,6 +270,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.dateTried = Date()
                 menuItem.motivation = existingMotivationText
                 saveItems()
+                foodArray.append(menuItem)
                 
                 main?.foodArray.append(menuItem)
                 
@@ -302,6 +305,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 saveItems()
                 /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                 main?.foodArray = [menuItem]
+                foodArray = [menuItem]
                 
                 DispatchQueue.main.async{
                     if main?.myCollectionView != nil
@@ -323,6 +327,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.motivation = notes
                 saveItems()
                 
+                
                 main?.targetArray = [menuItem]
                 DispatchQueue.main.async{
                     if let colView  = main?.myCollectionView{
@@ -338,10 +343,19 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         let happyUtterance = happySays()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if foodArray.count == 9{
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "celebrationScreen" ) as! celebrationScreenViewController
+            //nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.afterTryingaFoodScreen )
+            self.present(nextViewController, animated: true, completion: nil)
+            
+            // wanna release navigation stack 
+        }
+        else{
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
         nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.afterTryingaFoodScreen )
         let myNav = self.navigationController
         myNav?.pushViewController(nextViewController, animated: true)
+        }
     }
     
 

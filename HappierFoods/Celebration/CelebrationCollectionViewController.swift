@@ -41,14 +41,17 @@ class CelebrationCollectionViewController: UICollectionViewController {
                 let fileToLoad = foodArray[indexPath.row].filename ?? "chaos.jpg"
                 let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileToLoad)
                 cell.displayContent(image: filepath)
-                cell.tickImage.isHidden = false
+                //cell.tickImage.isHidden = false
         }
+        
+      
+        
         
         switch indexPath.row
         {
             case 0:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
-                    cell.tickImage.isHidden = true
+                   // cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 239/256, green: 71/256, blue: 111/256, alpha: 1)
                     cell.cellLabel.isHidden = false
@@ -59,7 +62,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
                     
             case 1:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
-                    cell.tickImage.isHidden = true
+                    //cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 255/256, green: 209/256, blue: 102/256, alpha: 1)
                     cell.cellLabel.isHidden = false
@@ -69,7 +72,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
             
             case 2:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
-                    cell.tickImage.isHidden = true
+                    //cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 6/256, green: 214/256, blue: 160/256, alpha: 1)
                     cell.cellLabel.isHidden = false
@@ -79,7 +82,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
             
             case 3:
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)){
-                cell.tickImage.isHidden = true
+                //cell.tickImage.isHidden = true
                 cell.cellImage.isHidden = true
                 cell.backgroundColor = UIColor(red: 6/256, green: 214/256, blue: 160/256, alpha: 1)
                 cell.cellLabel.isHidden = false
@@ -89,7 +92,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
             
             case 4:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)){
-                    cell.tickImage.isHidden = true
+                    //cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 239/256, green: 71/256, blue: 111/256, alpha: 1)
                     cell.cellLabel.isHidden = false
@@ -99,7 +102,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
             
             case 5:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6)){
-                    cell.tickImage.isHidden = true
+                   // cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 255/256, green: 209/256, blue: 102/256, alpha: 1)
                     cell.cellLabel.isHidden = false
@@ -109,7 +112,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
             
             case 6:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7)){
-                    cell.tickImage.isHidden = true
+                   // cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 255/256, green: 209/256, blue: 102/256, alpha: 1)
                     cell.cellLabel.isHidden = false
@@ -119,7 +122,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
             
             case 7:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)){
-                    cell.tickImage.isHidden = true
+                   // cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 6/256, green: 214/256, blue: 160/256, alpha: 1)
                     
@@ -130,7 +133,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
           
             case 8:
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(9)){
-                    cell.tickImage.isHidden = true
+                    //cell.tickImage.isHidden = true
                     cell.cellImage.isHidden = true
                     cell.backgroundColor = UIColor(red: 239/256, green: 71/256, blue: 111/256, alpha: 1)
                     cell.cellLabel.isHidden = false

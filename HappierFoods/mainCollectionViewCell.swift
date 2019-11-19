@@ -50,6 +50,13 @@ class mainCollectionViewCell: UICollectionViewCell {
         instructionReminder =  UIButton(frame: CGRect(x:0, y:0, width:self.frame.width,height:self.frame.width))
         self.addSubview(instructionReminder)
         
+        cellLabel = UILabel(frame: CGRect(x:0, y:0, width:self.frame.width,height:self.frame.width))
+        cellLabel.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 20 )
+        cellLabel.textAlignment = .center
+        cellLabel.baselineAdjustment = .alignCenters
+        cellLabel.isHidden = true
+        self.addSubview(cellLabel)
+        
     }
     
     override func layoutSubviews() {

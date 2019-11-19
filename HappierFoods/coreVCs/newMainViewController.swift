@@ -620,6 +620,8 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 //                        expandDetailButton.addTarget(self, action: #selector(expandDetailButtonTapped), for: .touchUpInside)
 //                        cell.addSubview(expandDetailButton)
 //
+                        cell.instructionReminder.tag = indexPath.row
+    
                         cell.instructionReminder.addTarget(self, action: #selector(expandDetailButtonTapped), for: .touchUpInside)
                     }
                     else
