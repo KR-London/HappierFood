@@ -47,7 +47,8 @@ class mainCollectionViewCell: UICollectionViewCell {
         cellImage.contentMode = .scaleToFill
         cellImage.cornerRadius = 5
         self.addSubview(cellImage)
-        
+        instructionReminder =  UIButton(frame: CGRect(x:0, y:0, width:self.frame.width,height:self.frame.width))
+        self.addSubview(instructionReminder)
         
     }
     

@@ -588,11 +588,8 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 //        editButton.tag = indexPath.row
 //        editButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
 //        cell.addSubview(editButton)
-        
-
-        
-        
         cell.backgroundColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1)
+        cell.instructionReminder.removeTarget(self, action: nil, for: .allEvents)
         
         var collectionViewSize = 16
             
@@ -610,19 +607,21 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
                         let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
                         //cell.cellImage.image = UIImage(named: "1.png")
                         cell.displayContent(image: fileToLoad)
-                        
-                        let expandDetailButton = UIButton(frame: CGRect(x:0, y:0, width:cell.frame.width,height:cell.frame.width))
-                         //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
-                        
-                        /// alter this if i have uneven filling
-                        expandDetailButton.tag = indexPath.row
-                        expandDetailButton.addTarget(self, action: #selector(expandDetailButtonTapped), for: .touchUpInside)
-                        cell.addSubview(expandDetailButton)
-                    
+//
+//                        let expandDetailButton = UIButton(frame: CGRect(x:0, y:0, width:cell.frame.width,height:cell.frame.width))
+//                         //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
+//
+//                        /// alter this if i have uneven filling
+//                        expandDetailButton.tag = indexPath.row
+//                        expandDetailButton.addTarget(self, action: #selector(expandDetailButtonTapped), for: .touchUpInside)
+//                        cell.addSubview(expandDetailButton)
+//
+                        cell.instructionReminder.addTarget(self, action: #selector(expandDetailButtonTapped), for: .touchUpInside)
                     }
                     else
                     {
                         cell.cellImage.isHidden = true
+                        cell.instructionReminder.addTarget(self, action: #selector(addFood), for: .touchUpInside)
 
                     }
                 }
