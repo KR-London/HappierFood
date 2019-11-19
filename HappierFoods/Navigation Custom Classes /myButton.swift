@@ -19,11 +19,18 @@ class myButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+        
+       
       //  fatalError("init(coder:) has not been implemented")
     }
 
     private func setup() {
         layer.cornerRadius = 5
+        self.layer.shadowColor = UIColor.black.cgColor
+               self.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+               self.layer.shadowRadius = 8
+               self.layer.shadowOpacity = 0.5
+               self.layer.masksToBounds = false
     }
 
     private func setColorScheme() {

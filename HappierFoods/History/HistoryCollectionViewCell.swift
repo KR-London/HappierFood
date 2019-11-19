@@ -18,7 +18,7 @@ class HistoryCollectionViewCell: UICollectionViewCell {
     func setup(){
         //cellImage.image
         self.layer.borderWidth = 0.0
-        self.layer.borderColor = UIColor.red.cgColor
+        //self.layer.borderColor = UIColor.red.cgColor
         self.layer.cornerRadius = 5.0
     }
     

@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		099BCCB29E692CE3EF82E01481D7B73E /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F147E9DDA816CCB5E47E98DA8A0BCE4 /* diamond.png */; };
+		14046959F9C2E5940707FE81E8F33A92 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 422FC5CE68D1F377FADCE256BC0D9903 /* confetti.png */; };
+		1C68E03039D0CCC04771BE697D5E7817 /* Pods-HappierFoods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F0128FF35C0BFDD169F3B4D4CBF446 /* Pods-HappierFoods-dummy.m */; };
+		3953C40C34C7DDA6C264156FD172FF58 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F10A859CC85ED145FAAA50A1762AAB2 /* triangle.png */; };
+		71A68DAC0F685F22C4EEFBD02B593710 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A76BF6EA8514F95B1DDD73CB911BAA72 /* star.png */; };
+		858CE5F48F1E0E55A5384AC2AF36C023 /* SAConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C11AC568577C62B1FD3A6312B55B84 /* SAConfettiView.swift */; };
+		8CA0A1AF9B084E6796CF3DAA8F897077 /* SAConfettiView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9BFF64C364AD4024C57DF67F5038BF /* SAConfettiView-dummy.m */; };
+		91691F6B5E71738DD030FD5DCC2C0283 /* SAConfettiView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D476E7FCC7E8A2CA09A28CC49943807C /* SAConfettiView-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E0CDA422283C66F881FABD95C6DF191C /* Pods-HappierFoods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B8FF46199F9A042B7488F498ACB400 /* Pods-HappierFoods-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D63907982B2DEA2216E59BEC155CD7A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEF5EC9A82178D0D695682390F2DE2F1;
+			remoteInfo = SAConfettiView;
+		};
+		EA8B21331CF33B2F8023F574A7394EBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E488B4A8341D4A1374B44B7D0191BC4;
+			remoteInfo = "SAConfettiView-SAConfettiView";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08B8FF46199F9A042B7488F498ACB400 /* Pods-HappierFoods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HappierFoods-umbrella.h"; sourceTree = "<group>"; };
+		0F147E9DDA816CCB5E47E98DA8A0BCE4 /* diamond.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = diamond.png; path = Pod/Assets/diamond.png; sourceTree = "<group>"; };
+		0FDF8559AF94616CBFB9156AEAC75C5A /* SAConfettiView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAConfettiView-prefix.pch"; sourceTree = "<group>"; };
+		16D1B8320916668E6D9D7BAEB0DF018A /* Pods-HappierFoods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HappierFoods.modulemap"; sourceTree = "<group>"; };
+		1DF6662247FA53BB84F870A97BBB1500 /* Pods-HappierFoods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HappierFoods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1FA558ACCF9F43701A8065E7AA37FAF3 /* Pods-HappierFoods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HappierFoods-resources.sh"; sourceTree = "<group>"; };
+		422FC5CE68D1F377FADCE256BC0D9903 /* confetti.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = confetti.png; path = Pod/Assets/confetti.png; sourceTree = "<group>"; };
+		46DE29592D9E7A6B333AB78DE2DFD3F6 /* Pods-HappierFoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappierFoods.debug.xcconfig"; sourceTree = "<group>"; };
+		4CFF2E4058F858816365EC642C6DD990 /* libSAConfettiView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSAConfettiView.a; path = libSAConfettiView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		575662C8902174150D559BD37F377530 /* ResourceBundle-SAConfettiView-SAConfettiView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SAConfettiView-SAConfettiView-Info.plist"; sourceTree = "<group>"; };
+		576C493ECFA5BD71EB47EB8F5BB8D217 /* libPods-HappierFoods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-HappierFoods.a"; path = "libPods-HappierFoods.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A36403FBAC039DE06388714C406AB06 /* SAConfettiView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SAConfettiView.xcconfig; sourceTree = "<group>"; };
+		5F10A859CC85ED145FAAA50A1762AAB2 /* triangle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = triangle.png; path = Pod/Assets/triangle.png; sourceTree = "<group>"; };
+		69F88397AE69BB89A4E8B74B763C3BC8 /* Pods-HappierFoods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HappierFoods-acknowledgements.plist"; sourceTree = "<group>"; };
+		78B4856655BB84201D7732170BDE3508 /* SAConfettiView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SAConfettiView.modulemap; sourceTree = "<group>"; };
+		87F0128FF35C0BFDD169F3B4D4CBF446 /* Pods-HappierFoods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HappierFoods-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A76BF6EA8514F95B1DDD73CB911BAA72 /* star.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = star.png; path = Pod/Assets/star.png; sourceTree = "<group>"; };
+		A996B39510677CFFF39C75A49A16649B /* Pods-HappierFoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HappierFoods.release.xcconfig"; sourceTree = "<group>"; };
+		C9C11AC568577C62B1FD3A6312B55B84 /* SAConfettiView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SAConfettiView.swift; path = Pod/Classes/SAConfettiView.swift; sourceTree = "<group>"; };
+		D476E7FCC7E8A2CA09A28CC49943807C /* SAConfettiView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAConfettiView-umbrella.h"; sourceTree = "<group>"; };
+		E94B64C2BD13E14D90FC9CA3977F42AF /* SAConfettiView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SAConfettiView.bundle; path = "SAConfettiView-SAConfettiView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9BFF64C364AD4024C57DF67F5038BF /* SAConfettiView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SAConfettiView-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		071A216284F3224D8D50F6F170A9DEB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E54277C8859A4DAF116405C98329485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90FDE6EECEC161230836C92A21F0634D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01A63B43634252D612378ACAC6EA1375 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				576C493ECFA5BD71EB47EB8F5BB8D217 /* libPods-HappierFoods.a */,
+				4CFF2E4058F858816365EC642C6DD990 /* libSAConfettiView.a */,
+				E94B64C2BD13E14D90FC9CA3977F42AF /* SAConfettiView.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		134502AD5A4922AB250C6555BF374D8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				422FC5CE68D1F377FADCE256BC0D9903 /* confetti.png */,
+				0F147E9DDA816CCB5E47E98DA8A0BCE4 /* diamond.png */,
+				A76BF6EA8514F95B1DDD73CB911BAA72 /* star.png */,
+				5F10A859CC85ED145FAAA50A1762AAB2 /* triangle.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		42CD8526D6AA365A013E9792BAD2478F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				880A99ED89143F1E4E5CEEC63569D07F /* SAConfettiView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		631F7B77EF44091F02153DF4D3F08D1E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				575662C8902174150D559BD37F377530 /* ResourceBundle-SAConfettiView-SAConfettiView-Info.plist */,
+				78B4856655BB84201D7732170BDE3508 /* SAConfettiView.modulemap */,
+				5A36403FBAC039DE06388714C406AB06 /* SAConfettiView.xcconfig */,
+				EC9BFF64C364AD4024C57DF67F5038BF /* SAConfettiView-dummy.m */,
+				0FDF8559AF94616CBFB9156AEAC75C5A /* SAConfettiView-prefix.pch */,
+				D476E7FCC7E8A2CA09A28CC49943807C /* SAConfettiView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SAConfettiView";
+			sourceTree = "<group>";
+		};
+		8714E426B6EBF0269CDE0D36FC2563B4 /* Pods-HappierFoods */ = {
+			isa = PBXGroup;
+			children = (
+				16D1B8320916668E6D9D7BAEB0DF018A /* Pods-HappierFoods.modulemap */,
+				1DF6662247FA53BB84F870A97BBB1500 /* Pods-HappierFoods-acknowledgements.markdown */,
+				69F88397AE69BB89A4E8B74B763C3BC8 /* Pods-HappierFoods-acknowledgements.plist */,
+				87F0128FF35C0BFDD169F3B4D4CBF446 /* Pods-HappierFoods-dummy.m */,
+				1FA558ACCF9F43701A8065E7AA37FAF3 /* Pods-HappierFoods-resources.sh */,
+				08B8FF46199F9A042B7488F498ACB400 /* Pods-HappierFoods-umbrella.h */,
+				46DE29592D9E7A6B333AB78DE2DFD3F6 /* Pods-HappierFoods.debug.xcconfig */,
+				A996B39510677CFFF39C75A49A16649B /* Pods-HappierFoods.release.xcconfig */,
+			);
+			name = "Pods-HappierFoods";
+			path = "Target Support Files/Pods-HappierFoods";
+			sourceTree = "<group>";
+		};
+		880A99ED89143F1E4E5CEEC63569D07F /* SAConfettiView */ = {
+			isa = PBXGroup;
+			children = (
+				C9C11AC568577C62B1FD3A6312B55B84 /* SAConfettiView.swift */,
+				134502AD5A4922AB250C6555BF374D8E /* Resources */,
+				631F7B77EF44091F02153DF4D3F08D1E /* Support Files */,
+			);
+			name = SAConfettiView;
+			path = SAConfettiView;
+			sourceTree = "<group>";
+		};
+		B2F26BDCB00DF6F25C9EF77DE65B045A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8714E426B6EBF0269CDE0D36FC2563B4 /* Pods-HappierFoods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				42CD8526D6AA365A013E9792BAD2478F /* Pods */,
+				01A63B43634252D612378ACAC6EA1375 /* Products */,
+				B2F26BDCB00DF6F25C9EF77DE65B045A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		40613D8C41CF8FCF85BFE2E62CB2A0BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91691F6B5E71738DD030FD5DCC2C0283 /* SAConfettiView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF870DF4A6E8CB3F670DD344266DBAED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0CDA422283C66F881FABD95C6DF191C /* Pods-HappierFoods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1E488B4A8341D4A1374B44B7D0191BC4 /* SAConfettiView-SAConfettiView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DD7E2D717B0E1E742EDD1BE358B1C22 /* Build configuration list for PBXNativeTarget "SAConfettiView-SAConfettiView" */;
+			buildPhases = (
+				E35AFA30D67807964CD5D8F4FCC6BABE /* Sources */,
+				071A216284F3224D8D50F6F170A9DEB1 /* Frameworks */,
+				5CE2765210F735A40920AFCE3AB4B120 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SAConfettiView-SAConfettiView";
+			productName = "SAConfettiView-SAConfettiView";
+			productReference = E94B64C2BD13E14D90FC9CA3977F42AF /* SAConfettiView.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		54D812D3BEF949629F5D7F038353014B /* Pods-HappierFoods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 049830D84C87529F42EBB6261B5AC0F0 /* Build configuration list for PBXNativeTarget "Pods-HappierFoods" */;
+			buildPhases = (
+				BF870DF4A6E8CB3F670DD344266DBAED /* Headers */,
+				D40BD823134FDFBA8D2F227AFFDDF2D9 /* Sources */,
+				1E54277C8859A4DAF116405C98329485 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1DE8484B194E7C1ABF0EF864CA60CF9 /* PBXTargetDependency */,
+			);
+			name = "Pods-HappierFoods";
+			productName = "Pods-HappierFoods";
+			productReference = 576C493ECFA5BD71EB47EB8F5BB8D217 /* libPods-HappierFoods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DEF5EC9A82178D0D695682390F2DE2F1 /* SAConfettiView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521DF59E4608C01C6050014D3A0D8FB3 /* Build configuration list for PBXNativeTarget "SAConfettiView" */;
+			buildPhases = (
+				40613D8C41CF8FCF85BFE2E62CB2A0BC /* Headers */,
+				A449A9D6FA6E2E3984E637D21BA6CB65 /* Sources */,
+				90FDE6EECEC161230836C92A21F0634D /* Frameworks */,
+				A4CDB55E927B09082492D7EB66BB44B6 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4D907D8DA200AC9B28299643091A7ED /* PBXTargetDependency */,
+			);
+			name = SAConfettiView;
+			productName = SAConfettiView;
+			productReference = 4CFF2E4058F858816365EC642C6DD990 /* libSAConfettiView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 01A63B43634252D612378ACAC6EA1375 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54D812D3BEF949629F5D7F038353014B /* Pods-HappierFoods */,
+				DEF5EC9A82178D0D695682390F2DE2F1 /* SAConfettiView */,
+				1E488B4A8341D4A1374B44B7D0191BC4 /* SAConfettiView-SAConfettiView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CE2765210F735A40920AFCE3AB4B120 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14046959F9C2E5940707FE81E8F33A92 /* confetti.png in Resources */,
+				099BCCB29E692CE3EF82E01481D7B73E /* diamond.png in Resources */,
+				71A68DAC0F685F22C4EEFBD02B593710 /* star.png in Resources */,
+				3953C40C34C7DDA6C264156FD172FF58 /* triangle.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4CDB55E927B09082492D7EB66BB44B6 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SAConfettiView/SAConfettiView.modulemap",
+				"${PODS_ROOT}/Headers/Public/SAConfettiView/SAConfettiView-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SAConfettiView-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SAConfettiView/SAConfettiView.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SAConfettiView/SAConfettiView-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A449A9D6FA6E2E3984E637D21BA6CB65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CA0A1AF9B084E6796CF3DAA8F897077 /* SAConfettiView-dummy.m in Sources */,
+				858CE5F48F1E0E55A5384AC2AF36C023 /* SAConfettiView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D40BD823134FDFBA8D2F227AFFDDF2D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C68E03039D0CCC04771BE697D5E7817 /* Pods-HappierFoods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35AFA30D67807964CD5D8F4FCC6BABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1DE8484B194E7C1ABF0EF864CA60CF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SAConfettiView;
+			target = DEF5EC9A82178D0D695682390F2DE2F1 /* SAConfettiView */;
+			targetProxy = D63907982B2DEA2216E59BEC155CD7A0 /* PBXContainerItemProxy */;
+		};
+		E4D907D8DA200AC9B28299643091A7ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SAConfettiView-SAConfettiView";
+			target = 1E488B4A8341D4A1374B44B7D0191BC4 /* SAConfettiView-SAConfettiView */;
+			targetProxy = EA8B21331CF33B2F8023F574A7394EBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F5CF7DBFEE388D3AF1ED1947DF07535 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A36403FBAC039DE06388714C406AB06 /* SAConfettiView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SAConfettiView/SAConfettiView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/SAConfettiView/SAConfettiView.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SAConfettiView;
+				PRODUCT_NAME = SAConfettiView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20B04BA06604245272C094337A1B5F98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A996B39510677CFFF39C75A49A16649B /* Pods-HappierFoods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		257497152829C177993B5EC99C1D227A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		5B577A53398C5E3D727C5A26A7DB32E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A36403FBAC039DE06388714C406AB06 /* SAConfettiView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SAConfettiView/SAConfettiView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/SAConfettiView/SAConfettiView.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SAConfettiView;
+				PRODUCT_NAME = SAConfettiView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60B3D35E15AA72ABC8BE007868EABE39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A36403FBAC039DE06388714C406AB06 /* SAConfettiView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SAConfettiView";
+				IBSC_MODULE = SAConfettiView;
+				INFOPLIST_FILE = "Target Support Files/SAConfettiView/ResourceBundle-SAConfettiView-SAConfettiView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = SAConfettiView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D58BE0BF26874E451E12F90E05B98143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A36403FBAC039DE06388714C406AB06 /* SAConfettiView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SAConfettiView";
+				IBSC_MODULE = SAConfettiView;
+				INFOPLIST_FILE = "Target Support Files/SAConfettiView/ResourceBundle-SAConfettiView-SAConfettiView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = SAConfettiView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		DB3FAE9CCD29F2B27D9EA97A3FCE10FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46DE29592D9E7A6B333AB78DE2DFD3F6 /* Pods-HappierFoods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		049830D84C87529F42EBB6261B5AC0F0 /* Build configuration list for PBXNativeTarget "Pods-HappierFoods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB3FAE9CCD29F2B27D9EA97A3FCE10FC /* Debug */,
+				20B04BA06604245272C094337A1B5F98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DD7E2D717B0E1E742EDD1BE358B1C22 /* Build configuration list for PBXNativeTarget "SAConfettiView-SAConfettiView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60B3D35E15AA72ABC8BE007868EABE39 /* Debug */,
+				D58BE0BF26874E451E12F90E05B98143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
+				257497152829C177993B5EC99C1D227A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		521DF59E4608C01C6050014D3A0D8FB3 /* Build configuration list for PBXNativeTarget "SAConfettiView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B577A53398C5E3D727C5A26A7DB32E7 /* Debug */,
+				0F5CF7DBFEE388D3AF1ED1947DF07535 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

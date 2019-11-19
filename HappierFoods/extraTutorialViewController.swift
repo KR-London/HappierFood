@@ -17,14 +17,14 @@ class extraTutorialViewController: UIViewController {
       
         for i in 2...11
         {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2*Double(i - 1 )) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2*Double(i - 2 )) {
                 let pic = "T" + String(i) + ".png"
                 print(pic)
                 self.tutorial.image = UIImage(named: pic)
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 23) {
                // let myNav = customNavigationController()
                // let storyboard = UIStoryboard(name: "Main", bundle: nil)
                // let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
@@ -32,6 +32,12 @@ class extraTutorialViewController: UIViewController {
             //self.present(initialViewController, animated: true, completion: nil)
             
             self.dismiss(animated: true, completion: nil)
+            
         }
+        
+        //let myNav = self.navigationController
+        
+        
+        
         }
 }

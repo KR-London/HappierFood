@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a59-XC-I8L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EO8-Hl-9C4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,20 +19,20 @@
             <objects>
                 <viewController storyboardIdentifier="history" title="History " id="o5k-lo-mMm" customClass="historyViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iVa-Lh-zfY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="XJ3-d7-Yey">
-                                <rect key="frame" x="8" y="8" width="398" height="721"/>
+                                <rect key="frame" x="8" y="52" width="398" height="802"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYw-Hq-2GV">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="442"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="491"/>
                                         <connections>
                                             <segue destination="Bpq-Ys-zch" kind="embed" id="yxO-IK-okY"/>
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-l5-H3m" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="495" width="398" height="86.5"/>
+                                        <rect key="frame" x="0.0" y="544" width="398" height="102.5"/>
                                         <color key="backgroundColor" red="0.75686274509803919" green="0.46666666666666667" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W23-4z-i6u" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="634.5" width="398" height="86.5"/>
+                                        <rect key="frame" x="0.0" y="699.5" width="398" height="102.5"/>
                                         <color key="backgroundColor" red="0.75686274509803919" green="0.46666666666666667" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.12941176470588234" green="0.0078431372549019607" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal">
@@ -102,7 +102,7 @@
             <objects>
                 <collectionViewController id="Bpq-Ys-zch" customClass="HistoryCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hiF-J6-D93">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="442"/>
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="491"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="layoutMargins" id="me0-gT-HUG">
@@ -176,6 +176,194 @@
             </objects>
             <point key="canvasLocation" x="-3597" y="-1177"/>
         </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="Gbx-ep-yp3">
+            <objects>
+                <tableViewController storyboardIdentifier="historyScreen" id="nO6-oq-xBK" customClass="historyTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jVY-68-ZNf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableCell" rowHeight="241" id="Ffu-r3-WmW" customClass="statsTableViewCell" customModule="HappierFoods" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="241"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ffu-r3-WmW" id="zcK-U6-v1B">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="241"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="fAU-6u-V3r">
+                                            <rect key="frame" x="20" y="11" width="374" height="219"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="16h-dj-nX7">
+                                                    <rect key="frame" x="0.0" y="69.5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="nrx-2V-8Z5"/>
+                                                        <constraint firstAttribute="width" constant="80" id="rMY-xD-xrT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26T-c3-0bP">
+                                                    <rect key="frame" x="132" y="99.5" width="142.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hb-o4-EAF">
+                                                    <rect key="frame" x="326.5" y="99.5" width="47.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="26T-c3-0bP" firstAttribute="width" secondItem="3hb-o4-EAF" secondAttribute="width" multiplier="3" id="1gB-mj-4hp"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fAU-6u-V3r" firstAttribute="top" secondItem="zcK-U6-v1B" secondAttribute="topMargin" id="G5N-N3-Yvc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fAU-6u-V3r" secondAttribute="bottom" id="HRY-7t-TcB"/>
+                                        <constraint firstItem="fAU-6u-V3r" firstAttribute="leading" secondItem="zcK-U6-v1B" secondAttribute="leadingMargin" id="MRW-Ag-sjQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fAU-6u-V3r" secondAttribute="trailing" id="sYs-cP-pgJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageForStat" destination="16h-dj-nX7" id="AGp-qD-dQ8"/>
+                                    <outlet property="titleOfStatistic" destination="26T-c3-0bP" id="QAg-pF-b0G"/>
+                                    <outlet property="valueOfStatistic" destination="3hb-o4-EAF" id="hqR-pz-fox"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nO6-oq-xBK" id="xT7-ge-36V"/>
+                            <outlet property="delegate" destination="nO6-oq-xBK" id="5JL-nq-xju"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eFZ-5a-QfI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAm-O5-aD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2267" y="-2514"/>
+        </scene>
+        <!--Stats-->
+        <scene sceneID="TjQ-ni-NZ6">
+            <objects>
+                <tableViewController storyboardIdentifier="statsScreen" title="Stats" id="Q6B-AB-fPC" customClass="statsTableViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9iW-jp-JDM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statsTableCell" rowHeight="80" id="bM1-hK-Qf4" customClass="statsTableViewCell" customModule="HappierFoods" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bM1-hK-Qf4" id="bQs-da-UCr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="VAg-cx-7RB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gtk-b3-ONA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="3G2-Xv-EdD"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Dgj-ow-efF"/>
+                                                        <constraint firstAttribute="width" secondItem="gtk-b3-ONA" secondAttribute="height" multiplier="1:1" id="nAU-8E-fL7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Of Stat" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvP-tQ-YFW">
+                                                    <rect key="frame" x="91" y="30.5" width="234" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57b-2F-JOC">
+                                                    <rect key="frame" x="336" y="30.5" width="78" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rvP-tQ-YFW" firstAttribute="width" secondItem="57b-2F-JOC" secondAttribute="width" multiplier="3" id="IMC-GE-GoU"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="VAg-cx-7RB" firstAttribute="leading" secondItem="bQs-da-UCr" secondAttribute="leading" id="9WL-A4-C6j"/>
+                                        <constraint firstAttribute="bottom" secondItem="VAg-cx-7RB" secondAttribute="bottom" id="ShG-eX-toB"/>
+                                        <constraint firstAttribute="trailing" secondItem="VAg-cx-7RB" secondAttribute="trailing" id="Xiz-Ve-az8"/>
+                                        <constraint firstItem="VAg-cx-7RB" firstAttribute="top" secondItem="bQs-da-UCr" secondAttribute="top" id="d5r-7j-hqn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageForStat" destination="gtk-b3-ONA" id="aaT-s0-vfu"/>
+                                    <outlet property="titleOfStatistic" destination="rvP-tQ-YFW" id="ejH-IO-iD0"/>
+                                    <outlet property="valueOfStatistic" destination="57b-2F-JOC" id="H3s-zd-Ghj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Q6B-AB-fPC" id="TRe-Mh-Whx"/>
+                            <outlet property="delegate" destination="Q6B-AB-fPC" id="ccD-Aw-QNC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Cnx-cv-RyY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCI-qv-HMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-580" y="-2468"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2OS-jh-RZS">
+            <objects>
+                <viewController id="qmP-m1-D8L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hsB-1N-q0f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qNx-uH-cd7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wVB-WZ-Qe3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A26-ZS-3YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3271" y="-829"/>
+        </scene>
+        <!--New Main View Controller-->
+        <scene sceneID="cXr-OH-TZY">
+            <objects>
+                <viewController storyboardIdentifier="newMainViewController" id="JX6-GS-qW6" customClass="newMainViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vJm-ch-fc3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2Wy-oO-9lO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kIb-JV-JOx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VgT-ro-sDU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1613" y="-4143"/>
+        </scene>
+        <!--New Data Input View Controller-->
+        <scene sceneID="fOY-21-YKH">
+            <objects>
+                <viewController storyboardIdentifier="newDataInputViewController" id="RxY-VO-Qis" customClass="newDataInputViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zzf-zh-tTC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QPC-EK-imM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEJ-cF-aWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2714" y="-4148"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="w5O-mg-vTN">
             <objects>
@@ -184,8 +372,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G5-gk-whZ">
+                                <rect key="frame" x="8" y="488" width="398" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8G5-gk-whZ" secondAttribute="height" multiplier="1:1" id="rjl-kO-i3o"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="little dude4.png">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="happyTickled:" destination="yA6-eK-gdw" eventType="touchUpInside" id="n6V-rA-MI0"/>
+                                    <segue destination="Q7d-Zl-03T" kind="show" id="BGs-Dk-9TE"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-Pg-QoH">
-                                <rect key="frame" x="8" y="8" width="398" height="1226"/>
+                                <rect key="frame" x="8" y="138.5" width="398" height="590.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ntM-vN-9DJ">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="414"/>
@@ -261,18 +463,11 @@
                                             <outlet property="delegate" destination="yA6-eK-gdw" id="eoN-Fw-jyJ"/>
                                         </connections>
                                     </collectionView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-ie-rmn">
-                                        <rect key="frame" x="0.0" y="422" width="398" height="398"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="AXY-ie-rmn" secondAttribute="height" multiplier="1:1" id="l65-aR-JjL"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uU-B9-gOO">
-                                        <rect key="frame" x="0.0" y="828" width="398" height="398"/>
+                                        <rect key="frame" x="0.0" y="422" width="398" height="110.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyO-Mw-g57">
-                                                <rect key="frame" x="0.0" y="180" width="184" height="38"/>
+                                                <rect key="frame" x="0.0" y="36" width="184" height="38"/>
                                                 <color key="backgroundColor" red="0.75686274509803919" green="0.46666666666666667" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                                 <color key="tintColor" red="0.12941176470588234" green="0.0078431372549019607" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -289,7 +484,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-lL-Bzf">
-                                                <rect key="frame" x="214" y="180" width="184" height="38"/>
+                                                <rect key="frame" x="214" y="36" width="184" height="38"/>
                                                 <color key="backgroundColor" red="0.75686274509803919" green="0.46666666666666667" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                                 <color key="tintColor" red="0.12941176470588234" green="0.0078431372549019607" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -317,47 +512,45 @@
                                             <constraint firstItem="KGE-lL-Bzf" firstAttribute="width" secondItem="vyO-Mw-g57" secondAttribute="width" id="wiT-Bn-JaG"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yb-bj-v04">
+                                        <rect key="frame" x="0.0" y="540.5" width="398" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-ie-rmn">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="AXY-ie-rmn" secondAttribute="height" multiplier="1:1" id="l65-aR-JjL"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wgu-Dh-CEe">
+                                                <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="puV-qo-kPr"/>
+                                                    <constraint firstAttribute="height" constant="50" id="r98-1T-1GO"/>
+                                                </constraints>
+                                            </imageView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKY-zO-QXs">
+                                                <rect key="frame" x="100" y="0.0" width="298" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="whz-Ts-hnZ" kind="embed" id="CVd-gB-GRg"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="1uU-B9-gOO" secondAttribute="bottom" id="SYI-W6-BLu"/>
-                                    <constraint firstItem="AXY-ie-rmn" firstAttribute="width" secondItem="1uU-B9-gOO" secondAttribute="height" id="bGe-mE-15a"/>
-                                    <constraint firstItem="AXY-ie-rmn" firstAttribute="height" secondItem="1uU-B9-gOO" secondAttribute="height" id="pYV-gn-prG"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wgu-Dh-CEe">
-                                <rect key="frame" x="8" y="-44" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="puV-qo-kPr"/>
-                                    <constraint firstAttribute="height" constant="50" id="r98-1T-1GO"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G5-gk-whZ">
-                                <rect key="frame" x="8" y="430" width="398" height="398"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="8G5-gk-whZ" secondAttribute="height" multiplier="1:1" id="rjl-kO-i3o"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="little dude4.png">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="happyTickled:" destination="yA6-eK-gdw" eventType="touchUpInside" id="n6V-rA-MI0"/>
-                                    <segue destination="Q7d-Zl-03T" kind="show" id="BGs-Dk-9TE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Wgu-Dh-CEe" firstAttribute="leading" secondItem="TnP-Rc-HIy" secondAttribute="leading" constant="8" id="2TF-fe-Q7m"/>
                             <constraint firstItem="1uU-B9-gOO" firstAttribute="height" secondItem="TnP-Rc-HIy" secondAttribute="height" multiplier="0.15" id="B79-YR-oEh"/>
                             <constraint firstItem="ntM-vN-9DJ" firstAttribute="height" secondItem="TnP-Rc-HIy" secondAttribute="width" id="Dnv-6f-Uou"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="trailing" secondItem="7YX-Pg-QoH" secondAttribute="trailing" constant="8" id="Lhi-jW-RnV"/>
-                            <constraint firstItem="8G5-gk-whZ" firstAttribute="top" secondItem="AXY-ie-rmn" secondAttribute="top" id="McU-pU-kvF"/>
-                            <constraint firstItem="8G5-gk-whZ" firstAttribute="bottom" secondItem="AXY-ie-rmn" secondAttribute="bottom" id="RVQ-YC-ceY"/>
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="leading" secondItem="TnP-Rc-HIy" secondAttribute="leading" constant="8" id="aq4-t0-Zye"/>
-                            <constraint firstItem="7YX-Pg-QoH" firstAttribute="top" secondItem="Wgu-Dh-CEe" secondAttribute="bottom" constant="2" id="dVZ-Mt-Y2q"/>
                             <constraint firstItem="7YX-Pg-QoH" firstAttribute="top" secondItem="TnP-Rc-HIy" secondAttribute="top" multiplier="1.1" priority="750" constant="8" id="jVq-nt-K0f"/>
-                            <constraint firstItem="8G5-gk-whZ" firstAttribute="centerX" secondItem="AXY-ie-rmn" secondAttribute="centerX" id="jnI-xA-Tlg"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="bottom" secondItem="7YX-Pg-QoH" secondAttribute="bottom" constant="8" id="uCR-aq-KKk"/>
                             <constraint firstItem="TnP-Rc-HIy" firstAttribute="trailing" secondItem="7YX-Pg-QoH" secondAttribute="trailing" constant="8" id="vdM-dN-X6r"/>
                             <constraint firstItem="ntM-vN-9DJ" firstAttribute="centerY" secondItem="TnP-Rc-HIy" secondAttribute="centerY" multiplier="0.4" priority="750" id="yjL-mE-gcr"/>
@@ -375,13 +568,15 @@
                         <outlet property="tryButton" destination="KGE-lL-Bzf" id="Yje-eD-jjg"/>
                         <segue destination="Q61-IA-lhv" kind="show" identifier="expandDetail" id="EyT-iX-Ahn"/>
                         <segue destination="QlS-BC-ikQ" kind="presentation" identifier="resetMainWithNavBar" id="kEo-kV-ixy"/>
-                        <segue destination="o5k-lo-mMm" kind="show" identifier="historySegue" id="bY1-rZ-0FJ"/>
                         <segue destination="a59-XC-I8L" kind="show" identifier="celebrationSegue" id="QId-2G-l4q"/>
+                        <segue destination="qmP-m1-D8L" kind="show" identifier="" id="8v9-S1-2Gp"/>
+                        <segue destination="Q6B-AB-fPC" kind="show" identifier="statsSegue" id="Gpb-ZL-zEG"/>
+                        <segue destination="nO6-oq-xBK" kind="show" identifier="historySegue" id="a6c-6F-0Ek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fna-ov-CAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="-1078"/>
+            <point key="canvasLocation" x="1614" y="-2233"/>
         </scene>
         <!--Data Input View Controller-->
         <scene sceneID="uHZ-bl-MmX">
@@ -494,7 +689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lr-MS-c1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2655" y="-1078"/>
+            <point key="canvasLocation" x="4723" y="-1125"/>
         </scene>
         <!--happy-->
         <scene sceneID="K3H-zs-YtL">
@@ -521,11 +716,11 @@
             <objects>
                 <viewController storyboardIdentifier="rateFoodVC" id="BYZ-38-t0r" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-3w-Rav" userLabel="Maxi Stack View">
-                                <rect key="frame" x="8" y="0.0" width="398" height="800"/>
+                                <rect key="frame" x="8" y="0.0" width="398" height="729"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-Yc-vXq" userLabel=" Mini Horizontal Stack View">
                                         <rect key="frame" x="8" y="0.0" width="382" height="100"/>
@@ -569,7 +764,7 @@
                                         </constraints>
                                     </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s04-OS-QFL" userLabel="Container Face View">
-                                        <rect key="frame" x="8" y="197.5" width="382" height="420"/>
+                                        <rect key="frame" x="8" y="162" width="382" height="420"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="s04-OS-QFL" secondAttribute="height" multiplier="1:1.1" id="7L5-Hl-tIW"/>
                                         </constraints>
@@ -577,8 +772,8 @@
                                             <segue destination="ohA-g8-JKs" kind="embed" identifier="faceSegue" id="Bav-kw-SGD"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-FI-m5N">
-                                        <rect key="frame" x="8" y="715" width="382" height="85"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-FI-m5N" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="644" width="382" height="85"/>
                                         <color key="backgroundColor" red="0.72941176470588232" green="0.94901960784313721" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="6HD-DS-dpG"/>
@@ -626,18 +821,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2654" y="-139"/>
+            <point key="canvasLocation" x="5272" y="13"/>
         </scene>
         <!--Motivation Input View Controller-->
         <scene sceneID="ewq-2n-46E">
             <objects>
                 <viewController storyboardIdentifier="targetSettingScreen" id="0Wu-Q4-rwe" userLabel="Motivation Input View Controller" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjk-aB-xtG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-Ev-8Zo">
-                                <rect key="frame" x="8" y="25" width="398" height="809"/>
+                                <rect key="frame" x="8" y="25" width="398" height="753"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-Zu-2J0" userLabel="Target Food Preview Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="153.5"/>
@@ -699,8 +894,8 @@
                                             </textView>
                                         </subviews>
                                     </stackView>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-Va-k3r">
-                                        <rect key="frame" x="0.0" y="715" width="398" height="94"/>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-Va-k3r" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="715" width="398" height="38"/>
                                         <color key="backgroundColor" red="0.72941176470588232" green="0.94901960784313721" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="24"/>
                                         <color key="tintColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -743,7 +938,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRd-Vv-Plf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="-1912"/>
+            <point key="canvasLocation" x="4307" y="-2214"/>
+        </scene>
+        <!--Confetti View Controller-->
+        <scene sceneID="ntX-1b-aQH">
+            <objects>
+                <viewController storyboardIdentifier="confettiViewController" id="phm-7b-IHy" customClass="confettiViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Kv-dG-wgR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="P5z-eL-3lw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHL-Zq-0JA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6384" y="-2080"/>
         </scene>
         <!--Celebration-->
         <scene sceneID="LEZ-5X-w76">
@@ -761,10 +971,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-I4-nLe">
-                                <rect key="frame" x="10" y="158" width="394" height="591"/>
+                                <rect key="frame" x="10" y="158" width="394" height="547"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-vh-OWh">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="560"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="516"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Bqs-vh-OWh" secondAttribute="height" multiplier="1:1" id="Bod-Vt-o4R"/>
                                         </constraints>
@@ -773,7 +983,7 @@
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK2-3K-eVT">
-                                        <rect key="frame" x="0.0" y="591" width="394" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="547" width="394" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                         <nil key="textColor"/>
@@ -810,7 +1020,7 @@
             <objects>
                 <collectionViewController id="zIl-jd-FQp" customClass="CelebrationCollectionViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tS7-7X-oF5">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="560"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="516"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIw-gS-uDj">
@@ -874,7 +1084,7 @@
         <!--Detail View-->
         <scene sceneID="E0q-XM-Kkr">
             <objects>
-                <viewController id="Q61-IA-lhv" customClass="DetailViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVC" id="Q61-IA-lhv" customClass="DetailViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fVB-ZT-yiI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -952,7 +1162,7 @@
                                         <color key="tintColor" red="0.12941176469999999" green="0.0078431372550000003" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Try This Food">
+                                                <fragment content="Try This Food Again?">
                                                     <attributes>
                                                         <font key="NSFont" size="18" name="TwCenMT-CondensedExtraBold"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -1103,7 +1313,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmC-C8-CxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="-1078.1109445277361"/>
+            <point key="canvasLocation" x="-1504" y="-712"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bBk-Ff-Ogc">
+            <objects>
+                <viewController id="whz-Ts-hnZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Q2-xJ-49Y">
+                        <rect key="frame" x="0.0" y="0.0" width="298" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aEA-9m-1di"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRp-Gn-37v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4158" y="-1827"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="riH-LV-78M">
+            <objects>
+                <navigationController storyboardIdentifier="testNav" automaticallyAdjustsScrollViewInsets="NO" id="EO8-Hl-9C4" customClass="customNavigationController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p03-YU-dgA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JX6-GS-qW6" kind="relationship" relationship="rootViewController" id="7cp-dv-ItH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0k-js-K4M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352" y="-4143"/>
         </scene>
     </scenes>
     <resources>
@@ -1120,9 +1363,9 @@
         <image name="tick.jpg" width="172" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OV7-Gj-yIk"/>
+        <segue reference="8JQ-7V-ZRj"/>
         <segue reference="8Jr-l3-dhP"/>
-        <segue reference="ae0-Ld-T5R"/>
+        <segue reference="PZb-oU-Ng7"/>
         <segue reference="s13-Me-gb1"/>
     </inferredMetricsTieBreakers>
 </document>

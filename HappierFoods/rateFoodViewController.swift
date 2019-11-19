@@ -25,13 +25,15 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let imagePickerView = UIImagePickerController()
     var firstPass = String()
+    
+    var historyArray: [HistoryTriedFoods]?
 
     // MARK: Actions and outlets
     @IBAction func endedEnteringName(_ sender: Any) {
         self.view.endEditing(true)
     }
   
-    @IBOutlet weak var moveOnButton: UIButton!
+    @IBOutlet weak var moveOnButton: myButton!
     @IBOutlet weak var nameOfFood: UITextField!
     @IBOutlet weak var faceView: FaceView!
     @IBOutlet weak var foodImage: UIImageView!
@@ -54,7 +56,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     // MARK: page lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         imagePickerView.allowsEditing = true
         loadItems()
         imagePickerView.delegate = self
@@ -62,21 +64,23 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 //        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
 //        presentState = main!.myNav!.currentStateAsString()
  
-        imagePlaceholder = cropImageToSquare(imagePlaceholder)
-        foodImage.image = imagePlaceholder
-
-        foodImage.translatesAutoresizingMaskIntoConstraints = false
-        foodImage.contentMode = .scaleAspectFill
-        foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        nameOfFood.text = foodName
+//        imagePlaceholder = cropImageToSquare(imagePlaceholder)
+//        foodImage.image = imagePlaceholder
+//
+//        foodImage.translatesAutoresizingMaskIntoConstraints = false
+//        foodImage.contentMode = .scaleAspectFill
+//        foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+            formatImage()
+            nameOfFood.text = foodName
     //   motivationText?.text = existingMotivationText
         
         // MARK: Colour
         
     //    moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
-        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
         presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
         if presentState == "SetTargetViewController" || presentState ==  "First Target"
         {
@@ -134,6 +138,16 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
+    func formatImage(){
+            imagePlaceholder = cropImageToSquare(imagePlaceholder)
+             foodImage?.image = imagePlaceholder
+
+             foodImage?.translatesAutoresizingMaskIntoConstraints = false
+             foodImage?.contentMode = .scaleAspectFill
+             foodImage?.widthAnchor.constraint(equalToConstant: 100).isActive = true
+             foodImage?.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    }
+    
     // MARK: Save data
     
     func saveItems(){
@@ -151,7 +165,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
 //    }
     
     func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?, notes: String?){
-        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
+        weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
         
         if firstPass == "Target" {
             presentState = "First Target"
@@ -205,7 +219,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.foodArray.append(menuItem)
                 
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -240,7 +254,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.targetArray.remove(at: indexOfMyTimestamp!)
                 
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -258,7 +272,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.foodArray.append(menuItem)
                 
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -273,7 +287,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 main?.targetArray.append(menuItem)
                 DispatchQueue.main.async{
-                    main?.mainCollectionView.reloadData()
+                    main?.myCollectionView.reloadData()
                 }
             }
             
@@ -290,9 +304,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 main?.foodArray = [menuItem]
                 
                 DispatchQueue.main.async{
-                    if main?.mainCollectionView != nil
+                    if main?.myCollectionView != nil
                     {
-                        main?.mainCollectionView.reloadData()
+                        main?.myCollectionView.reloadData()
                     }
                     else{
                         print("NIL MCV CAUGHT!!!!!")
@@ -311,7 +325,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 main?.targetArray = [menuItem]
                 DispatchQueue.main.async{
-                    if let colView  = main?.mainCollectionView{
+                    if let colView  = main?.myCollectionView{
                         colView.reloadData()
                         print("I have a collection view")
                     }
@@ -320,7 +334,14 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         default: return
         }
         
-        navigationController?.popToRootViewController(animated: true)
+        //navigationController?.popToRootViewController(animated: true)
+        let happyUtterance = happySays()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
+        nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.afterTryingaFoodScreen )
+        let myNav = self.navigationController
+        myNav?.pushViewController(nextViewController, animated: true)
     }
     
 
@@ -444,6 +465,55 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    func countOfThisFood() -> Int{
+        var countOfThisFood = Int()
+
+        if foodName == "" {
+//            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
+//                countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename }).count
+//            }
+//            else {
+//                countOfThisFood = 1
+//            }
+//        }
+//        else{
+//            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {
+//                countOfThisFood = foodArray.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+//            }
+//            else{
+//                 countOfThisFood = foodArray.filter({ $0.name == detailToDisplay.foodName }).count
+//            }
+        }
+
+        
+        if let history = historyArray
+        {
+            print(history)
+//            if foodName == ""
+//            {
+//
+//                if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+//                {
+//                    countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename }).count
+//                }
+//            }
+//            else
+//            {
+//
+//                if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg"
+//                {
+//                    countOfThisFood = countOfThisFood + history.filter({ $0.filename == detailToDisplay.photoFilename || $0.name == detailToDisplay.foodName }).count
+//                }
+//                else
+//                {
+//                    countOfThisFood = countOfThisFood + history.filter({ $0.name == detailToDisplay.foodName }).count
+//                }
+//            }
+        }
+        
+        return countOfThisFood
     }
 }
 

@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Instabug
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
+        doIPlaceANewDatestamp()
         //let launchedBefore = false
         let newTutorial = false
         
@@ -30,8 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "testNav" )
             self.window?.rootViewController = initialViewController
+            
+               //   let nextViewController = storyboard.instantiateViewController(withIdentifier: "newDataInputViewController" )
+            //self.window?.rootViewController!.push(nextViewController, animated: true, completion: nil)
             self.window?.makeKeyAndVisible()
             
         }
@@ -57,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
             }
-            
+
         }
       
      //   BugReporting.bugReportingOptions = [.]
@@ -118,6 +121,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func doIPlaceANewDatestamp(){
+        let now = Date()
+        print(Date())
+        var loginRecord = UserDefaults.standard.object(forKey: "loginRecord") as? [ Date ] ?? [ Date ]()
+        print("login record")
+        print(loginRecord)
+        
+        loginRecord = loginRecord + [now]
+        UserDefaults.standard.set(loginRecord, forKey: "loginRecord")
+        
+//        if let lastStamp = loginRecord.popLast()
+//        {
+//            if Calendar.current.isDateInToday(lastStamp)
+//            {
+//                loginRecord = loginRecord + [now]
+//                UserDefaults.standard.set(loginRecord, forKey: "loginRecord")
+//            }
+//        }
+        
+        
+        
     }
 }
 

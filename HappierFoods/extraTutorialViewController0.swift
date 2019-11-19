@@ -17,11 +17,11 @@ class extraTutorialViewController0: UIViewController {
       
         tutorial.image = UIImage(named: "T1.png")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.performSegue(withIdentifier: "segue", sender: self)
-            }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.performSegue(withIdentifier: "segue", sender: self)
+//            }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                // let myNav = customNavigationController()
                // let storyboard = UIStoryboard(name: "Main", bundle: nil)
                // let initialViewController = storyboard.instantiateViewController(withIdentifier: "Main" )

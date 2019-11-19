@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
+		440758B5237B5265007C8153 /* newMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440758B4237B5264007C8153 /* newMainViewController.swift */; };
+		440828572381153F00EC2C0F /* testingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440828562381153F00EC2C0F /* testingViewController.swift */; };
+		44082859238115BE00EC2C0F /* SAConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44082858238115BE00EC2C0F /* SAConfettiView.swift */; };
 		440886D9233E09C600A76800 /* 1plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886D8233E09C600A76800 /* 1plate.jpeg */; };
 		440886DB233E0D4300A76800 /* 2plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DA233E0D4300A76800 /* 2plate.jpeg */; };
 		440886DD233E0D4900A76800 /* 3plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DC233E0D4900A76800 /* 3plate.jpeg */; };
@@ -21,6 +24,7 @@
 		4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EDFE225F0AFC00D9B9CB /* chaos.jpg */; };
 		4414EE05225F9FB100D9B9CB /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EE04225F9FB000D9B9CB /* tick.jpg */; };
 		4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */; };
+		441AF0042383F85100B6DCAB /* newDataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AF0032383F85100B6DCAB /* newDataInputViewController.swift */; };
 		441DB5EF22C513DB00E857C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441DB5EE22C513DB00E857C0 /* Main.storyboard */; };
 		442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CD2299619E00CBE431 /* UIViewExtension.swift */; };
 		442113D0229961BB00CBE431 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */; };
@@ -73,6 +77,8 @@
 		44497FC622DCD4BF007CE3D3 /* screen2_block1_B.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44497FC522DCD4BF007CE3D3 /* screen2_block1_B.jpg */; };
 		44497FC922DCD705007CE3D3 /* preTry1B.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44497FC722DCD705007CE3D3 /* preTry1B.jpg */; };
 		44497FCA22DCD705007CE3D3 /* preTry2B.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44497FC822DCD705007CE3D3 /* preTry2B.jpg */; };
+		4449A5622369653B0070099F /* statsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449A5612369653B0070099F /* statsTableViewController.swift */; };
+		4449A564236965EB0070099F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449A563236965EB0070099F /* TableViewCell.swift */; };
 		445138F322887411001DC15B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 445138F222887410001DC15B /* cross.png */; };
 		44519036229B2426001C12D1 /* CelebrationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */; };
 		44519038229B3036001C12D1 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519037229B3036001C12D1 /* happy.png */; };
@@ -82,6 +88,8 @@
 		4483901822C731EC002F8D2E /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483901722C731EC002F8D2E /* onboarding2.png */; };
 		4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */; };
 		4483902122C7D187002F8D2E /* Loading Screens1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4483902022C7D187002F8D2E /* Loading Screens1.png */; };
+		448F0819236AB95E002B96BE /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448F0818236AB95E002B96BE /* historyTableViewController.swift */; };
+		448F081B236AC954002B96BE /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448F081A236AC954002B96BE /* settingsViewController.swift */; };
 		449613CB22DC9CBC001CCE37 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CA22DC9CBB001CCE37 /* apple.jpg */; };
 		449613CD22DC9CD6001CCE37 /* rice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CC22DC9CD6001CCE37 /* rice.jpeg */; };
 		449613CF22DC9CF6001CCE37 /* boiled_eggs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */; };
@@ -193,6 +201,7 @@
 		44B5300122DA213800CF730D /* b1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44B52FFB22DA213800CF730D /* b1.jpg */; };
 		44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */; };
 		44B5300522DA2F4E00CF730D /* preTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5300422DA2F4E00CF730D /* preTargetViewController.swift */; };
+		44B6F21F2383BA110098AF84 /* personality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6F21E2383BA110098AF84 /* personality.swift */; };
 		44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE3B9B22566A230090BB5F /* AppDelegate.swift */; };
 		44BE3BA622566A250090BB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA522566A250090BB5F /* Assets.xcassets */; };
 		44BE3BA922566A250090BB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BE3BA722566A250090BB5F /* LaunchScreen.storyboard */; };
@@ -211,7 +220,9 @@
 		44BFAD6D232D738900CD5CA8 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BFAD62232D738900CD5CA8 /* 10.png */; };
 		44BFAD6E232D738900CD5CA8 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BFAD63232D738900CD5CA8 /* 7.png */; };
 		44BFAD70232D7A2F00CD5CA8 /* 1 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BFAD6F232D7A2E00CD5CA8 /* 1 2.png */; };
+		44BFE3AD237B5828009D05F4 /* bubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE3AC237B5828009D05F4 /* bubbleView.swift */; };
 		44C313C922E90988002FB0AC /* girl_and_pizza.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */; };
+		44C74E5E237C4A020070AC87 /* confettiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C74E5D237C4A020070AC87 /* confettiViewController.swift */; };
 		44D519F0225E3301001BD7FB /* icons1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519ED225E3301001BD7FB /* icons1.png */; };
 		44D519F1225E3301001BD7FB /* icons2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EE225E3301001BD7FB /* icons2.png */; };
 		44D519F2225E3301001BD7FB /* icons3.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D519EF225E3301001BD7FB /* icons3.png */; };
@@ -220,8 +231,7 @@
 		44D598652259582B00267E71 /* dataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D598642259582B00267E71 /* dataInputViewController.swift */; };
 		44FE744B2357718100CDC2E5 /* BlankAward.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44FE744A2357718100CDC2E5 /* BlankAward.jpeg */; };
 		44FE744D2357737800CDC2E5 /* certificateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE744C2357737800CDC2E5 /* certificateViewController.swift */; };
-		6D1B9A1C50A2A3F1748EDEF2 /* Pods_HappierFoodsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE003BF8D73E498BC5B1788 /* Pods_HappierFoodsTests.framework */; };
-		FF77330A49533229A29CC12E /* Pods_HappierFoods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9552811D9036030A884AA59C /* Pods_HappierFoods.framework */; };
+		ED380D403CF2CA821C51ADDC /* libPods-HappierFoods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4448F531D483AEC9117D194 /* libPods-HappierFoods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,8 +245,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1FE003BF8D73E498BC5B1788 /* Pods_HappierFoodsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappierFoodsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
+		440758B4237B5264007C8153 /* newMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newMainViewController.swift; sourceTree = "<group>"; };
+		440828562381153F00EC2C0F /* testingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testingViewController.swift; sourceTree = "<group>"; };
+		44082858238115BE00EC2C0F /* SAConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAConfettiView.swift; sourceTree = "<group>"; };
 		440886D8233E09C600A76800 /* 1plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1plate.jpeg; sourceTree = "<group>"; };
 		440886DA233E0D4300A76800 /* 2plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2plate.jpeg; sourceTree = "<group>"; };
 		440886DC233E0D4900A76800 /* 3plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3plate.jpeg; sourceTree = "<group>"; };
@@ -250,6 +262,7 @@
 		4414EDFE225F0AFC00D9B9CB /* chaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos.jpg; sourceTree = "<group>"; };
 		4414EE04225F9FB000D9B9CB /* tick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick.jpg; sourceTree = "<group>"; };
 		4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celebrationScreenViewController.swift; sourceTree = "<group>"; };
+		441AF0032383F85100B6DCAB /* newDataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = newDataInputViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/coreVCs/newDataInputViewController.swift; sourceTree = "<absolute>"; };
 		441DB5EE22C513DB00E857C0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		442113CD2299619E00CBE431 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
@@ -302,6 +315,8 @@
 		44497FC522DCD4BF007CE3D3 /* screen2_block1_B.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = screen2_block1_B.jpg; path = ../../../../Downloads/screen2_block1_B.jpg; sourceTree = "<group>"; };
 		44497FC722DCD705007CE3D3 /* preTry1B.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = preTry1B.jpg; sourceTree = "<group>"; };
 		44497FC822DCD705007CE3D3 /* preTry2B.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = preTry2B.jpg; sourceTree = "<group>"; };
+		4449A5612369653B0070099F /* statsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statsTableViewController.swift; sourceTree = "<group>"; };
+		4449A563236965EB0070099F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		445138F222887410001DC15B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		44519035229B2426001C12D1 /* CelebrationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationCollectionViewController.swift; sourceTree = "<group>"; };
 		44519037229B3036001C12D1 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
@@ -312,6 +327,8 @@
 		4483901D22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = databasePlaceholderImage.001.jpeg; sourceTree = "<group>"; };
 		4483902022C7D187002F8D2E /* Loading Screens1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Screens1.png"; sourceTree = "<group>"; };
 		448813BE22D6434F00E3A78F /* HappierFoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HappierFoods.entitlements; sourceTree = "<group>"; };
+		448F0818236AB95E002B96BE /* historyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
+		448F081A236AC954002B96BE /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		449613CA22DC9CBB001CCE37 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		449613CC22DC9CD6001CCE37 /* rice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rice.jpeg; sourceTree = "<group>"; };
 		449613CE22DC9CF6001CCE37 /* boiled_eggs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boiled_eggs.jpeg; sourceTree = "<group>"; };
@@ -423,6 +440,7 @@
 		44B52FFB22DA213800CF730D /* b1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b1.jpg; sourceTree = "<group>"; };
 		44B5300222DA25A400CF730D /* Onboarding5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding5ViewController.swift; sourceTree = "<group>"; };
 		44B5300422DA2F4E00CF730D /* preTargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preTargetViewController.swift; sourceTree = "<group>"; };
+		44B6F21E2383BA110098AF84 /* personality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personality.swift; sourceTree = "<group>"; };
 		44BE3B9822566A230090BB5F /* HappierFoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappierFoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BE3B9B22566A230090BB5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44BE3BA522566A250090BB5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -445,7 +463,9 @@
 		44BFAD62232D738900CD5CA8 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		44BFAD63232D738900CD5CA8 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		44BFAD6F232D7A2E00CD5CA8 /* 1 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1 2.png"; sourceTree = "<group>"; };
+		44BFE3AC237B5828009D05F4 /* bubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bubbleView.swift; sourceTree = "<group>"; };
 		44C313C822E90988002FB0AC /* girl_and_pizza.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl_and_pizza.jpeg; sourceTree = "<group>"; };
+		44C74E5D237C4A020070AC87 /* confettiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confettiViewController.swift; sourceTree = "<group>"; };
 		44D519ED225E3301001BD7FB /* icons1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons1.png; sourceTree = "<group>"; };
 		44D519EE225E3301001BD7FB /* icons2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons2.png; sourceTree = "<group>"; };
 		44D519EF225E3301001BD7FB /* icons3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons3.png; sourceTree = "<group>"; };
@@ -454,11 +474,9 @@
 		44D598642259582B00267E71 /* dataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputViewController.swift; sourceTree = "<group>"; };
 		44FE744A2357718100CDC2E5 /* BlankAward.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BlankAward.jpeg; sourceTree = "<group>"; };
 		44FE744C2357737800CDC2E5 /* certificateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = certificateViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/Onboarding/certificateViewController.swift; sourceTree = "<absolute>"; };
-		505B2D1BFFFBAD71593F40F8 /* Pods-HappierFoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.release.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.release.xcconfig"; sourceTree = "<group>"; };
-		9552811D9036030A884AA59C /* Pods_HappierFoods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappierFoods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A17AD28183A020BB276BFAE0 /* Pods-HappierFoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.debug.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.debug.xcconfig"; sourceTree = "<group>"; };
-		C9737949FE63A6642A5DCA53 /* Pods-HappierFoodsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoodsTests.release.xcconfig"; path = "Target Support Files/Pods-HappierFoodsTests/Pods-HappierFoodsTests.release.xcconfig"; sourceTree = "<group>"; };
-		FCC5ADB4100BE1174D0083C2 /* Pods-HappierFoodsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoodsTests.debug.xcconfig"; path = "Target Support Files/Pods-HappierFoodsTests/Pods-HappierFoodsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FD10492F49D4262210C69AB /* Pods-HappierFoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.release.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.release.xcconfig"; sourceTree = "<group>"; };
+		B4448F531D483AEC9117D194 /* libPods-HappierFoods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappierFoods.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D985C6A565AE1579212BA30D /* Pods-HappierFoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.debug.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,7 +484,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF77330A49533229A29CC12E /* Pods_HappierFoods.framework in Frameworks */,
+				ED380D403CF2CA821C51ADDC /* libPods-HappierFoods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +492,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D1B9A1C50A2A3F1748EDEF2 /* Pods_HappierFoodsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +502,8 @@
 			isa = PBXGroup;
 			children = (
 				44455A29228E7D01006A6652 /* DetailViewController.swift */,
+				4449A5612369653B0070099F /* statsTableViewController.swift */,
+				4449A563236965EB0070099F /* TableViewCell.swift */,
 			);
 			path = detailView;
 			sourceTree = "<group>";
@@ -492,10 +511,8 @@
 		44329E9422DE28DD002DA0FA /* History */ = {
 			isa = PBXGroup;
 			children = (
-				4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */,
-				44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */,
+				448F0818236AB95E002B96BE /* historyTableViewController.swift */,
 				44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */,
-				443B66BF228EBD48007DDACC /* historyViewController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -513,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				4410083F22E4A0BB0096E47F /* Onboarding.storyboard */,
+				448F081A236AC954002B96BE /* settingsViewController.swift */,
 				44A5AB84235CA351009C0F8A /* resourcesViewController.swift */,
 				442D5584235CBF9C00E9C8EB /* web.swift */,
 				44FE744C2357737800CDC2E5 /* certificateViewController.swift */,
@@ -751,6 +769,19 @@
 			path = OnboardingHandwrittenLetter;
 			sourceTree = "<group>";
 		};
+		44B6F21D2383B9A40098AF84 /* DecomissionedVCs */ = {
+			isa = PBXGroup;
+			children = (
+				440828562381153F00EC2C0F /* testingViewController.swift */,
+				44D598622259535100267E71 /* mainViewController.swift */,
+				44D598642259582B00267E71 /* dataInputViewController.swift */,
+				44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */,
+				443B66BF228EBD48007DDACC /* historyViewController.swift */,
+				4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */,
+			);
+			path = DecomissionedVCs;
+			sourceTree = "<group>";
+		};
 		44BE3B8F22566A230090BB5F = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +791,7 @@
 				44BE3B9922566A230090BB5F /* Products */,
 				8EB6978B33F755039C073DA5 /* Pods */,
 				93EC7140F67B8062FC6FEE25 /* Frameworks */,
+				44B6F21D2383B9A40098AF84 /* DecomissionedVCs */,
 			);
 			sourceTree = "<group>";
 		};
@@ -785,10 +817,10 @@
 				442132F6234C98F000F4624D /* ExtraTutorial.storyboard */,
 				44B41CDB2350A8CB00A750E0 /* extraTutorialViewController.swift */,
 				442EAEED235118F300232E52 /* extraTutorialViewController0.swift */,
-				44D598622259535100267E71 /* mainViewController.swift */,
+				44C74E5A237C03E50070AC87 /* coreVCs */,
+				44BFE3AC237B5828009D05F4 /* bubbleView.swift */,
 				44D5985A2259346700267E71 /* mainCollectionViewCell.swift */,
 				44A63E9022598D03002E656E /* rateFoodViewController.swift */,
-				44D598642259582B00267E71 /* dataInputViewController.swift */,
 				442F8713228962DF00F4CCB5 /* detailView */,
 				44329E9522DE28EF002DA0FA /* Celebration */,
 				44329E9422DE28DD002DA0FA /* History */,
@@ -826,6 +858,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		44C74E5A237C03E50070AC87 /* coreVCs */ = {
+			isa = PBXGroup;
+			children = (
+				44C74E5D237C4A020070AC87 /* confettiViewController.swift */,
+				440758B4237B5264007C8153 /* newMainViewController.swift */,
+				441AF0032383F85100B6DCAB /* newDataInputViewController.swift */,
+				44082858238115BE00EC2C0F /* SAConfettiView.swift */,
+				44B6F21E2383BA110098AF84 /* personality.swift */,
+			);
+			path = coreVCs;
+			sourceTree = "<group>";
+		};
 		44D5985322592F0D00267E71 /* Navigation Custom Classes  */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,10 +882,8 @@
 		8EB6978B33F755039C073DA5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A17AD28183A020BB276BFAE0 /* Pods-HappierFoods.debug.xcconfig */,
-				505B2D1BFFFBAD71593F40F8 /* Pods-HappierFoods.release.xcconfig */,
-				FCC5ADB4100BE1174D0083C2 /* Pods-HappierFoodsTests.debug.xcconfig */,
-				C9737949FE63A6642A5DCA53 /* Pods-HappierFoodsTests.release.xcconfig */,
+				D985C6A565AE1579212BA30D /* Pods-HappierFoods.debug.xcconfig */,
+				7FD10492F49D4262210C69AB /* Pods-HappierFoods.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -849,8 +891,7 @@
 		93EC7140F67B8062FC6FEE25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9552811D9036030A884AA59C /* Pods_HappierFoods.framework */,
-				1FE003BF8D73E498BC5B1788 /* Pods_HappierFoodsTests.framework */,
+				B4448F531D483AEC9117D194 /* libPods-HappierFoods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -866,7 +907,7 @@
 				44BE3B9422566A230090BB5F /* Sources */,
 				44BE3B9522566A230090BB5F /* Frameworks */,
 				44BE3B9622566A230090BB5F /* Resources */,
-				F6230A1BA314946EDE7EBD37 /* [CP] Embed Pods Frameworks */,
+				F12FDD23E751ED6DE2D56789 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -881,11 +922,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44BE3BBB22566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoodsTests" */;
 			buildPhases = (
-				B9F3CFE8EEEAF955ECB9F01F /* [CP] Check Pods Manifest.lock */,
 				44BE3BAB22566A250090BB5F /* Sources */,
 				44BE3BAC22566A250090BB5F /* Frameworks */,
 				44BE3BAD22566A250090BB5F /* Resources */,
-				ED7BA82796444EFB1B0A31F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1125,28 +1164,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B9F3CFE8EEEAF955ECB9F01F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HappierFoodsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CE987560931A1EB70720BB43 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1169,38 +1186,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ED7BA82796444EFB1B0A31F2 /* [CP] Embed Pods Frameworks */ = {
+		F12FDD23E751ED6DE2D56789 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HappierFoodsTests/Pods-HappierFoodsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HappierFoodsTests/Pods-HappierFoodsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HappierFoodsTests/Pods-HappierFoodsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6230A1BA314946EDE7EBD37 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HappierFoods/Pods-HappierFoods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1212,20 +1212,27 @@
 			files = (
 				449ACB15226110B900C9F666 /* handDrawnFaceView.swift in Sources */,
 				44B52F8422D9FDC700CF730D /* Onboarding1ViewController.swift in Sources */,
+				44C74E5E237C4A020070AC87 /* confettiViewController.swift in Sources */,
+				440758B5237B5265007C8153 /* newMainViewController.swift in Sources */,
+				44082859238115BE00EC2C0F /* SAConfettiView.swift in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
+				440828572381153F00EC2C0F /* testingViewController.swift in Sources */,
 				447DE07D22C5BFA200081414 /* OnboardingViewController.swift in Sources */,
 				4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */,
 				44B41CDC2350A8CB00A750E0 /* extraTutorialViewController.swift in Sources */,
 				44D598632259535100267E71 /* mainViewController.swift in Sources */,
+				448F081B236AC954002B96BE /* settingsViewController.swift in Sources */,
 				442113D42299623800CBE431 /* UIImage+PixelBuffer.swift in Sources */,
 				446D220722C8C67E00FF56E3 /* customNavigationController.swift in Sources */,
 				449ACB17226110F300C9F666 /* customFaceARViewController.swift in Sources */,
 				442EAEEA23510F0500232E52 /* returnToOnboardingViewController.swift in Sources */,
 				442113D2229961D600CBE431 /* Extensions_UIImage.swift in Sources */,
 				44D5985B2259346700267E71 /* mainCollectionViewCell.swift in Sources */,
+				441AF0042383F85100B6DCAB /* newDataInputViewController.swift in Sources */,
 				44B52FF322DA18A400CF730D /* Onboarding4ViewController.swift in Sources */,
 				44B52FEB22DA10AF00CF730D /* Onboarding3ViewController.swift in Sources */,
 				442113D0229961BB00CBE431 /* CoreGraphicsExtensions.swift in Sources */,
+				4449A564236965EB0070099F /* TableViewCell.swift in Sources */,
 				44BE3BC1225673F60090BB5F /* FaceViewController.swift in Sources */,
 				44519036229B2426001C12D1 /* CelebrationCollectionViewController.swift in Sources */,
 				44471EC72338CE8300FFE0E6 /* HappierFoods.xcdatamodel in Sources */,
@@ -1244,11 +1251,15 @@
 				4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */,
 				44BE3B9C22566A230090BB5F /* AppDelegate.swift in Sources */,
 				44A63E9122598D03002E656E /* rateFoodViewController.swift in Sources */,
+				44B6F21F2383BA110098AF84 /* personality.swift in Sources */,
 				44BE3BC3225674070090BB5F /* FaceView.swift in Sources */,
+				448F0819236AB95E002B96BE /* historyTableViewController.swift in Sources */,
 				44D598652259582B00267E71 /* dataInputViewController.swift in Sources */,
 				44B5300522DA2F4E00CF730D /* preTargetViewController.swift in Sources */,
+				4449A5622369653B0070099F /* statsTableViewController.swift in Sources */,
 				440886E3233E3E3A00A76800 /* myButton.swift in Sources */,
 				44B5300322DA25A400CF730D /* Onboarding5ViewController.swift in Sources */,
+				44BFE3AD237B5828009D05F4 /* bubbleView.swift in Sources */,
 				442EAEEE235118F300232E52 /* extraTutorialViewController0.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1402,12 +1413,12 @@
 		};
 		44BE3BB922566A250090BB5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A17AD28183A020BB276BFAE0 /* Pods-HappierFoods.debug.xcconfig */;
+			baseConfigurationReference = D985C6A565AE1579212BA30D /* Pods-HappierFoods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1415,7 +1426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1425,12 +1436,12 @@
 		};
 		44BE3BBA22566A250090BB5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 505B2D1BFFFBAD71593F40F8 /* Pods-HappierFoods.release.xcconfig */;
+			baseConfigurationReference = 7FD10492F49D4262210C69AB /* Pods-HappierFoods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1438,7 +1449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.HappierFoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1448,7 +1459,6 @@
 		};
 		44BE3BBC22566A250090BB5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCC5ADB4100BE1174D0083C2 /* Pods-HappierFoodsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1469,7 +1479,6 @@
 		};
 		44BE3BBD22566A250090BB5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9737949FE63A6642A5DCA53 /* Pods-HappierFoodsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

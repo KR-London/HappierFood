@@ -46,8 +46,8 @@ class DetailViewController: UIViewController{
         loadItems()
         numberOfTries.textColor = #colorLiteral(red: 0.05645794421, green: 0.001110887388, blue: 0, alpha: 1)
         
-        weak var main = navigationController?.viewControllers[0] as? mainViewController
-        presentState = (main?.myNav?.currentStateAsString())!
+        weak var main = navigationController?.viewControllers[0] as? newMainViewController
+//        presentState = (main?.myNav?.currentStateAsString())!
         
         let filepath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(detailToDisplay.photoFilename)
         foodImage.image = UIImage(named: filepath)
@@ -176,12 +176,12 @@ class DetailViewController: UIViewController{
     
     @objc func delete(sender: UIButton!){
         
-        weak var main = navigationController?.viewControllers[0] as? mainViewController
+        weak var main = navigationController?.viewControllers[0] as? newMainViewController
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        switch presentState{
-            case "AddFoodViewController":
- 
+//        switch presentState{
+//            case "AddFoodViewController":
+//
                 let dateTried = detailToDisplay.triedOn
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -200,46 +200,46 @@ class DetailViewController: UIViewController{
                 }
 
                 main?.foodArray.remove(at: indexOfMyTimestamp!)
-                main?.mainCollectionView.reloadInputViews()
+                main?.myCollectionView.reloadInputViews()
                 
                 navigationController?.popViewController(animated: true)
 
-            case "SetTargetViewController":
-                var targetArray: [TargetFood]!
-                let dateTargetSet = detailToDisplay.triedOn
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let targetSetString = formatter.string(from: dateTargetSet)
-                
-                let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
-                do{
-                    try targetArray = context.fetch(request2)
-                }
-                catch{
-                    print("Error fetching data \(error)")
-                }
-                
-                let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
-                let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
-
-                context.delete(targetArray[indexOfMyTimestamp!])
-                do{
-                    try context.save()
-                }
-                catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                    let nserror = error as NSError
-                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-                }
-
-                main?.targetArray.remove(at: indexOfMyTimestamp!)
-                main?.mainCollectionView.reloadInputViews()
-                navigationController?.popViewController(animated: true)
-    
-            default:  break
-        }
+//            case "SetTargetViewController":
+//                var targetArray: [TargetFood]!
+//                let dateTargetSet = detailToDisplay.triedOn
+//                let formatter = DateFormatter()
+//                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//                let targetSetString = formatter.string(from: dateTargetSet)
+//
+//                let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+//                do{
+//                    try targetArray = context.fetch(request2)
+//                }
+//                catch{
+//                    print("Error fetching data \(error)")
+//                }
+//
+//                let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
+//                let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
+//
+//                context.delete(targetArray[indexOfMyTimestamp!])
+//                do{
+//                    try context.save()
+//                }
+//                catch {
+//                    // Replace this implementation with code to handle the error appropriately.
+//                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//
+//                    let nserror = error as NSError
+//                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                }
+//
+//                main?.targetArray.remove(at: indexOfMyTimestamp!)
+//                main?.mainCollectionView.reloadInputViews()
+//                navigationController?.popViewController(animated: true)
+//
+//            default:  break
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -276,9 +276,10 @@ class DetailViewController: UIViewController{
 
     }
     
+
     func tryItAgain(){
         
-        weak var main = navigationController?.viewControllers[0] as? mainViewController
+        weak var main = navigationController?.viewControllers[0] as? newMainViewController
         
         // passing the message along about what the original cell was
         let presentState = main?.myNav?.presentState
