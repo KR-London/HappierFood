@@ -269,15 +269,15 @@ class returnToOnboardingViewController: UIViewController {
             
             /// fade it in & out with RH picture
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
-                let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
+                let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut) {
                     self.block1.alpha = 1
                 }
                 animator.startAnimation()
             }
             
             /// fade it in & out with RH picture
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
-                let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+                let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut) {
                     self.block2.alpha = 1
                 }
                 animator.startAnimation()
@@ -285,8 +285,8 @@ class returnToOnboardingViewController: UIViewController {
             
             
             /// fade it in & out with RH picture
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
-                let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)){
+                let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut) {
                     self.b1.alpha = 1
                     self.b2.alpha = 1
                      self.b3.alpha = 1
@@ -311,8 +311,8 @@ class returnToOnboardingViewController: UIViewController {
     
         @objc func info(sender: UIButton!) {
               let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
-              let initialViewController = storyboard.instantiateViewController(withIdentifier: "p2" )
-              self.present(initialViewController, animated: true, completion: nil)
+              let initialViewController = storyboard.instantiateViewController(withIdentifier: "p0" )
+              self.present(initialViewController, animated: false, completion: nil)
         }
           
         @objc func motivate(sender: UIButton!) {

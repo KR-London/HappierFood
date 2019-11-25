@@ -17,7 +17,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
                 layout.scrollDirection = .horizontal
         
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collection.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
   
     
         return collection
@@ -28,7 +28,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         layout.scrollDirection = .horizontal
         
           let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-          collection.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+           collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
           return collection
       }()
     
@@ -164,7 +164,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     
     // MARK: Functions to manage the image input
       func setupLivePreview() {
-        let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8 as! CGFloat
+        let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8 
           videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
           videoPreviewLayer.videoGravity = .resizeAspectFill
           videoPreviewLayer.connection?.videoOrientation = .portrait
@@ -285,7 +285,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     
     //MARK: set up contstraints to lay them out
     func setUpSubview(){
-        let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8 as! CGFloat
+        let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8 
         let margins = view.layoutMarginsGuide
         //let fullScreen = view.
         
@@ -562,7 +562,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         nextViewController = storyboard.instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
         passData(dvc1: nextViewController)
         //myNav?.pushViewController(nextViewController, animated: true)
-        myNav = self.navigationController as! customNavigationController
+        myNav = (self.navigationController as! customNavigationController)
           /// this will nedd more nuance if I pull foods off the ribbons
         myNav?.presentState = .AddFoodViewController
         myNav?.pushViewController(nextViewController, animated: true)
@@ -586,7 +586,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
          nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
          passData(dvc1: nextViewController)
           //myNav?.pushViewController(nextViewController, animated: true)
-         myNav = self.navigationController as! customNavigationController
+         myNav = self.navigationController as? customNavigationController
         /// this will nedd more nuance if i pull foods off the ribbons
             myNav?.presentState = .SetTargetViewController
            myNav?.pushViewController(nextViewController, animated: true)

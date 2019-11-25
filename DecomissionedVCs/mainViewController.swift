@@ -139,7 +139,7 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
                            
                                let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
-                               let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
+                               let initialViewController = storyboard.instantiateViewController(withIdentifier: "p0" )
                                self.present(initialViewController, animated: true, completion: nil)
                            }
             

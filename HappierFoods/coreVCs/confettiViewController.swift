@@ -91,6 +91,7 @@ class confettiViewController: UIViewController {
             label.numberOfLines = 0
             label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
             label.text = text
+            label.textColor = #colorLiteral(red: 0.05645794421, green: 0.001110887388, blue: 0, alpha: 1)
             label.layoutIfNeeded()
             label.sizeToFit()
 

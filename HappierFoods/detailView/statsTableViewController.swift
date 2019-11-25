@@ -238,10 +238,7 @@ class statsTableViewController: UITableViewController {
     
     func numberOfWeeks() -> Int{
         var numberOfDays = Calendar.current.dateComponents([.day], from: loginRecord.first ?? Date(), to: loginRecord.last ?? Date()).day
-        print(numberOfDays)
-        
         if numberOfDays == 0 || numberOfDays == nil {numberOfDays = 1}
-        print(numberOfDays)
         return  Int(ceil(Double(numberOfDays!)/7.0))
     }
 

@@ -45,7 +45,8 @@ class mainCollectionViewCell: UICollectionViewCell {
         
         cellImage  = UIImageView()
         cellImage.contentMode = .scaleToFill
-        cellImage.cornerRadius = 5
+        cellImage.layer.cornerRadius = 5.0
+        cellImage.clipsToBounds = true
         self.addSubview(cellImage)
         instructionReminder =  UIButton(frame: CGRect(x:0, y:0, width:self.frame.width,height:self.frame.width))
         self.addSubview(instructionReminder)
@@ -60,12 +61,14 @@ class mainCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        
             super.layoutSubviews()
-             var frame = cellImage.frame
-                   frame.size.height = self.frame.size.height
-                   frame.size.width = self.frame.size.width
-                   frame.origin.x = 0
-                   frame.origin.y = 0
-                   cellImage.frame = frame
+        
+             var    frame = cellImage.frame
+                    frame.size.height = self.frame.size.height
+                    frame.size.width = self.frame.size.width
+                    frame.origin.x = 0
+                    frame.origin.y = 0
+                    cellImage.frame = frame
     }
 }

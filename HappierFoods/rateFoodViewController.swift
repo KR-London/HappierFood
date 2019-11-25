@@ -61,24 +61,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         loadItems()
         imagePickerView.delegate = self
         nameOfFood.delegate = self
-//        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-//        presentState = main!.myNav!.currentStateAsString()
- 
-//        imagePlaceholder = cropImageToSquare(imagePlaceholder)
-//        foodImage.image = imagePlaceholder
-//
-//        foodImage.translatesAutoresizingMaskIntoConstraints = false
-//        foodImage.contentMode = .scaleAspectFill
-//        foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
-//        foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-            formatImage()
-            nameOfFood.text = foodName
-    //   motivationText?.text = existingMotivationText
+        formatImage()
+        nameOfFood.text = foodName
         
         // MARK: Colour
-        
-    //    moveOnButton.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
         
         weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
         presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
@@ -108,7 +95,6 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         
         if segue.identifier == "faceSegue" {
             if let customFaceController = segue.destination as? customFaceARViewController{
-                // self.customFaceController = customFaceController
                 customFaceController.sliderFeedback( handler:  {[weak self] value in
                     self?.rating = Double(-1 + 2*value )
                 })
@@ -146,6 +132,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
              foodImage?.contentMode = .scaleAspectFill
              foodImage?.widthAnchor.constraint(equalToConstant: 100).isActive = true
              foodImage?.heightAnchor.constraint(equalToConstant: 100).isActive = true
+             foodImage?.cornerRadius = 5
     }
     
     // MARK: Save data
@@ -346,7 +333,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         if foodArray.count == 9{
             let nextViewController = storyboard.instantiateViewController(withIdentifier: "celebrationScreen" ) as! celebrationScreenViewController
             //nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.afterTryingaFoodScreen )
-            self.present(nextViewController, animated: true, completion: nil)
+            let myNav = self.navigationController
+            myNav?.pushViewController(nextViewController, animated: true)
             
             // wanna release navigation stack 
         }
@@ -482,7 +470,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func countOfThisFood() -> Int{
-        var countOfThisFood = Int()
+        let countOfThisFood = Int()
 
         if foodName == "" {
 //            if detailToDisplay.photoFilename.components(separatedBy: "/").last != "databasePlaceholderImage.001.jpeg" {

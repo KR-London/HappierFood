@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7T-DF-zg1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="140-ib-13p">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Extra Tutorial View Controller0-->
         <scene sceneID="BdA-Of-jWZ">
             <objects>
-                <viewController storyboardIdentifier="p1" id="v7T-DF-zg1" customClass="extraTutorialViewController0" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v7T-DF-zg1" customClass="extraTutorialViewController0" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aqM-E6-vrE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,10 +38,56 @@
             </objects>
             <point key="canvasLocation" x="-1059" y="-56"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="KzX-LW-Hzb">
+            <objects>
+                <viewController id="140-ib-13p" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YIy-Iq-dGK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Meu-tw-O1p">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="BJc-rU-rRB"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="K6m-MQ-yAD"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Cke-UC-LDp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efU-xI-aHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2762" y="581"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="7Nl-Nx-wfZ">
+            <objects>
+                <pageViewController storyboardIdentifier="pX" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oVZ-zU-tpd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lja-Tq-QUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2145" y="650"/>
+        </scene>
+        <!--Second Tutorial Page View Controller-->
+        <scene sceneID="YPt-BQ-EDs">
+            <objects>
+                <viewController storyboardIdentifier="p0" id="nlb-cX-Ncp" customClass="secondTutorialPageViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="p0" id="wct-PE-AdY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="84n-yZ-2bJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aeM-ih-u9s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1516" y="640"/>
+        </scene>
         <!--Extra Tutorial View Controller-->
         <scene sceneID="Ufa-EF-mE9">
             <objects>
-                <viewController storyboardIdentifier="p2" id="NgM-fz-uOS" customClass="extraTutorialViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NgM-fz-uOS" customClass="extraTutorialViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojz-sm-ohd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,5 +113,342 @@
             </objects>
             <point key="canvasLocation" x="-323.1884057971015" y="-56.25"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yx6-qh-9v5">
+            <objects>
+                <viewController storyboardIdentifier="p3" id="eaC-oa-NWZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oD0-xV-Qus">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.003.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="tM3-Cm-AtQ">
+                                <rect key="frame" x="31.5" y="44" width="351" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tM3-Cm-AtQ" secondAttribute="height" multiplier="329:767" id="DYQ-pS-ACr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tM3-Cm-AtQ" firstAttribute="top" secondItem="7Be-ic-2iB" secondAttribute="top" id="7jP-oP-utj"/>
+                            <constraint firstItem="tM3-Cm-AtQ" firstAttribute="centerY" secondItem="oD0-xV-Qus" secondAttribute="centerY" id="ACW-CM-LaW"/>
+                            <constraint firstItem="tM3-Cm-AtQ" firstAttribute="centerX" secondItem="oD0-xV-Qus" secondAttribute="centerX" id="ILg-B2-aaY"/>
+                            <constraint firstItem="7Be-ic-2iB" firstAttribute="bottom" secondItem="tM3-Cm-AtQ" secondAttribute="bottom" id="Ndx-ZW-MFS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Be-ic-2iB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zg-QY-KLM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="714.50892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tRX-Py-5Pv">
+            <objects>
+                <viewController storyboardIdentifier="p4" id="GNB-k9-OQ0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J5c-pk-ptK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.004.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="IFP-De-lw5">
+                                <rect key="frame" x="-355.5" y="44" width="1125" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IFP-De-lw5" secondAttribute="height" multiplier="1125:818" id="pDL-UH-6AI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IFP-De-lw5" firstAttribute="bottom" secondItem="lgd-bN-Bco" secondAttribute="bottom" id="BHK-Lo-yCu"/>
+                            <constraint firstItem="IFP-De-lw5" firstAttribute="top" secondItem="lgd-bN-Bco" secondAttribute="top" id="Iag-pC-a2P"/>
+                            <constraint firstItem="IFP-De-lw5" firstAttribute="top" secondItem="lgd-bN-Bco" secondAttribute="top" id="MjT-vi-wes"/>
+                            <constraint firstItem="IFP-De-lw5" firstAttribute="centerX" secondItem="J5c-pk-ptK" secondAttribute="centerX" id="T9x-pc-UuU"/>
+                            <constraint firstItem="IFP-De-lw5" firstAttribute="centerY" secondItem="J5c-pk-ptK" secondAttribute="centerY" id="csq-6I-VGZ"/>
+                            <constraint firstItem="lgd-bN-Bco" firstAttribute="bottom" secondItem="IFP-De-lw5" secondAttribute="bottom" id="jFW-LS-eGV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lgd-bN-Bco"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mox-XD-C9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231.8840579710145" y="714.50892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kRY-aq-ChW">
+            <objects>
+                <viewController storyboardIdentifier="p5" id="adS-Mt-B8A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bEg-Ny-gDD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ExtraTutorials.005.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="CEf-zS-2Kz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CEf-zS-2Kz" secondAttribute="height" multiplier="207:409" id="43A-vx-YgX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CEf-zS-2Kz" firstAttribute="bottom" secondItem="QMO-Zv-iWj" secondAttribute="bottom" id="ScS-Gf-c4A"/>
+                            <constraint firstItem="CEf-zS-2Kz" firstAttribute="top" secondItem="QMO-Zv-iWj" secondAttribute="top" id="gvH-tF-jSP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QMO-Zv-iWj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNZ-Ed-TDh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="715"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3D8-re-Ydb">
+            <objects>
+                <viewController storyboardIdentifier="p6" id="biY-TC-5aB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wUG-r4-DsO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.006.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-jM-nr9">
+                                <rect key="frame" x="22" y="44" width="370" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PKD-jM-nr9" secondAttribute="height" multiplier="352:779" id="fFZ-ot-itz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PKD-jM-nr9" firstAttribute="top" secondItem="wqc-aW-DpW" secondAttribute="top" id="TBJ-9c-vkd"/>
+                            <constraint firstItem="wqc-aW-DpW" firstAttribute="bottom" secondItem="PKD-jM-nr9" secondAttribute="bottom" id="XvR-nL-4vI"/>
+                            <constraint firstItem="PKD-jM-nr9" firstAttribute="centerX" secondItem="wUG-r4-DsO" secondAttribute="centerX" id="aEu-Hv-7bf"/>
+                            <constraint firstItem="PKD-jM-nr9" firstAttribute="centerY" secondItem="wUG-r4-DsO" secondAttribute="centerY" id="kD9-sM-5Rb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wqc-aW-DpW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Upc-u4-m1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2195.6521739130435" y="868.52678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xrP-VC-BP1">
+            <objects>
+                <viewController storyboardIdentifier="p7" id="Ikg-Uh-8hY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a4y-lr-9U6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.007.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="nqT-fb-B1d">
+                                <rect key="frame" x="29" y="44" width="356" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nqT-fb-B1d" secondAttribute="height" multiplier="331:760" id="RD0-zU-nqd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3yu-1X-gXI" firstAttribute="bottom" secondItem="nqT-fb-B1d" secondAttribute="bottom" id="Xa3-dp-hhN"/>
+                            <constraint firstItem="nqT-fb-B1d" firstAttribute="top" secondItem="3yu-1X-gXI" secondAttribute="top" id="igX-8f-R0n"/>
+                            <constraint firstItem="nqT-fb-B1d" firstAttribute="centerY" secondItem="a4y-lr-9U6" secondAttribute="centerY" id="uN6-cv-wSp"/>
+                            <constraint firstItem="nqT-fb-B1d" firstAttribute="centerX" secondItem="a4y-lr-9U6" secondAttribute="centerX" id="x24-49-eXL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3yu-1X-gXI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u55-Sp-D9E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837.68115942029" y="868.52678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UzW-mx-KAF">
+            <objects>
+                <viewController storyboardIdentifier="p8" id="BPK-PY-Mat" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cmh-9k-6BD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.008.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-HV-Ol4">
+                                <rect key="frame" x="33.5" y="44" width="347" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EmX-HV-Ol4" secondAttribute="height" multiplier="53:125" id="rsG-B9-xnU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EmX-HV-Ol4" firstAttribute="centerX" secondItem="Cmh-9k-6BD" secondAttribute="centerX" id="0K0-gS-U70"/>
+                            <constraint firstItem="Kjg-LB-3zo" firstAttribute="bottom" secondItem="EmX-HV-Ol4" secondAttribute="bottom" id="D96-CM-VZG"/>
+                            <constraint firstItem="EmX-HV-Ol4" firstAttribute="centerY" secondItem="Cmh-9k-6BD" secondAttribute="centerY" id="O0p-6D-2dl"/>
+                            <constraint firstItem="EmX-HV-Ol4" firstAttribute="top" secondItem="Kjg-LB-3zo" secondAttribute="top" id="Vkz-S1-uh6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kjg-LB-3zo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uj2-PW-K1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3466.666666666667" y="868.52678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QiZ-lH-JCE">
+            <objects>
+                <viewController storyboardIdentifier="p11" id="OY7-kn-adS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BIf-t7-i2x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.011.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-SB-uvc">
+                                <rect key="frame" x="28" y="44" width="358" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wec-SB-uvc" secondAttribute="height" multiplier="166:379" id="PcK-vX-lwy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wec-SB-uvc" firstAttribute="centerY" secondItem="BIf-t7-i2x" secondAttribute="centerY" id="GLp-eA-gzc"/>
+                            <constraint firstItem="Wec-SB-uvc" firstAttribute="centerX" secondItem="BIf-t7-i2x" secondAttribute="centerX" id="Uq2-PX-OTR"/>
+                            <constraint firstItem="kRE-lb-WVr" firstAttribute="bottom" secondItem="Wec-SB-uvc" secondAttribute="bottom" id="XOQ-k5-BNW"/>
+                            <constraint firstItem="Wec-SB-uvc" firstAttribute="top" secondItem="kRE-lb-WVr" secondAttribute="top" id="wWj-w2-dLy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kRE-lb-WVr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="idA-YW-BMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5511.594202898551" y="868.52678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7mx-mz-eSf">
+            <objects>
+                <viewController storyboardIdentifier="p10" id="prn-KO-ICW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ZG-V7-2re">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.010.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="vSs-ic-hzC">
+                                <rect key="frame" x="23" y="44" width="368" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vSs-ic-hzC" secondAttribute="height" multiplier="9:20" id="ED2-jK-D00"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vSs-ic-hzC" firstAttribute="centerX" secondItem="3ZG-V7-2re" secondAttribute="centerX" id="P2F-2j-cSr"/>
+                            <constraint firstItem="syp-BX-elk" firstAttribute="bottom" secondItem="vSs-ic-hzC" secondAttribute="bottom" id="W5t-Js-PRy"/>
+                            <constraint firstItem="vSs-ic-hzC" firstAttribute="centerY" secondItem="3ZG-V7-2re" secondAttribute="centerY" id="c9e-Ck-1wo"/>
+                            <constraint firstItem="vSs-ic-hzC" firstAttribute="top" secondItem="syp-BX-elk" secondAttribute="top" id="e1x-B1-0fH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="syp-BX-elk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4q-2U-AJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4798.5507246376819" y="868.52678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TZX-Jf-xIg">
+            <objects>
+                <viewController storyboardIdentifier="p9" id="GwS-Q8-Ch2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRV-KN-HtS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.009.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="viW-lF-0sD">
+                                <rect key="frame" x="31" y="44" width="352" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="viW-lF-0sD" secondAttribute="height" multiplier="108:251" id="MPZ-SM-cYh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="viW-lF-0sD" firstAttribute="centerY" secondItem="qRV-KN-HtS" secondAttribute="centerY" id="8wQ-pI-0fs"/>
+                            <constraint firstItem="ffQ-H6-dOk" firstAttribute="bottom" secondItem="viW-lF-0sD" secondAttribute="bottom" id="Fzt-fY-1Jg"/>
+                            <constraint firstItem="viW-lF-0sD" firstAttribute="top" secondItem="ffQ-H6-dOk" secondAttribute="top" id="LZq-py-ETd"/>
+                            <constraint firstItem="viW-lF-0sD" firstAttribute="centerX" secondItem="qRV-KN-HtS" secondAttribute="centerX" id="sVx-s5-eHi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ffQ-H6-dOk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rkc-GW-Yxc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4121.739130434783" y="868.52678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jVN-J4-jgS">
+            <objects>
+                <viewController storyboardIdentifier="p1" id="EEH-Cp-98x" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ddx-Lx-Fx0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.001.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="ooY-qS-sNz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ooY-qS-sNz" secondAttribute="height" multiplier="207:409" id="2ck-H1-gdZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ooY-qS-sNz" firstAttribute="centerX" secondItem="ddx-Lx-Fx0" secondAttribute="centerX" id="8aV-k4-aWx"/>
+                            <constraint firstItem="ooY-qS-sNz" firstAttribute="trailing" secondItem="BBE-3C-Rsx" secondAttribute="trailing" id="Q09-Gx-2k9"/>
+                            <constraint firstItem="BBE-3C-Rsx" firstAttribute="trailing" secondItem="ooY-qS-sNz" secondAttribute="trailing" id="YkE-oW-Pvv"/>
+                            <constraint firstItem="ooY-qS-sNz" firstAttribute="top" secondItem="BBE-3C-Rsx" secondAttribute="top" id="Z1e-jo-7Aa"/>
+                            <constraint firstItem="BBE-3C-Rsx" firstAttribute="bottom" secondItem="ooY-qS-sNz" secondAttribute="bottom" id="hGB-hY-sdv"/>
+                            <constraint firstItem="ooY-qS-sNz" firstAttribute="leading" secondItem="BBE-3C-Rsx" secondAttribute="leading" id="oIR-Hc-bQ5"/>
+                            <constraint firstItem="ooY-qS-sNz" firstAttribute="leading" secondItem="BBE-3C-Rsx" secondAttribute="leading" id="ud1-lf-WOV"/>
+                            <constraint firstItem="ooY-qS-sNz" firstAttribute="centerY" secondItem="ddx-Lx-Fx0" secondAttribute="centerY" id="vwD-yl-LMR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BBE-3C-Rsx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D45-uH-upS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713.04347826086962" y="714.50892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JCU-Dh-nrW">
+            <objects>
+                <viewController storyboardIdentifier="p2" id="KrA-1b-cM7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gma-H0-tW0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.002.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="5JU-Gq-NOR">
+                                <rect key="frame" x="27.5" y="0.0" width="359" height="896"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5JU-Gq-NOR" secondAttribute="height" multiplier="375:812" id="RMR-EQ-UgS"/>
+                                    <constraint firstAttribute="width" secondItem="5JU-Gq-NOR" secondAttribute="height" multiplier="140:349" id="eef-HQ-DoV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5JU-Gq-NOR" firstAttribute="top" secondItem="Gma-H0-tW0" secondAttribute="top" id="Vlh-rn-9pP"/>
+                            <constraint firstItem="5JU-Gq-NOR" firstAttribute="centerY" secondItem="Gma-H0-tW0" secondAttribute="centerY" id="Vn5-Tg-jsv"/>
+                            <constraint firstAttribute="bottom" secondItem="5JU-Gq-NOR" secondAttribute="bottom" id="X23-3K-5p2"/>
+                            <constraint firstItem="5JU-Gq-NOR" firstAttribute="centerX" secondItem="Gma-H0-tW0" secondAttribute="centerX" id="j6Y-gK-l3U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PfG-3r-5Ab"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z2h-AT-FHz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49.275362318840585" y="714.50892857142856"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ExtraTutorials.001.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.002.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.003.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.004.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.005.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.006.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.007.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.008.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.009.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.010.jpeg" width="1125" height="2436"/>
+        <image name="ExtraTutorials.011.jpeg" width="1125" height="2436"/>
+    </resources>
 </document>

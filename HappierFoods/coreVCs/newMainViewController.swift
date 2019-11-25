@@ -71,7 +71,7 @@ class newMainViewController: UIViewController {
         
         
             //  self.present(nextViewController, animated: true, completion: nil)
-        
+        loadItems()
         setUpSubview()
         
         // MARK: UI customisations
@@ -88,13 +88,14 @@ class newMainViewController: UIViewController {
         
         navigationController?.popToRootViewController(animated: false)
         myNav = navigationController as? customNavigationController
+    
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //              let nextViewController = storyboard.instantiateViewController(withIdentifier: "newDataInputViewController" )
 //        myNav?.pushViewController(nextViewController, animated: true)
 //        
         setUpNavigationBarItems()
-        loadItems()
+       
 
         // initialise celebration status
         let dateNow = Date().timeIntervalSince1970
@@ -162,17 +163,11 @@ class newMainViewController: UIViewController {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
                            
-                               let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
-                               let initialViewController = storyboard.instantiateViewController(withIdentifier: "p1" )
-                               self.present(initialViewController, animated: true, completion: nil)
-                           }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
-                
-                    let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
-                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "p2" )
-                    self.present(initialViewController, animated: true, completion: nil)
-                }
+              let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
+              let initialViewController = storyboard.instantiateViewController(withIdentifier: "p0" ) as! secondTutorialPageViewController
+                initialViewController.firstTry = true
+               self.present(initialViewController, animated: false, completion: nil)
+          }
             case .ResetDataAtTheStartOfNewWeek : //publicInformationBroadcast(didTheyReachTheirTarget: false)
                 print("Should be a comiseration message here")
             case .ReturnFromCelebrationScreen :
@@ -189,6 +184,7 @@ class newMainViewController: UIViewController {
     //MARK: Layout subroutines
         func setUpNavigationBarItems(){
             navigationItem.title = "HappyFoods"
+            //navigationItem.titleView?.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
             let navBarHeight = navigationController?.navigationBar.frame.height
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Stats", style: .plain, target: self, action: #selector(goStats))
@@ -201,7 +197,7 @@ class newMainViewController: UIViewController {
     
     func setUpSubview(){
         let margins = view.layoutMarginsGuide
-        let myNav = self.navigationController
+       // let myNav = self.navigationController
         
        
         
@@ -211,7 +207,7 @@ class newMainViewController: UIViewController {
         happyButton.translatesAutoresizingMaskIntoConstraints = false
         happyButton.addTarget(self, action: #selector(happyCoachingSegue), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            happyButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0.5*bubbleHeight),
+            happyButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0.3*bubbleHeight),
             happyButton.heightAnchor.constraint(equalToConstant: bubbleHeight),
             happyButton.widthAnchor.constraint(equalToConstant: bubbleHeight),
             happyButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
@@ -226,22 +222,24 @@ class newMainViewController: UIViewController {
             bubbleBox.leadingAnchor.constraint(equalTo: happyButton.trailingAnchor)
         ])
         
+        if foodArray.count > 15{
         view.addSubview(addFoodButton)
         addFoodButton.translatesAutoresizingMaskIntoConstraints = false
         addFoodButton.addTarget(self, action: #selector(addFood), for: .touchUpInside)
         NSLayoutConstraint.activate([
             addFoodButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
-            addFoodButton.heightAnchor.constraint(equalToConstant: bubbleHeight),
+            addFoodButton.heightAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8),
             addFoodButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
-            addFoodButton.widthAnchor.constraint(equalToConstant: bubbleHeight)
+            addFoodButton.widthAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8)
         ])
+        }
 
         view.addSubview(statsView)
         statsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             statsView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
             statsView.heightAnchor.constraint(equalToConstant: bubbleHeight),
-            statsView.trailingAnchor.constraint(equalTo: addFoodButton.leadingAnchor),
+            statsView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -bubbleHeight ),
             statsView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
         ])
         
@@ -262,6 +260,8 @@ class newMainViewController: UIViewController {
             myCollectionView.heightAnchor.constraint(equalTo: margins.widthAnchor),
             myCollectionView.widthAnchor.constraint(equalTo: margins.widthAnchor)
         ])
+        
+     
         
         confettiView = SAConfettiView()
                         // Create confetti view
@@ -301,6 +301,9 @@ class newMainViewController: UIViewController {
         label.numberOfLines = 0
         label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
         label.text = text
+        label.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+        label.textAlignment = .center
+
         label.layoutIfNeeded()
         label.sizeToFit()
 
@@ -501,7 +504,8 @@ class newMainViewController: UIViewController {
     func launchExtraTutorial(){
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
                 let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "p2" )
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "p0" ) as! secondTutorialPageViewController
+                initialViewController.firstTry = true
                 self.present(initialViewController, animated: true, completion: nil)
             }    }
     
@@ -597,10 +601,19 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
         
         var collectionViewSize = 16
             
-            if foodArray.count  > 16
+            if foodArray.count  > 15
             {
                 collectionViewSize = foodArray.count
             }
+            else{
+                if indexPath.row == 15{
+                    let label = UILabel()
+                    label.frame = cell.frame
+                    label.text = "+"
+                    label.alpha = 0.6
+                    cell.addSubview(label)
+                }
+        }
         
             if foodArray != nil {
                     if indexPath.row < foodArray.count {
@@ -628,6 +641,11 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
                     {
                         cell.cellImage.isHidden = true
                         cell.instructionReminder.addTarget(self, action: #selector(addFood), for: .touchUpInside)
+                          if indexPath.row == 15{
+                            cell.instructionReminder.titleLabel!.text = "+"
+                            cell.instructionReminder.titleLabel?.tintColor = #colorLiteral(red: 0.05645794421, green: 0.001110887388, blue: 0, alpha: 1)
+                            cell.backgroundColor?.withAlphaComponent(0.5)
+                                      }
 
                     }
                 }

@@ -20,7 +20,8 @@ struct happySays{
     let generalSupportiveMessages =
             [
                 "Trying new foods is hard - you're doing great!",
-                "You can do this!"
+                "You can do this!",
+                "It’s ok if you can’t eat something, everything will be alright"
             ]
     
     let celebrateRetryingMessages =   [   "It can take many tries to accept a new food",
@@ -52,7 +53,7 @@ struct happySays{
     func identifyContext(foodName: String?, tryNumber: Int?, logonNumber: Int?, screen: screen) -> String{
         if [5, 10, 15, 20, 25].contains(tryNumber)
         {
-            return celebrateRetrying(tryNumber: tryNumber!, name: foodName ?? "this food")
+            return celebrateRetrying(tryNumber: tryNumber!, name: foodName ?? "this food")
         }
         if [5, 10, 15, 20, 25].contains(logonNumber)
         {
@@ -98,3 +99,24 @@ enum screen{
     case afterSettingTargetScreen
     case coachingScreen
 }
+
+//Eg child indicates they are having a difficult food day/moment
+//App then says something like:
+//“oof!” (my teen’s slang suggestion),
+//“This is hard for you (acknowledgement not platitudes) but we can try some things together.”
+//Then says: “would you like to try a sensory tool”?
+//Then random suggestion to:
+//Smell, touch, lick, chew but not swallow, a food etc
+//And a rating of how it went. These ratings to be logged to see progress over time.
+//Perhaps even an info screen later on when your app is up and running about how sensory experiences help and how we need lots of them to feel safe with foods.
+
+//You can play on the word “chain” and make jokes about “what rhymes with...” or something like that. The idea being to form a perception in the child’s mind about things that link together, so that they can start seeing the connection between foods and do food chaining.
+//Then you can do the same as above but add food chaining as an option.
+//Eg “would you like to build a food chain with me? Or “let’s build a food chain”
+//The app then instructs the child to think of a food they like and then to think of something almost like it, made from the same ingredients or with the same sensory consistency. The app then offers the child the the same sensory strategies as above and the same rating and logging options.
+//Christelle Gill I’ll also add that there needs to be humour as just a logging tool is pretty disheartening if you have nothing to log. And they lose interest in the app very quickly that way. Bad days need strategies to help them feel that a bad day is just one day, not life.
+//When you are up and running you could throw some CBT in as options too. Things like examining thoughts: are they real or perceived (eg this food will make me sick - what evidence is there or is it your mind playing tricks on you), turning negative put downs into motivation etc. A good one for this is to direct the negatives they self-talk to an inanimate object - it soon becomes ridiculous and then humour can be used to turn negative into positive. Or they can “feed” their character in the app their own negative thoughts and it throws back positive phrases back at them. If they feed it positives it starts to glow or something.
+//I don’t know how that would translate into some digital but we had a pet rock who could only say positive things. We would feed it negative self talk and then imagined it giving off positive words. It was a “sad words muncher” who pooped happy thought rainbows - bit graphic and odd for your app but that was our thing 😆 🤷🏻‍♀️
+
+
+//u/negasonictracer
