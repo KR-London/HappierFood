@@ -39,6 +39,8 @@ class settingsViewController: UIViewController {
              self.deleteAllData("TriedFood")
              self.deleteAllData("HistoryTriedFoods")
              self.deleteAllData("Logons")
+            
+            UserDefaults.standard.removeObject(forKey: "loginRecord")
              self.returnToMain()
             
         }))

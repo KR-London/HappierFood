@@ -20,6 +20,26 @@ extension UIImage {
         defer { UIGraphicsEndImageContext() }
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+    
+    func cropImageToSquare() -> UIImage {
+        let orientation: UIDeviceOrientation = UIDevice.current.orientation
+        var imageWidth = self.size.width
+        var imageHeight = self.size.height
+        switch orientation {
+        case .landscapeLeft, .landscapeRight:
+            // Swap width and height if orientation is landscape
+            imageWidth = self.size.height
+            imageHeight = self.size.width
+        default:
+            break
+        }
+        
+        // The center coordinate along Y axis
+        let rcy = imageHeight * 0.5
+        let rect = CGRect(x: rcy - imageWidth * 0.5, y: 0, width: imageWidth, height: imageWidth)
+        let imageRef = self.cgImage?.cropping(to: rect)
+        return UIImage(cgImage: imageRef!, scale: 1.0, orientation: self.imageOrientation)
+    }
 
     func pixelBuffer() -> CVPixelBuffer? {
 

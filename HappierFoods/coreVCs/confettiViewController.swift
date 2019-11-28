@@ -33,13 +33,29 @@ class confettiViewController: UIViewController {
             button.addTarget(self, action: #selector(goHome), for: .touchUpInside)
           return button
       }()
+    
+    var imagePlaceholder = UIImage()
+    
+    lazy var foodImage: UIImageView = {
+        let image = UIImageView()
+        return image
+    }()
+    
+    lazy var foodName: UILabel = {
+        let label = UILabel()
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
-        showMessage(text: message ?? "That's fantastic progress!")
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showMessage(text: message ?? "That's fantastic progress!")
     }
     
     func setUpSubview(){
@@ -78,6 +94,18 @@ class confettiViewController: UIViewController {
             bubbleBox.bottomAnchor.constraint(equalTo: happyButton.topAnchor, constant: 10)
         ])
 
+        if imagePlaceholder != nil{
+            foodImage.image = imagePlaceholder
+            view.addSubview(foodImage)
+            foodImage.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                    foodImage.bottomAnchor.constraint(lessThanOrEqualTo: bubbleBox.topAnchor, constant: -10),
+                    foodImage.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                    foodImage.topAnchor.constraint(greaterThanOrEqualTo: margins.topAnchor, constant: 30),
+                    foodImage.widthAnchor.constraint(lessThanOrEqualTo: margins.widthAnchor, multiplier: 0.6),
+                    foodImage.heightAnchor.constraint(equalTo: foodImage.widthAnchor)
+                ])
+        }
 
 }
     
@@ -85,7 +113,7 @@ class confettiViewController: UIViewController {
         
             let myNav = self.navigationController
             
-           let bubbleHeight = 0.35*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
+            let bubbleHeight = 0.35*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
             let label =  UILabel()
             
             label.numberOfLines = 0
@@ -103,7 +131,7 @@ class confettiViewController: UIViewController {
             label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 50),
                                       height: ceil(bubbleHeight))
 
-            let bubbleSize = CGSize(width: label.frame.width + 18,
+            let bubbleSize = CGSize(width: label.frame.width + 10,
                                          height: label.frame.height + 20)
 
             let bubbleView = BubbleView()
@@ -120,13 +148,24 @@ class confettiViewController: UIViewController {
             NSLayoutConstraint.activate([
                 bubbleView.bottomAnchor.constraint(lessThanOrEqualTo: happyButton.topAnchor, constant: 10),
                 bubbleView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor),
-                bubbleView.leadingAnchor.constraint(lessThanOrEqualTo: happyButton.trailingAnchor)
+                bubbleView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 10),
+                bubbleView.centerXAnchor.constraint(equalTo: bubbleBox.centerXAnchor)
                ])
 
         }
     
     @objc func happyWobble(){
         print("Make happy wobble here")
+    }
+    
+    func formatImage(){
+        imagePlaceholder = imagePlaceholder.cropImageToSquare()
+        foodImage.image = imagePlaceholder
+        foodImage.translatesAutoresizingMaskIntoConstraints = false
+        foodImage.contentMode = .scaleAspectFill
+        foodImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        foodImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        foodImage.cornerRadius = 5
     }
     
     @objc func goHome(){

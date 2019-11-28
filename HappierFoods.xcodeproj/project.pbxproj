@@ -10,6 +10,7 @@
 		05E5E1247D6D5C8D9794E82D /* libPods-HappierFoods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CA5319AE70667C7BA207FC /* libPods-HappierFoods.a */; };
 		440282CF238B9EC60088B380 /* newDataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440282CE238B9EC60088B380 /* newDataInputViewController.swift */; };
 		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
+		4405869F238D686300398E5A /* challengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405869E238D686300398E5A /* challengeViewController.swift */; };
 		440758B5237B5265007C8153 /* newMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440758B4237B5264007C8153 /* newMainViewController.swift */; };
 		44080752238A698200AEA9CE /* ExtraTutorials.011.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44080747238A698200AEA9CE /* ExtraTutorials.011.jpeg */; };
 		44080753238A698200AEA9CE /* ExtraTutorials.007.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44080748238A698200AEA9CE /* ExtraTutorials.007.jpeg */; };
@@ -261,6 +262,7 @@
 		1281EC49C6CA870A8B5F097E /* Pods-HappierFoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappierFoods.debug.xcconfig"; path = "Target Support Files/Pods-HappierFoods/Pods-HappierFoods.debug.xcconfig"; sourceTree = "<group>"; };
 		440282CE238B9EC60088B380 /* newDataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = newDataInputViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/coreVCs/newDataInputViewController.swift; sourceTree = "<absolute>"; };
 		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
+		4405869E238D686300398E5A /* challengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeViewController.swift; sourceTree = "<group>"; };
 		440758B4237B5264007C8153 /* newMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newMainViewController.swift; sourceTree = "<group>"; };
 		44080747238A698200AEA9CE /* ExtraTutorials.011.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.011.jpeg; sourceTree = "<group>"; };
 		44080748238A698200AEA9CE /* ExtraTutorials.007.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.007.jpeg; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				4410083F22E4A0BB0096E47F /* Onboarding.storyboard */,
+				4405869E238D686300398E5A /* challengeViewController.swift */,
 				448F081A236AC954002B96BE /* settingsViewController.swift */,
 				44A5AB84235CA351009C0F8A /* resourcesViewController.swift */,
 				442D5584235CBF9C00E9C8EB /* web.swift */,
@@ -1290,6 +1293,7 @@
 				441AF0042383F85100B6DCAB /* newDataInputViewController.swift in Sources */,
 				44B52FF322DA18A400CF730D /* Onboarding4ViewController.swift in Sources */,
 				44B52FEB22DA10AF00CF730D /* Onboarding3ViewController.swift in Sources */,
+				4405869F238D686300398E5A /* challengeViewController.swift in Sources */,
 				442113D0229961BB00CBE431 /* CoreGraphicsExtensions.swift in Sources */,
 				4449A564236965EB0070099F /* TableViewCell.swift in Sources */,
 				44BE3BC1225673F60090BB5F /* FaceViewController.swift in Sources */,
@@ -1478,7 +1482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1501,7 +1505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

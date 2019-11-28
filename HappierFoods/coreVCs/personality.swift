@@ -21,7 +21,8 @@ struct happySays{
             [
                 "Trying new foods is hard - you're doing great!",
                 "You can do this!",
-                "It’s ok if you can’t eat something, everything will be alright"
+                "It’s ok if you can’t eat something, everything will be alright",
+                "Remember to breathe"
             ]
     
     let celebrateRetryingMessages =   [   "It can take many tries to accept a new food",
@@ -31,7 +32,8 @@ struct happySays{
               ]
     let celebrateUsageMessages =   [   "Yeahh - what a streak!!!",
         "Hot stuff!",
-        "Keep up the good work!"
+        "Keep up the good work!",
+        "You're doing this for you!"
     ]
     
     let vegetableMessages =   [   "Congratulations, you're really looking after yourself by trying that food",
@@ -41,7 +43,7 @@ struct happySays{
       ]
     
     let mixedFoodMessages =   [   "These foods will make eating with friends and family easier for you",
-          "Keep going like this, and restaurant menus will be a joy for you"
+          "Keep going like this, and restaurant menus will be a joy for you", "Mushy food! That's brave"
       ]
     
     var foodName: String?
@@ -98,6 +100,7 @@ enum screen{
     case afterTryingaFoodScreen
     case afterSettingTargetScreen
     case coachingScreen
+    case challengeScreen
 }
 
 //Eg child indicates they are having a difficult food day/moment

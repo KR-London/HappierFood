@@ -402,7 +402,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           if collectionView == self.triesCollectionView
               {
-                return (foodArray?.count ?? 0) + (historyArray?.count ?? 0)
+                return min((foodArray?.count ?? 0) + (historyArray?.count ?? 0), 20)
               }
         
         if collectionView == self.targetsCollectionView
@@ -602,7 +602,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
             func loadItems(){
                 let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
                 do{
-                    try foodArray = context.fetch(request)
+                    try foodArray = context.fetch(request).reversed()
                 }
                 catch{
                     print("Error fetching data \(error)")
@@ -610,7 +610,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
 
                 let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
                 do{
-                    try targetArray = context.fetch(request2)
+                    try targetArray = context.fetch(request2).reversed()
                 }
                 catch{
                     print("Error fetching data \(error)")
@@ -626,7 +626,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                 
                 let request4 : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
                              do{
-                                 try historyArray = context.fetch(request4)
+                                try historyArray = context.fetch(request4).reversed()
                              }
                              catch{
                                  print("Error fetching data \(error)")

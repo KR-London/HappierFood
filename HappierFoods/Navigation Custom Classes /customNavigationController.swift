@@ -55,26 +55,26 @@ class customNavigationController: UINavigationController {
         UIBarButtonItem.appearance().setTitleTextAttributes(
         [
             //UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
-            NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!,
+            NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )!,
             NSAttributedString.Key.foregroundColor : UIColor.black,
         ], for: .normal )
 
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
               [
-                  NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!,
+                  NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )!,
                   NSAttributedString.Key.foregroundColor : UIColor.black,
         ], for: .disabled )
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
               [
-                  NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!,
+                  NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )!,
                   NSAttributedString.Key.foregroundColor : UIColor.black,
         ], for: .reserved )
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
                      [
-                         NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )!,
+                         NSAttributedString.Key.font : UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )!,
                          NSAttributedString.Key.foregroundColor : UIColor.white,
         ], for: .application )
     }

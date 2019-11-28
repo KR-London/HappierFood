@@ -14,6 +14,9 @@ class HistoryCollectionViewCell: UICollectionViewCell {
     
     public func displayContent(image: String){
         foodImage.image = UIImage(named: image)
+        foodImage.layer.cornerRadius = 5.0
+        foodImage.translatesAutoresizingMaskIntoConstraints = false
+        foodImage.clipsToBounds = true
     }
     func setup(){
         //cellImage.image

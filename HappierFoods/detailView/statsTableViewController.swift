@@ -97,7 +97,7 @@ class statsTableViewController: UITableViewController {
             }
         }
         
-        return maxTriedFoods.randomElement()!
+        return maxTriedFoods.randomElement() ?? "No tries yet"
         
     }
     

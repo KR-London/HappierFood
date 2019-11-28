@@ -67,8 +67,10 @@ class historyTableViewController: UITableViewController {
         let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(record.1 ?? "1.png")
         
         cell.displayContent(image: fileToLoad)
-        
+        cell.imageView?.layer.cornerRadius = 5.0
+        cell.imageView?.clipsToBounds = true
        // print(foods[indexPath.row].1)
+        cell.imageView?.cornerRadius = 5.0
         
         cell.valueOfStatistic.text = ""
         

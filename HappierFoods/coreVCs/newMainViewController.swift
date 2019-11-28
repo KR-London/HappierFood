@@ -75,8 +75,8 @@ class newMainViewController: UIViewController {
         setUpSubview()
         
         // MARK: UI customisations
-        showMessage()
-        displayStats()
+       // showMessage()
+       displayStats()
 
         
         if  UserDefaults.standard.bool(forKey: "launchedBefore") == false
@@ -114,6 +114,12 @@ class newMainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        showMessage()
+        
+        if foodArray.count<16 { addFoodButton.isHidden = true}
+        
+        
         if defaults.bool(forKey: "Celebration Status") == true {
             view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
       
@@ -134,12 +140,29 @@ class newMainViewController: UIViewController {
                //self.performSegue(withIdentifier: "celebrationSegue", sender: nil )
             }
         }
+        
+        if foodArray.count > 15{
+             let margins = view.layoutMarginsGuide
+            view.addSubview(addFoodButton)
+            addFoodButton.translatesAutoresizingMaskIntoConstraints = false
+              addFoodButton.addTarget(self, action: #selector(addFood), for: .touchUpInside)
+              NSLayoutConstraint.activate([
+                  addFoodButton.topAnchor.constraint(equalTo: myCollectionView.bottomAnchor, constant: 8),
+                  addFoodButton.heightAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8),
+                  addFoodButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -8),
+                  addFoodButton.widthAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8)
+              ])
+        }
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
       ////  self.mainCollectionView.reloadInputViews()
         //happyIcon()
+       // bubbleBox.subviews.removeAll()
+       
         
         if isRainingConfetti == true{
             confettiView.isHidden = false
@@ -218,21 +241,21 @@ class newMainViewController: UIViewController {
         NSLayoutConstraint.activate([
             bubbleBox.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
             bubbleBox.heightAnchor.constraint(equalToConstant: bubbleHeight),
-            bubbleBox.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
+            bubbleBox.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -40),
             bubbleBox.leadingAnchor.constraint(equalTo: happyButton.trailingAnchor)
         ])
         
-        if foodArray.count > 15{
-        view.addSubview(addFoodButton)
-        addFoodButton.translatesAutoresizingMaskIntoConstraints = false
-        addFoodButton.addTarget(self, action: #selector(addFood), for: .touchUpInside)
-        NSLayoutConstraint.activate([
-            addFoodButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
-            addFoodButton.heightAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8),
-            addFoodButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
-            addFoodButton.widthAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8)
-        ])
-        }
+//        if foodArray.count > 15{
+//        view.addSubview(addFoodButton)
+//        addFoodButton.translatesAutoresizingMaskIntoConstraints = false
+//        addFoodButton.addTarget(self, action: #selector(addFood), for: .touchUpInside)
+//        NSLayoutConstraint.activate([
+//            addFoodButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
+//            addFoodButton.heightAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8),
+//            addFoodButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+//            addFoodButton.widthAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8)
+//        ])
+//        }
 
         view.addSubview(statsView)
         statsView.translatesAutoresizingMaskIntoConstraints = false
@@ -292,17 +315,18 @@ class newMainViewController: UIViewController {
     func showMessage() {
         
         let happyUtterance = happySays()
-        let logonCount = UserDefaults.standard.object(forKey: "loginRecord") as! [ Date ]
+        let logonCount = UserDefaults.standard.object(forKey: "loginRecord") as? [ Date ]
     
-        let text = happyUtterance.identifyContext(foodName: nil, tryNumber: nil, logonNumber: logonCount.count, screen: .mainScreen)
+        let text = happyUtterance.identifyContext(foodName: nil, tryNumber: nil, logonNumber: logonCount?.count ?? 0 , screen: .mainScreen)
         let bubbleHeight = 0.3*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
         let label =  UILabel()
         
         label.numberOfLines = 0
-        label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
+        label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18)
         label.text = text
         label.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
 
         label.layoutIfNeeded()
         label.sizeToFit()
@@ -312,10 +336,10 @@ class newMainViewController: UIViewController {
                                             options: .usesLineFragmentOrigin,
                                             attributes: [.font: label.font],
                                             context: nil)
-        label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 30),
+        label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 50),
                                   height: ceil(bubbleHeight))
 
-        let bubbleSize = CGSize(width: label.frame.width + 18,
+        let bubbleSize = CGSize(width: label.frame.width  ,
                                      height: label.frame.height + 20)
 
         let bubbleView = BubbleView()
@@ -327,12 +351,13 @@ class newMainViewController: UIViewController {
 
         label.center = bubbleView.center
         bubbleView.addSubview(label)
-        
-        bubbleView.translatesAutoresizingMaskIntoConstraints = true
-//        NSLayoutConstraint.activate([
-//            label.centerXAnchor.constraint(equalTo: statsView.centerXAnchor),
-//            label.centerYAnchor.constraint(equalTo: statsView.centerYAnchor)
-//           ])
+        let margins = view.layoutMarginsGuide
+      //  bubbleView.translatesAutoresizingMaskIntoConstraints = false
+      //  NSLayoutConstraint.activate([
+           // bubbleView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -8),
+         //   bubbleView.centerYAnchor.constraint(equalTo: statsView.centerYAnchor)
+         //   fasdfadsfd
+       //    ])
         
         
     }
@@ -340,8 +365,6 @@ class newMainViewController: UIViewController {
     func displayStats(){
         
         var loginRecord = UserDefaults.standard.object(forKey: "loginRecord") as? [ Date ] ?? [ Date ]()
-        
-        var text = String()
         var streak = 1
         var streaking = true
         var dateBefore = Date()
@@ -374,11 +397,9 @@ class newMainViewController: UIViewController {
         let label = UILabel()
         label.text = String(streak) + " Day Logon Streak!"
         label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
-      
         label.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
-
-        label.textAlignment = .center
-       label.baselineAdjustment = .alignCenters
+        label.textAlignment = .right
+        label.baselineAdjustment = .alignCenters
         
         //let constraintRect = statsView.frame.size
        // let boundingBox = text.boundingRect(with: constraintRect,
@@ -394,7 +415,7 @@ class newMainViewController: UIViewController {
             label.centerYAnchor.constraint(equalTo: statsView.centerYAnchor),
             label.widthAnchor.constraint(equalToConstant: 200),
             label.heightAnchor.constraint(equalToConstant: 100)
-               ])
+        ])
     }
     
     
@@ -573,7 +594,7 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
     
         
         
-        return 16
+        return max(16, foodArray.count)
         
 //        if foodArray.count + targetArray.count < 9
 //        {
@@ -598,20 +619,26 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 //        cell.addSubview(editButton)
         cell.backgroundColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1)
         cell.instructionReminder.removeTarget(self, action: nil, for: .allEvents)
+        cell.cellLabel.text = ""
+        cell.cellLabel.isHidden = true
         
         var collectionViewSize = 16
             
+
             if foodArray.count  > 15
             {
-                collectionViewSize = foodArray.count
+                collectionViewSize = foodArray.count + 1
             }
             else{
                 if indexPath.row == 15{
-                    let label = UILabel()
-                    label.frame = cell.frame
-                    label.text = "+"
-                    label.alpha = 0.6
-                    cell.addSubview(label)
+//                    let label = UILabel()
+//                    label.frame = cell.frame
+//                    label.text = "+"
+//                    label.alpha = 0.6
+//                    cell.addSubview(label)
+                    
+                    cell.cellLabel.text = "+"
+                    cell.cellLabel.isHidden = false
                 }
         }
         
@@ -649,6 +676,20 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
 
                     }
                 }
+        
+//        /// move this to main thread
+//        if indexPath.row == 15{
+//            let cellHeaight = cell.frame.height
+//            let label = UILabel(frame: CGRect(x: 0, y: 0, width: cellHeaight, height: cellHeaight))
+//                           //label.frame = cell.frame
+//                           label.text = "+"
+//            label.textAlignment = .center
+//            label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 60 )
+//                            label.tintColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+//            
+//                           label.alpha = 0.6
+//                           cell.addSubview(label)
+//                       }
 
         return cell
         }
