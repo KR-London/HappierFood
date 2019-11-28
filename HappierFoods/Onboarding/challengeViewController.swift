@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 import AVFoundation
+import Foundation
 
 class challengeViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var instructionLabel: UILabel!
   
          var imagePath: String?
-        var placeHolderImage: String? 
+        var placeHolderImage: String?
         /// initialise all the elements programatically
         lazy var triesCollectionView: UICollectionView = {
             
@@ -25,7 +26,6 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
             collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
       
-        
             return collection
         }()
         
@@ -33,9 +33,9 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
             
-              let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-               collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-              return collection
+            let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+            collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            return collection
           }()
         
         lazy var recordChallengeButton: myButton = {
@@ -48,16 +48,12 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         lazy var previewView: UIImageView = {
             let imageView = UIImageView()
             
-
-            /// stretch
             return imageView
         }()
         
         lazy var foodImage: UIImageView = {
             let imageView = UIImageView()
             
-
-            /// stretch
             return imageView
         }()
         
@@ -114,10 +110,11 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         // MARK: Core Data variables
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         var food: [NSManagedObject] = []
-        var foodArray: [TriedFood]!
-         var historyArray: [HistoryTriedFoods]!
-        var targetArray: [TargetFood]!
-        var logons: [Logons]!
+        var ChallengeFoodsArray: [ChallengeFoods]!
+        // var historyArray: [HistoryTriedFoods]!
+       // var targetArray: [TargetFood]!
+        //var targetArray: [TargetFood]!
+        //var logons: [Logons]!
         
         var selectedIndexPath : IndexPath?
         
@@ -468,44 +465,17 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
     
     
 //
-//                /// MARK: Setup
-//                func loadItems(){
-//                    let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
-//                    do{
-//                        try foodArray = context.fetch(request).reversed()
-//                    }
-//                    catch{
-//                        print("Error fetching data \(error)")
-//                    }
-//
-//                    let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
-//                    do{
-//                        try targetArray = context.fetch(request2).reversed()
-//                    }
-//                    catch{
-//                        print("Error fetching data \(error)")
-//                    }
-//
-//                    let request3 : NSFetchRequest<Logons> = Logons.fetchRequest()
-//                          do{
-//                              try logons = context.fetch(request3)
-//                          }
-//                          catch{
-//                              print("Error fetching data \(error)")
-//                          }
-//
-//                    let request4 : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
-//                                 do{
-//                                    try historyArray = context.fetch(request4).reversed()
-//                                 }
-//                                 catch{
-//                                     print("Error fetching data \(error)")
-//                                 }
-//
-//            //        if thisIsANewLogon(){
-//            //           kjhh logons
-//            //        }
-//        }
+                /// MARK: Setup
+                func loadItems(){
+                    let request : NSFetchRequest<ChallengeFoods> = ChallengeFoods.fetchRequest()
+                    do{
+                        try ChallengeFoodsArray = context.fetch(request).reversed()
+                    }
+                    catch{
+                        print("Error fetching data \(error)")
+                    }
+
+        }
         
 //        @objc func recordChallengeButton(sender: mainCollectionViewCell) -> Void {
 //
@@ -620,7 +590,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             
                 /// this bit updates the database
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "ChallengeFoods", into: managedObjectContext) as! ChallengeFoods
                     //menuItem.filename = imagePath
                     menuItem.filename = placeHolderImage
                     menuItem.name = imageName
@@ -628,12 +598,12 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                     menuItem.dateTried = Date()
                     saveItems()
                     /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
-                    main?.foodArray.append(menuItem)
-                    foodArray.append(menuItem)
+                    ///main?.foodArray.append(menuItem)
+                    ChallengeFoodsArray.append(menuItem)
                     
-                    DispatchQueue.main.async{
-                        main?.myCollectionView.reloadData()
-                    }
+//                    DispatchQueue.main.async{
+//                        main?.myCollectionView.reloadData()
+//                    }
                 }
                 
            
@@ -642,20 +612,10 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             let happyUtterance = happySays()
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if foodArray.count == 9{
-                let nextViewController = storyboard.instantiateViewController(withIdentifier: "celebrationScreen" ) as! celebrationScreenViewController
-                //nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.afterTryingaFoodScreen )
-                let myNav = self.navigationController
-                myNav?.pushViewController(nextViewController, animated: true)
-                
-                // wanna release navigation stack
-            }
-            else{
             let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
-                nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.challengeScreen)
+            nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.challengeScreen)
             let myNav = self.navigationController
             myNav?.pushViewController(nextViewController, animated: true)
-            }
         }
     }
 

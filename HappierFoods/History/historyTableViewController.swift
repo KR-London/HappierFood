@@ -16,6 +16,8 @@ class historyTableViewController: UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var historyArray: [HistoryTriedFoods]?
     var foodArray: [TriedFood]!
+    var challengeFoodsArray: [ChallengeFoods]!
+    var targetsArray: [TargetFood]!
     /// I need something more here to store information about badges and such
     
     var foods: [(String, String)]!
@@ -26,7 +28,8 @@ class historyTableViewController: UITableViewController {
         loadItems()
         
         foods = (
-            ( historyArray!.compactMap{(String($0.name!), String($0.filename!) )}
+            (
+                historyArray!.compactMap{(String($0.name!), String($0.filename!))}
                       //  ??  [("You start HappyFoods!", "chaos.jpg")]
                 )
                         +
@@ -142,6 +145,22 @@ class historyTableViewController: UITableViewController {
         catch{
             print("Error fetching data \(error)")
         }
+        
+        let request3 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+             do{
+                 try targetsArray = context.fetch(request3)
+             }
+             catch{
+                 print("Error fetching data \(error)")
+             }
+        
+        let request4 : NSFetchRequest<ChallengeFoods> = ChallengeFoods.fetchRequest()
+             do{
+                 try challengeFoodsArray = context.fetch(request4)
+             }
+             catch{
+                 print("Error fetching data \(error)")
+             }
 
     }
 

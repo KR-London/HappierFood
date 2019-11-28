@@ -6,12 +6,14 @@
     </entity>
     <entity name="ChallengeFoods" representedClassName="ChallengeFoods" syncable="YES" codeGenerationType="class">
         <attribute name="challenge" optional="YES" attributeType="String"/>
+        <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="filename" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="saveNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="HistoryTriedFoods" representedClassName="HistoryTriedFoods" syncable="YES" codeGenerationType="class">
+        <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="filename" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -38,10 +40,10 @@
     </entity>
     <elements>
         <element name="CelebrationStatus" positionX="-54" positionY="27" width="128" height="73"/>
-        <element name="HistoryTriedFoods" positionX="-54" positionY="27" width="128" height="103"/>
+        <element name="HistoryTriedFoods" positionX="-54" positionY="27" width="128" height="118"/>
         <element name="Logons" positionX="-54" positionY="36" width="128" height="88"/>
         <element name="TargetFood" positionX="-54" positionY="-9" width="128" height="120"/>
         <element name="TriedFood" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="ChallengeFoods" positionX="-54" positionY="36" width="128" height="118"/>
+        <element name="ChallengeFoods" positionX="-54" positionY="36" width="128" height="133"/>
     </elements>
 </model>
