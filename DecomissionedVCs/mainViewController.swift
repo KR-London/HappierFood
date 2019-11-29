@@ -26,8 +26,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: Core Data variables
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
-    var foodArray: [TriedFood]!
-    var targetArray: [TargetFood]!
+    var foodArray: [Tried]!
+    var targetArray: [Target]!
     var logons: [Logons]!
     
     unowned var myNav : customNavigationController?
@@ -59,8 +59,8 @@ class mainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 photoFilename = targetArray[collectionViewSize - buttonTag - 1 ].filename ?? "chaos.jpg"
                 foodName = targetArray[collectionViewSize - buttonTag - 1 ].name ?? ""
                 rating = 0.0
-                triedOn = targetArray[collectionViewSize - buttonTag - 1 ].dateAdded!
-                notes = targetArray[collectionViewSize - buttonTag - 1 ].motivation ?? " "
+                triedOn = targetArray[collectionViewSize - buttonTag - 1 ].date!
+                notes = targetArray[collectionViewSize - buttonTag - 1 ].notes ?? " "
                 myNav!.presentState = .SetTargetViewController
                 performSegue(withIdentifier: "expandDetail", sender: sender)
             }
@@ -568,7 +568,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
     
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        let request : NSFetchRequest<Tried> = Tried.fetchRequest()
         do{
             try foodArray = context.fetch(request)
         }
@@ -576,7 +576,7 @@ extension mainViewController: UICollectionViewDelegateFlowLayout {
             print("Error fetching data \(error)")
         }
         
-        let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+        let request2 : NSFetchRequest<Target> = Target.fetchRequest()
         do{
             try targetArray = context.fetch(request2)
         }

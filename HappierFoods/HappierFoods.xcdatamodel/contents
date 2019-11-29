@@ -4,46 +4,32 @@
         <attribute name="celebrationTriggered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="dateLastWeekStarted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="ChallengeFoods" representedClassName="ChallengeFoods" syncable="YES" codeGenerationType="class">
-        <attribute name="challenge" optional="YES" attributeType="String"/>
-        <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="filename" optional="YES" attributeType="String"/>
+    <entity name="Challenge" representedClassName="Challenge" parentEntity="Food" syncable="YES" codeGenerationType="class"/>
+    <entity name="Food" representedClassName="Food" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="filename" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="saveNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="HistoryTriedFoods" representedClassName="HistoryTriedFoods" syncable="YES" codeGenerationType="class">
-        <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="filename" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="saveNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-    </entity>
+    <entity name="History" representedClassName="History" parentEntity="Food" syncable="YES" codeGenerationType="class"/>
     <entity name="Logons" representedClassName="Logons" syncable="YES" codeGenerationType="class">
         <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="TargetFood" representedClassName="TargetFood" syncable="YES" codeGenerationType="class">
-        <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    <entity name="Target" representedClassName="Target" parentEntity="Food" syncable="YES" codeGenerationType="class">
         <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="filename" optional="YES" attributeType="String"/>
-        <attribute name="motivation" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="TriedFood" representedClassName="TriedFood" syncable="YES" codeGenerationType="class">
-        <attribute name="dateTried" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="filename" optional="YES" attributeType="String"/>
-        <attribute name="motivation" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-    </entity>
+    <entity name="Tried" representedClassName="Tried" parentEntity="Food" syncable="YES" codeGenerationType="class"/>
     <elements>
-        <element name="CelebrationStatus" positionX="-54" positionY="27" width="128" height="73"/>
-        <element name="HistoryTriedFoods" positionX="-54" positionY="27" width="128" height="118"/>
-        <element name="Logons" positionX="-54" positionY="36" width="128" height="88"/>
-        <element name="TargetFood" positionX="-54" positionY="-9" width="128" height="120"/>
-        <element name="TriedFood" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="ChallengeFoods" positionX="-54" positionY="36" width="128" height="133"/>
+        <element name="CelebrationStatus" positionX="-27.921875" positionY="-75.1171875" width="128" height="73"/>
+        <element name="Logons" positionX="-21.56640625" positionY="5.72265625" width="128" height="88"/>
+        <element name="Tried" positionX="-279.171875" positionY="-53.19921875" width="128" height="43"/>
+        <element name="Target" positionX="-563.5" positionY="-50.06640625" width="128" height="58"/>
+        <element name="History" positionX="-419.4921875" positionY="-49.58203125" width="128" height="43"/>
+        <element name="Challenge" positionX="-716.79296875" positionY="-48.6875" width="128" height="43"/>
+        <element name="Food" positionX="-590.8828125" positionY="-241.97265625" width="128" height="133"/>
     </elements>
 </model>

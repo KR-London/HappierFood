@@ -15,8 +15,8 @@ private let reuseIdentifier = "statsTableCell"
 class statsTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var historyArray: [HistoryTriedFoods]?
-    var foodArray: [TriedFood]!
+    var historyArray: [History]?
+    var foodArray: [Tried]!
     var logons: [Logons]!
     var uniqueFoods = [ (String, String)]()
     
@@ -346,7 +346,7 @@ class statsTableViewController: UITableViewController {
 
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+        let request : NSFetchRequest<History> = History.fetchRequest()
         do{
             try historyArray = context.fetch(request)
         }
@@ -354,7 +354,7 @@ class statsTableViewController: UITableViewController {
             print("Error fetching data \(error)")
         }
         
-        let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        let request2 : NSFetchRequest<Tried> = Tried.fetchRequest()
         do{
             try foodArray = context.fetch(request2)
         }

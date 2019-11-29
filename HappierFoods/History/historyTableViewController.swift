@@ -14,10 +14,10 @@ private let reuseIdentifier = "historyTableCell"
 class historyTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var historyArray: [HistoryTriedFoods]?
-    var foodArray: [TriedFood]!
-    var challengeFoodsArray: [ChallengeFoods]!
-    var targetsArray: [TargetFood]!
+    var historyArray: [History]?
+    var foodArray: [Tried]!
+    var challengeFoodsArray: [Challenge]!
+    var targetsArray: [Target]!
     /// I need something more here to store information about badges and such
     
     var foods: [(String, String)]!
@@ -130,7 +130,7 @@ class historyTableViewController: UITableViewController {
     
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+        let request : NSFetchRequest<History> = History.fetchRequest()
         do{
             try historyArray = context.fetch(request)
         }
@@ -138,7 +138,7 @@ class historyTableViewController: UITableViewController {
             print("Error fetching data \(error)")
         }
         
-        let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        let request2 : NSFetchRequest<Tried> = Tried.fetchRequest()
         do{
             try foodArray = context.fetch(request2)
         }
@@ -146,7 +146,7 @@ class historyTableViewController: UITableViewController {
             print("Error fetching data \(error)")
         }
         
-        let request3 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+        let request3 : NSFetchRequest<Target> = Target.fetchRequest()
              do{
                  try targetsArray = context.fetch(request3)
              }
@@ -154,7 +154,7 @@ class historyTableViewController: UITableViewController {
                  print("Error fetching data \(error)")
              }
         
-        let request4 : NSFetchRequest<ChallengeFoods> = ChallengeFoods.fetchRequest()
+        let request4 : NSFetchRequest<Challenge> = Challenge.fetchRequest()
              do{
                  try challengeFoodsArray = context.fetch(request4)
              }

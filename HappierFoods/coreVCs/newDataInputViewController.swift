@@ -116,9 +116,9 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     // MARK: Core Data variables
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
-    var foodArray: [TriedFood]!
-     var historyArray: [HistoryTriedFoods]!
-    var targetArray: [TargetFood]!
+    var foodArray: [Tried]!
+     var historyArray: [History]!
+    var targetArray: [Target]!
     var logons: [Logons]!
     
     var selectedIndexPath : IndexPath?
@@ -600,7 +600,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
     
             /// MARK: Setup
             func loadItems(){
-                let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+                let request : NSFetchRequest<Tried> = Tried.fetchRequest()
                 do{
                     try foodArray = context.fetch(request).reversed()
                 }
@@ -608,7 +608,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                     print("Error fetching data \(error)")
                 }
 
-                let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+                let request2 : NSFetchRequest<Target> = Target.fetchRequest()
                 do{
                     try targetArray = context.fetch(request2).reversed()
                 }
@@ -624,7 +624,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                           print("Error fetching data \(error)")
                       }
                 
-                let request4 : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+                let request4 : NSFetchRequest<History> = History.fetchRequest()
                              do{
                                 try historyArray = context.fetch(request4).reversed()
                              }

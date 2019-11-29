@@ -19,8 +19,8 @@ class DetailViewController: UIViewController{
     var detailToDisplay = (photoFilename: "tick.jpg", foodName: "not initialised", rating: 0.0, triedOn: Date(), notes: "" )
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var historyArray: [HistoryTriedFoods]?
-    var foodArray: [TriedFood]!
+    var historyArray: [History]?
+    var foodArray: [Tried]!
     
     @IBOutlet weak var moveOnButton: myButton!
     @IBOutlet weak var foodImage: UIImageView!
@@ -187,7 +187,7 @@ class DetailViewController: UIViewController{
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTried)
                 
-                let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.dateTried!)}
+                let listOfTimestamps = foodArray.compactMap{formatter.string(from: $0.date!)}
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
                   context.delete(foodArray[indexOfMyTimestamp!])
                 do{
@@ -258,7 +258,7 @@ class DetailViewController: UIViewController{
     
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+        let request : NSFetchRequest<History> = History.fetchRequest()
         do{
             try historyArray = context.fetch(request)
         }
@@ -266,7 +266,7 @@ class DetailViewController: UIViewController{
             print("Error fetching data \(error)")
         }
         
-        let request2 : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        let request2 : NSFetchRequest<Tried> = Tried.fetchRequest()
         do{
             try foodArray = context.fetch(request2)
         }

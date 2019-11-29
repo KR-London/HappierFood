@@ -110,7 +110,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         // MARK: Core Data variables
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         var food: [NSManagedObject] = []
-        var ChallengeFoodsArray: [ChallengeFoods]!
+        var ChallengeFoodsArray: [Challenge]!
         // var historyArray: [HistoryTriedFoods]!
        // var targetArray: [TargetFood]!
         //var targetArray: [TargetFood]!
@@ -467,7 +467,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
 //
                 /// MARK: Setup
                 func loadItems(){
-                    let request : NSFetchRequest<ChallengeFoods> = ChallengeFoods.fetchRequest()
+                    let request : NSFetchRequest<Challenge> = Challenge.fetchRequest()
                     do{
                         try ChallengeFoodsArray = context.fetch(request).reversed()
                     }
@@ -590,12 +590,12 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             
                 /// this bit updates the database
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "ChallengeFoods", into: managedObjectContext) as! ChallengeFoods
+                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Challenge", into: managedObjectContext) as! Challenge
                     //menuItem.filename = imagePath
                     menuItem.filename = placeHolderImage
                     menuItem.name = imageName
                     menuItem.rating = rating ?? 0
-                    menuItem.dateTried = Date()
+                    menuItem.date = Date()
                     saveItems()
                     /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                     ///main?.foodArray.append(menuItem)

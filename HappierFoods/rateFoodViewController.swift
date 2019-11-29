@@ -26,7 +26,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     let imagePickerView = UIImagePickerController()
     var firstPass = String()
     
-    var historyArray: [HistoryTriedFoods]?
+    var historyArray: [History]?
 
     // MARK: Actions and outlets
     @IBAction func endedEnteringName(_ sender: Any) {
@@ -49,8 +49,8 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     // MARK: Core Data helpers
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
-    var foodArray: [TriedFood]!
-    var targetArray: [TargetFood]!
+    var foodArray: [Tried]!
+    var targetArray: [Target]!
 
 
     // MARK: page lifecycle
@@ -104,7 +104,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        let request : NSFetchRequest<Tried> = Tried.fetchRequest()
         do{
             try
                 foodArray = context.fetch(request)
@@ -114,7 +114,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         
-        let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+        let request2 : NSFetchRequest<Target> = Target.fetchRequest()
         do{
             try
                 targetArray = context.fetch(request2)
@@ -195,12 +195,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         case "AddFoodViewController":
             /// this bit updates the database
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
                 //menuItem.filename = imagePath
                 menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
-                menuItem.dateTried = Date()
+                menuItem.date = Date()
                 saveItems()
                 /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                 main?.foodArray.append(menuItem)
@@ -217,7 +217,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let targetSetString = formatter.string(from: dateTargetSet)
                 
-                let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+                let request2 : NSFetchRequest<Target> = Target.fetchRequest()
                 do{
                     try targetArray = context.fetch(request2)
                 }
@@ -225,17 +225,17 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                     print("Error fetching data \(error)")
                 }
                 
-                let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.dateAdded!)}
+                let listOfTimestamps = targetArray.compactMap{formatter.string(from: $0.date!)}
                 let indexOfMyTimestamp = listOfTimestamps.firstIndex(of: targetSetString)
                 
                 managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
                 
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
                 menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
-                menuItem.dateTried = Date()
-                menuItem.motivation = existingMotivationText
+                menuItem.date = Date()
+                menuItem.notes = existingMotivationText
                 saveItems()
                 
                 main?.foodArray.append(menuItem)
@@ -250,12 +250,12 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         case "RetryTriedFood":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
                 menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
-                menuItem.dateTried = Date()
-                menuItem.motivation = existingMotivationText
+                menuItem.date = Date()
+                menuItem.notes = existingMotivationText
                 saveItems()
                 foodArray.append(menuItem)
                 
@@ -268,11 +268,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             
         case "SetTargetViewController":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Target", into: managedObjectContext) as! Target
                 menuItem.filename = placeHolderImage
                 menuItem.name = imageName
-                menuItem.dateAdded = Date()
-                menuItem.motivation = notes
+                menuItem.date = Date()
+                menuItem.notes = notes
                 saveItems()
                 
                 main?.targetArray.append(menuItem)
@@ -284,11 +284,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         case "First Pass":
             /// this bit updates the database
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
                 menuItem.filename = placeHolderImage
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
-                menuItem.dateTried = Date()
+                menuItem.date = Date()
                 saveItems()
                 /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                 main?.foodArray = [menuItem]
@@ -307,11 +307,11 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             
         case "First Target":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "TargetFood", into: managedObjectContext) as! TargetFood
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Target", into: managedObjectContext) as! Target
                 menuItem.filename = placeHolderImage
                 menuItem.name = imageName
-                menuItem.dateAdded = Date()
-                menuItem.motivation = notes
+                menuItem.date = Date()
+                menuItem.notes = notes
                 saveItems()
                 
                 

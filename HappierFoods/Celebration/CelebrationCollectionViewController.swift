@@ -16,7 +16,7 @@ private let reuseIdentifier = "Cell"
 class CelebrationCollectionViewController: UICollectionViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
-    var foodArray: [TriedFood]!
+    var foodArray: [Tried]!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadItems()
@@ -148,7 +148,7 @@ class CelebrationCollectionViewController: UICollectionViewController {
     
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        let request : NSFetchRequest<Tried> = Tried.fetchRequest()
         do{
             try foodArray = context.fetch(request)
         }

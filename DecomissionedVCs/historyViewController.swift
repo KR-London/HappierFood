@@ -14,7 +14,7 @@ class historyViewController: UIViewController{
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
-    var historyArray: [HistoryTriedFoods]!
+    var historyArray: [History]!
 
     @IBOutlet weak var resetToNewWeek: myButton!
     @IBOutlet weak var clearAllData: myButton!
@@ -68,7 +68,7 @@ class historyViewController: UIViewController{
         
         /// find the current maximum save number
         loadItems()
-        let maximumSaveNumber = historyArray?.compactMap({$0.saveNumber}).max() ?? 0
+       // let maximumSaveNumber = historyArray?.compactMap({$0.saveNumber}).max() ?? 0
 
         let size = main?.foodArray.count ?? -1
         
@@ -76,11 +76,11 @@ class historyViewController: UIViewController{
             for i in 0 ... size - 1 {
                 let foodToMove = main?.foodArray[i]
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "HistoryTriedFoods", into: managedObjectContext) as! HistoryTriedFoods
+                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "History", into: managedObjectContext) as! History
                     menuItem.filename = foodToMove?.filename
                     menuItem.name = foodToMove?.name
                     menuItem.rating = foodToMove?.rating ?? 0
-                    menuItem.saveNumber = maximumSaveNumber + 1
+                    //menuItem.saveNumber = maximumSaveNumber + 1
                     saveItems()
                 }
             }
@@ -106,7 +106,7 @@ class historyViewController: UIViewController{
     
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<HistoryTriedFoods> = HistoryTriedFoods.fetchRequest()
+        let request : NSFetchRequest<History> = History.fetchRequest()
         do{
             try historyArray = context.fetch(request)
         }

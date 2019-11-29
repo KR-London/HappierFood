@@ -56,8 +56,8 @@ class newMainViewController: UIViewController {
     // MARK: Core Data variables
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
-    var foodArray: [TriedFood]!
-    var targetArray: [TargetFood]!
+    var foodArray: [Tried]!
+    var targetArray: [Target]!
     var logons: [Logons]!
     
     // MARK: Confetti variables
@@ -448,7 +448,7 @@ class newMainViewController: UIViewController {
     
     //MARK: Data handling subroutines
         func loadItems(){
-            let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+            let request : NSFetchRequest<Tried> = Tried.fetchRequest()
             do{
                 try foodArray = context.fetch(request)
             }
@@ -456,7 +456,7 @@ class newMainViewController: UIViewController {
                 print("Error fetching data \(error)")
             }
             
-            let request2 : NSFetchRequest<TargetFood> = TargetFood.fetchRequest()
+            let request2 : NSFetchRequest<Target> = Target.fetchRequest()
             do{
                 try targetArray = context.fetch(request2)
             }
@@ -702,8 +702,8 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
         detailViewController.detailToDisplay.photoFilename = foodArray[buttonTag].filename ?? "chaos.jpg"
         detailViewController.detailToDisplay.foodName = foodArray[buttonTag].name ?? ""
         detailViewController.detailToDisplay.rating = foodArray[buttonTag].rating
-        detailViewController.detailToDisplay.triedOn = foodArray[buttonTag].dateTried!
-        detailViewController.detailToDisplay.notes = foodArray[buttonTag].motivation ?? " "
+        detailViewController.detailToDisplay.triedOn = foodArray[buttonTag].date!
+        detailViewController.detailToDisplay.notes = foodArray[buttonTag].notes ?? " "
         detailViewController.presentState = "AddFoodViewController"
         myNav?.presentState = .AddFoodViewController
 

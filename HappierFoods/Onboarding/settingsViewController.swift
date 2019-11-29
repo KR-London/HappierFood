@@ -14,9 +14,9 @@ class settingsViewController: UIViewController {
      // MARK: Core Data variables
      let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
      var food: [NSManagedObject] = []
-     var foodArray: [TriedFood]?
-     var targetArray: [TargetFood]?
-     var historyArray: [HistoryTriedFoods]?
+     var foodArray: [Tried]?
+     var targetArray: [Target]?
+     var historyArray: [History]?
      var logons: [Logons]!
     
     @IBAction func cacheData(_ sender: Any) {
@@ -75,7 +75,7 @@ class settingsViewController: UIViewController {
         
         loadItems()
         
-        let maximumSaveNumber = historyArray?.compactMap({$0.saveNumber}).max() ?? 0
+        //let maximumSaveNumber = historyArray?.compactMap({$0.saveNumber}).max() ?? 0
 
         let size = foodArray?.count ?? -1
         
@@ -83,11 +83,11 @@ class settingsViewController: UIViewController {
             for i in 0 ... size - 1 {
                 let foodToMove = foodArray?[i]
                 if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "HistoryTriedFoods", into: managedObjectContext) as! HistoryTriedFoods
+                    let menuItem = NSEntityDescription.insertNewObject(forEntityName: "History", into: managedObjectContext) as! History
                     menuItem.filename = foodToMove?.filename
                     menuItem.name = foodToMove?.name
                     menuItem.rating = foodToMove?.rating ?? 0
-                    menuItem.saveNumber = maximumSaveNumber + 1
+                    //menuItem.saveNumber = maximumSaveNumber + 1
                     saveItems()
                 }
             }
@@ -141,7 +141,7 @@ class settingsViewController: UIViewController {
     }
     
         func loadItems(){
-            let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+            let request : NSFetchRequest<Tried> = Tried.fetchRequest()
             do{
                 try foodArray = context.fetch(request)
             }
