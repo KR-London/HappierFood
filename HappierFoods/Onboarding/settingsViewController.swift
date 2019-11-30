@@ -87,7 +87,7 @@ class settingsViewController: UIViewController {
                     menuItem.filename = foodToMove?.filename
                     menuItem.name = foodToMove?.name
                     menuItem.rating = foodToMove?.rating ?? 0
-                    //menuItem.saveNumber = maximumSaveNumber + 1
+                    menuItem.type = entryType.triedBeforeThisWeek.rawValue
                     saveItems()
                 }
             }

@@ -201,6 +201,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.date = Date()
+                menuItem.type = entryType.triedThisWeek.rawValue
                 saveItems()
                 /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                 main?.foodArray.append(menuItem)
@@ -210,7 +211,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                     main?.myCollectionView.reloadData()
                 }
             }
-            
+            /// I don't think I use this now - but I should...
         case "ConvertTargetToTry":
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let formatter = DateFormatter()
@@ -236,11 +237,15 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.rating = rating ?? 0
                 menuItem.date = Date()
                 menuItem.notes = existingMotivationText
+                menuItem.type = entryType.triedThisWeek.rawValue
                 saveItems()
                 
                 main?.foodArray.append(menuItem)
                 foodArray.append(menuItem)
                 main?.targetArray.remove(at: indexOfMyTimestamp!)
+                
+                /// and reflag the target record
+                
                 
                 DispatchQueue.main.async{
                     main?.myCollectionView.reloadData()
@@ -256,6 +261,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.rating = rating ?? 0
                 menuItem.date = Date()
                 menuItem.notes = existingMotivationText
+                menuItem.type = entryType.triedThisWeek.rawValue
                 saveItems()
                 foodArray.append(menuItem)
                 
@@ -273,6 +279,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.name = imageName
                 menuItem.date = Date()
                 menuItem.notes = notes
+                menuItem.type = entryType.target.rawValue
                 saveItems()
                 
                 main?.targetArray.append(menuItem)

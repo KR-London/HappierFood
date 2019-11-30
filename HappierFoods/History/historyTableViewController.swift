@@ -63,7 +63,19 @@ class historyTableViewController: UITableViewController {
         
         cell.valueOfStatistic.text = ""
         
-        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        switch record.type{
+            case entryType.challenge.rawValue:
+                cell.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+            case entryType.triedThisWeek.rawValue:
+            cell.backgroundColor = UIColor(red: 186/255, green: 235/255, blue: 206/255, alpha: 1)
+            case entryType.triedBeforeThisWeek.rawValue:
+            cell.backgroundColor = UIColor(red: 186/255, green: 230/255, blue: 206/255, alpha: 1)
+            case entryType.target.rawValue:
+            cell.backgroundColor = UIColor(red: 186/255, green: 225/255, blue: 206/255, alpha: 1)
+            case entryType.targetCompleted.rawValue:
+            cell.backgroundColor = UIColor(red: 186/255, green: 220/255, blue: 206/255, alpha: 1)
+            default: cell.backgroundColor =  UIColor(red: 186/255, green: 215/255, blue: 206/255, alpha: 1)
+        }
 
         return cell
     }

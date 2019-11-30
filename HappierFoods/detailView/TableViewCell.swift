@@ -39,7 +39,7 @@ class statsTableViewCell: UITableViewCell {
       // self.imageForStat.layer.cornerRadius = 5.0
     
             
-        self.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 0.8) 
+        //self.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 0.8) 
         self.layer.cornerRadius = 5.0
         
         //self.imageForStat.translatesAutoresizingMaskIntoConstraints = false

@@ -446,6 +446,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                     menuItem.name = imageName
                     menuItem.rating = rating ?? 0
                     menuItem.date = Date()
+                    menuItem.type = entryType.challenge.rawValue
                     saveItems()
                     /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                     ///main?.foodArray.append(menuItem)

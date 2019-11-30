@@ -23,3 +23,11 @@ enum dataInputMode: String{
     case write
     case unknown
 }
+
+enum entryType: String{
+    case challenge
+    case triedThisWeek
+    case triedBeforeThisWeek
+    case target
+    case targetCompleted
+}

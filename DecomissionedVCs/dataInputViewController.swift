@@ -11,12 +11,7 @@ import UIKit
 import ARKit
 import AVFoundation
 
-enum dataInputMode: String{
-    case camera
-    case cameraRoll
-    case write
-    case unknown
-}
+
 
 class dataInputViewController: UIViewController, UIImagePickerControllerDelegate, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     

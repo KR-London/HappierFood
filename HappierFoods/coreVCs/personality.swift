@@ -95,13 +95,7 @@ struct happySays{
           }
 }
 
-enum screen{
-    case mainScreen
-    case afterTryingaFoodScreen
-    case afterSettingTargetScreen
-    case coachingScreen
-    case challengeScreen
-}
+
 
 //Eg child indicates they are having a difficult food day/moment
 //App then says something like:
