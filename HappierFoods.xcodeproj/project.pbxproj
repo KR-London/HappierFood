@@ -38,6 +38,7 @@
 		4414EDFF225F0AFD00D9B9CB /* chaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EDFE225F0AFC00D9B9CB /* chaos.jpg */; };
 		4414EE05225F9FB100D9B9CB /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EE04225F9FB000D9B9CB /* tick.jpg */; };
 		4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */; };
+		4419CA392392457300B19A5C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419CA382392457300B19A5C /* Enums.swift */; };
 		441AF0042383F85100B6DCAB /* newDataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AF0032383F85100B6DCAB /* newDataInputViewController.swift */; };
 		441DB5EF22C513DB00E857C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441DB5EE22C513DB00E857C0 /* Main.storyboard */; };
 		442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CD2299619E00CBE431 /* UIViewExtension.swift */; };
@@ -290,6 +291,7 @@
 		4414EDFE225F0AFC00D9B9CB /* chaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos.jpg; sourceTree = "<group>"; };
 		4414EE04225F9FB000D9B9CB /* tick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick.jpg; sourceTree = "<group>"; };
 		4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = celebrationScreenViewController.swift; sourceTree = "<group>"; };
+		4419CA382392457300B19A5C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		441AF0032383F85100B6DCAB /* newDataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = newDataInputViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/coreVCs/newDataInputViewController.swift; sourceTree = "<absolute>"; };
 		441DB5EE22C513DB00E857C0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		442113CD2299619E00CBE431 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 				442113D1229961D600CBE431 /* Extensions_UIImage.swift */,
 				442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */,
 				442113CD2299619E00CBE431 /* UIViewExtension.swift */,
+				4419CA382392457300B19A5C /* Enums.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1303,6 +1306,7 @@
 				44A5AB85235CA351009C0F8A /* resourcesViewController.swift in Sources */,
 				44B52FF522DA211900CF730D /* preTryViewController.swift in Sources */,
 				4461B1F8238A6BF700195906 /* secondTutorialPageViewController.swift in Sources */,
+				4419CA392392457300B19A5C /* Enums.swift in Sources */,
 				44329E9322DE1225002DA0FA /* HistoryCollectionViewCell.swift in Sources */,
 				44FE744D2357737800CDC2E5 /* certificateViewController.swift in Sources */,
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,

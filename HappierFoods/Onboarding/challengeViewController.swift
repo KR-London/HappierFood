@@ -15,8 +15,9 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
 
     @IBOutlet weak var instructionLabel: UILabel!
   
-         var imagePath: String?
+        var imagePath: String?
         var placeHolderImage: String?
+    
         /// initialise all the elements programatically
         lazy var triesCollectionView: UICollectionView = {
             
@@ -76,8 +77,6 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             foodName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             foodName.placeholder = "Name of food"
             foodName.adjustsFontSizeToFitWidth = true
-           // foodName.insertTextPlaceholder(with: <#T##CGSize#>)
-            //textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
             foodName.textAlignment = .center
             foodName.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
             foodName.setLeftPaddingPoints(5)
@@ -111,12 +110,9 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         var food: [NSManagedObject] = []
         var ChallengeFoodsArray: [Challenge]!
-        // var historyArray: [HistoryTriedFoods]!
-       // var targetArray: [TargetFood]!
-        //var targetArray: [TargetFood]!
-        //var logons: [Logons]!
         
         var selectedIndexPath : IndexPath?
+        var currentChallenge = String()
         
  override func viewDidLoad() {
        super.viewDidLoad()
@@ -135,13 +131,14 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
            "Present and name your dinner like how it would look in a Michelin Restaurant",
            "The ugliest nugget"
        ]
+    
+       /// update this implementation to make it a 'challenge of the week' or 'challenge of the day' thing.
+        currentChallenge = challenges.randomElement()!
+        instructionLabel.text = currentChallenge
    }
         
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-    //        if usedCamera == true {
-    //            recordTheFood()
-    //        }
             haptic.prepare()
         }
         
@@ -153,7 +150,6 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
            }
         
         //MARK: Data Input Subroutines
-        
         func launchCamera(){
             previewView.isHidden = false
             recordTheFood()
@@ -170,11 +166,11 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         // MARK: Functions to manage the image input
           func setupLivePreview() {
             let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8
-              videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-              videoPreviewLayer.videoGravity = .resizeAspectFill
-              videoPreviewLayer.connection?.videoOrientation = .portrait
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            videoPreviewLayer.videoGravity = .resizeAspectFill
+            videoPreviewLayer.connection?.videoOrientation = .portrait
             videoPreviewLayer.cornerRadius = 1.5*layoutUnit
-              previewView.layer.addSublayer(videoPreviewLayer)
+            previewView.layer.addSublayer(videoPreviewLayer)
           }
         
           func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -183,11 +179,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                 image = UIImage(data: imageData) ?? UIImage(named: "chaos.jpg")!
                 foodImage.image = image
                 foodImage.layer.masksToBounds = true
-             /// performSegue(withIdentifier: presentState ?? "Undefined", sender: "dataInputViewController")
-                //passData(dvc1: nextViewController)
                 nextViewController.formatImage()
-               // nextViewController.foodImage.image = image
-            
           }
           
           func presentCameraSettings() {
@@ -204,7 +196,6 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
               
               present(alertController, animated: true)
           }
-          
           
           func checkCameraAccess() -> Bool {
               switch AVCaptureDevice.authorizationStatus(for: .video) {
@@ -230,9 +221,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
               return true
           }
           
-          
           func recordTheFood() {
-
             
               if checkCameraAccess() == true {
                   captureSession = AVCaptureSession()
@@ -266,33 +255,17 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                   }
               }
           }
-//
-//          func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//              // Local variable inserted by Swift 4.2 migrator.
-//
-//
-//              let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-//
-//              if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
-//                  foodImage.image = userPickedImage
-//                image = userPickedImage.scaleImage(toSize: CGSize(width: 150, height: 150)) ?? UIImage(named: "chaos.jpg")!
-//              }
-//              imagePicker.dismiss(animated: true, completion: nil)
-//          }
           
           // MARK: User interaction handlers
           func textFieldShouldReturn(_ textField: UITextField) -> Bool {
               textField.resignFirstResponder()
-          //  textField.endEditing(true)
               return true
           }
           
-        
         //MARK: set up contstraints to lay them out
         func setUpSubview(){
             let layoutUnit = (self.view.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0))/8
             let margins = view.layoutMarginsGuide
-            //let fullScreen = view.
             
             view.addSubview(textInput)
             textInput.delegate = self
@@ -306,13 +279,9 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                 textInput.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
             ])
 
-        
-        
-
             view.addSubview(foodImage)
             foodImage.translatesAutoresizingMaskIntoConstraints = false
             foodImage.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-           // foodImage.image = UIImage(named: "cracker.jpeg")
             foodImage.layer.borderWidth = 6.0
             foodImage.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             
@@ -328,17 +297,16 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             previewView.isHidden = true
                 previewView.translatesAutoresizingMaskIntoConstraints = false
                 previewView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-               // foodImage.image = UIImage(named: "cracker.jpeg")
                 previewView.layer.borderWidth = 6.0
                 previewView.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
                 
-                NSLayoutConstraint.activate([
-                    previewView.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 6),
-                    previewView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                    previewView.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
-                    previewView.widthAnchor.constraint(equalTo: foodImage.heightAnchor)
-                ])
-                previewView.cornerRadius = 1.5*layoutUnit
+            NSLayoutConstraint.activate([
+                previewView.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 6),
+                previewView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                previewView.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
+                previewView.widthAnchor.constraint(equalTo: foodImage.heightAnchor)
+            ])
+            previewView.cornerRadius = 1.5*layoutUnit
             
             view.addSubview(addButton)
             addButton.translatesAutoresizingMaskIntoConstraints = false
@@ -350,32 +318,15 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             ])
             addButton.cornerRadius = 1.5*layoutUnit
             
-            
             view.addSubview(recordChallengeButton)
             recordChallengeButton.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate(
-                       [
-                        recordChallengeButton.topAnchor.constraint(greaterThanOrEqualTo: addButton.bottomAnchor, constant: 10),
-                           recordChallengeButton.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.9),
-                           recordChallengeButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-                           recordChallengeButton.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1/6 ),
-                           recordChallengeButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -40)
-                       ]
-                   )
-
-//            buttonStackView.addArrangedSubview(eatNowButton)
-//            buttonStackView.addArrangedSubview(eatLaterButton)
-//
-//            view.addSubview(buttonStackView)
-//            buttonStackView.translatesAutoresizingMaskIntoConstraints = false
-//            NSLayoutConstraint.activate([
-//                buttonStackView.bottomAnchor.constraint(greaterThanOrEqualTo: margins.bottomAnchor, constant: -10),
-//                buttonStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: layoutUnit),
-//                buttonStackView.widthAnchor.constraint(equalTo: margins.widthAnchor),
-//                buttonStackView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-//                buttonStackView.topAnchor.constraint(lessThanOrEqualTo: foodImage.bottomAnchor, constant: 10)
-//            ])
-            
+            NSLayoutConstraint.activate( [
+                recordChallengeButton.topAnchor.constraint(greaterThanOrEqualTo: addButton.bottomAnchor, constant: 10),
+                recordChallengeButton.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.9),
+                recordChallengeButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                recordChallengeButton.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 1/6 ),
+                recordChallengeButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -40)
+            ])
         }
 
         // MARK: Boilerplate
@@ -400,125 +351,31 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                 previewView.isHidden = true
                 
                 haptic.notificationOccurred(.success)
-                if AVCaptureDevice.authorizationStatus(for: .video) != .denied
-                {   let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-                    
+                if AVCaptureDevice.authorizationStatus(for: .video) != .denied {
+                    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
                     stillImageOutput.capturePhoto(with: settings, delegate: self)
-                    //foodImage.cornerRadius = 50
-                    ///previewView.cornerRadius = 50
                 }
             }
           
         }
-//
-//        @objc func eatNowSegue(){
-//            haptic.notificationOccurred(.success)
-//            if captureSession != nil
-//            {
-//                if AVCaptureDevice.authorizationStatus(for: .video) != .denied
-//                {    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-//
-//                    stillImageOutput.capturePhoto(with: settings, delegate: self)
-//                //foodImage.cornerRadius = 50
-//                ///previewView.cornerRadius = 50
-//                }
-//            }
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            nextViewController = storyboard.instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
-//            passData(dvc1: nextViewController)
-//            //myNav?.pushViewController(nextViewController, animated: true)
-//            myNav = (self.navigationController as! customNavigationController)
-//              /// this will nedd more nuance if I pull foods off the ribbons
-//            myNav?.presentState = .AddFoodViewController
-//            myNav?.pushViewController(nextViewController, animated: true)
-//            //present(nextViewController, animated: true, completion: nil)
-//        }
-//
-//        @objc func eatLaterSegue(){
-//            haptic.notificationOccurred(.success)
-//            if captureSession != nil
-//            {
-//                if AVCaptureDevice.authorizationStatus(for: .video) != .denied
-//                {
-//                    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-//
-//                    stillImageOutput.capturePhoto(with: settings, delegate: self)
-//                    //foodImage.cornerRadius = 50
-//                    ///previewView.cornerRadius = 50
-//                }
-//            }
-//             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//             nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
-//             passData(dvc1: nextViewController)
-//              //myNav?.pushViewController(nextViewController, animated: true)
-//             myNav = self.navigationController as? customNavigationController
-//            /// this will nedd more nuance if i pull foods off the ribbons
-//                myNav?.presentState = .SetTargetViewController
-//               myNav?.pushViewController(nextViewController, animated: true)
-//           }
-        
+    
         func passData(dvc1: confettiViewController){
             dvc1.imagePlaceholder = image ?? UIImage(named: placeholderImages.randomElement()!)!
             dvc1.foodName.text = textInput.text ?? ""
-            //dvc1.placeHolderImage = foodImage.image ?? UIImage(named: "1plate.jpeg")
         }
     
-    
-//
-                /// MARK: Setup
-                func loadItems(){
-                    let request : NSFetchRequest<Challenge> = Challenge.fetchRequest()
-                    do{
-                        try ChallengeFoodsArray = context.fetch(request).reversed()
-                    }
-                    catch{
-                        print("Error fetching data \(error)")
-                    }
-
+        /// MARK: Setup
+        func loadItems(){
+            let request : NSFetchRequest<Challenge> = Challenge.fetchRequest()
+            do{
+                try ChallengeFoodsArray = context.fetch(request).reversed()
+            }
+            catch{
+                print("Error fetching data \(error)")
+            }
         }
-        
-//        @objc func recordChallengeButton(sender: mainCollectionViewCell) -> Void {
-//
-//            if sender.tag < (foodArray?.count ?? 0)
-//            {
-//            let plate = foodArray[sender.tag]
-//            let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
-//            foodImage.image = UIImage(named: fileToLoad)
-//            foodImage.layer.masksToBounds = true
-//            image = UIImage(named: fileToLoad)
-//            textInput.text = foodArray![sender.tag].name ?? ""
-//            addButton.alpha = 0.2
-//            passData(dvc1: nextViewController)
-//            nextViewController.formatImage()
-//            }
-//            else{
-//                let plate = historyArray[sender.tag - (foodArray?.count ?? 0)]
-//                let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
-//                foodImage.image = UIImage(named: fileToLoad)
-//                foodImage.layer.masksToBounds = true
-//                image = UIImage(named: fileToLoad)
-//                textInput.text = historyArray![sender.tag - (foodArray?.count ?? 0)].name ?? ""
-//                addButton.alpha = 0.2
-//                nextViewController.historyArray = historyArray
-//                passData(dvc1: nextViewController)
-//                nextViewController.formatImage()
-//            }
-//        }
 
         @objc func recordChallenge() -> Void {
-//            print("Hello retarget Button")
-//            print(sender.tag)
-//            let plate = targetArray[sender.tag]
-//            let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(plate.filename ?? "1.png")
-//
-//            foodImage.image = UIImage(named: fileToLoad)
-//            image = UIImage(named: fileToLoad)
-//            foodImage.layer.masksToBounds = true
-//            textInput.text = targetArray![sender.tag].name ?? ""
-//            addButton.alpha = 0.2
-//            passData(dvc1: nextViewController)
-//            nextViewController.formatImage()
-//
             haptic.notificationOccurred(.success)
             if captureSession != nil
             {
@@ -531,18 +388,16 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                     ///previewView.cornerRadius = 50
                 }
             }
-             let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-             nextViewController = storyboard.instantiateViewController(withIdentifier: "postChallengeScreen" ) as! confettiViewController
-             passData(dvc1: nextViewController)
-              //myNav?.pushViewController(nextViewController, animated: true)
-             myNav = self.navigationController as? customNavigationController
-            /// this will nedd more nuance if i pull foods off the ribbons
-               // myNav?.presentState = .SetTargetViewController
-               myNav?.pushViewController(nextViewController, animated: true)
+            appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
+            
+//            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//            nextViewController = storyboard.instantiateViewController(withIdentifier: "postChallengeScreen" ) as! confettiViewController
+//            passData(dvc1: nextViewController)
+//            myNav = self.navigationController as? customNavigationController
+//            myNav?.pushViewController(nextViewController, animated: true)
         }
     
     // MARK: Save data
-        
         func saveItems(){
             do{ try
                 context.save() }
@@ -551,11 +406,6 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-        
-    //    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    //        self.view.endEditing(true)
-    //        return false
-    //    }
         
         func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?, notes: String?){
             weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
@@ -599,7 +449,12 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                     saveItems()
                     /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                     ///main?.foodArray.append(menuItem)
-                    ChallengeFoodsArray.append(menuItem)
+                    if ChallengeFoodsArray == nil{
+                        ChallengeFoodsArray = [menuItem]
+                    }
+                    else{
+                        ChallengeFoodsArray.append(menuItem)
+                    }
                     
 //                    DispatchQueue.main.async{
 //                        main?.myCollectionView.reloadData()

@@ -21,26 +21,13 @@ class historyTableViewController: UITableViewController {
     /// I need something more here to store information about badges and such
     
     var foods: [(String, String)]!
+    
+    var list: [Food]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadItems()
-        
-        foods = (
-            (
-                historyArray!.compactMap{(String($0.name!), String($0.filename!))}
-                      //  ??  [("You start HappyFoods!", "chaos.jpg")]
-                )
-                        +
-            (
-                foodArray!.compactMap{(String($0.name!), String($0.filename!) )}
-                    // ??          [("Why not try something new now?", "chaos.jpg")]
-                )
-                       // ?? [("Your tries will go here", "chaos.jpg")]
-        )
-        
-        print(foods)
         
     }
 
@@ -54,20 +41,19 @@ class historyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foods.count
+        return list.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier , for: indexPath) as! statsTableViewCell
         
-        let record = foods[indexPath.row]
+        let record = list[indexPath.row]
         
-        cell.titleOfStatistic.text = record.0
-        
+        cell.titleOfStatistic.text = record.name
         //cell.imageForStat.image =  UIImage(named: foods[indexPath.row].1)
         
         //cell.displayContent(image: foods[indexPath.row].1)
-        let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(record.1 ?? "1.png")
+        let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(record.filename ?? "1.png")
         
         cell.displayContent(image: fileToLoad)
         cell.imageView?.layer.cornerRadius = 5.0
@@ -130,39 +116,38 @@ class historyTableViewController: UITableViewController {
     
     /// MARK: Setup
     func loadItems(){
-        let request : NSFetchRequest<History> = History.fetchRequest()
+        let request : NSFetchRequest<Food> = Food.fetchRequest()
         do{
-            try historyArray = context.fetch(request)
+            try list = context.fetch(request)
         }
         catch{
             print("Error fetching data \(error)")
         }
-        
-        let request2 : NSFetchRequest<Tried> = Tried.fetchRequest()
-        do{
-            try foodArray = context.fetch(request2)
+//
+//        let request2 : NSFetchRequest<Tried> = Tried.fetchRequest()
+//        do{
+//            try foodArray = context.fetch(request2)
+//        }
+//        catch{
+//            print("Error fetching data \(error)")
+//        }
+//
+//        let request3 : NSFetchRequest<Target> = Target.fetchRequest()
+//             do{
+//                 try targetsArray = context.fetch(request3)
+//             }
+//             catch{
+//                 print("Error fetching data \(error)")
+//             }
+//
+//        let request4 : NSFetchRequest<Challenge> = Challenge.fetchRequest()
+//             do{
+//                 try challengeFoodsArray = context.fetch(request4)
+//             }
+//             catch{
+//                 print("Error fetching data \(error)")
+//             }
         }
-        catch{
-            print("Error fetching data \(error)")
-        }
-        
-        let request3 : NSFetchRequest<Target> = Target.fetchRequest()
-             do{
-                 try targetsArray = context.fetch(request3)
-             }
-             catch{
-                 print("Error fetching data \(error)")
-             }
-        
-        let request4 : NSFetchRequest<Challenge> = Challenge.fetchRequest()
-             do{
-                 try challengeFoodsArray = context.fetch(request4)
-             }
-             catch{
-                 print("Error fetching data \(error)")
-             }
-
-    }
 
 
 }

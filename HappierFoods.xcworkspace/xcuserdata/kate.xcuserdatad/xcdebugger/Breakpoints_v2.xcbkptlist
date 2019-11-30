@@ -1444,8 +1444,8 @@
             filePath = "HappierFoods/Onboarding/challengeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "561"
-            endingLineNumber = "561"
+            startingLineNumber = "411"
+            endingLineNumber = "411"
             landmarkName = "appsAndBiscuits(imageName:image:rating:notes:)"
             landmarkType = "7">
             <Locations>
@@ -1460,8 +1460,8 @@
                   urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/Onboarding/challengeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "561"
-                  endingLineNumber = "561"
+                  startingLineNumber = "411"
+                  endingLineNumber = "411"
                   offsetFromSymbolStart = "356">
                </Location>
                <Location
@@ -1475,9 +1475,9 @@
                   urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/Onboarding/challengeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "561"
-                  endingLineNumber = "561"
-                  offsetFromSymbolStart = "7299">
+                  startingLineNumber = "411"
+                  endingLineNumber = "411"
+                  offsetFromSymbolStart = "7940">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1495,6 +1495,22 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "setUpSubview()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1664736E-8430-4E43-8A1F-2AC17604578C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappierFoods/Onboarding/challengeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
+            landmarkName = "appsAndBiscuits(imageName:image:rating:notes:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
