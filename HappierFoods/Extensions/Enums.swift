@@ -9,6 +9,21 @@
 import Foundation
 
 
+enum Costume: String{
+    case SetTargetViewController
+    case AddFoodViewController
+    // I will refactor at some point to use the cases below for clearer code
+    case ExpandingTriedFoodDetail
+    case ExpandingTargetFoodDetail
+    case ConvertTargetToTry
+    case RetryTriedFood
+    case FirstLaunch
+    case FirstTarget
+    case ReturnFromCelebrationScreen
+    case ResetDataAtTheStartOfNewWeek
+    case Unknown
+}
+
 enum screen{
     case mainScreen
     case afterTryingaFoodScreen
@@ -31,3 +46,5 @@ enum entryType: String{
     case target
     case targetCompleted
 }
+
+

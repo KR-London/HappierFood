@@ -265,7 +265,7 @@ class preTargetViewController: UINavigationController {
         
         
         
-        motivationViewController.presentState = "First Target"
+        motivationViewController.presentState = .FirstLaunch
         motivationViewController.firstPass = "Target"
         motivationViewController.navigationItem.setHidesBackButton(true, animated: true)
         

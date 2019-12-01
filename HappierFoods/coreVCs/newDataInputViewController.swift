@@ -82,8 +82,6 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         foodName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         foodName.placeholder = "Name of food"
         foodName.adjustsFontSizeToFitWidth = true
-       // foodName.insertTextPlaceholder(with: <#T##CGSize#>)
-        //textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
         foodName.textAlignment = .center
         foodName.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
         foodName.setLeftPaddingPoints(5)
@@ -117,9 +115,10 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Tried]!
-     var historyArray: [History]!
+    var historyArray: [History]!
     var targetArray: [Target]!
     var logons: [Logons]!
+
     
     var selectedIndexPath : IndexPath?
     
@@ -128,15 +127,12 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         loadItems()
         view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
-        
-        
+  
+       nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if usedCamera == true {
-//            recordTheFood()
-//        }
         haptic.prepare()
     }
     
@@ -228,7 +224,6 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
       
       func recordTheFood() {
 
-        
           if checkCameraAccess() == true {
               captureSession = AVCaptureSession()
               captureSession.sessionPreset = .medium
@@ -245,7 +240,7 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
                   if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
                       captureSession.addInput(input)
                       captureSession.addOutput(stillImageOutput)
-                    setupLivePreview()
+                      setupLivePreview()
                   }
               }
               catch let error  {
@@ -259,13 +254,14 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
               DispatchQueue.main.async {
                   self.videoPreviewLayer.frame = self.previewView.bounds
               }
+            
+            nextViewController.presentState = .AddFoodViewController
           }
       }
       
       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
           // Local variable inserted by Swift 4.2 migrator.
-          
-          
           let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
           
           if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
@@ -289,68 +285,62 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         let margins = view.layoutMarginsGuide
         //let fullScreen = view.
         
-        triesCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "tryCell")
-        triesCollectionView.delegate = self
-        triesCollectionView.dataSource = self
-        triesCollectionView.allowsSelection = true
+            triesCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "tryCell")
+            triesCollectionView.delegate = self
+            triesCollectionView.dataSource = self
+            triesCollectionView.allowsSelection = true
         
         
         view.addSubview(triesCollectionView)
-        triesCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            triesCollectionView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
-            triesCollectionView.heightAnchor.constraint(equalToConstant: 0.7*layoutUnit),
-            triesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            triesCollectionView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor)
-            
-        ])
+            triesCollectionView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                triesCollectionView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
+                triesCollectionView.heightAnchor.constraint(equalToConstant: 0.7*layoutUnit),
+                triesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                triesCollectionView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor)
+            ])
         
-    targetsCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "tryCell")
-        targetsCollectionView.delegate = self
-        targetsCollectionView.dataSource = self
-        targetsCollectionView.allowsSelection = true
+            targetsCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "tryCell")
+            targetsCollectionView.delegate = self
+            targetsCollectionView.dataSource = self
+            targetsCollectionView.allowsSelection = true
+        
         view.addSubview(targetsCollectionView)
-        targetsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            targetsCollectionView.topAnchor.constraint(equalTo: triesCollectionView.bottomAnchor, constant: 10),
-            targetsCollectionView.heightAnchor.constraint(equalToConstant: 0.7*layoutUnit),
-            targetsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            targetsCollectionView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor)
-            
-        ])
+            targetsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                targetsCollectionView.topAnchor.constraint(equalTo: triesCollectionView.bottomAnchor, constant: 10),
+                targetsCollectionView.heightAnchor.constraint(equalToConstant: 0.7*layoutUnit),
+                targetsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                targetsCollectionView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor)
+            ])
         
         view.addSubview(textInput)
-        textInput.delegate = self
-        textInput.translatesAutoresizingMaskIntoConstraints = false
-        textInput.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        textInput.cornerRadius = 5
-        NSLayoutConstraint.activate([
-            textInput.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 10),
-            textInput.heightAnchor.constraint(equalToConstant: 0.65*layoutUnit),
-            textInput.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.85),
-            textInput.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
-        ])
-
-    
-    
-
-        view.addSubview(foodImage)
-        foodImage.translatesAutoresizingMaskIntoConstraints = false
-        foodImage.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-       // foodImage.image = UIImage(named: "cracker.jpeg")
-        foodImage.layer.borderWidth = 6.0
-        foodImage.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            textInput.delegate = self
+            textInput.translatesAutoresizingMaskIntoConstraints = false
+            textInput.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            textInput.cornerRadius = 5
+            NSLayoutConstraint.activate([
+                textInput.topAnchor.constraint(equalTo: targetsCollectionView.bottomAnchor, constant: 10),
+                textInput.heightAnchor.constraint(equalToConstant: 0.65*layoutUnit),
+                textInput.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.85),
+                textInput.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
+            ])
         
-        NSLayoutConstraint.activate([
-            foodImage.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 10),
-            foodImage.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-            foodImage.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
-            foodImage.widthAnchor.constraint(equalTo: foodImage.heightAnchor)
-        ])
-        foodImage.cornerRadius = 1.5*layoutUnit
+        view.addSubview(foodImage)
+            foodImage.translatesAutoresizingMaskIntoConstraints = false
+            foodImage.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            foodImage.layer.borderWidth = 6.0
+            foodImage.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            NSLayoutConstraint.activate([
+                foodImage.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 10),
+                foodImage.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                foodImage.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
+                foodImage.widthAnchor.constraint(equalTo: foodImage.heightAnchor)
+            ])
+            foodImage.cornerRadius = 1.5*layoutUnit
         
         view.addSubview(previewView)
-        previewView.isHidden = true
+            previewView.isHidden = true
             previewView.translatesAutoresizingMaskIntoConstraints = false
             previewView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
            // foodImage.image = UIImage(named: "cracker.jpeg")
@@ -366,29 +356,28 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
             previewView.cornerRadius = 1.5*layoutUnit
         
         view.addSubview(addButton)
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            addButton.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 10),
-            addButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-           addButton.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
-            addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor)
-        ])
-        addButton.cornerRadius = 1.5*layoutUnit
+            addButton.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                addButton.topAnchor.constraint(equalTo: textInput.bottomAnchor, constant: 10),
+                addButton.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                addButton.heightAnchor.constraint(equalToConstant: 3*layoutUnit),
+                addButton.widthAnchor.constraint(equalTo: addButton.heightAnchor)
+            ])
+            addButton.cornerRadius = 1.5*layoutUnit
         
 
         buttonStackView.addArrangedSubview(eatNowButton)
         buttonStackView.addArrangedSubview(eatLaterButton)
         
         view.addSubview(buttonStackView)
-        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            buttonStackView.bottomAnchor.constraint(greaterThanOrEqualTo: margins.bottomAnchor, constant: -10),
-            buttonStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: layoutUnit),
-            buttonStackView.widthAnchor.constraint(equalTo: margins.widthAnchor),
-            buttonStackView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
-            buttonStackView.topAnchor.constraint(lessThanOrEqualTo: foodImage.bottomAnchor, constant: 10)
-        ])
-        
+            buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                buttonStackView.bottomAnchor.constraint(greaterThanOrEqualTo: margins.bottomAnchor, constant: -10),
+                buttonStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: layoutUnit),
+                buttonStackView.widthAnchor.constraint(equalTo: margins.widthAnchor),
+                buttonStackView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+                buttonStackView.topAnchor.constraint(lessThanOrEqualTo: foodImage.bottomAnchor, constant: 10)
+            ])
     }
     
     /// fill in the data for the two collection view sources
@@ -399,16 +388,16 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
 }
 
 extension newDataInputViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          if collectionView == self.triesCollectionView
-              {
-                return min((foodArray?.count ?? 0) + (historyArray?.count ?? 0), 20)
-              }
         
-        if collectionView == self.targetsCollectionView
-                     {
+        if collectionView == self.triesCollectionView {
+                return min((foodArray?.count ?? 0) + (historyArray?.count ?? 0), 20)
+        }
+        
+        if collectionView == self.targetsCollectionView {
                        return targetArray?.count ?? 0
-                     }
+        }
         
         return 0
     }
@@ -431,7 +420,6 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                     }
                     
                     let editButton = UIButton(frame: CGRect(x:0, y:20, width:40,height:40))
-                    //editButton.setImage(UIImage(named: "editButton.png"), for: UIControlState.normal)
                     editButton.tag = indexPath.row
                     editButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
                     cell.addSubview(editButton)
@@ -464,37 +452,20 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                           layout collectionViewLayout: UICollectionViewLayout,
                           insetForSectionAt section: Int) -> UIEdgeInsets {
           return UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 0)
-      }
+    }
     
    
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
-//        print("hello")
-//
-//        if collectionView == self.triesCollectionView
-//         {
-////            if indexPath.row < (foodArray?.count ?? 0)
-////            {
-////            foodImage.image = UIImage(named: (foodArray?[indexPath.row].filename)!)
-////            textInput.text = foodArray?[indexPath.row].name ?? ""
-////            addButton.alpha = 0.2
-//         }
-//
-//         if collectionView == self.targetsCollectionView
-//         {
-//             foodImage.image = UIImage(named: (targetArray?[indexPath.row].filename)!)
-//            textInput.text = targetArray?[indexPath.row].name ?? ""
-//            addButton.alpha = 0.2
-//            self.reloadInputViews()
-//         }
-//
+
         var cellsToReload = [indexPath]
-          if let selected = selectedIndexPath {
+        
+        if let selected = selectedIndexPath {
               cellsToReload.append(selected)
-          }
-          selectedIndexPath = indexPath
-          collectionView.reloadItems(at: cellsToReload)
+        }
+        
+        selectedIndexPath = indexPath
+        collectionView.reloadItems(at: cellsToReload)
     }
     
 //    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -529,18 +500,16 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         if previewView.isHidden
         {
              previewView.isHidden = false
-              recordTheFood()
+             recordTheFood()
         }
         else{
             previewView.isHidden = true
             
             haptic.notificationOccurred(.success)
             if AVCaptureDevice.authorizationStatus(for: .video) != .denied
-            {   let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-                
+            {
+                let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
                 stillImageOutput.capturePhoto(with: settings, delegate: self)
-                //foodImage.cornerRadius = 50
-                ///previewView.cornerRadius = 50
             }
         }
       
@@ -554,19 +523,17 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
             {    let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
             
                 stillImageOutput.capturePhoto(with: settings, delegate: self)
-            //foodImage.cornerRadius = 50
-            ///previewView.cornerRadius = 50
             }
         }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        nextViewController = storyboard.instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
+        
+
         passData(dvc1: nextViewController)
-        //myNav?.pushViewController(nextViewController, animated: true)
+        
+
         myNav = (self.navigationController as! customNavigationController)
           /// this will nedd more nuance if I pull foods off the ribbons
-        myNav?.presentState = .AddFoodViewController
+        myNav?.presentState = nextViewController.presentState
         myNav?.pushViewController(nextViewController, animated: true)
-        //present(nextViewController, animated: true, completion: nil)
     }
     
     @objc func eatLaterSegue(){
@@ -576,45 +543,46 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
             if AVCaptureDevice.authorizationStatus(for: .video) != .denied
             {
                 let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-            
                 stillImageOutput.capturePhoto(with: settings, delegate: self)
-                //foodImage.cornerRadius = 50
-                ///previewView.cornerRadius = 50
             }
         }
-         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-         nextViewController = storyboard.instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
-         passData(dvc1: nextViewController)
-          //myNav?.pushViewController(nextViewController, animated: true)
-         myNav = self.navigationController as? customNavigationController
+
+       
+        nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
+        
+        nextViewController.presentState = .SetTargetViewController
+        myNav?.presentState = nextViewController.presentState
+       
+        passData(dvc1: nextViewController)
+        myNav = self.navigationController as? customNavigationController
+        
         /// this will nedd more nuance if i pull foods off the ribbons
-            myNav?.presentState = .SetTargetViewController
-           myNav?.pushViewController(nextViewController, animated: true)
+        myNav?.presentState = .SetTargetViewController
+        myNav?.pushViewController(nextViewController, animated: true)
        }
     
     func passData(dvc1: rateFoodViewController){
         dvc1.imagePlaceholder = image ?? UIImage(named: placeholderImages.randomElement()!)!
         dvc1.foodName = textInput.text ?? ""
-        //dvc1.placeHolderImage = foodImage.image ?? UIImage(named: "1plate.jpeg")
     }
     
             /// MARK: Setup
             func loadItems(){
                 let request : NSFetchRequest<Tried> = Tried.fetchRequest()
-                do{
-                    try foodArray = context.fetch(request).reversed()
-                }
-                catch{
-                    print("Error fetching data \(error)")
-                }
+                    do{
+                        try foodArray = context.fetch(request).reversed()
+                    }
+                    catch{
+                        print("Error fetching data \(error)")
+                    }
 
                 let request2 : NSFetchRequest<Target> = Target.fetchRequest()
-                do{
-                    try targetArray = context.fetch(request2).reversed()
-                }
-                catch{
-                    print("Error fetching data \(error)")
-                }
+                    do{
+                        try targetArray = context.fetch(request2).reversed()
+                    }
+                    catch{
+                        print("Error fetching data \(error)")
+                    }
 
                 let request3 : NSFetchRequest<Logons> = Logons.fetchRequest()
                       do{
@@ -625,16 +593,12 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                       }
                 
                 let request4 : NSFetchRequest<History> = History.fetchRequest()
-                             do{
-                                try historyArray = context.fetch(request4).reversed()
-                             }
-                             catch{
-                                 print("Error fetching data \(error)")
-                             }
-
-        //        if thisIsANewLogon(){
-        //           kjhh logons
-        //        }
+                      do{
+                            try historyArray = context.fetch(request4).reversed()
+                      }
+                      catch{
+                            print("Error fetching data \(error)")
+                      }
     }
     
     @objc func retryButtonTapped(sender: mainCollectionViewCell) -> Void {
@@ -662,6 +626,7 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
             nextViewController.historyArray = historyArray
             passData(dvc1: nextViewController)
             nextViewController.formatImage()
+            nextViewController.presentState = .RetryTriedFood
         }
     }
     
@@ -678,5 +643,8 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         addButton.alpha = 0.2
         passData(dvc1: nextViewController)
         nextViewController.formatImage()
+        nextViewController.presentState = .ConvertTargetToTry
+        nextViewController.dateTargetSet = plate.date!
+        /// now here I need to put a hold on this one, and if I save it, I need to delete the target
     }
 }

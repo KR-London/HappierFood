@@ -21,7 +21,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
     var rating = 0.0
     var foodName = String()
     var dateTargetSet = Date()
-    var presentState = String()
+    
+    // this would have been so much better doen as an enum
+    var presentState = Costume.Unknown
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let imagePickerView = UIImagePickerController()
     var firstPass = String()
@@ -68,8 +70,9 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         // MARK: Colour
         
         weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
-        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
-        if presentState == "SetTargetViewController" || presentState ==  "First Target"
+        presentState = main?.myNav?.presentState ?? Costume.FirstLaunch
+        
+        if presentState == .SetTargetViewController || presentState ==  .FirstTarget
         {
             motivationText.delegate = self
         }
@@ -83,7 +86,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             navigationItem.title = "Report Bug"
         }
         
-        if presentState == "First Pass"{navigationItem.title = ""}
+        if presentState == .FirstLaunch{navigationItem.title = ""}
         
         setUpNavigationBarItems()
 
@@ -155,7 +158,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
         
         if firstPass == "Target" {
-            presentState = "First Target"
+            presentState = .FirstTarget
             //self.navigationController?.navigationItem.hidesBackButton = true
             self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
         }
@@ -188,11 +191,10 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         let data = UIImage.pngData(image2)
         fileManager.createFile(atPath: imagePath!, contents: data(), attributes: nil)
         
-        
-        
+    
         switch presentState {
             
-        case "AddFoodViewController":
+        case .AddFoodViewController:
             /// this bit updates the database
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
@@ -212,7 +214,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             /// I don't think I use this now - but I should...
-        case "ConvertTargetToTry":
+        case .ConvertTargetToTry:
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -252,7 +254,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             
-        case "RetryTriedFood":
+        case .RetryTriedFood:
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
@@ -272,7 +274,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             
-        case "SetTargetViewController":
+        case .SetTargetViewController:
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Target", into: managedObjectContext) as! Target
                 menuItem.filename = placeHolderImage
@@ -288,7 +290,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             
-        case "First Pass":
+        case .FirstLaunch:
             /// this bit updates the database
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
@@ -312,7 +314,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             
-        case "First Target":
+        case .FirstTarget:
             if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Target", into: managedObjectContext) as! Target
                 menuItem.filename = placeHolderImage
@@ -390,27 +392,6 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
         shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
-        
-      //  let font = UIFont(name: "Arial", size: 2.0)
-      //  navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)
-        
-        //   let font = UIFont(name: "Verdana", size: 2.0)
-        //   UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!],
-//        weak var main = (navigationController?.viewControllers[0] as! mainViewController)
-//        presentState = main?.myNav?.currentStateAsString() ?? "First Pass"
-//
-//
-//
-//        switch  main?.myNav?.presentState {
-//        case .AddFoodViewController?, .RetryTriedFood?, .ConvertTargetToTry? :
-//            navigationItem.title = "Rate It!";
-//        case .SetTargetViewController?:
-//            navigationItem.title = "Motivate It"
-//        default:
-//            navigationItem.title = "Report Bug"
-//        }
-//
-//        if presentState == "First Pass"{navigationItem.title = ""}
     }
     
     // MARK: Handling user interaction
@@ -437,7 +418,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
         var message = String()
         
         switch presentState {
-        case "AddFoodViewController":
+        case .AddFoodViewController:
             let name = nameOfFood.text
             if name != nil && name != "" {
                 message = "I've just tried " + (name ?? "something") + ". In the release version of the app, I will also report whether I liked the food or not!"
@@ -445,7 +426,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
             else {
                 message = "I've just tried a new food!"
             }
-        case "SetTargetViewController":
+        case .SetTargetViewController:
             let name = nameOfFood.text
             if name != nil && name != "" {
                 message = "I've just set myself a target of trying " + (name ?? "something") + ". In the release version of the app, I will also report my motivation for trying this food."
