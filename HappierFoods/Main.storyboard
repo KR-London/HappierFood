@@ -274,7 +274,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Of Stat" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvP-tQ-YFW">
-                                                    <rect key="frame" x="91" y="26.5" width="234" height="27"/>
+                                                    <rect key="frame" x="91" y="30.5" width="234" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -290,24 +290,12 @@
                                                 <constraint firstItem="rvP-tQ-YFW" firstAttribute="width" secondItem="57b-2F-JOC" secondAttribute="width" multiplier="3" id="IMC-GE-GoU"/>
                                             </constraints>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d80-e1-WvZ">
-                                            <rect key="frame" x="120" y="29" width="174" height="20.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.049256207189999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VAg-cx-7RB" firstAttribute="leading" secondItem="bQs-da-UCr" secondAttribute="leading" id="9WL-A4-C6j"/>
-                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="trailing" secondItem="rvP-tQ-YFW" secondAttribute="trailing" id="AW1-xL-w8i"/>
-                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="height" secondItem="rvP-tQ-YFW" secondAttribute="height" id="ORz-2C-A2w"/>
                                         <constraint firstAttribute="bottom" secondItem="VAg-cx-7RB" secondAttribute="bottom" id="ShG-eX-toB"/>
                                         <constraint firstAttribute="trailing" secondItem="VAg-cx-7RB" secondAttribute="trailing" id="Xiz-Ve-az8"/>
                                         <constraint firstItem="VAg-cx-7RB" firstAttribute="top" secondItem="bQs-da-UCr" secondAttribute="top" id="d5r-7j-hqn"/>
-                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="bottom" secondItem="VAg-cx-7RB" secondAttribute="bottom" id="e0u-ND-o1N"/>
-                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="top" secondItem="rvP-tQ-YFW" secondAttribute="bottom" id="fCH-t9-S5c"/>
-                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="leading" secondItem="rvP-tQ-YFW" secondAttribute="leading" id="qUN-oq-VO0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -327,7 +315,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCI-qv-HMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="-2468"/>
+            <point key="canvasLocation" x="-581.15942028985512" y="-2468.3035714285711"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2OS-jh-RZS">
@@ -728,11 +716,11 @@
             <objects>
                 <viewController storyboardIdentifier="rateFoodVC" id="BYZ-38-t0r" customClass="rateFoodViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-3w-Rav" userLabel="Maxi Stack View">
-                                <rect key="frame" x="8" y="0.0" width="398" height="729"/>
+                                <rect key="frame" x="8" y="0.0" width="398" height="800"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-Yc-vXq" userLabel=" Mini Horizontal Stack View">
                                         <rect key="frame" x="8" y="0.0" width="382" height="100"/>
@@ -776,7 +764,7 @@
                                         </constraints>
                                     </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s04-OS-QFL" userLabel="Container Face View">
-                                        <rect key="frame" x="8" y="162" width="382" height="420"/>
+                                        <rect key="frame" x="8" y="197.5" width="382" height="420"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="s04-OS-QFL" secondAttribute="height" multiplier="1:1.1" id="7L5-Hl-tIW"/>
                                         </constraints>
@@ -785,7 +773,7 @@
                                         </connections>
                                     </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-FI-m5N" customClass="myButton" customModule="HappierFoods" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="644" width="382" height="85"/>
+                                        <rect key="frame" x="8" y="715" width="382" height="85"/>
                                         <color key="backgroundColor" red="0.72941176470588232" green="0.94901960784313721" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="6HD-DS-dpG"/>

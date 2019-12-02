@@ -114,7 +114,7 @@ class confettiViewController: UIViewController {
             let myNav = self.navigationController
             
             let bubbleHeight = 0.35*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
-            let label =  UILabel()
+            let label =  bubbleLabel()
             
             label.numberOfLines = 0
             label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)

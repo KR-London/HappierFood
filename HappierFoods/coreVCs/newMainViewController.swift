@@ -320,7 +320,7 @@ class newMainViewController: UIViewController {
     
         let text = happyUtterance.identifyContext(foodName: nil, tryNumber: nil, logonNumber: logonCount?.count ?? 0 , screen: .mainScreen)
         let bubbleHeight = 0.3*(view.frame.height - view.frame.width - (myNav?.navigationBar.frame.height ?? 0 ) )
-        let label =  UILabel()
+        let label =  bubbleLabel()
         
         label.numberOfLines = 0
         label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18)
@@ -331,6 +331,7 @@ class newMainViewController: UIViewController {
 
         label.layoutIfNeeded()
         label.sizeToFit()
+        //label.alignmentRectInsets = UIEdgeInsetsMake(0, 10, 0, 10)
 
         let constraintRect = bubbleBox.frame.size
 //        let boundingBox = text.boundingRect(with: constraintRect,
@@ -348,18 +349,8 @@ class newMainViewController: UIViewController {
         bubbleView.backgroundColor = .clear
         
         bubbleBox.addSubview(bubbleView)
-        
-
         label.center = bubbleView.center
         bubbleView.addSubview(label)
-       // let margins = view.layoutMarginsGuide
-      //  bubbleView.translatesAutoresizingMaskIntoConstraints = false
-      //  NSLayoutConstraint.activate([
-           // bubbleView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -8),
-         //   bubbleView.centerYAnchor.constraint(equalTo: statsView.centerYAnchor)
-         //   fasdfadsfd
-       //    ])
-        
         
     }
     
