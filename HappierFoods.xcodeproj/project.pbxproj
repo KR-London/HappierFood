@@ -12,6 +12,8 @@
 		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
 		4405869F238D686300398E5A /* challengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405869E238D686300398E5A /* challengeViewController.swift */; };
 		440758B5237B5265007C8153 /* newMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440758B4237B5264007C8153 /* newMainViewController.swift */; };
+		4407EC0623942E03006AEF82 /* myAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4407EC0523942E03006AEF82 /* myAppTests.swift */; };
+		4407EC1423944125006AEF82 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4407EC11239440C2006AEF82 /* SnapshotHelper.swift */; };
 		44080752238A698200AEA9CE /* ExtraTutorials.011.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44080747238A698200AEA9CE /* ExtraTutorials.011.jpeg */; };
 		44080753238A698200AEA9CE /* ExtraTutorials.007.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44080748238A698200AEA9CE /* ExtraTutorials.007.jpeg */; };
 		44080754238A698200AEA9CE /* ExtraTutorials.006.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44080749238A698200AEA9CE /* ExtraTutorials.006.jpeg */; };
@@ -250,6 +252,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4407EC0823942E03006AEF82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44BE3B9022566A230090BB5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44BE3B9722566A230090BB5F;
+			remoteInfo = HappierFoods;
+		};
 		44BE3BB022566A250090BB5F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 44BE3B9022566A230090BB5F /* Project object */;
@@ -265,6 +274,10 @@
 		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
 		4405869E238D686300398E5A /* challengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeViewController.swift; sourceTree = "<group>"; };
 		440758B4237B5264007C8153 /* newMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newMainViewController.swift; sourceTree = "<group>"; };
+		4407EC0323942E03006AEF82 /* myAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4407EC0523942E03006AEF82 /* myAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAppTests.swift; sourceTree = "<group>"; };
+		4407EC0723942E03006AEF82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4407EC11239440C2006AEF82 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		44080747238A698200AEA9CE /* ExtraTutorials.011.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.011.jpeg; sourceTree = "<group>"; };
 		44080748238A698200AEA9CE /* ExtraTutorials.007.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.007.jpeg; sourceTree = "<group>"; };
 		44080749238A698200AEA9CE /* ExtraTutorials.006.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.006.jpeg; sourceTree = "<group>"; };
@@ -510,6 +523,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4407EC0023942E03006AEF82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44BE3B9522566A230090BB5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +548,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4407EC0423942E03006AEF82 /* myAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4407EC11239440C2006AEF82 /* SnapshotHelper.swift */,
+				4407EC0523942E03006AEF82 /* myAppTests.swift */,
+				4407EC0723942E03006AEF82 /* Info.plist */,
+			);
+			path = myAppTests;
+			sourceTree = "<group>";
+		};
 		44080746238A698200AEA9CE /* ExtraTutorials */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,6 +867,7 @@
 				4410084122E4A5280096E47F /* Storyboard.storyboard */,
 				44BE3B9A22566A230090BB5F /* HappierFoods */,
 				44BE3BB222566A250090BB5F /* HappierFoodsTests */,
+				4407EC0423942E03006AEF82 /* myAppTests */,
 				44BE3B9922566A230090BB5F /* Products */,
 				8EB6978B33F755039C073DA5 /* Pods */,
 				44B6F21D2383B9A40098AF84 /* DecomissionedVCs */,
@@ -849,6 +880,7 @@
 			children = (
 				44BE3B9822566A230090BB5F /* HappierFoods.app */,
 				44BE3BAF22566A250090BB5F /* HappierFoodsTests.xctest */,
+				4407EC0323942E03006AEF82 /* myAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -952,6 +984,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4407EC0223942E03006AEF82 /* myAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4407EC0C23942E03006AEF82 /* Build configuration list for PBXNativeTarget "myAppTests" */;
+			buildPhases = (
+				4407EBFF23942E03006AEF82 /* Sources */,
+				4407EC0023942E03006AEF82 /* Frameworks */,
+				4407EC0123942E03006AEF82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4407EC0923942E03006AEF82 /* PBXTargetDependency */,
+			);
+			name = myAppTests;
+			productName = myAppTests;
+			productReference = 4407EC0323942E03006AEF82 /* myAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		44BE3B9722566A230090BB5F /* HappierFoods */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44BE3BB822566A250090BB5F /* Build configuration list for PBXNativeTarget "HappierFoods" */;
@@ -995,10 +1045,14 @@
 		44BE3B9022566A230090BB5F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Kate Roberts";
 				TargetAttributes = {
+					4407EC0223942E03006AEF82 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 44BE3B9722566A230090BB5F;
+					};
 					44BE3B9722566A230090BB5F = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -1023,11 +1077,19 @@
 			targets = (
 				44BE3B9722566A230090BB5F /* HappierFoods */,
 				44BE3BAE22566A250090BB5F /* HappierFoodsTests */,
+				4407EC0223942E03006AEF82 /* myAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4407EC0123942E03006AEF82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44BE3B9622566A230090BB5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1270,6 +1332,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4407EBFF23942E03006AEF82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4407EC0623942E03006AEF82 /* myAppTests.swift in Sources */,
+				4407EC1423944125006AEF82 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44BE3B9422566A230090BB5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1343,6 +1414,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4407EC0923942E03006AEF82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44BE3B9722566A230090BB5F /* HappierFoods */;
+			targetProxy = 4407EC0823942E03006AEF82 /* PBXContainerItemProxy */;
+		};
 		44BE3BB122566A250090BB5F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 44BE3B9722566A230090BB5F /* HappierFoods */;
@@ -1362,6 +1438,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4407EC0A23942E03006AEF82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E5MDC86ME;
+				INFOPLIST_FILE = myAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.myAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HappierFoods;
+			};
+			name = Debug;
+		};
+		4407EC0B23942E03006AEF82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E5MDC86ME;
+				INFOPLIST_FILE = myAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.myAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HappierFoods;
+			};
+			name = Release;
+		};
 		44BE3BB622566A250090BB5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1486,7 +1606,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1509,7 +1629,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1568,6 +1688,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4407EC0C23942E03006AEF82 /* Build configuration list for PBXNativeTarget "myAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4407EC0A23942E03006AEF82 /* Debug */,
+				4407EC0B23942E03006AEF82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		44BE3B9322566A230090BB5F /* Build configuration list for PBXProject "HappierFoods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

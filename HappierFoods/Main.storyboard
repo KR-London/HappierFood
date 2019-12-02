@@ -274,7 +274,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Of Stat" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvP-tQ-YFW">
-                                                    <rect key="frame" x="91" y="30.5" width="234" height="19.5"/>
+                                                    <rect key="frame" x="91" y="26.5" width="234" height="27"/>
                                                     <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -290,12 +290,24 @@
                                                 <constraint firstItem="rvP-tQ-YFW" firstAttribute="width" secondItem="57b-2F-JOC" secondAttribute="width" multiplier="3" id="IMC-GE-GoU"/>
                                             </constraints>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d80-e1-WvZ">
+                                            <rect key="frame" x="120" y="29" width="174" height="20.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.049256207189999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VAg-cx-7RB" firstAttribute="leading" secondItem="bQs-da-UCr" secondAttribute="leading" id="9WL-A4-C6j"/>
+                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="trailing" secondItem="rvP-tQ-YFW" secondAttribute="trailing" id="AW1-xL-w8i"/>
+                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="height" secondItem="rvP-tQ-YFW" secondAttribute="height" id="ORz-2C-A2w"/>
                                         <constraint firstAttribute="bottom" secondItem="VAg-cx-7RB" secondAttribute="bottom" id="ShG-eX-toB"/>
                                         <constraint firstAttribute="trailing" secondItem="VAg-cx-7RB" secondAttribute="trailing" id="Xiz-Ve-az8"/>
                                         <constraint firstItem="VAg-cx-7RB" firstAttribute="top" secondItem="bQs-da-UCr" secondAttribute="top" id="d5r-7j-hqn"/>
+                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="bottom" secondItem="VAg-cx-7RB" secondAttribute="bottom" id="e0u-ND-o1N"/>
+                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="top" secondItem="rvP-tQ-YFW" secondAttribute="bottom" id="fCH-t9-S5c"/>
+                                        <constraint firstItem="d80-e1-WvZ" firstAttribute="leading" secondItem="rvP-tQ-YFW" secondAttribute="leading" id="qUN-oq-VO0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1212,26 +1224,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIt-bv-qS0" customClass="handDrawnFaceView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
+                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rIt-bv-qS0" secondAttribute="height" multiplier="1:1" id="Age-AX-JgG"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I can't see your face" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qx-wu-i9I">
-                                <rect key="frame" x="70.5" y="194" width="241" height="32.5"/>
+                                <rect key="frame" x="78" y="182.5" width="226.5" height="32.5"/>
                                 <fontDescription key="fontDescription" name="TwCenMT-CondensedExtraBold" family="Tw Cen MT Condensed Extra Bold" pointSize="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qpk-I8-Icn">
-                                <rect key="frame" x="1" y="382.5" width="380" height="38.5"/>
+                                <rect key="frame" x="1" y="362.5" width="380" height="36.5"/>
                                 <connections>
                                     <action selector="sliderSliding:" destination="ohA-g8-JKs" eventType="valueChanged" id="1bH-IM-bft"/>
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ow-TI-vBP" customClass="smileView" customModule="HappierFoods" customModuleProvider="target">
-                                <rect key="frame" x="40.5" y="44" width="301" height="301"/>
+                                <rect key="frame" x="49.5" y="44" width="283" height="283"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>

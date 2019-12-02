@@ -14,20 +14,24 @@ private let reuseIdentifier = "historyTableCell"
 class historyTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var historyArray: [History]?
-    var foodArray: [Tried]!
-    var challengeFoodsArray: [Challenge]!
-    var targetsArray: [Target]!
+   // var historyArray: [History]?
+  //  var foodArray: [Tried]!
+   // var challengeFoodsArray: [Challenge]!
+   // var targetsArray: [Target]!
     /// I need something more here to store information about badges and such
     
-    var foods: [(String, String)]!
+    //var foods: [(String, String)]!
+    
+    var main: newMainViewController?
     
     var list: [Food]!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadItems()
+        
         
     }
 
@@ -65,19 +69,111 @@ class historyTableViewController: UITableViewController {
         
         switch record.type{
             case entryType.challenge.rawValue:
-                cell.backgroundColor = UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
+                cell.backgroundColor = #colorLiteral(red: 0.338232398, green: 0.2534516156, blue: 0.3303070068, alpha: 1)
+                    //UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
             case entryType.triedThisWeek.rawValue:
-            cell.backgroundColor = UIColor(red: 186/255, green: 235/255, blue: 206/255, alpha: 1)
+                cell.backgroundColor = #colorLiteral(red: 0.7630795836, green: 0.8484307528, blue: 0.5961778164, alpha: 1)
+                //UIColor(red: 176/255, green: 235/255, blue: 206/255, alpha: 1)
             case entryType.triedBeforeThisWeek.rawValue:
-            cell.backgroundColor = UIColor(red: 186/255, green: 230/255, blue: 206/255, alpha: 1)
+                cell.backgroundColor =  #colorLiteral(red: 0.4955835342, green: 0.6332069039, blue: 0.4178404212, alpha: 1)
+                //UIColor(red: 166/255, green: 230/255, blue: 206/255, alpha: 1)
             case entryType.target.rawValue:
-            cell.backgroundColor = UIColor(red: 186/255, green: 225/255, blue: 206/255, alpha: 1)
+                cell.backgroundColor =  #colorLiteral(red: 0.3476209641, green: 0.4364097714, blue: 0.3838276267, alpha: 1)
+                    //UIColor(red: 156/255, green: 225/255, blue: 206/255, alpha: 1)
             case entryType.targetCompleted.rawValue:
-            cell.backgroundColor = UIColor(red: 186/255, green: 220/255, blue: 206/255, alpha: 1)
-            default: cell.backgroundColor =  UIColor(red: 186/255, green: 215/255, blue: 206/255, alpha: 1)
+            cell.backgroundColor =   #colorLiteral(red: 0.9254191518, green: 0.9255302548, blue: 0.9253813624, alpha: 1)
+                //UIColor(red: 146/255, green: 220/255, blue: 206/255, alpha: 1)
+            default: cell.backgroundColor =  UIColor(red: 136/255, green: 215/255, blue: 206/255, alpha: 1)
         }
 
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            var thisIsATriedFood: Food?
+                
+            if list[indexPath.row].type == entryType.triedThisWeek.rawValue {
+                thisIsATriedFood = list[indexPath.row]
+            }
+            else
+            {
+                thisIsATriedFood = nil
+            }
+            
+            if bulkDelete == false{
+                    let alert = UIAlertController(title: "Are you sure?", message: "Deleting this record can't be undone", preferredStyle: .alert)
+
+                        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
+                            //self.list.remove(at: indexPath.row)
+                            
+                            self.context.delete(self.list[indexPath.row])
+                            self.list.remove(at: indexPath.row)
+                            do{
+                                try self.context.save()
+                            } catch {
+                                let nserror = error as NSError
+                                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                            }
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                        }))
+               
+                    alert.addAction(UIAlertAction(title: "Delete & don't ask again", style: .destructive, handler: {action in
+                       
+                        
+                        self.context.delete(self.list[indexPath.row])
+                        self.list.remove(at: indexPath.row)
+                        do{
+                            try self.context.save()
+                        } catch {
+                            let nserror = error as NSError
+                            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                        }
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                        bulkDelete = true
+                    }))
+                   
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                     self.present(alert, animated: true)
+                }
+                else{
+                    
+                    context.delete(list[indexPath.row])
+                    self.list.remove(at: indexPath.row)
+                    do{
+                        try context.save()
+                    } catch {
+                        let nserror = error as NSError
+                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    }
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            
+
+            if thisIsATriedFood  != nil {
+             
+                guard let indexOfDeletedFood = main?.foodArray.index(of: thisIsATriedFood as! Tried) else { fatalError("couldn't find that food - are you sure its previously tried? ") }
+                main?.foodArray.remove(at: indexOfDeletedFood)
+//                main?.myCollectionView.cellForItem(at:  IndexPath(row: indexOfDeletedFood, section: 0))
+//                main?.loadItems()
+//                //main?.myCollectionView.reloadSections([0])
+//              // main?.myCollectionView.reloadData()
+               main?.myCollectionView.reloadSections([0])
+                //let index = IndexPath(
+               // let cell = main?.myCollectionView.cellForItem(at: IndexPath(row: indexOfDeletedFood, section: 0)) as! mainCollectionViewCell
+               // cell.cellImage = nil
+               // cell.instructionReminder.isHidden = true
+
+               // cell.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+                //cell.reloadInputViews()
+               // main?.reloadInputViews()
+                //main?.myCollectionView.
+                
+            }
+        }
+        
     }
 
 
@@ -162,4 +258,6 @@ class historyTableViewController: UITableViewController {
         }
 
 
+    
+ 
 }

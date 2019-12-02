@@ -124,10 +124,10 @@ class confettiViewController: UIViewController {
             label.sizeToFit()
 
             let constraintRect = bubbleBox.frame.size
-            let boundingBox = text.boundingRect(with: constraintRect,
-                                                options: .usesLineFragmentOrigin,
-                                                attributes: [.font: label.font],
-                                                context: nil)
+            //let boundingBox = text.boundingRect(with: constraintRect,
+//                                                options: .usesLineFragmentOrigin,
+//                                                attributes: [.font: label.font],
+//                                                context: nil)
             label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 50),
                                       height: ceil(bubbleHeight))
 

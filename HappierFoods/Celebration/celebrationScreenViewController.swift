@@ -66,7 +66,7 @@ class celebrationScreenViewController: UIViewController {
         )
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
-            let animator = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
+          let _ = UIViewPropertyAnimator(duration: 3, curve: .easeOut) {
                                self.b1.alpha = 1
                            }
         }

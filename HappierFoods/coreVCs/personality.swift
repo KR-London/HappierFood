@@ -22,7 +22,9 @@ struct happySays{
                 "Trying new foods is hard - you're doing great!",
                 "You can do this!",
                 "It’s ok if you can’t eat something, everything will be alright",
-                "Remember to breathe"
+                "Remember to breathe",
+                "You're really trying, I can tell",
+                "If you're struggling, why not take half an hour out to play a game, and then come back?"
             ]
     
     let celebrateRetryingMessages =   [   "It can take many tries to accept a new food",

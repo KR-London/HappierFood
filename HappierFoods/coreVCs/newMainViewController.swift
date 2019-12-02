@@ -5,6 +5,7 @@ import CoreData
 //import SAConfettiView
 
 let defaults = UserDefaults.standard
+var bulkDelete = false
 
 class newMainViewController: UIViewController {
     
@@ -108,7 +109,7 @@ class newMainViewController: UIViewController {
             cacheData()
         }
         view.backgroundColor = UIColor(red: 251/255, green: 254/255, blue: 252/255, alpha: 1)
-        let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+      //  let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
         //print(datafilepath!)
     }
     
@@ -332,10 +333,10 @@ class newMainViewController: UIViewController {
         label.sizeToFit()
 
         let constraintRect = bubbleBox.frame.size
-        let boundingBox = text.boundingRect(with: constraintRect,
-                                            options: .usesLineFragmentOrigin,
-                                            attributes: [.font: label.font],
-                                            context: nil)
+//        let boundingBox = text.boundingRect(with: constraintRect,
+//                                            options: .usesLineFragmentOrigin,
+//                                            attributes: [.font: label.font],
+//                                            context: nil)
         label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 50),
                                   height: ceil(bubbleHeight))
 
@@ -351,7 +352,7 @@ class newMainViewController: UIViewController {
 
         label.center = bubbleView.center
         bubbleView.addSubview(label)
-        let margins = view.layoutMarginsGuide
+       // let margins = view.layoutMarginsGuide
       //  bubbleView.translatesAutoresizingMaskIntoConstraints = false
       //  NSLayoutConstraint.activate([
            // bubbleView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -8),
@@ -489,7 +490,7 @@ class newMainViewController: UIViewController {
     }
     
     func cacheData(){
-        deleteAllData("TriedFood")
+        deleteAllData("Tried")
         foodArray = []
         
         DispatchQueue.main.async{
@@ -550,7 +551,8 @@ class newMainViewController: UIViewController {
      @objc func goHistory() {
         //performSegue(withIdentifier: "historySegue", sender: UIButton())
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "historyScreen" )
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "historyScreen" ) as! historyTableViewController
+        initialViewController.main = self
         self.present(initialViewController, animated: true, completion: nil)
        // print("History button pressed")
     }
@@ -631,16 +633,10 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
             }
             else{
                 if indexPath.row == 15{
-//                    let label = UILabel()
-//                    label.frame = cell.frame
-//                    label.text = "+"
-//                    label.alpha = 0.6
-//                    cell.addSubview(label)
-                    
                     cell.cellLabel.text = "+"
                     cell.cellLabel.isHidden = false
                 }
-        }
+            }
         
             if foodArray != nil {
                     if indexPath.row < foodArray.count {

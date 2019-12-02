@@ -35,9 +35,9 @@ class settingsViewController: UIViewController {
        let alert = UIAlertController(title: "Are you sure?", message: "This will delete ALL of your data.", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Delete All", style: .destructive, handler: {action in
-             self.deleteAllData("TargetFood")
-             self.deleteAllData("TriedFood")
-             self.deleteAllData("HistoryTriedFoods")
+             self.deleteAllData("Target")
+             self.deleteAllData("Tried")
+             self.deleteAllData("History")
              self.deleteAllData("Logons")
             
             UserDefaults.standard.removeObject(forKey: "loginRecord")
@@ -93,7 +93,7 @@ class settingsViewController: UIViewController {
             }
         }
         
-        deleteAllData("TriedFood")
+        deleteAllData("Tried")
         
         /// reset markers
         let dateNow = Date().timeIntervalSince1970

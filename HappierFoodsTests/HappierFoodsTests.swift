@@ -18,6 +18,25 @@ class HappierFoodsTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testScreenshots() {
+       // let app = XCUIApplication()
+      //  XCUIDevice.shared.orientation = .portrait
+        
+        //let tabBarsQuery = XCUIApplication().tabBars
+        // Home
+       // tabBarsQuery.buttons.element(boundBy: 0).tap()
+        //snapshot("0-Home")
+        
+        // Map
+       // tabBarsQuery.buttons.element(boundBy: 1).tap()
+       // app.otherElements["eventlocation"].tap()
+       // snapshot("1-Map")
+        
+        // Twitter
+        //tabBarsQuery.buttons.element(boundBy: 2).tap()
+        //snapshot("2-Twiter")
+    }
 
     func testExample() {
         // This is an example of a functional test case.

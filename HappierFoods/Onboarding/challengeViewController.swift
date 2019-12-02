@@ -129,7 +129,8 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
            "Balance three vegetables on top of each other and photograph it",
            "Make your dinner into a face",
            "Present and name your dinner like how it would look in a Michelin Restaurant",
-           "The ugliest nugget"
+           "The ugliest nugget",
+           "Fry the weirdest thing you can"
        ]
     
        /// update this implementation to make it a 'challenge of the week' or 'challenge of the day' thing.
@@ -227,10 +228,12 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                   captureSession = AVCaptureSession()
                   captureSession.sessionPreset = .medium
               
-                  guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
-                      .first else {
-                          fatalError("No front facing camera found")
-                      }
+//                  guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
+//                      .first else {
+//                          fatalError("No front facing camera found")
+//                      }
+                
+                guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) else{ fatalError("No camera")}
               
                   do {
                       let input = try AVCaptureDeviceInput(device: backCamera)
@@ -408,7 +411,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         func appsAndBiscuits(imageName: String?, image: UIImage, rating: Double?, notes: String?){
-            weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
+          //  weak var main = (navigationController?.viewControllers[0] as! newMainViewController)
 
             /// create an instance of filemanager
             let fileManager = FileManager.default

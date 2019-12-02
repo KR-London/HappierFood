@@ -228,10 +228,13 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
               captureSession = AVCaptureSession()
               captureSession.sessionPreset = .medium
           
-              guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
-                  .first else {
-                      fatalError("No front facing camera found")
-                  }
+//              guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
+//                  .first else {
+//                      fatalError("No front facing camera found")
+//                  }
+            
+            guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
+                else{ fatalError("no camera")}
           
               do {
                   let input = try AVCaptureDeviceInput(device: backCamera)
@@ -532,7 +535,11 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
 
         myNav = (self.navigationController as! customNavigationController)
           /// this will nedd more nuance if I pull foods off the ribbons
+        if nextViewController.presentState != .Unknown {
         myNav?.presentState = nextViewController.presentState
+        } else {
+            myNav?.presentState = Costume.AddFoodViewController
+        }
         myNav?.pushViewController(nextViewController, animated: true)
     }
     

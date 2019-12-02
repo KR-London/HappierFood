@@ -25,9 +25,9 @@ class historyViewController: UIViewController{
     @IBAction func clearData(_ sender: Any) {
         
         weak var main = navigationController?.viewControllers[0] as? mainViewController
-        main?.deleteAllData("TargetFood")
-        main?.deleteAllData("TriedFood")
-        deleteAllData("HistoryTriedFoods")
+        main?.deleteAllData("Target")
+        main?.deleteAllData("Tried")
+        deleteAllData("History")
         
         main?.foodArray = []
         main?.targetArray = []
@@ -80,6 +80,7 @@ class historyViewController: UIViewController{
                     menuItem.filename = foodToMove?.filename
                     menuItem.name = foodToMove?.name
                     menuItem.rating = foodToMove?.rating ?? 0
+                    menuItem.type = entryType.triedBeforeThisWeek.rawValue
                     //menuItem.saveNumber = maximumSaveNumber + 1
                     saveItems()
                 }

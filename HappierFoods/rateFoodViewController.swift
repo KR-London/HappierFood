@@ -233,18 +233,28 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 managedObjectContext.delete(targetArray[indexOfMyTimestamp!])
                 
+                let archiveItem = NSEntityDescription.insertNewObject(forEntityName: "Target", into: managedObjectContext) as! Target
+                    archiveItem.filename = placeHolderImage
+                    archiveItem.name = imageName
+                    archiveItem.rating = rating ?? 0
+                    archiveItem.date = Date()
+                    archiveItem.notes = existingMotivationText
+                    archiveItem.type = entryType.targetCompleted.rawValue
+                
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Tried", into: managedObjectContext) as! Tried
-                menuItem.filename = placeHolderImage
-                menuItem.name = imageName
-                menuItem.rating = rating ?? 0
-                menuItem.date = Date()
-                menuItem.notes = existingMotivationText
-                menuItem.type = entryType.triedThisWeek.rawValue
-                saveItems()
+                    menuItem.filename = placeHolderImage
+                    menuItem.name = imageName
+                    menuItem.rating = rating ?? 0
+                    menuItem.date = Date()
+                    menuItem.notes = existingMotivationText
+                    menuItem.type = entryType.triedThisWeek.rawValue
+                    saveItems()
                 
                 main?.foodArray.append(menuItem)
                 foodArray.append(menuItem)
-                main?.targetArray.remove(at: indexOfMyTimestamp!)
+                
+                // this is redundant now
+               // main?.targetArray.remove(at: indexOfMyTimestamp!)
                 
                 /// and reflag the target record
                 
@@ -298,6 +308,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.name = imageName
                 menuItem.rating = rating ?? 0
                 menuItem.date = Date()
+                menuItem.type = entryType.triedThisWeek.rawValue
                 saveItems()
                 /// now update the local display - so the user can immediately see the difference without me needing to dip into the database and reload the whole view
                 main?.foodArray = [menuItem]
@@ -321,6 +332,7 @@ class rateFoodViewController: UIViewController, UIImagePickerControllerDelegate,
                 menuItem.name = imageName
                 menuItem.date = Date()
                 menuItem.notes = notes
+                menuItem.type = entryType.target.rawValue
                 saveItems()
                 
                 

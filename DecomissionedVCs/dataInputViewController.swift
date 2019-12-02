@@ -284,11 +284,17 @@ class dataInputViewController: UIViewController, UIImagePickerControllerDelegate
             captureSession = AVCaptureSession()
             captureSession.sessionPreset = .medium
         
-            guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
-                .first else {
-                    fatalError("No front facing camera found")
-                }
+//            guard let backCamera = AVCaptureDevice.devices().filter({ $0.position == .back })
+//                .first else {
+//                    fatalError("No front facing camera found")
+//                }
         
+
+            guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back) else {
+                //return <#default value#>
+                 fatalError("No front facing camera found")
+                }
+            
             do {
                 let input = try AVCaptureDeviceInput(device: backCamera)
                 stillImageOutput = AVCapturePhotoOutput()
