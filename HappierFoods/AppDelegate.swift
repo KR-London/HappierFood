@@ -69,7 +69,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        BugReporting.bugReportingOptions = [.emailFieldHidden]
         
         UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+        var navigationBarAppearace = UINavigationBar.appearance()
 
+      //  navigationBarAppearace.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+      //  navigationBarAppearace.barTintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+
+        // change navigation item title color
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+    
         return true
     }
     

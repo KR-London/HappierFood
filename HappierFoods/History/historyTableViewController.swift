@@ -109,7 +109,7 @@ class historyTableViewController: UITableViewController {
             }
             
             if bulkDelete == false{
-                    let alert = UIAlertController(title: "Are you sure?", message: "Deleting this record can't be undone", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Are you sure?", message: "Deleting this record can't be undone", preferredStyle: .actionSheet)
 
                         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {action in
                             //self.list.remove(at: indexPath.row)
@@ -125,7 +125,7 @@ class historyTableViewController: UITableViewController {
                             tableView.deleteRows(at: [indexPath], with: .fade)
                         }))
                
-                    alert.addAction(UIAlertAction(title: "Delete & don't ask again", style: .destructive, handler: {action in
+                    alert.addAction(UIAlertAction(title: "Delete & don't ask again today", style: .destructive, handler: {action in
                        
                         
                         self.context.delete(self.list[indexPath.row])

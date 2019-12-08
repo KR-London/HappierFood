@@ -20,7 +20,7 @@ class customNavigationController: UINavigationController {
          navigationBar.barTintColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
          navigationBar.backgroundColor = UIColor(red: 103/255, green: 230/255, blue: 194/255, alpha: 1)
        //// navigationBar.barTintColor = UIColor(red: 0/255, green: 0/255, blue: 194/255, alpha: 1)
-
+        
         navigationBar.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
        // navigationItem.title.
         
