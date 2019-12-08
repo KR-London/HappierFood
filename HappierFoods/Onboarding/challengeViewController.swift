@@ -365,6 +365,8 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         func passData(dvc1: confettiViewController){
             dvc1.imagePlaceholder = image ?? UIImage(named: placeholderImages.randomElement()!)!
             dvc1.foodName.text = textInput.text ?? ""
+            let happyUtterance = happySays()
+            dvc1.message = happyUtterance.identifyContext(foodName: textInput.text ?? "", tryNumber: nil, logonNumber: nil, screen: screen.challengeScreen )
         }
     
         /// MARK: Setup
@@ -391,7 +393,14 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                     ///previewView.cornerRadius = 50
                 }
             }
+            if image == nil && (textInput.text == nil || textInput.text == ""){
+                         let alert = UIAlertController(title: "I need a little more", message: "Please input a food name or a photo to log what you did", preferredStyle: .alert)
+                              alert.addAction(UIAlertAction(title: "I can do this!", style: .cancel, handler: nil))
+                               self.present(alert, animated: true)
+                     }
+            else{
             appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
+            }
             
 //            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
 //            nextViewController = storyboard.instantiateViewController(withIdentifier: "postChallengeScreen" ) as! confettiViewController

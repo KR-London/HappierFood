@@ -32,7 +32,7 @@ class returnToOnboardingViewController: UIViewController {
            // button.tintColor = UIColor().HexToColor(hexString: "#210203", alpha: 1.0)
             button.setTitle("Hold my hand - I'm gonna try something", for: .normal)
             button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-             button.titleLabel?.allowsDefaultTighteningForTruncation = true
+            button.titleLabel?.allowsDefaultTighteningForTruncation = true
             button.titleLabel?.font =  UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
             button.titleLabel?.textAlignment = .center
            // button.titleLabel!.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24 )
@@ -317,6 +317,9 @@ class returnToOnboardingViewController: UIViewController {
           
         @objc func motivate(sender: UIButton!) {
               performSegue(withIdentifier: "motivate", sender: self)
+//            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "resources" )
+//            self.present(initialViewController, animated: false, completion: nil)
         }
     
         @objc func settings(sender: UIButton!) {

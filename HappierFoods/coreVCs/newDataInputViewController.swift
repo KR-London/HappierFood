@@ -530,17 +530,25 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         }
         
 
-        passData(dvc1: nextViewController)
+        if image == nil && (textInput.text == nil || textInput.text == ""){
+            let alert = UIAlertController(title: "Please tell me what you tried", message: "I need either a food name or a photo to proceed", preferredStyle: .alert)
+                 alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                  self.present(alert, animated: true)
+        }
+        else
+        {
+            passData(dvc1: nextViewController)
         
 
-        myNav = (self.navigationController as! customNavigationController)
+            myNav = (self.navigationController as! customNavigationController)
           /// this will nedd more nuance if I pull foods off the ribbons
-        if nextViewController.presentState != .Unknown {
-        myNav?.presentState = nextViewController.presentState
-        } else {
-            myNav?.presentState = Costume.AddFoodViewController
+            if nextViewController.presentState != .Unknown {
+                myNav?.presentState = nextViewController.presentState
+            } else {
+                myNav?.presentState = Costume.AddFoodViewController
+            }
+            myNav?.pushViewController(nextViewController, animated: true)
         }
-        myNav?.pushViewController(nextViewController, animated: true)
     }
     
     @objc func eatLaterSegue(){
@@ -554,18 +562,25 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
             }
         }
 
-       
-        nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
+       if image == nil && (textInput.text == nil || textInput.text == ""){
+                let alert = UIAlertController(title: "Please tell me the target", message: "I need either a food name or a photo to proceed", preferredStyle: .alert)
+                     alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                      self.present(alert, animated: true)
+            }
+        else
+       {
+            nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "targetSettingScreen" ) as! rateFoodViewController
         
-        nextViewController.presentState = .SetTargetViewController
-        myNav?.presentState = nextViewController.presentState
+            nextViewController.presentState = .SetTargetViewController
+            myNav?.presentState = nextViewController.presentState
        
-        passData(dvc1: nextViewController)
-        myNav = self.navigationController as? customNavigationController
+            passData(dvc1: nextViewController)
+            myNav = self.navigationController as? customNavigationController
         
-        /// this will nedd more nuance if i pull foods off the ribbons
-        myNav?.presentState = .SetTargetViewController
-        myNav?.pushViewController(nextViewController, animated: true)
+            /// this will nedd more nuance if i pull foods off the ribbons
+            myNav?.presentState = .SetTargetViewController
+            myNav?.pushViewController(nextViewController, animated: true)
+        }
        }
     
     func passData(dvc1: rateFoodViewController){

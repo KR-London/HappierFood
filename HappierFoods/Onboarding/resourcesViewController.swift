@@ -35,6 +35,7 @@ class resourcesViewController: UIViewController, WKUIDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         let myRequest = URLRequest(url: myURL!)
         webWindow.load(myRequest)
         

@@ -25,8 +25,10 @@ struct happySays{
                 "Remember to breathe",
                 "You're really trying, I can tell",
                 "If you're struggling, why not take half an hour out to play a game, and then come back?",
-                "I know this is hard for you, but we can try new things together."
+                "I know this is hard for you, but we can try new things together.", "Start with food you like, and move your comfort zone outwards"
             ]
+    
+    let targetMessages = ["Food is a multisensory experience" , "It can be helpful to target trying foods similar to ones you already like"]
     
     let celebrateRetryingMessages =   [   "It can take many tries to accept a new food",
                   "Wow - what perseverance",
@@ -52,6 +54,9 @@ struct happySays{
     let mainScreenComms =   [   "Tap on my tummy for more help", "Have you tried challenge mode? Tap on my tummy to learn more.", "Your target is to try 9 new foods a week!", "Login every day to maintain your streak"
          ]
     
+    let afterChallengeScreenComms =   [   "Having fun with food can help reduce the fear", "Some people find it helps to play with food with no pressure to eat", "That's funny!", "You can share from the challenge screen", "Start with food you like, and move your comfort zone outwards", "Be a kid again - it's good for you", "Food is a multisensory experience"
+            ]
+    
     var foodName: String?
     var tries: Int?
     var logons: Int?
@@ -59,6 +64,11 @@ struct happySays{
     
     /// define a function which screens the food input for if it is froma particular class - e.g. vegetables
     func identifyContext(foodName: String?, tryNumber: Int?, logonNumber: Int?, screen: screen) -> String{
+        
+        if screen == .challengeScreen {
+            return afterChallengeScreenComms.randomElement()!
+        }
+        
         if [5, 10, 15, 20, 25].contains(tryNumber)
         {
             return celebrateRetrying(tryNumber: tryNumber!, name: foodName ?? "this food")

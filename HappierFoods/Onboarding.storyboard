@@ -118,11 +118,11 @@
             <objects>
                 <viewController storyboardIdentifier="o2" id="Y4M-5b-8iH" customClass="Onboarding2ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F8O-pf-dxO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xnu-sq-smD">
-                                <rect key="frame" x="314" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="314" y="44" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="G96-I6-7qy"/>
                                     <constraint firstAttribute="height" constant="100" id="kqa-Ln-gNE"/>
@@ -594,6 +594,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZOz-Gq-nU4"/>
                     </view>
+                    <navigationItem key="navigationItem" id="c3v-yB-vi1"/>
                     <connections>
                         <outlet property="webWindow" destination="VWu-4V-FFc" id="0CC-VG-EpN"/>
                     </connections>
@@ -757,9 +758,9 @@
                     <connections>
                         <segue destination="FeB-us-TIK" kind="presentation" identifier="reTry" id="fFK-Yt-DMA"/>
                         <segue destination="J5K-m7-rnN" kind="presentation" identifier="reNoTry" id="tyw-Gb-DW7"/>
-                        <segue destination="aAA-y7-CVG" kind="show" identifier="motivate" id="2Bv-jF-wIi"/>
                         <segue destination="YKY-fs-aHH" kind="show" identifier="settingSegue" id="w5S-sa-Zpn"/>
                         <segue destination="hls-5r-MeZ" kind="show" identifier="playSegue" id="eFO-Qq-GfJ"/>
+                        <segue destination="3kr-IF-0Nk" kind="show" identifier="motivate" id="TOU-5S-BAy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eig-98-BEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -771,11 +772,11 @@
             <objects>
                 <viewController storyboardIdentifier="happy" id="tnf-Lq-BSP" customClass="Onboarding4ViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JhR-g8-bS6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="little dude3.png" translatesAutoresizingMaskIntoConstraints="NO" id="GYi-pO-2PA">
-                                <rect key="frame" x="0.0" y="708" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="762" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="IPr-HO-sa5"/>
                                     <constraint firstAttribute="width" constant="100" id="Z8y-96-3JB"/>
@@ -898,14 +899,14 @@
             <objects>
                 <viewController id="aAA-y7-CVG" customClass="certificateViewController" customModule="HappierFoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TIT-x2-JvD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlankAward.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="dGj-Uv-hsX">
-                                <rect key="frame" x="20" y="37" width="374" height="768"/>
+                                <rect key="frame" x="20" y="64" width="374" height="768"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Fak-8o-vw4">
-                                <rect key="frame" x="95" y="431.5" width="224" height="63.5"/>
+                                <rect key="frame" x="95" y="461" width="224" height="63.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-lf-TXv">
                                         <rect key="frame" x="0.0" y="0.0" width="224" height="21"/>
@@ -985,7 +986,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="fFK-Yt-DMA"/>
         <segue reference="tyw-Gb-DW7"/>
-        <segue reference="cbf-hz-mSr"/>
-        <segue reference="AwC-OW-56U"/>
+        <segue reference="aVd-rT-8Za"/>
+        <segue reference="TOU-5S-BAy"/>
+        <segue reference="2o0-ak-dRD"/>
     </inferredMetricsTieBreakers>
 </document>
