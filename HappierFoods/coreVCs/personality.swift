@@ -24,7 +24,8 @@ struct happySays{
                 "It’s ok if you can’t eat something, everything will be alright",
                 "Remember to breathe",
                 "You're really trying, I can tell",
-                "If you're struggling, why not take half an hour out to play a game, and then come back?"
+                "If you're struggling, why not take half an hour out to play a game, and then come back?",
+                "I know this is hard for you, but we can try new things together."
             ]
     
     let celebrateRetryingMessages =   [   "It can take many tries to accept a new food",
@@ -47,6 +48,9 @@ struct happySays{
     let mixedFoodMessages =   [   "These foods will make eating with friends and family easier for you",
           "Keep going like this, and restaurant menus will be a joy for you", "Mushy food! That's brave"
       ]
+    
+    let mainScreenComms =   [   "Tap on my tummy for more help", "Have you tried challenge mode? Tap on my tummy to learn more.", "Your target is to try 9 new foods a week!", "Login every day to maintain your streak"
+         ]
     
     var foodName: String?
     var tries: Int?
@@ -75,6 +79,10 @@ struct happySays{
         if ["lasagna", "curry", "stew"].contains(foodName)
         {
             return celebrateMixedUpFood(name: foodName ?? "this food")
+        }
+        
+        if screen == .mainScreen && [8, 12, 16, 20].contains(logonNumber){
+            return mainScreenComms[(logonNumber ?? 8)/4 - 2]
         }
         
         return generalSupportiveMessages.randomElement() ?? "Well done - you are doing great!"

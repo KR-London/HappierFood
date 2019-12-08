@@ -67,6 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Instabug.start(withToken: "17d71f8f957715dc419f961534032c20", invocationEvents: [.shake])
 //        BugReporting.shakingThresholdForiPhone = 1.0
 //        BugReporting.bugReportingOptions = [.emailFieldHidden]
+        
+        UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
 
         return true
     }

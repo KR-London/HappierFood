@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Badges" representedClassName="Badges" parentEntity="Food" syncable="YES" codeGenerationType="class"/>
     <entity name="CelebrationStatus" representedClassName="CelebrationStatus" syncable="YES" codeGenerationType="class">
         <attribute name="celebrationTriggered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="dateLastWeekStarted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -25,11 +26,12 @@
     <entity name="Tried" representedClassName="Tried" parentEntity="Food" syncable="YES" codeGenerationType="class"/>
     <elements>
         <element name="CelebrationStatus" positionX="-27.921875" positionY="-75.1171875" width="128" height="73"/>
-        <element name="Logons" positionX="-21.56640625" positionY="5.72265625" width="128" height="88"/>
-        <element name="Tried" positionX="-279.171875" positionY="-53.19921875" width="128" height="43"/>
-        <element name="Target" positionX="-563.5" positionY="-50.06640625" width="128" height="58"/>
-        <element name="History" positionX="-419.4921875" positionY="-49.58203125" width="128" height="43"/>
-        <element name="Challenge" positionX="-716.79296875" positionY="-48.6875" width="128" height="43"/>
+        <element name="Challenge" positionX="-717.84765625" positionY="-47.56640625" width="128" height="43"/>
         <element name="Food" positionX="-590.8828125" positionY="-241.97265625" width="128" height="133"/>
+        <element name="History" positionX="-419.94140625" positionY="-47.8828125" width="128" height="43"/>
+        <element name="Logons" positionX="-21.56640625" positionY="5.72265625" width="128" height="88"/>
+        <element name="Target" positionX="-566.67578125" positionY="-49.5859375" width="128" height="58"/>
+        <element name="Tried" positionX="-279.36328125" positionY="-47.16015625" width="128" height="43"/>
+        <element name="Badges" positionX="-896.9921875" positionY="-47.3515625" width="128" height="43"/>
     </elements>
 </model>

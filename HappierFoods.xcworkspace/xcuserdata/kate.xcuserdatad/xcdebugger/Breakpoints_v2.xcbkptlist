@@ -820,63 +820,16 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7ADE4050-888B-473F-A62B-98AE9AA66EF4"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HappierFoods/History/historyTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7ADE4050-888B-473F-A62B-98AE9AA66EF4 - 644f9c827190313a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HappierFoods.historyTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "HappierFoods"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/History/historyTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "201">
-               </Location>
-               <Location
-                  uuid = "7ADE4050-888B-473F-A62B-98AE9AA66EF4 - a3d818ec8d599c59"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (HappierFoods.HistoryTriedFoods) -&gt; Swift.Optional&lt;Swift.String&gt; in HappierFoods.historyTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "HappierFoods"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/History/historyTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "39">
-               </Location>
-               <Location
-                  uuid = "7ADE4050-888B-473F-A62B-98AE9AA66EF4 - c4f76002f8b0c6fb"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (HappierFoods.TriedFood) -&gt; Swift.Optional&lt;Swift.String&gt; in HappierFoods.historyTableViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "HappierFoods"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kate/Desktop/HappierFoodsCopy/HappierFoods/History/historyTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "39">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1453,22 +1406,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "97AEDDB6-8FB2-489D-B0FA-7FFB378EB1A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HappierFoods/Onboarding/challengeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
-            landmarkName = "appsAndBiscuits(imageName:image:rating:notes:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BFF67A7D-82E8-4BE9-BD0A-B53C4A3561F7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1549,16 +1486,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A2D0CDBF-C04D-4B81-B3C5-808FA7F249E9"
+            uuid = "89D9EFAE-0FD5-455C-B9B3-EC859F4E4FF0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappierFoods/History/historyTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21E88A5A-34F3-4E4D-A3D6-71FE4B67EC96"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HappierFoods/secondTutorialPageViewController.swift"
+            filePath = "HappierFoods/History/historyTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "handleTap(_:)"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "loadItems()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

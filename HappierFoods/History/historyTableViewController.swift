@@ -14,14 +14,7 @@ private let reuseIdentifier = "historyTableCell"
 class historyTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-   // var historyArray: [History]?
-  //  var foodArray: [Tried]!
-   // var challengeFoodsArray: [Challenge]!
-   // var targetsArray: [Target]!
-    /// I need something more here to store information about badges and such
-    
-    //var foods: [(String, String)]!
-    
+
     var main: newMainViewController?
     
     var list: [Food]!
@@ -47,6 +40,8 @@ class historyTableViewController: UITableViewController {
         
         let record = list[indexPath.row]
         
+        // put in safety
+        
         cell.titleOfStatistic.text = record.name
         cell.valueOfStatistic.text = record.notes
         let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(record.filename ?? "1.png")
@@ -54,13 +49,15 @@ class historyTableViewController: UITableViewController {
         cell.displayContent(image: fileToLoad)
 
         
-        let date = record.date
+        if let date = record.date
+        {
            let formatter = DateFormatter()
            formatter.dateFormat = "dd MMM yy " //If you dont want static "UTC" you can go for ZZZZ instead of 'UTC'Z.
           // formatter.timeZone = TimeZone(abbreviation: "IST")
-           let result1 = formatter.string(from: date!) ?? ""
+           let result1 = formatter.string(from: date)
            cell.dateTried.text = result1
-        
+        }
+            
         switch record.type{
             case entryType.challenge.rawValue:
                // cell.backgroundColor = #colorLiteral(red: 0.9179692864, green: 0.4894329639, blue: 0.5481537275, alpha: 1)
@@ -148,6 +145,9 @@ class historyTableViewController: UITableViewController {
                 }
                 else{
                     
+                    /// am i creting a bug by only deleting parent
+                
+                
                     context.delete(list[indexPath.row])
                     self.list.remove(at: indexPath.row)
                     do{
@@ -163,6 +163,7 @@ class historyTableViewController: UITableViewController {
              
                 guard let indexOfDeletedFood = main?.foodArray.index(of: thisIsATriedFood as! Tried) else { fatalError("couldn't find that food - are you sure its previously tried? ") }
                 main?.foodArray.remove(at: indexOfDeletedFood)
+                main?.myCollectionView.reloadData()
             }
         }
         
