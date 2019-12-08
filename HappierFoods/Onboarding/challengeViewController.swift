@@ -33,7 +33,6 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         lazy var targetsCollectionView: UICollectionView = {
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
-            
             let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
             collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             return collection
@@ -48,13 +47,11 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         
         lazy var previewView: UIImageView = {
             let imageView = UIImageView()
-            
             return imageView
         }()
         
         lazy var foodImage: UIImageView = {
             let imageView = UIImageView()
-            
             return imageView
         }()
         
@@ -177,10 +174,13 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
           func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
                 guard let imageData = photo.fileDataRepresentation()
                   else { return }
-                image = UIImage(data: imageData) ?? UIImage(named: "chaos.jpg")!
+            image = UIImage(data: imageData)?.cropImageToSquare() ?? UIImage(named: "chaos.jpg")!
                 foodImage.image = image
                 foodImage.layer.masksToBounds = true
-                nextViewController.formatImage()
+              //  nextViewController.imagePlaceholder = image ?? UIImage(named: placeholderImages.randomElement()!)!
+              //  nextViewController.foodName.text = textInput.text ?? ""
+               // nextViewController.formatImage()
+            
           }
           
           func presentCameraSettings() {
@@ -233,7 +233,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
 //                          fatalError("No front facing camera found")
 //                      }
                 
-                guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) else{ fatalError("No camera")}
+                guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back) else{ fatalError("No camera")}
               
                   do {
                       let input = try AVCaptureDeviceInput(device: backCamera)

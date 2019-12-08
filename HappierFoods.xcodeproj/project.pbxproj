@@ -12,6 +12,9 @@
 		440282CF238B9EC60088B380 /* newDataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440282CE238B9EC60088B380 /* newDataInputViewController.swift */; };
 		4404C8BC22E06DD3003B484B /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */; };
 		4405869F238D686300398E5A /* challengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405869E238D686300398E5A /* challengeViewController.swift */; };
+		4405B0722396354B00C67F4B /* challengeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4405B06F2396354A00C67F4B /* challengeIcon.png */; };
+		4405B0732396354B00C67F4B /* targetIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4405B0702396354A00C67F4B /* targetIcon.png */; };
+		4405B0742396354B00C67F4B /* tryIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4405B0712396354A00C67F4B /* tryIcon.png */; };
 		440758B5237B5265007C8153 /* newMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440758B4237B5264007C8153 /* newMainViewController.swift */; };
 		4407EC0623942E03006AEF82 /* myAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4407EC0523942E03006AEF82 /* myAppTests.swift */; };
 		4407EC1423944125006AEF82 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4407EC11239440C2006AEF82 /* SnapshotHelper.swift */; };
@@ -58,7 +61,6 @@
 		442EAEEA23510F0500232E52 /* returnToOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442EAEE923510F0500232E52 /* returnToOnboardingViewController.swift */; };
 		442EAEEC235116D100232E52 /* certificate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442EAEEB235116D100232E52 /* certificate.jpeg */; };
 		442EAEEE235118F300232E52 /* extraTutorialViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442EAEED235118F300232E52 /* extraTutorialViewController0.swift */; };
-		44329E9322DE1225002DA0FA /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */; };
 		44329E9722DE292D002DA0FA /* HistoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */; };
 		443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B66BF228EBD48007DDACC /* historyViewController.swift */; };
 		443B66CA22905FB4007DDACC /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66C922905FB4007DDACC /* face.png */; };
@@ -275,6 +277,9 @@
 		440282CE238B9EC60088B380 /* newDataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = newDataInputViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/coreVCs/newDataInputViewController.swift; sourceTree = "<absolute>"; };
 		4404C8BB22E06DD3003B484B /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
 		4405869E238D686300398E5A /* challengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeViewController.swift; sourceTree = "<group>"; };
+		4405B06F2396354A00C67F4B /* challengeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = challengeIcon.png; sourceTree = "<group>"; };
+		4405B0702396354A00C67F4B /* targetIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targetIcon.png; sourceTree = "<group>"; };
+		4405B0712396354A00C67F4B /* tryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tryIcon.png; sourceTree = "<group>"; };
 		440758B4237B5264007C8153 /* newMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newMainViewController.swift; sourceTree = "<group>"; };
 		4407EC0323942E03006AEF82 /* myAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4407EC0523942E03006AEF82 /* myAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAppTests.swift; sourceTree = "<group>"; };
@@ -323,7 +328,6 @@
 		442EAEE923510F0500232E52 /* returnToOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = returnToOnboardingViewController.swift; sourceTree = "<group>"; };
 		442EAEEB235116D100232E52 /* certificate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = certificate.jpeg; sourceTree = "<group>"; };
 		442EAEED235118F300232E52 /* extraTutorialViewController0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extraTutorialViewController0.swift; sourceTree = "<group>"; };
-		44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewController.swift; sourceTree = "<group>"; };
 		443B66BF228EBD48007DDACC /* historyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		443B66C922905FB4007DDACC /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
@@ -592,7 +596,6 @@
 			isa = PBXGroup;
 			children = (
 				448F0818236AB95E002B96BE /* historyTableViewController.swift */,
-				44329E9222DE1225002DA0FA /* HistoryCollectionViewCell.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -661,6 +664,9 @@
 		4483901A22C7CDE4002F8D2E /* Placeholder Images */ = {
 			isa = PBXGroup;
 			children = (
+				4405B06F2396354A00C67F4B /* challengeIcon.png */,
+				4405B0702396354A00C67F4B /* targetIcon.png */,
+				4405B0712396354A00C67F4B /* tryIcon.png */,
 				44A4100022E98755002289AD /* little dude1.png */,
 				44A40FFA22E98755002289AD /* little dude2.png */,
 				44A40FFB22E98755002289AD /* little dude3.png */,
@@ -1173,6 +1179,7 @@
 				442132F7234C98F000F4624D /* ExtraTutorial.storyboard in Resources */,
 				44A4100722E98755002289AD /* little dude4.png in Resources */,
 				44BFAD67232D738900CD5CA8 /* 8.png in Resources */,
+				4405B0742396354B00C67F4B /* tryIcon.png in Resources */,
 				4483901E22C7CED8002F8D2E /* databasePlaceholderImage.001.jpeg in Resources */,
 				4483901622C731E6002F8D2E /* onboarding1.png in Resources */,
 				44D519F2225E3301001BD7FB /* icons3.png in Resources */,
@@ -1244,6 +1251,7 @@
 				44BFAD69232D738900CD5CA8 /* 9.png in Resources */,
 				442132FF234CB08500F4624D /* AdobeStock_243078492.jpeg in Resources */,
 				44A75AEF22EA6806007AE545 /* nuts.jpeg in Resources */,
+				4405B0732396354B00C67F4B /* targetIcon.png in Resources */,
 				442132FD234CB08500F4624D /* AdobeStock_243077934.jpeg in Resources */,
 				44B41CF22350AB5500A750E0 /* T5.png in Resources */,
 				44BFAD65232D738900CD5CA8 /* 2.png in Resources */,
@@ -1273,6 +1281,7 @@
 				44A5AB83235B5E14009C0F8A /* EmptyFridge.png in Resources */,
 				443B66E422906055007DDACC /* eyeOpen_browDownLeft.png in Resources */,
 				44A4102122E9ABD5002289AD /* text 5 1.png in Resources */,
+				4405B0722396354B00C67F4B /* challengeIcon.png in Resources */,
 				449613CB22DC9CBC001CCE37 /* apple.jpg in Resources */,
 				44A75AED22EA6806007AE545 /* prawns.jpeg in Resources */,
 				443B66E02290604C007DDACC /* eyeLookUpLeft_browDownLeft.png in Resources */,
@@ -1381,7 +1390,6 @@
 				44B52FF522DA211900CF730D /* preTryViewController.swift in Sources */,
 				4461B1F8238A6BF700195906 /* secondTutorialPageViewController.swift in Sources */,
 				4419CA392392457300B19A5C /* Enums.swift in Sources */,
-				44329E9322DE1225002DA0FA /* HistoryCollectionViewCell.swift in Sources */,
 				44FE744D2357737800CDC2E5 /* certificateViewController.swift in Sources */,
 				443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */,
 				449ACB13226110B400C9F666 /* smileView.swift in Sources */,

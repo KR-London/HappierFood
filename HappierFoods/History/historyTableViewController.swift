@@ -49,43 +49,65 @@ class historyTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier , for: indexPath) as! statsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier , for: indexPath) as! historyTableViewCell
         
         let record = list[indexPath.row]
         
         cell.titleOfStatistic.text = record.name
+        cell.valueOfStatistic.text = record.notes
         //cell.imageForStat.image =  UIImage(named: foods[indexPath.row].1)
         
         //cell.displayContent(image: foods[indexPath.row].1)
         let fileToLoad = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(record.filename ?? "1.png")
         
         cell.displayContent(image: fileToLoad)
-        cell.imageView?.layer.cornerRadius = 5.0
-        cell.imageView?.clipsToBounds = true
-       // print(foods[indexPath.row].1)
-        cell.imageView?.cornerRadius = 5.0
+//        cell.imageView?.layer.cornerRadius = 5.0
+//        cell.imageForStat.layer.cornerRadius = 5.0
+//        cell.imageForStat.layer.masksToBounds = true
+//        cell.imageView?.clipsToBounds = true
+//       // print(foods[indexPath.row].1)
+//        cell.imageView?.cornerRadius = 5.0
         
-        cell.valueOfStatistic.text = ""
+        let date = record.date
+           let formatter = DateFormatter()
+           formatter.dateFormat = "dd MMM yy " //If you dont want static "UTC" you can go for ZZZZ instead of 'UTC'Z.
+          // formatter.timeZone = TimeZone(abbreviation: "IST")
+           let result1 = formatter.string(from: date!) ?? ""
+           cell.dateTried.text = result1
         
         switch record.type{
             case entryType.challenge.rawValue:
-                cell.backgroundColor = #colorLiteral(red: 0.338232398, green: 0.2534516156, blue: 0.3303070068, alpha: 1)
+               // cell.backgroundColor = #colorLiteral(red: 0.9179692864, green: 0.4894329639, blue: 0.5481537275, alpha: 1)
+                cell.badge.image = #imageLiteral(resourceName: "challengeIcon.png")
                     //UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
             case entryType.triedThisWeek.rawValue:
-                cell.backgroundColor = #colorLiteral(red: 0.7630795836, green: 0.8484307528, blue: 0.5961778164, alpha: 1)
+               // cell.backgroundColor = #colorLiteral(red: 0.9179692864, green: 0.5285187325, blue: 0.5605356174, alpha: 1)
+                cell.badge.image = #imageLiteral(resourceName: "tryIcon.png")
                 //UIColor(red: 176/255, green: 235/255, blue: 206/255, alpha: 1)
             case entryType.triedBeforeThisWeek.rawValue:
-                cell.backgroundColor =  #colorLiteral(red: 0.4955835342, green: 0.6332069039, blue: 0.4178404212, alpha: 1)
+               // cell.backgroundColor =  #colorLiteral(red: 0.8722069301, green: 0.5249428587, blue: 0.5436992209, alpha: 1)
+            cell.badge.image = #imageLiteral(resourceName: "tryIcon.png")
                 //UIColor(red: 166/255, green: 230/255, blue: 206/255, alpha: 1)
             case entryType.target.rawValue:
-                cell.backgroundColor =  #colorLiteral(red: 0.3476209641, green: 0.4364097714, blue: 0.3838276267, alpha: 1)
+                //cell.backgroundColor =  #colorLiteral(red: 0.8722069301, green: 0.4650338842, blue: 0.5208273163, alpha: 1)
+                cell.badge.image = #imageLiteral(resourceName: "targetIcon.png")
                     //UIColor(red: 156/255, green: 225/255, blue: 206/255, alpha: 1)
             case entryType.targetCompleted.rawValue:
-            cell.backgroundColor =   #colorLiteral(red: 0.9254191518, green: 0.9255302548, blue: 0.9253813624, alpha: 1)
+                //cell.backgroundColor =   #colorLiteral(red: 0.9254191518, green: 0.9255302548, blue: 0.9253813624, alpha: 1)
+                cell.badge.image = #imageLiteral(resourceName: "targetIcon.png")
                 //UIColor(red: 146/255, green: 220/255, blue: 206/255, alpha: 1)
-            default: cell.backgroundColor =  UIColor(red: 136/255, green: 215/255, blue: 206/255, alpha: 1)
+            default: cell.badge.image = #imageLiteral(resourceName: "little dude1.png")
+                //cell.backgroundColor =  UIColor(red: 136/255, green: 215/255, blue: 206/255, alpha: 1)
+
         }
 
+                   
+                    if indexPath.row.isMultiple(of: 2) == true{
+                            cell.backgroundColor =  #colorLiteral(red: 0.8722069301, green: 0.5889267738, blue: 0.6418183641, alpha: 1)
+                    }
+                    else{
+                            cell.backgroundColor = #colorLiteral(red: 0.9179692864, green: 0.5285187325, blue: 0.5605356174, alpha: 1)
+                    }
         
         return cell
     }

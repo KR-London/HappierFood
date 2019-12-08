@@ -80,7 +80,13 @@ class statsTableViewController: UITableViewController {
                   cell.titleOfStatistic.text = " "
           }
           
-          cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+          if indexPath.row.isMultiple(of: 2) == true{
+                                 cell.backgroundColor =  #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+                         }
+                         else{
+                                 cell.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+                         }
+             
 
         return cell
     }
