@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='myAppTests.xctest' tests='5' failures='0'>
+  <testsuite name='HappierFoodsTests.HappierFoodsTests' tests='3' failures='0'>
+    <testcase classname='HappierFoodsTests.HappierFoodsTests' name='testExample' time='0.001'/>
+    <testcase classname='HappierFoodsTests.HappierFoodsTests' name='testPerformanceExample' time='0.356'/>
+    <testcase classname='HappierFoodsTests.HappierFoodsTests' name='testScreenshots' time='0.001'/>
+  </testsuite>
+  <testsuite name='myAppTests.myAppTests' tests='2' failures='0'>
+    <testcase classname='myAppTests.myAppTests' name='testExample' time='6.735'/>
+    <testcase classname='myAppTests.myAppTests' name='testLaunchPerformance' time='0.029'/>
+  </testsuite>
+</testsuites>
