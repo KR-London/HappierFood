@@ -26,10 +26,24 @@ class myAppTests: XCTestCase {
 
     func testExample() {
        
+//        let app = XCUIApplication()
+//        app.launch()
+//        setupSnapshot(app)
+//        snapshot("main")
+        
         let app = XCUIApplication()
-        app.launch()
-        setupSnapshot(app)
         snapshot("main")
+        app.collectionViews.cells.containing(.staticText, identifier:"+").children(matching: .staticText)["+"].tap()
+        snapshot("dataInputScreen")
+        app.buttons["Eat Now"].tap()
+        snapshot("faceRate")
+        app.buttons["Rate It!"].tap()
+        snapshot("confetti")
+        app.buttons["I'm a superstar"].tap()
+        snapshot("backToMain")
+       
+        
+                
 //
 //        let collectionViewsQuery = app.collectionViews
 //        collectionViewsQuery.cells.containing(.staticText, identifier:"+").children(matching: .staticText)["+"].tap()
@@ -73,6 +87,8 @@ class myAppTests: XCTestCase {
 //        #   "iPad Pro (9.7-inch)",
 //        #   "Apple TV 1080p"
     }
+    
+    
 
     func testLaunchPerformance() {
       //  if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

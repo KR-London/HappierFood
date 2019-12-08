@@ -117,9 +117,10 @@ class confettiViewController: UIViewController {
             let label =  bubbleLabel()
             
             label.numberOfLines = 0
-            label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
+            label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18)
             label.text = text
-            label.textColor = #colorLiteral(red: 0.05645794421, green: 0.001110887388, blue: 0, alpha: 1)
+            label.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
+            label.adjustsFontSizeToFitWidth = true
             label.layoutIfNeeded()
             label.sizeToFit()
 
@@ -144,7 +145,7 @@ class confettiViewController: UIViewController {
             label.center = bubbleView.center
             bubbleView.addSubview(label)
             
-          bubbleView.translatesAutoresizingMaskIntoConstraints = true
+            bubbleView.translatesAutoresizingMaskIntoConstraints = true
             NSLayoutConstraint.activate([
                 bubbleView.bottomAnchor.constraint(lessThanOrEqualTo: happyButton.topAnchor, constant: 10),
                 bubbleView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor),

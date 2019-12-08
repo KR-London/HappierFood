@@ -297,12 +297,14 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExtraTutorials.011.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-SB-uvc">
                                 <rect key="frame" x="28" y="44" width="358" height="818"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Wec-SB-uvc" secondAttribute="height" multiplier="166:379" id="PcK-vX-lwy"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Wec-SB-uvc" firstAttribute="centerY" secondItem="BIf-t7-i2x" secondAttribute="centerY" id="GLp-eA-gzc"/>
                             <constraint firstItem="Wec-SB-uvc" firstAttribute="centerX" secondItem="BIf-t7-i2x" secondAttribute="centerX" id="Uq2-PX-OTR"/>

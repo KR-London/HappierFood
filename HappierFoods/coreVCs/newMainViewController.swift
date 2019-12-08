@@ -341,7 +341,7 @@ class newMainViewController: UIViewController {
         label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 50),
                                   height: ceil(bubbleHeight))
 
-        let bubbleSize = CGSize(width: label.frame.width  ,
+        let bubbleSize = CGSize(width: label.frame.width + 10  ,
                                      height: label.frame.height + 20)
 
         let bubbleView = BubbleView()

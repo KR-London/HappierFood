@@ -38,7 +38,11 @@
                 let identifier = "p" + String(x)
                 let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: identifier )
-               // vc.view.backgroundColor = randomColor()
+                if x == 11 {
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)) )
+                    vc.view.addGestureRecognizer(tap)
+                }
+                
                 controllers.append(vc)
             }
 
@@ -70,12 +74,10 @@
 
             return nil
         }
-//
-//        func randomCGFloat() -> CGFloat {
-//            return CGFloat(arc4random()) / CGFloat(UInt32.max)
-//        }
-//
-//        func randomColor() -> UIColor {
-//            return UIColor(red: randomCGFloat(), green: randomCGFloat(), blue: randomCGFloat(), alpha: 1)
-//        }
+        
+        @objc func handleTap(_ sender: UITapGestureRecognizer) {
+            print("tap recognised")
+            pageController.dismiss(animated: true, completion: nil)
+        }
+
     }
