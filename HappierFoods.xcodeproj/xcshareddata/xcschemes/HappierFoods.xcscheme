@@ -56,6 +56,17 @@
                BlueprintName = "myAppTests"
                ReferencedContainer = "container:HappierFoods.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "myAppTests/testExample()">
+               </Test>
+               <Test
+                  Identifier = "myAppTests/testLaunchPerformance()">
+               </Test>
+               <Test
+                  Identifier = "myAppTests/testTopButtons()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

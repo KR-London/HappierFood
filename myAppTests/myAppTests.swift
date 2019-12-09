@@ -188,6 +188,116 @@ class myAppTests: XCTestCase {
     //        #   "Apple TV 1080p"
         }
         
+    func testOnboarding(){
+        let app = XCUIApplication()
+        app.launch()
+        setupSnapshot(app)
+        snapshot("onboarding1")
+        app.staticTexts["Is this for me?"].tap()
+        snapshot("onboardingquiz")
+        
+        
+        app.sliders["50%"]/*@START_MENU_TOKEN@*/.press(forDuration: 0.9);/*[[".tap()",".press(forDuration: 0.9);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let staticText = app/*@START_MENU_TOKEN@*/.staticTexts["👎"]/*[[".buttons[\"👎\"].staticTexts[\"👎\"]",".staticTexts[\"👎\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        staticText.tap()
+        let levelAppYourFoodStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Level App Your Food!"]/*[[".buttons[\"Level App Your Food!\"].staticTexts[\"Level App Your Food!\"]",".staticTexts[\"Level App Your Food!\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        levelAppYourFoodStaticText.tap()
+        snapshot("no_no")
+        
+//        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeDown()
+//
+//
+//
+//        let app2 = app
+//        app2/*@START_MENU_TOKEN@*/.staticTexts["I wanna Happy my Food "]/*[[".buttons[\"I wanna Happy my Food \"].staticTexts[\"I wanna Happy my Food \"]",".staticTexts[\"I wanna Happy my Food \"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeDown()
+//        app.staticTexts["You said that you eat a lot of different foods "].swipeDown()
+//        app.sliders["79%"].swipeLeft()
+//        staticText.tap()
+//        app.buttons["Level App Your Food!"].tap()
+//        app2/*@START_MENU_TOKEN@*/.staticTexts["Support Resources"]/*[[".buttons[\"Support Resources\"].staticTexts[\"Support Resources\"]",".staticTexts[\"Support Resources\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app.staticTexts["Come back anytime you are ready to try new foods. "].swipeDown()
+//        staticText2.tap()
+//        levelAppYourFoodStaticText.tap()
+//        app2/*@START_MENU_TOKEN@*/.staticTexts["I wanna Happy my Food"]/*[[".buttons[\"I wanna Happy my Food\"].staticTexts[\"I wanna Happy my Food\"]",".staticTexts[\"I wanna Happy my Food\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app2/*@START_MENU_TOKEN@*/.staticTexts["....Okay...."]/*[[".buttons[\"....Okay....\"].staticTexts[\"....Okay....\"]",".staticTexts[\"....Okay....\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app.buttons["Try Food"].tap()
+//        app.buttons["Nibble It"].tap()
+//        app.buttons["button"].tap()
+//
+//
+//
+//        app.sliders["34%"].tap()
+//
+//        let iWannaHappyMyFoodStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["I wanna Happy my Food"]/*[[".buttons[\"I wanna Happy my Food\"].staticTexts[\"I wanna Happy my Food\"]",".staticTexts[\"I wanna Happy my Food\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+//        iWannaHappyMyFoodStaticText.tap()
+//
+//        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+//        element.swipeDown()
+//        app.buttons["Level App Your Food!"].tap()
+//        iWannaHappyMyFoodStaticText.tap()
+//
+//        let app2 = app
+//        app2/*@START_MENU_TOKEN@*/.staticTexts["....Okay...."]/*[[".buttons[\"....Okay....\"].staticTexts[\"....Okay....\"]",".staticTexts[\"....Okay....\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app.buttons["Try Food"].tap()
+//        app.buttons["Nibble It"].tap()
+//        app.buttons["button"].tap()
+//        app.buttons["Rate It!"].tap()
+//        app.buttons["I'm a superstar"].tap()
+//
+//        let element2 = element.children(matching: .other).element
+//        element2.swipeLeft()
+//        element2.swipeLeft()
+//        element2.swipeDown()
+//        app2/*@START_MENU_TOKEN@*/.icons["Happy Foods "]/*[[".otherElements[\"Home screen icons\"]",".icons.icons[\"Happy Foods \"]",".icons[\"Happy Foods \"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+                
+        
+    }
+    
+    func testOnboarding2(){
+        
+        let app = XCUIApplication()
+        app.launch()
+        setupSnapshot(app)
+        app.buttons["Is this for me?"].tap()
+
+        let levelAppYourFoodStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Level App Your Food!"]/*[[".buttons[\"Level App Your Food!\"].staticTexts[\"Level App Your Food!\"]",".staticTexts[\"Level App Your Food!\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        levelAppYourFoodStaticText.tap()
+        snapshot("onboarding1")
+       // app/*@START_MENU_TOKEN@*/.staticTexts["I wanna Happy my Food"]/*[[".buttons[\"I wanna Happy my Food\"].staticTexts[\"I wanna Happy my Food\"]",".staticTexts[\"I wanna Happy my Food\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let levelAppYourFoodStaticText2 = app.staticTexts["I wanna Happy my Food"]
+        levelAppYourFoodStaticText2.tap()
+        snapshot("onboarding2")
+        let levelAppYourFoodStaticText3 = app.staticTexts["....Okay...."]
+        levelAppYourFoodStaticText3.tap()
+        snapshot("onboarding3")
+        let levelAppYourFoodStaticText4 = app.staticTexts["Try Food"]
+               levelAppYourFoodStaticText4.tap()
+               snapshot("onboarding4")
+        let levelAppYourFoodStaticText5 = app.staticTexts["Smell It"]
+        levelAppYourFoodStaticText5.tap()
+        snapshot("onboarding5")
+     
+    }
+    
+    func testOnboarding3(){
+          
+          let app = XCUIApplication()
+          app.launch()
+          setupSnapshot(app)
+          app.buttons["Is this for me?"].tap()
+          let levelAppYourFoodStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Level App Your Food!"]/*[[".buttons[\"Level App Your Food!\"].staticTexts[\"Level App Your Food!\"]",".staticTexts[\"Level App Your Food!\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+          levelAppYourFoodStaticText.tap()
+         // app/*@START_MENU_TOKEN@*/.staticTexts["I wanna Happy my Food"]/*[[".buttons[\"I wanna Happy my Food\"].staticTexts[\"I wanna Happy my Food\"]",".staticTexts[\"I wanna Happy my Food\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+          let levelAppYourFoodStaticText2 = app.staticTexts["I wanna Happy my Food"]
+          levelAppYourFoodStaticText2.tap()
+          let levelAppYourFoodStaticText3 = app.staticTexts["....Okay...."]
+          levelAppYourFoodStaticText3.tap()
+          let levelAppYourFoodStaticText4 = app.staticTexts["Not Eating Now"]
+          levelAppYourFoodStaticText4.tap()
+          snapshot("firsttarget")
+       
+      }
 
     func testLaunchPerformance() {
       //  if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
@@ -198,3 +308,5 @@ class myAppTests: XCTestCase {
        // }
     }
 }
+
+
