@@ -253,13 +253,13 @@ class preTargetViewController: UINavigationController {
             
             case "Other":
             
-                motivationViewController.imagePlaceholder = UIImage(named: "chaos.jpg")!
-                motivationViewController.placeHolderImage = "chaos.jpg"
+                motivationViewController.imagePlaceholder = UIImage(named: "1plate.jpeg")!
+                motivationViewController.placeHolderImage = "1plate.jpeg"
             
             default:
             
-                motivationViewController.imagePlaceholder = UIImage(named: "chaos.jpg")!
-                motivationViewController.placeHolderImage = "chaos.jpg"
+                motivationViewController.imagePlaceholder = UIImage(named: "1plate.jpeg")!
+                motivationViewController.placeHolderImage = "1plate.jpeg"
         }
       
         

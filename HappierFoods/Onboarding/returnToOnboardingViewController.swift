@@ -120,7 +120,7 @@ class returnToOnboardingViewController: UIViewController {
             block1.alpha = 0
             NSLayoutConstraint.activate(
                 [
-                    //block1.topAnchor.constraint(equalTo: self.view.topAnchor),
+                    block1.topAnchor.constraint(equalTo: self.view.topAnchor),
                     block1.widthAnchor.constraint(equalTo: margins.widthAnchor),
                     block1.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
                     block1.heightAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 163/545)

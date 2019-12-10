@@ -61,23 +61,23 @@ class historyTableViewController: UITableViewController {
         switch record.type{
             case entryType.challenge.rawValue:
                // cell.backgroundColor = #colorLiteral(red: 0.9179692864, green: 0.4894329639, blue: 0.5481537275, alpha: 1)
-                cell.badge.image = #imageLiteral(resourceName: "challengeIcon.png")
+                cell.badge.image = #imageLiteral(resourceName: "feat.png")
                     //UIColor(red: 186/255, green: 242/255, blue: 206/255, alpha: 1)
             case entryType.triedThisWeek.rawValue:
                // cell.backgroundColor = #colorLiteral(red: 0.9179692864, green: 0.5285187325, blue: 0.5605356174, alpha: 1)
-                cell.badge.image = #imageLiteral(resourceName: "tryIcon.png")
+                cell.badge.image = #imageLiteral(resourceName: "tried.png")
                 //UIColor(red: 176/255, green: 235/255, blue: 206/255, alpha: 1)
             case entryType.triedBeforeThisWeek.rawValue:
                // cell.backgroundColor =  #colorLiteral(red: 0.8722069301, green: 0.5249428587, blue: 0.5436992209, alpha: 1)
-            cell.badge.image = #imageLiteral(resourceName: "tryIcon.png")
+            cell.badge.image = #imageLiteral(resourceName: "tried.png")
                 //UIColor(red: 166/255, green: 230/255, blue: 206/255, alpha: 1)
             case entryType.target.rawValue:
                 //cell.backgroundColor =  #colorLiteral(red: 0.8722069301, green: 0.4650338842, blue: 0.5208273163, alpha: 1)
-                cell.badge.image = #imageLiteral(resourceName: "targetIcon.png")
+                cell.badge.image = #imageLiteral(resourceName: "target.png")
                     //UIColor(red: 156/255, green: 225/255, blue: 206/255, alpha: 1)
             case entryType.targetCompleted.rawValue:
                 //cell.backgroundColor =   #colorLiteral(red: 0.9254191518, green: 0.9255302548, blue: 0.9253813624, alpha: 1)
-                cell.badge.image = #imageLiteral(resourceName: "targetIcon.png")
+                cell.badge.image = #imageLiteral(resourceName: "target.png")
                 //UIColor(red: 146/255, green: 220/255, blue: 206/255, alpha: 1)
             default: cell.badge.image = #imageLiteral(resourceName: "little dude1.png")
                 //cell.backgroundColor =  UIColor(red: 136/255, green: 215/255, blue: 206/255, alpha: 1)
@@ -86,10 +86,10 @@ class historyTableViewController: UITableViewController {
 
                    
                     if indexPath.row.isMultiple(of: 2) == true{
-                            cell.backgroundColor =  #colorLiteral(red: 0.8722069301, green: 0.5889267738, blue: 0.6418183641, alpha: 1)
+                            cell.backgroundColor =  #colorLiteral(red: 0.9921568627, green: 0.3215686275, blue: 0.4666666667, alpha: 1)
                     }
                     else{
-                            cell.backgroundColor = #colorLiteral(red: 0.9179692864, green: 0.5285187325, blue: 0.5605356174, alpha: 1)
+                            cell.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.5285187325, blue: 0.7176470588, alpha: 1)
                     }
         
         return cell

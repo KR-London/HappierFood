@@ -110,6 +110,62 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         
         var selectedIndexPath : IndexPath?
         var currentChallenge = String()
+    
+    let challenges = [
+             "Make a dish containing only items beginning with 'T'", //1
+             "What is the king of dips, and what can make it better?",
+             "Balance three vegetables on top of each other and photograph it",
+             "Make your dinner into a face",
+             "Present and name your dinner like how it would look in a Michelin Restaurant",
+             "The ugliest nugget",
+             "Fry the weirdest thing you can",
+             "Make a dish containing only items beginning with 'T'",
+             "What is the king of dips, and what can make it better?",
+             "Balance three vegetables on top of each other and photograph it",
+             "Make your dinner into a face", //11
+             "Present and name your dinner like how it would look in a Michelin Restaurant",
+             "The ugliest nugget",
+             "Fry the weirdest thing you can",
+             "Make a dish containing only items beginning with 'T'",
+             "What is the king of dips, and what can make it better?",
+             "Balance three vegetables on top of each other and photograph it",
+             "Make your dinner into a face",
+             "Present and name your dinner like how it would look in a Michelin Restaurant",
+             "The ugliest nugget",
+             "Fry the weirdest thing you can", //21
+             "Make a dish containing only items beginning with 'T'",
+             "What is the king of dips, and what can make it better?",
+             "Balance three vegetables on top of each other and photograph it",
+             "Make your dinner into a face",
+             "Present and name your dinner like how it would look in a Michelin Restaurant",
+             "The ugliest nugget",
+             "Fry the weirdest thing you can",
+             "Make a dish containing only items beginning with 'T'",
+             "What is the king of dips, and what can make it better?",
+             "Balance three vegetables on top of each other and photograph it", //31
+             "Make your dinner into a face",
+             "Present and name your dinner like how it would look in a Michelin Restaurant",
+             "The ugliest nugget",
+             "Fry the weirdest thing you can",
+             "Make a dish containing only items beginning with 'T'",
+             "What is the king of dips, and what can make it better?",
+             "Balance three vegetables on top of each other and photograph it",
+             "Make your dinner into a face",
+             "Present and name your dinner like how it would look in a Michelin Restaurant",
+             "The ugliest nugget", //41
+             "Fry the weirdest thing you can",
+             "Make a dish containing only items beginning with 'T'",
+             "What is the king of dips, and what can make it better?",
+             "Balance three vegetables on top of each other and photograph it",
+             "Make your dinner into a face",
+             "Present and name your dinner like how it would look in a Michelin Restaurant",
+             "The ugliest nugget",
+             "Fry the weirdest thing you can",
+             "Make a dish containing only items beginning with 'T'",
+             "Best Christmassy snack", //51
+             "Wildest Christmassy Plate of food", //christmas
+             "Make your dinner into a face", //new year
+         ]
         
  override func viewDidLoad() {
        super.viewDidLoad()
@@ -118,20 +174,18 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
        
        view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
        
-        setUpSubview()
+       setUpSubview()
+       setUpNavigationBarItems()
        
-       let challenges = [
-           "Make a dish containing only items beginning with 'T'",
-           "What is the king of dips, and what can make it better?",
-           "Balance three vegetables on top of each other and photograph it",
-           "Make your dinner into a face",
-           "Present and name your dinner like how it would look in a Michelin Restaurant",
-           "The ugliest nugget",
-           "Fry the weirdest thing you can"
-       ]
+     
     
        /// update this implementation to make it a 'challenge of the week' or 'challenge of the day' thing.
-        currentChallenge = challenges.randomElement()!
+        /// I want a dictionary/mapping of week to challenge
+    /// Hard code a week worth of challenges
+    
+    
+    
+        currentChallenge = thisWeeksChallenge()
         instructionLabel.text = currentChallenge
    }
         
@@ -151,6 +205,13 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         func launchCamera(){
             previewView.isHidden = false
             recordTheFood()
+        }
+    
+        func thisWeeksChallenge() -> String{
+            let calendar = Calendar.current
+            let weekOfYear = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
+            return challenges[weekOfYear - 1]
+            
         }
         
         func pickFromCameraRoll(){
@@ -384,6 +445,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             haptic.notificationOccurred(.success)
             if captureSession != nil
             {
+                previewView.isHidden = true
                 if AVCaptureDevice.authorizationStatus(for: .video) != .denied
                 {
                     let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
@@ -392,14 +454,19 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                     //foodImage.cornerRadius = 50
                     ///previewView.cornerRadius = 50
                 }
+                
+                
+                appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
             }
-            if image == nil && (textInput.text == nil || textInput.text == ""){
+            else{
+                if image == nil && (textInput.text == nil || textInput.text == ""){
                          let alert = UIAlertController(title: "I need a little more", message: "Please input a food name or a photo to log what you did", preferredStyle: .alert)
                               alert.addAction(UIAlertAction(title: "I can do this!", style: .cancel, handler: nil))
                                self.present(alert, animated: true)
                      }
-            else{
-            appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
+                else{
+                    appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
+                }
             }
             
 //            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
@@ -485,5 +552,30 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
             let myNav = self.navigationController
             myNav?.pushViewController(nextViewController, animated: true)
         }
+    
+    func setUpNavigationBarItems(){
+          let shareButton = UIButton(type: .system)
+        if #available(iOS 13.0, *) {
+            shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        } else {
+           shareButton.setImage(UIImage(named: "share.png")?.resize(to: CGSize(width: 50,height: 100)), for: .normal)
+        }
+          shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+          navigationItem.rightBarButtonItem = UIBarButtonItem(customView: shareButton)
+      }
+    
+     @objc func share() {
+         
+        var message = String()
+         
+        message = "Debug message"
+        let image = foodImage.image ?? #imageLiteral(resourceName: "little dude1.png")
+
+        let activityViewController =
+        UIActivityViewController(activityItems: [message, image],
+                                      applicationActivities: nil)
+         
+        present(activityViewController, animated: true)
+     }
     }
 

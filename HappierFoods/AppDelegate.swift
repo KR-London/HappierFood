@@ -76,6 +76,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // change navigation item title color
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
     
         return true
     }

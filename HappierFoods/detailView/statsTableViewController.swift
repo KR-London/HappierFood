@@ -18,6 +18,7 @@ class statsTableViewController: UITableViewController {
     var historyArray: [History]?
     var foodArray: [Tried]!
     var logons: [Logons]!
+    var list: [Food]!
     var uniqueFoods = [ (String, String)]()
     
    var tryCounts = [ String: Int ]()
@@ -40,7 +41,7 @@ class statsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 18
     }
 
 
@@ -64,9 +65,10 @@ class statsTableViewController: UITableViewController {
                   cell.titleOfStatistic.text = "Average Tries Per Week"
                   cell.valueOfStatistic.text = String( Double(tryCounts.count)/Double(numberOfWeeks()) )
               case 5:
-                //cell.imageForStat.image = UIImage(named: "1plate.jpeg")
+                    let this = maxTries()
+                  cell.imageForStat.image = UIImage(named: photoOfFood(name: this) ?? "1plate.jpeg")
                   cell.titleOfStatistic.text = "Most Retried Food"
-                  cell.valueOfStatistic.text =  maxTries()
+                  cell.valueOfStatistic.text = this
               case 6:
                   cell.titleOfStatistic.text = "Number of foods tried 5 times of more"
                   cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 5}).count)
@@ -76,16 +78,47 @@ class statsTableViewController: UITableViewController {
              case 8:
                 cell.titleOfStatistic.text = "What stat do you want to see... "
                 cell.valueOfStatistic.text =  "..here!"
+            case 9:
+                           cell.titleOfStatistic.text = "Total targets set"
+                                                       cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count ?? 0)
+            case 10:
+                             cell.titleOfStatistic.text = "Total targets done"
+                             cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.targetCompleted.rawValue}).count ?? 0)
+                         case 11:
+                              cell.titleOfStatistic.text = "Total targets open"
+                                                         cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue }).count ?? 0)
+                         case 12:
+                              cell.titleOfStatistic.text = "Challenges done"
+                                                         cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.challenge.rawValue}).count ?? 0)
+                         case 13:
+                             cell.titleOfStatistic.text = "Average targets set per week"
+                             cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count ?? 0)/Double(numberOfWeeks() ))
+                         case 14:
+                            cell.titleOfStatistic.text = "Average targets met per week"
+                             cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.targetCompleted.rawValue}).count ?? 0)/Double(numberOfWeeks() ))
+//                         case 15:
+////                               let this = maxTries()
+////                             cell.imageForStat.image = UIImage(named: photoOfFood(name: this) ?? "1plate.jpeg")
+////                             cell.titleOfStatistic.text = "Most Retried Food"
+////                             cell.valueOfStatistic.text = this
+//                         case 16:
+////                             cell.titleOfStatistic.text = "Number of foods tried 5 times of more"
+////                             cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 5}).count)
+//                         case 17:
+////                             cell.titleOfStatistic.text = "Number of foods tried 12 times of more"
+////                             cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 12}).count)
+//            
               default:
                   cell.titleOfStatistic.text = " "
           }
           
-          if indexPath.row.isMultiple(of: 2) == true{
-                                 cell.backgroundColor =  #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-                         }
-                         else{
-                                 cell.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
-                         }
+    if indexPath.row.isMultiple(of: 2) == true{
+                              cell.backgroundColor =  #colorLiteral(red: 0.9921568627, green: 0.3215686275, blue: 0.4666666667, alpha: 1)
+                      }
+                      else{
+                              cell.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.5285187325, blue: 0.7176470588, alpha: 1)
+                      }
+          
              
 
         return cell
@@ -105,6 +138,11 @@ class statsTableViewController: UITableViewController {
         
         return maxTriedFoods.randomElement() ?? "No tries yet"
         
+    }
+    
+    func photoOfFood(name: String) -> String? {
+        let this = list.filter({$0.name == name}).filter({$0.filename?.dropLast(10) == "plate.jpeg" })
+        return this.randomElement()?.filename ?? nil
     }
     
     func listOfFoodsTried(){
@@ -375,6 +413,14 @@ class statsTableViewController: UITableViewController {
               catch{
                   print("Error fetching data \(error)")
               }
+        
+        let request4 : NSFetchRequest<Food> = Food.fetchRequest()
+                     do{
+                         try list = context.fetch(request4)
+                     }
+                     catch{
+                         print("Error fetching data \(error)")
+                     }
 
     }
 
