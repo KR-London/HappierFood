@@ -387,7 +387,7 @@ class newMainViewController: UIViewController {
         }
         
         let label = UILabel()
-        label.text = String(streak) + " Day Logon Streak!"
+        label.text = String(streak) + " Day Log In Streak!"
         label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 24)
         label.textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
         label.textAlignment = .right

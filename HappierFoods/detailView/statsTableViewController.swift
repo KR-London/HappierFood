@@ -56,13 +56,13 @@ class statsTableViewController: UITableViewController {
                   cell.titleOfStatistic.text = "Total Distinct Foods Tried"
                   cell.valueOfStatistic.text  = String(tryCounts.count)
               case 2:
-                  cell.titleOfStatistic.text = "All Logons"
+                  cell.titleOfStatistic.text = "All Log Ins"
                   cell.valueOfStatistic.text = String( loginRecord.count)
               case 3:
-                  cell.titleOfStatistic.text = "Average Logon per week"
+                  cell.titleOfStatistic.text = "Average Log Ins per Week"
                   cell.valueOfStatistic.text = String( Double(loginRecord.count)/Double(numberOfWeeks() ))
               case 4:
-                  cell.titleOfStatistic.text = "Average Tries Per Week"
+                  cell.titleOfStatistic.text = "Average Tries per Week"
                   cell.valueOfStatistic.text = String( Double(tryCounts.count)/Double(numberOfWeeks()) )
               case 5:
                     let this = maxTries()
@@ -70,31 +70,31 @@ class statsTableViewController: UITableViewController {
                   cell.titleOfStatistic.text = "Most Retried Food"
                   cell.valueOfStatistic.text = this
               case 6:
-                  cell.titleOfStatistic.text = "Number of foods tried 5 times of more"
+                  cell.titleOfStatistic.text = "Number of Foods Tried 5 Times or More"
                   cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 5}).count)
               case 7:
-                  cell.titleOfStatistic.text = "Number of foods tried 12 times of more"
+                  cell.titleOfStatistic.text = "Number of Foods Tried 12 Times or More"
                   cell.valueOfStatistic.text =  String(tryCounts.filter({$0.value > 12}).count)
              case 8:
                 cell.titleOfStatistic.text = "What stat do you want to see... "
-                cell.valueOfStatistic.text =  "..here!"
+                cell.valueOfStatistic.text =  "..here?"
             case 9:
-                           cell.titleOfStatistic.text = "Total targets set"
+                           cell.titleOfStatistic.text = "Total Targets Set"
                                                        cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count ?? 0)
             case 10:
-                             cell.titleOfStatistic.text = "Total targets done"
+                             cell.titleOfStatistic.text = "Total Targets Done"
                              cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.targetCompleted.rawValue}).count ?? 0)
                          case 11:
-                              cell.titleOfStatistic.text = "Total targets open"
+                              cell.titleOfStatistic.text = "Total Targets Open"
                                                          cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue }).count ?? 0)
                          case 12:
-                              cell.titleOfStatistic.text = "Challenges done"
+                              cell.titleOfStatistic.text = "Challenges Done"
                                                          cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.challenge.rawValue}).count ?? 0)
                          case 13:
-                             cell.titleOfStatistic.text = "Average targets set per week"
+                             cell.titleOfStatistic.text = "Average Targets Set per Week"
                              cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count ?? 0)/Double(numberOfWeeks() ))
                          case 14:
-                            cell.titleOfStatistic.text = "Average targets met per week"
+                            cell.titleOfStatistic.text = "Average Targets Met per Week"
                              cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.targetCompleted.rawValue}).count ?? 0)/Double(numberOfWeeks() ))
 //                         case 15:
 ////                               let this = maxTries()

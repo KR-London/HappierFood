@@ -167,6 +167,19 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
              "Make your dinner into a face", //new year
          ]
         
+    
+    let challengeDictionary: [String:String] = [
+        "Make a dish containing only items beginning with 'T'" :"A dish containing only items beginning with 'T'", //1
+        "What is the king of dips, and what can make it better?" : "King of dips",
+        "Balance three vegetables on top of each other and photograph it" : "Three vegetable tower",
+        "Make your dinner into a face" : "Face dinner",
+        "Present and name your dinner like how it would look in a Michelin Restaurant" : "Haute cuisine",
+        "The ugliest nugget" : "Ugly nugget",
+        "Fry the weirdest thing you can" : "Weird Fry",
+                "Best Christmassy snack": "Christmas snacking!", //51
+        "Wildest Christmassy Plate of food": "Boss Christmas dinner!", //christmas
+        "Express a New Year Resolution as a plate of food": "New Years resolution" //new year
+            ]
  override func viewDidLoad() {
        super.viewDidLoad()
 
@@ -568,7 +581,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
          
         var message = String()
          
-        message = "Debug message"
+        message = (challengeDictionary[thisWeeksChallenge()] ?? "") + (textInput.text ?? "") + "#happyFoods"
         let image = foodImage.image ?? #imageLiteral(resourceName: "little dude1.png")
 
         let activityViewController =

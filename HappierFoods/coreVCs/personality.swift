@@ -13,7 +13,7 @@ struct happySays{
     let firstUseMessages =
             [   "Welcome to HappyFoods",
                 "Click on my tummy if you ever need a bit more help",
-                "Logon every day to maintain your streak!",
+                "Log in every day to maintain your streak!",
                 "Check out the stats and the history on the top bar!"
             ]
     

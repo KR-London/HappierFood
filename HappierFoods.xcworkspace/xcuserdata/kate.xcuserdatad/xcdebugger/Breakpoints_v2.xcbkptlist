@@ -1445,10 +1445,10 @@
             filePath = "HappierFoods/Onboarding/challengeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
-            landmarkName = "recordChallenge()"
-            landmarkType = "7">
+            startingLineNumber = "475"
+            endingLineNumber = "475"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1461,10 +1461,10 @@
             filePath = "HappierFoods/Onboarding/challengeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
-            landmarkName = "pictureInput()"
-            landmarkType = "7">
+            startingLineNumber = "421"
+            endingLineNumber = "421"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1477,10 +1477,10 @@
             filePath = "HappierFoods/Onboarding/challengeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "446"
-            endingLineNumber = "446"
-            landmarkName = "recordChallenge()"
-            landmarkType = "7">
+            startingLineNumber = "459"
+            endingLineNumber = "459"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1493,10 +1493,10 @@
             filePath = "HappierFoods/Onboarding/challengeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "471"
-            endingLineNumber = "471"
-            landmarkName = "recordChallenge()"
-            landmarkType = "7">
+            startingLineNumber = "485"
+            endingLineNumber = "485"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
