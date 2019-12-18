@@ -17,19 +17,17 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
                 layout.scrollDirection = .horizontal
         
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+//        collection.registerClass(dataInputCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader , withReuseIdentifier: "someRandomIdentifierString"))
         collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-  
-    
         return collection
     }()
     
     lazy var targetsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
-          let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-           collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-          return collection
+        let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collection.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        return collection
       }()
     
     lazy var eatNowButton: myButton = {
@@ -40,24 +38,42 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
     }()
 
     lazy var eatLaterButton: myButton = {
-          let button = myButton()
-            button.setTitle("Eat Later", for: .normal)
-         button.addTarget(self, action: #selector(eatLaterSegue), for: .touchUpInside)
-          return button
+        let button = myButton()
+        button.setTitle("Eat Later", for: .normal)
+        button.addTarget(self, action: #selector(eatLaterSegue), for: .touchUpInside)
+        return button
       }()
     
     lazy var previewView: UIImageView = {
         let imageView = UIImageView()
-        
-
         /// stretch
         return imageView
+    }()
+    
+    lazy var tryCollectionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+        label.backgroundColor = UIColor.white
+        label.text = "Retry?"
+        label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        label.alpha = 0.6
+        return label
+        
+    }()
+    lazy var targetCollectionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "TwCenMT-CondensedExtraBold", size: 18 )
+        label.backgroundColor = UIColor.white
+        label.text = "Target?"
+        label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        label.alpha = 0.6
+        return label
+        
     }()
     
     lazy var foodImage: UIImageView = {
         let imageView = UIImageView()
         
-
         /// stretch
         return imageView
     }()
@@ -127,8 +143,9 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
         loadItems()
         view.backgroundColor = UIColor(red: 224/255, green: 250/255, blue: 233/255, alpha: 1)
         setUpSubview()
+        
   
-       nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
+        nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rateFoodVC" ) as! rateFoodViewController
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -381,7 +398,36 @@ class newDataInputViewController: UIViewController,UIImagePickerControllerDelega
                 buttonStackView.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
                 buttonStackView.topAnchor.constraint(lessThanOrEqualTo: foodImage.bottomAnchor, constant: 10)
             ])
+        
+        if foodArray != nil
+        {
+            if foodArray.count > 0
+            {
+            view.addSubview( tryCollectionLabel )
+            tryCollectionLabel.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                       tryCollectionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 0.3*layoutUnit),
+                       tryCollectionLabel.centerYAnchor.constraint(equalTo: triesCollectionView.centerYAnchor),
+                       tryCollectionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+            }
+        }
+        
+        if targetArray != nil
+              {
+                if targetArray.count > 0
+                {
+                  view.addSubview( targetCollectionLabel )
+                  targetCollectionLabel.translatesAutoresizingMaskIntoConstraints = false
+                  NSLayoutConstraint.activate([
+                             targetCollectionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 0.3*layoutUnit),
+                             targetCollectionLabel.centerYAnchor.constraint(equalTo: targetsCollectionView.centerYAnchor),
+                             targetCollectionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+                  ])
+                }
+              }
     }
+    
     
     /// fill in the data for the two collection view sources
     
@@ -405,11 +451,14 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         return 0
     }
     
+//    func collectionView(collectionView: UICollectionView, viewFor HeaderInSection section: Int) -> UIView?{
+//        return headeCell
+//    }
+//
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tryCell", for: indexPath) as! mainCollectionViewCell
-
         
-            if collectionView == self.triesCollectionView
+        if collectionView == self.triesCollectionView
                    {
                     if indexPath.row < (foodArray?.count ?? 0){
                       let plate = foodArray[indexPath.row]
@@ -441,9 +490,6 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
                             editButton.addTarget(self, action: #selector(targetTryButtonTapped), for: .touchUpInside)
                             cell.addSubview(editButton)
                           }
-         
-        
-        
             return cell
     }
     
@@ -469,6 +515,15 @@ extension newDataInputViewController: UICollectionViewDelegate, UICollectionView
         
         selectedIndexPath = indexPath
         collectionView.reloadItems(at: cellsToReload)
+    }
+    
+ func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "dataInputCollectionReusableView", for: indexPath)
+            // Customize headerView here
+            return headerView
+        }
+        fatalError()
     }
     
 //    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

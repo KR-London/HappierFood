@@ -65,6 +65,7 @@
 		442EAEEC235116D100232E52 /* certificate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442EAEEB235116D100232E52 /* certificate.jpeg */; };
 		442EAEEE235118F300232E52 /* extraTutorialViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442EAEED235118F300232E52 /* extraTutorialViewController0.swift */; };
 		44329E9722DE292D002DA0FA /* HistoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */; };
+		44343F2E23A7ACEB00CC44DD /* dataInputCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44343F2D23A7ACEB00CC44DD /* dataInputCollectionReusableView.swift */; };
 		443B66C0228EBD48007DDACC /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B66BF228EBD48007DDACC /* historyViewController.swift */; };
 		443B66CA22905FB4007DDACC /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66C922905FB4007DDACC /* face.png */; };
 		443B66CC22906000007DDACC /* eyeBlinkLeft_browDownLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 443B66CB22905FFF007DDACC /* eyeBlinkLeft_browDownLeft.png */; };
@@ -337,6 +338,7 @@
 		442EAEEB235116D100232E52 /* certificate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = certificate.jpeg; sourceTree = "<group>"; };
 		442EAEED235118F300232E52 /* extraTutorialViewController0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extraTutorialViewController0.swift; sourceTree = "<group>"; };
 		44329E9622DE292D002DA0FA /* HistoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewController.swift; sourceTree = "<group>"; };
+		44343F2D23A7ACEB00CC44DD /* dataInputCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInputCollectionReusableView.swift; sourceTree = "<group>"; };
 		443B66BF228EBD48007DDACC /* historyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		443B66C922905FB4007DDACC /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
 		443B66CB22905FFF007DDACC /* eyeBlinkLeft_browDownLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeBlinkLeft_browDownLeft.png; sourceTree = "<group>"; };
@@ -971,6 +973,7 @@
 			children = (
 				44C74E5D237C4A020070AC87 /* confettiViewController.swift */,
 				440758B4237B5264007C8153 /* newMainViewController.swift */,
+				44343F2D23A7ACEB00CC44DD /* dataInputCollectionReusableView.swift */,
 				441AF0032383F85100B6DCAB /* newDataInputViewController.swift */,
 				440282CE238B9EC60088B380 /* newDataInputViewController.swift */,
 				44082858238115BE00EC2C0F /* SAConfettiView.swift */,
@@ -1381,6 +1384,7 @@
 				44B52F8422D9FDC700CF730D /* Onboarding1ViewController.swift in Sources */,
 				44C74E5E237C4A020070AC87 /* confettiViewController.swift in Sources */,
 				440758B5237B5265007C8153 /* newMainViewController.swift in Sources */,
+				44343F2E23A7ACEB00CC44DD /* dataInputCollectionReusableView.swift in Sources */,
 				44082859238115BE00EC2C0F /* SAConfettiView.swift in Sources */,
 				44146634225D358900DD4751 /* ARViewController.swift in Sources */,
 				440828572381153F00EC2C0F /* testingViewController.swift in Sources */,
