@@ -74,7 +74,7 @@ class newMainViewController: UIViewController {
             //  self.present(nextViewController, animated: true, completion: nil)
         loadItems()
         setUpSubview()
-        self.becomeFirstResponder()
+       // self.becomeFirstResponder()
         // MARK: UI customisations
        // showMessage()
        displayStats()
@@ -112,16 +112,16 @@ class newMainViewController: UIViewController {
       //  let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
         //print(datafilepath!)
     }
-    override var canBecomeFirstResponder: Bool {
-        get {
-            return true
-        }
-    }
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-          if motion == .motionShake {
-              print("shake")
-          }
-      }
+//    override var canBecomeFirstResponder: Bool {
+//        get {
+//            return true
+//        }
+//    }
+//    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+//          if motion == .motionShake {
+//              print("shake")
+//          }
+//      }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
