@@ -74,7 +74,7 @@ class newMainViewController: UIViewController {
             //  self.present(nextViewController, animated: true, completion: nil)
         loadItems()
         setUpSubview()
-        
+        self.becomeFirstResponder()
         // MARK: UI customisations
        // showMessage()
        displayStats()
@@ -112,6 +112,16 @@ class newMainViewController: UIViewController {
       //  let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
         //print(datafilepath!)
     }
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+          if motion == .motionShake {
+              print("shake")
+          }
+      }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -333,7 +343,7 @@ class newMainViewController: UIViewController {
         label.sizeToFit()
         //label.alignmentRectInsets = UIEdgeInsetsMake(0, 10, 0, 10)
 
-        let constraintRect = bubbleBox.frame.size
+   //     let constraintRect = bubbleBox.frame.size
 //        let boundingBox = text.boundingRect(with: constraintRect,
 //                                            options: .usesLineFragmentOrigin,
 //                                            attributes: [.font: label.font],
@@ -615,7 +625,7 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
         cell.cellLabel.text = ""
         cell.cellLabel.isHidden = true
         
-        var collectionViewSize = 16
+       var collectionViewSize = 16
             
 
             if foodArray.count  > 15

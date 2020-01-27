@@ -22,7 +22,7 @@ class historyTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.alwaysBounceVertical = false
         loadItems()
     }
 

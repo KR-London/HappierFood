@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
- 
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         /// for testing
         doIPlaceANewDatestamp()
@@ -69,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        BugReporting.bugReportingOptions = [.emailFieldHidden]
         
         UILabel.appearance(whenContainedInInstancesOf: [UIView.self]).textColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
-        var navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearace = UINavigationBar.appearance()
 
       //  navigationBarAppearace.tintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
       //  navigationBarAppearace.barTintColor = UIColor(red: 3/255, green: 18/255, blue: 8/255, alpha: 1)
@@ -80,10 +78,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
+          
     
         return true
     }
     
+//    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+//          if(event?.subtype == UIEvent.EventSubtype.motionShake) {
+//                  print("You shook me, now what")
+//              }
+//    }
+//
     /// set orientations you want to be allowed in this property by default
     var orientationLock = UIInterfaceOrientationMask.portrait
     

@@ -28,7 +28,6 @@
 		44080756238A698200AEA9CE /* ExtraTutorials.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4408074B238A698200AEA9CE /* ExtraTutorials.001.jpeg */; };
 		44080757238A698200AEA9CE /* ExtraTutorials.003.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4408074C238A698200AEA9CE /* ExtraTutorials.003.jpeg */; };
 		44080758238A698200AEA9CE /* ExtraTutorials.002.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4408074D238A698200AEA9CE /* ExtraTutorials.002.jpeg */; };
-		44080759238A698200AEA9CE /* ExtraTutorials.005.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4408074E238A698200AEA9CE /* ExtraTutorials.005.jpeg */; };
 		4408075A238A698200AEA9CE /* ExtraTutorials.009.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4408074F238A698200AEA9CE /* ExtraTutorials.009.jpeg */; };
 		4408075B238A698200AEA9CE /* ExtraTutorials.008.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44080750238A698200AEA9CE /* ExtraTutorials.008.jpeg */; };
 		4408075C238A698200AEA9CE /* ExtraTutorials.004.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44080751238A698200AEA9CE /* ExtraTutorials.004.jpeg */; };
@@ -40,6 +39,7 @@
 		440886DF233E0D5000A76800 /* 4plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886DE233E0D4F00A76800 /* 4plate.jpeg */; };
 		440886E1233E0D5500A76800 /* 5plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440886E0233E0D5500A76800 /* 5plate.jpeg */; };
 		440886E3233E3E3A00A76800 /* myButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440886E2233E3E3A00A76800 /* myButton.swift */; };
+		440D913723AB99A600F4D5AD /* ExtraTutorials.005.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 440D913623AB99A600F4D5AD /* ExtraTutorials.005.jpeg */; };
 		4410084022E4A0BB0096E47F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4410083F22E4A0BB0096E47F /* Onboarding.storyboard */; };
 		4410084222E4A5280096E47F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4410084122E4A5280096E47F /* Storyboard.storyboard */; };
 		4410ECF42294031F00CC3515 /* NoCameraPlaceholder.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */; };
@@ -48,7 +48,6 @@
 		4414EE05225F9FB100D9B9CB /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4414EE04225F9FB000D9B9CB /* tick.jpg */; };
 		4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */; };
 		4419CA392392457300B19A5C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419CA382392457300B19A5C /* Enums.swift */; };
-		441AF0042383F85100B6DCAB /* newDataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AF0032383F85100B6DCAB /* newDataInputViewController.swift */; };
 		441DB5EF22C513DB00E857C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441DB5EE22C513DB00E857C0 /* Main.storyboard */; };
 		442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CD2299619E00CBE431 /* UIViewExtension.swift */; };
 		442113D0229961BB00CBE431 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */; };
@@ -301,7 +300,6 @@
 		4408074B238A698200AEA9CE /* ExtraTutorials.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.001.jpeg; sourceTree = "<group>"; };
 		4408074C238A698200AEA9CE /* ExtraTutorials.003.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.003.jpeg; sourceTree = "<group>"; };
 		4408074D238A698200AEA9CE /* ExtraTutorials.002.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.002.jpeg; sourceTree = "<group>"; };
-		4408074E238A698200AEA9CE /* ExtraTutorials.005.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.005.jpeg; sourceTree = "<group>"; };
 		4408074F238A698200AEA9CE /* ExtraTutorials.009.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.009.jpeg; sourceTree = "<group>"; };
 		44080750238A698200AEA9CE /* ExtraTutorials.008.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.008.jpeg; sourceTree = "<group>"; };
 		44080751238A698200AEA9CE /* ExtraTutorials.004.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.004.jpeg; sourceTree = "<group>"; };
@@ -313,6 +311,7 @@
 		440886DE233E0D4F00A76800 /* 4plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4plate.jpeg; sourceTree = "<group>"; };
 		440886E0233E0D5500A76800 /* 5plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5plate.jpeg; sourceTree = "<group>"; };
 		440886E2233E3E3A00A76800 /* myButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myButton.swift; sourceTree = "<group>"; };
+		440D913623AB99A600F4D5AD /* ExtraTutorials.005.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExtraTutorials.005.jpeg; sourceTree = "<group>"; };
 		4410083F22E4A0BB0096E47F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Onboarding.storyboard; path = HappierFoods/Onboarding.storyboard; sourceTree = SOURCE_ROOT; };
 		4410084122E4A5280096E47F /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4410ECF32294031E00CC3515 /* NoCameraPlaceholder.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoCameraPlaceholder.001.jpeg; sourceTree = "<group>"; };
@@ -586,9 +585,9 @@
 				4408074B238A698200AEA9CE /* ExtraTutorials.001.jpeg */,
 				4408074C238A698200AEA9CE /* ExtraTutorials.003.jpeg */,
 				4408074D238A698200AEA9CE /* ExtraTutorials.002.jpeg */,
-				4408074E238A698200AEA9CE /* ExtraTutorials.005.jpeg */,
 				4458A15E239CDE4E00BBFE1F /* ExtraTutorials.012.jpeg */,
 				4408074F238A698200AEA9CE /* ExtraTutorials.009.jpeg */,
+				440D913623AB99A600F4D5AD /* ExtraTutorials.005.jpeg */,
 				44080750238A698200AEA9CE /* ExtraTutorials.008.jpeg */,
 				44080751238A698200AEA9CE /* ExtraTutorials.004.jpeg */,
 			);
@@ -1073,7 +1072,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Kate Roberts";
 				TargetAttributes = {
 					4407EC0223942E03006AEF82 = {
@@ -1146,6 +1145,7 @@
 				44B52FF022DA14C000CF730D /* areYouReady2.jpg in Resources */,
 				44B41D002350BE3100A750E0 /* NewPromoPics.001.jpeg in Resources */,
 				44A75AF522EA6806007AE545 /* sweet_potato.jpeg in Resources */,
+				440D913723AB99A600F4D5AD /* ExtraTutorials.005.jpeg in Resources */,
 				44A4101822E9AA6A002289AD /* text 3 1.png in Resources */,
 				44A4101422E9A9BB002289AD /* text 2 2.png in Resources */,
 				44A75AEC22EA6806007AE545 /* nuggets.jpeg in Resources */,
@@ -1254,7 +1254,6 @@
 				44BFAD6E232D738900CD5CA8 /* 7.png in Resources */,
 				44080752238A698200AEA9CE /* ExtraTutorials.011.jpeg in Resources */,
 				44A4102622E9ACFF002289AD /* bub 1.png in Resources */,
-				44080759238A698200AEA9CE /* ExtraTutorials.005.jpeg in Resources */,
 				44A4102722E9ACFF002289AD /* bub 2.png in Resources */,
 				44A75AFA22EA6806007AE545 /* avocado.jpeg in Resources */,
 				44A75AE722EA6806007AE545 /* pork chop.jpeg in Resources */,
@@ -1400,7 +1399,6 @@
 				442EAEEA23510F0500232E52 /* returnToOnboardingViewController.swift in Sources */,
 				442113D2229961D600CBE431 /* Extensions_UIImage.swift in Sources */,
 				44D5985B2259346700267E71 /* mainCollectionViewCell.swift in Sources */,
-				441AF0042383F85100B6DCAB /* newDataInputViewController.swift in Sources */,
 				44B52FF322DA18A400CF730D /* Onboarding4ViewController.swift in Sources */,
 				44B52FEB22DA10AF00CF730D /* Onboarding3ViewController.swift in Sources */,
 				4405869F238D686300398E5A /* challengeViewController.swift in Sources */,
@@ -1572,7 +1570,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1629,7 +1627,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1642,7 +1640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1665,7 +1663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HappierFoods/HappierFoods.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = HappierFoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

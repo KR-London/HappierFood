@@ -17,6 +17,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
   
         var imagePath: String?
         var placeHolderImage: String?
+        var iWantToSegue = false
     
         /// initialise all the elements programatically
         lazy var triesCollectionView: UICollectionView = {
@@ -209,6 +210,7 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         
         override func viewWillDisappear(_ animated: Bool) {
                super.viewWillDisappear(animated)
+           
                if usedCamera == true {
                    self.captureSession?.stopRunning()
                }
@@ -249,6 +251,9 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                 guard let imageData = photo.fileDataRepresentation()
                   else { return }
             image = UIImage(data: imageData)?.cropImageToSquare() ?? UIImage(named: "chaos.jpg")!
+            if iWantToSegue == true{
+                 appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
+            }
                 foodImage.image = image
                 foodImage.layer.masksToBounds = true
               //  nextViewController.imagePlaceholder = image ?? UIImage(named: placeholderImages.randomElement()!)!
@@ -455,10 +460,12 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
         }
 
         @objc func recordChallenge() -> Void {
-            haptic.notificationOccurred(.success)
+           // haptic.notificationOccurred(.success)
+           // pictureInput()
+            iWantToSegue = true
             if captureSession != nil
             {
-                previewView.isHidden = true
+                //previewView.isHidden = true
                 if AVCaptureDevice.authorizationStatus(for: .video) != .denied
                 {
                     let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
@@ -467,9 +474,8 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
                     //foodImage.cornerRadius = 50
                     ///previewView.cornerRadius = 50
                 }
-                
-                
-                appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
+               
+//                appsAndBiscuits(imageName: textInput.text ?? "", image: image ?? UIImage(named: placeholderImages.randomElement()!)!, rating: nil, notes: currentChallenge)
             }
             else{
                 if image == nil && (textInput.text == nil || textInput.text == ""){
@@ -486,6 +492,15 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
 //            nextViewController = storyboard.instantiateViewController(withIdentifier: "postChallengeScreen" ) as! confettiViewController
 //            passData(dvc1: nextViewController)
 //            myNav = self.navigationController as? customNavigationController
+//            myNav?.pushViewController(nextViewController, animated: true)
+            
+//            //navigationController?.popToRootViewController(animated: true)
+//            let happyUtterance = happySays()
+//
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
+//            nextViewController.message = happyUtterance.identifyContext(foodName: textInput.text ?? "", tryNumber: nil, logonNumber: nil, screen: screen.challengeScreen)
+//            let myNav = self.navigationController
 //            myNav?.pushViewController(nextViewController, animated: true)
         }
     
@@ -553,12 +568,10 @@ class challengeViewController: UIViewController, UIImagePickerControllerDelegate
 //                        main?.myCollectionView.reloadData()
 //                    }
                 }
-                
-           
-            
-            //navigationController?.popToRootViewController(animated: true)
+     
+//            //navigationController?.popToRootViewController(animated: true)
             let happyUtterance = happySays()
-            
+
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let nextViewController = storyboard.instantiateViewController(withIdentifier: "confettiViewController" ) as! confettiViewController
             nextViewController.message = happyUtterance.identifyContext(foodName: imageName, tryNumber: nil, logonNumber: nil, screen: screen.challengeScreen)

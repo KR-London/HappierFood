@@ -28,7 +28,7 @@ class statsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.alwaysBounceVertical = false
         loadItems()
         listOfFoodsTried()
 
@@ -47,6 +47,9 @@ class statsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)  as! statsTableViewCell
+        
+         cell.titleOfStatistic.text = ""
+         cell.valueOfStatistic.text = ""
 
         switch indexPath.row{
               case 0:
@@ -80,22 +83,22 @@ class statsTableViewController: UITableViewController {
                 cell.valueOfStatistic.text =  "..here?"
             case 9:
                            cell.titleOfStatistic.text = "Total Targets Set"
-                                                       cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count ?? 0)
+                           cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count )
             case 10:
                              cell.titleOfStatistic.text = "Total Targets Done"
-                             cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.targetCompleted.rawValue}).count ?? 0)
+                             cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.targetCompleted.rawValue}).count )
                          case 11:
                               cell.titleOfStatistic.text = "Total Targets Open"
-                                                         cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue }).count ?? 0)
+                              cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.target.rawValue }).count )
                          case 12:
                               cell.titleOfStatistic.text = "Challenges Done"
-                                                         cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.challenge.rawValue}).count ?? 0)
+                              cell.valueOfStatistic.text = String( list.filter({ $0.type == entryType.challenge.rawValue}).count )
                          case 13:
                              cell.titleOfStatistic.text = "Average Targets Set per Week"
-                             cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count ?? 0)/Double(numberOfWeeks() ))
+                             cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.target.rawValue || $0.type == entryType.targetCompleted.rawValue}).count )/Double(numberOfWeeks() ))
                          case 14:
                             cell.titleOfStatistic.text = "Average Targets Met per Week"
-                             cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.targetCompleted.rawValue}).count ?? 0)/Double(numberOfWeeks() ))
+                            cell.valueOfStatistic.text = String( Double(list.filter({ $0.type == entryType.targetCompleted.rawValue}).count )/Double(numberOfWeeks() ))
 //                         case 15:
 ////                               let this = maxTries()
 ////                             cell.imageForStat.image = UIImage(named: photoOfFood(name: this) ?? "1plate.jpeg")
