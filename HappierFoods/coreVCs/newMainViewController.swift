@@ -2,6 +2,7 @@ import UIKit
 import Foundation
 import Darwin
 import CoreData
+import MessageUI
 //import SAConfettiView
 
 let defaults = UserDefaults.standard
@@ -112,16 +113,16 @@ class newMainViewController: UIViewController {
       //  let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
         //print(datafilepath!)
     }
-//    override var canBecomeFirstResponder: Bool {
-//        get {
-//            return true
-//        }
-//    }
-//    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-//          if motion == .motionShake {
-//              print("shake")
-//          }
-//      }
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+          if motion == .motionShake {
+              showFeedbackDialog()
+          }
+      }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -255,18 +256,6 @@ class newMainViewController: UIViewController {
             bubbleBox.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -40),
             bubbleBox.leadingAnchor.constraint(equalTo: happyButton.trailingAnchor)
         ])
-        
-//        if foodArray.count > 15{
-//        view.addSubview(addFoodButton)
-//        addFoodButton.translatesAutoresizingMaskIntoConstraints = false
-//        addFoodButton.addTarget(self, action: #selector(addFood), for: .touchUpInside)
-//        NSLayoutConstraint.activate([
-//            addFoodButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10),
-//            addFoodButton.heightAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8),
-//            addFoodButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
-//            addFoodButton.widthAnchor.constraint(equalTo:   margins.widthAnchor, multiplier: 0.25, constant: -8)
-//        ])
-//        }
 
         view.addSubview(statsView)
         statsView.translatesAutoresizingMaskIntoConstraints = false
@@ -276,9 +265,7 @@ class newMainViewController: UIViewController {
             statsView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -bubbleHeight ),
             statsView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
         ])
-        
    
-        
         myCollectionView.register(mainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell")
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
@@ -341,16 +328,8 @@ class newMainViewController: UIViewController {
 
         label.layoutIfNeeded()
         label.sizeToFit()
-        //label.alignmentRectInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-
-   //     let constraintRect = bubbleBox.frame.size
-//        let boundingBox = text.boundingRect(with: constraintRect,
-//                                            options: .usesLineFragmentOrigin,
-//                                            attributes: [.font: label.font],
-//                                            context: nil)
         label.frame.size = CGSize(width: ceil(view.frame.width - bubbleHeight - 50),
                                   height: ceil(bubbleHeight))
-
         let bubbleSize = CGSize(width: label.frame.width + 10  ,
                                      height: label.frame.height + 20)
 
@@ -633,9 +612,72 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
                 collectionViewSize = foodArray.count + 1
             }
             else{
-                if indexPath.row == 15{
-                    cell.cellLabel.text = "+"
-                    cell.cellLabel.isHidden = false
+                if indexPath.row >= foodArray.count{
+                   // cell.cellLabel.text = "+"
+                   // cell.cellLabel.isHidden = false
+                print(indexPath.row)
+                    switch indexPath.row{
+                        case 15:
+                            cell.cellLabel.text = "+"
+                            cell.instructionReminder.addTarget(self, action: #selector(addFood), for: .touchUpInside)
+                            cell.cellLabel.isHidden = false
+                        case 3:
+//                            cell.cellLabel.text = "How will this app help me?"
+//                            ///
+//                            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//                            cell.cellLabel.isHidden = false
+                                cell.backgroundColor = UIColor.clear
+                                cell.cellImage.isHidden = false
+                                //cell.displayContent(image: "button_labels.001.jpeg")
+                                cell.cellImage.image = UIImage(named: "button_labels.001.jpeg")
+                                cell.layer.borderWidth = 2.0
+                                cell.layer.borderColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1).cgColor
+                                cell.instructionReminder.addTarget(self, action: #selector(info), for: .touchUpInside)
+                        case 6:
+//                            cell.cellLabel.text = "Hold my hand - I'm gonna try something"
+//                            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//                            cell.cellLabel.isHidden = false
+                                cell.backgroundColor = UIColor.clear
+                                cell.cellImage.isHidden = false
+                                cell.displayContent(image: "button_labels.002.jpeg")
+                                cell.layer.borderWidth = 2.0
+                                cell.layer.borderColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1).cgColor
+                                cell.instructionReminder.addTarget(self, action: #selector(trying), for: .touchUpInside)
+                        case 9:
+//                            cell.cellLabel.text = "I'm feeling down"
+//                            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//                            cell.cellLabel.isHidden = false
+                                cell.backgroundColor = UIColor.clear
+                                cell.cellImage.isHidden = false
+                                cell.displayContent(image: "button_labels.003.jpeg")
+                                cell.layer.borderWidth = 2.0
+                                cell.layer.borderColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1).cgColor
+                        cell.instructionReminder.addTarget(self, action: #selector(motivate), for: .touchUpInside)
+                        case 12:
+//                            cell.cellLabel.text = "Gimme a target! "
+//                            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//                            cell.cellLabel.isHidden = false
+                                cell.backgroundColor = UIColor.clear
+                                cell.cellImage.isHidden = false
+                                cell.displayContent(image: "button_labels.004.jpeg")
+                                cell.layer.borderWidth = 2.0
+                                cell.layer.borderColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1).cgColor
+                        cell.instructionReminder.addTarget(self, action: #selector(noTry), for: .touchUpInside)
+                        case 14:
+//                            cell.cellLabel.text = "Fun challenge!"
+//                            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//                            cell.cellLabel.isHidden = false
+                                cell.backgroundColor = UIColor.clear
+                                cell.cellImage.isHidden = false
+                                cell.displayContent(image: "button_labels.005.jpeg")
+                                cell.layer.borderWidth = 2.0
+                                cell.layer.borderColor = UIColor(red: 103/255, green: 228/255, blue: 154/255, alpha: 1).cgColor
+                                cell.instructionReminder.addTarget(self, action: #selector(play), for: .touchUpInside)
+                        default:
+                            cell.instructionReminder.titleLabel!.text = ""
+                            cell.instructionReminder.addTarget(self, action: #selector(addFood), for: .touchUpInside)
+                            cell.cellImage.isHidden = true
+                   }
                 }
             }
         
@@ -663,13 +705,14 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
                     }
                     else
                     {
-                        cell.cellImage.isHidden = true
-                        cell.instructionReminder.addTarget(self, action: #selector(addFood), for: .touchUpInside)
-                          if indexPath.row == 15{
-                            cell.instructionReminder.titleLabel!.text = "+"
-                            cell.instructionReminder.titleLabel?.tintColor = #colorLiteral(red: 0.05645794421, green: 0.001110887388, blue: 0, alpha: 1)
-                            cell.backgroundColor?.withAlphaComponent(0.5)
-                                      }
+                      ///  cell.cellImage.isHidden = true
+//                        cell.instructionReminder.addTarget(self, action: #selector(addFood), for: .touchUpInside)
+//                          if indexPath.row == 15{
+//                            cell.instructionReminder.titleLabel!.text = "+"
+//                            cell.instructionReminder.titleLabel?.tintColor = #colorLiteral(red: 0.05645794421, green: 0.001110887388, blue: 0, alpha: 1)
+//                            cell.backgroundColor?.withAlphaComponent(0.5)
+//                                      }
+                        
 
                     }
                 }
@@ -710,5 +753,103 @@ extension newMainViewController: UICollectionViewDelegate, UICollectionViewDeleg
                 
     }
     
+        func showFeedbackDialog() {
+            //Creating UIAlertController and
+            //Setting title and message for the alert dialog
+            let alertController = UIAlertController(title: "Can you give us some feedback?", message: "It really helps us to get the product right for you and for future users.", preferredStyle: .alert)
+            
+            //the confirm action taking the inputs
+            let confirmAction = UIAlertAction(title: "Email feedback", style: .default) { (_) in
+                
+                //getting the input values from user
+                let thisBestThingAboutThisAppIs = alertController.textFields?[0].text
+                let theMostFrustratungThingAboutThisAppIs = alertController.textFields?[1].text
+                let iWishThisAppDid = alertController.textFields?[2].text
+                ///let email = alertController.textFields?[1].text
+                self.sendEmail(thisBestThingAboutThisAppIs: thisBestThingAboutThisAppIs, theMostFrustratungThingAboutThisAppIs: theMostFrustratungThingAboutThisAppIs, iWishThisAppDid: iWishThisAppDid)
+              ///  self.labelMessage.text = "Name: " + name! + "Email: " + email!
+                
+            }
+            
+            //the cancel action doing nothing
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+            
+            //adding textfields to our dialog box
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Best Thing About This App Is"
+            }
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Most Frustrating Thing Is"
+            }
+            alertController.addTextField { (textField) in
+                textField.placeholder = "I Wish This App Could "
+            }
+            
+            //adding the action to dialogbox
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            //finally presenting the dialog box
+            self.present(alertController, animated: true, completion: nil)
+        }
+    
+            @objc func trying(sender: UIButton!) {
+                //performSegue(withIdentifier: "reTry", sender: self)
+                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+                                               let initialViewController = storyboard.instantiateViewController(withIdentifier: "reTry" )
+                                               self.present(initialViewController, animated: false, completion: nil)
+            }
+            
+            
+            @objc func noTry(sender: UIButton!) {
+                //performSegue(withIdentifier: "reNoTry", sender: self)
+                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+                                let initialViewController = storyboard.instantiateViewController(withIdentifier: "reNoTry" )
+                                self.present(initialViewController, animated: false, completion: nil)
+            }
+        
+            @objc func info(sender: UIButton!) {
+                  let storyboard = UIStoryboard(name: "ExtraTutorial", bundle: nil)
+                  let initialViewController = storyboard.instantiateViewController(withIdentifier: "p0" )
+                  self.present(initialViewController, animated: false, completion: nil)
+            }
+              
+            @objc func motivate(sender: UIButton!) {
+                 // performSegue(withIdentifier: "motivate", sender: self)
+                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "resources" )
+                self.present(initialViewController, animated: false, completion: nil)
+            }
+        
+            @objc func settings(sender: UIButton!) {
+                     performSegue(withIdentifier: "settingSegue", sender: self)
+            }
+        
+            @objc func play(sender: UIButton!) {
+                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+                              let initialViewController = storyboard.instantiateViewController(withIdentifier: "play" )
+                              self.present(initialViewController, animated: false, completion: nil)
+            }
+        
 
+}
+
+extension newMainViewController : MFMailComposeViewControllerDelegate{
+    
+    func sendEmail(thisBestThingAboutThisAppIs: String?, theMostFrustratungThingAboutThisAppIs: String?, iWishThisAppDid: String?) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["kate@saltformysquid.com"])
+            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+    }
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
 }

@@ -49,6 +49,11 @@
 		4414EE08225FB15700D9B9CB /* celebrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414EE07225FB15700D9B9CB /* celebrationScreenViewController.swift */; };
 		4419CA392392457300B19A5C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419CA382392457300B19A5C /* Enums.swift */; };
 		441DB5EF22C513DB00E857C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441DB5EE22C513DB00E857C0 /* Main.storyboard */; };
+		442111EC23F3D51B00118610 /* button_labels.003.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442111E723F3D51B00118610 /* button_labels.003.jpeg */; };
+		442111ED23F3D51B00118610 /* button_labels.005.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442111E823F3D51B00118610 /* button_labels.005.jpeg */; };
+		442111EE23F3D51B00118610 /* button_labels.002.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442111E923F3D51B00118610 /* button_labels.002.jpeg */; };
+		442111EF23F3D51B00118610 /* button_labels.004.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442111EA23F3D51B00118610 /* button_labels.004.jpeg */; };
+		442111F023F3D51B00118610 /* button_labels.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 442111EB23F3D51B00118610 /* button_labels.001.jpeg */; };
 		442113CE2299619E00CBE431 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CD2299619E00CBE431 /* UIViewExtension.swift */; };
 		442113D0229961BB00CBE431 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */; };
 		442113D2229961D600CBE431 /* Extensions_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442113D1229961D600CBE431 /* Extensions_UIImage.swift */; };
@@ -322,6 +327,11 @@
 		4419CA382392457300B19A5C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		441AF0032383F85100B6DCAB /* newDataInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = newDataInputViewController.swift; path = /Users/kate/Desktop/HappierFoodsCopy/HappierFoods/coreVCs/newDataInputViewController.swift; sourceTree = "<absolute>"; };
 		441DB5EE22C513DB00E857C0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		442111E723F3D51B00118610 /* button_labels.003.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_labels.003.jpeg; sourceTree = "<group>"; };
+		442111E823F3D51B00118610 /* button_labels.005.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_labels.005.jpeg; sourceTree = "<group>"; };
+		442111E923F3D51B00118610 /* button_labels.002.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_labels.002.jpeg; sourceTree = "<group>"; };
+		442111EA23F3D51B00118610 /* button_labels.004.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_labels.004.jpeg; sourceTree = "<group>"; };
+		442111EB23F3D51B00118610 /* button_labels.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_labels.001.jpeg; sourceTree = "<group>"; };
 		442113CD2299619E00CBE431 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		442113CF229961BB00CBE431 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		442113D1229961D600CBE431 /* Extensions_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions_UIImage.swift; sourceTree = "<group>"; };
@@ -676,6 +686,11 @@
 		4483901A22C7CDE4002F8D2E /* Placeholder Images */ = {
 			isa = PBXGroup;
 			children = (
+				442111EB23F3D51B00118610 /* button_labels.001.jpeg */,
+				442111E923F3D51B00118610 /* button_labels.002.jpeg */,
+				442111E723F3D51B00118610 /* button_labels.003.jpeg */,
+				442111EA23F3D51B00118610 /* button_labels.004.jpeg */,
+				442111E823F3D51B00118610 /* button_labels.005.jpeg */,
 				4403990C239FC20E0079DB0C /* feat.png */,
 				4403990A239FC20E0079DB0C /* target.png */,
 				4403990B239FC20E0079DB0C /* tried.png */,
@@ -1250,6 +1265,7 @@
 				44497FC922DCD705007CE3D3 /* preTry1B.jpg in Resources */,
 				44080755238A698200AEA9CE /* ExtraTutorials.010.jpeg in Resources */,
 				440886DD233E0D4900A76800 /* 3plate.jpeg in Resources */,
+				442111EF23F3D51B00118610 /* button_labels.004.jpeg in Resources */,
 				44A75AE422EA6806007AE545 /* fried_rice.jpeg in Resources */,
 				44BFAD6E232D738900CD5CA8 /* 7.png in Resources */,
 				44080752238A698200AEA9CE /* ExtraTutorials.011.jpeg in Resources */,
@@ -1266,6 +1282,7 @@
 				4483902122C7D187002F8D2E /* Loading Screens1.png in Resources */,
 				44BFAD6B232D738900CD5CA8 /* 6.png in Resources */,
 				44497FC222DCD204007CE3D3 /* preTarget1B.jpg in Resources */,
+				442111EE23F3D51B00118610 /* button_labels.002.jpeg in Resources */,
 				44A75AEA22EA6806007AE545 /* grapes.jpeg in Resources */,
 				44B41CFE2350BE3100A750E0 /* NewPromoPics.006.jpeg in Resources */,
 				44B41D042350BE3100A750E0 /* NewPromoPics.008.jpeg in Resources */,
@@ -1273,12 +1290,15 @@
 				44BFAD69232D738900CD5CA8 /* 9.png in Resources */,
 				442132FF234CB08500F4624D /* AdobeStock_243078492.jpeg in Resources */,
 				44A75AEF22EA6806007AE545 /* nuts.jpeg in Resources */,
+				442111EC23F3D51B00118610 /* button_labels.003.jpeg in Resources */,
 				4405B0732396354B00C67F4B /* targetIcon.png in Resources */,
 				442132FD234CB08500F4624D /* AdobeStock_243077934.jpeg in Resources */,
 				44B41CF22350AB5500A750E0 /* T5.png in Resources */,
+				442111ED23F3D51B00118610 /* button_labels.005.jpeg in Resources */,
 				44BFAD65232D738900CD5CA8 /* 2.png in Resources */,
 				44A75AD822EA6806007AE545 /* sardines.jpeg in Resources */,
 				44B41CEC2350AB5500A750E0 /* T9.png in Resources */,
+				442111F023F3D51B00118610 /* button_labels.001.jpeg in Resources */,
 				44080758238A698200AEA9CE /* ExtraTutorials.002.jpeg in Resources */,
 				44A4100622E98755002289AD /* little dude8.png in Resources */,
 				44A75ADD22EA6806007AE545 /* carrots.jpeg in Resources */,
